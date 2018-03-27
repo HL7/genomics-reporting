@@ -1,0 +1,18 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <p>
+    The idea for a Sequence resource grew out, in part, the Substitutable Medical Applications and Reusable Technologies(SMART) Platforms Project, which explored creating clinical genomic apps to integrated traditional EMR clinical data and genomic data to show data visualization and analysis, including CDS that depended upon both types of data. Below are a couple of examples. Several apps have already been designed including Genomics Advisor, SMART Precision Cancer Medicine, and Diabetes Bear EMR. Below, one of these apps will be described. To include other apps in this section, please feel free to add a note on it and how it uses FHIR/Genomics calls.
+  </p>
+  <p>SMART Platforms Project is described the following articles:</p>
+  <ul>
+    <li><a href="https://smarthealthit.org/an-app-platform-for-healthcare/about/">What Is SMART?</a></li>
+    <li><a href="https://academic.oup.com/jamia/article/22/6/1173/2357593">SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps</a></li>
+  </ul>
+  <a name="advisor"></a>
+  <h2>Genomics Advisor</h2>
+  <p>
+    The SMART on FHIR Genomics Advisor was an app incorporating genomics data to show risk of disease, drug susceptibility, and related conditions based upon genotype. Technically, this app was architected (see below) by combining data from independent data services, a SMART on FHIR clinical server for clinical information and one for a SMART on FHIR Genomics data server for genomic data. The set of FHIR API calls that are necessary to support this app are shown below:
+  </p>
+  <img src="1-smart-fhir-image.png" alt="image to show the SMART on FHIR work flow"/>
+  <p>The presentation of the app looks like this: </p>
+  <img src="2-smart-fhir-image.png" alt="image to show the presentation of the SMART on FHIR apps"/>
+</div>

@@ -1,0 +1,124 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <p>
+    This section provides guidance on reporting genetic tests that involve sequencing the DNA, RNA or amino acid chains of the specimen.  This includes direct sequencing, shot-gun sequencing, array-based variant testing and other mechanisms.
+  </p>
+  <p>
+    There are three profiles provided for describing the results of genetic testing that perform some degree of sequencing:
+  </p>
+  <ul>
+    <li><a href="obs-described-variant.html">Described Variant</a>,</li>
+    <li><a href="sequence.html">Sequence</a>, and</li>
+    <li><a href="obs-complex-variant.html">Complex Variant</a></li>
+  </ul>
+  <img src="2-sequencing.png" alt="Diagram showing the sequencing profiles"/>
+  <p>
+    Of these, the workhorse is <i>Described Variant</i>.  It provides the details of exactly what sort of change was found, where that change was found, the degree of certainty around the type and location of the change and other information.  It leverages the <i>Sequence</i> profile to convey information that would be part of a knowledge-base definition of the identified variant, but all information specific to the particular observed specimen is conveyed in the Described Variant profile.
+  </p>
+  <p>
+    The <i>Complex Variant</i> profile is used when there is a need to represent a named grouping of variants that do not correspond to a single <a href="obs-genotype.html">Genotype</a> or <a href="obs-haplotype.html">Haplotype</a>.  The details of what was found are left to the member <i>Described Variants</i> the <i>Complex Variant</i> points to.
+  </p>
+  <p>
+    TODO - provide additional guidance on the content and use of these profiles
+  </p>
+
+  <!--Sequence Resource Definition Section-->
+<!--  
+  I've commented this out for now because a lot of it no longer applies.  Most elements of sequence aren't being used in the genetic reporting process because the group agreed to treat Sequence as a "definitional" resource and 
+<a name="sequence"> </a>
+  <h2>Sequence Resource Usage Guide</h2>
+  <p>
+    The Sequence resource is designed for next-generation sequencing data. Patients' observed sequences should be represented by recording reference sequence id/string and detected variants. To specify how it proceed, here is a picture below:
+  </p>
+  <img src="sequence-outline.png" alt="image sequence layout"/>
+  <a name="sequence-element"></a>
+  <h3>Main Elements Definition</h3>
+  <p>
+    Sequence.coordinateSystem: This element shall be constrained into only two possible values: 0 for 0-based system and 1 for 1-based system. Below is the picture that could explain what's the difference between these two systems:
+  </p>
+  <img src="sequence-coordinate-sys.png" alt="image coordinate system description"/>
+  <p>
+    Sequence.referenceSeq: Four optional ways are provided to represent reference sequence in Sequence resource:
+  </p>
+  <ul>
+    <li>Sequence.referenceSeq.referenceSeqId: Reference sequence id in public database.</li>
+    <li>Sequence.referenceSeq.referenceSeqString: Reference sequence string.</li>
+    <li>Sequence.referenceSeq.referenceSeqPointer: Reference to observed sequence stored in another sequence entity.</li>
+    <li>Sequence.referenceSeq.genomeBuild, Sequence.reference.chromosome: The combination of genome build and chromosome.</li>
+  </ul>
+  <p>
+    The diagram below describes 4 optional ways provided in the Sequence resource to encode sequencing data.
+  </p>
+  <img src="sequence-data-present.jpeg" alt="image to show the four optional ways to encode sequencing data"/>
+  <p>
+    Sequence.referenceSeq.stand: Record the 'watson' or 'crick' value.
+  </p>
+  <p>
+    Sequence.referenceSeq.orientation: Record the 'sense' or 'antisense' value.
+  </p>
+  <p>
+    Sequence.referenceSeq.windowStart/windowEnd: Selects a range from the reference sequence (or genome) that is used to define building block of a current sequence (e.g. Sequence resource instance 1).
+  </p>
+  <p>
+    Sequence.quality: Quality scores for bases in the sequence. It is intended to be compliant with emerging regulatory needs needs (eg: those found at <a href="https://precision.fda.gov/">PrecisionFDA</a> ).
+  </p>
+  <p>
+    Sequence.variant: This complex element is used for encoding sequence. When the information of reference sequence and variants are provided, the observed sequence will be derived.
+  </p>
+  <p>
+    Sequence.patient: This element points to a Patient identifier to show that this sequence is related to the same patient.
+  </p>
+  <p>
+    Sequence.specimen: A pointer to specimen identifier, if needed.
+  </p>
+  <p>
+    Sequence.device: A pointer to Device identifier which is used for describing sequencing method (such as chip id, chip manufacturer etc.)
+  </p>
+  <p>
+    Sequence.pointer: A pointer to a Sequence instance for the next sequence block to build a sequence graph.
+  </p>
+  <p>
+    Sequence.repository: This complex element is used to provide a clarifying structure, a base URL, and/or relevant IDs when referring to an external repository.
+  </p>
+  <p>
+    (GA4GH Repository Example): If the Sequence resource refers to a GA4GH repository for read info, references to a GA4GH full sequence dataset should conform to GA4GH data models and accessed via the GA4GH API. The URL of a GA4GH repository, ids of a GA4GH variant and read group are contained in the Sequence resource. The URL of a GA4GH repository is an api_base of a GA4GH server that could be called for sequence data. The GA4GH variant set is a collection of call sets and the GA4GH call set is a collection of variant calls, typically for one sample. A variant call represents a determination of genotype with respect to that variant.
+  </p>
+  <ul>
+    <li>VariantSet definition: A VariantSet is a collection of variants and variant calls intended to be analyzed together.</li>
+    <li>CallSet definition: A CallSet is a collection of calls that were generated by the same analysis of the same sample.</li>
+    <li> A read group is a collection of reads produced by a sequencer. A read group set typically models reads corresponding to one sample, sequenced one way, and aligned one way. The API reference of <a href="https://cloud.google.com/genomics/">Google Genomics</a> is a GA4GH repository built by Google and provides details of the data models, such as the resource representations.</li>
+  </ul>
+
+  <a name="relationship-sequence"></a>
+  <h2>Relationship among Sequence resource and genetics profiles</h2>
+  <img src="general-relationship.png" alt="General relationship between sequence and other resource"/>
+  <p><b>Pointers to Sequence resource</b></p>
+  <p>
+    Sequence resource is used to transmit and represent sequencing data. In FHIR Genomics, there are several genetics profiles containing internal pointers to Sequence resource for genetic data reporting. Here is the summary:
+  </p>
+  <p>
+    Sequence.pointer: A bundle of Sequence instances can be connected by Sequence.pointer to build sequence graph described in Section 3. Sequence.pointer will point to the next sequence block.
+  </p>
+  <p>
+    Sequence.variant.variantPointer: A pointer to link the Observation(Variant) profile which store the associated interpretative variant information
+  </p>
+  <p><b>Pointer to Observation resource (based on genetics profile)</b></p>
+  <p>
+    Observation.hasMember: point to the related Sequence resource that belongs to the Observation group
+  </p>
+  <p>
+    Observation.derivedFrom: point to the related Sequence data the observation is made from
+  </p>
+  <p>
+    DiagnosticReport.result: A pointer to Observation instance. This element is used for reporting genetic result.
+  </p>
+  <p>
+    Item extension in ServiceRequest-genetics profile: It is used to describe the genetic test order.
+  </p>
+  <p>
+    FamilyMemberHistory: A pointer to genetics Observation instance to report genetic test results of family member
+  </p>
+  <p><b>Observation vs. Sequence</b></p>
+  <p>
+    Sequence is used for raw sequencing data while genetic-profile-based Observation resource is used for reporting interpretative genetic information (eg. DNA/amino acid variant detected in the patient). Although both Sequence and Observation-genetics profiles contain variant info, they are used differently: Sequence.variant is used for encoding the sequence block; the Observation-genetics profile is mainly used for a variants test result or interpretations of raw data in Sequence resource.
+  </p>-->
+</div>

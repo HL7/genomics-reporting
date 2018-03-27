@@ -1,0 +1,207 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<p>
+		We show use of the FHIR design we are proposing for these cases:
+	</p>
+	<ol>
+		<li>Specimen Identification
+			<ol>
+				<li>Get references to all variants obtained from germline analysis.</li>
+				<li>Explore antibacterial drug resistance over time (non-patient DNA)</li>
+			</ol>
+		</li>
+		<li>Clinical Sequencing – Germline Testing</li>
+		<li>Cancer Profiling</li>
+		<li>Decision Making Tools – Family History and Drug Dosage Calculators
+			<ol>
+				<li>Today clinicians translate (i.e. manually re-enter) genetic data into tools for decision making. This includes family history tools and drug dosage calculators. In the future, this data will automatically be incorporated into clinical decision making tools.</li>
+				<li>Get pharmacogenomic reporting and disease risk or diagnosis associated with variant</li>
+			</ol>
+		</li>
+		<li>Public Health</li>
+		<li>Clinical and Research Data Warehouses</li>
+	</ol>
+	
+	<a name="specimenIdentification"> </a>
+	<h2>Specimen Identification</h2>
+	<ul>
+		<li>Germline testing for biomarkers/mutations (usually inherited)</li>
+		<li>Tumor testing for biomarkers/mutations (somatic / tumor specific)</li>
+		<li>Pediatric Testing</li>
+		<li>Infectious Disease Testing</li>
+	</ul>
+	<a name="germline"> </a>
+	<h3>Get references to all variants obtained from germline analysis</h3>
+	<pre class="http">GET /Observation?component-code-value=http://loinc.org|LA6683-2</pre>
+	<p>
+		*Return a bundle of genetics-profile-based Observation instances
+	</p>
+	<a name="clinicalSequencing"></a>
+	<h3>Clinical Sequencing – Germline Testing</h3>
+	<p>
+		For a chart review, get references to all DNA sequences related to mutations with an interpretation “Unknown Significance”
+	</p>
+	<pre class="http">GET /Observation?subject=123&amp;component-code-value=http://loinc.org|53037-8$LA6682-4</pre>
+	<p>
+		53037-8: LOINC code for “Genetic disease sequence variant interpretation”
+	</p>
+	<p>
+		LA6682-4: LOINC answer code for “Unknown Significance”.
+	</p>
+	<a name="cancerProfiling"></a>
+	<h3>Cancer Profiling</h3>
+	<p>
+		The goal of this profile methodology is to get references from all variants obtained from somatic analysis. Changes in the population of cells with particular mutations will change overtime as well as in conjunction with events such as therapy. For instance, targeted chemotherapy may kill a specific population of cancer cells with specific mutations and other cancer cell populations may survive and continue to divide. Therefore, clearly annotating these specimens as somatic variants and capturing annotations related to a time relevant to a treatment timeline may be critical for analysis.
+	</p>
+	<pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-genetics&amp;component-code-value=http://loinc.org|LA6684-0&amp;date=2015-07-04&amp;subject=123</pre>
+	<a name="decisionMaking"></a>
+	<h3>Decision Making Tools - Family History and Drug Dosage Calculators</h3>
+	<p>
+		Today clinicians translate (i.e. manually re-enter) genetic data into tools for decision making. This includes family history tools and drug dosage calculators. In the future, this data will automatically be incorporated into clinical decision making tools.
+	</p>
+	<p>
+		Get family history related to one observation:
+	</p>
+	<pre class="http">GET /DiagnosticReport?_profile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-genetic&amp;subject=123</pre>
+	<a name="getPharmacogenomic"></a>
+	<pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-genetics&amp;subject=123&amp;component-code-value= http://loinc.org|51963-7</pre>
+	<p>
+		51963-7 : LOINC code for “Medication Assessed ”
+	</p>
+	<a name="publicHealth"></a>
+	<h3>Public Health</h3>
+	<p>
+		Today Registrars manually translate clinical data into public health reporting systems. This data is used to monitor and improve public health (e.g. surveillance and clinical research). In the future, this data will be extracted from the EHR in an automated (or semi-automated) fashion.
+	</p>
+	<p>
+		For a breast cancer clinical genomic study, get all genetic-profile-based observations of patients with breast cancer:
+	</p>
+	<pre class="http">GET /DiagnosticReport?_profile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-genetic&amp;component-code-value=http://snomed.info/sct|254837009</pre>
+	<a name="clinicalResearch"></a>
+	<h3>Clinical and Research Data Warehouse</h3>
+	<p>
+		Health data warehousing should persist data in its standardized formats, while allowing users to export subsets of the data in the warehouse into multiple ‘data marts’, optimized for specific use cases, analysis type or reporting needs.
+	</p>
+	<p>
+		Get all genetic-profile-based observations of patients with the variant c.181T>G
+	</p>
+	<pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-genetics&amp;
+    component-code-value=http://www.ncbi.nlm.nih.gov/projects/SNP|rs58238560</pre>
+    <a name="other"></a>
+    <h2>Other Genomics Use Case</h2>
+    <p>
+    	During the development of the FHIR Genomics design, CGWG participants have commented on the earlier use cases and/or proposed new use cases. In this section, we list describe of these new cases and demonstrate how the proposed design will address them.
+    </p>
+    <a name="getAPatient"></a>
+    <h3>Get a Patient's Family members' genetics report</h3>
+    <p>
+    	This example is proposed by Kevin Hughes. Family history is useful for clinicians to know more about the condition of the patient.
+    </p>
+    <pre class="http">GET /FamilyMemberHistory?_profile=http://hl7.org/fhir/StructureDefinition/familymemberhistory-genetic&amp;patient=123</pre>
+    <a name="panel"></a>
+    <h3>Panel</h3>
+    <p>
+    	Search for results from nephrotic syndrome panel
+    </p>
+    <pre class="http">GET /DiagnosticReport&amp;_profile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-genetic&amp;code=N0336&amp;patient=123</pre>
+    <a name="basicQueries"></a>
+    <h3>Basic Queries</h3>
+    <p>
+    	Find patients by condition and affected status
+    </p>
+    <pre class="http">GET /Condition?component-code-value-[x]=http://snomed.info/sct|439401001</pre>
+    <p>
+    	Find patients by phenotypical attribute
+    </p>
+    <pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-geneticsGene&amp;CodeableConcept=http://loinc.org|79716-7</pre>
+    <p>
+    	79716-7: LOINC code for “CYP2C9 gene product metabolic activity interpretation”
+    </p>
+    <p>
+    	Find patients by molecular data type available
+    </p>
+    <pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-genetics&amp;DNARegionName=NC_000017.10:g.497469T>A</pre>
+    <p>
+    	53035-2: LOINC code for “DNA marker assessed"
+    </p>
+    <p>
+    	Find mutation by mutation type and position
+    </p>
+    <pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-geneticsVariant&amp;Name=NM_000059.3:c.706C;A&amp;Type=http://loinc.org|81289-1</pre>
+    <p>
+    	Find patients based on mode of inheritance (genomic region, position, gene, SNP)
+    </p>
+    <pre class="http">GET /FamilyMemberHistory?_profile=http://hl7.org/fhir/StructureDefinition/familymemberhistory-genetic&amp;reasonCode=http://snomed.info/sct|272398008</pre>
+    <p>
+    	7272398008: SNOMED code for “ Inheritance types "
+    </p>
+    <p>
+    	Search for patient by ID
+    </p>
+    <pre class="http">GET /Patient?subject=123</pre>
+    <p>
+    	Search for diagnostic reports with a given variant
+    </p>
+    <pre class="http">GET /DiagnosticReport?_profile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-genetics&amp;component-code-value=http://www.ncbi.nlm.nih.gov/projects/SNP|rs58238560</pre>
+    <p>
+    	Given diagnostic report, return associated family history information
+    </p>
+    <pre class="http">GET /DiagnosticReport?_profile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-geneticsFamilyMemberHistory&amp;_Id=123</pre>
+    <p>
+    	Search for variants given gene and variant classification
+    </p>
+    <pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-genetics&amp;component-code-value=http://www.genenames.org|3236&amp;component-code-value=http://loinc.org|LA6684-0</pre>
+    <p>
+    	Search for patients based on genetic ancestry
+    </p>
+    <pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observation-genetics&amp;component-code-value=http://www.genenames.org|186044009&amp;component-code-value=http://snomed.info/sct|LA6684-0</pre>
+    <a name="booleanQueries"></a>
+    <h3>Boolean Queries</h3>
+    <p>
+    	Find all patients with a set of variants
+    </p>
+    <pre class="http">GET /Observation?_profile=http://hl7.org/fhir/StructureDefinition/observaiton-genetics&amp;component-code-value=http://www.ncbi.nlm.nih.gov/projects/SNP|rs58238560$rs58238559$rs58238565</pre>
+    <p>
+    	rs58238560: variant: NC_000017.10:g.497469T>A
+
+    	rs58238559: variant: NC_000007.13:g.87082273T>C
+
+    	rs58238565: variant: NC_000005.10:g.131929452C>A
+    </p>
+    <a name="specimenBased"></a>
+    <h3>Specimen-based Queries</h3>
+    <p>
+    	Find specimens collected from specific specimen body sites
+    </p>
+    <pre class="http">GET /Specimen?component-code-value=http://snomed.info/sct|85151006</pre>
+    <p>
+    	Find specimens from this patient's pedigree
+    </p>
+    <pre class="hhtp">GET /FamilyMemberHistory?_profile=http://hl7.org/fhir/StructureDefinition/familymemberhistory-genetic&amp;patient=123</pre>
+    <p>
+    	Find specimens based on patient disease status
+    </p>
+    <pre class="http">GET /DiagnosticReport?_ptofile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-genetic&amp;component-code-value=http://snomed.info/sct|254837009&amp;patient=123</pre>
+    <p>
+    	Find specimens based on specimen disease status
+    </p>
+    <pre class="http">GET /Specimen?status=available</pre>
+    <p>
+        Find specimens based on technology platform
+    </p>
+    <pre class="http">GET /Specimen?_profile=http://hl7.org/fhir/StructureDefinition/shareablecodesystem&amp;code=Information Technology</pre>
+    <p>
+        Find specimens based on instrument identifier
+    </p>
+    <pre class="http">GET /Specimen?container.identifier=48736-15394-75465</pre>
+    <a name="timeBased"></a>
+    <h3>Time-Based Queries</h3>
+    <p>
+        Find specimens collected within an absolute date range
+    </p>
+    <pre class="http">GET /Specimen?receivedTime=2011-03-04T07:03:00Z</pre>
+    <p>
+        Find specimens collected within a relative date range
+    </p>
+    <pre class="http">GET /Specimen?_profile=http://hl7.org/fhir/StructureDefinition/specimen-treatmentTime&amp;duration=quot</pre>
+
+</div>

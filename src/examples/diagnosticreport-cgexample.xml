@@ -1,0 +1,1963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Questions:
+1. How does DNA range work if you're testing genes on different chromosomes?
+2. Section 4 says it repeats for each gene tested, however the panel can point to multiple Genes.  Should it not say it will repeat for each relevant gene or gene combination?
+3. When capturing "effect on drug metabolism" and "effect on drug efficacy", should that not be drug-specific?  If so, why is it not listed under the Medication Panel?
+4. Section C has Allelic phase basis, but not the allelic phases.  Why?
+5. F.5 talks about F.1 being the medication assessed, but it's not.  It's the Gene assessed.
+
+New:
+6. Do we need the "panel" notion for the pharmacogenomics panel bit?
+-->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <id value="diagnosticreport-cgexample"/>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/DiagnosticReport/report"/>
+    <resource>
+      <DiagnosticReport>
+        <id value="report"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/diagnosticreport"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <!-- We don't expose A (81306-3) because the variables that apply to the study are captured a variety of places and there's no need to group them.  Their applicability is clear based on where they're positioned. -->
+<!--        <extension url="http://hl7.org/fhir/uv/cg/StructureDefinition/draft-dr-haplotype-def">
+          <extension url="gene">
+            <valueCodeableConcept>
+              <coding>
+                H.1 Gene studied
+                <system value="http://example.org/hgnc-symb"/>
+                <code value="2623"/>
+                <display value="CYP2C9"/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url="name">
+            H.2 Haplotype name
+            <valueString value="*18"/>
+          </extension>
+          <extension url="variant">
+            <extension url="location">
+              <valueCodeableConcept>
+                <coding>
+                  I.1 dbSNP ID
+                  <system value="http://example.org/dbsnp"/>
+                  <version value="137"/>
+                  <code value="1057910"/>
+                  <display value="rs1057910"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <extension url="allele">
+              I.2 Genomic alt allele
+              CLEM: Should this be coded?
+              <valueString value="C"/>
+            </extension>
+          </extension>
+          <extension url="variant">
+            <extension url="location">
+              <valueCodeableConcept>
+                <coding>
+                  J.1 dbSNP ID
+                  <system value="http://example.org/dbsnp"/>
+                  <version value="137"/>
+                  <code value="72558193"/>
+                  <display value="rs72558193"/>
+                </coding>
+              </valueCodeableConcept>
+            </extension>
+            <extension url="allele">
+              J.2 Genomic alt allele
+              <valueString value="C"/>
+            </extension>
+          </extension>
+        </extension>-->
+        <basedOn>
+          <reference value="DiagnosticRequest/request"/>
+        </basedOn>
+        <status value="final"/>
+        <code>
+          <coding>
+            <!-- Top (same as diagnostic request -->
+            <system value="http://loinc.org"/>
+            <code value="81247-9"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <result>
+          <reference value="Observation/overall-interp"/>
+        </result>
+        <result>
+          <reference value="Observation/deletion-dup-overall"/>
+        </result>
+        <result>
+          <reference value="Observation/negatives"/>
+        </result>
+        <result>
+          <reference value="Observation/iscn"/>
+        </result>
+        <result>
+          <reference value="Observation/discrete-variant"/>
+        </result>
+        <result>
+          <reference value="Observation/complex-variant"/>
+        </result>
+        <result>
+          <reference value="Observation/pharmPanel"/>
+        </result>
+        <presentedForm>
+          <!-- A.10 Genetic analysis report -->
+          <!-- Can be included directly or referenced by URL -->
+          <contentType value="text/plain"/>
+          <data value="UHV0IHRoZSByZXBvcnQgdGV4dCBoZXJlIC0gbWltZS1lbmNvZGVk"/>
+        </presentedForm>
+      </DiagnosticReport>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Patient/patient"/>
+    <resource>
+      <Patient>
+        <id value="patient"/>
+        <text>
+          <status value="additional"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">This would contain patient identifiers, demographics, etc.</div>
+        </text>
+      </Patient>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Specimen/specimen"/>
+    <resource>
+      <Specimen>
+        <!-- This would contain details about the type of specimen, processing, etc. -->
+        <id value="specimen"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/specimen"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+      </Specimen>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Organization/lab"/>
+    <resource>
+      <Organization>
+        <id value="lab"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <name value="Some lab"/>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/DiagnosticRequest/request"/>
+    <resource>
+      <ServiceRequest>
+        <id value="request"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/servicerequest"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="active"/>
+        <intent value="original-order"/>
+        <code>
+          <coding>
+            <!-- Top  -->
+            <system value="http://loinc.org"/>
+            <code value="81247-9"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <reasonCode>
+          <!-- A.1 Reason for Study -->
+          <text value="Worried about family planning"/>
+        </reasonCode>
+      </ServiceRequest>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/overall-interp"/>
+    <resource>
+      <Observation>
+        <id value="overall-interp"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-overall"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="51968-6"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <!-- A.8 Genetic analysis overall interpretation -->
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="LA6576-8"/>
+            <display value="Positive"/>
+          </coding>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="10828004"/>
+            <display value="Positive"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/deletion-dup-overall"/>
+    <resource>
+      <Observation>
+        <id value="deletion-dup-overall"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-deletion-dup"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="83006-7"/>
+            <display value="Deletion-duplication overall interpretation"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <!-- A.9 Deletion-duplication overall interpretation -->
+            <system value="http://loinc.org"/>
+            <code value="LA26803-9"/>
+            <display value="No deletion duplications detected in studied regions"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+      </Observation>
+    </resource>
+  </entry>
+<!--  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/negatives"/>
+    <resource>
+      <Observation>
+        <id value="negatives"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="51968-6"/>
+            <display value="Genetic analysis overall interpretation"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="LA6577-6"/>
+            <display value="Negative"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51967-8"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="445274004"/>
+              <display value="Deficiency of isobutyryl-coenzyme A dehydrogenase (disorder)"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51963-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="50005"/>
+              <display value="Fluoxetine"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51963-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="84701"/>
+              <display value="Atorvastatin"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51963-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="45000"/>
+              <display value="Naproxen"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51963-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="11289"/>
+              <display value="Coumadin"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://example.org/hgnc-symb"/>
+              <code value="21497"/>
+              <display value="ACAD9"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="36908-2"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://example.org/clinvar"/>
+              <version value="???"/>
+              <code value="7129"/>
+              <display value="NM_000492.3(CFTR):c.3846G>A (p.Trp1282Ter)"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51959-5"/>
+            </coding>
+          </code>
+          <valueRange>
+            <low>
+              <value value="2000753"/>
+            </low>
+            <high>
+              <value value="2234579"/>
+            </high>
+          </valueRange>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+            </coding>
+          </code>
+          <valueString value="All coding regions and appropriate flanking regions"/>
+        </component>
+      </Observation>
+    </resource>
+  </entry>-->
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/iscn"/>
+    <resource>
+      <Observation>
+        <id value="iscn"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-cytogenic-not"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="81291-7"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <!-- A.11 - Variant ISCN -->
+          <coding>
+            <system value="http://example.org/icsn"/>
+            <code value="???"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/discrete-variant"/>
+    <resource>
+      <!-- This observation represents the sequence that was found (or not) -->
+      <!-- Panel B -->
+      <Observation>
+        <id value="discrete-variant"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-described-variant"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+          <coding>
+            <!-- B.1 Variant category -->
+            <system value="http://loinc.org"/>
+            <code value="LA26802-1"/>
+            <display value="Structural Variant"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="69548-6"/>
+            <display value="Genetic variant assessment"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <!-- B.21 Genetic variant Assessment -->
+            <system value="http://loinc.org"/>
+            <code value="LA9633-4"/>
+            <display value="Present"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81252-9"/>
+              <display value="Discrete genetic variant"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.2 Discrete genetic variant (ClinVar or COSMIC) -->
+              <system value="http://example.org/clinvar"/>
+              <version value="???"/>
+              <!-- A.16 ClinVar version -->
+              <code value="30880"/>
+              <display value="NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"/>
+            </coding>
+            <coding>
+              <!-- B.16 CIGAR-simple genetic variant -->
+              <system value="http://example.org/cigar"/>
+              <code value="tbd"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.3 Gene studied -->
+              <system value="http://example.org/hgnc"/>
+              <code value="21497"/>
+              <display value="ACAD9"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51959-5"/>
+            </coding>
+          </code>
+          <!-- A.6 Ranges of DNA sequence examined -->
+          <!-- CLEM: is this needed here? -->
+          <valueRange>
+            <low>
+              <value value="2000753"/>
+            </low>
+            <high>
+              <value value="2234579"/>
+            </high>
+          </valueRange>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+            </coding>
+          </code>
+          <!-- A.7 Description of ranges of DNA sequences examined -->
+          <!-- CLEM: is this needed here? -->
+          <valueString value="All coding regions and appropriate flanking regions"/>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="62374-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- A.12 Human reference sequence assembly version -->
+              <!-- This has to be listed for each variant where it's relevant as there's no inheritance in FHIR -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://loinc.org"/>
+              <code value="LA14029-5"/>
+              <display value="GRCh37"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51958-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.4 Transcript Reference Sequence ID -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/RefSeq-T"/>
+              <code value="NM_014049.4"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48013-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.9 Genomic Reference Sequence -->
+              <system value="http://example.org/RefSeq-G"/>
+              <code value="NG_017064.1"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81290-9"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.10 Genomic DNA change -->
+              <system value="http://example.org/HGVS.g"/>
+              <version value="15.11"/>
+              <!-- A.13 HGVS version -->
+              <code value="NC_000003.11:g.128625063C>T"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81255-2"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.15 dbSNP ID -->
+              <system value="http://example.org/dbsnp"/>
+              <version value="137"/>
+              <!-- A.14 dbSNP version -->
+              <code value="rs368949613"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48004-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.5 DNA change cHGVS -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/HGVS.c"/>
+              <version value="15.11"/>
+              <!-- A.13 HGVS version -->
+              <code value="c.1249C>T"/>
+              <!-- No need to echo a display that's the same as the code - if there's no display and you
+                   can't look up the display, default is to display the code -->
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48004-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.6 Amino acid change pHGVS -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/HGVS.p"/>
+              <version value="15.11"/>
+              <!-- A.13 HGVS version -->
+              <code value="p.Arg417Cys"/>
+              <!-- No need to echo a display that's the same as the code - if there's no display and you
+                   can't look up the display, default is to display the code -->
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48019-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.7 DNA change type -->
+              <system value="http://loinc.org"/>
+              <code value="LA6690-7"/>
+              <display value="Substitution"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48006-1"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.8 Amino acid change type -->
+              <system value="http://loinc.org"/>
+              <code value="LA6698-0"/>
+              <display value="Missense"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="69547-8"/>
+            </coding>
+          </code>
+          <!-- B.11 Genomic Ref allele -->
+          <valueString value="C"/>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81254-5"/>
+            </coding>
+          </code>
+          <valueRange>
+            <!-- B.12 Genomic Allele start-end -->
+            <low>
+              <value value="31731"/>
+            </low>
+            <high>
+              <value value="31731"/>
+            </high>
+          </valueRange>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="69551-0"/>
+            </coding>
+          </code>
+          <!-- B.13 Genomic Alt allele -->
+          <valueString value="T"/>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="84414-2"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.14 Haplotype name -->
+              <system value="http://example.org/???"/>
+              <code value="*2"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48001-2"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.17 Cytogenic (chromosome) location -->
+              <system value="http://example.org/Chrom-Loc"/>
+              <code value="3q21"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48002-0"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.18 Genomic source class -->
+              <system value="http://loinc.org"/>
+              <code value="LA6683-2"/>
+              <display value="Germline"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53037-8"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.20 Genetic variation clinical significance -->
+              <system value="http://loinc.org"/>
+              <code value="LA6668-3"/>
+              <display value="Pathogenic"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81259-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.22 Probable associated phenotype -->
+              <system value="http://example.org/MedGen-Dis"/>
+              <code value="C1970173"/>
+              <display value="Acyl-CoA dehydrogenase family, member 9, deficiency of"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <!-- The following components may get moved, depending on discussions w/ Eric H. as they aren't really
+             defining the sequence -->
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53034-5"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.23 Allelic state -->
+              <system value="http://loinc.org"/>
+              <code value="LA6706-1"/>
+              <display value="Heterozygous"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81258-6"/>
+            </coding>
+          </code>
+          <!-- B.24 Allelic Frequency -->
+          <valueQuantity>
+            <value value="0.47"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81258-6"/>
+            </coding>
+          </code>
+          <!-- B.25 Allelic Read Depth -->
+          <valueQuantity>
+            <value value="208"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="82120-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.26 Allelic phase -->
+              <system value="http://loinc.org"/>
+              <code value="LA6112-2"/>
+              <display value="1st set of variants in cis relation to each other"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="82309-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.27 Basis for allelic phase -->
+              <system value="http://loinc.org"/>
+              <code value="LA6429-3"/>
+              <display value="Inferred from population data"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <!-- Structual variant-specific elements -->
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="82155-3"/>
+            </coding>
+          </code>
+          <valueQuantity>
+            <!-- B.28 Genomic structural variant copy number -->
+            <value value="1"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <!-- B.29 Genomic structural variant reported arrCGH ratio -->
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81299-0"/>
+            </coding>
+          </code>
+          <valueQuantity>
+            <value value="0.48"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81300-6"/>
+              <!-- CLEM: Can't this be calculated from start/end? -->
+            </coding>
+          </code>
+          <valueQuantity>
+            <!-- B.30 Structural variant length -->
+            <value value="1396929"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81301-4"/>
+            </coding>
+          </code>
+          <valueRange>
+            <!-- B.31 Structural variant outer start-end -->
+            <low>
+              <value value="13200589"/>
+            </low>
+            <high>
+              <value value="15592000"/>
+            </high>
+          </valueRange>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81302-2"/>
+            </coding>
+          </code>
+          <valueRange>
+            <!-- CLEM: this is the same as the actual start/end.  In what cases would it be different? -->
+            <!-- B.32 Structural variant inner start-end -->
+            <low>
+              <value value="14184616"/>
+            </low>
+            <high>
+              <value value="15581544"/>
+            </high>
+          </valueRange>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/complex-variant"/>
+    <resource>
+      <!-- Panel C -->
+      <!-- This observation represents the sequence that was found (or not) -->
+      <Observation>
+        <id value="complex-variant"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-complex-variant"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="69548-6"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <!-- B.21 Genetic variant assessment -->
+            <system value="http://loinc.org"/>
+            <code value="LA9633-4"/>
+            <display value="Present"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+        <hasMember>
+          <reference value="Observation/complex-component-D"/>
+          <!-- D - this is the link from a complex variant to its component simple variants -->
+          <!-- This would be modeled the same as discrete-var -->
+        </hasMember>
+        <hasMember>
+          <reference value="Observation/complex-component-E"/>
+          <!-- E - this is the link from a complex variant to its component simple variants -->
+          <!-- This would be modeled the same as discrete-var -->
+        </hasMember>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81260-2"/>
+              <!-- Clem: Does this actually need to be a distinct LOINC id for simple vs. complex variant?  Isn't the observation simply saying "what variant"? -->
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <!-- CLEM: is it ok to treat these as translations? -->
+            <coding>
+              <!-- C.1 Complex genetic variant -->
+              <system value="http://example.org/clinvar"/>
+              <version value="???"/>
+              <!-- A.16 ClinVar version -->
+              <code value="16895"/>
+              <display value="NM_000106.5(CYP2D):c.[886C>T;457G>C] – Haplotype"/>
+            </coding>
+            <coding>
+              <!-- C.2 Complex variant HGVS name -->
+              <system value="http://example.org/hgvs"/>
+              <code value="c.[886C>T;457G>C"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81263-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- C.3 Complex variant type -->
+              <system value="http://loinc.org"/>
+              <code value="LA26218-0"/>
+              <display value="Haplotype"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53037-8"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- C.5 Complex variant type -->
+              <system value="http://loinc.org"/>
+              <code value="LA6668-3"/>
+              <display value="Pathogenic"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <!-- The following components may get moved, depending on discussions w/ Eric H. as they aren't really
+             defining the sequence -->
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53034-5"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- C.6 Allelic state -->
+              <system value="http://loinc.org"/>
+              <code value="LA6706-1"/>
+              <display value="Heterozygous"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <!-- CLEM: Why do we have Allelic frequency, read depth and phase for simplevar, but not complex var? -->
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81258-6"/>
+            </coding>
+          </code>
+          <!-- B.21 Allelic Frequency -->
+          <valueQuantity>
+            <value value="0.47"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81258-6"/>
+            </coding>
+          </code>
+          <!-- B.22 Allelic Read Depth -->
+          <valueQuantity>
+            <value value="208"/>
+          </valueQuantity>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="82120-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.23 Allelic phase -->
+              <system value="http://loinc.org"/>
+              <code value="LA6112-2"/>
+              <display value="1st set of variants in cis relation to each other"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="82309-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- CLEM: Why do we have basis for allelic phase when we don't actually declare the phase? -->
+              <!-- C.7 Basis for allelic phase -->
+              <system value="http://loinc.org"/>
+              <code value="LA6429-3"/>
+              <display value="Inferred from population data"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81259-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- C.4 Associated phenotype -->
+              <system value="http://snomed.info/sct"/>
+              <code value="293498008"/>
+              <display value="Debrisoquine adverse reaction (disorder)"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/complex-component-D"/>
+    <resource>
+      <!-- Panel D -->
+      <Observation>
+        <id value="complex-component-D"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-described-variant"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+          <coding>
+            <!-- B.1 Variant category -->
+            <system value="http://loinc.org"/>
+            <code value="LA26801-3"/>
+            <display value="Simple Variant"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="69548-6"/>
+            <display value="Genetic variant assessment"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <!-- B.21 Genetic variation assessment -->
+            <code value="LA9633-4"/>
+            <display value="Present"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81252-9"/>
+              <display value="Discrete genetic variant"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- D.1(B.2) Discrete genetic variant (ClinVar or COSMIC) -->
+              <system value="http://example.org/clinvar"/>
+              <version value="???"/>
+              <!-- A.16 ClinVar version -->
+              <code value="31934"/>
+              <display value="NM_000106.5(CYP2D6):c.886C>T (p.Arg296Cys)"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51959-5"/>
+            </coding>
+          </code>
+          <!-- A.6 Ranges of DNA sequence examined -->
+          <!-- CLEM: is this needed here? -->
+          <valueRange>
+            <low>
+              <value value="2000753"/>
+            </low>
+            <high>
+              <value value="2234579"/>
+            </high>
+          </valueRange>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+            </coding>
+          </code>
+          <!-- A.7 Description of ranges of DNA sequences examined -->
+          <!-- CLEM: is this needed here? -->
+          <valueString value="All coding regions and appropriate flanking regions"/>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="62374-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- A.12 Human reference sequence assembly version -->
+              <!-- This has to be listed for each variant where it's relevant as there's no inheritance in FHIR -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://loinc.org"/>
+              <code value="LA14029-5"/>
+              <display value="GRCh37"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51958-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- D.2(B.4) Transcript Reference Sequence ID -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/RefSeq-T"/>
+              <code value="NM_000106.5"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48004-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- D.3(B.5) DNA change cHGVS -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/HGVS.c"/>
+              <version value="15.11"/>
+              <!-- A.13 HGVS version -->
+              <code value="c.886C>T"/>
+              <!-- No need to echo a display that's the same as the code - if there's no display and you
+                   can't look up the display, default is to display the code -->
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48004-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- D.4(B.6) Amino acid change pHGVS -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/HGVS.p"/>
+              <version value="15.11"/>
+              <!-- A.13 HGVS version -->
+              <code value="p.Arg296Cys"/>
+              <!-- No need to echo a display that's the same as the code - if there's no display and you
+                   can't look up the display, default is to display the code -->
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48019-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- D.5(B.7) DNA change type -->
+              <system value="http://loinc.org"/>
+              <code value="LA6690-7"/>
+              <display value="Substitution"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48006-1"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- D.6(B.8) Amino acid change type -->
+              <system value="http://loinc.org"/>
+              <code value="LA6698-0"/>
+              <display value="Missense"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/complex-component-E"/>
+    <resource>
+      <!-- Panel E -->
+      <Observation>
+        <id value="complex-component-E"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-described-variant"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+          <coding>
+            <!-- B.1 Variant category -->
+            <system value="http://loinc.org"/>
+            <code value="LA26801-3"/>
+            <display value="Simple Variant"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="69548-6"/>
+            <display value="Genetic variant assessment"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://loinc.org"/>
+            <!-- B.21 Genetic variation assessment -->
+            <code value="LA9633-4"/>
+            <display value="Present"/>
+          </coding>
+        </valueCodeableConcept>
+        <specimen>
+          <reference value="Specimen/specimen"/>
+        </specimen>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81252-9"/>
+              <display value="Discrete genetic variant"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- E.1(B.2) Discrete genetic variant (ClinVar or COSMIC) -->
+              <system value="http://example.org/clinvar"/>
+              <version value="???"/>
+              <!-- A.16 ClinVar version -->
+              <code value="38486"/>
+              <display value="NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51959-5"/>
+            </coding>
+          </code>
+          <!-- A.6 Ranges of DNA sequence examined -->
+          <!-- CLEM: is this needed here? -->
+          <valueRange>
+            <low>
+              <value value="2000753"/>
+            </low>
+            <high>
+              <value value="2234579"/>
+            </high>
+          </valueRange>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+            </coding>
+          </code>
+          <!-- A.7 Description of ranges of DNA sequences examined -->
+          <!-- CLEM: is this needed here? -->
+          <valueString value="All coding regions and appropriate flanking regions"/>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="62374-4"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- A.12 Human reference sequence assembly version -->
+              <!-- This has to be listed for each variant where it's relevant as there's no inheritance in FHIR -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://loinc.org"/>
+              <code value="LA14029-5"/>
+              <display value="GRCh37"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51958-7"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- E.2(B.4) Transcript Reference Sequence ID -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/RefSeq-T"/>
+              <code value="NM_000106.5"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48004-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- E.3(B.5) DNA change cHGVS -->
+              <!-- Need to define a proper URL for this -->
+              <system value="http://example.org/HGVS.c"/>
+              <version value="15.11"/>
+              <!-- A.13 HGVS version -->
+              <code value="c.1457G>C"/>
+              <!-- No need to echo a display that's the same as the code - if there's no display and you
+                   can't look up the display, default is to display the code -->
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/pharmPanel"/>
+    <resource>
+      <Observation>
+        <!-- D Pharmacogenomics results panel -->
+        <id value="pharmPanel"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-gen-panel"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <extension url="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-recommendedAction">
+          <valueReference>
+            <reference value="Task/usage"/>
+          </valueReference>
+        </extension>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="82118-1"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <hasMember>
+          <reference value="Observation/genotype"/>
+        </hasMember>
+        <hasMember>
+          <reference value="Observation/metab"/>
+        </hasMember>
+        <hasMember>
+          <reference value="Observation/efficacy"/>
+        </hasMember>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/genotype"/>
+    <resource>
+      <Observation>
+        <id value="genotype"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-genotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="47998-0"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <!-- F.2.a, F.2.b Genotype display name -->
+        <!-- TODO: Figure out how to separate these -->
+        <valueString value="*2/*5,*A/*A"/>
+        <hasMember>
+          <!-- D1.3 -->
+          <reference value="Observation/discrete-variant"/>
+        </hasMember>
+        <component>
+          <!-- This isn't "what did we observe?", but rather a qualification on "what did we look at?" -->
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <!-- CLEM: I believe this is just part of the genotype observation, right? -->
+            <!-- F.1.a Gene studied -->
+            <!-- lloyd: 1 gene per variation -->
+            <coding>
+              <system value="http://example.org/hgnc"/>
+              <code value="2623"/>
+              <display value="CYP2C9"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.3 Gene studied -->
+              <system value="http://example.org/hgnc"/>
+              <code value="23663"/>
+              <display value="VKORC1"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/metab"/>
+    <resource>
+      <Observation>
+        <id value="metab"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-metabolism"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="53040-2"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <!-- F.3 Genetic variation's effect on drug metabolism -->
+            <system value="http://loinc.org"/>
+            <code value="LA9657-3"/>
+            <display value="Rapid metabolizer"/>
+          </coding>
+        </valueCodeableConcept>
+        <hasMember>
+          <reference value="Observation/genotype"/>
+        </hasMember>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- G.1 Medication assessed -->
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="11289"/>
+              <display value="Warfarin"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/efficacy"/>
+    <resource>
+      <Observation>
+        <id value="efficacy"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-efficacy"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="51961-1"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <!-- F.4 Genetic variation's effect on drug efficacy -->
+            <system value="http://loinc.org"/>
+            <code value="LA6676-6"/>
+            <display value="Resistant"/>
+          </coding>
+        </valueCodeableConcept>
+        <hasMember>
+          <reference value="Observation/genotype"/>
+        </hasMember>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- G.1 Medication assessed -->
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="11289"/>
+              <display value="Warfarin"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/highrisk"/>
+    <resource>
+      <Observation>
+        <id value="highrisk"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-high-risk"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <status value="final"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="83009-1"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+        <effectiveDateTime value="2016"/>
+        <issued value="2016-09-06T00:00:00-05:00"/>
+        <performer>
+          <reference value="Organization/lab"/>
+        </performer>
+        <valueCodeableConcept>
+          <coding>
+            <!-- F.5 Genetic variation’s effect on high-risk allele  -->
+            <system value="http://loinc.org"/>
+            <code value="LA19542-2"/>
+            <display value="Low risk"/>
+          </coding>
+        </valueCodeableConcept>
+        <hasMember>
+          <reference value="Observation/genotype"/>
+        </hasMember>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- G.1 Medication assessed -->
+              <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+              <code value="11289"/>
+              <display value="Warfarin"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="http://hl7.org/fhir/uv/cg/Task/usage"/>
+    <resource>
+      <Task>
+        <!-- G1 -->
+        <id value="usage"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/task-med-chg"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
+        </text>
+        <contained>
+          <MedicationStatement>
+            <id value="med"/>
+            <status value="unknown"/>
+            <medicationCodeableConcept>
+              <coding>
+                <!-- G.1 Medication assessed -->
+                <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                <code value="11289"/>
+                <display value="Warfarin"/>
+              </coding>
+            </medicationCodeableConcept>
+            <subject>
+              <reference value="Patient/patient"/>
+            </subject>
+          </MedicationStatement>
+        </contained>
+        <extension url="http://hl7.org/fhir/uv/cg/StructureDefinition/task-reason-reference">
+          <valueReference>
+            <reference value="Observation/genotype"/>
+          </valueReference>
+        </extension>
+        <status value="requested"/>
+        <intent value="proposal"/>
+        <code>
+          <coding>
+            <!-- G.2 Medication usage suggestion -->
+            <system value="http://loinc.org"/>
+            <code value="LA26423-6"/>
+            <display value="Increase dose"/>
+          </coding>
+          <!-- G.3 Medication usage suggestion [narrative] -->
+          <text value="May need higher dosage than usual."/>
+        </code>
+        <focus>
+          <reference value="#med"/>
+        </focus>
+        <for>
+          <reference value="Patient/patient"/>
+        </for>
+        <requester>
+          <reference value="Organization/lab"/>
+        </requester>
+      </Task>
+    </resource>
+  </entry>
+</Bundle>

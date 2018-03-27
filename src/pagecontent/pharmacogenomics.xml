@@ -1,0 +1,136 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <!--draft-->
+  <p>
+    This section provides guidance for genomic reporting about the impact of a patient's or tumor's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="common.html">General Genomic Reporting</a> and <a href="sequencing.html">Sequenced Variants</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific impact profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Genomic Reporting</a> section of this implementation guide as it includes several profiles dealing with the impact of medications on cancers.
+  </p>
+  
+  <a name="general"> </a>
+  <h2>General guidance</h2>
+  <p>
+    While not specifically profiled in this version of the IG, some additional constraints will typically apply to somatic profiles.  Patient will usually be present, however pharmacogenomics can theoretically be relevant for environmental samples (e.g. to determine the most effective way to deal with a persistent environmental pathogen).
+  </p>
+
+  <a name="impacts"> </a>
+  <h2>Pharmacogenomic-specific Genetic Impacts</h2>
+  <img src="4-pharmacogenomics-fig1-impacts.png" alt="Diagram showing the 3 medication impact profiles and the associated medication usage implications task"/>
+  <p>
+    All pharmacogenomic impact profiles inherit from the abstract <a href="obs-impact.html">Genetic Impact</a> profile.  They also inherit from a commonabstract <a href="obs-med-impact.html">Medication Impact</a> profile which includes the mandatory code that identifies the medication whose impact is being described.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
+  </p>
+  <p>
+    There are three types of impacts defined in this profile:
+  </p>
+  <ul>
+    <li><a href="obs-metabolism.html">Genotype medication metabolism impact</a> describes the impact of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have impacts on appropriate dosage</li>
+    <li><a href="obs-efficacy.html">Genotype medication efficacy impact</a> describes how the associated genetic findings affect the effectiveness of the medication.  This can influence the appropriateness of the medication for the patient.</li>
+    <li><a href="obs-high-risk.html">High Risk Allele</a> indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  I.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics.</li>
+  </ul>
+  <p>
+    These impacts can all be associated with the <a href="task-med-chg.html">Medication Usage Implications</a> profile which allows making a recommendation for the patient's medication therapy (e.g. discontinuing a medication, altering dosage, etc.)
+  </p>
+  <blockquote class="stu-note">
+    <p>
+    The modeling of the usage implications may also change if the modeling of impacts change as discussed in the <a href="general.html#impacts">General Genomic Reporting</a> section.
+    </p>
+  </blockquote>
+
+  <a name="examples"> </a>
+  <h2>Pharmacogenomic Example Instances</h2>
+  <p>
+    The following section walks through a specific <a href="diagnosticreport-pgxexample.html">pharmacogenomics example</a>.
+  </p>
+  <img src="pgx-example-overall.png" alt="image to show the overall relationship between resources of pharmacogenomics example"/>
+  <img src="pgx-example-genetic-impact.png" alt="image to show the genetic impact detail of the pharmacogenomics example"/>
+  <p>
+    From the diagram above, Genotype Medication Metabolism Impact is used to store the phenotype detail which includes the following fields:
+  </p>
+  <ul>
+    <li>code (LOINC|53040-2|Genetic variant effect on drug metabolism)</li>
+    <li>valueCodeableConept (etc:LOINC|LA25390-8|Rapid metabolizer)</li>
+    <li>derivedFrom(Observation/genotype)</li>
+    <li>component
+      <ul>
+        <li>code(LOINC|51963-7|medication assessed)</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    Medication Usage Impact is a Task resource, and it will store the specific recommendation of the specific phenotype which is stated on the Genotype Medication Metabolism Impact. Therefore, a reasonReference pointer will point to the Genotype Medication Metabolism Impact.
+  </p>
+  <p>
+    DiagnosticReport.result will be used to point to the Genotype Medication Metabolism Impact.
+  </p>
+  <a name="computable"> </a>
+  <h3>Pharmacogenomic-specific Computable Genetic Findings</h3>
+  <img src="pgx-example-genetic-finding.png" alt="image to show the genetic finding detail of the pharmacogenomics example"/>
+  <p>
+    From the diagram above, Genotype, Haplotype and Variant profiles will are used. Each of the profile have the similar structure with Genetic Finding and Computable Finding, which means that Genotype, Haplotype and Variant profiles are inheriting the elements from Genetic Finding and Computable Finding.
+  </p>
+  <p>
+    Genotype contains the following fields:
+  </p>
+  <ul>
+    <li>code(LOINC|84413-4|Genotype display name)</li>
+    <li>valueString (etc:*4/*35B)</li>
+    <li>derivedFrom
+      <ul>
+        <li>Observation/Haplotype</li>
+        <li>Observation/Variant</li>
+        <li>Sequence/sequence</li>
+      </ul>
+    </li>
+    <li>component
+      <ul>
+        <li>code (LOINC|48018-6|Gene studies ID)</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    Haplotype contains the following fields:
+  </p>
+  <ul>
+    <li>code(LOINC|84414-2|Haplotype Name)</li>
+    <li>valueString (etc: *35B)</li>
+    <li>derivedFrom
+      <ul>
+        <li>Observation/Variant</li>
+        <li>Sequence/sequence</li>
+      </ul>
+    </li>
+    <li>component
+      <ul>
+        <li>code (LOINC|48018-6|Gene studied ID)</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    Variant contains the following fields:
+  </p>
+  <ul>
+    <li>code (LOINC|69548-6|genetic variant assessment)</li>
+    <li>valueCodeableConcept(etc: LOINC|LA9633-4|Present)</li>
+    <li>derivedFrom
+      <ul>
+        <li>Sequence/sequence</li>
+      </ul>
+    </li>
+    <li>component
+      <ul>
+        <li>code (LOINC|48013-7|Genomic reference sequence ID)</li>
+        <li>code (LOINC|81255-2|dbSNP ID)</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    DiagnosticReport is used to record all these genetic finding elements by using “result” pointer, and each of these genetics finding elements will have a pointer point to their corresponding sequences.
+  </p>
+  <a name="additional"> </a>
+  <h2>Pharmacogenomic-specific Guidance and Recommendations</h2>
+  <p>
+    Recommendation for the medication usage will be stored on Task resource. Within the overall diagram, it is called Medication Usage Impact. It contains the following fields:
+  </p>
+  <ul>
+    <li>code(etc: LOINC|LA26434-6|Increase dose)</li>
+    <li>description(Any recommendation text for the medication usage suggestion)</li>
+    <li>reasonReference(Obseration/GenomicImpact)</li>
+  </ul>
+</div>

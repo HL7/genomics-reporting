@@ -1,0 +1,54 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <!--draft-->
+  <a name="overview"> </a>
+  <h2>Overview</h2>
+  <p>
+    Genetic reporting involves reporting information about the genetic characteristics of a sample.  The sample might be a tissue sample from a human, an animal or, more rarely, a bacteria or virus.  In humans and animals, the sample might be from "normal" tissue, transplanted tissue, reproductive tissue (egg or sperm) or abnormal tissue such as a tumor.
+  </p>
+  <p>
+    Reporting is typically done on the specimen's DNA (chromosomal or occasionally mitochondrial DNA), however it can also be done on RNA and proteins (amino acid sequences).
+  </p>
+  <p>
+    Because DNA, RNA and even amino acid sequences can be exceptionally long - and are typically mostly the same for a given type of organism or protein - reporting is typically done on the basis of variations between the tested specimen and a reference specimen rather than as a complete enumeration of the whole sequence.  This approach is also used because clinical relevance of genetic tests is based on the presence of diverges from the norm.  Note that a sequence might still be relevant (and might still be referred to as a variation) even if it is unchanged from the reference.
+  </p>
+  <p>
+    Differences in sequences (variations) are are detected (and documented) using a variety of different techniques each of which has trade-offs in terms of applicability (some can only be used for DNA but not RNA or amino acid sequences or can only detect certain types of changes), cost, speed, availability and precision.  A genetic report may contain information gathered from multiple testing approaches.  For example, a more general test might be followed up with more specific tests providing additional details.
+  </p>
+  <p>
+    Variations can be described at different levels of granularity ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g. fragile X) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms or SNPs).  Intermediate levels may group multiple changes together.  Such groupings can be based on a number of considerations:
+  </p>
+  <ul>
+    <li>The technique used to detect the variation</li>
+    <li>Alignment with the borders of major features of the underlying sequence (e.g. gene variants)</li>
+    <li>The presumed cause of the difference (insertion of extra copies, inversion of a portion of the sequence</li>
+    <li>Common patterns in the population (a common set of variations typically appear together)</li>
+    <li>A known effect (a particular collection of changes may result in a known physical manifestation or disease - aka. a phenotype)</li>
+  </ul>
+  <p>
+    Groupings may themselves be organized into higher-level groupings based on the same criteria.
+  </p>
+  <p>
+    "Known" variations are often assigned codes and catalogued into terminologies.  This allows easy linking of knowledge to information found in a particular specimen.  Reports can simply specify the code and know that clinicians can look up relevant information associated with the code.  However, sometimes variations are detected that do not (yet) have a standardized code.  In these cases, a description of the variation and where it was located must be communicated.  Often, even when a code is known, the details about the location and type of change are communicated
+  </p>
+
+  <a name="keyelements"> </a>
+  <h2>Key Reporting Elements</h2>
+  <p>
+    The focal element for genetic reporting is the DiagnosticReport resource.  It summarizes and packages all of the information found, organizes it for consumption and provides a summary as well as a rendered view of the findings.  It is the primary response to the ServiceRequest which is the "order" for genetic testing to occur.  In practice, there can be multiple ServiceRequests grouped together as part of a single requisition.  This allows multiple tests to be ordered at one time and the results to be gathered as a group.  The organization of the report is accomplished by subsetting data into panels (and sometimes sub-panels).  The structure of these panels is usually driven by the types of testing requested, though they can vary depending on the reporting lab.  In some cases, no panel organization will be provided at all.
+  </p>
+  <p>
+    TODO - continue this - findings, interpretations, impacts, recommendations
+  </p>  
+
+  <a name="variant"> </a>
+  <h2>Variant Reporting</h2>
+  <p>
+    DNA differences are sometimes reported on the basis of cytogenetic analysis - visually examining one or more chromosomes using high-powered magnification and various staining techniques to identify discrepancies.  Cytogenetics cannot be applied to RNA or proteins because they do not fold in a manner that is amenable to visual inspection.
+  </p>
+  <p>
+    DNA, RNA and amino acid sequences can all be examined through a variety of mechanisms.
+  </p>
+  <p>
+    TODO - continue this - explain sequences and the different measurement parameters associated with them
+  </p>
+</div>
