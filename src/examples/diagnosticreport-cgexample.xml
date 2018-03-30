@@ -26,7 +26,7 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <!-- We don't expose A (81306-3) because the variables that apply to the study are captured a variety of places and there's no need to group them.  Their applicability is clear based on where they're positioned. -->
-<!--        <extension url="http://hl7.org/fhir/uv/cg/StructureDefinition/draft-dr-haplotype-def">
+        <!--        <extension url="http://hl7.org/fhir/uv/cg/StructureDefinition/draft-dr-haplotype-def">
           <extension url="gene">
             <valueCodeableConcept>
               <coding>
@@ -102,9 +102,9 @@ New:
         <result>
           <reference value="Observation/deletion-dup-overall"/>
         </result>
-        <result>
+        <!--        <result>
           <reference value="Observation/negatives"/>
-        </result>
+        </result>-->
         <result>
           <reference value="Observation/iscn"/>
         </result>
@@ -214,6 +214,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -260,6 +266,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -288,7 +300,7 @@ New:
       </Observation>
     </resource>
   </entry>
-<!--  <entry>
+  <!--  <entry>
     <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/negatives"/>
     <resource>
       <Observation>
@@ -298,6 +310,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1060,6 +1078,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1632,6 +1656,12 @@ New:
           </valueReference>
         </extension>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1671,6 +1701,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1688,10 +1724,10 @@ New:
         <!-- F.2.a, F.2.b Genotype display name -->
         <!-- TODO: Figure out how to separate these -->
         <valueString value="*2/*5,*A/*A"/>
-        <hasMember>
+        <derivedFrom>
           <!-- D1.3 -->
           <reference value="Observation/discrete-variant"/>
-        </hasMember>
+        </derivedFrom>
         <component>
           <!-- This isn't "what did we observe?", but rather a qualification on "what did we look at?" -->
           <code>
@@ -1743,6 +1779,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1765,9 +1807,9 @@ New:
             <display value="Rapid metabolizer"/>
           </coding>
         </valueCodeableConcept>
-        <hasMember>
+        <derivedFrom>
           <reference value="Observation/genotype"/>
-        </hasMember>
+        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -1800,6 +1842,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1822,9 +1870,9 @@ New:
             <display value="Resistant"/>
           </coding>
         </valueCodeableConcept>
-        <hasMember>
+        <derivedFrom>
           <reference value="Observation/genotype"/>
-        </hasMember>
+        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -1857,6 +1905,12 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -1879,9 +1933,9 @@ New:
             <display value="Low risk"/>
           </coding>
         </valueCodeableConcept>
-        <hasMember>
+        <derivedFrom>
           <reference value="Observation/genotype"/>
-        </hasMember>
+        </derivedFrom>
         <component>
           <code>
             <coding>
