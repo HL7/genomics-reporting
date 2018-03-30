@@ -7,7 +7,7 @@
   <a name="scope"> </a>
   <h2>Scope</h2>
   <p>
-    Genomics is a rapidly evolving area of healthcare that involves complex data structures.  There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice.  The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing.  This implementation guide tries to provide guidance that will enable improved interoperable and computable sharing of genetic testing results.
+    Genomics is a rapidly evolving area of healthcare that involves complex data structures.  There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice.  The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing.  The implementation guide is also paradigm-independent - the data structures presented here could be used in RESTful, messaging, document or other paradigms.
   </p>
   <p>
     This guide covers all aspects of genetic reporting, including:
@@ -89,7 +89,7 @@
   <a name="content"> </a>
   <h2>Content and organization</h2>
   <p>
-    This implementation guide is organized into a set of sections.  The first two sections are applicable to all types of genetic reporting.  All implementers intending to do clinical genomic reporting should read both of these.
+    This implementation guide is organized into a set of sections. The first two sections are applicable to all types of genetic reporting. All implementers intending to do clinical genomic reporting should read 'Background' and 'General Genomic Reporting.'  
   </p>
   <p>
     The remaining sections provide support for more specialized types of reporting.  They are optional.  If your system is involved with genetic reports in a particular area, then read through that section of the implementation guide.  However, there's no reason to read through sections that deal with reporting your system does not use.
@@ -101,7 +101,7 @@
     <tbody>
       <tr>
         <th><a href="background.html">Background</a></th>
-        <td>Background on genomic concepts represented within this guide.  It's essential reading for those who may not have a deep knowledge of genetics, but it's recommended for all implementers as it provides definitions for terms as they are used in this implementation guide.  Not all terms necessarily have widely expected definitions, so this IG's use of a term may differ from the meaning you may be used to.</td>
+        <td>Background on genomic concepts represented within this guide.  It's essential reading for those who may not have a deep knowledge of genetics, but it's recommended for all implementers as it provides definitions for terms as they are used in this implementation guide.  In some cases, agreement on term defitions is not unanimous within the gentics community, so this IG's use of a term may differ from the meaning you may be used to.</td>
       </tr>
       <tr>
         <th><a href="general.html">General Genomic Reporting</a></th>
@@ -113,7 +113,7 @@
       </tr>
       <tr>
         <th><a href="cytogenomics.html">Cytogenomic Reporting</a></th>
-        <td>Guidance on expressing information gathered by [[cytogenomic]] testing techniques including FISH tests, chromosomal analysis, etc.</td>
+        <td>Guidance on expressing information gathered by [[cytogenomic - link TBD]] testing techniques including FISH tests, chromosomal analysis, etc.</td>
       </tr>
       <tr>
         <th><a href="pharmacogenomics.html">Pharmacogenomic Reporting</a></th>
