@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Mar 29, 2018 20:49+0000 for FHIR v3.2.0 
+  Generated on Sat, Mar 31, 2018 00:52+0000 for FHIR v3.2.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -582,7 +582,7 @@
         <xs:sequence>
           <xs:element name="modifierExtension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element in which it is contained. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -654,7 +654,7 @@
         <xs:sequence>
           <xs:element name="extension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -3300,7 +3300,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a Reference(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri.</xs:documentation>
+              <xs:documentation xml:lang="en">Points to the value set or external definition (e.g. implicit value set) that identifies the set of codes to be used. If the binding refers to an explicit value set - the normal case - then use a canonical(ValueSet) preferably containing the canonical URL for the value set. If the reference is to an implicit value set - usually, an IETF RFC that defines a grammar, such as mime types - then use a uri.</xs:documentation>
             </xs:annotation>
            <xs:element name="valueSetUri" type="uri"  maxOccurs="1"/>
            <xs:element name="valueSetCanonical" type="canonical"  maxOccurs="1"/>
@@ -4232,7 +4232,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this activity definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this activity definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this activity definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -4267,7 +4267,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this activity definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -4279,12 +4279,12 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:choice>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the activity definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the activity definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the activity definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the activity definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the activity definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -4309,7 +4309,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this activity definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this activity definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
@@ -4329,7 +4329,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
@@ -5775,7 +5775,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier(s) of this adverse event that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actuality" minOccurs="1" maxOccurs="1" type="AdverseEventActuality">
@@ -5959,7 +5959,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This records identifiers associated with this allergy/intolerance concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="clinicalStatus" minOccurs="0" maxOccurs="1" type="AllergyIntoleranceClinicalStatus">
@@ -7789,7 +7789,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this capability statement is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this capability statement when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this capability statement is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -7814,17 +7814,17 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this capability statement is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the capability statement was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the capability statement was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the capability statement.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the capability statement.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -7849,7 +7849,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this capability statement is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this capability statement is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -8684,7 +8684,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This records identifiers associated with this care plan that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this care plan by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instantiates" minOccurs="0" maxOccurs="unbounded" type="uri">
@@ -8724,7 +8724,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Human-friendly name for the CarePlan.</xs:documentation>
+              <xs:documentation xml:lang="en">Human-friendly name for the care plan.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -8739,7 +8739,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies the original context in which this particular CarePlan was created.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies the original context in which this particular care plan was created.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -8749,7 +8749,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies the individual(s) or ogranization who is responsible for the content of the care plan.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies the individual(s) or organization who is responsible for the content of the care plan.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="careTeam" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -8764,7 +8764,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="supportingInfo" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include co-morbidities, recent procedures, limitations, recent assessments, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies portions of the patient's record that specifically influenced the formation of the plan.  These might include comorbidities, recent procedures, limitations, recent assessments, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="goal" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -8841,7 +8841,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Detailed description of the type of planned activity; e.g. What lab test, what procedure, what kind of encounter.</xs:documentation>
+              <xs:documentation xml:lang="en">Detailed description of the type of planned activity; e.g. what lab test, what procedure, what kind of encounter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -9163,7 +9163,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This records identifiers associated with this care team that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this care team by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CareTeamStatus">
@@ -10780,7 +10780,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A unique identifier assigned to the clinical impression that remains consistent regardless of what server the impression is stored on.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="ClinicalImpressionStatus">
@@ -10827,7 +10827,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="previous" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to the last assesment that was conducted bon this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.</xs:documentation>
+              <xs:documentation xml:lang="en">A reference to the last assessment that was conducted on this patient. Assessments are often/usually ongoing in nature; a care provider (practitioner or team) will make new assessments on an ongoing basis as new data arises or the patient's conditions changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="problem" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -10837,7 +10837,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="investigation" type="ClinicalImpression.Investigation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">One or more sets of investigations (signs, symptions, etc.). The actual grouping of investigations vary greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.</xs:documentation>
+              <xs:documentation xml:lang="en">One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="protocol" minOccurs="0" maxOccurs="unbounded" type="uri">
@@ -10888,7 +10888,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A name/code for the group (&quot;set&quot;) of investigations. Typically, this will be something like &quot;signs&quot;, &quot;symptoms&quot;, &quot;clinical&quot;, &quot;diagnostic&quot;, but the list is not constrained, and others such groups such as (exposure|family|travel|nutitirional) history may be used.</xs:documentation>
+              <xs:documentation xml:lang="en">A name/code for the group (&quot;set&quot;) of investigations. Typically, this will be something like &quot;signs&quot;, &quot;symptoms&quot;, &quot;clinical&quot;, &quot;diagnostic&quot;, but the list is not constrained, and others such groups such as (exposure|family|travel|nutritional) history may be used.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="item" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -10971,7 +10971,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this code system is (or will be) published. This is used in [Coding](datatypes.html#Coding).system.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this code system when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this code system is (or will be) published. This is used in [Coding](datatypes.html#Coding).system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -11001,17 +11001,17 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this code system is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the code system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the code system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the code system changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the code system.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the code system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -11036,7 +11036,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this code system is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this code system is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -11460,7 +11460,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifiers associated with this Communication that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this communication by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instantiates" minOccurs="0" maxOccurs="unbounded" type="uri">
@@ -11696,7 +11696,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A unique ID of this request for reference purposes. It must be provided if the user wants it returned as part of any output, otherwise it will be autogenerated, if needed, by the CDS system. Does not need to be the actual ID of the source system.</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this communication request by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -11884,7 +11884,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this compartment definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this compartment definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this compartment definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
@@ -11904,17 +11904,17 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this compartment definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the compartment definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the compartment definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the compartment definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the compartment definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the compartment definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -11939,7 +11939,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this compartment definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this compartment definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CompartmentType">
@@ -12445,7 +12445,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this concept map is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this concept map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this concept map is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -12475,17 +12475,17 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this concept map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the concept map was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the concept map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the concept map changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the concept map.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the concept map.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -12510,7 +12510,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this concept map is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this concept map is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -12756,7 +12756,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This records identifiers associated with this condition that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this condition by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="clinicalStatus" minOccurs="0" maxOccurs="1" type="ConditionClinicalStatusCodes">
@@ -12821,7 +12821,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:choice>
           <xs:element name="assertedDate" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the existance of the Condition was first asserted or acknowledged.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the existence of the Condition was first asserted or acknowledged.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="recorder" minOccurs="0" maxOccurs="1" type="Reference">
@@ -17041,7 +17041,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this event definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this event definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this event definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this event definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -17076,7 +17076,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this event definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this event definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -17088,12 +17088,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:choice>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the event definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the event definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the event definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the event definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the event definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the event definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -17118,7 +17118,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this event definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this event definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
@@ -17138,7 +17138,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
@@ -17185,7 +17185,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this example scenario when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this example scenario is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this example scenario when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this example scenario is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -17210,17 +17210,17 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this example scenario is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this example scenario is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the example scenario was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the example scenario changes. (e.g. the 'content logical definition').</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the example scenario was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the example scenario changes. (e.g. the 'content logical definition').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the example scenario.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the example scenario.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -17601,7 +17601,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this expansion profile is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this expansion profile when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this expansion profile is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -17626,17 +17626,17 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this expansion profile is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this expansion profile is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the expansion profile was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the expansion profile changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the expansion profile was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the expansion profile changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the expansion profile.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the expansion profile.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -19111,7 +19111,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifier assigned to the flag for external use (outside the FHIR environment).</xs:documentation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this flag by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="FlagStatus">
@@ -19121,7 +19121,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allows an flag to be divided into different categories like clinical, administrative etc. Intended to be used as a means of filtering which flags are displayed to particular user or in a given context.</xs:documentation>
+              <xs:documentation xml:lang="en">Allows a flag to be divided into different categories like clinical, administrative etc. Intended to be used as a means of filtering which flags are displayed to particular user or in a given context.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
@@ -19131,7 +19131,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The patient, location, group , organization , or practitioner, etc. this is about record this flag is associated with.</xs:documentation>
+              <xs:documentation xml:lang="en">The patient, location, group, organization, or practitioner etc. this is about record this flag is associated with.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -19403,7 +19403,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this graph definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this graph definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this graph definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -19423,17 +19423,17 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this graph definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the graph definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the graph definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the graph definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the graph definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the graph definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -19458,7 +19458,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this graph definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this graph definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="start" minOccurs="1" maxOccurs="1" type="ResourceType">
@@ -19846,7 +19846,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">An identifier, codeableconcept or canonical reference to the guidance that was requested.</xs:documentation>
+              <xs:documentation xml:lang="en">An identifier, CodeableConcept or canonical reference to the guidance that was requested.</xs:documentation>
             </xs:annotation>
             <xs:element name="moduleUri" type="uri"/>
             <xs:element name="moduleCanonical" type="canonical"/>
@@ -20963,7 +20963,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this implementation guide is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this implementation guide when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this implementation guide is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -20983,17 +20983,17 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this implementation guide is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the implementation guide was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the implementation guide was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the implementation guide changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the implementation guide.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the implementation guide.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -21176,7 +21176,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
               <xs:documentation xml:lang="en">If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.</xs:documentation>
             </xs:annotation>
             <xs:element name="exampleBoolean" type="boolean"/>
-            <xs:element name="exampleReference" type="Reference"/>
+            <xs:element name="exampleCanonical" type="canonical"/>
           </xs:choice>
           <xs:element name="package" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
@@ -21204,6 +21204,11 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           <xs:element name="title" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="generation" minOccurs="1" maxOccurs="1" type="GuidePageGeneration">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code that indicates how the page is generated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="page" type="ImplementationGuide.Page" minOccurs="0" maxOccurs="unbounded">
@@ -21315,7 +21320,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
               <xs:documentation xml:lang="en">If true or a reference, indicates the resource is an example instance.  If a reference is present, indicates that the example is an example of the specified profile.</xs:documentation>
             </xs:annotation>
             <xs:element name="exampleBoolean" type="boolean"/>
-            <xs:element name="exampleReference" type="Reference"/>
+            <xs:element name="exampleCanonical" type="canonical"/>
           </xs:choice>
           <xs:element name="relativePath" minOccurs="0" maxOccurs="1" type="url">
             <xs:annotation>
@@ -21419,6 +21424,41 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="GuideParameterCode-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="GuidePageGeneration-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="html">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">HTML</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="markdown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Markdown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="xml">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">XML</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="generated">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Generated</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GuidePageGeneration">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A code that indicates how the page is generated</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="GuidePageGeneration-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -21764,7 +21804,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this library is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this library when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this library is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -21799,7 +21839,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this library is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
@@ -21816,12 +21856,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:choice>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the library was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the library was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the library changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the library.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the library.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -21846,7 +21886,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this library is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this library is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
@@ -21866,7 +21906,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
@@ -22363,7 +22403,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this measure is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this measure when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this measure is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -22398,7 +22438,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this measure is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this measure is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -22410,12 +22450,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:choice>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the measure was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the measure was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the measure changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the measure.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the measure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -22440,12 +22480,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this measure is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this measure is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A detailed description of how the measure is used from a clinical perspective.</xs:documentation>
+              <xs:documentation xml:lang="en">A detailed description, from a clinical perspective, of how the measure is used.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -22460,7 +22500,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
@@ -22470,7 +22510,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Descriptive topics related to the content of the measure. Topics provide a high-level categorization of the type of the measure that can be useful for filtering and searching.</xs:documentation>
+              <xs:documentation xml:lang="en">Descriptive topics related to the content of the measure. Topics provide a high-level categorization grouping types of measures that can be useful for filtering and searching.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contributor" minOccurs="0" maxOccurs="unbounded" type="Contributor">
@@ -22490,12 +22530,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="disclaimer" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Notices and disclaimers regarding the use of the measure, or related to intellectual property (such as code systems) referenced by the measure.</xs:documentation>
+              <xs:documentation xml:lang="en">Notices and disclaimers regarding the use of the measure or related to intellectual property (such as code systems) referenced by the measure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="scoring" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates how the calculation is performed for the measure, including proportion, ratio, continuous variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates how the calculation is performed for the measure, including proportion, ratio, continuous-variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="compositeScoring" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -22520,7 +22560,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="rationale" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Provides a succint statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.</xs:documentation>
+              <xs:documentation xml:lang="en">Provides a succinct statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="clinicalRecommendationStatement" minOccurs="0" maxOccurs="1" type="markdown">
@@ -22530,7 +22570,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="improvementNotation" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is whthin a range).</xs:documentation>
+              <xs:documentation xml:lang="en">Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="definition" minOccurs="0" maxOccurs="unbounded" type="markdown">
@@ -22586,7 +22626,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="stratifier" type="Measure.Stratifier" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library, or a valid FHIR Resource Path.</xs:documentation>
+              <xs:documentation xml:lang="en">The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -22674,7 +22714,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="criteria" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The criteria for the supplemental data. This must be the name of a valid expression defined within a referenced library, and defines the data to be returned for this element.</xs:documentation>
+              <xs:documentation xml:lang="en">The criteria for the supplemental data. This must be the name of a valid expression defined within a referenced library. The criteria defines the data to be returned for this element.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
@@ -22688,12 +22728,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:element name="MeasureReport" type="MeasureReport">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="MeasureReport">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -22701,12 +22741,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this report when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this MeasureReport when it is represented in other formats or referenced in a specification, model, design or an instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="MeasureReportStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The report status. No data will be available until the report status is complete.</xs:documentation>
+              <xs:documentation xml:lang="en">The MeasureReport status. No data will be available until the MeasureReport status is complete.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="MeasureReportType">
@@ -22731,7 +22771,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="reporter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The individiual, location, group, or organization that is reporting the data.</xs:documentation>
+              <xs:documentation xml:lang="en">The individual, location, group, or organization that is reporting the data.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="1" maxOccurs="1" type="Period">
@@ -22755,7 +22795,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MeasureReport.Group">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -22786,7 +22826,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MeasureReport.Population">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -22812,7 +22852,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MeasureReport.Stratifier">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -22833,7 +22873,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MeasureReport.Stratum">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -22859,7 +22899,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MeasureReport.Population1">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure, and optionally a reference to the resources involved in that calculation.</xs:documentation>
+      <xs:documentation xml:lang="en">The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -23171,7 +23211,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="serialNumber" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An identifier assigned to a drug at the point of manufacturing and repackaging (at the package or pallet level), sufficenti to facilitate the identification, validatation, authentication and tracking and tracking of drugs.</xs:documentation>
+              <xs:documentation xml:lang="en">An identifier assigned to a drug at the point of manufacturing and repackaging (at the package or pallet level), sufficient to facilitate the identification, validation, authentication, and tracking and tracking of drugs.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -23223,12 +23263,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event.  Particularly important if these records have to be updated.</xs:documentation>
+              <xs:documentation xml:lang="en">External identifier - FHIR will generate its own internal identifiers (probably URLs) which do not need to be explicitly managed by the resource.  The identifier here is one that would be used by another non-FHIR system - for example an automated medication pump would provide a record each time it operated; an administration while the patient was off the ward might be made with a different system and entered after the event. This identifier is particularly important when these records require updates.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instantiates" minOccurs="0" maxOccurs="unbounded" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A protocol, guideline, orderset or other definition that was adhered to in whole or in part by this event.</xs:documentation>
+              <xs:documentation xml:lang="en">A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -23238,7 +23278,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="MedicationAdministrationStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Will generally be set to show that the administration has been completed.  For some long running administrations such as infusions it is possible for an administration to be started but not completed or it may be paused while some other process is under way.</xs:documentation>
+              <xs:documentation xml:lang="en">Will generally be set to show that the administration has been completed.  For some long running administrations such as infusions, it is possible for an administration to be started but not completed or it may be paused while some other process is under way.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -23260,7 +23300,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The visit, admission or other contact between patient and health care provider the medication administration was performed as part of.</xs:documentation>
+              <xs:documentation xml:lang="en">The visit, admission, or other contact between patient and health care provider during which the medication administration was performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="supportingInformation" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -23458,7 +23498,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The procedure that the dispense is done because of.</xs:documentation>
+              <xs:documentation xml:lang="en">The procedure that trigger the dispense.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="MedicationDispenseStatus">
@@ -23468,7 +23508,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates type of medication dispense and where the medication is expected to be consumed or administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the type of medication dispense and where the medication is expected to be consumed or administered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
@@ -23500,7 +23540,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The principal physical locaiton where the dispense was performed.</xs:documentation>
+              <xs:documentation xml:lang="en">The principal physical location where the dispense was performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="authorizingPrescription" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -23560,7 +23600,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="detectedIssue" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. Drug-drug interaction, duplicate therapy, dosage alert etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates an actual or potential clinical issue with or between one or more active or proposed clinical actions for a patient; e.g. drug-drug interaction, duplicate therapy, dosage alert etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -23619,7 +23659,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the reason for the substitution of (or lack of substitution) from what was prescribed.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the reason for the substitution (or lack of substitution) from what was prescribed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="responsibleParty" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -23701,12 +23741,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This records identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. For example a re-imbursement system might issue its own id for each prescription that is created.  This is particularly important where FHIR only provides part of an entire workflow process where records must be tracked through an entire system.</xs:documentation>
+              <xs:documentation xml:lang="en">This records identifiers associated with this medication request that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. For example a reimbursement system might issue its own id for each prescription that is created.  This is particularly important where FHIR only provides part of an entire workflow process where records must be tracked through an entire system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="MedicationRequestStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code specifying the current state of the order.  Generally this will be active or completed state.</xs:documentation>
+              <xs:documentation xml:lang="en">A code specifying the current state of the order.  Generally, this will be active or completed state.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="intent" minOccurs="1" maxOccurs="1" type="MedicationRequestIntent">
@@ -23753,7 +23793,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="requester" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The individual, organization or device that initiated the request and has responsibility for its activation.</xs:documentation>
+              <xs:documentation xml:lang="en">The individual, organization, or device that initiated the request and has responsibility for its activation.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="performer" minOccurs="0" maxOccurs="1" type="Reference">
@@ -23783,7 +23823,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="instantiates" minOccurs="0" maxOccurs="unbounded" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.</xs:documentation>
+              <xs:documentation xml:lang="en">The URL pointing to a protocol, guideline, orderset, or other definition that is adhered to in whole or in part by this MedicationRequest.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -24042,7 +24082,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates where type of medication statement and where the medication is expected to be consumed or administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates type of medication statement and where the medication is expected to be consumed or administered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
@@ -24076,7 +24116,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="informationSource" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g Claim or MedicationRequest.</xs:documentation>
+              <xs:documentation xml:lang="en">The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g. Claim or MedicationRequest.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="derivedFrom" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -25348,7 +25388,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this message definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this message definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this message definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -25383,17 +25423,17 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this message definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the message definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the message definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the message definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the message definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the message definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -25418,7 +25458,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this message definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this message definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -25811,12 +25851,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the naming system was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the naming system was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the naming system changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the naming system.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the naming system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -26928,7 +26968,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this operation definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this operation definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this operation definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -26953,17 +26993,17 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this operation definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the operation definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the operation definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the operation definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the operation definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the operation definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -26988,7 +27028,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this operation definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this operation definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="affectsState" minOccurs="0" maxOccurs="1" type="boolean">
@@ -29947,7 +29987,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this plan definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this plan definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -29977,7 +30017,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A high level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.</xs:documentation>
+              <xs:documentation xml:lang="en">A high-level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
@@ -29987,7 +30027,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this plan definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -29999,12 +30039,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:choice>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the plan definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the plan definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the plan definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the plan definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the plan definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -30029,7 +30069,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this plan definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this plan definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
@@ -30049,7 +30089,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
@@ -30146,12 +30186,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="measure" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The parameter whose value is to be tracked, e.g. body weigth, blood pressure, or hemoglobin A1c level.</xs:documentation>
+              <xs:documentation xml:lang="en">The parameter whose value is to be tracked, e.g. body weight, blood pressure, or hemoglobin A1c level.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. Whan a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value.</xs:documentation>
+              <xs:documentation xml:lang="en">The target value of the measure to be achieved to signify fulfillment of the goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the range can be specified. When a low value is missing, it indicates that the goal is achieved at any value at or below the high value. Similarly, if the high value is missing, it indicates that the goal is achieved at any value at or above the low value.</xs:documentation>
             </xs:annotation>
             <xs:element name="detailQuantity" type="Quantity"/>
             <xs:element name="detailRange" type="Range"/>
@@ -30185,7 +30225,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short description of the action used to provide a summary to display to the user.</xs:documentation>
+              <xs:documentation xml:lang="en">A brief description of the action used to provide a summary to display to the user.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="textEquivalent" minOccurs="0" maxOccurs="1" type="string">
@@ -30195,7 +30235,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a the section of a documentation template.</xs:documentation>
+              <xs:documentation xml:lang="en">A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -30220,7 +30260,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="condition" type="PlanDefinition.Condition" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An expression that describes applicability criteria, or start/stop conditions for the action.</xs:documentation>
+              <xs:documentation xml:lang="en">An expression that describes applicability criteria or start/stop conditions for the action.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="input" minOccurs="0" maxOccurs="unbounded" type="DataRequirement">
@@ -30271,7 +30311,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="requiredBehavior" minOccurs="0" maxOccurs="1" type="ActionRequiredBehavior">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Defines the requiredness behavior for the action.</xs:documentation>
+              <xs:documentation xml:lang="en">Defines the required behavior for the action.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="precheckBehavior" minOccurs="0" maxOccurs="1" type="ActionPrecheckBehavior">
@@ -30332,7 +30372,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether or not the condition is satisfied.</xs:documentation>
+              <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether the condition is satisfied.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -31843,7 +31883,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this questionnaire is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this questionnaire is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -31878,7 +31918,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subjectType" minOccurs="0" maxOccurs="unbounded" type="ResourceType">
@@ -31888,12 +31928,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the questionnaire was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the questionnaire was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the questionnaire changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the questionnaire.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the questionnaire.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -31918,7 +31958,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this questionnaire is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this questionnaire is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -31933,7 +31973,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval, but doesn't change the original approval date.</xs:documentation>
+              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
@@ -33457,7 +33497,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this search parameter is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this search parameter is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -33482,17 +33522,17 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this search parameter is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the search parameter was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the search parameter was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the search parameter changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the search parameter.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the search parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -33517,7 +33557,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this search parameter is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this search parameter is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
@@ -34410,7 +34450,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="orderDetail" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have a order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.</xs:documentation>
+              <xs:documentation xml:lang="en">Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
@@ -34455,7 +34495,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="performer" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The desired perfomer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -35072,7 +35112,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this structure definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this structure definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this structure definition is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -35102,17 +35142,17 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this structure definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the structure definition was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the structure definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure definition changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the structure definition.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the structure definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -35137,7 +35177,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this structure definition is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this structure definition is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -35398,7 +35438,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this structure map is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this structure map is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -35428,17 +35468,17 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this structure map is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this structure map is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the structure map was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure map changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the structure map was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the structure map changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the structure map.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the structure map.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -35463,7 +35503,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this structure map is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this structure map is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -38012,7 +38052,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this terminology capabilities when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this terminology capabilities is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this terminology capabilities when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this terminology capabilities is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -38037,17 +38077,17 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this terminology capabilities is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this terminology capabilities is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the terminology capabilities was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the terminology capabilities changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the terminology capabilities was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the terminology capabilities changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the terminology capabilities.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the terminology capabilities.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -38072,7 +38112,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this terminology capabilities is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this terminology capabilities is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -38742,7 +38782,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this test script is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this test script when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this test script is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -38772,17 +38812,17 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this test script is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the test script was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the test script was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the test script changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the test script.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the test script.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -38807,7 +38847,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this test script is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this test script is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -38995,7 +39035,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
               <xs:documentation xml:lang="en">Links to the FHIR specification that describes this interaction and the resources involved in more detail.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="capabilities" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="capabilities" minOccurs="1" maxOccurs="1" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">Minimum capabilities required of server for test script to execute successfully.   If server does not meet at a minimum the referenced capability statement, then all tests in this script are skipped.</xs:documentation>
            </xs:annotation>
@@ -41595,7 +41635,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this value set when it is referenced in a specification, model, design or an instance, also called it's canonical identifier. This SHOULD be globally unique, and SHOULD be a literal address at which this value set is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this value set when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this value set is (or will be) published.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -41625,17 +41665,17 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A boolean value to indicate that this value set is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this value set is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the value set was published. The date must change if and when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the value set changes. (e.g. the 'content logical definition').</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the value set was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the value set changes. (e.g. the 'content logical definition').</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the individual or organization that published the value set.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the value set.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -41665,7 +41705,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Explaination of why this value set is needed and why it has been designed as it has.</xs:documentation>
+              <xs:documentation xml:lang="en">Explanation of why this value set is needed and why it has been designed as it has.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">

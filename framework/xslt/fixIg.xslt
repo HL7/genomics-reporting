@@ -50,11 +50,6 @@
                 </xsl:otherwise>
               </xsl:choose>
             </xsl:variable>
-            <xsl:if test="not(@kind)">
-              <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page-generated">
-                <valueBoolean value="true"/>
-              </extension>
-            </xsl:if>
             <xsl:choose>
               <xsl:when test="source">
                 <source value="{$value}"/>
@@ -85,6 +80,12 @@
                   <format value="generated"/>
                 </xsl:otherwise>
               </xsl:choose>
+            </xsl:if>
+            <xsl:if test="not(@kind)">
+              <generation value="generated"/>
+<!--              <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page-generated">
+                <valueBoolean value="true"/>
+              </extension>-->
             </xsl:if>
           </page>
         </xsl:for-each>
