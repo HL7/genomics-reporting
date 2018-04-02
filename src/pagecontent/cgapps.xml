@@ -39,24 +39,37 @@
     Interface as follows: 
   </p>
   <img src="cgapps-genomicsAdviser-fg2.png" alt="Interface of Genomics Adviser app"/>
-  <a name="precisionMedicine"></a>
   <p>
     <b>Figure 2: Genomics Advisor Interface</b>
   </p>
-  <!--
+  <a name="precisionMedicine"></a>
   <h2>Example 2: Precision Medicine</h2>
   <p>
     (more info..)
   </p>
   <p>
-    More information: </p>
+    SMART Precision Cancer Medicine (PCM) displays population-level information about somatic cancer mutations relative to a single patient.
+    The PCM prototype can rapidly present a visualization that compares a patient’s somatic genomic alterations against a distribution built from more than 3000 patients, along with context-specific links to external knowledge bases.It is open-source software for clinicians to present the individual patient within the population-level spectrum of cancer somatic mutations. The app can be implemented on any SMART on FHIR-enabled EHRs, and future versions of PCM should be able to evolve in parallel with external knowledge bases.
+  </p>
+  <p>
+    This app was developed as a native iOS app optimized for the iPad and iPad Mini tablet devices (Apple Inc., Cupertino, CA, USA). The user authenticates by using their standard VUMC username and password. As required by the OAuth 2.0 process, the user must authorize the app for initial data access. A splash-screen is presented and followed by a simple query interface, which allows a practitioner to look up a patient by name or medical record number.
+  </p>
+  <p>
+    A successful patient query brings up the patient-centric view:
+  </p>
+  <img src="cgapps-precisionCancerMedicine-fg3.png"/>
+  <p>
+    <b>Figure 3: A successful query</b>
+  </p>
+  <img src="cgapps-precisionCancerMedicine-fg4.png"/>
+  <p>
+    <b>Figure 4: Details about the pie chart</b>
+  </p>
+  <img src="cgapps-precisionCancerMedicine-fg5.png"/>
+  <p>
+    <b>Figure 5: Details about mutation type</b>
+  </p>
   <ul>
     <li><a ref="https://academic.oup.com/jamia/article/23/4/701/2200286">SMART precision cancer medicine: a FHIR-based app to provide genomic information at the point of care</a></li>
   </ul>
-  -->
-<!--  <p>The presentation of the app looks like this: </p>
-  <img src="2-smart-fhir-image.png" alt="image to show the presentation of the SMART on FHIR apps"/>
-  <p>
-    <b>Figure 2: SMART on FHIR apps</b>
-  </p>-->
 </div>
