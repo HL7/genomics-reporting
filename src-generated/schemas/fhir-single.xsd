@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Apr 2, 2018 07:04+0000 for FHIR v3.2.0 
+  Generated on Mon, Apr 2, 2018 21:25+0000 for FHIR v3.3.0 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.2.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.3.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="fhir-xhtml.xsd"/>
@@ -582,7 +582,7 @@
         <xs:sequence>
           <xs:element name="modifierExtension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element, and that modifies the understanding of the element in which it is contained. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -654,7 +654,7 @@
         <xs:sequence>
           <xs:element name="extension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -2147,7 +2147,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
   </xs:complexType>
   <xs:complexType name="UsageContext">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Specifies clinical/business/etc metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).</xs:documentation>
+      <xs:documentation xml:lang="en">Specifies clinical/business/etc. metadata that can be used to retrieve, index and/or categorize an artifact. This metadata can either be specific to the applicable population (e.g., age category, DRG) or the specific context of care (e.g., venue, care setting, provider of care).</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -3610,7 +3610,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
   </xs:complexType>
   <xs:complexType name="ProductShelfLife">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The shelf-life and storage information for a medicinal product item or container can be described using the this class.</xs:documentation>
+      <xs:documentation xml:lang="en">The shelf-life and storage information for a medicinal product item or container can be described using this class.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -3623,7 +3623,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           </xs:element>
           <xs:element name="type" type="CodeableConcept" minOccurs="1" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This describes the shelf life, taking into account various scenarios such as shelf life of the packaged Medicinal Product itself, shelf life after transformation where necessary and shelf life after the first opening of a bottle, etc The shelf life type shall be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.</xs:documentation>
+              <xs:documentation xml:lang="en">This describes the shelf life, taking into account various scenarios such as shelf life of the packaged Medicinal Product itself, shelf life after transformation where necessary and shelf life after the first opening of a bottle, etc. The shelf life type shall be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="period" type="Quantity" minOccurs="1" maxOccurs="1">
@@ -3716,7 +3716,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
         <xs:sequence>
           <xs:element name="text" type="Narrative" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.</xs:documentation>
+              <xs:documentation xml:lang="en">A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="contained" type="ResourceContainer" minOccurs="0" maxOccurs="unbounded">
@@ -3726,12 +3726,12 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           </xs:element>
           <xs:element name="extension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="modifierExtension" type="Extension" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</xs:documentation>
+              <xs:documentation xml:lang="en">May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -6392,7 +6392,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="requestedPeriod" minOccurs="0" maxOccurs="unbounded" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the minutes duration should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.</xs:documentation>
+              <xs:documentation xml:lang="en">A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the duration (usually in minutes) should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -6418,7 +6418,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="required" minOccurs="0" maxOccurs="1" type="ParticipantRequired">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Is this participant required to be present at the meeting. This covers a use-case where 2 doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.</xs:documentation>
+              <xs:documentation xml:lang="en">Whether this participant is required to be present at the meeting. This covers a use-case where two doctors need to meet to discuss the results for a specific patient, and the patient is not required to be present.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="ParticipationStatus">
@@ -6600,7 +6600,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="actor" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A Person, Location/HealthcareService or Device that is participating in the appointment.</xs:documentation>
+              <xs:documentation xml:lang="en">A Person, Location, HealthcareService, or Device that is participating in the appointment.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="participantStatus" minOccurs="1" maxOccurs="1" type="ParticipationStatus">
@@ -8023,7 +8023,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="cors" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Server adds CORS headers when responding to requests - this enables javascript applications to use the server.</xs:documentation>
+              <xs:documentation xml:lang="en">Server adds CORS headers when responding to requests - this enables Javascript applications to use the server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="service" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -9434,7 +9434,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="supportingInformation" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Further information supporting the this charge.</xs:documentation>
+              <xs:documentation xml:lang="en">Further information supporting this charge.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -10034,7 +10034,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="bodySite" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Physical service site on the patient (limb, tooth, etc).</xs:documentation>
+              <xs:documentation xml:lang="en">Physical service site on the patient (limb, tooth, etc.).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subSite" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -13025,7 +13025,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="scope" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A selector of the type of consent being presented among the four possible: ADR, Privacy, Treatment, Research.</xs:documentation>
+              <xs:documentation xml:lang="en">A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="category" minOccurs="1" maxOccurs="unbounded" type="CodeableConcept">
@@ -13073,7 +13073,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="verification" type="Consent.Verification" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Whether a treatment instruction (e.g. artifical respiration yes or no) was verified with the patient, his/her family or another authorized person.</xs:documentation>
+              <xs:documentation xml:lang="en">Whether a treatment instruction (e.g. artificial respiration yes or no) was verified with the patient, his/her family or another authorized person.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="provision" type="Consent.Provision" minOccurs="0" maxOccurs="1">
@@ -13212,7 +13212,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="reference" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The resource that identifies the actor. To identify a actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers').</xs:documentation>
+              <xs:documentation xml:lang="en">The resource that identifies the actor. To identify actors by type, use group to identify a set of actors by some property they share (e.g. 'admitting officers').</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -13510,7 +13510,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="class" minOccurs="0" maxOccurs="1" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Resource Type, Profile, or CDA etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Categorization of the type of asset.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="Coding">
@@ -14992,7 +14992,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="performer" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The desired perfomer for doing the diagnostic testing.</xs:documentation>
+              <xs:documentation xml:lang="en">The desired performer for doing the diagnostic testing.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -15012,7 +15012,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="supportingInfo" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Additional clinical information about the patient that may influence the request fulfilment.  For example, this may includes body where on the subject's the device will be used ( i.e. the target site).</xs:documentation>
+              <xs:documentation xml:lang="en">Additional clinical information about the patient that may influence the request fulfilment.  For example, this may include where on the subject's body the device will be used (i.e. the target site).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -16912,7 +16912,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="careManager" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner that is the care manager/care co-ordinator for this patient.</xs:documentation>
+              <xs:documentation xml:lang="en">The practitioner that is the care manager/care coordinator for this patient.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="team" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -17245,7 +17245,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">What is the example scenario resource created for. This should not be used to show the business purpose of the scenario itself, but the purpose of documenting a scenario.</xs:documentation>
+              <xs:documentation xml:lang="en">What the example scenario resource is created for. This should not be used to show the business purpose of the scenario itself, but the purpose of documenting a scenario.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="actor" type="ExampleScenario.Actor" minOccurs="0" maxOccurs="unbounded">
@@ -18427,7 +18427,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="bodySite" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Physical service site on the patient (limb, tooth, etc).</xs:documentation>
+              <xs:documentation xml:lang="en">Physical service site on the patient (limb, tooth, etc.).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subSite" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -19981,7 +19981,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This flag is used to mark the record to not be used. This is not used when a centre is closed for maintenance, or for holidays, the notAvailable period is to be used for this.</xs:documentation>
+              <xs:documentation xml:lang="en">This flag is used to mark the record to not be used. This is not used when a center is closed for maintenance, or for holidays, the notAvailable period is to be used for this.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="providedBy" minOccurs="0" maxOccurs="1" type="Reference">
@@ -20610,7 +20610,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="fundingSource" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the source of the vaccine actually administered. This may be different than the patient eligbility (e.g. the patient may be eligibile for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -21023,7 +21023,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="fhirVersion" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.</xs:documentation>
+              <xs:documentation xml:lang="en">The version of the FHIR specification on which this ImplementationGuide is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.3.0 for this version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="dependsOn" type="ImplementationGuide.DependsOn" minOccurs="0" maxOccurs="unbounded">
@@ -21137,7 +21137,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The name for the group, as used in page.package.</xs:documentation>
+              <xs:documentation xml:lang="en">The name for the group, as used in ImplementationGuide.definition.resource.package and ImplementationGuide.definition.page.package.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -21487,7 +21487,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="cancelledReason" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc).</xs:documentation>
+              <xs:documentation xml:lang="en">In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -22071,7 +22071,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The common subject (or patient) of the resources that are in the list, if there is one.</xs:documentation>
+              <xs:documentation xml:lang="en">The common subject (or patient) of the resources that are in the list if there is one.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
@@ -22176,12 +22176,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:element name="Location" type="Location">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
+      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Location">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
+      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -22199,7 +22199,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="operationalStatus" minOccurs="0" maxOccurs="1" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc such as an isolation unit/dialisys chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.</xs:documentation>
+              <xs:documentation xml:lang="en">The Operational status covers operation values most relevant to beds (but can also apply to rooms/units/chair/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping and other activities like maintenance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
@@ -22209,7 +22209,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="alias" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A list of alternate names that the location is known as, or was known as in the past.</xs:documentation>
+              <xs:documentation xml:lang="en">A list of alternate names that the location is known as or was known as in the past.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -22278,7 +22278,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Location.Position">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
+      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -22304,7 +22304,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Location.HoursOfOperation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
+      <xs:documentation xml:lang="en">Details and position information for a physical place where services are provided and resources and participants may be stored, found, contained, or accommodated.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -23147,7 +23147,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="amount" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc).</xs:documentation>
+              <xs:documentation xml:lang="en">Specific amount of the drug in the packaged product.  For example, when specifying a product that has the same strength (For example, Insulin glargine 100 unit per mL solution for injection), this attribute provides additional clarification of the package amount (For example, 3 mL, 10mL, etc.).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="ingredient" type="Medication.Ingredient" minOccurs="0" maxOccurs="unbounded">
@@ -24223,7 +24223,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Regulatory type, e.g Investigational or Authorized.</xs:documentation>
+              <xs:documentation xml:lang="en">Regulatory type, e.g. Investigational or Authorized.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="combinedPharmaceuticalDoseForm" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -24601,12 +24601,12 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:element name="MedicinalProductClinicals" type="MedicinalProductClinicals">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="MedicinalProductClinicals">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -24638,7 +24638,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MedicinalProductClinicals.UndesirableEffects">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -24669,7 +24669,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MedicinalProductClinicals.Population">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -24702,7 +24702,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MedicinalProductClinicals.TherapeuticIndication">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -24753,7 +24753,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MedicinalProductClinicals.OtherTherapy">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -24776,7 +24776,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MedicinalProductClinicals.Contraindication">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -24817,7 +24817,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="MedicinalProductClinicals.Interactions">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc of a medicinal product, including for regulatory purposes.</xs:documentation>
+      <xs:documentation xml:lang="en">The clinical particulars - indications, contraindications etc. of a medicinal product, including for regulatory purposes.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -26767,7 +26767,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this {{title}}. Enables tracking the life-cycle of the content.</xs:documentation>
+              <xs:documentation xml:lang="en">The status of this ODH. Enables tracking the life-cycle of the content.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
@@ -26792,7 +26792,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="employmentStatus" type="OccupationalData.EmploymentStatus" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A person’s current economic relationship to a job. Employment status refers to whether a person is currently working for compensation, is unemployed (i.e., searching for work for compensation), or is not in the labor force (e.g. disabled, homemaker, chooses not to work, etc.). Employment status is not the same as classification of work.</xs:documentation>
+              <xs:documentation xml:lang="en">A person's current economic relationship to a job. Employment status refers to whether a person is currently working for compensation, is unemployed (i.e., searching for work for compensation), or is not in the labor force (e.g. disabled, homemaker, chooses not to work, etc.). Employment status is not the same as classification of work.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="retirementDate" minOccurs="0" maxOccurs="unbounded" type="dateTime">
@@ -26828,7 +26828,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code that represents a person’s current economic relationship to a job.</xs:documentation>
+              <xs:documentation xml:lang="en">A code that represents a person's current economic relationship to a job.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effective" minOccurs="1" maxOccurs="1" type="Period">
@@ -26885,7 +26885,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="industry" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A code that represents the type of business associated with a person's Past Or Present Job; i.e., for one job. A change in industry indicates a change in job.</xs:documentation>
+              <xs:documentation xml:lang="en">A code that represents the type of business associated with a person's Past or Present Job; i.e., for one job. A change in industry indicates a change in job.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="effective" minOccurs="0" maxOccurs="1" type="Period">
@@ -29102,7 +29102,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="alias" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A list of alternate names that the organization is known as, or was known as in the past.</xs:documentation>
+              <xs:documentation xml:lang="en">A list of alternate names that the organization is known as, or was known as in the past.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="telecom" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
@@ -29271,7 +29271,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="allDay" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Is this always available? (hence times are irrelevant) e.g. 24 hour service.</xs:documentation>
+              <xs:documentation xml:lang="en">Is this always available? (hence times are irrelevant) e.g. 24-hour service.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="availableStartTime" minOccurs="0" maxOccurs="1" type="time">
@@ -29930,7 +29930,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="assurance" minOccurs="0" maxOccurs="1" type="IdentityAssuranceLevel">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Level of assurance that this link is actually associated with the target resource.</xs:documentation>
+              <xs:documentation xml:lang="en">Level of assurance that this link is associated with the target resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -30764,7 +30764,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="communication" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A language the practitioner is able to use in patient communication.</xs:documentation>
+              <xs:documentation xml:lang="en">A language the practitioner can use in patient communication.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -32333,7 +32333,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
       </xs:enumeration>
       <xs:enumeration value="&gt;=">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Greator or Equals</xs:documentation>
+          <xs:documentation xml:lang="en">Greater or Equals</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="&lt;=">
@@ -33445,7 +33445,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Whether this schedule record is in active use, or should not be used (such as was entered in error).</xs:documentation>
+              <xs:documentation xml:lang="en">Whether this schedule record is in active use or should not be used (such as was entered in error).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="serviceCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -33465,7 +33465,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="actor" minOccurs="1" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The resource this Schedule resource is providing availability information for. These are expected to usually be one of HealthcareService, Location, Practitioner, PractitionerRole, Device, Patient or RelatedPerson.</xs:documentation>
+              <xs:documentation xml:lang="en">The resource this Schedule resource is providing availability information for. These are usually expected to be one of HealthcareService, Location, Practitioner, PractitionerRole, Device, Patient or RelatedPerson.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="planningHorizon" minOccurs="0" maxOccurs="1" type="Period">
@@ -33512,7 +33512,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="derivedFrom" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. I.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.</xs:documentation>
+              <xs:documentation xml:lang="en">Where this search parameter is originally defined. If a derivedFrom is provided, then the details in the search parameter must be consistent with the definition from which it is defined. i.e. the parameter should have the same meaning, and (usually) the functionality should be a proper subset of the underlying search parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
@@ -33617,7 +33617,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="chain" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference, and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.</xs:documentation>
+              <xs:documentation xml:lang="en">Contains the names of any search parameters which may be chained to the containing search parameter. Chained parameters may be added to search parameters of type reference and specify that resources will only be returned if they contain a reference to a resource which matches the chained parameter value. Values for this field should be drawn from SearchParameter.code for a parameter on the target resource type.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="component" type="SearchParameter.Component" minOccurs="0" maxOccurs="unbounded">
@@ -35192,7 +35192,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="fhirVersion" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.2.0 for this version.</xs:documentation>
+              <xs:documentation xml:lang="en">The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 3.3.0 for this version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="mapping" type="StructureDefinition.Mapping" minOccurs="0" maxOccurs="unbounded">
@@ -35237,7 +35237,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="snapshot" type="StructureDefinition.Snapshot" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A snapshot view is expressed in a stand alone form that can be used and interpreted without considering the base StructureDefinition.</xs:documentation>
+              <xs:documentation xml:lang="en">A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="differential" type="StructureDefinition.Differential" minOccurs="0" maxOccurs="1">
@@ -35523,7 +35523,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="group" type="StructureMap.Group" minOccurs="1" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Organizes the mapping into managable chunks for human review/ease of maintenance.</xs:documentation>
+              <xs:documentation xml:lang="en">Organizes the mapping into manageable chunks for human review/ease of maintenance.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -35580,7 +35580,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="typeMode" minOccurs="1" maxOccurs="1" type="StructureMapGroupTypeMode">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If this is the default rule set to apply for thie source type, or this combination of types.</xs:documentation>
+              <xs:documentation xml:lang="en">If this is the default rule set to apply for the source type or this combination of types.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="string">
@@ -36168,12 +36168,12 @@ Any information provided in these elements on a Questionnaire Item overrides the
   </xs:complexType>
   <xs:element name="Subscription" type="Subscription">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system is able to take an appropriate action.</xs:documentation>
+      <xs:documentation xml:lang="en">The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Subscription">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system is able to take an appropriate action.</xs:documentation>
+      <xs:documentation xml:lang="en">The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -36225,7 +36225,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
   </xs:complexType>
   <xs:complexType name="Subscription.Channel">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The subscription resource is used to define a push based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system is able to take an appropriate action.</xs:documentation>
+      <xs:documentation xml:lang="en">The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -37666,7 +37666,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:choice>
           <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the &quot;request&quot; resource the task is seeking to fulfil.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfil a procedureRequest ( = FocusOn ) to collect a specimen from a patient.</xs:documentation>
+              <xs:documentation xml:lang="en">BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a &quot;request&quot; resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the &quot;request&quot; resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="groupIdentifier" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -37696,7 +37696,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="intent" minOccurs="1" maxOccurs="1" type="RequestIntent">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the &quot;level&quot; of actionability associated with the Task.  I.e. Is this a proposed task, a planned task, an actionable task, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the &quot;level&quot; of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="RequestPriority">
@@ -37781,7 +37781,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="restriction" type="Task.Restriction" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">If the Task.focus is a request resource and the task is seeking fulfillment (i.e is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.</xs:documentation>
+              <xs:documentation xml:lang="en">If the Task.focus is a request resource and the task is seeking fulfillment (i.e. is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="input" type="Task.Input" minOccurs="0" maxOccurs="unbounded">
@@ -38426,7 +38426,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="teardown" type="TestReport.Teardown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The results of the series of operations required to clean up after the all the tests were executed (successfully or otherwise).</xs:documentation>
+              <xs:documentation xml:lang="en">The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -38907,7 +38907,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="teardown" type="TestScript.Teardown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A series of operations required to clean up after the all the tests are executed (successfully or otherwise).</xs:documentation>
+              <xs:documentation xml:lang="en">A series of operations required to clean up after all the tests are executed (successfully or otherwise).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
