@@ -1,21 +1,59 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    The idea for a Sequence resource grew out, in part, the Substitutable Medical Applications and Reusable Technologies(SMART) Platforms Project, which explored creating clinical genomic apps to integrated traditional EMR clinical data and genomic data to show data visualization and analysis, including CDS that depended upon both types of data. Below are a couple of examples. Several apps have already been designed including Genomics Advisor, SMART Precision Cancer Medicine, and Diabetes Bear EMR. Below, one of these apps will be described. To include other apps in this section, please feel free to add a note on it and how it uses FHIR/Genomics calls.
+    This part introduces some app examples that use SMART(Substitutable Medical Applications and Reusable Technologies) to explore creating clinical genomic apps to integrated traditional EMR clinical data and genomic data to show data visualization and analysis, including CDS that depended upon both types of data.
   </p>
-  <p>SMART Platforms Project is described the following articles:</p>
+  <p>
+    SMART on FHIR emerged from the combination of the SMART Platform project and the HL7® FHIR® effort. It combines FHIR-compliant clinical data access from EHR systems with web standards to launch web and mobile apps from a user’s EHR session, including FHIR’s REST-based API for clinical data, OAuth 2.0 authentication, and HTML5 to support web and native mobile apps. 
+  </p>
+  <p>
+    Below are the introduction of SMART app’s structure and a couple of examples. Several apps have already been designed including Genomics Advisor, SMART Precision Cancer Medicine, Diabetes Bear EMR and Variant Mapper, one of which will be described. 
+  </p>
+  <p>For more information about SMART:</p>
   <ul>
-    <li><a href="https://smarthealthit.org/an-app-platform-for-healthcare/about/">What Is SMART?</a></li>
-    <li><a href="https://academic.oup.com/jamia/article/22/6/1173/2357593">SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps</a></li>
+    <li><a href="https://smarthealthit.org/an-app-platform-for-healthcare/about/">What is SMART?</a></li>
   </ul>
-  <a name="advisor"></a>
-  <h2>Genomics Advisor</h2>
+  <a name="appStructure"></a>
+  <h2>SMART App Structure</h2>
   <p>
-    The SMART on FHIR Genomics Advisor was an app incorporating genomics data to show risk of disease, drug susceptibility, and related conditions based upon genotype. Technically, this app was architected (see below) by combining data from independent data services, a SMART on FHIR clinical server for clinical information and one for a SMART on FHIR Genomics data server for genomic data. The set of FHIR API calls that are necessary to support this app are shown below: 
+    Following figure shows common structure of a SMART on FHIR app. 
   </p>
-  <img src="1-smart-fhir-image.png" alt="image to show the SMART on FHIR work flow"/>
+  <img src="cgapps-StructureSMARTApps-fg1.png" alt="image showing common structure of CG apps"/>
   <p>
-    <b>Figure 1: SMART on FHIR workflow</b>
+    <b>Figure 1: SMART apps structure</b>
   </p>
+  <p>
+    The apps integrate genomic and clinical data, provide Representational State Transfer (REST)-based APIs/web services which has been adopted by HL7 and hold great promise in this regard and through which both researchers and developers could send/get genomic data, create an abstraction layer above specific file formats and enable communicating genomic information in the cloud. 
+  </p>
+  <p>
+    For more information about SMART on FHIR:</p>
+  <ul>
+    <li><a ref="https://academic.oup.com/jamia/article/22/6/1173/2357593">SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps</a></li>
+  </ul>
+  <a name="genomicsAdviser"></a>
+  <h2>Example 1: Genomics Adviser</h2>
+  <p>
+    The SMART on FHIR Genomics Advisor was an app incorporating genomics data to show risk of disease, drug susceptibility, and related conditions based upon genotype. 
+    It represents a first in terms of genomic integration into Electronic Health Records (EHRs) and Personal Health Records (PHRs). Its robustness and interoperability with a wide variety of systems is done through the SMART framework and allows clinicians to easily access relevant clinical and genomic information across a variety of EHR/PHRs. The application supports integration of clinical and genomic data from SMART-enabled service.
+  </p>
+  <p>
+    Interface as follows: 
+  </p>
+  <img src="cgapps-genomicsAdviser-fg2.png" alt="Interface of Genomics Adviser app"/>
+  <a name="precisionMedicine"></a>
+  <p>
+    <b>Figure 2: Genomics Advisor Interface</b>
+  </p>
+  <!--
+  <h2>Example 2: Precision Medicine</h2>
+  <p>
+    (more info..)
+  </p>
+  <p>
+    More information: </p>
+  <ul>
+    <li><a ref="https://academic.oup.com/jamia/article/23/4/701/2200286">SMART precision cancer medicine: a FHIR-based app to provide genomic information at the point of care</a></li>
+  </ul>
+  -->
 <!--  <p>The presentation of the app looks like this: </p>
   <img src="2-smart-fhir-image.png" alt="image to show the presentation of the SMART on FHIR apps"/>
   <p>
