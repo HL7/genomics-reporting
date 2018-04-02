@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sat, Mar 31, 2018 14:50+0000 for FHIR v3.2.0 
+  Generated on Mon, Apr 2, 2018 07:04+0000 for FHIR v3.2.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -3065,7 +3065,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           </xs:element>
           <xs:element name="expression" type="string" minOccurs="1" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A [FHIRPath](http://hl7.org/fhirpath) expression of constraint that can be executed to see if this constraint is met.</xs:documentation>
+              <xs:documentation xml:lang="en">A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see if this constraint is met.</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element name="xpath" type="string" minOccurs="0" maxOccurs="1">
@@ -3324,7 +3324,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
           </xs:element>
           <xs:element name="path" type="string" minOccurs="1" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A FHIRPath expression, using [the simple subset of FHIRPath](simplefhirpath.html), that is used to identify the element on which discrimination is based.</xs:documentation>
+              <xs:documentation xml:lang="en">A FHIRPath expression, using [the simple subset of FHIRPath](fhirpath.html#simple), that is used to identify the element on which discrimination is based.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -6302,7 +6302,7 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="serviceCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A broad categorisation of the service that is to be performed during this appointment.</xs:documentation>
+              <xs:documentation xml:lang="en">A broad categorization of the service that is to be performed during this appointment.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="serviceType" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -7470,7 +7470,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="signature" minOccurs="0" maxOccurs="1" type="Signature">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Digital Signature - base64 encoded. XML-DSIg or a JWT.</xs:documentation>
+              <xs:documentation xml:lang="en">Digital Signature - base64 encoded. XML-DSig or a JWT.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -7622,7 +7622,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="etag" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).</xs:documentation>
+              <xs:documentation xml:lang="en">The Etag for the resource, it the operation for the entry produced a versioned resource (see [Resource Metadata and Versioning](http.html#versioning) and [Managing Resource Contention](http.html#concurrency)).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="lastModified" minOccurs="0" maxOccurs="1" type="instant">
@@ -7859,7 +7859,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="kind" minOccurs="1" maxOccurs="1" type="CapabilityStatementKind">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind not instance of software) or a class of implementation (e.g. a desired purchase).</xs:documentation>
+              <xs:documentation xml:lang="en">The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="instantiates" minOccurs="0" maxOccurs="unbounded" type="canonical">
@@ -7925,7 +7925,7 @@ into another (possibly the same) biological entity.</xs:documentation>
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Name software is known by.</xs:documentation>
+              <xs:documentation xml:lang="en">Name the software is known by.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -8084,7 +8084,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="updateCreate" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A flag to indicate that the server allows or needs to allow the client to create new identities on the server (e.g. that is, the client PUTs to a location where there is no existing resource). Allowing this operation means that the server allows the client to create new identities on the server.</xs:documentation>
+              <xs:documentation xml:lang="en">A flag to indicate that the server allows or needs to allow the client to create new identities on the server (that is, the client PUTs to a location where there is no existing resource). Allowing this operation means that the server allows the client to create new identities on the server.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="conditionalCreate" minOccurs="0" maxOccurs="1" type="boolean">
@@ -8129,7 +8129,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="operation" type="CapabilityStatement.Operation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the opration, and the parameters.</xs:documentation>
+              <xs:documentation xml:lang="en">Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the operation, and the parameters.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -8207,7 +8207,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Documentation that describes anything special about the operation behaviour, possibly detailing different behaviour for system, type and instance-level invocation of the operation.</xs:documentation>
+              <xs:documentation xml:lang="en">Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -8280,7 +8280,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="address" minOccurs="1" maxOccurs="1" type="url">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The network address of the end-point. For solutions that do not use network addresses for routing, it can be just an identifier.</xs:documentation>
+              <xs:documentation xml:lang="en">The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -8327,7 +8327,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="profile" minOccurs="1" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A profile on the document bundle that constrains which resources are present, and their contents.</xs:documentation>
+              <xs:documentation xml:lang="en">A profile on the document Bundle that constrains which resources are present, and their contents.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -14056,7 +14056,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="mitigation" type="DetectedIssue.Mitigation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates an action that has been taken or is committed to to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -16563,7 +16563,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="managingOrganization" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The organization that manages this endpoint (even if technically another organisation is hosting this in the cloud, it is the organisation associated with the data).</xs:documentation>
+              <xs:documentation xml:lang="en">The organization that manages this endpoint (even if technically another organization is hosting this in the cloud, it is the organization associated with the data).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
@@ -28865,7 +28865,7 @@ http://hl7.org/fhir/NamingSystem/iccbba-other-di.</xs:documentation>
           </xs:element>
           <xs:element name="expression" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A [simple subset of FHIRPath](simplefhirpath.html) limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.</xs:documentation>
+              <xs:documentation xml:lang="en">A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -33358,7 +33358,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="basis" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the source data considered as part of the assessment (FamilyHistory, Observations, Procedures, Conditions, etc.).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="prediction" type="RiskAssessment.Prediction" minOccurs="0" maxOccurs="unbounded">
@@ -33394,14 +33394,14 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">How likely is the outcome (in the specified timeframe).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates how likely the outcome is (in the specified timeframe).</xs:documentation>
             </xs:annotation>
             <xs:element name="probabilityDecimal" type="decimal"/>
             <xs:element name="probabilityRange" type="Range"/>
           </xs:choice>
           <xs:element name="qualitativeRisk" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">How likely is the outcome (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, high).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates how likely the outcome is (in the specified timeframe), expressed as a qualitative value (e.g. low, medium, or high).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relativeRisk" minOccurs="0" maxOccurs="1" type="decimal">
@@ -33450,7 +33450,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="serviceCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A broad categorisation of the service that is to be performed during this appointment.</xs:documentation>
+              <xs:documentation xml:lang="en">A broad categorization of the service that is to be performed during this appointment.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="serviceType" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -34567,7 +34567,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="serviceCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A broad categorisation of the service that is to be performed during this appointment.</xs:documentation>
+              <xs:documentation xml:lang="en">A broad categorization of the service that is to be performed during this appointment.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="serviceType" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -36943,7 +36943,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">High level categorisation, e.g. polymer or nucleic acid.</xs:documentation>
+              <xs:documentation xml:lang="en">High level categorization, e.g. polymer or nucleic acid.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="referenceSource" minOccurs="0" maxOccurs="unbounded" type="string">

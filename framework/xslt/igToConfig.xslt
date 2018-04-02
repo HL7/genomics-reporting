@@ -5,6 +5,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:f="http://hl7.org/fhir">
   <xsl:param name="spec"/>
   <xsl:param name="version"/>
+  <xsl:param name="license"/>
   <xsl:param name="fhirVersion" select="/f:ImplementationGuide/f:fhirVersion/@value"/>
   <xsl:param name="snomedRelease">
     <xsl:choose>
@@ -24,6 +25,14 @@
   <xsl:variable name="includeXml" select="not(translate(substring($excludexml,1,1), $uppercase, $lowercase)='y')"/>
   <xsl:variable name="includeJson" select="not(translate(substring($excludejson,1,1), $uppercase, $lowercase)='y')"/>
   <xsl:variable name="includeTtl" select="not(translate(substring($excludettl,1,1), $uppercase, $lowercase)='y')"/>
+  <xsl:variable name="realm">
+    <xsl:choose>
+      <xsl:when test="$snomedRelease='001'">uv</xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="translate($snomedRelease, $uppercase, $lowercase)"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
   <xsl:output method="text" encoding="UTF-8"/>
   <xsl:template match="/f:ImplementationGuide">
     <xsl:variable name="snomedReleaseNumber">
@@ -56,6 +65,8 @@
     <xsl:value-of select="concat('&quot;fixed-business-version&quot;: &quot;', $version, '&quot;,&#xa;  ')"/>
   </xsl:if>
   <xsl:text>"html-template": "template-page.html",&#xa;  </xsl:text>
+  <xsl:value-of select="concat('&quot;license&quot;: &quot;', $license, '&quot;,&#xa;  ')"/>
+  <xsl:value-of select="concat('&quot;npn-name&quot;: &quot;', $realm, '-', f:id/@value, '&quot;,&#xa;  ')"/>
   <xsl:text>"paths": {
     "resources": ["resources", "../src/resources", "../src/vocabulary", "../src/examples"],
     "pages": ["../src/images", "pages"],
@@ -68,6 +79,7 @@
     <xsl:value-of select="$spec"/>
     <xsl:text>"
   },
+  "suppressedWarningFile": "../src/ignoreWarnings.txt",
   "pre-process": [
     {"folder": "../framework/assets",
      "relativePath": "assets"},
@@ -165,7 +177,7 @@
   <xsl:text>",
   "no-inactive-codes" : "true",
   "canonicalBase": "</xsl:text>
-  <xsl:value-of select="substring-before(f:url/@value, '/ImplementationGuide')"/>
+  <xsl:value-of select="substring-before(/f:ImplementationGuide/f:url/@value, '/ImplementationGuide')"/>
   <xsl:text>",&#xa;  </xsl:text>
   <xsl:for-each select="f:dependency[f:type/@value='reference']/f:uri/@value|f:dependsOn/f:uri/@value">
     <xsl:variable name="code">

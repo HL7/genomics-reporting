@@ -1,0 +1,197 @@
+{
+  "DO_NOT_EDIT_THIS_FILE": "This file is generated.  Any edits made will be overwritten",
+  "tool": "jekyll",
+  "logging": ["html"],
+  "version": "3.2.0",
+  "fixed-business-version": "test",
+  "html-template": "template-page.html",
+  "license": "cc0-1.0",
+  "npn-name": "uv-genomics-reporting",
+  "paths": {
+    "resources": ["resources", "../src/resources", "../src/vocabulary", "../src/examples"],
+    "pages": ["../src/images", "pages"],
+    "temp": "../temp/pages",
+    "output": "../output",
+    "txCache": "txcache",
+    "history" : "history.html",
+    "qa": "../temp/qa",
+    "specification": "http://build.fhir.org/"
+  },
+  "suppressedWarningFile": "../src/ignoreWarnings.txt",
+  "pre-process": [
+    {"folder": "../framework/assets",
+     "relativePath": "assets"},
+    {"folder": "../framework/includes",
+     "relativePath": "_includes"},
+    {"folder": "../src/includes",
+     "relativePath": "_includes",
+     "transform": "../framework/xslt/processPages.xslt"},
+    {"folder": "../src/data",
+     "relativePath": "_data"},
+    {"folder": "../src/pagecontent",
+     "relativePath": "_includes",
+     "transform": "../framework/xslt/processPages.xslt"}
+  ],
+  "extraTemplates": [
+    {
+      "name": "mappings",
+      "description": "Mappings"
+    },
+    {
+      "name": "examples",
+      "description": "Examples"
+    },
+    {
+      "name": "profile-xml",
+      "description": "Profile XML"
+    },
+    {
+      "name": "profile-json",
+      "description": "Profile JSON"
+    },
+    {
+      "name": "profile-ttl",
+      "description": "Profile Turtle"
+    }
+  ],
+  "defaults": {
+    "Any": {
+      "java" : false,
+      "template-base": "../framework/templates/template-instance-base.html",
+      "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"
+    },
+    "ImplementationGuide": {
+      "template-base": "",
+      "template-format": ""
+    },
+    "StructureDefinition": {
+      "template-base": "../framework/templates/template-profile.html",
+      "template-defns": "../framework/templates/template-profile-definitions.html",
+      "template-mappings": "../framework/templates/template-profile-mappings.html",
+      "template-examples": "../framework/templates/template-profile-examples.html",
+      "template-profile-xml": "../framework/templates/template-profile-xml.html",
+      "template-profile-json": "../framework/templates/template-profile-json.html",
+      "template-profile-ttl": "../framework/templates/template-profile-ttl.html",
+      "base": "{{[id]}}.html",
+      "defns": "{{[id]}}-definitions.html",
+      "mappings": "{{[id]}}-mappings.html",
+      "examples": "{{[id]}}-examples.html",
+      "profile-xml": "{{[id]}}.profile.xml.html",
+      "profile-json": "{{[id]}}.profile.json.html",
+      "profile-ttl": "{{[id]}}.profile.ttl.html"
+    },
+    "ValueSet": {
+      "template-base": "../framework/templates/template-valueset.html",
+      "template-format": "../framework/templates/template-valueset-format.html",
+      "base": "valueset-{{[id]}}.html",
+      "format": "valueset-{{[id]}}.{{[fmt]}}.html"
+    }
+  },
+  "sct-edition" : "http://snomed.info/sct/900000000000207008",
+  "no-inactive-codes" : "true",
+  "canonicalBase": "http://hl7.org/fhir/uv/genomics-reporting",
+  "source": "genomics-reporting.xml",
+  "spreadsheets": [
+    "device-profile-spreadsheet.xml",
+    "devicecomponent-profile-spreadsheet.xml",
+    "diagnosticreport-profile-spreadsheet.xml",
+    "medicationstatement-profile-spreadsheet.xml",
+    "observation-profile-spreadsheet.xml",
+    "sequence-profile-spreadsheet.xml",
+    "servicerequest-profile-spreadsheet.xml",
+    "specimen-profile-spreadsheet.xml",
+    "task-profile-spreadsheet.xml"
+  ],
+  "resources": {
+    "StructureDefinition/obs-base":{
+    },
+    "StructureDefinition/diagnosticreport":{
+    },
+    "StructureDefinition/specimen":{
+    },
+    "StructureDefinition/task-rec-followup":{
+    },
+    "StructureDefinition/servicerequest":{
+    },
+    "StructureDefinition/obs-gen-panel":{
+    },
+    "StructureDefinition/obs-overall":{
+    },
+    "StructureDefinition/obs-deletion-dup":{
+    },
+    "StructureDefinition/obs-chrom-overall":{
+    },
+    "StructureDefinition/obs-desc-gen-finding":{
+    },
+    "StructureDefinition/obs-comp-gen-finding":{
+    },
+    "StructureDefinition/obs-haplotype":{
+    },
+    "StructureDefinition/obs-genotype":{
+    },
+    "StructureDefinition/obs-cytogenic-not":{
+    },
+    "StructureDefinition/obs-complex-variant":{
+    },
+    "StructureDefinition/obs-described-variant":{
+    },
+    "StructureDefinition/obs-sequence-config":{
+    },
+    "StructureDefinition/obs-impact":{
+    },
+    "StructureDefinition/obs-inh-dis-path":{
+    },
+    "StructureDefinition/obs-chrom-g-band":{
+    },
+    "StructureDefinition/obs-chrom-fish":{
+    },
+    "StructureDefinition/obs-copy-num-chg":{
+    },
+    "StructureDefinition/device-micro-plat":{
+    },
+    "StructureDefinition/devicecomp-fish-probe":{
+    },
+    "StructureDefinition/obs-med-impact":{
+    },
+    "StructureDefinition/obs-metabolism":{
+    },
+    "StructureDefinition/obs-efficacy":{
+    },
+    "StructureDefinition/obs-high-risk":{
+    },
+    "StructureDefinition/task-med-chg":{
+    },
+    "StructureDefinition/medicationstatement":{
+    },
+    "StructureDefinition/obs-som-impact":{
+    },
+    "StructureDefinition/obs-som-diagnostic":{
+    },
+    "StructureDefinition/obs-som-prognostic":{
+    },
+    "StructureDefinition/obs-som-predictive":{
+    },
+    "StructureDefinition/dr-relatedArtifact":{
+    },
+    "StructureDefinition/dr-recommendedAction":{
+    },
+    "StructureDefinition/dr-supportingInfo":{
+    },
+    "StructureDefinition/obs-focus":{
+    },
+    "StructureDefinition/obs-recommendedAction":{
+    },
+    "StructureDefinition/obs-unsolicited":{
+    },
+    "StructureDefinition/device-comp-manufacturer":{
+    },
+    "Bundle/diagnosticreport-cgexample":{
+    },
+    "Bundle/diagnosticreport-pgxexample":{
+    },
+    "Bundle/CG-IG-HLA-FullBundle-01":{
+    }
+  }
+}

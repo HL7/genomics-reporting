@@ -21,467 +21,473 @@ and include the following:
 + Sequences for exons 2 and 3 for HLA-A,-B,-C
 -->
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-	<id value="CG-IG-HLA-FullBundle-01"/>
-	<type value="transaction"/>
-	<!--    now, each entry is an action to take in the transaction    -->
-	<!-- Patient -->
-	<entry>
-		<fullUrl value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-		<resource>
-			<Patient>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<h4>Donor </h4>
-						<p>name: John Storm</p>
-						<p>gender: male</p>
-						<p>born: 1986-12-31</p>
-					</div>
-				</text>
-				<identifier>
-					<use value="usual"/>
-					<type>
-						<coding>
-							<system value="http://hl7.org/fhir/v2/0203"/>
-							<code value="DR"/>
-						</coding>
-					</type>
-					<system value="urn:oid:0.0.0.0.0.0.0"/>
-					<value value="12345"/>
-					<period>
-						<start value="2012-11-10"/>
-					</period>
-					<assigner>
-						<display value="aDonorRegistry"/>
-					</assigner>
-				</identifier>
-				<name>
-					<use value="official"/>
-					<text value="John Storm"/>
-					<family value="Storm"/>
-					<given value="John"/>
-				</name>
-				<name>
-					<use value="nickname"/>
-					<text value="Johnny Storm"/>
-					<family value="Storm"/>
-					<given value="Johnny"/>
-				</name>
-				<name>
-					<use value="nickname"/>
-					<text value="The Human Torch"/>
-				</name>
-				<gender value="male"/>
-				<birthDate value="1986-12-31"/>
-			</Patient>
-		</resource>
-		<!--    now, details about the action to take with the resource    -->
-		<request>
-			<method value="POST"/>
-			<url value="Patient"/>
-		</request>
-	</entry>
-	<!-- Specimen -->
-	<entry>
-		<fullUrl value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-		<resource>
-			<Specimen xmlns="http://hl7.org/fhir">
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>a buccal swab</pre>
-					</div>
-				</text>
-				<identifier>
-					<system value="http://myorgsurl.com"/>
-					<value value="123"/>
-				</identifier>
-				<accessionIdentifier>
-					<system value="http://mylabsurl.com"/>
-					<value value="456"/>
-				</accessionIdentifier>
-				<type>
-					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="258564008"/>
-						<display value="Buccal smear sample"/>
-					</coding>
-				</type>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<collection>
-					<collectedDateTime value="2016-11-10"/>
-					<method>
-						<coding>
-							<system value="http://hl7.org/fhir/v2/0488"/>
-							<code value="SWA"/>
-						</coding>
-					</method>
-					<bodySite>
-						<coding>
-							<system value="http://snomed.info/sct"/>
-							<code value="261063000"/>
-							<display value="Buccal space"/>
-						</coding>
-						<text value="Buccal space"/>
-					</bodySite>
-				</collection>
-			</Specimen>
-		</resource>
-		<!--    now, details about the action to take with the resource    -->
-		<request>
-			<method value="POST"/>
-			<url value="Specimen"/>
-		</request>
-	</entry>
-	<!-- Organization - typing lab -->
-	<entry>
-		<fullUrl value="urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950"/>
-		<resource>
-			<Organization>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>aTypingLab, Inc</pre>
-					</div>
-				</text>
-				<name value="aTypingLab Inc"/>
-				<alias value="aTL"/>
-				<telecom xmlns="http://hl7.org/fhir">
-					<system value="phone"/>
-					<value value="1-800-555-1234"/>
-					<use value="work"/>
-					<rank value="1"/>
-				</telecom>
-				<address xmlns="http://hl7.org/fhir">
-					<use value="work"/>
-					<type value="both"/>
-					<text value="123 Main St, Sometown, ND 99999"/>
-					<line value="123 Main St"/>
-					<city value="Sometown"/>
-					<state value="ND"/>
-					<postalCode value="99999"/>
-					<country value="USA"/>
-				</address>
-			</Organization>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Organization"/>
-		</request>
-	</entry>
-	<!-- Organization - donor registry -->
-	<entry>
-		<fullUrl value="urn:uuid:00ef18ad-ed04-4b2c-81ee-b69bb243f0d5"/>
-		<resource>
-			<Organization>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>aDonorRegistry</pre>
-					</div>
-				</text>
-				<name value="aDonorRegistry"/>
-				<alias value="ADR"/>
-				<telecom xmlns="http://hl7.org/fhir">
-					<system value="phone"/>
-					<value value="1-800-555-6789"/>
-					<use value="work"/>
-					<rank value="1"/>
-				</telecom>
-				<address xmlns="http://hl7.org/fhir">
-					<use value="work"/>
-					<type value="both"/>
-					<text value="456 Main St, Anytown ND, 00000"/>
-					<line value="456 Main St"/>
-					<city value="Anytown"/>
-					<state value="ND"/>
-					<postalCode value="00000"/>
-					<country value="USA"/>
-				</address>
-			</Organization>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Organization"/>
-		</request>
-	</entry>
-	<!-- ServiceRequest -->
-	<entry>
-		<fullUrl value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
-		<resource>
-			<ServiceRequest>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA typing request for John Storm</pre>
-					</div>
-				</text>
-				<status value="completed"/>
-				<intent value="order"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="13303-3"/>
-						<display value="HLA-A+​B+​C (class I) [Type]"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<authoredOn value="2016-11-15"/>
-				<requester>
+  <id value="CG-IG-HLA-FullBundle-01"/>
+  <type value="transaction"/>
+  <!--    now, each entry is an action to take in the transaction    -->
+  <!-- Patient -->
+  <entry>
+    <fullUrl value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+    <resource>
+      <Patient>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <h4>Donor </h4>
+            <p>name: John Storm</p>
+            <p>gender: male</p>
+            <p>born: 1986-12-31</p>
+          </div>
+        </text>
+        <identifier>
+          <use value="usual"/>
+          <type>
+            <coding>
+              <system value="http://hl7.org/fhir/v2/0203"/>
+              <code value="DR"/>
+            </coding>
+          </type>
+          <system value="urn:oid:0.0.0.0.0.0.0"/>
+          <value value="12345"/>
+          <period>
+            <start value="2012-11-10"/>
+          </period>
+          <assigner>
+            <display value="aDonorRegistry"/>
+          </assigner>
+        </identifier>
+        <name>
+          <use value="official"/>
+          <text value="John Storm"/>
+          <family value="Storm"/>
+          <given value="John"/>
+        </name>
+        <name>
+          <use value="nickname"/>
+          <text value="Johnny Storm"/>
+          <family value="Storm"/>
+          <given value="Johnny"/>
+        </name>
+        <name>
+          <use value="nickname"/>
+          <text value="The Human Torch"/>
+        </name>
+        <gender value="male"/>
+        <birthDate value="1986-12-31"/>
+      </Patient>
+    </resource>
+    <!--    now, details about the action to take with the resource    -->
+    <request>
+      <method value="POST"/>
+      <url value="Patient"/>
+    </request>
+  </entry>
+  <!-- Specimen -->
+  <entry>
+    <fullUrl value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+    <resource>
+      <Specimen xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>a buccal swab</pre>
+          </div>
+        </text>
+        <identifier>
+          <system value="http://myorgsurl.com"/>
+          <value value="123"/>
+        </identifier>
+        <accessionIdentifier>
+          <system value="http://mylabsurl.com"/>
+          <value value="456"/>
+        </accessionIdentifier>
+        <type>
+          <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="258564008"/>
+            <display value="Buccal smear sample"/>
+          </coding>
+        </type>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <collection>
+          <collectedDateTime value="2016-11-10"/>
+          <method>
+            <coding>
+              <system value="http://hl7.org/fhir/v2/0488"/>
+              <code value="SWA"/>
+            </coding>
+          </method>
+          <bodySite>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="261063000"/>
+              <display value="Buccal space"/>
+            </coding>
+            <text value="Buccal space"/>
+          </bodySite>
+        </collection>
+      </Specimen>
+    </resource>
+    <!--    now, details about the action to take with the resource    -->
+    <request>
+      <method value="POST"/>
+      <url value="Specimen"/>
+    </request>
+  </entry>
+  <!-- Organization - typing lab -->
+  <entry>
+    <fullUrl value="urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950"/>
+    <resource>
+      <Organization>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>aTypingLab, Inc</pre>
+          </div>
+        </text>
+        <name value="aTypingLab Inc"/>
+        <alias value="aTL"/>
+        <telecom xmlns="http://hl7.org/fhir">
+          <system value="phone"/>
+          <value value="1-800-555-1234"/>
+          <use value="work"/>
+          <rank value="1"/>
+        </telecom>
+        <address xmlns="http://hl7.org/fhir">
+          <use value="work"/>
+          <type value="both"/>
+          <text value="123 Main St, Sometown, ND 99999"/>
+          <line value="123 Main St"/>
+          <city value="Sometown"/>
+          <state value="ND"/>
+          <postalCode value="99999"/>
+          <country value="USA"/>
+        </address>
+      </Organization>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Organization"/>
+    </request>
+  </entry>
+  <!-- Organization - donor registry -->
+  <entry>
+    <fullUrl value="urn:uuid:00ef18ad-ed04-4b2c-81ee-b69bb243f0d5"/>
+    <resource>
+      <Organization>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>aDonorRegistry</pre>
+          </div>
+        </text>
+        <name value="aDonorRegistry"/>
+        <alias value="ADR"/>
+        <telecom xmlns="http://hl7.org/fhir">
+          <system value="phone"/>
+          <value value="1-800-555-6789"/>
+          <use value="work"/>
+          <rank value="1"/>
+        </telecom>
+        <address xmlns="http://hl7.org/fhir">
+          <use value="work"/>
+          <type value="both"/>
+          <text value="456 Main St, Anytown ND, 00000"/>
+          <line value="456 Main St"/>
+          <city value="Anytown"/>
+          <state value="ND"/>
+          <postalCode value="00000"/>
+          <country value="USA"/>
+        </address>
+      </Organization>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Organization"/>
+    </request>
+  </entry>
+  <!-- ServiceRequest -->
+  <entry>
+    <fullUrl value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
+    <resource>
+      <ServiceRequest>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA typing request for John Storm</pre>
+          </div>
+        </text>
+        <status value="completed"/>
+        <intent value="order"/>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="13303-3"/>
+            <display value="HLA-A+​B+​C (class I) [Type]"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <authoredOn value="2016-11-15"/>
+        <requester>
           <reference value="urn:uuid:00ef18ad-ed04-4b2c-81ee-b69bb243f0d5"/>
           <type value="Organization"/>
           <display value="aDonorRegistry"/>
-				</requester>
-				<performer>
-					<reference value="urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950"/>
-					<type value="Organization"/>
-					<display value="aTypingLab, Inc"/>
-				</performer>
-				<reasonCode>
-					<text value="tissue typing for donor registry"/>
-				</reasonCode>
-			</ServiceRequest>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="ServiceRequest"/>
-		</request>
-	</entry>
-	<!-- the following is the actual genotyping actual report for HLA-A, -B, and -C -->
-	<!-- Sequence, HLA-A*01:01:01:01, exon 2-->
-	<entry>
-		<fullUrl value="urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-A*01:01:01:01, exon 2"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00001"/>
-						</coding>
-						<text value="HLA-A*01:01:01:01"/>
-					</referenceSeqId>
-					<windowStart value="503"/>
-					<windowEnd value="773"/>
-				</referenceSeq>
-				<observedSeq value="GCTCCCACTCCATGAGGTATTTCTTCACATCCGTGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCCGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGCCAGAAGATGGAGCCGCGGGCGCCGTGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCAGGAGACACGGAATATGAAGGCCCACTCACAGACTGACCGAGCGAACCTGGGGACCCTGCGCGGCTACTACAACCAGAGCGAGGACG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-A*01:01:01:01, exon 3 -->
-	<entry>
-		<fullUrl value="urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-A*01:01:01:01, exon 3"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00001"/>
-						</coding>
-						<text value="HLA-A*01:01:01:01"/>
-					</referenceSeqId>
-					<windowStart value="1014"/>
-					<windowEnd value="1290"/>
-				</referenceSeq>
-				<observedSeq value="GTTCTCACACCATCCAGATAATGTATGGCTGCGACGTGGGGCCGGACGGGCGCTTCCTCCGCGGGTACCGGCAGGACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCTTGGACCGCGGCGGACATGGCAGCTCAGATCACCAAGCGCAAGTGGGAGGCGGTCCATGCGGCGGAGCAGCGGAGAGTCTACCTGGAGGGCCGGTGCGTGGACGGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCACGG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-A*01:02, exon 2 -->
-	<entry>
-		<fullUrl value="urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-A*01:02, exon 2"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00002"/>
-						</coding>
-						<text value="HLA-A*01:02"/>
-					</referenceSeqId>
-					<windowStart value="503"/>
-					<windowEnd value="773"/>
-				</referenceSeq>
-				<observedSeq value="GCTCCCACTCCATGAGGTATTTCTCCACATCCGTGTCCCGGCCCGGCAGTGGAGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGCCAGAAGATGGAGCCGCGGGCGCCGTGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCAGGAGACACGGAATATGAAGGCCCACTCACAGACTGACCGAGCGAACCTGGGGACCCTGCGCGGCTACTACAACCAGAGCGAGGACG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-A*01:02, exon 3 -->
-	<entry>
-		<fullUrl value="urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-A*01:02, exon 3"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00002"/>
-						</coding>
-						<text value="HLA-A*01:02"/>
-					</referenceSeqId>
-					<windowStart value="1014"/>
-					<windowEnd value="1290"/>
-				</referenceSeq>
-				<observedSeq value="GTTCTCACACCATCCAGATAATGTATGGCTGCGACGTGGGGCCGGACGGGCGCTTCCTCCGCGGGTACCGGCAGGACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCTTGGACCGCGGCGGACATGGCAGCTCAGATCACCAAGCGCAAGTGGGAGGCGGTCCATGCGGCGGAGCAGCGGAGAGTCTACCTGGAGGGCCGGTGCGTGGACGGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCACGG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- haplotype Observation for allele assignment : HLA-A:01:01:01G -->
-	<entry>
-		<fullUrl value="urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-A:01:01:01G</pre>
-					</div>
-				</text>
-				<status value="final"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84414-2"/>
-						<display value="Haplotype name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<coding>
-						<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-						<version value="3.23"/>
-						<code value="HGG00001"/>
-						<display value="HLA-A*01:01:01G"/>
-					</coding>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<derivedFrom>
-					<reference value="urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804"/>
-					<type value="Sequence"/>
-					<display value="HLA-A*01:01:01:01, exon 2"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675"/>
-					<type value="Sequence"/>
-					<display value="HLA-A*01:01:01:01, exon 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4931"/>
-							<display value="HLA-A"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-				<!-- phaseset extension -->
-				<!--
+        </requester>
+        <performer>
+          <reference value="urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950"/>
+          <type value="Organization"/>
+          <display value="aTypingLab, Inc"/>
+        </performer>
+        <reasonCode>
+          <text value="tissue typing for donor registry"/>
+        </reasonCode>
+      </ServiceRequest>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="ServiceRequest"/>
+    </request>
+  </entry>
+  <!-- the following is the actual genotyping actual report for HLA-A, -B, and -C -->
+  <!-- Sequence, HLA-A*01:01:01:01, exon 2-->
+  <entry>
+    <fullUrl value="urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-A*01:01:01:01, exon 2"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00001"/>
+            </coding>
+            <text value="HLA-A*01:01:01:01"/>
+          </referenceSeqId>
+          <windowStart value="503"/>
+          <windowEnd value="773"/>
+        </referenceSeq>
+        <observedSeq value="GCTCCCACTCCATGAGGTATTTCTTCACATCCGTGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCCGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGCCAGAAGATGGAGCCGCGGGCGCCGTGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCAGGAGACACGGAATATGAAGGCCCACTCACAGACTGACCGAGCGAACCTGGGGACCCTGCGCGGCTACTACAACCAGAGCGAGGACG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-A*01:01:01:01, exon 3 -->
+  <entry>
+    <fullUrl value="urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-A*01:01:01:01, exon 3"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00001"/>
+            </coding>
+            <text value="HLA-A*01:01:01:01"/>
+          </referenceSeqId>
+          <windowStart value="1014"/>
+          <windowEnd value="1290"/>
+        </referenceSeq>
+        <observedSeq value="GTTCTCACACCATCCAGATAATGTATGGCTGCGACGTGGGGCCGGACGGGCGCTTCCTCCGCGGGTACCGGCAGGACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCTTGGACCGCGGCGGACATGGCAGCTCAGATCACCAAGCGCAAGTGGGAGGCGGTCCATGCGGCGGAGCAGCGGAGAGTCTACCTGGAGGGCCGGTGCGTGGACGGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCACGG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-A*01:02, exon 2 -->
+  <entry>
+    <fullUrl value="urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-A*01:02, exon 2"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00002"/>
+            </coding>
+            <text value="HLA-A*01:02"/>
+          </referenceSeqId>
+          <windowStart value="503"/>
+          <windowEnd value="773"/>
+        </referenceSeq>
+        <observedSeq value="GCTCCCACTCCATGAGGTATTTCTCCACATCCGTGTCCCGGCCCGGCAGTGGAGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGCCAGAAGATGGAGCCGCGGGCGCCGTGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCAGGAGACACGGAATATGAAGGCCCACTCACAGACTGACCGAGCGAACCTGGGGACCCTGCGCGGCTACTACAACCAGAGCGAGGACG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-A*01:02, exon 3 -->
+  <entry>
+    <fullUrl value="urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-A*01:02, exon 3"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00002"/>
+            </coding>
+            <text value="HLA-A*01:02"/>
+          </referenceSeqId>
+          <windowStart value="1014"/>
+          <windowEnd value="1290"/>
+        </referenceSeq>
+        <observedSeq value="GTTCTCACACCATCCAGATAATGTATGGCTGCGACGTGGGGCCGGACGGGCGCTTCCTCCGCGGGTACCGGCAGGACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCTTGGACCGCGGCGGACATGGCAGCTCAGATCACCAAGCGCAAGTGGGAGGCGGTCCATGCGGCGGAGCAGCGGAGAGTCTACCTGGAGGGCCGGTGCGTGGACGGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCACGG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- haplotype Observation for allele assignment : HLA-A:01:01:01G -->
+  <entry>
+    <fullUrl value="urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-A:01:01:01G</pre>
+          </div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84414-2"/>
+            <display value="Haplotype name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <version value="3.23"/>
+            <code value="HGG00001"/>
+            <display value="HLA-A*01:01:01G"/>
+          </coding>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <derivedFrom>
+          <reference value="urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804"/>
+          <type value="Sequence"/>
+          <display value="HLA-A*01:01:01:01, exon 2"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675"/>
+          <type value="Sequence"/>
+          <display value="HLA-A*01:01:01:01, exon 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4931"/>
+              <display value="HLA-A"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+        <!-- phaseset extension -->
+        <!--
                 <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
                     <extension url="Sequence">
                         <valueReference>
@@ -499,101 +505,107 @@ and include the following:
                     </extension>
                 </extension>
 -->
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- haplotype Observation, allele assignment : HLA-A*01:02 -->
-	<entry>
-		<fullUrl value="urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-A*01:02</pre>
-					</div>
-				</text>
-				<status value="final"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84414-2"/>
-						<display value="Haplotype name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<coding>
-						<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-						<version value="3.23"/>
-						<code value="HLA00002"/>
-						<display value="HLA-A*01:02"/>
-					</coding>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<derivedFrom>
-					<reference value="urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621"/>
-					<type value="Sequence"/>
-					<display value="HLA-A*01:02, exon 2"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0"/>
-					<type value="Sequence"/>
-					<display value="HLA-A*01:02, exon 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4931"/>
-							<display value="HLA-A"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-				<!-- phaseset extension -->
-				<!--
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- haplotype Observation, allele assignment : HLA-A*01:02 -->
+  <entry>
+    <fullUrl value="urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-A*01:02</pre>
+          </div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84414-2"/>
+            <display value="Haplotype name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <version value="3.23"/>
+            <code value="HLA00002"/>
+            <display value="HLA-A*01:02"/>
+          </coding>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <derivedFrom>
+          <reference value="urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621"/>
+          <type value="Sequence"/>
+          <display value="HLA-A*01:02, exon 2"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0"/>
+          <type value="Sequence"/>
+          <display value="HLA-A*01:02, exon 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4931"/>
+              <display value="HLA-A"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+        <!-- phaseset extension -->
+        <!--
                 <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
                     <extension url="Sequence">
                         <valueReference>
@@ -611,340 +623,346 @@ and include the following:
                     </extension>
                 </extension>
 -->
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- genotype Observation for HLA-A-->
-	<entry>
-		<fullUrl value="urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-genotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-A:01:01G+HLA-A*01:02</pre>
-					</div>
-				</text>
-				<basedOn>
-					<reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
-					<type value="ServiceRequest"/>
-					<display value="Class I HLA genotyping for John Storm"/>
-				</basedOn>
-				<status value="final"/>
-				<category>
-					<coding>
-						<system value="http://hl7.org/fhir/observation-category"/>
-						<code value="laboratory"/>
-					</coding>
-				</category>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84413-4"/>
-						<display value="Genotype display name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
-					<text value="HLA-A:01:01G+HLA-A*01:02"/>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<!-- deriveFrom are Haplotype observations -->
-				<derivedFrom>
-					<reference value="urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6"/>
-					<type value="Observation"/>
-					<display value="HLA-A*01:01:01G, exons 2 and 3"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32"/>
-					<type value="Observation"/>
-					<display value="HLA-A*01:02, exons 2 and 3"/>
-				</derivedFrom>
-				<!-- these are inherited from http://hl7.org/fhir/uv/cg/StructureDefinition/obs-comp-gen-finding -->
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4931"/>
-							<display value="HLA-A"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- HLA-B -->
-	<!-- Sequence, HLA-B*15:01:01:01, exon 2-->
-	<entry>
-		<fullUrl value="urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-B*15:01:01:01, exon 2"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00162"/>
-						</coding>
-						<text value="HLA-B*15:01:01:01"/>
-					</referenceSeqId>
-					<windowStart value="486"/>
-					<windowEnd value="756"/>
-				</referenceSeq>
-				<observedSeq value="GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGATCTCCAAGACCAACACACAGACTTACCGAGAGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-B*15:01:01:01, exon 3-->
-	<entry>
-		<fullUrl value="urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-B*15:01:01:01, exon 3"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00162"/>
-						</coding>
-						<text value="HLA-B*15:01:01:01"/>
-					</referenceSeqId>
-					<windowStart value="1001"/>
-					<windowEnd value="1277"/>
-				</referenceSeq>
-				<observedSeq value="GGTCTCACACCCTCCAGAGGATGTACGGCTGCGACGTGGGGCCGGACGGGCGCCTCCTCCGCGGGCATGACCAGTCCGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGAGCTCCTGGACCGCGGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGTGGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-B*57:01:01, exon 2-->
-	<entry>
-		<fullUrl value="urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-B*57:01:01, exon 2"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00381"/>
-						</coding>
-						<text value="HLA-B*57:01:01"/>
-					</referenceSeqId>
-					<windowStart value="485"/>
-					<windowEnd value="755"/>
-				</referenceSeq>
-				<observedSeq value="GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACGGGGAGACACGGAACATGAAGGCCTCCGCGCAGACTTACCGAGAGAACCTGCGGATCGCGCTCCGCTACTACAACCAGAGCGAGGCCG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-B*57:01:01, exon 3-->
-	<entry>
-		<fullUrl value="urn:uuid:db69e549-6267-4777-b4b9-8813f3329309"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-B*57:01:01, exon 3"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00381"/>
-						</coding>
-						<text value="HLA-B*57:01:01"/>
-					</referenceSeqId>
-					<windowStart value="1001"/>
-					<windowEnd value="1277"/>
-				</referenceSeq>
-				<observedSeq value="GGTCTCACATCATCCAGGTGATGTATGGCTGCGACGTGGGGCCGGACGGGCGCCTCCTCCGCGGGCATGACCAGTCCGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGAGCTCCTGGACCGCGGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGTGGCGGAGCAGCTGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- haplotype Observation for allele assignment : HLA-B*15:01:01G -->
-	<entry>
-		<fullUrl value="urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-B*15:01:01G</pre>
-					</div>
-				</text>
-				<status value="final"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84414-2"/>
-						<display value="Haplotype name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<coding>
-						<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-						<version value="3.23"/>
-						<code value="HGG00041"/>
-						<display value="HLA-B*15:01:01G"/>
-					</coding>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<derivedFrom>
-					<reference value="urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670"/>
-					<type value="Sequence"/>
-					<display value="HLA-B*15:01:01:01, exon 2"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138"/>
-					<type value="Sequence"/>
-					<display value="HLA-B*15:01:01:01, exon 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4932"/>
-							<display value="HLA-B"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-				<!-- phaseset extension -->
-				<!--
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- genotype Observation for HLA-A-->
+  <entry>
+    <fullUrl value="urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-A:01:01G+HLA-A*01:02</pre>
+          </div>
+        </text>
+        <basedOn>
+          <reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
+          <type value="ServiceRequest"/>
+          <display value="Class I HLA genotyping for John Storm"/>
+        </basedOn>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84413-4"/>
+            <display value="Genotype display name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
+          <text value="HLA-A:01:01G+HLA-A*01:02"/>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <!-- deriveFrom are Haplotype observations -->
+        <derivedFrom>
+          <reference value="urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6"/>
+          <type value="Observation"/>
+          <display value="HLA-A*01:01:01G, exons 2 and 3"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32"/>
+          <type value="Observation"/>
+          <display value="HLA-A*01:02, exons 2 and 3"/>
+        </derivedFrom>
+        <!-- these are inherited from http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-comp-gen-finding -->
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4931"/>
+              <display value="HLA-A"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- HLA-B -->
+  <!-- Sequence, HLA-B*15:01:01:01, exon 2-->
+  <entry>
+    <fullUrl value="urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-B*15:01:01:01, exon 2"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00162"/>
+            </coding>
+            <text value="HLA-B*15:01:01:01"/>
+          </referenceSeqId>
+          <windowStart value="486"/>
+          <windowEnd value="756"/>
+        </referenceSeq>
+        <observedSeq value="GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGATCTCCAAGACCAACACACAGACTTACCGAGAGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-B*15:01:01:01, exon 3-->
+  <entry>
+    <fullUrl value="urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-B*15:01:01:01, exon 3"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00162"/>
+            </coding>
+            <text value="HLA-B*15:01:01:01"/>
+          </referenceSeqId>
+          <windowStart value="1001"/>
+          <windowEnd value="1277"/>
+        </referenceSeq>
+        <observedSeq value="GGTCTCACACCCTCCAGAGGATGTACGGCTGCGACGTGGGGCCGGACGGGCGCCTCCTCCGCGGGCATGACCAGTCCGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGAGCTCCTGGACCGCGGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGTGGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-B*57:01:01, exon 2-->
+  <entry>
+    <fullUrl value="urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-B*57:01:01, exon 2"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00381"/>
+            </coding>
+            <text value="HLA-B*57:01:01"/>
+          </referenceSeqId>
+          <windowStart value="485"/>
+          <windowEnd value="755"/>
+        </referenceSeq>
+        <observedSeq value="GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACGGGGAGACACGGAACATGAAGGCCTCCGCGCAGACTTACCGAGAGAACCTGCGGATCGCGCTCCGCTACTACAACCAGAGCGAGGCCG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-B*57:01:01, exon 3-->
+  <entry>
+    <fullUrl value="urn:uuid:db69e549-6267-4777-b4b9-8813f3329309"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-B*57:01:01, exon 3"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00381"/>
+            </coding>
+            <text value="HLA-B*57:01:01"/>
+          </referenceSeqId>
+          <windowStart value="1001"/>
+          <windowEnd value="1277"/>
+        </referenceSeq>
+        <observedSeq value="GGTCTCACATCATCCAGGTGATGTATGGCTGCGACGTGGGGCCGGACGGGCGCCTCCTCCGCGGGCATGACCAGTCCGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGAGCTCCTGGACCGCGGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGTGGCGGAGCAGCTGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- haplotype Observation for allele assignment : HLA-B*15:01:01G -->
+  <entry>
+    <fullUrl value="urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-B*15:01:01G</pre>
+          </div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84414-2"/>
+            <display value="Haplotype name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <version value="3.23"/>
+            <code value="HGG00041"/>
+            <display value="HLA-B*15:01:01G"/>
+          </coding>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <derivedFrom>
+          <reference value="urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670"/>
+          <type value="Sequence"/>
+          <display value="HLA-B*15:01:01:01, exon 2"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138"/>
+          <type value="Sequence"/>
+          <display value="HLA-B*15:01:01:01, exon 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4932"/>
+              <display value="HLA-B"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+        <!-- phaseset extension -->
+        <!--
                 <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
                     <extension url="Sequence">
                         <valueReference>
@@ -962,101 +980,107 @@ and include the following:
                     </extension>
                 </extension>
 -->
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- haplotype Observation, allele assignment : HLA-B*57:01:01G -->
-	<entry>
-		<fullUrl value="urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-B*57:01:01G</pre>
-					</div>
-				</text>
-				<status value="final"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84414-2"/>
-						<display value="Haplotype name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<coding>
-						<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-						<version value="3.23"/>
-						<code value="HGG00079"/>
-						<display value="HLA-B*57:01:01G"/>
-					</coding>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<derivedFrom>
-					<reference value="urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe"/>
-					<type value="Sequence"/>
-					<display value="HLA-B*57:01:01, exon 2"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:db69e549-6267-4777-b4b9-8813f3329309"/>
-					<type value="Sequence"/>
-					<display value="HLA-B*57:01:01, exon 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4932"/>
-							<display value="HLA-B"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-				<!-- phaseset extension -->
-				<!--
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- haplotype Observation, allele assignment : HLA-B*57:01:01G -->
+  <entry>
+    <fullUrl value="urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-B*57:01:01G</pre>
+          </div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84414-2"/>
+            <display value="Haplotype name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <version value="3.23"/>
+            <code value="HGG00079"/>
+            <display value="HLA-B*57:01:01G"/>
+          </coding>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <derivedFrom>
+          <reference value="urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe"/>
+          <type value="Sequence"/>
+          <display value="HLA-B*57:01:01, exon 2"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:db69e549-6267-4777-b4b9-8813f3329309"/>
+          <type value="Sequence"/>
+          <display value="HLA-B*57:01:01, exon 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4932"/>
+              <display value="HLA-B"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+        <!-- phaseset extension -->
+        <!--
                 <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
                     <extension url="Sequence">
                         <valueReference>
@@ -1074,339 +1098,345 @@ and include the following:
                     </extension>
                 </extension>
 -->
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- genotype Observation for HLA-B-->
-	<entry>
-		<fullUrl value="urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-genotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-B*15:01:01G+HLA-B*57:01:01G</pre>
-					</div>
-				</text>
-				<basedOn>
-					<reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
-					<type value="ServiceRequest"/>
-					<display value="Class I HLA genotyping for John Storm"/>
-				</basedOn>
-				<status value="final"/>
-				<category>
-					<coding>
-						<system value="http://hl7.org/fhir/observation-category"/>
-						<code value="laboratory"/>
-					</coding>
-				</category>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84413-4"/>
-						<display value="Genotype display name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
-					<text value="HLA-B*15:01:01G+HLA-B*57:01:01G"/>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<!-- derivedFrom are Haplotype observations -->
-				<derivedFrom>
-					<reference value="urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a"/>
-					<type value="Observation"/>
-					<display value="HLA-B*15:01:01G, exons 2 and 3"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5"/>
-					<type value="Observation"/>
-					<display value="HLA-B*57:01:01G, exons 2 and 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4932"/>
-							<display value="HLA-B"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- HLA-C -->
-	<!-- Sequence, HLA-C*01:02:01, exon 2 -->
-	<entry>
-		<fullUrl value="urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-C*01:02:01, exon 2"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00401"/>
-						</coding>
-						<text value="HLA-C*01:02:01"/>
-					</referenceSeqId>
-					<windowStart value="486"/>
-					<windowEnd value="756"/>
-				</referenceSeq>
-				<observedSeq value="GCTCCCACTCCATGAAGTATTTCTTCACATCCGTGTCCCGGCCTGGCCGCGGAGAGCCCCGCTTCATCTCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGTCCGAGAGGGGAGCCGCGGGCGCCGTGGGTGGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGAAGTACAAGCGCCAGGCACAGACTGACCGAGTGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-C*01:02:01, exon 3 -->
-	<entry>
-		<fullUrl value="urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-C*01:02:01, exon 3"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00401"/>
-						</coding>
-						<text value="HLA-C*01:02:01"/>
-					</referenceSeqId>
-					<windowStart value="1002"/>
-					<windowEnd value="1278"/>
-				</referenceSeq>
-				<observedSeq value="GGTCTCACACCCTCCAGTGGATGTGTGGCTGCGACCTGGGGCCCGACGGGCGCCTCCTCCGCGGGTATGACCAGTACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCCTGGACCGCCGCGGACACCGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGCGGAGAGCCTACCTGGAGGGCACGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-C*03:04:01:01, exon 2 -->
-	<entry>
-		<fullUrl value="urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-C*03:04:01:01, exon 2"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00413"/>
-						</coding>
-						<text value="HLA-C*03:04:01:01"/>
-					</referenceSeqId>
-					<windowStart value="486"/>
-					<windowEnd value="756"/>
-				</referenceSeq>
-				<observedSeq value="GCTCCCACTCCATGAGGTATTTCTACACCGCTGTGTCCCGGCCCGGCCGCGGGGAGCCCCACTTCATCGCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGTCCGAGAGGGGAGCCGCGGGCGCCGTGGGTGGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGAAGTACAAGCGCCAGGCACAGACTGACCGAGTGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- Sequence, HLA-C*03:04:01:01, exon 3 -->
-	<entry>
-		<fullUrl value="urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9"/>
-		<resource>
-			<Sequence>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>"HLA-C*03:04:01:01, exon 3"</pre>
-					</div>
-				</text>
-				<type value="dna"/>
-				<coordinateSystem value="0"/>
-				<referenceSeq>
-					<referenceSeqId>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-							<code value="HLA00413"/>
-						</coding>
-						<text value="HLA-C*03:04:01:01"/>
-					</referenceSeqId>
-					<windowStart value="1001"/>
-					<windowEnd value="1277"/>
-				</referenceSeq>
-				<observedSeq value="GGTCTCACATCATCCAGAGGATGTATGGCTGCGACGTGGGGCCCGACGGGCGCCTCCTCCGCGGGTATGACCAGTACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGATCTGCGCTCCTGGACCGCCGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGCTGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGAAGAATGGGAAGGAGACGCTGCAGCGCGCGG"/>
-			</Sequence>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Sequence"/>
-		</request>
-	</entry>
-	<!-- haplotype Observation, allele assignment : HLA-C*01:02:01 -->
-	<entry>
-		<fullUrl value="urn:uuid:709c5315-9403-4867-9d82-0b953836665f"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-C*01:02:01G</pre>
-					</div>
-				</text>
-				<status value="final"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84414-2"/>
-						<display value="Haplotype name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<coding>
-						<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-						<version value="3.23"/>
-						<code value="HGG00083"/>
-						<display value="HLA-C*01:02:01G"/>
-					</coding>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<derivedFrom>
-					<reference value="urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0"/>
-					<type value="Sequence"/>
-					<display value="HLA-C*01:02:01, exon 2"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f"/>
-					<type value="Sequence"/>
-					<display value="HLA-C*01:02:01, exon 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4933"/>
-							<display value="HLA-C"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-				<!-- phaseset extension -->
-				<!--
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- genotype Observation for HLA-B-->
+  <entry>
+    <fullUrl value="urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-B*15:01:01G+HLA-B*57:01:01G</pre>
+          </div>
+        </text>
+        <basedOn>
+          <reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
+          <type value="ServiceRequest"/>
+          <display value="Class I HLA genotyping for John Storm"/>
+        </basedOn>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84413-4"/>
+            <display value="Genotype display name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
+          <text value="HLA-B*15:01:01G+HLA-B*57:01:01G"/>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <!-- derivedFrom are Haplotype observations -->
+        <derivedFrom>
+          <reference value="urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a"/>
+          <type value="Observation"/>
+          <display value="HLA-B*15:01:01G, exons 2 and 3"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5"/>
+          <type value="Observation"/>
+          <display value="HLA-B*57:01:01G, exons 2 and 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4932"/>
+              <display value="HLA-B"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- HLA-C -->
+  <!-- Sequence, HLA-C*01:02:01, exon 2 -->
+  <entry>
+    <fullUrl value="urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-C*01:02:01, exon 2"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00401"/>
+            </coding>
+            <text value="HLA-C*01:02:01"/>
+          </referenceSeqId>
+          <windowStart value="486"/>
+          <windowEnd value="756"/>
+        </referenceSeq>
+        <observedSeq value="GCTCCCACTCCATGAAGTATTTCTTCACATCCGTGTCCCGGCCTGGCCGCGGAGAGCCCCGCTTCATCTCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGTCCGAGAGGGGAGCCGCGGGCGCCGTGGGTGGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGAAGTACAAGCGCCAGGCACAGACTGACCGAGTGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-C*01:02:01, exon 3 -->
+  <entry>
+    <fullUrl value="urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-C*01:02:01, exon 3"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00401"/>
+            </coding>
+            <text value="HLA-C*01:02:01"/>
+          </referenceSeqId>
+          <windowStart value="1002"/>
+          <windowEnd value="1278"/>
+        </referenceSeq>
+        <observedSeq value="GGTCTCACACCCTCCAGTGGATGTGTGGCTGCGACCTGGGGCCCGACGGGCGCCTCCTCCGCGGGTATGACCAGTACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCCTGGACCGCCGCGGACACCGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGCGGAGAGCCTACCTGGAGGGCACGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-C*03:04:01:01, exon 2 -->
+  <entry>
+    <fullUrl value="urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-C*03:04:01:01, exon 2"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00413"/>
+            </coding>
+            <text value="HLA-C*03:04:01:01"/>
+          </referenceSeqId>
+          <windowStart value="486"/>
+          <windowEnd value="756"/>
+        </referenceSeq>
+        <observedSeq value="GCTCCCACTCCATGAGGTATTTCTACACCGCTGTGTCCCGGCCCGGCCGCGGGGAGCCCCACTTCATCGCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGTCCGAGAGGGGAGCCGCGGGCGCCGTGGGTGGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGAAGTACAAGCGCCAGGCACAGACTGACCGAGTGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- Sequence, HLA-C*03:04:01:01, exon 3 -->
+  <entry>
+    <fullUrl value="urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9"/>
+    <resource>
+      <Sequence>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>"HLA-C*03:04:01:01, exon 3"</pre>
+          </div>
+        </text>
+        <type value="dna"/>
+        <coordinateSystem value="0"/>
+        <referenceSeq>
+          <referenceSeqId>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+              <code value="HLA00413"/>
+            </coding>
+            <text value="HLA-C*03:04:01:01"/>
+          </referenceSeqId>
+          <windowStart value="1001"/>
+          <windowEnd value="1277"/>
+        </referenceSeq>
+        <observedSeq value="GGTCTCACATCATCCAGAGGATGTATGGCTGCGACGTGGGGCCCGACGGGCGCCTCCTCCGCGGGTATGACCAGTACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGATCTGCGCTCCTGGACCGCCGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGCTGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGAAGAATGGGAAGGAGACGCTGCAGCGCGCGG"/>
+      </Sequence>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Sequence"/>
+    </request>
+  </entry>
+  <!-- haplotype Observation, allele assignment : HLA-C*01:02:01 -->
+  <entry>
+    <fullUrl value="urn:uuid:709c5315-9403-4867-9d82-0b953836665f"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-C*01:02:01G</pre>
+          </div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84414-2"/>
+            <display value="Haplotype name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <version value="3.23"/>
+            <code value="HGG00083"/>
+            <display value="HLA-C*01:02:01G"/>
+          </coding>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <derivedFrom>
+          <reference value="urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0"/>
+          <type value="Sequence"/>
+          <display value="HLA-C*01:02:01, exon 2"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f"/>
+          <type value="Sequence"/>
+          <display value="HLA-C*01:02:01, exon 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4933"/>
+              <display value="HLA-C"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+        <!-- phaseset extension -->
+        <!--
                 <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
                     <extension url="Sequence">
                         <valueReference>
@@ -1424,101 +1454,107 @@ and include the following:
                     </extension>
                 </extension>
 -->
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- haplotype Observation, allele assignment : HLA-C*03:04:01G -->
-	<entry>
-		<fullUrl value="urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-C*03:04:01G</pre>
-					</div>
-				</text>
-				<status value="final"/>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84414-2"/>
-						<display value="Haplotype name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<coding>
-						<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-						<version value="3.23"/>
-						<code value="HGG00088"/>
-						<display value="HLA-C*01:02:01G"/>
-					</coding>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<derivedFrom>
-					<reference value="urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce"/>
-					<type value="Sequence"/>
-					<display value="HLA-C*03:04:01:01, exon 2"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9"/>
-					<type value="Sequence"/>
-					<display value="HLA-C*03:04:01:01, exon 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4933"/>
-							<display value="HLA-C"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-				<!-- phaseset extension -->
-				<!--
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- haplotype Observation, allele assignment : HLA-C*03:04:01G -->
+  <entry>
+    <fullUrl value="urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-C*03:04:01G</pre>
+          </div>
+        </text>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84414-2"/>
+            <display value="Haplotype name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <version value="3.23"/>
+            <code value="HGG00088"/>
+            <display value="HLA-C*01:02:01G"/>
+          </coding>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <derivedFrom>
+          <reference value="urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce"/>
+          <type value="Sequence"/>
+          <display value="HLA-C*03:04:01:01, exon 2"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9"/>
+          <type value="Sequence"/>
+          <display value="HLA-C*03:04:01:01, exon 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4933"/>
+              <display value="HLA-C"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+        <!-- phaseset extension -->
+        <!--
                 <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
                     <extension url="Sequence">
                         <valueReference>
@@ -1536,127 +1572,127 @@ and include the following:
                     </extension>
                 </extension>
 -->
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- genotype Observation, HLA-C*01:02:01G+HLA-C*03:04:01G -->
-	<entry>
-		<fullUrl value="urn:uuid:0e0a780e-4486-4cd0-bfae-7243c579f208"/>
-		<resource>
-			<Observation>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-genotype"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>HLA-C*01:02:01G+HLA-C*03:04:01G</pre>
-					</div>
-				</text>
-				<basedOn>
-					<reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
-					<type value="ServiceRequest"/>
-					<display value="Class I HLA genotyping for John Storm"/>
-				</basedOn>
-				<status value="final"/>
-				<category>
-					<coding>
-						<system value="http://hl7.org/fhir/observation-category"/>
-						<code value="laboratory"/>
-					</coding>
-				</category>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="84413-4"/>
-						<display value="Genotype display name"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<valueCodeableConcept>
-					<!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
-					<text value="HLA-C*01:02:01G+HLA-C*03:04:01G"/>
-				</valueCodeableConcept>
-				<method>
-					<coding>
-						<system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
-						<code value="GTR000000000.0"/>
-					</coding>
-					<text value="NGS based Class I HLA-A, -B, -C genotyping"/>
-				</method>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<!-- derivedFrom are Haplotype observations -->
-				<derivedFrom>
-					<reference value="urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47"/>
-					<type value="Observation"/>
-					<display value="HLA-C*03:04:01G, exons 2 and 3"/>
-				</derivedFrom>
-				<derivedFrom>
-					<reference value="urn:uuid:709c5315-9403-4867-9d82-0b953836665f"/>
-					<type value="Observation"/>
-					<display value="HLA-C*01:02:01G, exons 2 and 3"/>
-				</derivedFrom>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="48018-6"/>
-							<display value="Gene Studied"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<coding>
-							<system value="https://www.genenames.org/"/>
-							<code value="HGNC:4933"/>
-							<display value="HLA-C"/>
-						</coding>
-					</valueCodeableConcept>
-				</component>
-				<component>
-					<code>
-						<coding>
-							<system value="http://loinc.org"/>
-							<code value="8193-3"/>
-							<display value="Description of ranges of DNA sequences examined"/>
-						</coding>
-					</code>
-					<valueCodeableConcept>
-						<text value="Exons 2 and 3"/>
-					</valueCodeableConcept>
-				</component>
-			</Observation>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="Observation"/>
-		</request>
-	</entry>
-	<!-- diagnostic report -->
-	<entry>
-		<fullUrl value="urn:uuid:b0a4b18e-94e7-4b1b-8031-c7ae4bdd8db9"/>
-		<resource>
-			<DiagnosticReport>
-				<meta>
-					<profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/diagnosticreport"/>
-				</meta>
-				<text>
-					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<pre>
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- genotype Observation, HLA-C*01:02:01G+HLA-C*03:04:01G -->
+  <entry>
+    <fullUrl value="urn:uuid:0e0a780e-4486-4cd0-bfae-7243c579f208"/>
+    <resource>
+      <Observation>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>HLA-C*01:02:01G+HLA-C*03:04:01G</pre>
+          </div>
+        </text>
+        <basedOn>
+          <reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
+          <type value="ServiceRequest"/>
+          <display value="Class I HLA genotyping for John Storm"/>
+        </basedOn>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="84413-4"/>
+            <display value="Genotype display name"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <valueCodeableConcept>
+          <!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
+          <text value="HLA-C*01:02:01G+HLA-C*03:04:01G"/>
+        </valueCodeableConcept>
+        <method>
+          <coding>
+            <system value="http://www.ncbi.nlm.nih.gov/gtr/"/>
+            <code value="GTR000000000.0"/>
+          </coding>
+          <text value="NGS based Class I HLA-A, -B, -C genotyping"/>
+        </method>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <!-- derivedFrom are Haplotype observations -->
+        <derivedFrom>
+          <reference value="urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47"/>
+          <type value="Observation"/>
+          <display value="HLA-C*03:04:01G, exons 2 and 3"/>
+        </derivedFrom>
+        <derivedFrom>
+          <reference value="urn:uuid:709c5315-9403-4867-9d82-0b953836665f"/>
+          <type value="Observation"/>
+          <display value="HLA-C*01:02:01G, exons 2 and 3"/>
+        </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="48018-6"/>
+              <display value="Gene Studied"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="https://www.genenames.org/"/>
+              <code value="HGNC:4933"/>
+              <display value="HLA-C"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="81293-3"/>
+              <display value="Description of ranges of DNA sequences examined"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <text value="Exons 2 and 3"/>
+          </valueCodeableConcept>
+        </component>
+      </Observation>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+  <!-- diagnostic report -->
+  <entry>
+    <fullUrl value="urn:uuid:b0a4b18e-94e7-4b1b-8031-c7ae4bdd8db9"/>
+    <resource>
+      <DiagnosticReport>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnosticreport"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>
 HLA-A,-B,-C genotyping report for John Storm (MRN:12345)
 
 LOCUS   ALLELE 1            ALLELE 2
@@ -1669,83 +1705,83 @@ Effective date: 2015-12-15
 Method: Sequencing of exons 2 and 3 of HLA Class I genes
 Lab: aTypingLab Inc
                     </pre>
-					</div>
-				</text>
-				<!-- The extensions below will be deprecated and refactored into a profile in the Genetic Reporting Implementation Guide -->
-				<extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsAlleleDatabase">
-					<valueCodeableConcept>
-						<coding>
-							<system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
-							<version value="3.23"/>
-						</coding>
-					</valueCodeableConcept>
-				</extension>
-				<extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsGlstring">
-					<extension url="text">
-						<valueString value="HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"/>
-					</extension>
-					<extension url="uri">
-						<valueUri value="https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex"/>
-					</extension>
-				</extension>
-				<basedOn>
-					<reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
-					<type value="ServiceRequest"/>
-					<display value="Class I HLA genotyping for John Storm"/>
-				</basedOn>
-				<status value="final"/>
-				<category>
-					<coding>
-						<system value="http://hl7.org/fhir/v2/0074"/>
-						<code value="GE"/>
-						<display value="Genetics"/>
-					</coding>
-				</category>
-				<code>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="81247-9"/>
-						<display value="Master HL7 genetic variant reporting panel"/>
-					</coding>
-				</code>
-				<subject>
-					<reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
-					<type value="Patient"/>
-					<display value="John Storm"/>
-				</subject>
-				<effectiveDateTime value="2016-12-15"/>
-				<issued value="2016-12-15T14:15:30-06:00"/>
-				<performer>
-					<reference value="urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950"/>
-					<type value="Organization"/>
-					<display value="aTypingLab Inc"/>
-				</performer>
-				<specimen>
-					<reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
-					<display value="buccal swab from John Storm"/>
-				</specimen>
-				<!-- results are genotype observations for each gene -->
-				<result>
-					<reference value="urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228"/>
-					<type value="Observation"/>
-					<display value="HLA-A: HLA-A:01:01:01G+HLA-A*01:02"/>
-				</result>
-				<result>
-					<reference value="urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70"/>
-					<type value="Observation"/>
-					<display value="HLA-B: HLA-B*15:01:01G+HLA-B*57:01:01G"/>
-				</result>
-				<result>
-					<reference value="urn:uuid:0e0a780e-4486-4cd0-bfae-7243c579f208"/>
-					<type value="Observation"/>
-					<display value="HLA-C: HLA-C*01:02:01G+HLA-C*03:04:01G"/>
-				</result>
-			</DiagnosticReport>
-		</resource>
-		<!--    transaction details    -->
-		<request>
-			<method value="POST"/>
-			<url value="DiagnosticReport"/>
-		</request>
-	</entry>
+          </div>
+        </text>
+        <!-- The extensions below will be deprecated and refactored into a profile in the Genetic Reporting Implementation Guide -->
+        <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsAlleleDatabase">
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <version value="3.23"/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsGlstring">
+          <extension url="text">
+            <valueString value="HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"/>
+          </extension>
+          <extension url="uri">
+            <valueUri value="https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex"/>
+          </extension>
+        </extension>
+        <basedOn>
+          <reference value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
+          <type value="ServiceRequest"/>
+          <display value="Class I HLA genotyping for John Storm"/>
+        </basedOn>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/v2/0074"/>
+            <code value="GE"/>
+            <display value="Genetics"/>
+          </coding>
+        </category>
+        <code>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="81247-9"/>
+            <display value="Master HL7 genetic variant reporting panel"/>
+          </coding>
+        </code>
+        <subject>
+          <reference value="urn:uuid:13f34265-335c-4853-bc38-0815315edafa"/>
+          <type value="Patient"/>
+          <display value="John Storm"/>
+        </subject>
+        <effectiveDateTime value="2016-12-15"/>
+        <issued value="2016-12-15T14:15:30-06:00"/>
+        <performer>
+          <reference value="urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950"/>
+          <type value="Organization"/>
+          <display value="aTypingLab Inc"/>
+        </performer>
+        <specimen>
+          <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
+          <display value="buccal swab from John Storm"/>
+        </specimen>
+        <!-- results are genotype observations for each gene -->
+        <result>
+          <reference value="urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228"/>
+          <type value="Observation"/>
+          <display value="HLA-A: HLA-A:01:01:01G+HLA-A*01:02"/>
+        </result>
+        <result>
+          <reference value="urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70"/>
+          <type value="Observation"/>
+          <display value="HLA-B: HLA-B*15:01:01G+HLA-B*57:01:01G"/>
+        </result>
+        <result>
+          <reference value="urn:uuid:0e0a780e-4486-4cd0-bfae-7243c579f208"/>
+          <type value="Observation"/>
+          <display value="HLA-C: HLA-C*01:02:01G+HLA-C*03:04:01G"/>
+        </result>
+      </DiagnosticReport>
+    </resource>
+    <!--    transaction details    -->
+    <request>
+      <method value="POST"/>
+      <url value="DiagnosticReport"/>
+    </request>
+  </entry>
 </Bundle>

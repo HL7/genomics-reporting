@@ -58,6 +58,7 @@
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}.json" style="${dir.xslt}/igToConfig.xslt">
       <param name="spec" expression="${fhirspec}"/>
       <param name="version" expression="${version}"/>
+      <param name="license" expression="${license}"/>
       <param name="excludexml" expression="${excludexml}"/>
       <param name="excludejson" expression="${excludejson}"/>
       <param name="excludettl" expression="${excludettl}"/>

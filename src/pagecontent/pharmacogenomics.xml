@@ -17,6 +17,15 @@
     <b>Figure 1: Pharmacogenomic Impacts</b>
   </p>
   <p>
+    (Profile links:
+    <a href="obs-impact.html">Genetic Impact</a>,
+    <a href="obs-med-impact.html">Medication Impact</a>,
+    <a href="obs-high-risk.html">High Risk Allele</a>,
+    <a href="obs-metabolism.html">Genotype Medication Metabolism Impact</a>,
+    <a href="obs-efficacy.html">Genotype Medication Efficacy Impact</a>
+    )
+  </p>
+  <p>
     All pharmacogenomic impact profiles inherit from the abstract <a href="obs-impact.html">Genetic Impact</a> profile.  They also inherit from a commonabstract <a href="obs-med-impact.html">Medication Impact</a> profile which includes the mandatory code that identifies the medication whose impact is being described.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
   </p>
   <p>

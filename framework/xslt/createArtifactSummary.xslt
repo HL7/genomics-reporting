@@ -7,7 +7,7 @@
     <div>
       <div class="itoc">
         <p>Artifact Packages</p>
-        <xsl:for-each select="f:package">
+        <xsl:for-each select="f:package|f:definition/f:package">
           <p class="link">-
             <a href="#{position()}">
               <xsl:value-of select="f:name/@value"/>
@@ -16,7 +16,7 @@
         </xsl:for-each>
       </div>
       <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
-      <xsl:for-each select="f:package">
+      <xsl:for-each select="f:package|f:definition/f:package">
         <h2 class="self-link-parent">
           <a name="{position()}">
             <xsl:value-of select="' '"/>
@@ -37,7 +37,7 @@
     <p>
       <table>
         <tbody>
-          <xsl:for-each select="f:resource|parent::ImplementationGuide/f:resource[f:package/@value=current()/@id]">
+          <xsl:for-each select="f:resource|parent::f:definition/f:resource[f:package/@id=current()/@id]">
             <tr>
               <td style="column-width:30%">
                 <xsl:choose>

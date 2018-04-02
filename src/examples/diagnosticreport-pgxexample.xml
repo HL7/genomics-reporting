@@ -4,14 +4,14 @@
   <id value="diagnosticreport-pgxexample"/>
   <type value="collection"/>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/DiagnosticReport/pgx-report"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/DiagnosticReport/pgx-report"/>
     <resource>
       <DiagnosticReport>
         <id value="pgx-report"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/diagnosticreport"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnosticreport"/>
         </meta>
-        <extension url="http://hl7.org/fhir/uv/cg/StructureDefinition/dr-recommendedAction">
+        <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/dr-recommendedAction">
           <valueReference>
             <reference value="Task/med-usage-impact-task-pgx-example"/>
           </valueReference>
@@ -64,7 +64,7 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Patient/patient"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Patient/patient"/>
     <resource>
       <Patient>
         <id value="patient"/>
@@ -76,12 +76,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Specimen/specimen"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Specimen/specimen"/>
     <resource>
       <Specimen>
         <id value="specimen"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/specimen"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -94,7 +94,7 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Organization/lab"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Organization/lab"/>
     <resource>
       <Organization>
         <id value="lab"/>
@@ -107,12 +107,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/ServiceRequest/pgx-request"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/ServiceRequest/pgx-request"/>
     <resource>
       <ServiceRequest>
         <id value="pgx-request"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/servicerequest"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -136,14 +136,20 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/med-impact-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/med-impact-pgx-example"/>
     <resource>
       <Observation>
         <id value="med-impact-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-metabolism"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-metabolism"/>
         </meta>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://hl7.org/fhir/observation-category"/>
+            <code value="laboratory"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
@@ -166,9 +172,6 @@
             <display value="Rapid metabolizer"/>
           </coding>
         </valueCodeableConcept>
-        <specimen>
-          <reference value="Specimen/specimen"/>
-        </specimen>
         <derivedFrom>
           <reference value="Observation/genotype-pgx-example"/>
         </derivedFrom>
@@ -192,12 +195,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/genotype-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/genotype-pgx-example"/>
     <resource>
       <Observation>
         <id value="genotype-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-genotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
         </meta>
         <status value="final"/>
         <category>
@@ -225,12 +228,6 @@
         <derivedFrom>
           <reference value="Observation/haplotype-2-pgx-example"/>
         </derivedFrom>
-        <derivedFrom>
-          <reference value="Sequence/sequence-1-pgx-example"/>
-        </derivedFrom>
-        <derivedFrom>
-          <reference value="Sequence/sequence-2-pgx-example"/>
-        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -251,12 +248,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/haplotype-1-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/haplotype-1-pgx-example"/>
     <resource>
       <Observation>
         <id value="haplotype-1-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
         </meta>
         <status value="final"/>
         <category>
@@ -281,9 +278,6 @@
         <derivedFrom>
           <reference value="Observation/variant-1-pgx-example"/>
         </derivedFrom>
-        <derivedFrom>
-          <reference value="Sequence/sequence-1-pgx-example"/>
-        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -304,12 +298,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/haplotype-2-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/haplotype-2-pgx-example"/>
     <resource>
       <Observation>
         <id value="haplotype-2-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
         </meta>
         <status value="final"/>
         <category>
@@ -334,9 +328,6 @@
         <derivedFrom>
           <reference value="Observation/variant-2-pgx-example"/>
         </derivedFrom>
-        <derivedFrom>
-          <reference value="Sequence/sequence-2-pgx-example"/>
-        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -357,12 +348,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/variant-1-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/variant-1-pgx-example"/>
     <resource>
       <Observation>
         <id value="variant-1-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-described-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant"/>
         </meta>
         <status value="final"/>
         <category>
@@ -374,7 +365,7 @@
         <code>
           <coding>
             <system value="http://loinc.org"/>
-            <code value="69548-6"/>
+            <code value="TBD-Described"/>
             <display value="Genetic variant assessment"/>
           </coding>
         </code>
@@ -480,12 +471,12 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Observation/variant-2-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/variant-2-pgx-example"/>
     <resource>
       <Observation>
         <id value="variant-2-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/obs-described-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant"/>
         </meta>
         <status value="final"/>
         <category>
@@ -497,7 +488,7 @@
         <code>
           <coding>
             <system value="http://loinc.org"/>
-            <code value="69548-6"/>
+            <code value="TBD-Described"/>
             <display value="Genetic variant assessment"/>
           </coding>
         </code>
@@ -603,10 +594,11 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Sequence/sequence-1-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Sequence/sequence-1-pgx-example"/>
     <resource>
       <Sequence>
         <id value="sequence-1-pgx-example"/>
+        <type value="dna"/>
         <coordinateSystem value="0"/>
         <referenceSeq>
           <orientation value="sense"/>
@@ -623,10 +615,11 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Sequence/sequence-2-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Sequence/sequence-2-pgx-example"/>
     <resource>
       <Sequence>
         <id value="sequence-2-pgx-example"/>
+        <type value="dna"/>
         <coordinateSystem value="0"/>
         <referenceSeq>
           <orientation value="sense"/>
@@ -643,14 +636,14 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/Task/med-usage-impact-task-pgx-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Task/med-usage-impact-task-pgx-example"/>
     <resource>
       <Task>
         <id value="med-usage-impact-task-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/task-med-chg"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/task-med-chg"/>
         </meta>
-        <status value="draft"/>
+        <status value="requested"/>
         <intent value="proposal"/>
         <code>
           <coding>
@@ -661,6 +654,12 @@
           <text value="Any Increase does Recommendation Text from the provider"/>
         </code>
         <description value="Any Increase does Recommendation Text from the provider"/>
+        <focus>
+          <reference value="MedicationStatement/current-med-example"/>
+        </focus>
+        <for>
+          <reference value="Patient/patient"/>
+        </for>
         <reasonReference>
           <reference value="Observation/med-impact-pgx-example"/>
         </reasonReference>
@@ -668,14 +667,14 @@
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/cg/MedicationStatement/current-med-example"/>
+    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/MedicationStatement/current-med-example"/>
     <resource>
       <MedicationStatement>
         <id value="current-med-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/cg/StructureDefinition/medicationstatement"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medicationstatement"/>
         </meta>
-        <status value="active"/>
+        <status value="unknown"/>
         <medicationCodeableConcept>
           <coding>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>

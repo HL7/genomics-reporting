@@ -47,68 +47,173 @@
   <table>
     <tbody>
       <tr>
-        <th>STU3 Profile</th>
-        <th>R4 Mapping</th>
+        <th>R4 Profile</th>
+        <th>R3 Equivalent</th>
       </tr>
       <tr>
-        <td>DNASequenceVariantName</td>
-        <td>todo</td>
+        <td>Gene Studied</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsGene.html">Extension: Observation-geneticsGene</a>
+        </td>
       </tr>
       <tr>
-        <td>DNAVariantId</td>
-        <td>todo</td>
+        <td>Chromosome Location</td>
+        <td>[Not supported]</td>
       </tr>
       <tr>
-        <td>DNASequenceVariantType</td>
-        <td>todo</td>
+        <td>DNA Region Name</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsDNARegionName.html">Extension: Observation-geneticsDNARegionName</a>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Transcript DNA change (cHGVS)</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Name</a>
+        </td>
       </tr>
       <tr>
-        <td>AminoAcidChangeName</td>
-        <td>todo</td>
+        <td>DNA change type</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Type</a>
+        </td>
       </tr>
       <tr>
-        <td>AminoAcidChangeType</td>
-        <td>todo</td>
+        <td>Simple var ID</td>
+        <td>[Not supported]</td>
       </tr>
       <tr>
-        <td>Gene</td>
-        <td>todo</td>
+        <td>dbSNP ID</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Id</a>
+        </td>
       </tr>
       <tr>
-        <td>DNARegionName</td>
-        <td>todo</td>
+        <td>Genomica DNA change (gHGVS)</td>
+        <td>[Not supported]</td>
       </tr>
       <tr>
-        <td>AlleleName</td>
-        <td>todo</td>
+        <td>Genomic source class</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-geneticsGenomicSourceClass.html">Extension: Observation-geneticsGenomicSourceClass</a>
+        </td>
       </tr>
       <tr>
-        <td>AllelicState</td>
-        <td>todo</td>
+        <td>Amino acid change (pHGVS)</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsAminoAcidChange.html">Extension: Observation-geneticsAminoAcidChange.Name</a>
+        </td>
       </tr>
       <tr>
-        <td>AllelicFrequency</td>
-        <td>todo</td>
+        <td>Amino acid change type</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsAminoAcidChange.html">Extension: Observation-geneticsAminoAcidChange.Type</a>
+        </td>
       </tr>
       <tr>
-        <td>CopyNumberEvent</td>
-        <td>todo</td>
+        <td>Transcript reference sequence ID</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.referenceSeq.referenceSeqId</a> (Can only support one reference sequence)
+        </td>
       </tr>
       <tr>
-        <td>GenomicSourceClass</td>
-        <td>todo</td>
+        <td>Genomic reference sequence ID</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.referenceSeq.referenceSeqId</a> (Can only support one reference sequence)
+        </td>
       </tr>
       <tr>
-        <td>PhaseSet</td>
-        <td>todo</td>
+        <td>[Not supported]</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.Name</a>
+        </td>
       </tr>
       <tr>
-        <td>Sequence</td>
-        <td>todo</td>
+        <td>Allelic Frequency</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.Frequency</a>
+        </td>
+      </tr>      
+      <tr>
+        <td>Allelic phase</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsPhaseSet.html">Extension: Observation-geneticsPhaseSet.Id</a> (inexact map)
+        </td>
       </tr>
       <tr>
-        <td>Interpretation</td>
-        <td>todo</td>
+        <td>[Not Supported]</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsPhaseSet.html">Extension: Observation-geneticsPhaseSet.Sequence</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Basis for allelic phase</td>
+        <td>[Not supported]</td>
+      </tr>
+      <tr>
+        <td>Allelic state</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.State</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic structural variant copy number</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsCopyNumberEvent.html">Extension: Observation-geneticsCopyNumberEvent</a> (inexact map)
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant reported arrCGH [Ratio]</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.reportedaCGHRatio</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic ref allele</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.variant.referenceAllele</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic alt allele</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.variant.observedAllele</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Coordinate System</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.coordinateSystem</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic Allele start-end</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.variant.start,end</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant length</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.length</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant outer start and end</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.outer</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant inner start and end</td>
+        <td>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.inner</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Specimen Source</td>
+        <td>[Not supported]</td>
       </tr>
     </tbody>
   </table>
