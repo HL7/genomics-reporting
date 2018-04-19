@@ -37,7 +37,7 @@
     <p>
       <table>
         <tbody>
-          <xsl:for-each select="f:resource|parent::f:definition/f:resource[f:package/@id=current()/@id]">
+          <xsl:for-each select="f:resource|parent::f:definition/f:resource[f:package/@value=current()/@id]">
             <tr>
               <td style="column-width:30%">
                 <xsl:choose>

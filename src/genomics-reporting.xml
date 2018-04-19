@@ -76,7 +76,7 @@
       <name value="Base observation common properties"/>
       <description value="Base profile that defines characteristics shared by all genetic observations"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -88,7 +88,7 @@
       <name value="CG Diagnostic Report"/>
       <description value="Defines the overall genetic report"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -100,7 +100,7 @@
       <name value="CG Specimen"/>
       <description value="Constraints on Specimen for use with clinical genomics reporting"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -112,7 +112,7 @@
       <name value="Recomended Followup"/>
       <description value="Task describing the followup that is recommended"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -124,7 +124,7 @@
       <name value="Order for Genetics Test"/>
       <description value="The lab order or request that triggered the execution of the genetics test"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -136,7 +136,7 @@
       <name value="Genetic Panel"/>
       <description value="Organizes information within a genetic report"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -148,7 +148,7 @@
       <name value="Genetic analysis overall interpretation"/>
       <description value="Provides a coarse overall interpretation of the genetic results reported."/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -160,7 +160,7 @@
       <name value="Deletion-duplication overall interpretation"/>
       <description value="Provides an overall interpretation of whether any deletions or duplications were found as part of the genetic analysis"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -172,7 +172,7 @@
       <name value="Chromosome analysis overall interpretation"/>
       <description value="Provides a coarse overall interpretation of the chromosomal analysis results reported."/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -184,7 +184,7 @@
       <name value="Descriptive Genetic Finding"/>
       <description value="Properties common to genetic findings whose results are expressed as narrative"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -196,7 +196,7 @@
       <name value="Computable Genetic Finding"/>
       <description value="Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -208,7 +208,7 @@
       <name value="Haplotype"/>
       <description value="Assertion of a particular haplotype on the basis of one or more variants"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -220,7 +220,7 @@
       <name value="Genotype"/>
       <description value="Assertion of a particular genotype on the basis of one or more variants or haplotypes"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -232,7 +232,7 @@
       <name value="Cytogenic Notation"/>
       <description value="Fully describes a variant with a single code.  Typically a large variant such as a mosaic, abnormal chromosome numbers, etc."/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -244,7 +244,7 @@
       <name value="Complex Variant"/>
       <description value="A variant consisting of multiple independent consecutive variations"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -256,7 +256,7 @@
       <name value="Described Variant (Discrete or Structural)"/>
       <description value="Details about a  set of changes in the tested sample compared to a reference sequence."/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -268,7 +268,7 @@
       <name value="Definitional Sequence"/>
       <description value="A profile on sequence that limits it to definitional elements, excluding patient-specific measurement information"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -280,7 +280,7 @@
       <name value="Sequence Configuration"/>
       <description value="Indicates whether two sequences are in Cis (same strand) or Trans (opposite strand) relationship to each other"/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -292,7 +292,7 @@
       <name value="Genetic Impact"/>
       <description value="Abstract profile for observations describing the impact of one or more genetic observations."/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -304,7 +304,7 @@
       <name value="Inheritable Disease Pathology"/>
       <description value="Provides an indication of whether there's a pathologic risk associated with a particular genotype, haplotype, variant or combination there-of, and if so, what the associated pathology is."/>
       <exampleBoolean value="false"/>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <!--    <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -316,7 +316,7 @@
       <sourceReference>
         <reference value="StructureDefinition/obs-discrete-variant"/>
       </sourceReference>
-      <package id="general"/>
+      <package value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -328,7 +328,7 @@
       <sourceReference>
         <reference value="StructureDefinition/obs-structural-variant"/>
       </sourceReference>
-      <package id="general"/>
+      <package value="general"/>
     </resource>-->
     <!-- Cytogenomics -->
     <resource>
@@ -341,7 +341,7 @@
       <name value="Chromosome analysis G-banding panel"/>
       <description value="Chromosome analysis that uses traditional banding technique."/>
       <exampleBoolean value="false"/>
-      <package id="cytogenomics"/>
+      <package value="cytogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -353,7 +353,7 @@
       <name value="Chromosome Analysis FISH panel"/>
       <description value="Fluorescence in situ hybridization test results"/>
       <exampleBoolean value="false"/>
-      <package id="cytogenomics"/>
+      <package value="cytogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -365,7 +365,7 @@
       <name value="Chromosome copy number change panel"/>
       <description value="Details about the copy number pair, such as the base pair start and end coordinates of where the change occurred."/>
       <exampleBoolean value="false"/>
-      <package id="cytogenomics"/>
+      <package value="cytogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -377,7 +377,7 @@
       <name value="Device Micro-array Platform"/>
       <description value="Information about a micro-array platform used as part of copy number change testing"/>
       <exampleBoolean value="false"/>
-      <package id="cytogenomics"/>
+      <package value="cytogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -389,7 +389,7 @@
       <name value="DeviceComponent Fish Probe"/>
       <description value="Information about the probe used in a FISH test"/>
       <exampleBoolean value="false"/>
-      <package id="cytogenomics"/>
+      <package value="cytogenomics"/>
     </resource>
     <!-- Pharmacogenomics -->
     <resource>
@@ -402,7 +402,7 @@
       <name value="Genetic Medication Impact"/>
       <description value="Abstract profile with common properties for observations that convey the potential impact of a genetic characteristics on a medication"/>
       <exampleBoolean value="false"/>
-      <package id="pharmacogenomics"/>
+      <package value="pharmacogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -414,7 +414,7 @@
       <name value="Genotype medication metabolism impact"/>
       <description value="Assertion of the expected impact of a particular genotype on the ability of the subject to metabolize medications"/>
       <exampleBoolean value="false"/>
-      <package id="pharmacogenomics"/>
+      <package value="pharmacogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -426,7 +426,7 @@
       <name value="Genotype medication efficacy impact"/>
       <description value="Assertion of the expected impact of a particular genotype on the efficacy of medications for the subject"/>
       <exampleBoolean value="false"/>
-      <package id="pharmacogenomics"/>
+      <package value="pharmacogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -438,7 +438,7 @@
       <name value="High Risk Allele"/>
       <description value="Assertion of whether the patient has a high-risk allele"/>
       <exampleBoolean value="false"/>
-      <package id="pharmacogenomics"/>
+      <package value="pharmacogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -450,7 +450,7 @@
       <name value="Medication Adjustment Proposal"/>
       <description value="Task describing what sort of change (if any) should be made in a patient's medication based on an identified genotype"/>
       <exampleBoolean value="false"/>
-      <package id="pharmacogenomics"/>
+      <package value="pharmacogenomics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -462,7 +462,7 @@
       <name value="Current Medication"/>
       <description value="MedicationStatement describing a med potentially being taken by the patient that may require adjustment"/>
       <exampleBoolean value="false"/>
-      <package id="pharmacogenomics"/>
+      <package value="pharmacogenomics"/>
     </resource>
     <!-- Somatics -->
     <resource>
@@ -475,7 +475,7 @@
       <name value="Somatic Impact"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions"/>
       <exampleBoolean value="false"/>
-      <package id="somatics"/>
+      <package value="somatics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -487,7 +487,7 @@
       <name value="Somatic Diagnostic Impact"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer"/>
       <exampleBoolean value="false"/>
-      <package id="somatics"/>
+      <package value="somatics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -499,7 +499,7 @@
       <name value="Somatic Prognostic Impact"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions"/>
       <exampleBoolean value="false"/>
-      <package id="somatics"/>
+      <package value="somatics"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -511,7 +511,7 @@
       <name value="Somatic Predictive Impact"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the impact of a specified medication or combination of medications"/>
       <exampleBoolean value="false"/>
-      <package id="somatics"/>
+      <package value="somatics"/>
     </resource>
     <!-- Extensions -->
     <resource>
@@ -524,7 +524,7 @@
       <name value="Related Artifact"/>
       <description value="Captures citations, evidence and other supporting documentation for the observation or report"/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -536,7 +536,7 @@
       <name value="Recommended action"/>
       <description value="References a proposed action that is recommended based on the results of the diagnostic report"/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -548,7 +548,7 @@
       <name value="Supporting Information"/>
       <description value="Additional information relevant to interpreting/understanding the report"/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -560,7 +560,7 @@
       <name value="Focus"/>
       <description value="Allows an observation to be made about multiple things."/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -572,7 +572,7 @@
       <name value="Recommended action"/>
       <description value="References a proposed action that is recommended based on the results of the observation."/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -584,7 +584,7 @@
       <name value="Unsolicited?"/>
       <description value="If true, indicates that the observation was not asked for as part of the report but was provided as additional useful information by the reporting lab or other service provider."/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -596,7 +596,7 @@
       <name value="Manufacturer"/>
       <description value="Indicates the manufacturer for a particular component"/>
       <exampleBoolean value="false"/>
-      <package id="extensions"/>
+      <package value="extensions"/>
     </resource>
     <!-- Examples -->
     <resource>
@@ -606,7 +606,7 @@
       <name value="CG Test"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
-      <package id="examples"/>
+      <package value="examples"/>
     </resource>
     <resource>
       <reference>
@@ -615,7 +615,7 @@
       <name value="PGx Example"/>
       <description value="Pharmacogenomic Report Example instances"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
-      <package id="examples"/>
+      <package value="examples"/>
     </resource>
     <resource>
       <reference>
@@ -624,7 +624,7 @@
       <name value="HLA Example"/>
       <description value="HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
-      <package id="examples"/>
+      <package value="examples"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
