@@ -66,7 +66,9 @@
   </xsl:if>
   <xsl:text>"html-template": "template-page.html",&#xa;  </xsl:text>
   <xsl:value-of select="concat('&quot;license&quot;: &quot;', $license, '&quot;,&#xa;  ')"/>
-  <xsl:value-of select="concat('&quot;npn-name&quot;: &quot;', $realm, '-', f:id/@value, '&quot;,&#xa;  ')"/>
+  <xsl:variable name="address" select="substring-before(substring-after(/f:ImplementationGuide/f:url/@value, '//'), '/')"/>
+  <xsl:variable name="prefix" select="substring-before($address, '.')"/>
+  <xsl:value-of select="concat('&quot;npm-name&quot;: &quot;', $prefix, '.fhir.', $realm, '.', f:id/@value, '&quot;,&#xa;  ')"/>
   <xsl:text>"paths": {
     "resources": ["resources", "../src/resources", "../src/vocabulary", "../src/examples"],
     "pages": ["../src/images", "pages"],
