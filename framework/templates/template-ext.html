@@ -1,6 +1,13 @@
 ---
 ---
 {% include fragment-pagebegin.html %}
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
 {% assign excludexml = site.data.info.excludexml | downcase | slice: 0 %}
 {% assign excludejson = site.data.info.excludejson | downcase | slice: 0 %}
 {% assign excludettl = site.data.info.excludettl | downcase | slice: 0 %}
@@ -31,12 +38,8 @@
     </li>
 {% endunless %}
   </ul>
-  <h3 class="self-link-parent">
-    <span class="sectioncount">{{site.data.pages[page.path].label}}<a name="{{site.data.pages[page.path].label}}"> </a>
-    </span> Extension: {{[title]}} <a title="link to here" class="self-link" href="extension-{{[id]}}.html#{{site.data.pages[page.path].label}}">
-      <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-    </a>
-  </h3>
+  <a name="root"> </a>
+  <h2 id="root">Extension: {{[title]}}</h2>
   {% assign intro = site.data.pages[page.path].intro %}
   {% if site.data.pages[page.path].intro != null %}
   <div style="display:inline-block">
@@ -64,13 +67,7 @@
   
   <!-- no uri -->
   <a name="profile"> </a>
-  <h4 class="self-link-parent">
-    <span class="sectioncount">{{site.data.pages[page.path].label}}.2</span>
-    Formal Views of Extension Content
-    <a title="link to here" class="self-link" href="extension-{{[id]}}.html#profile">
-      <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-    </a>
-  </h4>
+  <h3 id="profile">Formal Views of Extension Content</h3>
   <p>
     <a href="{{site.data.fhir.path}}profiling.html#representation">Description of Profiles, Differentials, Snapshots, and how the XML and JSON presentations work</a>.
   </p>
@@ -226,20 +223,11 @@
   <p>Other representations of extension: <a href="{{[id]}}.sch">Schematron</a>
   </p>
   <a name="tx"> </a>
-  <h4 class="self-link-parent">
-    <span class="sectioncount">{{site.data.pages[page.path].label}}.3</span> Terminology Bindings <a title="link to here" class="self-link" href="extension-{{[id]}}.html#tx">
-      <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-    </a>
-  </h4>
+  <h3 id="tx">Terminology Bindings</h3>
   {%include StructureDefinition-{{[id]}}-tx.xhtml%}
   
-  <a name="inv"> </a>  
-  <h4 class="self-link-parent">
-    <span class="sectioncount">{{site.data.pages[page.path].label}}.4</span> Constraints 
-    <a title="link to here" class="self-link" href="extension-{{[id]}}.html#inv">
-      <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-    </a>
-  </h4>
+  <a name="inv"> </a>
+  <h3 id="inv">Constraints</h3>
   {%include StructureDefinition-{{[id]}}-inv.xhtml%}
 
   {% assign notes = site.data.pages[page.path].notes %}

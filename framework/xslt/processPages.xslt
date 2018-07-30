@@ -31,29 +31,30 @@
     <div>
       <xsl:apply-templates select="@*"/>
       <xsl:if test="count(html:h2)>1">
-        <div class="itoc">
+        <div class="markdown-toc">
           <p>Contents:</p>
-          <xsl:for-each select="html:h2">
-            <p class="link">
-              <xsl:variable name="hierarchy">
-                <xsl:apply-templates mode="findHierarchy" select="."/>
-              </xsl:variable>
-              <xsl:variable name="link">
-                <xsl:choose>
-                  <xsl:when test="preceding-sibling::*[1][self::html:a[@name]]">
-                    <xsl:value-of select="preceding-sibling::*[1]/@name"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="$hierarchy"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:variable>
-              <xsl:text>- </xsl:text>
-              <a href="#{$link}">
-                <xsl:value-of select="."/>
-              </a>
-            </p>
-          </xsl:for-each>
+          <ul>
+            <xsl:for-each select="html:h2">
+              <li>
+                <xsl:variable name="hierarchy">
+                  <xsl:apply-templates mode="findHierarchy" select="."/>
+                </xsl:variable>
+                <xsl:variable name="link">
+                  <xsl:choose>
+                    <xsl:when test="preceding-sibling::*[1][self::html:a[@name]]">
+                      <xsl:value-of select="preceding-sibling::*[1]/@name"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="$hierarchy"/>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:variable>
+                <a href="#{$link}">
+                  <xsl:value-of select="."/>
+                </a>
+              </li>
+            </xsl:for-each>
+          </ul>
         </div>
       </xsl:if>
       <xsl:apply-templates select="node()"/>
@@ -95,21 +96,21 @@
     </xsl:if>
     <xsl:element name="{local-name(.)}" namespace="http://www.w3.org/1999/xhtml">
       <xsl:apply-templates select="@*"/>
-      <xsl:attribute name="class">
+<!--      <xsl:attribute name="class">
         <xsl:value-of  select="'self-link-parent'"/>
-      </xsl:attribute>
-      <span class="sectioncount">
+      </xsl:attribute>-->
+<!--      <span class="sectioncount">
         <xsl:value-of select="concat('{{site.data.pages[page.path].label}}.', $hierarchy)"/>
       </span>
-      <xsl:text> </xsl:text>
+      <xsl:text> </xsl:text>-->
       <xsl:apply-templates select="node()"/>
-      <xsl:text> </xsl:text>
+<!--      <xsl:text> </xsl:text>
       <a title="link to here" class="self-link">
         <xsl:attribute name="href">
           <xsl:value-of select="concat('{{page.path}}#', $link)"/>
         </xsl:attribute>
         <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-      </a>
+      </a>-->
     </xsl:element>
   </xsl:template>
   <xsl:template mode="findHierarchy" match="html:h2|html:h3|html:h4|html:h5">

@@ -46,10 +46,10 @@
                     <xsl:variable name="id" select="substring-after(*[self::f:sourceReference or self::f:reference]/f:reference/@value, '/')"/>
                     <xsl:variable name="href">
                       <xsl:choose>
-                        <xsl:when test="$type='ValueSet' and not(f:example/@value='true' or f:exampleBoolean/@value='true' or f:exampleReference or f:purpose/@value='example')">
+                        <xsl:when test="$type='ValueSet' and not(f:example/@value='true' or f:exampleBoolean/@value='true' or f:exampleReference or f:exampleCanonical or f:purpose/@value='example')">
                           <xsl:value-of select="concat('valueset-', $id, '.html')"/>
                         </xsl:when>
-                        <xsl:when test="starts-with($id, 'ext')">
+                        <xsl:when test="starts-with($id, 'ext') or contains(f:package/@value, 'xtension')">
                           <xsl:value-of select="concat('extension-', $id, '.html')"/>
                         </xsl:when>
                         <xsl:otherwise>

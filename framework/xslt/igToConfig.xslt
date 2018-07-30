@@ -65,6 +65,7 @@
     <xsl:value-of select="concat('&quot;fixed-business-version&quot;: &quot;', $version, '&quot;,&#xa;  ')"/>
   </xsl:if>
   <xsl:text>"html-template": "template-page.html",&#xa;  </xsl:text>
+  <xsl:text>"md-template": "template-page-md.html",&#xa;  </xsl:text>
   <xsl:value-of select="concat('&quot;license&quot;: &quot;', $license, '&quot;,&#xa;  ')"/>
   <xsl:variable name="address" select="substring-before(substring-after(/f:ImplementationGuide/f:url/@value, '//'), '/')"/>
   <xsl:variable name="prefix" select="substring-before($address, '.')"/>
@@ -207,7 +208,7 @@
       <xsl:variable name="id" select="substring-after(*[self::f:reference or self::f:sourceReference]/f:reference/@value, '/')"/>
       <xsl:if test="position()!=1">,</xsl:if>
       <xsl:value-of select="concat('&#xa;    &quot;', *[self::f:reference or self::f:sourceReference]/f:reference/@value, '&quot;:{&#xa;')"/>
-      <xsl:if test="f:example/@value='true' or f:exampleBoolean/@value='true' or f:exampleReference">
+      <xsl:if test="f:example/@value='true' or f:exampleBoolean/@value='true' or f:exampleCanonical or f:exampleReference">
         <xsl:choose>
           <xsl:when test="$type='ValueSet'">
             <xsl:text>    "template-base": "../framework/templates/template-instance-base.html",&#xa;</xsl:text>
@@ -229,7 +230,7 @@
           </xsl:when>
         </xsl:choose>
       </xsl:if>
-      <xsl:if test="not(f:example/@value='true' or f:exampleBoolean='true' or f:exampleFor) and (ancestor::f:ImplementationGuide//f:page[*[self::f:source or self::f:nameUrl]/@value=concat('extension-', $id, '.html')] or starts-with($id, 'ext-')) and $type='StructureDefinition'">
+      <xsl:if test="not(f:example/@value='true' or f:exampleBoolean='true' or f:exampleCanonical or f:exampleFor) and (ancestor::f:ImplementationGuide//f:page[*[self::f:source or self::f:nameUrl]/@value=concat('extension-', $id, '.html')] or starts-with($id, 'ext-') or contains(f:package/@value, 'xtension')) and $type='StructureDefinition'">
         <xsl:text>      "template-base": "../framework/templates/template-ext.html",&#xa;</xsl:text>
         <xsl:text>      "template-defns": "../framework/templates/template-ext-definitions.html",&#xa;</xsl:text>
         <xsl:text>      "template-mappings": "../framework/templates/template-ext-mappings.html",&#xa;</xsl:text>
