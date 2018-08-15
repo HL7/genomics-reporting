@@ -19,9 +19,6 @@
       <valueUri value="device-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="devicecomponent-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="diagnosticreport-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -384,9 +381,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/devicecomp-fish-probe"/>
+        <reference value="StructureDefinition/device-fish-probe"/>
       </reference>
-      <name value="DeviceComponent Fish Probe"/>
+      <name value="Device Fish Probe"/>
       <description value="Information about the probe used in a FISH test"/>
       <exampleBoolean value="false"/>
       <package value="cytogenomics"/>
@@ -586,18 +583,6 @@
       <exampleBoolean value="false"/>
       <package value="extensions"/>
     </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/device-comp-manufacturer"/>
-      </reference>
-      <name value="Manufacturer"/>
-      <description value="Indicates the manufacturer for a particular component"/>
-      <exampleBoolean value="false"/>
-      <package value="extensions"/>
-    </resource>
     <!-- Examples -->
     <resource>
       <reference>
@@ -699,6 +684,11 @@
         <nameUrl value="usecases.html"/>
         <title value="HL7 Domain Analysis Use Cases"/>
         <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="test.html"/>
+        <title value="test markdown"/>
+        <generation value="markdown"/>
       </page>
     </page>
   </definition>

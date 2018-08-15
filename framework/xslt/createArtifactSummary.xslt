@@ -17,15 +17,9 @@
       </div>
       <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
       <xsl:for-each select="f:package|f:definition/f:package">
-        <h2 class="self-link-parent">
-          <a name="{position()}">
-            <xsl:value-of select="' '"/>
-          </a>
+        <h3>
           <xsl:value-of select="concat(f:name/@value, ' ')"/> 
-          <a href="#{position()}" title="link to here" class="self-link">
-            <img src="assets/images/link.svg" width="20" class="self-link" height="20"/>
-          </a>
-        </h2>
+        </h3>
         <xsl:apply-templates select="."/>
       </xsl:for-each>
     </div>

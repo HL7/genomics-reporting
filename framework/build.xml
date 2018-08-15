@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="org.hl7.fhir.tools" basedir=".." default="publish-ig">
   <property name="updatePublisher" value="Y"/>
+  <property name="noTx" value="N"/>
   <!-- Where the main FHIR build publish folder is -->
   <property name="jar.publisher" value="http://build.fhir.org/org.hl7.fhir.igpublisher.jar"/>
   <!-- Project-specific inputs -->
@@ -20,6 +21,9 @@
   <property name="excludexml" value="No"/>
   <property name="excludejson" value="No"/>
   <property name="excludettl" value="No"/>
+  <condition property="txParm" value="" else="-tx n/a">
+    <equals arg1="${noTx}" arg2="N"/>
+  </condition>
   <target name="local-setup" description="-- grabs igpublisher from local build and schemas from spec">
     <mkdir dir="${dir.srcgenned}"/>
     <mkdir dir="${dir.schemas}"/>
@@ -67,13 +71,13 @@
   <target name="publish-ig-continuous" depends="publisher-setup" if="continuous" description="--> Run the IG build">
     <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
-      <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json -watch"/>
+      <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm} -watch"/>
     </java>
   </target>
   <target name="publish-ig-once" depends="publisher-setup" unless="continuous" description="--> Run the IG build">
     <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
-      <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json"/>
+      <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm}"/>
     </java>
   </target>
   <target name="publish-ig" depends="publish-ig-once, publish-ig-continuous"/>

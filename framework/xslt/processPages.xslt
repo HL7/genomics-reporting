@@ -96,21 +96,7 @@
     </xsl:if>
     <xsl:element name="{local-name(.)}" namespace="http://www.w3.org/1999/xhtml">
       <xsl:apply-templates select="@*"/>
-<!--      <xsl:attribute name="class">
-        <xsl:value-of  select="'self-link-parent'"/>
-      </xsl:attribute>-->
-<!--      <span class="sectioncount">
-        <xsl:value-of select="concat('{{site.data.pages[page.path].label}}.', $hierarchy)"/>
-      </span>
-      <xsl:text> </xsl:text>-->
       <xsl:apply-templates select="node()"/>
-<!--      <xsl:text> </xsl:text>
-      <a title="link to here" class="self-link">
-        <xsl:attribute name="href">
-          <xsl:value-of select="concat('{{page.path}}#', $link)"/>
-        </xsl:attribute>
-        <img src="assets/images/link.svg" class="self-link" width="20" height="20"/>
-      </a>-->
     </xsl:element>
   </xsl:template>
   <xsl:template mode="findHierarchy" match="html:h2|html:h3|html:h4|html:h5">
