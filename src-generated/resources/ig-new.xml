@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="genomics-reporting"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
+  <version value="0.2"/>
+  <name value="Clinical Genomics Reporting"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International Clinical Genomics Work Group"/>
+  <description value="Guidelines for reporting of clinical genomics results using HL7 FHIR"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.fhir.uv.genomics-reporting"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="3.5.0"/>
+  <definition>
+    <package id="general">
+      <name value="General Profiles"/>
+      <description value="General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"/>
+    </package>
+    <package id="somatics">
+      <name value="Somatics"/>
+      <description value="Profiles related to the reporting of somatic genetic issues"/>
+    </package>
+    <package id="pharmacogenomics">
+      <name value="Pharmacogenomics"/>
+      <description value="Profiles for reports relating to genetic impact on medication use and effectiveness"/>
+    </package>
+    <package id="cytogenomics">
+      <name value="Cytogenomics"/>
+      <description value="Profiles for reporting cytogenic results"/>
+    </package>
+    <package id="extensions">
+      <name value="Extensions"/>
+      <description value="Extensions defined as part of the CG implementation guide"/>
+    </package>
+    <package id="examples">
+      <name value="Example(s)"/>
+      <description value="Example(s) showing the use of the CG profiles"/>
+    </package>
+    <resource>
+      <reference>
+        <reference value="Bundle/diagnosticreport-cgexample"/>
+      </reference>
+      <name value="CG Test"/>
+      <description value="Test instance showing data from the CG v2 spec"/>
+      <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <package value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/diagnosticreport-pgxexample"/>
+      </reference>
+      <name value="PGx Example"/>
+      <description value="Pharmacogenomic Report Example instances"/>
+      <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <package value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
+      </reference>
+      <name value="HLA Example"/>
+      <description value="HLA Typing Example"/>
+      <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <package value="examples"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="CG IG Home Page"/>
+        <generation value="html"/>
+        <page>
+          <nameUrl value="background.html"/>
+          <title value="Genomics Primer"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="general.html"/>
+          <title value="General Genomic Reporting"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="sequencing.html"/>
+          <title value="Sequenced Variants"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="cytogenomics.html"/>
+          <title value="Cytogenomic Reporting"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="pharmacogenomics.html"/>
+          <title value="Pharmacogenomic Reporting"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="somatics.html"/>
+          <title value="Somatic Genomic Reporting"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="transplants.html"/>
+          <title value="Genomic Profiling for Transplantation"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="conversion.html"/>
+          <title value="Conversion from STU3"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="v2.html"/>
+          <title value="Appendix A: Relation to v2 reporting"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="cgapps.html"/>
+          <title value="Appendix B: Clinical Genomic Apps"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="domain.html"/>
+          <title value="Appendix C: Querying Genomics Information"/>
+          <generation value="html"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="artifacts.html"/>
+        <title value="Artifact List"/>
+        <generation value="html"/>
+        <page>
+          <nameUrl value="obs-base.html"/>
+          <title value="Base observation common properties"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="diagnosticreport.html"/>
+          <title value="CG Diagnostic Report"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="specimen.html"/>
+          <title value="CG Specimen"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="task-rec-followup.html"/>
+          <title value="Recomended Followup"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="servicerequest.html"/>
+          <title value="Order for Genetics Test"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-gen-panel.html"/>
+          <title value="Genetic Panel"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-overall.html"/>
+          <title value="Genetic analysis overall interpretation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-deletion-dup.html"/>
+          <title value="Deletion-duplication overall interpretation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-chrom-overall.html"/>
+          <title value="Chromosome analysis overall interpretation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-desc-gen-finding.html"/>
+          <title value="Descriptive Genetic Finding"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-comp-gen-finding.html"/>
+          <title value="Computable Genetic Finding"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-haplotype.html"/>
+          <title value="Haplotype"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-genotype.html"/>
+          <title value="Genotype"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-cytogenic-not.html"/>
+          <title value="Cytogenic Notation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-complex-variant.html"/>
+          <title value="Complex Variant"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-described-variant.html"/>
+          <title value="Described Variant (Discrete or Structural)"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="sequence.html"/>
+          <title value="Definitional Sequence"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-sequence-config.html"/>
+          <title value="Sequence Configuration"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-impact.html"/>
+          <title value="Genetic Impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-inh-dis-path.html"/>
+          <title value="Inheritable Disease Pathology"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-chrom-g-band.html"/>
+          <title value="Chromosome analysis G-banding panel"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-chrom-fish.html"/>
+          <title value="Chromosome Analysis FISH panel"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-copy-num-chg.html"/>
+          <title value="Chromosome copy number change panel"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="device-micro-plat.html"/>
+          <title value="Device Micro-array Platform"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="device-fish-probe.html"/>
+          <title value="Device Fish Probe"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-med-impact.html"/>
+          <title value="Genetic Medication Impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-metabolism.html"/>
+          <title value="Genotype medication metabolism impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-efficacy.html"/>
+          <title value="Genotype medication efficacy impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-high-risk.html"/>
+          <title value="High Risk Allele"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="task-med-chg.html"/>
+          <title value="Medication Adjustment Proposal"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="medicationstatement.html"/>
+          <title value="Current Medication"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-som-impact.html"/>
+          <title value="Somatic Impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-som-diagnostic.html"/>
+          <title value="Somatic Diagnostic Impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-som-prognostic.html"/>
+          <title value="Somatic Prognostic Impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-som-predictive.html"/>
+          <title value="Somatic Predictive Impact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-dr-relatedArtifact.html"/>
+          <title value="Related Artifact"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-dr-recommendedAction.html"/>
+          <title value="Recommended action"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-dr-supportingInfo.html"/>
+          <title value="Supporting Information"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-obs-focus.html"/>
+          <title value="Focus"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-obs-recommendedAction.html"/>
+          <title value="Recommended action"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-obs-unsolicited.html"/>
+          <title value="Unsolicited?"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="diagnosticreport-cgexample.html"/>
+          <title value="CG Test"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="diagnosticreport-pgxexample.html"/>
+          <title value="PGx Example"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="CG-IG-HLA-FullBundle-01.html"/>
+          <title value="HLA Example"/>
+          <generation value="generated"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="usecases.html"/>
+        <title value="HL7 Domain Analysis Use Cases"/>
+        <generation value="html"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="apply-business-version"/>
+      <value value="0.2"/>
+    </parameter>
+    <parameter>
+      <code value="html-template"/>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code value="generate-json"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="generate-xml"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="generate-turtle"/>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

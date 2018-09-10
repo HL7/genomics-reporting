@@ -17,7 +17,7 @@
       </div>
       <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
       <xsl:for-each select="f:package|f:definition/f:package">
-        <h3>
+        <h3 id="{position()}">
           <xsl:value-of select="concat(f:name/@value, ' ')"/> 
         </h3>
         <xsl:apply-templates select="."/>
