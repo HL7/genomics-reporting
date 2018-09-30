@@ -1,5 +1,4 @@
 -------------------------------------------------------------------------------------
-
 {"code" : {
   "code" : "text/plain"
 }, "valueSet" :{
@@ -16,82 +15,6 @@ v: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
-
-{"code" : {
-  "coding" : [{
-    "system" : "http://hl7.org/fhir/observation-category",
-    "code" : "laboratory"
-  },
-  {
-    "system" : "http://loinc.org",
-    "code" : "LA26802-1",
-    "display" : "Structural Variant"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/observation-category"
-    }]
-  }
-}}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Unable to provide support for code system http://hl7.org/fhir/observation-category"
-}
--------------------------------------------------------------------------------------
-
-{"code" : {
-  "coding" : [{
-    "system" : "http://hl7.org/fhir/observation-category",
-    "code" : "laboratory"
-  },
-  {
-    "system" : "http://loinc.org",
-    "code" : "LA26801-3",
-    "display" : "Simple Variant"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/observation-category"
-    }]
-  }
-}}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Unable to provide support for code system http://hl7.org/fhir/observation-category"
-}
--------------------------------------------------------------------------------------
-
-{"code" : {
-  "coding" : [{
-    "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
-    "code" : "laboratory"
-  },
-  {
-    "system" : "http://loinc.org",
-    "code" : "LA26802-1",
-    "display" : "Structural Variant"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/observation-category"
-    }]
-  }
-}}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "None of the codes provided (http://terminology.hl7.org/CodeSystem/v2-0074#laboratory, http://loinc.org#LA26802-1) are  valid in the value set ObservationCategoryCodes"
-}
--------------------------------------------------------------------------------------
-
 {"code" : {
   "coding" : [{
     "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
@@ -113,30 +36,6 @@ v: {
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "None of the codes provided (http://terminology.hl7.org/CodeSystem/v2-0074#laboratory, http://loinc.org#LA26801-3) are  valid in the value set ObservationCategoryCodes"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://hl7.org/fhir/ValueSet/observation-category",
-    "code" : "laboratory"
-  },
-  {
-    "system" : "http://loinc.org",
-    "code" : "LA26801-3",
-    "display" : "Simple Variant"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://terminology.hl7.org/CodeSystem/observation-category"
-    }]
-  }
-}}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Unable to provide support for code system http://hl7.org/fhir/ValueSet/observation-category"
+  "error" : "The code \"laboratory\" is not valid in the system http://terminology.hl7.org/CodeSystem/v2-0074; The display \"Simple Variant\" is not a valid display for the code ,{http://loinc.org}LA26801-3 - should be one of []; None of the codes provided (http://terminology.hl7.org/CodeSystem/v2-0074#laboratory, http://loinc.org#LA26801-3) are  valid in the value set ObservationCategoryCodes"
 }
 -------------------------------------------------------------------------------------
