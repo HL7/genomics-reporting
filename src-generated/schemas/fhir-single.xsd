@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Sep 27, 2018 18:34+0000 for FHIR v3.6.0 
+  Generated on Mon, Oct 8, 2018 09:37+0000 for FHIR v3.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -26897,7 +26897,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
         <xs:sequence>
           <xs:element name="text" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.The dosage instructions should reflect the dosage of the medication that was administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
+
+The dosage instructions should reflect the dosage of the medication that was administered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="site" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -28116,12 +28118,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:element name="MedicationStatement" type="MedicationStatement">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now, or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from sources such as the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains. The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient's memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now, or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from sources such as the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains. 
+
+The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient's memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="MedicationStatement">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now, or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from sources such as the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains. The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient's memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a medication that is being consumed by a patient.   A MedicationStatement may indicate that the patient may be taking the medication now, or has taken the medication in the past or will be taking the medication in the future.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay.   The medication information may come from sources such as the patient's memory, from a prescription bottle,  or from a list of medications the patient, clinician or other party maintains. 
+
+The primary difference between a medication statement and a medication administration is that the medication administration has complete administration information and is based on actual administration information from the person who administered the medication.  A medication statement is often, if not always, less specific.  There is no required date/time when the medication was administered, in fact we only know that a source has reported the patient is taking this medication, where details such as time, quantity, or rate or even medication product may be incomplete or missing or less precise.  As stated earlier, the medication statement information may come from the patient's memory, from a prescription bottle or from a list of medications the patient, clinician or other party maintains.  Medication administration is more formal and is not missing detailed information.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -31866,7 +31872,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="location" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This element is depracated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse. 
+              <xs:documentation xml:lang="en">This element is deprecated because it is XML specific. It is replaced by issue.expression, which is format independent, and simpler to parse. 
 
 For resource issues, this will be a simple XPath limited to element names, repetition indicators and the default child access that identifies one of the elements in the resource that caused this issue to be raised.  For HTTP errors, will be &quot;http.&quot; + the parameter name.</xs:documentation>
            </xs:annotation>
@@ -33696,7 +33702,8 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="address" minOccurs="0" maxOccurs="unbounded" type="Address">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Address(es) of the practitioner that are not role specific (typically home address). Work addresses are not typically entered in this property as they are usually role dependent.</xs:documentation>
+              <xs:documentation xml:lang="en">Address(es) of the practitioner that are not role specific (typically home address). 
+Work addresses are not typically entered in this property as they are usually role dependent.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="gender" minOccurs="0" maxOccurs="1" type="AdministrativeGender">
@@ -35642,6 +35649,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A free text natural language description of the research definition from a consumer's perspective.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="comment" minOccurs="0" maxOccurs="unbounded" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
               <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate research definition instances.</xs:documentation>
@@ -35826,6 +35838,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A free text natural language description of the research element definition from a consumer's perspective.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="comment" minOccurs="0" maxOccurs="unbounded" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
               <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate research element definition instances.</xs:documentation>
@@ -35906,7 +35923,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The type of research element, a population, an exposure, or an outcome.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="outcomeType" minOccurs="0" maxOccurs="1" type="OutcomeType">
+          <xs:element name="variableType" minOccurs="0" maxOccurs="1" type="VariableType">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).</xs:documentation>
            </xs:annotation>
@@ -35927,24 +35944,18 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="definitionCodeableConcept" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">Use Codes to define the members of the research element, such as condition, medication, or observation.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="definitionUsageContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+              <xs:documentation xml:lang="en">Define members of the research element using Codes (such as condition, medication, or observation), Expressions ( using an expression language such as FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the last year).</xs:documentation>
+            </xs:annotation>
+            <xs:element name="definitionCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="definitionCanonical" type="canonical"/>
+            <xs:element name="definitionExpression" type="Expression"/>
+            <xs:element name="definitionDataRequirement" type="DataRequirement"/>
+          </xs:choice>
+          <xs:element name="usageContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
               <xs:documentation xml:lang="en">Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="definitionDataRequirement" minOccurs="0" maxOccurs="unbounded" type="DataRequirement">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Use DataRequirements to define the members of the research elements, such as Diabetes diagnosis onset in the last year.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="definitionExpression" minOccurs="0" maxOccurs="unbounded" type="Expression">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Use Expressions to define member criteria using an expression language such as FHIRPath or CQL.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="exclude" minOccurs="0" maxOccurs="1" type="boolean">
@@ -35971,14 +35982,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="studyEffectiveDuration" type="Duration"/>
             <xs:element name="studyEffectiveTiming" type="Timing"/>
           </xs:choice>
+          <xs:element name="studyEffectiveTimeFromStart" minOccurs="0" maxOccurs="1" type="Duration">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates duration from the study initiation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="studyEffectiveGroupMeasure" minOccurs="0" maxOccurs="1" type="GroupMeasure">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates how elements are aggregated within the study effective period.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="studyEffectiveFollowup" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">When true, the studyEffectiveDuration represents a duration for followup.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="participantEffectiveDescription" minOccurs="0" maxOccurs="1" type="string">
@@ -35995,14 +36006,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="participantEffectiveDuration" type="Duration"/>
             <xs:element name="participantEffectiveTiming" type="Timing"/>
           </xs:choice>
+          <xs:element name="participantEffectiveTimeFromStart" minOccurs="0" maxOccurs="1" type="Duration">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates duration from the participant's study entry.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="participantEffectiveGroupMeasure" minOccurs="0" maxOccurs="1" type="GroupMeasure">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates how elements are aggregated within the study effective period.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="participantEffectiveFollowup" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">When true, the participantEffectiveDuration represents a duration for followup.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -36039,7 +36050,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="OutcomeType-list">
+  <xs:simpleType name="VariableType-list">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="dichotomous">
         <xs:annotation>
@@ -36058,14 +36069,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="OutcomeType">
+  <xs:complexType name="VariableType">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The possible types of outcomes (E.g. Dichotomous, Continuous, Descriptive).</xs:documentation>
+      <xs:documentation xml:lang="en">The possible types of variables for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="OutcomeType-list" use="optional"/>
+        <xs:attribute name="value" type="VariableType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
