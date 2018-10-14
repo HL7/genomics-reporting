@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
   
-    <link href="fhir.css" rel="stylesheet"/>
+    <link href="{{site.data.info.assets}}fhir.css" rel="stylesheet"/>
       
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+    <link href="{{site.data.info.assets}}assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="{{site.data.info.assets}}assets/css/bootstrap-fhir.css" rel="stylesheet"/>
   
     <!-- Project extras -->
-    <link href="assets/css/project.css" rel="stylesheet"/>
-    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
-    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+    <link href="{{site.data.info.assets}}assets/css/project.css" rel="stylesheet"/>
+    <link href="{{site.data.info.assets}}assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="{{site.data.info.assets}}assets/css/jquery-ui.css" rel="stylesheet"/>
   
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -26,27 +26,34 @@
     <![endif]-->
   
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
-    <link rel="shortcut icon" href="assets/ico/favicon.png"/>  
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="{{site.data.info.assets}}assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="{{site.data.info.assets}}assets/ico/favicon.png"/>  
   </head>
   <body>
-    <style type="text/css">h2,h3,h4,h5,h6{--heading-prefix:"{{site.data.pages[page.path].label}}"}</style>
+{% if site.data.info.ballotstatus != '' %}
+{% assign status = site.data.info.ballotstatus %}
+{% else %}
+{% assign status = site.data.fhir.ig.status %}
+{% endif %}
+{% assign label = {{site.data.pages[page.path].label}} | split: '.0' %}
+    <style type="text/css">h2{--heading-prefix:"{{site.data.info.headingOffset}}{{label}}"}
+    h3,h4,h5,h6{--heading-prefix:"{{site.data.info.headingOffset}}{{site.data.pages[page.path].label}}"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
-        <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="assets/images/fhir-logo-www.png"/> </a>
+        <a id="logo" no-external="true" href="http://hl7.org/fhir"><img alt="logo fhir" src="{{site.data.info.assets}}assets/images/fhir-logo-www.png"/> </a>
         <div id="hl7-status">
-          <b>{{site.data.fhir.ig.name}}</b> {{site.data.fhir.ig.version}} - {{site.data.fhir.ig.status}} 
+          <b>{{site.data.fhir.ig.name}}</b> {{site.data.fhir.ig.version}} - {{status}} 
         </div>
     
         <div id="hl7-nav">
           <a id="hl7-logo" no-external="true" href="http://www.hl7.org">
-          <img height="50" alt="visit the hl7 website" width="42" src="assets/images/hl7-logo.png"/>
+          <img height="50" alt="visit the hl7 website" width="42" src="{{site.data.info.assets}}assets/images/hl7-logo.png"/>
         </a>
       </div>
-      <div id="hl7-search"><a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a></div>
+      <div id="hl7-search"><a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="{{site.data.info.assets}}assets/images/search.png"/></a></div>
       </div>
       <div class="container">  <!-- container -->
       </div>
@@ -72,7 +79,8 @@
         </nav>  <!-- /.navbar -->
       <!-- /HEADER CONTENT -->
       </div>  <!-- /container -->
-    </div>  <!-- /segment-navbar -->  
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->  
         <ul class="breadcrumb">

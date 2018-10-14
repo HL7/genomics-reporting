@@ -24,16 +24,33 @@
   <condition property="txParm" value="" else="-tx n/a">
     <equals arg1="${noTx}" arg2="N"/>
   </condition>
+  <condition property="badrun">
+    <and>
+      <isset property="additionalVersion"/>
+      <isset property="continuous"/>
+    </and>
+  </condition>
+  <condition property="hasAdditional" value="Y" else="N">
+    <isset property="additionalVersion"/>
+  </condition>
   <target name="local-setup" description="-- grabs igpublisher from local build and schemas from spec">
+    <fail if="badrun" message="Can't run in continuous mode when processing multiple IG versions"/>
     <mkdir dir="${dir.srcgenned}"/>
     <mkdir dir="${dir.schemas}"/>
     <dependset>
       <srcfilelist dir="${dir.src}" files="properties.txt"/>
       <targetfilelist dir="${dir.srcgenned}" files="${guidename}.json"/>
-      <targetfilelist dir="${dir.schemas}" files="fhir-single.xsd fhir-xhtml.xsd xml.xsd xmldsig-core-schema.xsd"/>
+      <!-- Can't do this because it deletes the schemas if the web address date is older than local properties.txt date
+      <targetfilelist dir="${dir.schemas}" files="fhir-single.xsd fhir-xhtml.xsd xml.xsd xmldsig-core-schema.xsd"/>-->
     </dependset>
     <condition property="downloads">
       <equals arg1="${updatePublisher}" arg2="Y"/>
+    </condition>
+    <condition property="additionalDownloads">
+      <and>
+        <isset property="additionalVersion"/>
+        <isset property="downloads"/>
+      </and>
     </condition>
   </target>
   <target name="local-downloads" depends="local-setup" if="downloads" description="--Download current IG generator files">
@@ -52,29 +69,92 @@
     <fail unless="fhirspec" message="'fhirspec' must be defined in properties.txt. e.g. 'http://build.fhir.org/'"/>
     <fail unless="copyrightyear" message="'copyrightyear' must be defined in properties.txt. e.g. '2015+'"/>
     <echo file="${dir.data}/info.json">{
+  "ballotstatus":"${ballotstatus}",
   "copyrightyear":"${copyrightyear}",
   "excludexml":"${excludexml}",
   "excludejson":"${excludejson}",
-  "excludettl":"${excludettl}"
+  "excludettl":"${excludettl}",
+  "assets":"",
+  "headingOffset":""
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt"/>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt"/>
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+      <param name="alternate" expression="${additionalVersion}"/>
+    </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}.json" style="${dir.xslt}/igToConfig.xslt">
       <param name="spec" expression="${fhirspec}"/>
       <param name="version" expression="${version}"/>
+      <param name="license" expression="${license}"/>
+      <param name="hasAdditional" expression="${hasAdditional}"/>
+      <param name="additionalVersion" expression="${additionalVersion}"/>
+      <param name="excludexml" expression="${excludexml}"/>
+      <param name="excludejson" expression="${excludejson}"/>
+      <param name="excludettl" expression="${excludettl}"/>
+    </xslt>
+  </target>
+  <target name="extraVersion" depends="publisher-setup" if="additionalVersion" description="--> Prep for second IG">
+    <property name="dir.altincludes" value="${dir.pages}${additionalVersion}/_includes"/>
+    <property name="dir.altdata" value="${dir.pages}${additionalVersion}/_data"/>
+    <condition property="additionVNumber" value="1.0.2">
+      <equals arg1="${additionalVersion}" arg2="STU2"/>
+    </condition>
+    <condition property="additionalVNumber" value="1.4.0">
+      <equals arg1="${additionalVersion}" arg2="2016May"/>
+    </condition>
+    <condition property="additionalVNumber" value="3.0.1">
+      <equals arg1="${additionalVersion}" arg2="STU3"/>
+    </condition>
+    <condition property="additionalVNumber" value="4.0.0">
+      <equals arg1="${additionalVersion}" arg2="R4"/>
+    </condition>
+    <condition property="additionalVNumber" value="3.5.0">
+      <equals arg1="${additionalVersion}" arg2="current"/>
+    </condition>
+    <fail unless="additionalVNumber" message="additionalVersion of '${additionalVersion}' is not supported.  Must be DSTU2, 2016May, STU3, R4 or current"/>
+    <condition property="otherfhirspec" value="http://build.fhir.org/" else="http://hl7.org/fhir/${additionalVersion}/">
+      <equals arg1="${additionalVersion}" arg2="current"/>
+    </condition>
+    <echo file="${dir.altdata}/info.json">{
+  "ballotstatus":"${ballotstatus}",
+  "copyrightyear":"${copyrightyear}",
+  "excludexml":"${excludexml}",
+  "excludejson":"${excludejson}",
+  "excludettl":"${excludettl}",
+  "assets":"../",
+  "headingOffset":"${childHeadingOffset}."
+}</echo>
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.altincludes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt">
+      <param name="version" expression="${additionalVersion}"/>
+    </xslt>
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}${additionalVersion}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+      <param name="version" expression="${additionalVersion}"/>
+      <param name="altVNumber" expression="${additionalVNumber}"/>
+    </xslt>
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}${additionalVersion}.json" style="${dir.xslt}/igToConfig.xslt">
+      <param name="spec" expression="${otherfhirspec}"/>
+      <param name="version" expression="${additionalVNumber}"/>
+      <param name="fhirVersion" expression="${additionalVNumber}"/>
+      <param name="additional" expression="${additionalVersion}"/>
       <param name="license" expression="${license}"/>
       <param name="excludexml" expression="${excludexml}"/>
       <param name="excludejson" expression="${excludejson}"/>
       <param name="excludettl" expression="${excludettl}"/>
     </xslt>
   </target>
-  <target name="publish-ig-continuous" depends="publisher-setup" if="continuous" description="--> Run the IG build">
+  <target name="extra-downloads" depends="extraVersion" if="additionalDownloads" description="--Download other version schemas">
+    <mkdir dir="${dir.schemas}${additionalVersion}"/>
+    <get src="${otherfhirspec}fhir-single.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
+    <get src="${otherfhirspec}fhir-xhtml.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
+    <get src="${otherfhirspec}xml.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
+    <get src="${otherfhirspec}xmldsig-core-schema.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
+  </target>
+  <target name="publish-ig-continuous" unless="additionalVersion" depends="extra-downloads" if="continuous" description="--> Run the IG build">
     <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm} -watch"/>
     </java>
   </target>
-  <target name="publish-ig-once" depends="publisher-setup" unless="continuous" description="--> Run the IG build">
+  <target name="publish-ig-once" depends="extra-downloads" unless="continuous" description="--> Run the IG build">
     <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm}"/>

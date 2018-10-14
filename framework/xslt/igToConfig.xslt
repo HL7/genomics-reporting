@@ -6,6 +6,9 @@
   <xsl:param name="spec"/>
   <xsl:param name="version"/>
   <xsl:param name="license"/>
+  <xsl:param name="additional"/>
+  <xsl:param name="hasAdditional"/>
+  <xsl:param name="additionalVersion"/>
   <xsl:param name="fhirVersion" select="/f:ImplementationGuide/f:fhirVersion/@value"/>
   <xsl:param name="snomedRelease">
     <xsl:choose>
@@ -56,37 +59,73 @@
     <xsl:text>{
   "DO_NOT_EDIT_THIS_FILE": "This file is generated.  Any edits made will be overwritten",
   "tool": "jekyll",
-  "logging": ["html"],
-  "version": "</xsl:text>
-  <xsl:value-of select="$fhirVersion"/>
-  <xsl:text>",
-  </xsl:text>
-  <xsl:if test="$version!=''">
-    <xsl:value-of select="concat('&quot;fixed-business-version&quot;: &quot;', $version, '&quot;,&#xa;  ')"/>
+  "logging": ["html"],</xsl:text>
+  <xsl:if test="$hasAdditional='Y'">
+    <xsl:value-of select="concat('&#xa;  &quot;nestedIgConfig&quot;:&quot;', f:id/@value, $additionalVersion, '.json&quot;,')"/>
+    <xsl:value-of select="concat('&#xa;  &quot;nestedIgOutput&quot;:&quot;', $additionalVersion, '&quot;,')"/>
+    <xsl:text>&#xa;  "igArtifactsPage":"artifacts.html",</xsl:text>
   </xsl:if>
-  <xsl:text>"html-template": "template-page.html",&#xa;  </xsl:text>
-  <xsl:text>"md-template": "template-page-md.html",&#xa;  </xsl:text>
-  <xsl:value-of select="concat('&quot;license&quot;: &quot;', $license, '&quot;,&#xa;  ')"/>
-  <xsl:variable name="address" select="substring-before(substring-after(/f:ImplementationGuide/f:url/@value, '//'), '/')"/>
-  <xsl:variable name="prefix" select="substring-before($address, '.')"/>
-  <xsl:value-of select="concat('&quot;npm-name&quot;: &quot;', $prefix, '.fhir.', $realm, '.', f:id/@value, '&quot;,&#xa;  ')"/>
-  <xsl:text>"paths": {
-    "resources": ["resources", "../src/resources", "../src/vocabulary", "../src/examples"],
-    "pages": ["../src/images", "pages"],
-    "temp": "../temp/pages",
-    "output": "../output",
+  <xsl:text>
+  "version": "</xsl:text>
+    <xsl:value-of select="$fhirVersion"/>
+    <xsl:text>",
+  </xsl:text>
+    <xsl:if test="$version!=''">
+      <xsl:value-of select="concat('&quot;fixed-business-version&quot;: &quot;', $version, '&quot;,&#xa;  ')"/>
+    </xsl:if>
+    <xsl:text>"html-template": "template-page.html",&#xa;  </xsl:text>
+    <xsl:text>"md-template": "template-page-md.html",&#xa;  </xsl:text>
+    <xsl:value-of select="concat('&quot;license&quot;: &quot;', $license, '&quot;,&#xa;  ')"/>
+    <xsl:variable name="address" select="substring-before(substring-after(/f:ImplementationGuide/f:url/@value, '//'), '/')"/>
+    <xsl:variable name="prefix" select="substring-before($address, '.')"/>
+    <xsl:variable name="suffix">
+      <xsl:if test="$additional">
+        <xsl:value-of select="concat('.', translate($additional, $uppercase, $lowercase))"/>
+      </xsl:if>
+    </xsl:variable>
+    <xsl:value-of select="concat('&quot;npm-name&quot;: &quot;', f:packageId/@value, '&quot;,&#xa;  ')"/>
+    <xsl:text>"paths": {&#xa;    "resources": ["resources</xsl:text>
+    <xsl:if test="$additional">
+      <xsl:value-of select="$additional"/>
+    </xsl:if>
+    <xsl:text>", "../src/resources", "../src/vocabulary", "../src/examples"],
+    "pages": ["../src/images", "pages</xsl:text>
+    <xsl:if test="$additional">
+      <xsl:value-of select="$additional"/>
+    </xsl:if>
+    <xsl:text>"],
+    "temp": "../temp</xsl:text>
+    <xsl:if test="$additional">
+      <xsl:value-of select="$additional"/>
+    </xsl:if>
+    <xsl:text>/pages",
+    "output": "../</xsl:text>
+    <xsl:choose>
+      <xsl:when test="$additional">
+        <xsl:value-of select="concat('temp/pages/', $additional)"/>
+      </xsl:when>
+      <xsl:otherwise>output</xsl:otherwise>
+    </xsl:choose>
+    <text>",
     "txCache": "txcache",
     "history" : "history.html",
-    "qa": "../temp/qa",
+    "qa": "../temp</text>
+    <xsl:if test="$additional">
+      <xsl:value-of select="$additional"/>
+    </xsl:if>
+    <xsl:text>/qa",
     "specification": "</xsl:text>
     <xsl:value-of select="$spec"/>
     <xsl:text>"
   },
   "suppressedWarningFile": "../src/ignoreWarnings.txt",
+  "includeHeadings": false,
   "pre-process": [
-    {"folder": "../framework/assets",
-     "relativePath": "assets"},
-    {"folder": "../framework/includes",
+    {"folder": "../framework/config",
+     "relativePath": ""},&#xa;</xsl:text>
+    <xsl:if test="not($additional)">    {"folder": "../framework/assets",
+     "relativePath": "assets"},&#xa;</xsl:if>
+    <xsl:text>    {"folder": "../framework/includes",
      "relativePath": "_includes"},
     {"folder": "../src/includes",
      "relativePath": "_includes",
@@ -126,16 +165,16 @@
   "defaults": {
     "Any": {
       "java" : false,&#x0a;</xsl:text>
-  <xsl:if test="not($includeXml)">
-    <xsl:text>      "xml" : false,&#x0a;</xsl:text>
-  </xsl:if>
-  <xsl:if test="not($includeJson)">
-    <xsl:text>      "json" : false,&#x0a;</xsl:text>
-  </xsl:if>
-  <xsl:if test="not($includeTtl)">
-    <xsl:text>      "ttl" : false,&#x0a;</xsl:text>
-  </xsl:if>
-  <xsl:text>      "template-base": "../framework/templates/template-instance-base.html",
+    <xsl:if test="not($includeXml)">
+      <xsl:text>      "xml" : false,&#x0a;</xsl:text>
+    </xsl:if>
+    <xsl:if test="not($includeJson)">
+      <xsl:text>      "json" : false,&#x0a;</xsl:text>
+    </xsl:if>
+    <xsl:if test="not($includeTtl)">
+      <xsl:text>      "ttl" : false,&#x0a;</xsl:text>
+    </xsl:if>
+    <xsl:text>      "template-base": "../framework/templates/template-instance-base.html",
       "template-format": "../framework/templates/template-instance-format.html",
       "base": "{{[id]}}.html",
       "format": "{{[id]}}.{{[fmt]}}.html"
@@ -162,9 +201,9 @@
       "examples": "{{[id]}}-examples.html"</xsl:text>
     <xsl:if test="$includeXml">,
       "profile-xml": "{{[id]}}.profile.xml.html"</xsl:if>
-    <xsl:if test="$includeXml">,
+    <xsl:if test="$includeJson">,
       "profile-json": "{{[id]}}.profile.json.html"</xsl:if>
-    <xsl:if test="$includeXml">,
+    <xsl:if test="$includeTtl">,
       "profile-ttl": "{{[id]}}.profile.ttl.html"</xsl:if>
     <xsl:text>
     },
@@ -176,34 +215,45 @@
     }
   },
   "sct-edition" : "http://snomed.info/sct/</xsl:text>
-  <xsl:value-of select="$snomedReleaseNumber"/>
-  <xsl:text>",
+    <xsl:value-of select="$snomedReleaseNumber"/>
+    <xsl:text>",
   "no-inactive-codes" : "true",
   "canonicalBase": "</xsl:text>
-  <xsl:value-of select="substring-before(/f:ImplementationGuide/f:url/@value, '/ImplementationGuide')"/>
-  <xsl:text>",&#xa;  </xsl:text>
-  <xsl:for-each select="f:dependency[f:type/@value='reference']/f:uri/@value|f:dependsOn/f:uri/@value">
-    <xsl:variable name="code">
-      <xsl:call-template name="findLast">
-        <xsl:with-param name="string" select="."/>
-        <xsl:with-param name="split" select="'/'"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:value-of select="concat('&quot;dependencyList&quot;: [&#xa;    {&#xa;      &quot;name&quot; : &quot;', $code, '&quot;,&#xa;      &quot;location&quot; : &quot;', ., 
-      '&quot;,&#xa;      &quot;source&quot; : &quot;../../', $code, '2/website&quot;&#xa;    }&#xa;  ],&#xa;  ')"/>
-  </xsl:for-each>
-  <xsl:text>"source": "</xsl:text>
-  <xsl:value-of select="f:id/@value"/>
-  <xsl:text>.xml",
+    <xsl:value-of select="substring-before(/f:ImplementationGuide/f:url/@value, '/ImplementationGuide')"/>
+    <xsl:if test="$additional">
+      <xsl:value-of select="concat('/', $additional)"/>
+    </xsl:if>
+    <xsl:text>",&#xa;  </xsl:text>
+    <xsl:if test="f:*[(self::f:dependency and f:type/@value='reference') or self::f:dependsOn][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $additional) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$additional)]">
+      <xsl:text>&quot;dependencyList&quot;: [&#xa;</xsl:text>
+      <xsl:for-each select="f:*[(self::f:dependency and f:type/@value='reference') or self::f:dependsOn][not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $additional) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$additional)]">
+        <xsl:variable name="code">
+          <xsl:call-template name="findLast">
+            <xsl:with-param name="string" select="f:uri/@value"/>
+            <xsl:with-param name="split" select="'/'"/>
+          </xsl:call-template>
+        </xsl:variable>
+        <xsl:value-of select="concat('    {&#xa;      &quot;name&quot; : &quot;', $code, '&quot;,&#xa;      &quot;version&quot; : &quot;', f:version/@value, 
+        '&quot;,&#xa;      &quot;location&quot; : &quot;', f:uri/@value, 
+        '&quot;,&#xa;      &quot;source&quot; : &quot;../../', $code, '2/website&quot;&#xa;    }')"/>
+        <xsl:if test="position()!=last()">
+          <xsl:text>,&#xa;</xsl:text>
+        </xsl:if>
+      </xsl:for-each>
+      <xsl:text>&#xa;  ],&#xa;  </xsl:text>
+    </xsl:if>
+    <xsl:text>"source": "</xsl:text>
+    <xsl:value-of select="f:id/@value"/>
+    <xsl:text>.xml",
   "spreadsheets": [</xsl:text>
-    <xsl:for-each select="//f:extension[@url='http://hl7.org/fhir/tools-profile-spreadsheet']/f:valueUri/@value">
+    <xsl:for-each select="//f:extension[@url='http://hl7.org/fhir/tools-profile-spreadsheet']/f:valueUri[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $additional) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$additional)]">
       <xsl:if test="position()!=1">,</xsl:if>
-      <xsl:value-of select="concat('&#xa;    &quot;', ., '&quot;')"/>
+      <xsl:value-of select="concat('&#xa;    &quot;', @value, '&quot;')"/>
     </xsl:for-each>
     <xsl:text>
   ],
   "resources": {</xsl:text>
-    <xsl:for-each select="f:package/f:resource|f:definition/f:resource">
+    <xsl:for-each select="f:*[self::f:package or self::f:definition]/f:resource[not(f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion'] or $additional) or (f:extension[@url='http://hl7.org/fhir/StructureDefinition/tools-alternateVersion']/f:valueCode/@value=$additional)]">
       <xsl:variable name="type" select="substring-before(*[self::f:reference or self::f:sourceReference]/f:reference/@value, '/')"/>
       <xsl:variable name="id" select="substring-after(*[self::f:reference or self::f:sourceReference]/f:reference/@value, '/')"/>
       <xsl:if test="position()!=1">,</xsl:if>
@@ -230,7 +280,7 @@
           </xsl:when>
         </xsl:choose>
       </xsl:if>
-      <xsl:if test="not(f:example/@value='true' or f:exampleBoolean='true' or f:exampleCanonical or f:exampleFor) and (ancestor::f:ImplementationGuide//f:page[*[self::f:source or self::f:nameUrl]/@value=concat('extension-', $id, '.html')] or starts-with($id, 'ext-') or contains(f:package/@value, 'xtension')) and $type='StructureDefinition'">
+      <xsl:if test="not(f:example/@value='true' or f:exampleBoolean='true' or f:exampleCanonical or f:exampleFor) and (ancestor::f:ImplementationGuide//f:page[*[self::f:source or self::f:nameUrl]/@value=concat('extension-', $id, '.html')] or starts-with($id, 'ext-') or contains(f:package/@value, 'xtension') or contains(f:groupingId/@value, 'xtension')) and $type='StructureDefinition'">
         <xsl:text>      "template-base": "../framework/templates/template-ext.html",&#xa;</xsl:text>
         <xsl:text>      "template-defns": "../framework/templates/template-ext-definitions.html",&#xa;</xsl:text>
         <xsl:text>      "template-mappings": "../framework/templates/template-ext-mappings.html",&#xa;</xsl:text>

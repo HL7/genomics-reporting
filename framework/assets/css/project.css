@@ -418,8 +418,13 @@ div.markdown-toc p.link
   margin: 0px;
 }
 /* Common content for section numbering */
-body{counter-reset: section}
-h2{counter-reset: sub-section}
-h3{counter-reset: composite}
-h4{counter-reset: detail}
-h5{counter-reset: more-detail}
+body{counter-reset:section}
+h2{counter-reset:sub-section}
+h3{counter-reset:composite}
+h4{counter-reset:detail}
+h5{counter-reset:more-detail}
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) "." counter(section) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}

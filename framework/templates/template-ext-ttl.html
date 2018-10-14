@@ -1,15 +1,9 @@
 ---
 ---
 {% include fragment-pagebegin.html %}
-<style type="text/css">
-h2:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) ".8 ";}
-h3:before{color:silver;counter-increment:composite;content:var(--heading-prefix) ".8." counter(composite) " ";}
-h4:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".8." counter(composite) "." counter(detail) " ";}
-h5:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) ".8." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
-</style>
 {% assign excludexml = site.data.info.excludexml | downcase | slice: 0 %}
 {% assign excludejson = site.data.info.excludejson | downcase | slice: 0 %}
-<div class="col-12">
+<div style="counter-reset: section 8" class="col-12">
   <ul class="nav nav-tabs">
     <li>
       <a href="extension-{{[id]}}.html">Content</a>
