@@ -13,7 +13,7 @@
       <code value="001"/>
     </coding>
   </jurisdiction>
-  <fhirVersion value="3.5.0"/>
+  <fhirVersion value="3.6.0"/>
   <definition>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="device-profile-spreadsheet.xml"/>
@@ -164,30 +164,6 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-chrom-overall"/>
-      </reference>
-      <name value="Chromosome analysis overall interpretation"/>
-      <description value="Provides a coarse overall interpretation of the chromosomal analysis results reported."/>
-      <exampleBoolean value="false"/>
-      <package value="general"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/obs-desc-gen-finding"/>
-      </reference>
-      <name value="Descriptive Genetic Finding"/>
-      <description value="Properties common to genetic findings whose results are expressed as narrative"/>
-      <exampleBoolean value="false"/>
-      <package value="general"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/obs-comp-gen-finding"/>
       </reference>
       <name value="Computable Genetic Finding"/>
@@ -328,30 +304,6 @@
       <package value="general"/>
     </resource>-->
     <!-- Cytogenomics -->
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/obs-chrom-g-band"/>
-      </reference>
-      <name value="Chromosome analysis G-banding panel"/>
-      <description value="Chromosome analysis that uses traditional banding technique."/>
-      <exampleBoolean value="false"/>
-      <package value="cytogenomics"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/obs-chrom-fish"/>
-      </reference>
-      <name value="Chromosome Analysis FISH panel"/>
-      <description value="Fluorescence in situ hybridization test results"/>
-      <exampleBoolean value="false"/>
-      <package value="cytogenomics"/>
-    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -621,7 +573,7 @@
         <generation value="html"/>
         <page>
           <nameUrl value="background.html"/>
-          <title value="Genomics Primer"/>
+          <title value="Genomics Background"/>
           <generation value="html"/>
         </page>
         <page>

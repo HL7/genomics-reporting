@@ -1,40 +1,50 @@
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "53040-2"
+  "code" : "62370-2"
 }, "valueSet" :null}####
 v: {
-  "display" : "Genetic variation's effect on drug metabolism",
+  "display" : "FISH probe gene name [Identifier]",
   "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "LA25390-8"
+  "code" : "62371-0"
+}, "valueSet" :null}####
+v: {
+  "display" : "FISH probe locus [Identifier]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-panel"
 }, "valueSet" :null}####
 v: {
   "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-panel\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-panel) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "51968-6"
+}, "valueSet" :null}####
+v: {
+  "display" : "Discrete variation analysis overall interpretation",
   "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "51963-7"
+  "code" : "83006-7"
 }, "valueSet" :null}####
 v: {
-  "display" : "Medication assessed [ID]",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "84413-4"
-}, "valueSet" :null}####
-v: {
-  "display" : "Genotype display name",
+  "display" : "Deletion-duplication overall interpretation",
   "severity" : null,
   "error" : ""
 }
@@ -51,10 +61,80 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
+  "code" : "48001-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Cytogenetic (chromosome) location",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81293-3"
+}, "valueSet" :null}####
+v: {
+  "display" : "Description of ranges of DNA sequences examined",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "84413-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genotype display name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
   "code" : "84414-2"
 }, "valueSet" :null}####
 v: {
   "display" : "Haplotype name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "69548-6"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic variant assessment",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81260-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Complex genetic variant [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81262-8"
+}, "valueSet" :null}####
+v: {
+  "display" : "Complex variant HGVS name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81263-6"
+}, "valueSet" :null}####
+v: {
+  "display" : "Complex variant type",
   "severity" : null,
   "error" : ""
 }
@@ -66,15 +146,95 @@ v: {
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "The code provided (http://loinc.org#TBD-Described) is not  valid in the value set All codes known to the system"
+  "error" : "The code \"TBD-Described\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-Described) is not  valid in the value set All codes known to the system"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "LA9633-4"
+  "code" : "48004-6"
 }, "valueSet" :null}####
 v: {
-  "display" : "",
+  "display" : "DNA change (c.HGVS)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48019-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "DNA Change Type",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81252-9"
+}, "valueSet" :null}####
+v: {
+  "display" : "Discrete genetic variant",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81255-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "dbSNP [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81290-9"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic DNA change (gHGVS)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48002-0"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic source class [Type]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48005-3"
+}, "valueSet" :null}####
+v: {
+  "display" : "Amino acid change (pHGVS)",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48006-1"
+}, "valueSet" :null}####
+v: {
+  "display" : "Amino acid change [Type]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "51958-7"
+}, "valueSet" :null}####
+v: {
+  "display" : "Transcript reference sequence [ID]",
   "severity" : null,
   "error" : ""
 }
@@ -91,10 +251,70 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "81255-2"
+  "code" : "81258-6"
 }, "valueSet" :null}####
 v: {
-  "display" : "dbSNP [ID]",
+  "display" : "Allelic frequency [NFr]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "82120-7"
+}, "valueSet" :null}####
+v: {
+  "display" : "Allelic phase",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "82309-6"
+}, "valueSet" :null}####
+v: {
+  "display" : "Basis for allelic phase [Type]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "82121-5"
+}, "valueSet" :null}####
+v: {
+  "display" : "Allelic read depth",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "53034-5"
+}, "valueSet" :null}####
+v: {
+  "display" : "Allelic state",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "82155-3"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic structural variant copy number",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81299-0"
+}, "valueSet" :null}####
+v: {
+  "display" : "Structural variant reported arrCGH [Ratio]",
   "severity" : null,
   "error" : ""
 }
@@ -121,10 +341,330 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
+  "code" : "TBD"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
   "code" : "81254-5"
 }, "valueSet" :null}####
 v: {
   "display" : "Genomic allele start-end",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81300-6"
+}, "valueSet" :null}####
+v: {
+  "display" : "Structural variant [Length]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81301-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "Structural variant outer start and end",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81302-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Structural variant inner start and end",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81291-7"
+}, "valueSet" :null}####
+v: {
+  "display" : "Variant ISCN",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-sequence-configuration"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-sequence-configuration\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-sequence-configuration) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-Level-of-Evidence"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-Level-of-Evidence\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-Level-of-Evidence) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "53037-8"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic variation clinical significance [Imp]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81259-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "Associated phenotype",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-mode-of-inheritance"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-mode-of-inheritance\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-mode-of-inheritance) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "51963-7"
+}, "valueSet" :null}####
+v: {
+  "display" : "Medication assessed [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "53040-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic variation's effect on drug metabolism",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "51961-1"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic variation's effect on drug efficacy",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "83009-1"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic variation's effect on high-risk allele",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-cancer"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-cancer\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-cancer) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-somatic-diagnostic"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-somatic-diagnostic\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-somatic-diagnostic) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-somatic-prognostic"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-somatic-prognostic\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-somatic-prognostic) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-medication"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-medication\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-medication) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-treatment"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-treatment\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-treatment) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-somatic-predictive"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-somatic-predictive\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-somatic-predictive) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62377-7"
+}, "valueSet" :null}####
+v: {
+  "display" : "Chromosome copy number change panel",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62378-5"
+}, "valueSet" :null}####
+v: {
+  "display" : "Chromosome copy number change [Type]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62379-3"
+}, "valueSet" :null}####
+v: {
+  "display" : "Chromosome band involved start",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62380-1"
+}, "valueSet" :null}####
+v: {
+  "display" : "Chromosome band involved end",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62381-9"
+}, "valueSet" :null}####
+v: {
+  "display" : "Base pair start coordinate [#]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62382-7"
+}, "valueSet" :null}####
+v: {
+  "display" : "Base pair end coordinate [#]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62383-5"
+}, "valueSet" :null}####
+v: {
+  "display" : "Flanking normal region before start",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62384-3"
+}, "valueSet" :null}####
+v: {
+  "display" : "Flanking normal region after end",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62374-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "Human reference sequence assembly version",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "62373-6"
+}, "valueSet" :null}####
+v: {
+  "display" : "Human reference assembly release, UCSC version [Identifier]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA25390-8"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA9633-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
   "severity" : null,
   "error" : ""
 }
@@ -159,6 +699,411 @@ v: {
 }
 -------------------------------------------------------------------------------------
 {"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81247-9"
+}, "valueSet" :null}####
+v: {
+  "display" : "Master HL7 genetic variant reporting panel",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6576-8",
+  "display" : "Positive"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Positive\" is not a valid display for the code {http://loinc.org}LA6576-8 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "83006-7",
+  "display" : "Deletion-duplication overall interpretation"
+}, "valueSet" :null}####
+v: {
+  "display" : "Deletion-duplication overall interpretation",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26803-9",
+  "display" : "No deletion duplications detected in studied regions"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"No deletion duplications detected in studied regions\" is not a valid display for the code {http://loinc.org}LA26803-9 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "TBD-Described",
+  "display" : "Genetic variant assessment"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-Described\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-Described) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA9633-4",
+  "display" : "Present"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Present\" is not a valid display for the code {http://loinc.org}LA9633-4 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81252-9",
+  "display" : "Discrete genetic variant"
+}, "valueSet" :null}####
+v: {
+  "display" : "Discrete genetic variant",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6690-7",
+  "display" : "Substitution"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Substitution\" is not a valid display for the code {http://loinc.org}LA6690-7 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6698-0",
+  "display" : "Missense"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Missense\" is not a valid display for the code {http://loinc.org}LA6698-0 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6683-2",
+  "display" : "Germline"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Germline\" is not a valid display for the code {http://loinc.org}LA6683-2 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6706-1",
+  "display" : "Heterozygous"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Heterozygous\" is not a valid display for the code {http://loinc.org}LA6706-1 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6112-2",
+  "display" : "1st set of variants in cis relation to each other"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"1st set of variants in cis relation to each other\" is not a valid display for the code {http://loinc.org}LA6112-2 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6429-3",
+  "display" : "Inferred from population data"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"LA6429-3\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#LA6429-3) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6668-3",
+  "display" : "Pathogenic"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Pathogenic\" is not a valid display for the code {http://loinc.org}LA6668-3 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26218-0",
+  "display" : "Haplotype"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Haplotype\" is not a valid display for the code {http://loinc.org}LA26218-0 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26801-3",
+  "display" : "Simple Variant"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Simple Variant\" is not a valid display for the code {http://loinc.org}LA26801-3 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "82118-1"
+}, "valueSet" :null}####
+v: {
+  "display" : "Pharmacogenomics result panel",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA9657-3",
+  "display" : "Rapid metabolizer"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Rapid metabolizer\" is not a valid display for the code {http://loinc.org}LA9657-3 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6676-6",
+  "display" : "Resistant"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Resistant\" is not a valid display for the code {http://loinc.org}LA6676-6 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA19542-2",
+  "display" : "Low risk"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Low risk\" is not a valid display for the code {http://loinc.org}LA19542-2 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26423-6",
+  "display" : "Increase dose"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Increase dose\" is not a valid display for the code {http://loinc.org}LA26423-6 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "53040-2",
+  "display" : "Genetic variation's effect on drug metabolism"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic variation's effect on drug metabolism",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA25390-8",
+  "display" : "Rapid metabolizer"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "warning",
+  "error" : "The display \"Rapid metabolizer\" is not a valid display for the code {http://loinc.org}LA25390-8 - should be one of []"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "51963-7",
+  "display" : "Medication assessed"
+}, "valueSet" :null}####
+v: {
+  "display" : "Medication assessed [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "84413-4",
+  "display" : "genotype display name"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genotype display name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48018-6",
+  "display" : "Gene studied ID"
+}, "valueSet" :null}####
+v: {
+  "display" : "Gene studied [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "84414-2",
+  "display" : "Haplotype Name"
+}, "valueSet" :null}####
+v: {
+  "display" : "Haplotype name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48013-7",
+  "display" : "Genomic reference sequence ID"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic reference sequence [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81255-2",
+  "display" : "dbSNP ID"
+}, "valueSet" :null}####
+v: {
+  "display" : "dbSNP [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "69547-8",
+  "display" : "Genomic Ref allele"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic ref allele [ID]",
+  "severity" : "warning",
+  "error" : "The display \"Genomic Ref allele\" is not a valid display for the code {http://loinc.org}69547-8 - should be one of [\"Genomic ref allele [ID]\",\"Ref nucleotide\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "69551-0",
+  "display" : "Genomic Alt allele"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic alt allele [ID]",
+  "severity" : "warning",
+  "error" : "The display \"Genomic Alt allele\" is not a valid display for the code {http://loinc.org}69551-0 - should be one of [\"Genomic alt allele [ID]\",\"Alt allele\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81254-5",
+  "display" : "Genomic Allele start-end"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genomic allele start-end",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "13303-3",
+  "display" : "HLA-A+​B+​C (class I) [Type]"
+}, "valueSet" :null}####
+v: {
+  "display" : "HLA-A+B+C (class I) [Type]",
+  "severity" : "warning",
+  "error" : "The display \"HLA-A+​B+​C (class I) [Type]\" is not a valid display for the code {http://loinc.org}13303-3 - should be one of [\"HLA-A+B+C (class I) [Type]\",HLA-A+B+C]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "84414-2",
+  "display" : "Haplotype name"
+}, "valueSet" :null}####
+v: {
+  "display" : "Haplotype name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "48018-6",
+  "display" : "Gene Studied"
+}, "valueSet" :null}####
+v: {
+  "display" : "Gene studied [ID]",
+  "severity" : "warning",
+  "error" : "The display \"Gene Studied\" is not a valid display for the code {http://loinc.org}48018-6 - should be one of [\"Gene studied [ID]\",\"Gene studied ID\"]"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81293-3",
+  "display" : "Description of ranges of DNA sequences examined"
+}, "valueSet" :null}####
+v: {
+  "display" : "Description of ranges of DNA sequences examined",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "84413-4",
+  "display" : "Genotype display name"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genotype display name",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
   "coding" : [{
     "system" : "http://loinc.org",
     "code" : "81247-9",
@@ -172,6 +1117,17 @@ v: {
     }]
   }
 }}####
+v: {
+  "display" : "Master HL7 genetic variant reporting panel",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81247-9",
+  "display" : "Master HL7 genetic variant reporting panel"
+}, "valueSet" :null}####
 v: {
   "display" : "Master HL7 genetic variant reporting panel",
   "severity" : null,

@@ -1,57 +1,73 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <!--draft-->
+  <a name="scope"> </a>
+  <h2>Scope</h2>
+  <p>
+  	This section introduces some of the key genomics terms and relationships that should be understood by those implementing this specification.
+  </p>
   <a name="overview"> </a>
   <h2>Overview</h2>
   <p>
-    Genetic reporting involves reporting information about the genetic characteristics of a sample.  The sample might be a tissue sample from a human, an animal or, more rarely, a bacteria or virus.  In humans and animals, the sample might be from "normal" tissue, transplanted tissue, reproductive tissue (egg or sperm) or abnormal tissue such as a tumor.
+    Genetic reporting involves reporting information about the genetic characteristics of a sample. In humans and animals, the sample might be from "normal" tissue, transplanted tissue, reproductive tissue (egg or sperm) or abnormal tissue such as a tumor, or other body fluids such as blood, cerebrospinal fluid, or urine.
   </p>
   <p>
-    Reporting is typically done on the specimen's DNA (chromosomal or occasionally mitochondrial DNA), however it can also be done on RNA and proteins (amino acid sequences).
+    Reporting is typically done on the specimen's DNA (chromosomal or occasionally mitochondrial DNA), however it can also be done on RNA and proteins.
   </p>
   <p>
-    Because DNA, RNA and even amino acid sequences can be exceptionally long - and are virtually the same for long stretches within a given species - reporting is typically done on the basis of differences between the sequence observed in the tested specimen and the sequence in a reference sequence. Such differences are called variations. They are not usually reported as a complete enumeration of the whole sequence of interest.  This approach is also used because clinical relevance of genetic tests is based on the presence of diverges from the norm.  Note that a sequence might still be relevant even if it is unchanged from the reference.
+    <strong>Sequence</strong> is a term that indicates a connected series of joined base molecules - a polymer of subunits. For DNA and RNA the bases (or monomeric subunits) are nucleotides. For proteins the units of analysis are amino acids. In the cell, the polymers that comprise DNA or RNA or proteins exist in many discrete molecules. DNA polymers are further organized into structures called chromosomes.
   </p>
   <p>
-    Differences in sequences (variations) are detected (and documented) using a variety of different techniques each of which has trade-offs in terms of applicability (some can only be used for DNA but not RNA or amino acid sequences or can only detect certain types of changes), cost, speed, availability and precision.  A genetic report may contain information gathered from multiple testing approaches.  For example, a more general test might be followed up with more specific tests providing additional details.
+  	Because DNA, RNA and even amino acid sequences can be exceptionally long - and are virtually the same for long stretches within a given species - reporting is typically done on the basis of differences between the sequence observed in the tested specimen and the sequence in a <strong>reference sequence</strong>. Such differences are called <strong>variations</strong>. They are not usually reported as a complete enumeration of the whole sequence of interest. This approach is also used because clinical relevance of genetic tests is based on the presence of divergence from the norm. Note that a sequence might still be relevant even if it is unchanged from the reference.
   </p>
   <p>
-    Variations can be described at different levels of granularity ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g. fragile X) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms or SNPs).  Intermediate levels may group multiple changes together.  Such groupings can be based on a number of considerations:
-  </p>
-  <ul>
-    <li>The technique used to detect the variation</li>
-    <li>Alignment with the borders of major features of the underlying sequence (e.g. gene variants)</li>
-    <li>The type of the difference (insertion of extra copies, inversion of a portion of the sequence</li>
-    <li>Common patterns in the population (a common set of variations typically appear together)</li>
-    <li>A known effect (a particular collection of changes may result in a known physical manifestation or disease - aka. a phenotype)</li>
-  </ul>
-  <p>
-    Groupings may themselves be organized into higher-level groupings based on the same criteria.
+  	Variations can be described at different levels of granularity, ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g. as seen in microsatellite instability) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms/Variations, abbreviated SNP or SNV depending on the context).
   </p>
   <p>
-    "Known" variations are often assigned codes and catalogued into terminologies.  This allows easy linking of knowledge to information found in a particular specimen.  Reports can simply specify the code and know that clinicians can look up relevant information associated with the code.  However, sometimes variations are detected that do not (yet) have a standardized code.  In these cases, a description of the variation and where it was located must be communicated.  Often, even when a code is known, the details about the location and type of change are communicated
+    "Known" variations are often assigned codes and catalogued into code systems. This allows easy linking of knowledge to information found in a particular specimen. Reports can simply specify the <strong>code</strong> and know that clinicians can look up relevant information associated with the code. However, sometimes variations are detected that do not (yet) have a standardized code. In these cases, a description of the variation and where it was located must be communicated. Often, even when a code is known, the details about the location and type of change are communicated.
+  </p>
+  <p>
+    Observed genetic findings (such as wild type, single variants, and co-occurring variants) can be collectively expressed as haplotypes and genotypes. Haplotypes describe a set of genetic findings that appear on a single DNA molecule. Genotypes describe combinations of haplotypes or variations at similar positions across both parental chromosomes. See <a href="sequencing.html">Sequenced Variants</a> for more information.
   </p>
 
   <a name="keyelements"> </a>
   <h2>Key Reporting Elements</h2>
   <p>
-    The payload for a genetic report is carried by the DiagnosticReport resource. The report summarizes and packages all of the information produced by the genetic analysis and other related items such as the orders, the specimen, and others. It organizes it for consumption and provide a summary as well as a rendered view of the findings. It is the primary response to the ServiceRequest which is the "order" for genetic testing to occur. In practice, there can be multiple ServiceRequests grouped together as part of a single requisition. This allows multiple tests to be ordered at one time and the results to be gathered as a group. The organization of the report is accomplished by subsetting data into panels (and sometimes sub-panels). The structure of these panels is usually driven by the types of testing requested, though they can vary depending on the reporting lab. In some cases, no panel organization will be provided at all.
+  	Clinical laboratories worldwide offer genomic testing as part of their test menus to providers for the diagnosis, prognosis, and treatment of patients.  In order to perform testing, both an order from a healthcare provider and a specimen collected from a patient are needed.  Genomic testing is unique in that as the body of knowledge expands, genetic testing performed earlier on a patient specimen may be reanalyzed at a later point with this newer knowledge.  In these cases, the data to be reanalyzed is often treated as a patient specimen, potentially with an order for the reanalysis.
   </p>
   <p>
-    As part of a report of genetics key components to enumerate are: findings, interpretation, impact and recommendations. Findings in genetics are a set of differences from the norm in the observed sequence. For example, a patient sample may have a DNA sequence difference from a reference sequence. The finding is the sequence present in the patient, which can only be understood in the context of a reference Sequence used to indicate the norm. Or, a patient sample has a chromosomal aberration (such as duplication of a chromosome), where the reference is considered to be a generic arrangement of chromosomes. Another example is the microarray detected presence of a SNP, here the reference is the probe set sequence used for detection. Commonly, these findings are reported with interpretations, impacts and recommendations. Interpretations are high-level statements that indicate that a divergence was found. Such as a statement that the sample is 'positive for CYP2C19*1.' Impacts provide an elaboration of the effect of the interpretation, such as ‘poor response to medication.' For the reported impacts, recommended actions may be included, such as 'reduce dosage.'
-  </p>  
+  	When a laboratory decides to add a new test to their test menu for physician’s to order, much is required even before the test order goes live and patient testing commences.  The laboratory validates the test system, including its analytical sensitivity, specificity, and reporting.
+  </p>
+  <p>
+    The payload for a genetic report is carried by the <strong>DiagnosticReport</strong> resource. The report summarizes and packages all of the information produced by the genetic analysis and other related items such as the orders, the specimen, and others. It organizes it for consumption and provide a summary as well as a rendered view of the findings. It is the primary response to the <strong>ServiceRequest</strong> which is the "order" for genetic testing to occur. 
+  </p>
+  <p>
+  	In practice, there can be multiple ServiceRequests grouped together as part of a single requisition. This allows multiple tests to be ordered at one time and the results to be gathered as a group. A genetic report may also contain information gathered from multiple testing approaches. For example, a more general test might be followed up with more specific tests providing additional details.
+  </p>
+  <p>
+  	The organization of the report is often accomplished by subsetting data into panels (and sometimes sub-panels). The structure of these panels is usually driven by the types of testing requested, though they can vary depending on the reporting lab. In some cases, no panel organization will be provided at all.
+  </p>
+  <p>
+  	As part of a report, key components to enumerate are: findings, interpretations, impact and recommendations.
+  </p>
+  <p>
+  	<strong>Genetic Findings</strong> are <strong>observations</strong> about the specimen's genetic characteristics. For example, a chromosomal abnormality (such as duplication of a chromosome), genotype, haplotype, or variant that was detected. <strong>Genetic Impacts</strong> provide an elaboration of the effect of one or more genetic findings, such as ‘poor response to medication.' For the reported impacts, <strong>recommended</strong> actions may be included, such as 'reduce dosage. 
+  </p>
+  <p>
+  	A Genetic <strong>Interpretation</strong> is an overall  assessment of the result of the genetic testing in the context one or more service requests, such as a statement that there is a positive or negative finding.
+  </p>
+  <p>
+  	While any and all of this information may be communicated in the report, it is important to note the clinician has the total patient picture including radiology, patient history, etc, and ultimately assesses the findings.
+  </p>
+  <p>
+  	See <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> for more guidance on impacts and <a href="general.html">General Genomic Reporting</a> for detailed information on genetic reports.
+  </p>
+
 
   <a name="variant"> </a>
-  <h2>Variant Reporting</h2>
+  <h2>Variant Detection</h2>
   <p>
-    DNA, RNA and amino acid sequences can all be examined through a variety of mechanisms. These range from direct sequencing, inference from microarrays, and mass spectrometry. Additionally, genetics findings are sometimes reported on the basis of cytogenetic analysis - visually examining one or more chromosomes using high-powered magnification and various staining techniques to identify discrepancies
+    DNA, RNA and amino acid sequences can all be examined through a variety of mechanisms, ranging from direct sequencing, inference from microarrays, and mass spectrometry.
   </p>
   <p>
-    Sequence is a term that indicates a connected series of joined base molecules - a polymer of subunits. For DNA and RNA the bases (or monomeric subunits) are nucleotides. For proteins the units of analysis are amino acids. In the cell, the polymers that comprise DNA or RNA or proteins exist in many discrete molecules. DNA polymers are further organized into structures called chromosomes. 
-  </p>
-  <p>
-    Direct sequencing techniques follow a multistep pathway. The initial phase of a sequencing run produces raw sequence with a qualification of the quality of the raw sequence. The raw sequence is then subject to further computational analysis. In traditional sequencing the product is a single 'read' and the initial step is often the final step. However, in techniques such as next-generation sequencing, the initial step is massively parallel and many 'reads' result. The next phase for massively parallel sequencing techniques is to align the 'reads' to each other and a reference sequence, which acts as a scaffold to aid in assembling 'reads,' in order to create longer, contiguous series of sequences. The next phase for traditional and highly-parallel sequencing techniques is to compare the sequence, or sequence of the assembled 'reads,' to a reference sequence. This comparison produces indientification of variance and quality scores.
-  </p>
-  <p>
-    Inferential techniques for determining variants in sequences rely upon a standard as a reference. For example, inference from microarrays is done through comparing the signal produced by a sample to a known standard reference. In the case of microarrays, the probe set used conveys the positions interrogated. In Mass spectrometry, the standard is the mass of a known reference. In inferential techniques the output is the presence or absence of variation with a technique specific measurement of accuracy. 
+    Variations are detected by comparing a patients genetic sequence with a reference using a variety of techniques each with their own trade-offs in terms of applicability, cost, speed, availability, and precision. Some can only be used for DNA but not RNA or amino acid sequences or can only detect certain types of changes, for example.
   </p>
 </div>
