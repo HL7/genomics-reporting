@@ -12,6 +12,7 @@
       <code value="001"/>
     </coding>
   </jurisdiction>
+  <packageId value="hl7.fhir.uv.genomics-reporting"/>
   <fhirVersion value="3.6.0"/>
   <definition>
     
@@ -22,30 +23,30 @@
     
     
     
-    <package id="general">
+    <grouping id="general">
       <name value="General Profiles"/>
       <description value="General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"/>
-    </package>
-    <package id="somatics">
+    </grouping>
+    <grouping id="somatics">
       <name value="Somatics"/>
       <description value="Profiles related to the reporting of somatic genetic issues"/>
-    </package>
-    <package id="pharmacogenomics">
+    </grouping>
+    <grouping id="pharmacogenomics">
       <name value="Pharmacogenomics"/>
       <description value="Profiles for reports relating to genetic impact on medication use and effectiveness"/>
-    </package>
-    <package id="cytogenomics">
+    </grouping>
+    <grouping id="cytogenomics">
       <name value="Cytogenomics"/>
       <description value="Profiles for reporting cytogenic results"/>
-    </package>
-    <package id="extensions">
+    </grouping>
+    <grouping id="extensions">
       <name value="Extensions"/>
       <description value="Extensions defined as part of the CG implementation guide"/>
-    </package>
-    <package id="examples">
+    </grouping>
+    <grouping id="examples">
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
-    </package>
+    </grouping>
     
     
     
@@ -74,7 +75,7 @@
       <sourceReference>
         <reference value="StructureDefinition/obs-discrete-variant"/>
       </sourceReference>
-      <package value="general"/>
+      <groupingId value="general"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -86,7 +87,7 @@
       <sourceReference>
         <reference value="StructureDefinition/obs-structural-variant"/>
       </sourceReference>
-      <package value="general"/>
+      <groupingId value="general"/>
     </resource>-->
     <!-- Cytogenomics -->
     
@@ -119,7 +120,7 @@
       <name value="CG Test"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
-      <package value="examples"/>
+      <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
@@ -128,7 +129,7 @@
       <name value="PGx Example"/>
       <description value="Pharmacogenomic Report Example instances"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
-      <package value="examples"/>
+      <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
@@ -137,7 +138,7 @@
       <name value="HLA Example"/>
       <description value="HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
-      <package value="examples"/>
+      <groupingId value="examples"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

@@ -3,7 +3,7 @@
   "tool": "jekyll",
   "logging": ["html"],
   "version": "3.6.0",
-  "fixed-business-version": "0.2",
+  "fixed-business-version": "0.3",
   "html-template": "template-page.html",
   "md-template": "template-page-md.html",
   "license": "CC0-1.0",
@@ -19,7 +19,10 @@
     "specification": "http://build.fhir.org/"
   },
   "suppressedWarningFile": "../src/ignoreWarnings.txt",
+  "includeHeadings": false,
   "pre-process": [
+    {"folder": "../framework/config",
+     "relativePath": ""},
     {"folder": "../framework/assets",
      "relativePath": "assets"},
     {"folder": "../framework/includes",

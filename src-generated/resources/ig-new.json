@@ -3,30 +3,30 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
-  "version" : "0.2",
+  "version" : "0.3",
   "name" : "Clinical Genomics Reporting",
   "status" : "draft",
   "experimental" : false,
@@ -40,9 +40,10 @@
   }],
   "packageId" : "hl7.fhir.uv.genomics-reporting",
   "license" : "CC0-1.0",
-  "fhirVersion" : "3.6.0",
+  "fhirVersion" : ["3.6.0",
+  "3.6.0"],
   "definition" : {
-    "package" : [{
+    "grouping" : [{
       "id" : "general",
       "name" : "General Profiles",
       "description" : "General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"
@@ -79,7 +80,7 @@
       "name" : "CG Test",
       "description" : "Test instance showing data from the CG v2 spec",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
-      "package" : "examples"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -88,7 +89,7 @@
       "name" : "PGx Example",
       "description" : "Pharmacogenomic Report Example instances",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
-      "package" : "examples"
+      "groupingId" : "examples"
     },
     {
       "reference" : {
@@ -97,7 +98,7 @@
       "name" : "HLA Example",
       "description" : "HLA Typing Example",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
-      "package" : "examples"
+      "groupingId" : "examples"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -375,8 +376,8 @@
       }]
     },
     "parameter" : [{
-      "code" : "apply-business-version",
-      "value" : "0.2"
+      "code" : "apply",
+      "value" : "version"
     },
     {
       "code" : "html-template",
