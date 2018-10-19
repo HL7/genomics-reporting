@@ -29,9 +29,6 @@
       <valueUri value="observation-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
-      <valueUri value="sequence-profile-spreadsheet.xml"/>
-    </extension>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="servicerequest-profile-spreadsheet.xml"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
@@ -229,18 +226,6 @@
       </reference>
       <name value="Described Variant"/>
       <description value="Details about a set of changes in the tested sample compared to a reference sequence."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="general"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/sequence"/>
-      </reference>
-      <name value="Definitional Sequence"/>
-      <description value="A profile on sequence that limits it to definitional elements, excluding patient-specific measurement information"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
