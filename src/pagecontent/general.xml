@@ -188,6 +188,52 @@
   <p>
     These categories of observations have relationships.  Haplotypes can be identified based on the presence of variants.  Genotypes can be identified based on the presence of haplotypes and/or variants.  All three can be expressed as a combination of one or more sequences.
   </p>
+  <p>
+    Genotype is used to convey corresponding haplotypes or variations at a particular locus. Many genotypes are expressed as simple strings, and can be conveyed in <code>genotype.valueCodeableConcept.text</code>. In some cases, genotypes are sufficiently standardized to be conveyed as codes in <code>genotype.valueCodeableConcept.code</code>. 
+    <ul>
+      <li><code>TPMT *1/*3A</code> represents the TPMT *1 haplotype (or 'star allele') on one chromosome and the TPMT *3A haplotype on the homologous chromosome</li>
+      <li><code>A/C</code> represents a heterozygous "A" and a heterozygous "C" at SNP rs1142345. </li>
+    </ul>
+  </p>
+  <p>
+    For HLA, KIR, and other genes in the immunogenetics domain, the National Marrow Donor Program (NMDP) led a community effort to define the Genotype List String (GL String) grammar, described <a href="https://glstring.org">here</a>. Notably, the GL String uses '+' as a delimiter between alleles in a genotype. It also has delimiters for ambiguous genotypes, allele lists, and haplotypes.
+  </p>
+  <p>
+    For Pharmacogenomics, we define here a simple grammar of [HGNC gene symbol followed by white space followed by a slash ('/') delimited list of haplotype codes], where the codeSystem is set to the codeSystem of the haplotypes (e.g. Pharmvar). 
+  </p>
+  <p>
+    Here are some examples:
+    <ul>
+      <li>Text only<br/>
+        <code>
+          &lt;valueCodeableConcept&gt;<br/>
+          &#160;&#160;&lt;text&gt;A/C at SNP rs1142345&lt;/text&gt;<br/>
+          &lt;/valueCodeableConcept&gt;<br/>
+        </code>
+      </li>
+      <li>Coded HLA<br/>
+        <code>
+          &lt;valueCodeableConcept&gt;<br/>
+          &#160;&#160;&lt;coding&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;system value=&quot;http://glstring.org&quot;/&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;version value=&quot;1.0&quot;/&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;code value=&quot;[hla|3.23]HLA-A*01:01:01:01/HLA-A*01:02+HLA-A*24:02:01:01&quot;/&gt;<br/>
+          &#160;&#160;&lt;/coding&gt;<br/>
+          &lt;/valueCodeableConcept&gt;<br/>
+        </code>
+      </li>
+      <li>Coded PGx<br/>
+        <code>
+          &lt;valueCodeableConcept&gt;<br/>
+          &#160;&#160;&lt;coding&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;system value=&quot;https://www.pharmvar.org/&quot;/&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;code value=value=&quot;CYP2C9 *1A/*1A&quot;/&gt;<br/>
+          &#160;&#160;&lt;/coding&gt;<br/>
+          &lt;/valueCodeableConcept&gt;<br/>
+        </code>
+      </li>
+    </ul>
+  </p>
 
   <a name="interpretations"> </a>
   <h2>Genetic Interpretations</h2>
