@@ -16,11 +16,12 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>16600</WindowHeight>
+  <WindowHeight>16540</WindowHeight>
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>380</WindowTopX>
   <WindowTopY>460</WindowTopY>
-  <ActiveSheet>2</ActiveSheet>
+  <ActiveSheet>17</ActiveSheet>
+  <FirstVisibleSheet>10</FirstVisibleSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1306,14 +1307,12 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Discriminator</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">relative path | ordered? (true/false) | rules (open/openAtEnd/closed) See wiki</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">relative path | ordered? (true/false) | rules (open/openAtEnd/closed) See wiki</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Slice Description</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s90"><Data ss:Type="String">Element</Data><Comment
@@ -2346,7 +2345,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -21187,7 +21185,7 @@
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">Sequence Phase Relation</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">Sequence Phase Relationship</Data></Cell>
     <Cell ss:StyleID="s98"><Data ss:Type="String">Indicates whether entities are in Cis (same strand) or Trans (opposite strand) relationship to each other</Data></Cell>
     <Cell ss:StyleID="s99"/>
     <Cell ss:StyleID="s98"/>
@@ -21805,10 +21803,11 @@
     <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
    </PageSetup>
    <Unsynced/>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>3</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -21821,12 +21820,10 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
