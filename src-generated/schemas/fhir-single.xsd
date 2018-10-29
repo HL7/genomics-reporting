@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Oct 25, 2018 15:18+0000 for FHIR v3.6.0 
+  Generated on Mon, Oct 29, 2018 21:18+0000 for FHIR v3.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -4950,9 +4950,9 @@ A coverage may only be resposible for specific types of charges, and the sequenc
               <xs:documentation xml:lang="en">This subject or group impacted by the event.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care that establishes the context for this AdverseEvent.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -5124,12 +5124,12 @@ A coverage may only be resposible for specific types of charges, and the sequenc
               <xs:documentation xml:lang="en">Business identifiers assigned to this AllergyIntolerance by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="clinicalStatus" minOccurs="0" maxOccurs="1" type="AllergyIntoleranceClinicalStatus">
+          <xs:element name="clinicalStatus" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The clinical status of the allergy or intolerance.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="verificationStatus" minOccurs="0" maxOccurs="1" type="AllergyIntoleranceVerificationStatus">
+          <xs:element name="verificationStatus" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).</xs:documentation>
            </xs:annotation>
@@ -5344,41 +5344,6 @@ A coverage may only be resposible for specific types of charges, and the sequenc
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="AllergyIntoleranceVerificationStatus-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="unconfirmed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Unconfirmed</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="confirmed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Confirmed</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="refuted">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Refuted</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="entered-in-error">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Entered In Error</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AllergyIntoleranceVerificationStatus">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Assertion about certainty associated with a propensity, or potential risk, of a reaction to the identified substance.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AllergyIntoleranceVerificationStatus-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="AllergyIntoleranceSeverity-list">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="mild">
@@ -5409,36 +5374,6 @@ A coverage may only be resposible for specific types of charges, and the sequenc
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="AllergyIntoleranceClinicalStatus-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="active">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Active</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="inactive">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Inactive</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="resolved">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Resolved</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="AllergyIntoleranceClinicalStatus">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The clinical status of the allergy or intolerance.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="AllergyIntoleranceClinicalStatus-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="Appointment" type="Appointment">
     <xs:annotation>
       <xs:documentation xml:lang="en">A booking of a healthcare event among patient(s), practitioner(s), related person(s) and/or device(s) for a specific date/time. This may result in one or more Encounter(s).</xs:documentation>
@@ -5462,6 +5397,11 @@ A coverage may only be resposible for specific types of charges, and the sequenc
               <xs:documentation xml:lang="en">The overall status of the Appointment. Each of the participants has their own participation status which indicates their involvement in the process, however this status indicates the shared status.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="cancelationReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="serviceCategory" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A broad categorization of the service that is to be performed during this appointment.</xs:documentation>
@@ -5482,12 +5422,12 @@ A coverage may only be resposible for specific types of charges, and the sequenc
               <xs:documentation xml:lang="en">The style of appointment or patient that has been booked in the slot (not service type).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The reason that this appointment is being scheduled. This is more clinical than administrative.</xs:documentation>
+              <xs:documentation xml:lang="en">The coded reason that this appointment is being scheduled. This is more clinical than administrative.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="indication" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="reasonReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.</xs:documentation>
            </xs:annotation>
@@ -5554,7 +5494,9 @@ A coverage may only be resposible for specific types of charges, and the sequenc
           </xs:element>
           <xs:element name="requestedPeriod" minOccurs="0" maxOccurs="unbounded" type="Period">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within. When using these values, the duration (usually in minutes) should be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time.</xs:documentation>
+              <xs:documentation xml:lang="en">A set of date ranges (potentially including times) that the appointment is preferred to be scheduled within.
+
+The duration (usually in minutes) could also be provided to indicate the length of the appointment to fill and populate the start/end times for the actual allocated time. However in other situations the duration may be calculated by the scheduling system.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -7904,9 +7846,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Identifies the patient or group whose intended care is described by the plan.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies the original context in which this particular care plan was created.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this CarePlan was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -8373,9 +8315,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Identifies the patient or group whose intended care is handled by the team.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care that establishes the context for this care team.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this CareTeam was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -8634,7 +8576,12 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Identifiers assigned to this event performer or other systems.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="definition" minOccurs="0" maxOccurs="unbounded" type="uri">
+          <xs:element name="definitionUri" minOccurs="0" maxOccurs="unbounded" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">References the (external) source of pricing information, rules of application for the code this ChargeItem uses.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="definitionCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">References the source of pricing information, rules of application for the code this ChargeItem uses.</xs:documentation>
            </xs:annotation>
@@ -10547,9 +10494,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The patient or group of individuals assessed as part of this record.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care this impression was created as part of.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this ClinicalImpression was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -11272,9 +11219,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Other resources that pertain to this communication and to which this communication should be associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter within which the communication was sent.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this Communication was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="sent" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -11468,9 +11415,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Other resources that pertain to this communication request and to which this communication request should be associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care within which the communication request was created.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this CommunicationRequest was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="payload" type="CommunicationRequest.Payload" minOccurs="0" maxOccurs="unbounded">
@@ -12463,9 +12410,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Indicates the patient or group who the condition record is associated with.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Encounter during which the condition was first asserted.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this Condition was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -14663,11 +14610,13 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Indicates the patient whose record the detected issue is associated with.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The date or date-time when the detected issue was initially identified.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+              <xs:documentation xml:lang="en">The date or period when the detected issue was initially identified.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="identifiedDateTime" type="dateTime"/>
+            <xs:element name="identifiedPeriod" type="Period"/>
+          </xs:choice>
           <xs:element name="author" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Individual or device responsible for the issue being raised.  For example, a decision support application or a pharmacist conducting a medication review.</xs:documentation>
@@ -17061,7 +17010,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The list of people responsible for providing the service.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="appointment" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="appointment" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The appointment that scheduled this encounter.</xs:documentation>
            </xs:annotation>
@@ -17076,7 +17025,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Quantity of time the encounter lasted. This excludes the time during leaves of absence.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reasonReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.</xs:documentation>
            </xs:annotation>
@@ -17195,7 +17149,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="role" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="use" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).</xs:documentation>
            </xs:annotation>
@@ -17280,6 +17234,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="EncounterLocationStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="physicalType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This will be used to specifiy the required levels (bed/ward/room/etc) desired to be recorded to simplify either messaging or query.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -21596,9 +21555,14 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Business identifiers assigned to this goal by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="GoalStatus">
+          <xs:element name="lifecycleStatus" minOccurs="1" maxOccurs="1" type="GoalLifecycleStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates whether the goal has been reached and is still considered relevant.</xs:documentation>
+              <xs:documentation xml:lang="en">The state of the goal throughout its lifecycle.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="achievementStatus" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Describes the progression, or lack thereof, towards the goal against the target.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -21707,16 +21671,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="GoalStatus-list">
+  <xs:simpleType name="GoalLifecycleStatus-list">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="proposed">
         <xs:annotation>
           <xs:documentation xml:lang="en">Proposed</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="accepted">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Accepted</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="planned">
@@ -21724,39 +21683,24 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="en">Planned</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="in-progress">
+      <xs:enumeration value="accepted">
         <xs:annotation>
-          <xs:documentation xml:lang="en">In Progress</xs:documentation>
+          <xs:documentation xml:lang="en">Accepted</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="on-target">
+      <xs:enumeration value="active">
         <xs:annotation>
-          <xs:documentation xml:lang="en">On Target</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ahead-of-target">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Ahead of Target</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="behind-target">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Behind Target</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="sustaining">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Sustaining</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="achieved">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Achieved</xs:documentation>
+          <xs:documentation xml:lang="en">Active</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="on-hold">
         <xs:annotation>
           <xs:documentation xml:lang="en">On Hold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Completed</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="cancelled">
@@ -21776,14 +21720,14 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="GoalStatus">
+  <xs:complexType name="GoalLifecycleStatus">
     <xs:annotation>
       <xs:documentation xml:lang="en">Indicates whether the goal has been met and is still being targeted.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="GoalStatus-list" use="optional"/>
+        <xs:attribute name="value" type="GoalLifecycleStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -22419,7 +22363,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Any additional description of the service and/or any specific issues not covered by the other attributes, which can be displayed as further detail under the serviceName.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="extraDetails" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="extraDetails" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Extra details about the service that can't be placed in the other fields.</xs:documentation>
            </xs:annotation>
@@ -22444,24 +22388,24 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The code(s) that detail the conditions under which the healthcare service is available/offered.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="eligibility" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="eligibility" type="HealthcareService.Eligibility" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Does this service have specific eligibility requirements that need to be met in order to use the service?</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="eligibilityNote" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="program" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Describes the eligibility conditions for the service.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="programName" minOccurs="0" maxOccurs="unbounded" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Program Names that can be used to categorize the service.</xs:documentation>
+              <xs:documentation xml:lang="en">Programs that this service is applicable to.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="characteristic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Collection of characteristics (attributes).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="communication" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Some services are specifically made available in multiple languages, this property permits a directory to declare the languages this is offered in. Typically this is only provided where a service operates in communities with mixed languages used.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="referralMethod" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -22492,6 +22436,27 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="endpoint" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HealthcareService.Eligibility">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The details of a healthcare service available at a location.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Coded value for the eligibility.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="comment" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Describes the eligibility conditions for the service.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -23103,7 +23068,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Indicates the authority who published the protocol (e.g. ACIP) that is being followed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="targetDisease" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="targetDisease" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The vaccine preventable disease the dose is being administered against.</xs:documentation>
            </xs:annotation>
@@ -23114,6 +23079,13 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
             </xs:annotation>
             <xs:element name="doseNumberPositiveInt" type="positiveInt"/>
             <xs:element name="doseNumberString" type="string"/>
+          </xs:choice>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="seriesDosesPositiveInt" type="positiveInt"/>
+            <xs:element name="seriesDosesString" type="string"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>
@@ -29200,6 +29172,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The dose form for a single part product, or combined form of a multiple part product.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="legalStatusOfSupply" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The legal status of supply of the medicinal product as classified by the regulator.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="additionalMonitoringIndicator" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Whether the Medicinal Product is subject to additional monitoring for regulatory reasons.</xs:documentation>
@@ -29223,41 +29200,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="marketingStatus" minOccurs="0" maxOccurs="unbounded" type="MarketingStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">Marketing status of the medicinal product, in contrast to marketing authorizaton.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="marketingAuthorization" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Product regulatory authorization.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="packagedMedicinalProduct" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Package representation for the product.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="pharmaceuticalProduct" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Pharmaceutical aspects of product.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contraindication" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Clinical contraindications, reasons for not giving this.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="interaction" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Clinical interactions with other medications or substances.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="therapeuticIndication" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Clinical reason for use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="undesirableEffect" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Potential clinical unwanted effects of use.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="attachedDocument" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -29298,6 +29240,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="specialDesignation" type="MedicinalProduct.SpecialDesignation" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates if the medicinal product has an orphan designation for the treatment of a rare disease.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="pharmaceuticalProduct" type="MedicinalProduct.PharmaceuticalProduct" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The medicinal product in terms of its pharmaceuticals.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -29435,11 +29382,13 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The intended use of the product, e.g. prevention, treatment.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="indication" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">Condition for which the medicinal use applies.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="indicationCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="indicationReference" type="Reference"/>
+          </xs:choice>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">For example granted, pending, expired or withdrawn.</xs:documentation>
@@ -29453,6 +29402,166 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="species" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Animal species for which this applies.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicinalProduct.PharmaceuticalProduct">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An identifier for the pharmaceutical medicinal product.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="administrableDoseForm" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The administrable dose form, after necessary reconstitution.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="unitOfPresentation" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Todo.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="ingredient" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Ingredient.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="device" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Accompanying device.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="characteristics" type="MedicinalProduct.Characteristics" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Characteristics e.g. a products onset of action.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="routeOfAdministration" type="MedicinalProduct.RouteOfAdministration" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The path by which the pharmaceutical product is taken into or makes contact with the body.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicinalProduct.Characteristics">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A coded characteristic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of characteristic e.g. assigned or pending.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicinalProduct.RouteOfAdministration">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Coded expression for the route.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="firstDose" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The first dose (dose quantity) administered in humans can be specified, for a product under investigation, using a numerical value and its unit of measurement.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="maxSingleDose" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The maximum single dose that can be administered as per the protocol of a clinical trial can be specified using a numerical value and its unit of measurement.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="maxDosePerDay" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The maximum dose per day (maximum dose quantity to be administered in any one 24-h period) that can be administered as per the protocol referenced in the clinical trial authorisation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="maxDosePerTreatmentPeriod" minOccurs="0" maxOccurs="1" type="Ratio">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The maximum dose per treatment period that can be administered as per the protocol referenced in the clinical trial authorisation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="maxTreatmentPeriod" minOccurs="0" maxOccurs="1" type="Duration">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The maximum treatment period during which an Investigational Medicinal Product can be administered as per the protocol referenced in the clinical trial authorisation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="targetSpecies" type="MedicinalProduct.TargetSpecies" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A species for which this route applies.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicinalProduct.TargetSpecies">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Coded expression for the species.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="withdrawalPeriod" type="MedicinalProduct.WithdrawalPeriod" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A species specific time during which consumption of animal product is not appropriate.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicinalProduct.WithdrawalPeriod">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="tissue" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Coded expression for the type of tissue for which the withdrawal period applues, e.g. meat, milk.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A value for the time.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="supportingInformation" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Extra information about the withdrawal period.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -29490,11 +29599,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Jurisdiction within a country.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="legalStatusOfSupply" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The legal status of supply of the medicinal product as classified by the regulator.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -29931,6 +30035,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="strengthLowLimit" minOccurs="0" maxOccurs="1" type="Ratio">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="measurementPoint" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">For when strength is measured at a particular point or distance.</xs:documentation>
@@ -30088,9 +30197,19 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Unique identifier.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="subject" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The product with this is a pack for.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Textual description.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="legalStatusOfSupply" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The legal status of supply of the medicinal product as classified by the regulator.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="marketingStatus" minOccurs="0" maxOccurs="unbounded" type="MarketingStatus">
@@ -33608,6 +33727,13 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code or group definition that describes the intended subject of the action and its children, if any.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="subjectReference" type="Reference"/>
+          </xs:choice>
           <xs:element name="trigger" minOccurs="0" maxOccurs="unbounded" type="TriggerDefinition">
             <xs:annotation>
               <xs:documentation xml:lang="en">A description of when the action should be triggered.</xs:documentation>
@@ -34339,9 +34465,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The person, animal or group on which the procedure was performed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter during which the procedure was performed.</xs:documentation>
+              <xs:documentation xml:lang="en">The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -35651,6 +35777,32 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="communication" type="RelatedPerson.Communication" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A language which may be used to communicate with about the patient's health.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RelatedPerson.Communication">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="language" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The ISO-639-1 alpha 2 code in lower case for the language, optionally followed by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g. &quot;en&quot; for English, or &quot;en-US&quot; for American English versus &quot;en-EN&quot; for England English.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="preferred" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates whether or not the patient prefers this language (over other languages he masters up a certain level).</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -37768,7 +37920,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The number of copies of the seqeunce of interest. (RNASeq).</xs:documentation>
+              <xs:documentation xml:lang="en">The number of copies of the sequence of interest. (RNASeq).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="referenceSeq" type="Sequence.ReferenceSeq" minOccurs="0" maxOccurs="1">
@@ -37783,7 +37935,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="observedSeq" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall starts from referenceSeq.windowStart and end by referenceSeq.windowEnd.</xs:documentation>
+              <xs:documentation xml:lang="en">Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="quality" type="Sequence.Quality" minOccurs="0" maxOccurs="unbounded">
@@ -37844,7 +37996,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="referenceSeqPointer" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A Pointer to another Sequence entity as reference sequence.</xs:documentation>
+              <xs:documentation xml:lang="en">A pointer to another Sequence entity as reference sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="referenceSeqString" minOccurs="0" maxOccurs="1" type="string">
@@ -38092,19 +38244,19 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="precision" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="variantType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identify the exact boundaries of variant sequences. Each type of structure variant requires the DNA duplex to be broken and rejoined, and this creates a new sequence of bases at the rejoined sites, known as breakpoints or boundaries.</xs:documentation>
+              <xs:documentation xml:lang="en">Information about chromosome structure variation DNA change type.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reportedaCGHRatio" minOccurs="0" maxOccurs="1" type="decimal">
+          <xs:element name="exact" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Structural Variant reported aCGH ratio.</xs:documentation>
+              <xs:documentation xml:lang="en">Used to indicate if the outer and inner start-end values have the same meaning.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="length" minOccurs="0" maxOccurs="1" type="integer">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Length of the variant choromosome.</xs:documentation>
+              <xs:documentation xml:lang="en">Length of the variant chromosome.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="outer" type="Sequence.Outer" minOccurs="0" maxOccurs="1">
