@@ -31,7 +31,7 @@
     These principles were implemented in a technical specification by extending an existing XML based format for exchanging histocompatibility and immunogenetic genotyping data called Histoimmunogenetics Markup Language (HML) to include results from NGS methodologies (https://bioinformatics.bethematchclinical.org/hla-resources/hml/). The resulting schema may be found in https://schemas.nmdp.org/. The National Marrow Donor Program (NMDP)/Be The Match uses this format for reporting HLA genotyping from potential donors and for patients needing stem cell transplants.
   </p>
   <p>
-    Both MIRING and HML were used to inform mapping data elements to FHIR resources such as Patient, Specimen, Sequence, Observation-Genetic Profile, and DiagnosticReport where possible. Several additional data elements were needed specifically for this use case, resulting in the development of a specific profile for reporting HLA genotyping results (Diagnostic Report Profile for HLA Genotyping Results).
+    Both MIRING and HML were used to inform mapping data elements to FHIR resources such as Patient, Specimen, MolecularSequence, Observation-Genetic Profile, and DiagnosticReport where possible. Several additional data elements were needed specifically for this use case, resulting in the development of a specific profile for reporting HLA genotyping results (Diagnostic Report Profile for HLA Genotyping Results).
   </p>
   <ul>
     <li>Minimum information for reporting next generation sequence genotyping (MIRING): Guidelines for reporting HLA and KIR genotyping via next generation sequencing (see <a href="https://www.ncbi.nlm.nih.gov/pubmed/26407912">here</a> )</li>
@@ -57,7 +57,7 @@
 
 
   <p>
-    From the below image, HLA result profile in DiagnosticReport resource is used. The Genotype profile of Observation will be pointed by the DiagnosticReport.result. Haplotype profile will be used. Then, Sequence Resource with the exon sequence data will be pointed by the haplotype profile.
+    From the below image, HLA result profile in DiagnosticReport resource is used. The Genotype profile of Observation will be pointed by the DiagnosticReport.result. Haplotype profile will be used. Then, MolecularSequence Resource with the exon sequence data will be pointed by the haplotype profile.
   </p>
   <img src="hla-relationship.png" alt="Diagram showing the hla report relationship"/>-->
   <a name="interpretations"> </a>
