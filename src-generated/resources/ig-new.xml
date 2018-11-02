@@ -52,7 +52,7 @@
     </grouping>
     <grouping id="cytogenomics">
       <name value="Cytogenomics"/>
-      <description value="Profiles for reporting cytogenic results"/>
+      <description value="Profiles for reporting cytogenetic results"/>
     </grouping>
     <grouping id="extensions">
       <name value="Extensions"/>
@@ -66,7 +66,7 @@
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
       </reference>
-      <name value="CG Test"/>
+      <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -75,7 +75,7 @@
       <reference>
         <reference value="Bundle/diagnosticreport-pgxexample"/>
       </reference>
-      <name value="PGx Example"/>
+      <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -84,7 +84,7 @@
       <reference>
         <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
       </reference>
-      <name value="HLA Example"/>
+      <name value="Example - HLA"/>
       <description value="HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -95,7 +95,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="CG IG Home Page"/>
+        <title value="IG Home Page"/>
         <generation value="html"/>
         <page>
           <nameUrl value="background.html"/>
@@ -109,7 +109,7 @@
         </page>
         <page>
           <nameUrl value="sequencing.html"/>
-          <title value="Reporting Variants"/>
+          <title value="Variant Reporting"/>
           <generation value="html"/>
         </page>
         <page>
@@ -124,12 +124,12 @@
         </page>
         <page>
           <nameUrl value="somatics.html"/>
-          <title value="Somatic Genomic Reporting"/>
+          <title value="Somatic Reporting"/>
           <generation value="html"/>
         </page>
         <page>
           <nameUrl value="transplants.html"/>
-          <title value="Genomic Profiling for Transplantation"/>
+          <title value="Transplantation Reporting"/>
           <generation value="html"/>
         </page>
         <page>
@@ -159,17 +159,17 @@
         <generation value="html"/>
         <page>
           <nameUrl value="obs-base.html"/>
-          <title value="Base observation common properties"/>
+          <title value="Genetic Observation Common Properties"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="diagnosticreport.html"/>
-          <title value="CG Diagnostic Report"/>
+          <title value="Genomics Report"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="specimen.html"/>
-          <title value="CG Specimen"/>
+          <title value="Specimen"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -179,17 +179,17 @@
         </page>
         <page>
           <nameUrl value="servicerequest.html"/>
-          <title value="Order for Genetics Test"/>
+          <title value="Request for Genetics Test"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="obs-gen-panel.html"/>
-          <title value="Genetic Panel"/>
+          <title value="Genomics Panel"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="obs-overall.html"/>
-          <title value="Genetic analysis overall interpretation"/>
+          <title value="Genomic analysis overall interpretation"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -213,8 +213,8 @@
           <generation value="generated"/>
         </page>
         <page>
-          <nameUrl value="obs-cytogenic-not.html"/>
-          <title value="Cytogenic Notation"/>
+          <nameUrl value="obs-cytogenetic-nomenclature.html"/>
+          <title value="Cytogenetic Nomenclature"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -239,37 +239,37 @@
         </page>
         <page>
           <nameUrl value="obs-inh-dis-path.html"/>
-          <title value="Inheritable Disease Pathology"/>
+          <title value="Inheritable Disease Pathogenicity"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="obs-copy-num-chg.html"/>
-          <title value="Chromosome copy number change panel"/>
+          <title value="Copy Number Change"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="device-micro-plat.html"/>
-          <title value="Device Micro-array Platform"/>
+          <title value="Device Microarray Platform"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="device-fish-probe.html"/>
-          <title value="Device Fish Probe"/>
+          <title value="Device FISH Probe"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="obs-med-impact.html"/>
-          <title value="Genetic Medication Impact"/>
+          <title value="Medication Impact"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="obs-metabolism.html"/>
-          <title value="Genotype medication metabolism impact"/>
+          <title value="Medication Metabolism Impact"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="obs-efficacy.html"/>
-          <title value="Genotype medication efficacy impact"/>
+          <title value="Medication Efficacy Impact"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -279,7 +279,7 @@
         </page>
         <page>
           <nameUrl value="task-med-chg.html"/>
-          <title value="Medication Adjustment Proposal"/>
+          <title value="Medication Usage Implication"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -314,7 +314,7 @@
         </page>
         <page>
           <nameUrl value="extension-dr-recommendedAction.html"/>
-          <title value="Recommended action"/>
+          <title value="Recommended Action - DiagnosticReport"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -329,22 +329,22 @@
         </page>
         <page>
           <nameUrl value="extension-obs-recommendedAction.html"/>
-          <title value="Recommended action"/>
+          <title value="Recommended Action - Observation"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="diagnosticreport-cgexample.html"/>
-          <title value="CG Test"/>
+          <title value="Example - Genomics Reporting"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="diagnosticreport-pgxexample.html"/>
-          <title value="PGx Example"/>
+          <title value="Example - Pharmacogenomics"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="CG-IG-HLA-FullBundle-01.html"/>
-          <title value="HLA Example"/>
+          <title value="Example - HLA"/>
           <generation value="generated"/>
         </page>
       </page>

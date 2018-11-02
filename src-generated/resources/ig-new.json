@@ -61,7 +61,7 @@
     {
       "id" : "cytogenomics",
       "name" : "Cytogenomics",
-      "description" : "Profiles for reporting cytogenic results"
+      "description" : "Profiles for reporting cytogenetic results"
     },
     {
       "id" : "extensions",
@@ -77,7 +77,7 @@
       "reference" : {
         "reference" : "Bundle/diagnosticreport-cgexample"
       },
-      "name" : "CG Test",
+      "name" : "Example - Genomics Reporting",
       "description" : "Test instance showing data from the CG v2 spec",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
       "groupingId" : "examples"
@@ -86,7 +86,7 @@
       "reference" : {
         "reference" : "Bundle/diagnosticreport-pgxexample"
       },
-      "name" : "PGx Example",
+      "name" : "Example - Pharmacogenomics",
       "description" : "Pharmacogenomic Report Example instances",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
       "groupingId" : "examples"
@@ -95,7 +95,7 @@
       "reference" : {
         "reference" : "Bundle/CG-IG-HLA-FullBundle-01"
       },
-      "name" : "HLA Example",
+      "name" : "Example - HLA",
       "description" : "HLA Typing Example",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
       "groupingId" : "examples"
@@ -106,7 +106,7 @@
       "generation" : "html",
       "page" : [{
         "nameUrl" : "index.html",
-        "title" : "CG IG Home Page",
+        "title" : "IG Home Page",
         "generation" : "html",
         "page" : [{
           "nameUrl" : "background.html",
@@ -120,7 +120,7 @@
         },
         {
           "nameUrl" : "sequencing.html",
-          "title" : "Reporting Variants",
+          "title" : "Variant Reporting",
           "generation" : "html"
         },
         {
@@ -135,12 +135,12 @@
         },
         {
           "nameUrl" : "somatics.html",
-          "title" : "Somatic Genomic Reporting",
+          "title" : "Somatic Reporting",
           "generation" : "html"
         },
         {
           "nameUrl" : "transplants.html",
-          "title" : "Genomic Profiling for Transplantation",
+          "title" : "Transplantation Reporting",
           "generation" : "html"
         },
         {
@@ -170,17 +170,17 @@
         "generation" : "html",
         "page" : [{
           "nameUrl" : "obs-base.html",
-          "title" : "Base observation common properties",
+          "title" : "Genetic Observation Common Properties",
           "generation" : "generated"
         },
         {
           "nameUrl" : "diagnosticreport.html",
-          "title" : "CG Diagnostic Report",
+          "title" : "Genomics Report",
           "generation" : "generated"
         },
         {
           "nameUrl" : "specimen.html",
-          "title" : "CG Specimen",
+          "title" : "Specimen",
           "generation" : "generated"
         },
         {
@@ -190,17 +190,17 @@
         },
         {
           "nameUrl" : "servicerequest.html",
-          "title" : "Order for Genetics Test",
+          "title" : "Request for Genetics Test",
           "generation" : "generated"
         },
         {
           "nameUrl" : "obs-gen-panel.html",
-          "title" : "Genetic Panel",
+          "title" : "Genomics Panel",
           "generation" : "generated"
         },
         {
           "nameUrl" : "obs-overall.html",
-          "title" : "Genetic analysis overall interpretation",
+          "title" : "Genomic analysis overall interpretation",
           "generation" : "generated"
         },
         {
@@ -224,8 +224,8 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-cytogenic-not.html",
-          "title" : "Cytogenic Notation",
+          "nameUrl" : "obs-cytogenetic-nomenclature.html",
+          "title" : "Cytogenetic Nomenclature",
           "generation" : "generated"
         },
         {
@@ -250,37 +250,37 @@
         },
         {
           "nameUrl" : "obs-inh-dis-path.html",
-          "title" : "Inheritable Disease Pathology",
+          "title" : "Inheritable Disease Pathogenicity",
           "generation" : "generated"
         },
         {
           "nameUrl" : "obs-copy-num-chg.html",
-          "title" : "Chromosome copy number change panel",
+          "title" : "Copy Number Change",
           "generation" : "generated"
         },
         {
           "nameUrl" : "device-micro-plat.html",
-          "title" : "Device Micro-array Platform",
+          "title" : "Device Microarray Platform",
           "generation" : "generated"
         },
         {
           "nameUrl" : "device-fish-probe.html",
-          "title" : "Device Fish Probe",
+          "title" : "Device FISH Probe",
           "generation" : "generated"
         },
         {
           "nameUrl" : "obs-med-impact.html",
-          "title" : "Genetic Medication Impact",
+          "title" : "Medication Impact",
           "generation" : "generated"
         },
         {
           "nameUrl" : "obs-metabolism.html",
-          "title" : "Genotype medication metabolism impact",
+          "title" : "Medication Metabolism Impact",
           "generation" : "generated"
         },
         {
           "nameUrl" : "obs-efficacy.html",
-          "title" : "Genotype medication efficacy impact",
+          "title" : "Medication Efficacy Impact",
           "generation" : "generated"
         },
         {
@@ -290,7 +290,7 @@
         },
         {
           "nameUrl" : "task-med-chg.html",
-          "title" : "Medication Adjustment Proposal",
+          "title" : "Medication Usage Implication",
           "generation" : "generated"
         },
         {
@@ -325,7 +325,7 @@
         },
         {
           "nameUrl" : "extension-dr-recommendedAction.html",
-          "title" : "Recommended action",
+          "title" : "Recommended Action - DiagnosticReport",
           "generation" : "generated"
         },
         {
@@ -340,22 +340,22 @@
         },
         {
           "nameUrl" : "extension-obs-recommendedAction.html",
-          "title" : "Recommended action",
+          "title" : "Recommended Action - Observation",
           "generation" : "generated"
         },
         {
           "nameUrl" : "diagnosticreport-cgexample.html",
-          "title" : "CG Test",
+          "title" : "Example - Genomics Reporting",
           "generation" : "generated"
         },
         {
           "nameUrl" : "diagnosticreport-pgxexample.html",
-          "title" : "PGx Example",
+          "title" : "Example - Pharmacogenomics",
           "generation" : "generated"
         },
         {
           "nameUrl" : "CG-IG-HLA-FullBundle-01.html",
-          "title" : "HLA Example",
+          "title" : "Example - HLA",
           "generation" : "generated"
         }]
       },

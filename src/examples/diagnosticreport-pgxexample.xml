@@ -383,9 +383,6 @@
         <specimen>
           <reference value="Specimen/specimen"/>
         </specimen>
-        <derivedFrom>
-          <reference value="MolecularSequence/sequence-1-pgx-example"/>
-        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -506,9 +503,6 @@
         <specimen>
           <reference value="Specimen/specimen"/>
         </specimen>
-        <derivedFrom>
-          <reference value="MolecularSequence/sequence-2-pgx-example"/>
-        </derivedFrom>
         <component>
           <code>
             <coding>
@@ -593,48 +587,6 @@
           </valueRange>
         </component>
       </Observation>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/MolecularSequence/sequence-1-pgx-example"/>
-    <resource>
-      <MolecularSequence>
-        <id value="sequence-1-pgx-example"/>
-        <type value="dna"/>
-        <coordinateSystem value="0"/>
-        <referenceSeq>
-          <orientation value="sense"/>
-          <referenceSeqId>
-            <coding>
-              <system value="http://www.ncbi.nlm.nih.gov/nuccore"/>
-              <code value="NG-007726.3"/>
-            </coding>
-          </referenceSeqId>
-          <windowStart value="55227970"/>
-          <windowEnd value="55227980"/>
-        </referenceSeq>
-      </MolecularSequence>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/MolecularSequence/sequence-2-pgx-example"/>
-    <resource>
-      <MolecularSequence>
-        <id value="sequence-2-pgx-example"/>
-        <type value="dna"/>
-        <coordinateSystem value="0"/>
-        <referenceSeq>
-          <orientation value="sense"/>
-          <referenceSeqId>
-            <coding>
-              <system value="http://www.ncbi.nlm.nih.gov/nuccore"/>
-              <code value="NG-007726.3"/>
-            </coding>
-          </referenceSeqId>
-          <windowStart value="55227970"/>
-          <windowEnd value="55227980"/>
-        </referenceSeq>
-      </MolecularSequence>
     </resource>
   </entry>
   <entry>

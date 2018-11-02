@@ -36,7 +36,7 @@
     </grouping>
     <grouping id="cytogenomics">
       <name value="Cytogenomics"/>
-      <description value="Profiles for reporting cytogenic results"/>
+      <description value="Profiles for reporting cytogenetic results"/>
     </grouping>
     <grouping id="extensions">
       <name value="Extensions"/>
@@ -114,7 +114,7 @@
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
       </reference>
-      <name value="CG Test"/>
+      <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -123,7 +123,7 @@
       <reference>
         <reference value="Bundle/diagnosticreport-pgxexample"/>
       </reference>
-      <name value="PGx Example"/>
+      <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -132,7 +132,7 @@
       <reference>
         <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
       </reference>
-      <name value="HLA Example"/>
+      <name value="Example - HLA"/>
       <description value="HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -143,7 +143,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="CG IG Home Page"/>
+        <title value="IG Home Page"/>
         <generation value="html"/>
         <page>
           <nameUrl value="background.html"/>
@@ -157,7 +157,7 @@
         </page>
         <page>
           <nameUrl value="sequencing.html"/>
-          <title value="Reporting Variants"/>
+          <title value="Variant Reporting"/>
           <generation value="html"/>
         </page>
         <page>
@@ -172,12 +172,12 @@
         </page>
         <page>
           <nameUrl value="somatics.html"/>
-          <title value="Somatic Genomic Reporting"/>
+          <title value="Somatic Reporting"/>
           <generation value="html"/>
         </page>
         <page>
           <nameUrl value="transplants.html"/>
-          <title value="Genomic Profiling for Transplantation"/>
+          <title value="Transplantation Reporting"/>
           <generation value="html"/>
         </page>
         <page>
@@ -207,17 +207,17 @@
         <generation value="html"/>
       <page>
 <nameUrl value="obs-base.html"/>
-<ns0:title xmlns:ns0="http://hl7.org/fhir" value="Base observation common properties"/>
+<ns0:title xmlns:ns0="http://hl7.org/fhir" value="Genetic Observation Common Properties"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport.html"/>
-<ns1:title xmlns:ns1="http://hl7.org/fhir" value="CG Diagnostic Report"/>
+<ns1:title xmlns:ns1="http://hl7.org/fhir" value="Genomics Report"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen.html"/>
-<ns2:title xmlns:ns2="http://hl7.org/fhir" value="CG Specimen"/>
+<ns2:title xmlns:ns2="http://hl7.org/fhir" value="Specimen"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -227,17 +227,17 @@
 </page>
 <page>
 <nameUrl value="servicerequest.html"/>
-<ns4:title xmlns:ns4="http://hl7.org/fhir" value="Order for Genetics Test"/>
+<ns4:title xmlns:ns4="http://hl7.org/fhir" value="Request for Genetics Test"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-gen-panel.html"/>
-<ns5:title xmlns:ns5="http://hl7.org/fhir" value="Genetic Panel"/>
+<ns5:title xmlns:ns5="http://hl7.org/fhir" value="Genomics Panel"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-overall.html"/>
-<ns6:title xmlns:ns6="http://hl7.org/fhir" value="Genetic analysis overall interpretation"/>
+<ns6:title xmlns:ns6="http://hl7.org/fhir" value="Genomic analysis overall interpretation"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -261,8 +261,8 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-cytogenic-not.html"/>
-<ns11:title xmlns:ns11="http://hl7.org/fhir" value="Cytogenic Notation"/>
+<nameUrl value="obs-cytogenetic-nomenclature.html"/>
+<ns11:title xmlns:ns11="http://hl7.org/fhir" value="Cytogenetic Nomenclature"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -287,37 +287,37 @@
 </page>
 <page>
 <nameUrl value="obs-inh-dis-path.html"/>
-<ns16:title xmlns:ns16="http://hl7.org/fhir" value="Inheritable Disease Pathology"/>
+<ns16:title xmlns:ns16="http://hl7.org/fhir" value="Inheritable Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-copy-num-chg.html"/>
-<ns17:title xmlns:ns17="http://hl7.org/fhir" value="Chromosome copy number change panel"/>
+<ns17:title xmlns:ns17="http://hl7.org/fhir" value="Copy Number Change"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="device-micro-plat.html"/>
-<ns18:title xmlns:ns18="http://hl7.org/fhir" value="Device Micro-array Platform"/>
+<ns18:title xmlns:ns18="http://hl7.org/fhir" value="Device Microarray Platform"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="device-fish-probe.html"/>
-<ns19:title xmlns:ns19="http://hl7.org/fhir" value="Device Fish Probe"/>
+<ns19:title xmlns:ns19="http://hl7.org/fhir" value="Device FISH Probe"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-med-impact.html"/>
-<ns20:title xmlns:ns20="http://hl7.org/fhir" value="Genetic Medication Impact"/>
+<ns20:title xmlns:ns20="http://hl7.org/fhir" value="Medication Impact"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-metabolism.html"/>
-<ns21:title xmlns:ns21="http://hl7.org/fhir" value="Genotype medication metabolism impact"/>
+<ns21:title xmlns:ns21="http://hl7.org/fhir" value="Medication Metabolism Impact"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-efficacy.html"/>
-<ns22:title xmlns:ns22="http://hl7.org/fhir" value="Genotype medication efficacy impact"/>
+<ns22:title xmlns:ns22="http://hl7.org/fhir" value="Medication Efficacy Impact"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -327,7 +327,7 @@
 </page>
 <page>
 <nameUrl value="task-med-chg.html"/>
-<ns24:title xmlns:ns24="http://hl7.org/fhir" value="Medication Adjustment Proposal"/>
+<ns24:title xmlns:ns24="http://hl7.org/fhir" value="Medication Usage Implication"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -362,7 +362,7 @@
 </page>
 <page>
 <nameUrl value="extension-dr-recommendedAction.html"/>
-<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Recommended action"/>
+<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Recommended Action - DiagnosticReport"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -377,22 +377,22 @@
 </page>
 <page>
 <nameUrl value="extension-obs-recommendedAction.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Recommended action"/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Recommended Action - Observation"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-cgexample.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="CG Test"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - Genomics Reporting"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-pgxexample.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="PGx Example"/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Pharmacogenomics"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="CG-IG-HLA-FullBundle-01.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="HLA Example"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - HLA"/>
 <generation value="generated"/>
 </page>
 </page>

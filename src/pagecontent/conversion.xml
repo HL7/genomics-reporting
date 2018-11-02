@@ -66,9 +66,9 @@
           <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsDNARegionName.html">Extension: Observation-geneticsDNARegionName</a>
         </td>
       </tr>
-      
+
       <tr>
-        <td>Transcript DNA change (cHGVS)</td>
+        <td>DNA Change - Transcript (cHGVS)</td>
         <td>
           <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Name</a>
         </td>
@@ -134,7 +134,7 @@
         <td>
           <a href="http://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.Frequency</a>
         </td>
-      </tr>      
+      </tr>
       <tr>
         <td>Allelic phase</td>
         <td>
@@ -166,49 +166,49 @@
       <tr>
         <td>Structural variant reported arrCGH [Ratio]</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.structureVariant.reportedaCGHRatio</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.reportedaCGHRatio</a>
         </td>
       </tr>
       <tr>
         <td>Genomic ref allele</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.variant.referenceAllele</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.variant.referenceAllele</a>
         </td>
       </tr>
       <tr>
         <td>Genomic alt allele</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.variant.observedAllele</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.variant.observedAllele</a>
         </td>
       </tr>
       <tr>
         <td>Coordinate System</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.coordinateSystem</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.coordinateSystem</a>
         </td>
       </tr>
       <tr>
         <td>Genomic Allele start-end</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.variant.start,end</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.variant.start,end</a>
         </td>
       </tr>
       <tr>
         <td>Structural variant length</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.structureVariant.length</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.length</a>
         </td>
       </tr>
       <tr>
         <td>Structural variant outer start and end</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.structureVariant.outer</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.outer</a>
         </td>
       </tr>
       <tr>
         <td>Structural variant inner start and end</td>
         <td>
-          <a href="http://hl7.org/fhir/stu3/sequence.html">MolecularSequence.structureVariant.inner</a>
+          <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.inner</a>
         </td>
       </tr>
       <tr>
@@ -221,14 +221,14 @@
     TODO - include mapping document from LIN
   </p>
   <a name="sequence"> </a>
-  <h2>Sequence Resource</h2>
+  <h2>Sequence -> MolecularSequence Resource</h2>
   <p>
-    The <a href="{{site.data.fhir.path}}sequence.html">Sequence</a> resource is supported in both the STU3 and R4 profiles.  However, the R4 profiles propose to limit the use of Sequence to "definitional" data rather than patient-specific sequence information, preferring to use Observation for the former.  As a result, several STU3 Sequence elements are mapped to Observation elements in R4.
+    The STU3 <a href="http://hl7.org/fhir/stu3/sequence.html">Sequence</a> Resource has been renamed to <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a> in R4 and has various improvments.
   </p>
   <p>TODO - define specific mappings and identify which additional sequence elements (particularly quality elements) should be brought into the Observation profiles</p>
   <a name="hla"> </a>
   <h2>HLA genotyping results</h2>
   <p>
-    This version of the implementation guide has not incorporated 
+    This version of the implementation guide has not incorporated
   </p>
 </div>

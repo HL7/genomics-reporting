@@ -12,21 +12,21 @@
 <tr>
 <td style="column-width:30%">
 <a href="obs-base.html">
-                        •  Base observation common properties</a>
+                        •  Genetic Observation Common Properties</a>
 </td>
 <td>Base profile that defines characteristics shared by all genetic observations</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="diagnosticreport.html">
-                        •  CG Diagnostic Report</a>
+                        •  Genomics Report</a>
 </td>
-<td>Defines the overall genetic report</td>
+<td>Defines the overall genomic report</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="specimen.html">
-                        •  CG Specimen</a>
+                        •  Specimen</a>
 </td>
 <td>Constraints on Specimen for use with clinical genomics reporting</td>
 </tr>
@@ -40,21 +40,21 @@
 <tr>
 <td style="column-width:30%">
 <a href="servicerequest.html">
-                        •  Order for Genetics Test</a>
+                        •  Request for Genetics Test</a>
 </td>
 <td>The lab order or request that triggered the execution of the genetics test</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="obs-gen-panel.html">
-                        •  Genetic Panel</a>
+                        •  Genomics Panel</a>
 </td>
 <td>Organizes information within a genetic report</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="obs-overall.html">
-                        •  Genetic analysis overall interpretation</a>
+                        •  Genomic analysis overall interpretation</a>
 </td>
 <td>Provides a coarse overall interpretation of the genetic results reported.</td>
 </tr>
@@ -88,8 +88,8 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="obs-cytogenic-not.html">
-                        •  Cytogenic Notation</a>
+<a href="obs-cytogenetic-nomenclature.html">
+                        •  Cytogenetic Nomenclature</a>
 </td>
 <td>Fully describes a variant with a single code.  Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.</td>
 </tr>
@@ -124,7 +124,7 @@
 <tr>
 <td style="column-width:30%">
 <a href="obs-inh-dis-path.html">
-                        •  Inheritable Disease Pathology</a>
+                        •  Inheritable Disease Pathogenicity</a>
 </td>
 <td>Provides an indication of whether there's a pathologic risk associated with a particular genotype, haplotype, variant or combination there-of, and if so, what the associated pathology is.</td>
 </tr>
@@ -177,21 +177,21 @@
 <tr>
 <td style="column-width:30%">
 <a href="obs-med-impact.html">
-                        •  Genetic Medication Impact</a>
+                        •  Medication Impact</a>
 </td>
 <td>Abstract profile with common properties for observations that convey the potential impact of a genetic characteristics on a medication</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="obs-metabolism.html">
-                        •  Genotype medication metabolism impact</a>
+                        •  Medication Metabolism Impact</a>
 </td>
 <td>Assertion of the expected impact of a particular genotype on the ability of the subject to metabolize medications</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="obs-efficacy.html">
-                        •  Genotype medication efficacy impact</a>
+                        •  Medication Efficacy Impact</a>
 </td>
 <td>Assertion of the expected impact of a particular genotype on the efficacy of medications for the subject</td>
 </tr>
@@ -205,7 +205,7 @@
 <tr>
 <td style="column-width:30%">
 <a href="task-med-chg.html">
-                        •  Medication Adjustment Proposal</a>
+                        •  Medication Usage Implication</a>
 </td>
 <td>Task describing what sort of change (if any) should be made in a patient's medication based on an identified genotype</td>
 </tr>
@@ -221,28 +221,28 @@
 </p>
 <a name="4"> </a>
 <h3>Cytogenomics </h3>
-<p>Profiles for reporting cytogenic results</p>
+<p>Profiles for reporting cytogenetic results</p>
 <p>
 <table>
 <tbody>
 <tr>
 <td style="column-width:30%">
 <a href="obs-copy-num-chg.html">
-                        •  Chromosome copy number change panel</a>
+                        •  Copy Number Change</a>
 </td>
 <td>Details about the copy number pair, such as the base pair start and end coordinates of where the change occurred.</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="device-micro-plat.html">
-                        •  Device Micro-array Platform</a>
+                        •  Device Microarray Platform</a>
 </td>
 <td>Information about a micro-array platform used as part of copy number change testing</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="device-fish-probe.html">
-                        •  Device Fish Probe</a>
+                        •  Device FISH Probe</a>
 </td>
 <td>Information about the probe used in a FISH test</td>
 </tr>
@@ -265,7 +265,7 @@
 <tr>
 <td style="column-width:30%">
 <a href="extension-dr-recommendedAction.html">
-                        •  Recommended action</a>
+                        •  Recommended Action - DiagnosticReport</a>
 </td>
 <td>References a proposed action that is recommended based on the results of the diagnostic report</td>
 </tr>
@@ -286,7 +286,7 @@
 <tr>
 <td style="column-width:30%">
 <a href="extension-obs-recommendedAction.html">
-                        •  Recommended action</a>
+                        •  Recommended Action - Observation</a>
 </td>
 <td>References a proposed action that is recommended based on the results of the observation.</td>
 </tr>
@@ -302,21 +302,21 @@
 <tr>
 <td style="column-width:30%">
 <a href="diagnosticreport-cgexample.html">
-                        •  CG Test</a>
+                        •  Example - Genomics Reporting</a>
 </td>
 <td>Test instance showing data from the CG v2 spec</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="diagnosticreport-pgxexample.html">
-                        •  PGx Example</a>
+                        •  Example - Pharmacogenomics</a>
 </td>
 <td>Pharmacogenomic Report Example instances</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="CG-IG-HLA-FullBundle-01.html">
-                        •  HLA Example</a>
+                        •  Example - HLA</a>
 </td>
 <td>HLA Typing Example</td>
 </tr>
