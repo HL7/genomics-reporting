@@ -68,7 +68,7 @@
       <reference>
         <reference value="StructureDefinition/obs-base"/>
       </reference>
-      <name value="Base observation common properties"/>
+      <name value="Genetic Observation Common Properties"/>
       <description value="Base profile that defines characteristics shared by all genetic observations"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -80,8 +80,8 @@
       <reference>
         <reference value="StructureDefinition/diagnosticreport"/>
       </reference>
-      <name value="CG Diagnostic Report"/>
-      <description value="Defines the overall genetic report"/>
+      <name value="Genomics Report"/>
+      <description value="Defines the overall genomic report"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -92,7 +92,7 @@
       <reference>
         <reference value="StructureDefinition/specimen"/>
       </reference>
-      <name value="CG Specimen"/>
+      <name value="Specimen"/>
       <description value="Constraints on Specimen for use with clinical genomics reporting"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -116,7 +116,7 @@
       <reference>
         <reference value="StructureDefinition/servicerequest"/>
       </reference>
-      <name value="Order for Genetics Test"/>
+      <name value="Request for Genetics Test"/>
       <description value="The lab order or request that triggered the execution of the genetics test"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -128,7 +128,7 @@
       <reference>
         <reference value="StructureDefinition/obs-gen-panel"/>
       </reference>
-      <name value="Genetic Panel"/>
+      <name value="Genomics Panel"/>
       <description value="Organizes information within a genetic report"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -140,7 +140,7 @@
       <reference>
         <reference value="StructureDefinition/obs-overall"/>
       </reference>
-      <name value="Genetic analysis overall interpretation"/>
+      <name value="Genomic analysis overall interpretation"/>
       <description value="Provides a coarse overall interpretation of the genetic results reported."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -260,7 +260,7 @@
       <reference>
         <reference value="StructureDefinition/obs-inh-dis-path"/>
       </reference>
-      <name value="Inheritable Disease Pathology"/>
+      <name value="Inheritable Disease Pathogenicity"/>
       <description value="Provides an indication of whether there's a pathologic risk associated with a particular genotype, haplotype, variant or combination there-of, and if so, what the associated pathology is."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -297,7 +297,7 @@
       <reference>
         <reference value="StructureDefinition/obs-copy-num-chg"/>
       </reference>
-      <name value="Chromosome copy number change panel"/>
+      <name value="Copy Number Change"/>
       <description value="Details about the copy number pair, such as the base pair start and end coordinates of where the change occurred."/>
       <exampleBoolean value="false"/>
       <groupingId value="cytogenomics"/>
@@ -309,7 +309,7 @@
       <reference>
         <reference value="StructureDefinition/device-micro-plat"/>
       </reference>
-      <name value="Device Micro-array Platform"/>
+      <name value="Device Microarray Platform"/>
       <description value="Information about a micro-array platform used as part of copy number change testing"/>
       <exampleBoolean value="false"/>
       <groupingId value="cytogenomics"/>
@@ -321,7 +321,7 @@
       <reference>
         <reference value="StructureDefinition/device-fish-probe"/>
       </reference>
-      <name value="Device Fish Probe"/>
+      <name value="Device FISH Probe"/>
       <description value="Information about the probe used in a FISH test"/>
       <exampleBoolean value="false"/>
       <groupingId value="cytogenomics"/>
@@ -334,7 +334,7 @@
       <reference>
         <reference value="StructureDefinition/obs-med-impact"/>
       </reference>
-      <name value="Genetic Medication Impact"/>
+      <name value="Medication Impact"/>
       <description value="Abstract profile with common properties for observations that convey the potential impact of a genetic characteristics on a medication"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
@@ -346,7 +346,7 @@
       <reference>
         <reference value="StructureDefinition/obs-metabolism"/>
       </reference>
-      <name value="Genotype medication metabolism impact"/>
+      <name value="Medication Metabolism Impact"/>
       <description value="Assertion of the expected impact of a particular genotype on the ability of the subject to metabolize medications"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
@@ -358,7 +358,7 @@
       <reference>
         <reference value="StructureDefinition/obs-efficacy"/>
       </reference>
-      <name value="Genotype medication efficacy impact"/>
+      <name value="Medication Efficacy Impact"/>
       <description value="Assertion of the expected impact of a particular genotype on the efficacy of medications for the subject"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
@@ -382,7 +382,7 @@
       <reference>
         <reference value="StructureDefinition/task-med-chg"/>
       </reference>
-      <name value="Medication Adjustment Proposal"/>
+      <name value="Medication Usage Implication"/>
       <description value="Task describing what sort of change (if any) should be made in a patient's medication based on an identified genotype"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
@@ -468,7 +468,7 @@
       <reference>
         <reference value="StructureDefinition/dr-recommendedAction"/>
       </reference>
-      <name value="Recommended action"/>
+      <name value="Recommended Action - DiagnosticReport"/>
       <description value="References a proposed action that is recommended based on the results of the diagnostic report"/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
@@ -504,7 +504,7 @@
       <reference>
         <reference value="StructureDefinition/obs-recommendedAction"/>
       </reference>
-      <name value="Recommended action"/>
+      <name value="Recommended Action - Observation"/>
       <description value="References a proposed action that is recommended based on the results of the observation."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
@@ -514,7 +514,7 @@
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
       </reference>
-      <name value="CG Test"/>
+      <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -523,7 +523,7 @@
       <reference>
         <reference value="Bundle/diagnosticreport-pgxexample"/>
       </reference>
-      <name value="PGx Example"/>
+      <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
@@ -532,7 +532,7 @@
       <reference>
         <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
       </reference>
-      <name value="HLA Example"/>
+      <name value="Example - HLA"/>
       <description value="HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>

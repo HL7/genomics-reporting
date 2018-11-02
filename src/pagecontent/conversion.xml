@@ -11,7 +11,7 @@
   <a name="procedurerequest"> </a>
   <h2>ProcedureRequest-genetics</h2>
   <p>
-    Guidance for converting from the <a href="http://hl7.org/fhir/stu3/genomics.html#procedurerequest-genetics">STU3 ProcedureRequest-genetics</a> profile to the <a href="servicerequest.html">Order for Genetics Test</a> profile.
+    Guidance for converting from the <a href="http://hl7.org/fhir/stu3/genomics.html#procedurerequest-genetics">STU3 ProcedureRequest-genetics</a> profile to the <a href="servicerequest.html">Request for Genetics Test</a> profile.
   </p>
   <p>
     The STU3 model made no assertions about the use of ProcedureRequest beyond the introduction of a single optional repeating complex extension.  In FHIR R4, ProcedureRequest has been renamed to <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a>.  Additional guidance has been provided on a minimum set of data elements to support.
@@ -25,7 +25,7 @@
   <a name="diagnosticreport"> </a>
   <h2>DiagnosticReport-genetics</h2>
   <p>
-    Guidance for converting from the <a href="http://hl7.org/fhir/stu3/genomics.html#diagnosticreport-genetics">STU3 DiagnosticReport-genetics</a> profile to the <a href="diagnosticreport.html">CG Diagnostic Report</a> profile.
+    Guidance for converting from the <a href="http://hl7.org/fhir/stu3/genomics.html#diagnosticreport-genetics">STU3 DiagnosticReport-genetics</a> profile to the <a href="diagnosticreport.html">Genomics Report</a> profile.
   </p>
   <p>
     The STU3 profile prohibited the population of codedDiagnosis element and asserted 3 optional repeating extensions - geneticsAssessedCOndition, geneticsFamilyMemberHistory and geneticsAnalysis.  In the R4 profile, we no longer prohibit the inclusion of codeDiagnosis.  While it would be unusual for a lab to assert diagosis, it is possible that some organizations, with appropriate knowledge of the patient and clinician oversight could do so.  The R4 profile merely provides guidance on this element.

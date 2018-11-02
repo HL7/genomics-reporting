@@ -6,18 +6,18 @@
   <a name="diagnosticreport"> </a>
   <h2>Diagnostic Report</h2>
   <p>
-    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genetic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genetic analysis.  (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab.)  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of four categories:
+    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis.  (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab.)  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of four categories:
   </p>
   <a name="fig1"> </a>
-  <img src="1-general-fig1-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genetic diagnostic report"/>
+  <img src="1-general-fig1-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
-    <b>Figure 1: Genetic Report Overview</b>
+    <b>Figure 1: Genomic Report Overview</b>
   </p>
   <p>
-    (Profile links: 
-    <a href="diagnosticreport.html">Genetics DiagnosticReport</a>,
+    (Profile links:
+    <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="obs-gen-panel.html">Genetics Panel</a>,
-    Overall Genetic Interpretation (see <a href="#fig6">Figure 6</a>),
+    Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
     <a href="obs-impact.html">Genetic Impact</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>)
     )
@@ -55,12 +55,12 @@
     Any organization of observations into panels or sub-panels is purely for navigation and presentation purposes.  It carries no additional "meaning".  Each observation can be interpreted on its own without knowing the associated panel or sub-panel.  The organization of observations in panels does not assert any relationship between observations.
   </p>
   <p>
-    However, it <b>is</b> possible for relationships to exist between the different observation components of a genetic report.  Such relationships are asserted directly on one of the affected observations.  Some of these relationship types are defined on the basis of the high-level observation category the observation belongs to.  Others will be defined for narrower categories or explicit observation types.  The high-level category relationships are shown in the following diagram:
+    However, it <b>is</b> possible for relationships to exist between the different observation components of a genomics report.  Such relationships are asserted directly on one of the affected observations.  Some of these relationship types are defined on the basis of the high-level observation category the observation belongs to.  Others will be defined for narrower categories or explicit observation types.  The high-level category relationships are shown in the following diagram:
   </p>
   <a name="fig2"> </a>
-  <img src="1-general-fig2-category-relationships.png" alt="Class diagram showing the high-level categories of the component parts in a genetic diagnostic report"/>
+  <img src="1-general-fig2-category-relationships.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
-    <b>Figure 2: Genetic Report Category Relationships</b>
+    <b>Figure 2: Genomic Report Category Relationships</b>
   </p>
   <p>
     (Profile links:
@@ -74,7 +74,7 @@
   </p>
   <ul>
     <li><i>Genetic Interpretations</i> can be "derived from" <i>Genetic Assertions</i>.  For example, an interpretation asserting that "deletions or duplications were found" might be supported by observations of variants that contain deletions and/or duplications.</li>
-    <li><i>Genetic Impacts</i> MUST be "derived from" <i>Genetic Assertions</i>.  For example, in a genetic report, it's not acceptable to assert "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that assertion.</li>
+    <li><i>Genetic Impacts</i> MUST be "derived from" <i>Genetic Assertions</i>.  For example, in a genomic report, it's not acceptable to assert "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that assertion.</li>
     <li>Every <i>Recommended Action</i> will have a reason relationship to either a <i>Genetic Interpretation</i> or <i>Genetic Assertion</i>.  For example: a recommendation to increase the dosage of a medication might be tied to a genetic interpretation indicating that the patient is an increased metabolizer of that medication; an assertion that re-testing should be performed on a variant that was detected but had low quality metrics for certainty. </li>
   </ul>
   <p>
@@ -94,12 +94,12 @@
   <a name="fig3"> </a>
   <img src="1-general-fig3-other-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
   <p>
-    <b>Figure 3: Genetic Report Other Relationships</b>
+    <b>Figure 3: Genomic Report Other Relationships</b>
   </p>
   <p>
     (Profile links:
     Recommended Action (see <a href="#fig2">Figure 2</a>),
-    <a href="diagnosticreport.html">Genetics DiagnosticReport</a>,
+    <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genetic Test</a>,
     <a href="obs-base.html">Genetic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
@@ -129,18 +129,18 @@
   <a name="fig4"> </a>
   <img src="1-general-fig4-supporting-info.png" alt="Class diagram showing supportingInfo links from ServiceRequest and DiagnosticReport."/>
   <p>
-    <b>Figure 4: Genetic Report Supporting Information</b>
+    <b>Figure 4: Genomics Report Supporting Information</b>
   </p>
   <p>
     (Profile links:
-    <a href="diagnosticreport.html">Genetics DiagnosticReport</a>,
+    <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genetic Test</a>
     )
   </p>
   <p>
     (Profile links:
     Recommended Action (see <a href="#fig2">Figure 2</a>),
-    <a href="diagnosticreport.html">Genetics DiagnosticReport</a>,
+    <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genetic Test</a>,
     <a href="obs-base.html">Genetic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
@@ -188,7 +188,7 @@
     These categories of observations have relationships.  Haplotypes can be identified based on the presence of variants.  Genotypes can be identified based on the presence of haplotypes and/or variants.  All three can be expressed as a combination of one or more sequences.
   </p>
   <p>
-    Genotype is used to convey corresponding haplotypes or variations at a particular locus. Many genotypes are expressed as simple strings, and can be conveyed in <code>genotype.valueCodeableConcept.text</code>. In some cases, genotypes are sufficiently standardized to be conveyed as codes in <code>genotype.valueCodeableConcept.code</code>. 
+    Genotype is used to convey corresponding haplotypes or variations at a particular locus. Many genotypes are expressed as simple strings, and can be conveyed in <code>genotype.valueCodeableConcept.text</code>. In some cases, genotypes are sufficiently standardized to be conveyed as codes in <code>genotype.valueCodeableConcept.code</code>.
     <ul>
       <li><code>TPMT *1/*3A</code> represents the TPMT *1 haplotype (or 'star allele') on one chromosome and the TPMT *3A haplotype on the homologous chromosome</li>
       <li><code>A/C</code> represents a heterozygous "A" and a heterozygous "C" at SNP rs1142345. </li>
@@ -198,7 +198,7 @@
     For HLA, KIR, and other genes in the immunogenetics domain, the National Marrow Donor Program (NMDP) led a community effort to define the Genotype List String (GL String) grammar, described <a href="https://glstring.org">here</a>. Notably, the GL String uses '+' as a delimiter between alleles in a genotype. It also has delimiters for ambiguous genotypes, allele lists, and haplotypes.
   </p>
   <p>
-    For Pharmacogenomics, we define here a simple grammar of [HGNC gene symbol followed by white space followed by a slash ('/') delimited list of haplotype codes], where the codeSystem is set to the codeSystem of the haplotypes (e.g. Pharmvar). 
+    For Pharmacogenomics, we define here a simple grammar of [HGNC gene symbol followed by white space followed by a slash ('/') delimited list of haplotype codes], where the codeSystem is set to the codeSystem of the haplotypes (e.g. Pharmvar).
   </p>
   <p>
     Here are some examples:
@@ -239,7 +239,7 @@
   <a name="fig6"> </a>
   <img src="1-general-fig6-interpretations.png" alt="Class diagram showing common interpretations."/>
   <p>
-    <b>Figure 6: Genetic Report Interpretations</b>
+    <b>Figure 6: Genetic Interpretations</b>
   </p>
   <p>
     (Profile links:
@@ -265,7 +265,7 @@
   <a name="fig7"> </a>
   <img src="1-general-fig7-impacts.png" alt="Class diagram showing the abstract Genetic Impact class."/>
   <p>
-    <b>Figure 7: Genetic Report Impacts</b>
+    <b>Figure 7: Genetic Impacts</b>
   </p>
   <p>
     (Profile links:
@@ -282,7 +282,7 @@
     <li><code>levelOfEvidence</code> indicates the strength of the evidence behind the assertion</li>
   </ul>
   <p>
-    Only one impact is defined as a "common" impact.  However, impacts are relevant for other areas of genetic testing including <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> and more impact types will be defined there.  
+    Only one impact is defined as a "common" impact.  However, impacts are relevant for other areas of genetic testing including <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> and more impact types will be defined there.
   </p>
   <p>
     The "Inherited Disease" impact indicates the likelihood of inheritance (valueCodeableConcept) of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance).
@@ -291,7 +291,7 @@
   <a name="other"> </a>
   <h2>Other content</h2>
   <p>
-    The profiles describing the detailed observations within a genetic report are found in the other sections of this implementation guide based on what type of testing and reporting is being done:
+    The profiles describing the detailed observations within a genomics report are found in the other sections of this implementation guide based on what type of testing and reporting is being done:
   </p>
   <ul>
     <li>The <a href="sequencing.html">Reporting Variants</a> section deals with all types of variants detected by formal sequencing, including simple/discrete variants, structural variants and complex variants detected by direct sequencing, shot-gun-based sequencing and array-based testing for specific variants.</li>
@@ -302,6 +302,6 @@
   </ul>
 
   <p>
-    Many genetic reports will draw on more than one of these areas.  For example, a somatic report will typically include sequencing information as well as information on likely tumor susceptibility to particular medications.  Reports should draw on whatever sections are relevant.
+    Many genomics reports will draw on more than one of these areas.  For example, a somatic report will typically include sequencing information as well as information on likely tumor susceptibility to particular medications.  Reports should draw on whatever sections are relevant.
   </p>
 </div>
