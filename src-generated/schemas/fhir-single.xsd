@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Nov 5, 2018 08:13+0000 for FHIR v3.6.0 
+  Generated on Mon, Nov 5, 2018 20:09+0000 for FHIR v3.6.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="3.6.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -14080,7 +14080,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">A unique identifier assigned to this coverage eligiblity request.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="FinancialResourceStatusCodes">
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="FinancialResourceStatusCodes">
             <xs:annotation>
               <xs:documentation xml:lang="en">The status of the resource instance.</xs:documentation>
            </xs:annotation>
@@ -14095,7 +14095,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="patient" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="patient" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.</xs:documentation>
            </xs:annotation>
@@ -14107,7 +14107,7 @@ into another (possibly the same) biological entity.</xs:documentation>
             <xs:element name="servicedDate" type="date"/>
             <xs:element name="servicedPeriod" type="Period"/>
           </xs:choice>
-          <xs:element name="created" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:element name="created" minOccurs="1" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date when this resource was created.</xs:documentation>
            </xs:annotation>
@@ -14122,7 +14122,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The provider which is responsible for the request.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="insurer" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="insurer" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The Insurer who issued the coverage in question and is the recipient of the request.</xs:documentation>
            </xs:annotation>
@@ -33788,12 +33788,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A human readable description of the status of the request for the reconciliation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="paymentDate" minOccurs="0" maxOccurs="1" type="date">
+          <xs:element name="paymentDate" minOccurs="1" maxOccurs="1" type="date">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date of payment as indicated on the financial instrument.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="paymentAmount" minOccurs="0" maxOccurs="1" type="Money">
+          <xs:element name="paymentAmount" minOccurs="1" maxOccurs="1" type="Money">
             <xs:annotation>
               <xs:documentation xml:lang="en">Total payment amount as indicated on the financial instrument.</xs:documentation>
            </xs:annotation>
