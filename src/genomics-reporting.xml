@@ -265,6 +265,18 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/obs-region-studied"/>
+      </reference>
+      <name value="Region Studied"/>
+      <description value="Provides a description of the region studied."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
     <!--    <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>

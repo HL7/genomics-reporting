@@ -6,7 +6,7 @@
   <a name="diagnosticreport"> </a>
   <h2>Diagnostic Report</h2>
   <p>
-    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis.  (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab.)  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of four categories:
+    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis.  (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab.)  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of five categories:
   </p>
   <a name="fig1"> </a>
   <img src="1-general-fig1-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
@@ -19,29 +19,34 @@
     <a href="obs-gen-panel.html">Genetics Panel</a>,
     Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
     <a href="obs-impact.html">Genetic Impact</a>,
-    Genetic Finding (see <a href="#fig5">Figure 5</a>)
+    Genetic Finding (see <a href="#fig5">Figure 5</a>),
+    <a href="obs-region-studied.html">Region Studied</a>
     )
   </p>
   <table>
     <tbody>
       <tr>
         <th>Genetic Interpretations</th>
-        <td>These are high-level assessments of the result of the genetic testing.</td>
+        <td>These are high-level observations of the result of the genetic testing.</td>
       </tr>
       <tr>
         <th>Genetic Impacts</th>
-        <td>These represent assertions about the patient based on the genetic test results.  For example, "Patient may have increased susceptibility to heart attacks"</td>
+        <td>These represent observations about the patient based on the genetic test results.  For example, "Patient may have increased susceptibility to heart attacks"</td>
       </tr>
       <tr>
         <th>Genetic Findings</th>
         <td>These are observations about the specimen's genetic characteristics.  For example, a chromosomal abnormality, genotype, haplotype or variant that was detected.</td>
       </tr>
+      <tr>
+        <th>Genetic Panel</th>
+        <td>The genetic observations can be organized and grouped together in a wide variety of ways.</td>
+      </tr>
+      <tr>
+        <th>Region Studied</th>
+        <td>These are observations describing the region or regions that were studied as part of this Genomics Report.</td>
+      </tr>
     </tbody>
   </table>
-  <a name="lookedfor"> </a>
-  <blockquote class="stu-note">
-    <p>One area yet to be resolved is how to best capture "what was looked for" - i.e. the genes/diseases/medications/etc. that were evaluated as part of testing.  Because FHIR resources are intended to be stand-alone, any of this information that is relevant to a particular Observation needs to be conveyed as part of that Observation.  The work group is still considering how best to reflect this information in the model.</p>
-  </blockquote>
   <p>
     In addition to the observations included in the report, some reports might also recommend specific actions be taken, such as genetic counseling, re-testing, adjusting drug dosages, etc. - driven by the results found.  These are covered by the <b>Recommended Action</b> category and are expressed using FHIR's <a href="{{site.data.fhir.path}}/task.html">Task</a> resource.
   </p>
@@ -73,8 +78,8 @@
     The relationships between categories are as follows:
   </p>
   <ul>
-    <li><i>Genetic Interpretations</i> can be "derived from" <i>Genetic Assertions</i>.  For example, an interpretation asserting that "deletions or duplications were found" might be supported by observations of variants that contain deletions and/or duplications.</li>
-    <li><i>Genetic Impacts</i> MUST be "derived from" <i>Genetic Assertions</i>.  For example, in a genomic report, it's not acceptable to assert "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that assertion.</li>
+    <li><i>Genetic Interpretations</i> can be "derived from" <i>Genetic Findings</i>.  For example, an interpretation asserting that "deletions or duplications were found" might be supported by observations of variants that contain deletions and/or duplications.</li>
+    <li><i>Genetic Impacts</i> MUST be "derived from" <i>Genetic Findings</i>.  For example, in a genomic report, it's not acceptable to assert "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that assertion.</li>
     <li>Every <i>Recommended Action</i> will have a reason relationship to either a <i>Genetic Interpretation</i> or <i>Genetic Assertion</i>.  For example: a recommendation to increase the dosage of a medication might be tied to a genetic interpretation indicating that the patient is an increased metabolizer of that medication; an assertion that re-testing should be performed on a variant that was detected but had low quality metrics for certainty. </li>
   </ul>
   <p>
