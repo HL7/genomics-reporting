@@ -368,6 +368,18 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/obs-transporter"/>
+      </reference>
+      <name value="Medication Transporter Impact"/>
+      <description value="Assertion of the expected impact of a particular genotype on the ability of the subject to actively transport medications"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="pharmacogenomics"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/obs-efficacy"/>
       </reference>
       <name value="Medication Efficacy Impact"/>
