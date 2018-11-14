@@ -292,6 +292,47 @@
   <p>
     The "Inherited Disease" impact indicates the likelihood of inheritance (valueCodeableConcept) of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance).
   </p>
+  <p>
+    Here are some examples of how the levelOfEvidence component can be used (NOTE - they would be used in the appropriate, use case specific profile):
+    <ul>
+
+    <li>Coded ACMG (see <a href="https://www.acmg.net/docs/standards_guidelines_for_the_interpretation_of_sequence_variants.pdf">ACMG</a>)<br/>
+      <code>
+        &lt;valueCodeableConcept&gt;<br/>
+        &#160;&#160;&lt;coding&gt;<br/>
+        &#160;&#160;&#160;&#160;&lt;system value=&quot;https://www.acmg.org/&quot;/&gt; TODO - Need ACMG as a Code System<br/>
+        &#160;&#160;&#160;&#160;&lt;code value=&quot;PS1&quot;/&gt;<br/>
+        &#160;&#160;&lt;/coding&gt;<br/>
+        &#160;&#160;&lt;coding&gt;<br/>
+        &#160;&#160;&#160;&#160;&lt;system value=&quot;https://www.acmg.org/&quot;/&gt;<br/>
+        &#160;&#160;&#160;&#160;&lt;code value=&quot;PM2&quot;/&gt;<br/>
+        &#160;&#160;&lt;/coding&gt;<br/>
+        &lt;/valueCodeableConcept&gt;<br/>
+      </code>
+    </li>
+
+      <li>Coded PGx (see <a href="https://www.pharmgkb.org/clinicalAnnotations">PharmGKB</a>)<br/>
+        <code>
+          &lt;valueCodeableConcept&gt;<br/>
+          &#160;&#160;&lt;coding&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;system value=&quot;https://www.pharmvar.org/&quot;/&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;code value=&quot;Level 1A&quot;/&gt;<br/>
+          &#160;&#160;&lt;/coding&gt;<br/>
+          &lt;/valueCodeableConcept&gt;<br/>
+        </code>
+      </li>
+      <li>Coded Somatic (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728662/">MVLD</a>)<br/>
+        <code>
+          &lt;valueCodeableConcept&gt;<br/>
+          &#160;&#160;&lt;coding&gt;<br/>
+          &#160;&#160;&#160;&#160;&lt;system value=&quot;https://www.clinicalgenome.org/mvld/&quot;/&gt; TODO - Need ClinGen/MVLD as a Code System<br/>
+          &#160;&#160;&#160;&#160;&lt;code value=&quot;Tier1 LevelA&quot;/&gt;<br/>
+          &#160;&#160;&lt;/coding&gt;<br/>
+          &lt;/valueCodeableConcept&gt;<br/>
+        </code>
+      </li>
+    </ul>
+  </p>
 
   <a name="other"> </a>
   <h2>Other content</h2>
