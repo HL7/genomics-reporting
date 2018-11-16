@@ -554,10 +554,19 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
+      </reference>
+      <name value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+      <description value="Full Bundle HLA Typing Example"/>
+      <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="DiagnosticReport/diagnosticreport-hla-glstring-r4"/>
       </reference>
       <name value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
-      <description value="HLA Typing Example"/>
+      <description value="DiagnosticReport HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
     </resource>
@@ -566,7 +575,7 @@
         <reference value="Observation/obs-genotype-hla-a-glstring-r4"/>
       </reference>
       <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
-      <description value="HLA-A genoyping Example"/>
+      <description value="HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01"/>
       <exampleCanonical value="StructureDefinition/obs-genotype"/>
       <groupingId value="examples"/>
     </resource>
@@ -580,10 +589,10 @@
       <groupingId value="examples"/>
     </resource>
     <resource>
-      <reference>
+      <reference> 
         <reference value="Specimen/specimen-hla-r4"/>
       </reference>
-      <name value="Buccal swab for HLA typing"/>
+      <name value="Example - Buccal swab for HLA typing"/>
       <description value="Specimen example: Buccal swab for HLA typing"/>
       <exampleCanonical value="StructureDefinition/specimen"/>
       <groupingId value="examples"/>
@@ -592,7 +601,7 @@
       <reference>
         <reference value="ServiceRequest/servicerequest-hla-a-r4"/>
       </reference>
-      <name value="Service request for high-resolution HLA-A genotyping"/>
+      <name value="Example - Service request for high-resolution HLA-A genotyping"/>
       <description value="ServiceRequest example: High-resolution HLA-A genotyping"/>
       <exampleCanonical value="StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>

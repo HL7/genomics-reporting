@@ -13,7 +13,7 @@ Transaction bundle that creates and links:
 + ServiceRequest for HLA-A,-B,-C typing of patient(donor)
 
 The second part of this bundle contains the resources that would be contained
-in a separate transaction bundle to be sent as the HLA typing report.
+in a separate transaction bundle to be sent as the HLA typing report. 
 and include the following:
 + DiagnosticReport summarizing genotyping for HLA-A,-B,-C typing of patient(donor)
 + Genotype Obervations for each gene
@@ -86,6 +86,9 @@ and include the following:
     <fullUrl value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
     <resource>
       <Specimen xmlns="http://hl7.org/fhir">
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
+        </meta>
         <text>
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">
@@ -103,8 +106,8 @@ and include the following:
         <type>
           <coding>
             <system value="http://snomed.info/sct"/>
-            <code value="258564008"/>
-            <display value="Buccal smear sample"/>
+            <code value="733104004"/>
+            <display value="Swab from buccal mucosa (specimen)"/>
           </coding>
         </type>
         <subject>
@@ -112,24 +115,6 @@ and include the following:
           <type value="Patient"/>
           <display value="John Storm"/>
         </subject>
-        <collection>
-          <collectedDateTime value="2016-11-10"/>
-          <method>
-            <coding>
-              <system value="http://snomed.info/sct"/>
-              <code value="129300006"/>
-              <display value="Puncture - action"/>
-            </coding>
-          </method>
-          <bodySite>
-            <coding>
-              <system value="http://snomed.info/sct"/>
-              <code value="261063000"/>
-              <display value="Buccal space"/>
-            </coding>
-            <text value="Buccal space"/>
-          </bodySite>
-        </collection>
       </Specimen>
     </resource>
     <!--    now, details about the action to take with the resource    -->
@@ -217,6 +202,9 @@ and include the following:
     <fullUrl value="urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea"/>
     <resource>
       <ServiceRequest>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
+        </meta>
         <text>
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">
@@ -276,7 +264,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00001"/>
             </coding>
@@ -310,7 +298,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00001"/>
             </coding>
@@ -344,7 +332,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00002"/>
             </coding>
@@ -378,7 +366,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00002"/>
             </coding>
@@ -413,7 +401,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -432,9 +420,9 @@ and include the following:
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
           <coding>
-            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <version value="3.23"/>
-            <code value="HGG00001"/>
+            <code value="HLA-A*01:01:01G"/>
             <display value="HLA-A*01:01:01G"/>
           </coding>
         </valueCodeableConcept>
@@ -464,7 +452,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -487,25 +475,6 @@ and include the following:
             <text value="Exons 2 and 3"/>
           </valueCodeableConcept>
         </component>
-        <!-- phaseset extension -->
-        <!--
-                <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804"/>
-                            <display value = "HLA-A*01:01:01:01, exon 2"/>
-                        </valueReference>
-                    </extension>
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675"/>
-                            <display value="HLA-A*01:01:01:01, exon 3"/>
-                        </valueReference>
-                    </extension>
-                </extension>
--->
       </Observation>
     </resource>
     <!--    transaction details    -->
@@ -531,7 +500,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -550,9 +519,9 @@ and include the following:
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
           <coding>
-            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <version value="3.23"/>
-            <code value="HLA00002"/>
+            <code value="HLA-A*01:02"/>
             <display value="HLA-A*01:02"/>
           </coding>
         </valueCodeableConcept>
@@ -582,7 +551,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -605,25 +574,6 @@ and include the following:
             <text value="Exons 2 and 3"/>
           </valueCodeableConcept>
         </component>
-        <!-- phaseset extension -->
-        <!--
-                <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621"/>
-                            <display value = "HLA-A*01:02, exon 2"/>
-                        </valueReference>
-                    </extension>
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0"/>
-                            <display value="HLA-A*01:02, exon 3"/>
-                        </valueReference>
-                    </extension>
-                </extension>
--->
       </Observation>
     </resource>
     <!--    transaction details    -->
@@ -654,7 +604,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -672,8 +622,11 @@ and include the following:
         </subject>
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
-          <!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
-          <text value="HLA-A:01:01G+HLA-A*01:02"/>
+          <coding>
+            <system value="https://glstring.org"/>
+            <version value="1.0"/>
+            <code value="hla#3.23.0#HLA-A:01:01G+HLA-A*01:02"/>
+          </coding>
         </valueCodeableConcept>
         <method>
           <coding>
@@ -703,7 +656,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -712,18 +665,6 @@ and include the following:
               <code value="HGNC:4931"/>
               <display value="HLA-A"/>
             </coding>
-          </valueCodeableConcept>
-        </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-              <display value="Description of ranges of DNA sequences examined"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <text value="Exons 2 and 3"/>
           </valueCodeableConcept>
         </component>
       </Observation>
@@ -751,7 +692,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00162"/>
             </coding>
@@ -785,7 +726,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00162"/>
             </coding>
@@ -819,7 +760,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00381"/>
             </coding>
@@ -853,7 +794,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00381"/>
             </coding>
@@ -888,7 +829,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -907,7 +848,7 @@ and include the following:
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
           <coding>
-            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <version value="3.23"/>
             <code value="HGG00041"/>
             <display value="HLA-B*15:01:01G"/>
@@ -939,7 +880,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -962,25 +903,6 @@ and include the following:
             <text value="Exons 2 and 3"/>
           </valueCodeableConcept>
         </component>
-        <!-- phaseset extension -->
-        <!--
-                <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670"/>
-                            <display value = "HLA-B*15:01:01:01, exon 2"/>
-                        </valueReference>
-                    </extension>
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138"/>
-                            <display value="HLA-B*15:01:01:01, exon 3"/>
-                        </valueReference>
-                    </extension>
-                </extension>
--->
       </Observation>
     </resource>
     <!--    transaction details    -->
@@ -1006,7 +928,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -1025,9 +947,9 @@ and include the following:
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
           <coding>
-            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <version value="3.23"/>
-            <code value="HGG00079"/>
+            <code value="HLA-B*57:01:01G"/>
             <display value="HLA-B*57:01:01G"/>
           </coding>
         </valueCodeableConcept>
@@ -1057,7 +979,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -1068,37 +990,6 @@ and include the following:
             </coding>
           </valueCodeableConcept>
         </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-              <display value="Description of ranges of DNA sequences examined"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <text value="Exons 2 and 3"/>
-          </valueCodeableConcept>
-        </component>
-        <!-- phaseset extension -->
-        <!--
-                <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe"/>
-                            <display value = "HLA-B*57:01:01, exon 2"/>
-                        </valueReference>
-                    </extension>
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:db69e549-6267-4777-b4b9-8813f3329309"/>
-                            <display value="HLA-B*57:01:01, exon 3"/>
-                        </valueReference>
-                    </extension>
-                </extension>
--->
       </Observation>
     </resource>
     <!--    transaction details    -->
@@ -1129,7 +1020,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -1147,8 +1038,11 @@ and include the following:
         </subject>
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
-          <!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
-          <text value="HLA-B*15:01:01G+HLA-B*57:01:01G"/>
+          <coding>
+            <system value="https://glstring.org"/>
+            <version value="1.0"/>
+            <code value="hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G"/>
+          </coding>
         </valueCodeableConcept>
         <method>
           <coding>
@@ -1177,7 +1071,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -1186,18 +1080,6 @@ and include the following:
               <code value="HGNC:4932"/>
               <display value="HLA-B"/>
             </coding>
-          </valueCodeableConcept>
-        </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-              <display value="Description of ranges of DNA sequences examined"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <text value="Exons 2 and 3"/>
           </valueCodeableConcept>
         </component>
       </Observation>
@@ -1225,7 +1107,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00401"/>
             </coding>
@@ -1259,7 +1141,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00401"/>
             </coding>
@@ -1293,7 +1175,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00413"/>
             </coding>
@@ -1327,7 +1209,7 @@ and include the following:
         <referenceSeq>
           <referenceSeqId>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
               <code value="HLA00413"/>
             </coding>
@@ -1362,7 +1244,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -1381,9 +1263,9 @@ and include the following:
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
           <coding>
-            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <version value="3.23"/>
-            <code value="HGG00083"/>
+            <code value="HLA-C*01:02:01G"/>
             <display value="HLA-C*01:02:01G"/>
           </coding>
         </valueCodeableConcept>
@@ -1413,7 +1295,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -1424,37 +1306,6 @@ and include the following:
             </coding>
           </valueCodeableConcept>
         </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-              <display value="Description of ranges of DNA sequences examined"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <text value="Exons 2 and 3"/>
-          </valueCodeableConcept>
-        </component>
-        <!-- phaseset extension -->
-        <!--
-                <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0"/>
-                            <display value = "HLA-C*01:02:01, exon 2"/>
-                        </valueReference>
-                    </extension>
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f"/>
-                            <display value="HLA-C*01:02:01, exon 3"/>
-                        </valueReference>
-                    </extension>
-                </extension>
--->
       </Observation>
     </resource>
     <!--    transaction details    -->
@@ -1480,7 +1331,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -1499,9 +1350,9 @@ and include the following:
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
           <coding>
-            <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <version value="3.23"/>
-            <code value="HGG00088"/>
+            <code value="HLA-C*01:02:01G"/>
             <display value="HLA-C*01:02:01G"/>
           </coding>
         </valueCodeableConcept>
@@ -1531,7 +1382,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -1542,37 +1393,6 @@ and include the following:
             </coding>
           </valueCodeableConcept>
         </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-              <display value="Description of ranges of DNA sequences examined"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <text value="Exons 2 and 3"/>
-          </valueCodeableConcept>
-        </component>
-        <!-- phaseset extension -->
-        <!--
-                <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/observation-geneticsPhaseSet" >
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce"/>
-                            <display value = "HLA-C*03:04:01:01, exon 2"/>
-                        </valueReference>
-                    </extension>
-                    <extension url="MolecularSequence">
-                        <valueReference>
-                            <type value="MolecularSequence"\>
-                            <reference value="urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9"/>
-                            <display value="HLA-C*03:04:01:01, exon 3"/>
-                        </valueReference>
-                    </extension>
-                </extension>
--->
       </Observation>
     </resource>
     <!--    transaction details    -->
@@ -1603,7 +1423,7 @@ and include the following:
         <status value="final"/>
         <category>
           <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
         </category>
@@ -1621,8 +1441,11 @@ and include the following:
         </subject>
         <effectiveDateTime value="2016-12-15"/>
         <valueCodeableConcept>
-          <!-- I'd like to express this as a GL String, but have each allele come from the IMGT/HLA. How do I constrain this?-->
-          <text value="HLA-C*01:02:01G+HLA-C*03:04:01G"/>
+          <coding>
+            <system value="https://glstring.org"/>
+            <version value="1.0"/>
+            <code value="hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G"/>
+          </coding>
         </valueCodeableConcept>
         <method>
           <coding>
@@ -1651,7 +1474,7 @@ and include the following:
             <coding>
               <system value="http://loinc.org"/>
               <code value="48018-6"/>
-              <display value="Gene Studied"/>
+              <display value="Gene studied [ID]"/>
             </coding>
           </code>
           <valueCodeableConcept>
@@ -1712,7 +1535,7 @@ Lab: aTypingLab Inc
         <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsAlleleDatabase">
           <valueCodeableConcept>
             <coding>
-              <system value="http://www.ebi.ac.uk/ipd/imgt/hla/"/>
+              <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
               <version value="3.23"/>
             </coding>
           </valueCodeableConcept>
@@ -1731,15 +1554,13 @@ Lab: aTypingLab Inc
           <display value="Class I HLA genotyping for John Storm"/>
         </basedOn>
         <status value="final"/>
-<!--
         <category>
           <coding>
-            <system value="http://hl7.org/fhir/v2/0074"/>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
             <code value="GE"/>
             <display value="Genetics"/>
           </coding>
         </category>
--->
         <code>
           <coding>
             <system value="http://loinc.org"/>

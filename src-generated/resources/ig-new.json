@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\Jamie\\Documents\\GitHub\\genomics-reporting\\src-generated\\resources"
+    "valueString" : "/Users/bmilius/src/github-hl7/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\Jamie\\Documents\\GitHub\\genomics-reporting\\src\\resources"
+    "valueString" : "/Users/bmilius/src/github-hl7/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\Jamie\\Documents\\GitHub\\genomics-reporting\\src\\vocabulary"
+    "valueString" : "/Users/bmilius/src/github-hl7/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\Jamie\\Documents\\GitHub\\genomics-reporting\\src\\examples"
+    "valueString" : "/Users/bmilius/src/github-hl7/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\Jamie\\Documents\\GitHub\\genomics-reporting\\src\\images"
+    "valueString" : "/Users/bmilius/src/github-hl7/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\Jamie\\Documents\\GitHub\\genomics-reporting\\src-generated\\pages"
+    "valueString" : "/Users/bmilius/src/github-hl7/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -93,10 +93,19 @@
     },
     {
       "reference" : {
+        "reference" : "Bundle/CG-IG-HLA-FullBundle-01"
+      },
+      "name" : "Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
+      "description" : "Full Bundle HLA Typing Example",
+      "exampleCanonical" : "StructureDefinition/diagnosticreport",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
         "reference" : "DiagnosticReport/diagnosticreport-hla-glstring-r4"
       },
       "name" : "Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
-      "description" : "HLA Typing Example",
+      "description" : "DiagnosticReport HLA Typing Example",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
       "groupingId" : "examples"
     },
@@ -105,7 +114,7 @@
         "reference" : "Observation/obs-genotype-hla-a-glstring-r4"
       },
       "name" : "Example - HLA genotyping for HLA-A, using GLStrings",
-      "description" : "HLA-A genoyping Example",
+      "description" : "HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01",
       "exampleCanonical" : "StructureDefinition/obs-genotype",
       "groupingId" : "examples"
     },
@@ -122,7 +131,7 @@
       "reference" : {
         "reference" : "Specimen/specimen-hla-r4"
       },
-      "name" : "Buccal swab for HLA typing",
+      "name" : "Example - Buccal swab for HLA typing",
       "description" : "Specimen example: Buccal swab for HLA typing",
       "exampleCanonical" : "StructureDefinition/specimen",
       "groupingId" : "examples"
@@ -131,7 +140,7 @@
       "reference" : {
         "reference" : "ServiceRequest/servicerequest-hla-a-r4"
       },
-      "name" : "Service request for high-resolution HLA-A genotyping",
+      "name" : "Example - Service request for high-resolution HLA-A genotyping",
       "description" : "ServiceRequest example: High-resolution HLA-A genotyping",
       "exampleCanonical" : "StructureDefinition/servicerequest",
       "groupingId" : "examples"
@@ -400,6 +409,11 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "CG-IG-HLA-FullBundle-01.html",
+          "title" : "Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "diagnosticreport-hla-glstring-r4.html",
           "title" : "Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
           "generation" : "generated"
@@ -416,12 +430,12 @@
         },
         {
           "nameUrl" : "specimen-hla-r4.html",
-          "title" : "Buccal swab for HLA typing",
+          "title" : "Example - Buccal swab for HLA typing",
           "generation" : "generated"
         },
         {
           "nameUrl" : "servicerequest-hla-a-r4.html",
-          "title" : "Service request for high-resolution HLA-A genotyping",
+          "title" : "Example - Service request for high-resolution HLA-A genotyping",
           "generation" : "generated"
         }]
       },

@@ -132,10 +132,19 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
+      </reference>
+      <name value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+      <description value="Full Bundle HLA Typing Example"/>
+      <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="DiagnosticReport/diagnosticreport-hla-glstring-r4"/>
       </reference>
       <name value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
-      <description value="HLA Typing Example"/>
+      <description value="DiagnosticReport HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
     </resource>
@@ -144,7 +153,7 @@
         <reference value="Observation/obs-genotype-hla-a-glstring-r4"/>
       </reference>
       <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
-      <description value="HLA-A genoyping Example"/>
+      <description value="HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01"/>
       <exampleCanonical value="StructureDefinition/obs-genotype"/>
       <groupingId value="examples"/>
     </resource>
@@ -158,10 +167,10 @@
       <groupingId value="examples"/>
     </resource>
     <resource>
-      <reference>
+      <reference> 
         <reference value="Specimen/specimen-hla-r4"/>
       </reference>
-      <name value="Buccal swab for HLA typing"/>
+      <name value="Example - Buccal swab for HLA typing"/>
       <description value="Specimen example: Buccal swab for HLA typing"/>
       <exampleCanonical value="StructureDefinition/specimen"/>
       <groupingId value="examples"/>
@@ -170,7 +179,7 @@
       <reference>
         <reference value="ServiceRequest/servicerequest-hla-a-r4"/>
       </reference>
-      <name value="Service request for high-resolution HLA-A genotyping"/>
+      <name value="Example - Service request for high-resolution HLA-A genotyping"/>
       <description value="ServiceRequest example: High-resolution HLA-A genotyping"/>
       <exampleCanonical value="StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
@@ -439,28 +448,33 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="CG-IG-HLA-FullBundle-01.html"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="diagnosticreport-hla-glstring-r4.html"/>
-<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-genotype-hla-a-glstring-r4.html"/>
-<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-haplotype-hla-a-1-r4.html"/>
-<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
+<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen-hla-r4.html"/>
-<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Buccal swab for HLA typing"/>
+<ns43:title xmlns:ns43="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="servicerequest-hla-a-r4.html"/>
-<ns43:title xmlns:ns43="http://hl7.org/fhir" value="Service request for high-resolution HLA-A genotyping"/>
+<ns44:title xmlns:ns44="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
 <generation value="generated"/>
 </page>
 </page>
