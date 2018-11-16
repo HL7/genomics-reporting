@@ -1,0 +1,44 @@
+<Specimen xmlns="http://hl7.org/fhir">
+    <id value="specimen-hla-r4"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>buccal swab: 001-123456789 </pre>
+        </div>
+    </text>    
+    <identifier>
+        <system value="http://specimensrus.com"/>
+        <value value="001^123456789"/>
+    </identifier>    
+    <type>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="258564008"/>
+            <display value="Buccal smear sample"/>
+        </coding>
+    </type>
+    <!-- the IG currently requires subject, but for this use case the sample is de-identified, so we stub in sample identifer as the subject -->  
+    <subject>
+        <display value="001^123456789"/>
+    </subject>
+    <receivedTime value="2018-05-01"/>
+    <collection>
+        <method>
+            <coding>
+                <system value="http://hl7.org/fhir/v2/0488"/>
+                <code value="SWA"/>
+                <display value="Swab"/>
+            </coding>
+        </method>
+        <bodySite>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="261063000"/>
+                <display value="Buccal space"/>
+            </coding>
+        </bodySite>
+    </collection>    
+</Specimen>

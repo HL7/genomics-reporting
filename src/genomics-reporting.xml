@@ -554,13 +554,49 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Bundle/CG-IG-HLA-FullBundle-01"/>
+        <reference value="DiagnosticReport/diagnosticreport-hla-glstring-r4"/>
       </reference>
-      <name value="Example - HLA"/>
+      <name value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
       <description value="HLA Typing Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/obs-genotype-hla-a-glstring-r4"/>
+      </reference>
+      <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+      <description value="HLA-A genoyping Example"/>
+      <exampleCanonical value="StructureDefinition/obs-genotype"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/obs-haplotype-hla-a-1-r4"/>
+      </reference>
+      <name value="Example - Observation for a single HLA-A allele"/>
+      <description value="HLA-A allele observaation: HLA-A*03:01:01:01"/>
+      <exampleCanonical value="StructureDefinition/obs-haplotype"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Specimen/specimen-hla-r4"/>
+      </reference>
+      <name value="Buccal swab for HLA typing"/>
+      <description value="Specimen example: Buccal swab for HLA typing"/>
+      <exampleCanonical value="StructureDefinition/specimen"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ServiceRequest/servicerequest-hla-a-r4"/>
+      </reference>
+      <name value="Service request for high-resolution HLA-A genotyping"/>
+      <description value="ServiceRequest example: High-resolution HLA-A genotyping"/>
+      <exampleCanonical value="StructureDefinition/servicerequest"/>
+      <groupingId value="examples"/>
+    </resource>    
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>

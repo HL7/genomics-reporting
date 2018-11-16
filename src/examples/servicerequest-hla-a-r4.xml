@@ -1,0 +1,59 @@
+<ServiceRequest xmlns="http://hl7.org/fhir">
+    <id value="servicerequest-hla-a-r4"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
+    </meta>
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <pre>High resolution HLA-A typing for sample 001-123456789</pre>
+        </div>
+    </text>
+    <identifier>
+        <system value="https:/aDonorRegistry.com"/>
+        <value value="199688.2.1..1.83"/>
+    </identifier>    
+    
+    <!-- status is required -->
+    <status value="completed"/>
+    
+    <!-- intent is required -->
+    <intent value="order"/>
+    
+    <category>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="108252007"/>
+            <display value="Laboratory procedure"/>
+        </coding>
+    </category>  
+    <priority value="routine"/>
+    <code>
+        <coding>
+            <system value="http://loinc.org"/>
+            <code value="57290-9"/>
+            <display value="HLA-A [Type] by High resolution"/>
+        </coding>
+    </code>
+    
+    <!-- subject is required, but this test is for a de-identified sample, so we stub in the specimen identifier -->
+    <subject>
+        <display value="001^246802468"/>
+    </subject>
+    
+    <requester>
+        <reference value="Organization/123"/>
+        <type value="Organization"/>
+        <display value="aDonorRegistry"/>
+    </requester>
+    <performer>
+        <reference value="Organization/456"/>
+        <type value="Organization"/>
+        <display value="aTypingLab, Inc"/>
+    </performer>
+    <specimen>
+        <reference value="Specimen/f456"/>
+        <type value="Specimen"/>
+        <display value="buccal swab: 123456789"/>
+    </specimen>
+</ServiceRequest>
