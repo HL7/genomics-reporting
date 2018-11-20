@@ -15587,7 +15587,7 @@
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Coordinate System</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s108"><Data ss:Type="String">Base number of coordinate system (0 for 0-based numbering or interbase coordinate system, inclusive start, exclusive end, 1 for 1-based inclusive numbering or base coordinate system, inclusive start, inclusive end, 1-based exclusive for 1-based numbering with inclusive start and exclusive end)</Data><NamedCell
+    <Cell ss:StyleID="s108"><Data ss:Type="String">Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features.  For more details see the HGVS and VCF guides.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -15619,7 +15619,7 @@
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s108"><Data ss:Type="String">This captures the base numbering used to calculate base positions in the reported sequence information. Discussion on this element: https://arnaudceol.wordpress.com/2014/09/18/chromosome-coordinate-systems-0-based-1-based/ </Data><NamedCell
+    <Cell ss:StyleID="s108"><Data ss:Type="String">This captures the base numbering used to calculate base positions in the reported sequence information.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -15650,9 +15650,9 @@
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">0 | 1-based inclusive | 1-based exclusive</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Interval | Variant method | Alignment method</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s108"><Data ss:Type="String">Source:  https://arnaudceol.wordpress.com/2014/09/18/chromosome-coordinate-systems-0-based-1-based/ </Data><NamedCell
+    <Cell ss:StyleID="s108"><Data ss:Type="String"></Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -45326,11 +45326,11 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Additional notes about the code.  Not published</Font>       </ss:Data></Comment></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="30">
-    <Cell ss:StyleID="s172"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s172"><Data ss:Type="Number">Interval</Data></Cell>
     <Cell ss:StyleID="s160"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s174"><Data ss:Type="String">0-based</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="String">Interval</Data></Cell>
     <Cell ss:StyleID="s174"><Data ss:Type="String">0-based numbering or interbase coordinate system, inclusive start, exclusive end</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s174"/>
@@ -45340,12 +45340,12 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="30">
-    <Cell ss:StyleID="s176"><Data ss:Type="String">1-based inclusive</Data></Cell>
+    <Cell ss:StyleID="s176"><Data ss:Type="String">Variant method</Data></Cell>
     <Cell ss:StyleID="s163"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s151"/>
     <Cell ss:StyleID="s177"/>
-    <Cell ss:StyleID="s177"><Data ss:Type="String">1-based inclusive</Data></Cell>
-    <Cell ss:StyleID="s177"><Data ss:Type="String">1 for 1-based numbering or base coordinate system, inclusive start, inclusive end</Data></Cell>
+    <Cell ss:StyleID="s177"><Data ss:Type="String">Variant method</Data></Cell>
+    <Cell ss:StyleID="s177"><Data ss:Type="String">1-based [inclusive start, inclusive end] - with Alignment Method (VCF-like)</Data></Cell>
     <Cell ss:StyleID="s177"/>
     <Cell ss:StyleID="s177"/>
     <Cell ss:StyleID="s177"/>
@@ -45354,12 +45354,12 @@
     <Cell ss:StyleID="s178"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s176"><Data ss:Type="String">1-based exclusive</Data></Cell>
+    <Cell ss:StyleID="s176"><Data ss:Type="String">Alignment method</Data></Cell>
     <Cell ss:StyleID="s163"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s151"/>
     <Cell ss:StyleID="s177"/>
-    <Cell ss:StyleID="s177"><Data ss:Type="String">1-based exclusive </Data></Cell>
-    <Cell ss:StyleID="s177"><Data ss:Type="String">1 for 1-based numbering or base coordinate system, inclusive start, exclusive end</Data></Cell>
+    <Cell ss:StyleID="s177"><Data ss:Type="String">Alignment method</Data></Cell>
+    <Cell ss:StyleID="s177"><Data ss:Type="String">1-based [inclusive start, inclusive end] - with Variant Method (HGVS-like)</Data></Cell>
     <Cell ss:StyleID="s177"/>
     <Cell ss:StyleID="s177"/>
     <Cell ss:StyleID="s177"/>
