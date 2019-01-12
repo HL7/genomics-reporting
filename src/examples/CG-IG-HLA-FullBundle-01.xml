@@ -13,7 +13,7 @@ Transaction bundle that creates and links:
 + ServiceRequest for HLA-A,-B,-C typing of patient(donor)
 
 The second part of this bundle contains the resources that would be contained
-in a separate transaction bundle to be sent as the HLA typing report. 
+in a separate transaction bundle to be sent as the HLA typing report.
 and include the following:
 + DiagnosticReport summarizing genotyping for HLA-A,-B,-C typing of patient(donor)
 + Genotype Obervations for each gene
@@ -1532,7 +1532,8 @@ Lab: aTypingLab Inc
           </div>
         </text>
         <!-- The extensions below will be deprecated and refactored into a profile in the Genetic Reporting Implementation Guide -->
-        <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsAlleleDatabase">
+        <extension xmlns="http://hl7.org/fhir"
+          url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database">
           <valueCodeableConcept>
             <coding>
               <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
@@ -1540,7 +1541,7 @@ Lab: aTypingLab Inc
             </coding>
           </valueCodeableConcept>
         </extension>
-        <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-resultsGlstring">
+        <extension xmlns="http://hl7.org/fhir" url="http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring">
           <extension url="text">
             <valueString value="HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"/>
           </extension>
