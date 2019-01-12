@@ -10,7 +10,7 @@
   <Author>Grahame</Author>
   <LastAuthor>Microsoft Office User</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-01-12T17:00:37Z</LastSaved>
+  <LastSaved>2019-01-12T20:18:03Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -33,8 +33,8 @@
   <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>460</WindowTopY>
-  <ActiveSheet>35</ActiveSheet>
-  <FirstVisibleSheet>24</FirstVisibleSheet>
+  <ActiveSheet>11</ActiveSheet>
+  <FirstVisibleSheet>5</FirstVisibleSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1287,7 +1287,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>28</ActiveRow>
+     <ActiveRow>24</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -3113,12 +3113,11 @@
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <TopRowVisible>2</TopRowVisible>
-   <LeftColumnVisible>11</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>3</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>9</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7124,7 +7123,7 @@
     <Pane>
      <Number>0</Number>
      <ActiveRow>5</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7143,13 +7142,13 @@
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
-   <Column ss:StyleID="s86" ss:AutoFitWidth="0" ss:Width="68"/>
+   <Column ss:StyleID="s86" ss:Width="152"/>
    <Column ss:StyleID="s86" ss:AutoFitWidth="0" ss:Width="59"/>
    <Column ss:StyleID="s86" ss:AutoFitWidth="0" ss:Width="227"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="77"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="29"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="35"/>
-   <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="119"/>
+   <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="170"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="29"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="107"/>
    <Column ss:StyleID="s85" ss:Width="44"/>
@@ -7171,8 +7170,9 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The name of an element for the purposes of this profile (used for slicing, code generation, etc. (see wiki for more details)</Font>       </ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Discriminator</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">relative path | ordered? (true/false) | rules (open/openAtEnd/closed) See wiki</Font>       </ss:Data></Comment><NamedCell
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">relative path | ordered? (true/false) | rules (open/openAtEnd/closed) See wiki</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Slice Description</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -7356,7 +7356,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="30">
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s105"><Data ss:Type="String" x:Ticked="1">@type,resolve().code.@pattern</Data><NamedCell
+    <Cell ss:StyleID="s105"><Data ss:Type="String" x:Ticked="1">@type</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s105"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.derivedFrom</Data><NamedCell
@@ -7394,7 +7394,7 @@
     <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-cytogenetic-nomenclature}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-complex-variant}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant}</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-cytogenetic-nomenclature}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -7849,6 +7849,7 @@
     <ValidPrinterInfo/>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <Zoom>87</Zoom>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -7868,8 +7869,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>3</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -8620,7 +8621,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="obs-impact">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="96" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="99" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -8630,7 +8631,7 @@
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="77"/>
    <Column ss:StyleID="s85" ss:Width="29"/>
    <Column ss:StyleID="s85" ss:Width="35"/>
-   <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="119"/>
+   <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="201"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="29"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="107"/>
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="60"/>
@@ -8651,11 +8652,15 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The name of an element for the purposes of this profile (used for slicing, code generation, etc. (see wiki for more details)</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Discriminator</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">relative path | ordered? (true/false) | rules (open/openAtEnd/closed) See wiki</Font>       </ss:Data></Comment></Cell>
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Color="#000000">        </Font><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">relative path | ordered? (true/false) | rules (open/openAtEnd/closed) See wiki</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Slice Description</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font>       </ss:Data></Comment></Cell>
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Color="#000000">        </Font><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s90"><Data ss:Type="String">Element</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font>       </ss:Data></Comment></Cell>
@@ -8666,11 +8671,13 @@
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
         x:Family="Swiss" html:Size="8" html:Color="#000000">Min and max repetitions n..m</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Inv.</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Comma-delimited list of Ids from Invariant tab that controls appearance of this element</Font>       </ss:Data></Comment></Cell>
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Comma-delimited list of Ids from Invariant tab that controls appearance of this element</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Type</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Data type, resource reference, profiles, aggregations, class names, type references, etc. - see the wiki</Font>       </ss:Data></Comment></Cell>
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Data type, resource reference, profiles, aggregations, class names, type references, etc. - see the wiki</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Must Support</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">If Y, indicates the element must be supported by conformant systems.  Defaults to N</Font>       </ss:Data></Comment></Cell>
@@ -8678,8 +8685,9 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Value</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font>       </ss:Data></Comment></Cell>
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Pattern</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Like 'value' however while instance values must contain the specified components, they may contain others.</Font>       </ss:Data></Comment></Cell>
@@ -8774,7 +8782,7 @@
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="30">
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String" x:Ticked="1">resolve().code.@pattern</Data></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String" x:Ticked="1">resolve().@profile</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.derivedFrom</Data></Cell>
     <Cell ss:StyleID="s107"/>
@@ -8799,15 +8807,93 @@
     <Cell ss:StyleID="s111"/>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="270">
-    <Cell ss:StyleID="s104"><Data ss:Type="String">finding</Data></Cell>
+    <Cell ss:StyleID="s104"><Data ss:Type="String">findingGenotype</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.derivedFrom</Data></Cell>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">1..*</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-complex-variant}</Data></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype}</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s111"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="270">
+    <Cell ss:StyleID="s104"><Data ss:Type="String">findingHaplotype</Data></Cell>
+    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.derivedFrom</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s111"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="270">
+    <Cell ss:StyleID="s104"><Data ss:Type="String">findingDescribedVariant</Data></Cell>
+    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.derivedFrom</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant}</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s110"/>
+    <Cell ss:StyleID="s111"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="270">
+    <Cell ss:StyleID="s104"><Data ss:Type="String">findingComplexVariant</Data></Cell>
+    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.derivedFrom</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data></Cell>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-complex-variant}</Data></Cell>
+    <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
@@ -11175,15 +11261,15 @@
    <Unsynced/>
    <Print>
     <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <TopRowVisible>5</TopRowVisible>
+   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>8</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>4</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -13654,9 +13740,9 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>3</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>11</LeftColumnRightPane>
+   <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -13667,6 +13753,7 @@
     <Pane>
      <Number>1</Number>
      <ActiveRow>7</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
@@ -13675,7 +13762,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>9</ActiveRow>
+     <ActiveRow>0</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -16210,7 +16298,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>55</TopRowBottomPane>
+   <TopRowBottomPane>20</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>9</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -16228,7 +16316,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>57</ActiveRow>
+     <ActiveRow>24</ActiveRow>
      <ActiveCol>15</ActiveCol>
     </Pane>
    </Panes>
@@ -18139,7 +18227,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>36</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -18152,12 +18240,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>43</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>8</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -46019,7 +46106,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
