@@ -189,7 +189,7 @@
             <coding>
               <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
               <code value="103"/>
-              <display value="6-mercaptopurine"/>
+              <display value="mercaptopurine"/>
             </coding>
           </valueCodeableConcept>
         </component>
@@ -220,7 +220,13 @@
         </code>
         <effectiveDateTime value="2018"/>
         <issued value="2018-03-06T00:00:00-05:00"/>
-        <valueString value="*4/*35B"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://www.pharmvar.org/"/>
+            <code value="CYP2C9 *4/*35B"/>
+            <display value="CYP2C9 *4/*35B"/>
+          </coding>
+        </valueCodeableConcept>
         <specimen>
           <reference value="Specimen/specimen"/>
         </specimen>
@@ -273,7 +279,13 @@
         </code>
         <effectiveDateTime value="2018"/>
         <issued value="2018-03-06T00:00:00-05:00"/>
-        <valueString value="*35B"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://www.pharmvar.org/"/>
+            <code value="CYP2C9 *35B"/>
+            <display value="CYP2C9 *35B"/>
+          </coding>
+        </valueCodeableConcept>
         <specimen>
           <reference value="Specimen/specimen"/>
         </specimen>
@@ -323,7 +335,13 @@
         </code>
         <effectiveDateTime value="2018"/>
         <issued value="2018-03-06T00:00:00-05:00"/>
-        <valueString value="*4"/>
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://www.pharmvar.org/"/>
+            <code value="CYP2C9 *4"/>
+            <display value="CYP2C9 *4"/>
+          </coding>
+        </valueCodeableConcept>
         <specimen>
           <reference value="Specimen/specimen"/>
         </specimen>
@@ -437,7 +455,7 @@
             <coding>
               <system value="http://loinc.org"/>
               <code value="69547-8"/>
-              <display value="Genomic Ref allele"/>
+              <display value="Ref nucleotide"/>
             </coding>
           </code>
           <valueString value="T"/>
@@ -447,7 +465,7 @@
             <coding>
               <system value="http://loinc.org"/>
               <code value="69551-0"/>
-              <display value="Genomic Alt allele"/>
+              <display value="Alt allele"/>
             </coding>
           </code>
           <valueString value="G"/>
@@ -560,7 +578,7 @@
             <coding>
               <system value="http://loinc.org"/>
               <code value="69547-8"/>
-              <display value="Genomic Ref allele"/>
+              <display value="Ref nucleotide"/>
             </coding>
           </code>
           <valueString value="T"/>
@@ -570,7 +588,7 @@
             <coding>
               <system value="http://loinc.org"/>
               <code value="69551-0"/>
-              <display value="Genomic Alt allele"/>
+              <display value="Alt allele"/>
             </coding>
           </code>
           <valueString value="G"/>
@@ -681,7 +699,7 @@
           <coding>
             <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
             <code value="103"/>
-            <display value="6-mercaptopurine"/>
+            <display value="mercaptopurine"/>
           </coding>
         </medicationCodeableConcept>
         <subject>

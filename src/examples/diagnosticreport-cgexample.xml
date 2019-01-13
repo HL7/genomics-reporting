@@ -297,7 +297,7 @@ New:
             <!-- A.9 Deletion-duplication overall interpretation -->
             <system value="http://loinc.org"/>
             <code value="LA26803-9"/>
-            <display value="No deletion duplications detected in studied regions"/>
+            <display value="No deletion or duplication detected in studied region"/>
           </coding>
         </valueCodeableConcept>
         <specimen>
@@ -922,7 +922,7 @@ New:
             <coding>
               <!-- B.26 Allelic phase -->
               <system value="http://loinc.org"/>
-              <code value="LA6112-2"/>
+              <code value="LA26814-6"/>
               <display value="1st set of variants in cis relation to each other"/>
             </coding>
           </valueCodeableConcept>
@@ -1680,7 +1680,16 @@ New:
         </performer>
         <!-- F.2.a, F.2.b Genotype display name -->
         <!-- TODO: Figure out how to separate these -->
-        <valueString value="*2/*5,*A/*A"/>
+        <!-- valueString value="*2/*5,*A/*A"/ -->
+        <!--  missing the VKORC1 valueCodeableConcept for now -->
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://www.pharmvar.org/"/>
+            <code value="CYP2C9 *2/*5"/>
+            <display value="CYP2C9 *2/*5"/>
+          </coding>
+        </valueCodeableConcept>
+
         <specimen>
           <reference value="Specimen/specimen"/>
         </specimen>
@@ -1763,7 +1772,7 @@ New:
           <coding>
             <!-- F.3 Genetic variation's effect on drug metabolism -->
             <system value="http://loinc.org"/>
-            <code value="LA9657-3"/>
+            <code value="LA25390-8"/>
             <display value="Rapid metabolizer"/>
           </coding>
         </valueCodeableConcept>

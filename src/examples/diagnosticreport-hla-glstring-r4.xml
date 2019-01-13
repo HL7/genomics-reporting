@@ -7,15 +7,15 @@
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
             <pre>
-HLA-A,-B,-C genotyping report for sample-id=123456789 
+HLA-A,-B,-C genotyping report for sample-id=123456789
 
 LOCUS   ALLELE ASSIGNMENT
 HLA-A   HLA-A*03:01:01:01
         HLA-A*30:01:01
-        
+
 HLA-B   HLA-B*15:01:01:01
         HLA-B*40:01:02:01/HLA-B*40:01:02:02/HLA-B*40:01:02:04/HLA-B*40:01:02:06
-        
+
 HLA-C   HLA-C*07:04:01:01/HLA-C*07:04:01:03
         HLA-C*12:03:01:01/HLA-C*12:03:01:06
 
@@ -25,7 +25,8 @@ Effective date: 2018-07-26
 Lab: aTypingLab Inc
            </pre>
         </div>
-    </text> 
+    </text>
+<!-- REMOVE INVALID REFS
     <basedOn>
         <reference value="ServiceRequest/f123"/>
         <display value="Sequence-based typing of HLA-A for sample-id=123456789"/>
@@ -37,16 +38,17 @@ Lab: aTypingLab Inc
     <basedOn>
         <reference value="ServiceRequest/f125"/>
         <display value="Sequence-based typing of HLA-C for sample-id=123456789"/>
-    </basedOn>                
-    <status value="final"/>    
-    <category> 
+    </basedOn>
+-->
+    <status value="final"/>
+    <category>
         <coding>
             <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
             <code value="GE"/>
             <display value="Genetics"/>
         </coding>
-    </category>    
-     <code> 
+    </category>
+     <code>
         <coding>
             <system value="http://loinc.org"/>
             <code value="81247-9"/>
@@ -58,11 +60,12 @@ Lab: aTypingLab Inc
             <display value="HLA-A+B+C SBT [Interpretation] by High resolution"/>
         </coding>
     </code>
-    <effectiveDateTime value="2018-07-26"/>    
+    <effectiveDateTime value="2018-07-26"/>
+    <!-- REMOVE INVALID REFS
     <performer>
-        <reference value="Oranization/f345"/> 
+        <reference value="Oranization/f345"/>
         <display value="aTypingLab, Inc"/>
-    </performer>    
+    </performer>
     <specimen>
         <reference value="Specimen/f456"/>
         <display value="buccal swab: 123456789"/>
@@ -76,11 +79,11 @@ Lab: aTypingLab Inc
         <reference value="Observation/f235"/>
         <type value="Observation"/>
         <display value="HLA-B genotype: HLA-B*15:01:01:01+HLA-B*40:01:02:01/HLA-B*40:01:02:02/HLA-B*40:01:02:04/HLA-B*40:01:02:06"/>
-    </result> 
+    </result>
     <result>
         <reference value="Observation/f236"/>
         <type value="Observation"/>
         <display value="HLA-C genotype: HLA-C*07:04:01:01/HLA-C*07:04:01:03+HLA-C*12:03:01:01/HLA-C*12:03:01:06"/>
-    </result>  
+    </result>
+-->
 </DiagnosticReport>
-

@@ -12,11 +12,13 @@
             <pre>Observation for HLA-A*03:01:01:01 allele</pre>
         </div>
     </text>
+    <!-- REMOVE INVALID REFS
     <basedOn>
         <reference value="ServiceRequest/f123"/>
         <type value="ServiceRequest"/>
         <display value="Sequence-based typing of HLA-A for sample 001-246802468"/>
     </basedOn>
+-->
     <status value="final"/>
     <category>
         <coding>
@@ -35,14 +37,16 @@
             <system value="http://loinc.org"/>
             <code value="57290-9"/>
             <display value="HLA-A [Type] by High resolution"/>
-        </coding>   
-    </code>       
+        </coding>
+    </code>
     <effectiveDateTime value="2018-07-26"/>
+    <!-- REMOVE INVALID REFS
     <performer>
         <reference value="Organization/f345"/>
         <type value="Organization"/>
         <display value="aTypingLab, Inc"/>
     </performer>
+-->
     <valueCodeableConcept>
         <coding>
             <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
@@ -50,6 +54,7 @@
             <code value="HLA-A*03:01:01:01"/>
         </coding>
     </valueCodeableConcept>
+    <!-- REMOVE INVALID REFS
     <specimen>
         <reference value="Specimen/f456"/>
         <display value="buccal swab: 123456789"/>
@@ -58,7 +63,8 @@
         <reference value="MolecularSequence/f567"/>
         <type value="MolecularSequence"/>
         <display value="Sequence for HLA-A*03:01:01:01"/>
-    </derivedFrom>               
+    </derivedFrom>
+-->
     <component>
         <code>
             <coding>
