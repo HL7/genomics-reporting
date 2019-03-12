@@ -114,9 +114,10 @@ New:
         <result>
           <reference value="Observation/dis-path"/>
         </result>
+        <!--
         <result>
           <reference value="Observation/complex-variant"/>
-        </result>
+        </result>-->
         <result>
           <reference value="Observation/complex-dis-path"/>
         </result>
@@ -535,7 +536,7 @@ New:
       <Observation>
         <id value="discrete-variant"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1086,11 +1087,10 @@ New:
       </Observation>
     </resource>
   </entry>
+  <!--
   <entry>
     <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/complex-variant"/>
     <resource>
-      <!-- Panel C -->
-      <!-- This observation represents the sequence that was found (or not) -->
       <Observation>
         <id value="complex-variant"/>
         <meta>
@@ -1123,7 +1123,6 @@ New:
         </performer>
         <valueCodeableConcept>
           <coding>
-            <!-- B.21 Genetic variant assessment -->
             <system value="http://loinc.org"/>
             <code value="LA9633-4"/>
             <display value="Present"/>
@@ -1134,34 +1133,29 @@ New:
         </specimen>
         <hasMember>
           <reference value="Observation/complex-component-D"/>
-          <!-- D - this is the link from a complex variant to its component simple variants -->
-          <!-- This would be modeled the same as discrete-var -->
         </hasMember>
         <hasMember>
           <reference value="Observation/complex-component-E"/>
-          <!-- E - this is the link from a complex variant to its component simple variants -->
-          <!-- This would be modeled the same as discrete-var -->
         </hasMember>
         <component>
           <code>
             <coding>
               <system value="http://loinc.org"/>
               <code value="81260-2"/>
-              <!-- Clem: Does this actually need to be a distinct LOINC id for simple vs. complex variant?  Isn't the observation simply saying "what variant"? -->
             </coding>
           </code>
           <valueCodeableConcept>
-            <!-- CLEM: is it ok to treat these as translations? -->
+
             <coding>
-              <!-- C.1 Complex genetic variant -->
+
               <system value="http://example.org/clinvar"/>
               <version value="???"/>
-              <!-- A.16 ClinVar version -->
+
               <code value="16895"/>
               <display value="NM_000106.5(CYP2D):c.[886C>T;457G>C] – Haplotype"/>
             </coding>
             <coding>
-              <!-- C.2 Complex variant HGVS name -->
+
               <system value="http://example.org/hgvs"/>
               <code value="c.[886C>T;457G>C"/>
             </coding>
@@ -1176,7 +1170,7 @@ New:
           </code>
           <valueCodeableConcept>
             <coding>
-              <!-- C.3 Complex variant type -->
+
               <system value="http://loinc.org"/>
               <code value="LA26218-0"/>
               <display value="Haplotype"/>
@@ -1185,7 +1179,7 @@ New:
         </component>
       </Observation>
     </resource>
-  </entry>
+  </entry> -->
   <entry>
     <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/complex-dis-path"/>
     <resource>
@@ -1256,7 +1250,7 @@ New:
       <Observation>
         <id value="complex-component-D"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1423,7 +1417,7 @@ New:
       <Observation>
         <id value="complex-component-E"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-described-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
         </meta>
         <text>
           <status value="generated"/>

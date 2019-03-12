@@ -205,6 +205,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+    <!--
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -217,14 +218,15 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+  -->
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-described-variant"/>
+        <reference value="StructureDefinition/obs-variant"/>
       </reference>
-      <name value="Described Variant"/>
+      <name value="Variant"/>
       <description value="Details about a set of changes in the tested sample compared to a reference sequence."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -301,7 +303,7 @@
       </sourceReference>
       <groupingId value="general"/>
     </resource>-->
-    <!-- Cytogenomics -->
+    <!-- Cytogenomics 
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -337,7 +339,7 @@
       <description value="Information about the probe used in a FISH test"/>
       <exampleBoolean value="false"/>
       <groupingId value="cytogenomics"/>
-    </resource>
+    </resource>-->
     <!-- Pharmacogenomics -->
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
