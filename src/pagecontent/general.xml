@@ -118,13 +118,13 @@
     A few key points to take from this diagram:
   </p>
   <ul>
-    <li><a href="servicerequest.html">Orders for genetic testing</a> and the <a href="diagnosticreport.html">reports resulting from them</a> can be associated to patients, to <a href="specimen.html">specimens</a> or both.</li>
+    <li><a href="servicerequest.html">Request for Genetic Test</a> and the <a href="diagnosticreport.html">reports resulting from them</a> can be associated to patients, to <a href="specimen.html">specimens</a> or both.</li>
     <li>Specimens may be linked to a specific subject, but they can also be stand-alone.  For example, genetic testing of a sample swabbed from a counter-top.</li>
     <li>Family member history and tasks are always associated with a patient, not a specimen.</li>
     <li>All genetic observations are derived from a <a href="obs-base.html">common abstract profile</a> that asserts they should have a category, effective date, issued date and status.</li>
     <li>The effective date is the date the genetic specimen was collected and the issued date is when the observation was performed.</li>
     <li>Of the different types of observations, Genetic Findings all have exactly one specimen.  The remainder might be associated with a specimen, but might not.  Observations may also be associated with a particular BodyStructure, such as a fetus, tumor or lesion.</li>
-    <li>Genetic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate order.  All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
+    <li>Genetic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request.  All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
     <li>The <a href="servicerequest.html">Request for Genetic Test</a> typically represents a clinician order.  However, it can also represent a lab-side filler order, a reflex order or even a plan or recommendation.  These uses are distinguished via the <code>intent</code> element.</li>
     <li>The primary test to perform is captured in ServiceRequest.code.  However, Qualifications on what variants, medications, diseases and other aspects to search on can be conveyed using the <code>orderDetail</code> element</li>
   </ul>
@@ -253,14 +253,14 @@
     )
   </p>
   <p>
-    Overall interpretations are high-level summary observations that apply to the whole report.  Typically there will only be one of each type - or at least one of each type for a given service request.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?".  There are two high-level intepretations that apply to most genetic reports:
+    Overall interpretations are high-level summary observations that apply to the whole report.  Typically there will only be one of each type - or at least one of each type for a given request for genetic test.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?".  There are two high-level intepretations that apply to most genetic reports:
   </p>
   <ul>
     <li><a href="obs-overall.html">Genetic Analysis Overall Coded Interpretation</a> is what the laboratory declares as the summary result of the test (e.g. Positive, Negative, Unknown) and is typically used when the genetic test was looking for a particular genetically-based disease. It allows indication of whether genetic results known to be associated with the disease was found or not.</li>
     <li><a href="obs-deletion-dup.html">Deletion Duplication Overall Interpretation</a> merely allows indication of whether deletions or duplications were identified in the region(s) where analysis was requested.  (This isn't useful unless testing is constrained to specific regions as almost everyone has deletions and duplications somewhere.) </li>
   </ul>
 
-  <a name="Implications"> </a>
+  <a name="implications"> </a>
   <h2>Genetic Implications</h2>
   <blockquote class="stu-note">
     <p>
@@ -268,7 +268,7 @@
     </p>
   </blockquote>
   <a name="fig7"> </a>
-  <img src="1-general-fig7-Implications.png" alt="Class diagram showing the abstract Genetic Implications class."/>
+  <img src="1-general-fig7-impacts.png" alt="Class diagram showing the abstract Genetic Implications class."/>
   <p>
     <b>Figure 7: Genetic Implications</b>
   </p>

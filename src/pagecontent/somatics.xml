@@ -1,6 +1,6 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    This section deals with genetic reporting of non-germline variations - i.e. variations not inherited from the organism's parents.  This sort of reporting is particularly prominent when dealing with cancer-related specimens, but can also include transplanted tissue and other forms of mosaicism.  <!-- Todo - link to a definition of this, ideally from background -->This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Somatic genetic reports supplement this information with a set of somatics-specific impact profiles.  Implementers of this portion of the implementation guide may also be interested in the <a href="pharmacogenomics.html">Pharmacogenomic Reporting</a> section which deals more generally with medication impacts, such as general efficacy, metabolism and increased risks based on patient genetic characteristics.
+    This section deals with genetic reporting of non-germline variations - i.e. variations not inherited from the organism's parents.  This sort of reporting is particularly prominent when dealing with cancer-related specimens, but can also include transplanted tissue and other forms of mosaicism.  <!-- Todo - link to a definition of this, ideally from background -->This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Somatic genetic reports supplement this information with a set of somatics-specific implication profiles.  Implementers of this portion of the implementation guide may also be interested in the <a href="pharmacogenomics.html">Pharmacogenomic Reporting</a> section which deals more generally with medication implications, such as general efficacy, metabolism and increased risks based on patient genetic characteristics.
   </p>
   <p>
     Some of the somatic profiles make reference to medications and other therapies.  Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications or other therapies.  Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
@@ -12,34 +12,34 @@
     While not specifically profiled in this version of the IG, some additional constraints will typically apply to somatic profiles.  Patient will typically be mandatory as somatics is not relevant for environmental samples.  Body structure will often be identified to allow associating results with specific tumors or lesions - even if multiple samples are drawn over time.
   </p>
   
-  <a name="impacts"> </a>
-  <h2>Somatic-specific Genetic Impacts</h2>
-  <img src="5-somatics-fig1-impacts.png" alt="Diagram showing the somatic impact profiles"/>
+  <a name="implications"> </a>
+  <h2>Somatic-specific Genetic Implications</h2>
+  <img src="5-somatics-fig1-impacts.png" alt="Diagram showing the somatic implication profiles"/>
   <p>
-    <b>Figure 1: Somatic Impacts</b>
+    <b>Figure 1: Somatic Implications</b>
   </p>
   <p>
     (Profile links:
-    <a href="obs-impact.html">Genetic Impact</a>,
-    <a href="obs-som-impact.html">Somatic Impact</a>,
-    <a href="obs-som-diagnostic.html">Somatic Diagnostic Impact</a>,
-    <a href="obs-som-prognostic.html">Somatic Prognostic Impact</a>,
-    <a href="obs-som-predictive.html">Somatic Predictive Impact</a>
+    <a href="obs-implication.html">Genetic Implication</a>,
+    <a href="obs-som-implication.html">Somatic Implication</a>,
+    <a href="obs-som-diagnostic.html">Somatic Diagnostic Implication</a>,
+    <a href="obs-som-prognostic.html">Somatic Prognostic Implication</a>,
+    <a href="obs-som-predictive.html">Somatic Predictive Implication</a>
     )
   </p>
   <p>
-    This implementation guide defines three somatic-specific impact profiles.  All three are cancer-related and include a mandatory identification of the associated cancer.
+    This implementation guide defines three somatic-specific implication profiles.  All three are cancer-related and include a mandatory identification of the associated cancer.
   </p>
   <p>
-    The <a href="obs-som-diagnostic.html">Somatic Diagnostic Impact</a> profile indicates how predictive the associated genetic findings are for a particular type of cancer.  It might positively diagnose the cancer type, support the diagnosis of a particular cancer type, decrease the likelihood of a tumor being a particular cancer type or positively exclude a particular cancer type.
+    The <a href="obs-som-diagnostic.html">Somatic Diagnostic Implication</a> profile indicates how predictive the associated genetic findings are for a particular type of cancer.  It might positively diagnose the cancer type, support the diagnosis of a particular cancer type, decrease the likelihood of a tumor being a particular cancer type or positively exclude a particular cancer type.
   </p>
   <p>
-    The <a href="obs-som-prognostic.html">Somatic Prognostic Impact</a> profile indicates that the associated genetic findings have implications for the overall outcome for the cancer patient (either positive or negative).  Those outcomes might be asserted on their own or asserted presuming the patient is receiving the indicated combination of medications and other therapies.  This can be used to recommend or discourage particular therapeutic approaches based on current evidence.</p>
+    The <a href="obs-som-prognostic.html">Somatic Prognostic Implication</a> profile indicates that the associated genetic findings have implications for the overall outcome for the cancer patient (either positive or negative).  Those outcomes might be asserted on their own or asserted presuming the patient is receiving the indicated combination of medications and other therapies.  This can be used to recommend or discourage particular therapeutic approaches based on current evidence.</p>
   <p>
-    The <a href="obs-som-predictive.html">Somatic Predictive Impact</a> profile indicates the impact the associated genetic findings on the susceptability/responsiveness of a particular medication or medication combination on the specified cancer type.
+    The <a href="obs-som-predictive.html">Somatic Predictive Implication</a> profile indicates the implication the associated genetic findings on the susceptability/responsiveness of a particular medication or medication combination on the specified cancer type.
   </p>
   <p>
-    NOTE: While it would seem like prognostic and predictive impacts are expressing the same information, this is not always the case.  A medication may improve outcomes without necessarily significantly impacting a tumor.  Similarly a medication may impact a tumor but not significantly improve outcomes.  Both types of impacts may be relevant and reporting organizations should share what is currently known. The work group acknowledges the profiles in this section are drafts and alternative models will be considered in the next round of balloting.
+    NOTE: While it would seem like prognostic and predictive implications are expressing the same information, this is not always the case.  A medication may improve outcomes without necessarily significantly implicationing a tumor.  Similarly a medication may implication a tumor but not significantly improve outcomes.  Both types of implications may be relevant and reporting organizations should share what is currently known. The work group acknowledges the profiles in this section are drafts and alternative models will be considered in the next round of balloting.
   </p>
   
   <a name="examples"> </a>

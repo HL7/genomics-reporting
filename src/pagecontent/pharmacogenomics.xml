@@ -15,20 +15,21 @@
   </p>
 
   <a name="implications"> </a>
+  <!--
   <h2>Pharmacogenomic-specific Genetic Implications</h2>
   <img src="4-pharmacogenomics-fig1-impacts.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Usage Implication task"/>
   <p>
     <b>Figure 1: Pharmacogenomic Implications</b>
   </p>
+-->
   <p>
-    (Profile links:
+    Profile links:
     <a href="obs-implication.html">Genetic Implication</a>,
     <a href="obs-med-implication.html">Medication Implication</a>,
     <a href="obs-high-risk.html">High Risk Allele</a>,
     <a href="obs-metabolism.html">Medication Metabolism Implication</a>,
     <a href="obs-transporter.html">Medication Transporter Implication</a>,
     <a href="obs-efficacy.html">Medication Efficacy Implication</a>
-    )
   </p>
   <p>
     All pharmacogenomic implication profiles inherit from the abstract <a href="obs-implication.html">Genetic Implication</a> profile.  They also inherit from a common abstract <a href="obs-med-implication.html">Medication Implication</a> profile which includes the mandatory code that identifies the medication whose implication is being described.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
