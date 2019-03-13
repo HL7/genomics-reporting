@@ -18,7 +18,7 @@
     <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="obs-gen-panel.html">Genetics Panel</a>,
     Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
-    <a href="obs-impact.html">Genetic Impact</a>,
+    <a href="obs-implication.html">Genetic Implications</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
     <a href="obs-region-studied.html">Region Studied</a>
     )
@@ -30,7 +30,7 @@
         <td>These are high-level observations of the result of the genetic testing.</td>
       </tr>
       <tr>
-        <th>Genetic Impacts</th>
+        <th>Genetic Implications</th>
         <td>These represent observations about the patient based on the genetic test results.  For example, "Patient may have increased susceptibility to heart attacks"</td>
       </tr>
       <tr>
@@ -71,7 +71,7 @@
     (Profile links:
     <a href="obs-gen-panel.html">Genetics Panel</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
-    <a href="obs-impact.html">Genetic Impact</a>
+    <a href="obs-implication.html">Genetic Implications</a>
     )
   </p>
   <p>
@@ -111,7 +111,7 @@
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
     Overall Genetic Interpretation (see <a href="#fig6">Figure 6</a>),
     <a href="obs-gen-panel.html">Genomics Panel</a>,
-    <a href="obs-impact.html">Genetic Impact</a>
+    <a href="obs-implication.html">Genetic Implications</a>
     )
   </p>
   <p>
@@ -152,13 +152,13 @@
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
     Overall Genetic Interpretation (see <a href="#fig6">Figure 6</a>),
     <a href="obs-gen-panel.html">Genomics Panel</a>,
-    <a href="obs-impact.html">Genetic Impact</a>,
+    <a href="obs-implication.html">Genetic Implications</a>,
     )
   </p>
 
   <a name="findings"> </a>
   <h2>Genetic Findings</h2>
-  <p>The primary focus of genetic testing is making Genetic Findings.  These are the fine and/or coarse-grained descriptions of a specimen's genetic characteristics.  It is this information that leads to the actionable <i>Genetic Impacts</i> and the <i>Overall Interpretations</i> for the report.
+  <p>The primary focus of genetic testing is making Genetic Findings.  These are the fine and/or coarse-grained descriptions of a specimen's genetic characteristics.  It is this information that leads to the actionable <i>Genetic Implications</i> and the <i>Overall Interpretations</i> for the report.
   </p>
   <a name="fig5"> </a>
   <img src="1-general-fig5-genetic-findings.png" alt="Class diagram showing relationship of Computable genetic findings as well as genotypes, haplotypes, variations and sequences."/>
@@ -178,7 +178,7 @@
   </p>
   <!--
   <p>
-    Genetic findings can be broken into two categories: those where the results are expressed as discrete coded data elements (<a href="obs-comp-gen-finding.html">computable findings</a>) and those where the results are primarily expressed as human narrative (<a href="obs-desc-gen-finding.html">non-computable findings</a>).  Both types of findings can support the determination of genetic impacts, but only computable findings can be used with automated decision support.
+    Genetic findings can be broken into two categories: those where the results are expressed as discrete coded data elements (<a href="obs-comp-gen-finding.html">computable findings</a>) and those where the results are primarily expressed as human narrative (<a href="obs-desc-gen-finding.html">non-computable findings</a>).  Both types of findings can support the determination of genetic Implications, but only computable findings can be used with automated decision support.
   </p>
   -->
   <p>
@@ -260,37 +260,37 @@
     <li><a href="obs-deletion-dup.html">Deletion Duplication Overall Interpretation</a> merely allows indication of whether deletions or duplications were identified in the region(s) where analysis was requested.  (This isn't useful unless testing is constrained to specific regions as almost everyone has deletions and duplications somewhere.) </li>
   </ul>
 
-  <a name="impacts"> </a>
-  <h2>Genetic Impacts</h2>
+  <a name="Implications"> </a>
+  <h2>Genetic Implications</h2>
   <blockquote class="stu-note">
     <p>
-      At present, impacts are noted as explicit observations about the patient/subject.  However, it's not clear this is the correct approach.  The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way.  This would allow saying "this variant is associated with an increase risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert.  Feedback is welcome.
+      At present, implications are noted as explicit observations about the patient/subject.  However, it's not clear this is the correct approach.  The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way.  This would allow saying "this variant is associated with an increase risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert.  Feedback is welcome.
     </p>
   </blockquote>
   <a name="fig7"> </a>
-  <img src="1-general-fig7-impacts.png" alt="Class diagram showing the abstract Genetic Impact class."/>
+  <img src="1-general-fig7-Implications.png" alt="Class diagram showing the abstract Genetic Implications class."/>
   <p>
-    <b>Figure 7: Genetic Impacts</b>
+    <b>Figure 7: Genetic Implications</b>
   </p>
   <p>
     (Profile links:
-    <a href="obs-impact.html">Genetic Impact</a>,
+    <a href="obs-implication.html">Genetic Implications</a>,
     <a href="obs-inh-dis-path.html">Inherited Disease Pathogenicity</a>
     )
   </p>
   <p>
-    Genetic impacts are assertions of likely effects genetic results on the patient, tumor or other subject.  All impacts inherit a common set of elements:
+    Genetic Implications are assertions of likely effects genetic results on the patient, tumor or other subject.  All implications inherit a common set of elements:
   </p>
   <ul>
-    <li><code>relatedArtifact</code> supports conveying references to citations, supporting documentation and other information relevant to the assertion of the impact</li>
-    <li><code>comment</code> contains additional detail and possibly qualification of the asserted impact</li>
+    <li><code>relatedArtifact</code> supports conveying references to citations, supporting documentation and other information relevant to the assertion of the implication</li>
+    <li><code>comment</code> contains additional detail and possibly qualification of the asserted Implication</li>
     <li><code>levelOfEvidence</code> indicates the strength of the evidence behind the assertion</li>
   </ul>
   <p>
-    Only one impact is defined as a "common" impact.  However, impacts are relevant for other areas of genetic testing including <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> and more impact types will be defined there.
+    Only one Implication is defined as a "common" Implication.  However, implications are relevant for other areas of genetic testing including <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> where more implication types will be defined.
   </p>
   <p>
-    The "Inherited Disease" impact indicates the likelihood of inheritance (valueCodeableConcept) of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance).
+    The "Inherited Disease" Implication indicates the likelihood of inheritance (valueCodeableConcept) of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance).
   </p>
   <p>
     Here are some examples of how the levelOfEvidence component can be used (NOTE - they would be used in the appropriate, use case specific profile):
@@ -342,8 +342,8 @@
   <ul>
     <li>The <a href="sequencing.html">Variant Reporting</a> section deals with all types of variants detected by formal sequencing, including simple/discrete variants, structural variants and complex variants detected by direct sequencing, shot-gun-based sequencing and array-based testing for specific variants.</li>
     <li>The <a href="cytogenomics.html">Cytogenomic Reporting</a> section deals with cytogenetic observations.</li>
-    <li>The <a href="pharmacogenomics.html">Pharmacogenomic Reporting</a> section deals with genetic testing related to medication results.  It primarily focuses on medication-related impacts of variation, haplotype and genotype observations.</li>
-    <li>The <a href="somatics.html">Somatic Reporting</a> section deals with non-germline variations, particularly those related to tumors and genetic-based impacts on outcomes and the effectiveness of medications and other interventions.</li>
+    <li>The <a href="pharmacogenomics.html">Pharmacogenomic Reporting</a> section deals with genetic testing related to medication results.  It primarily focuses on medication-related implications of variation, haplotype and genotype observations.</li>
+    <li>The <a href="somatics.html">Somatic Reporting</a> section deals with non-germline variations, particularly those related to tumors and genetic-based implications on outcomes and the effectiveness of medications and other interventions.</li>
     <li>The <a href="histocompatibility.html">Histocompatibility Reporting</a> section deals with information related to variations relevant histocompatibility and immunogenetics, including HLA typing.</li>
   </ul>
 

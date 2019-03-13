@@ -47,7 +47,7 @@
     </grouping>
     <grouping id="pharmacogenomics">
       <name value="Pharmacogenomics"/>
-      <description value="Profiles for reports relating to genetic impact on medication use and effectiveness"/>
+      <description value="Profiles for reports relating to genetic implication on medication use and effectiveness"/>
     </grouping>
     <grouping id="cytogenomics">
       <name value="Cytogenomics"/>
@@ -248,10 +248,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-impact"/>
+        <reference value="StructureDefinition/obs-implication"/>
       </reference>
-      <name value="Genetic Impact"/>
-      <description value="Abstract profile for observations describing the impact of one or more genetic observations."/>
+      <name value="Genetic Implication"/>
+      <description value="Abstract profile for observations describing the implication of one or more genetic observations."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -346,10 +346,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-med-impact"/>
+        <reference value="StructureDefinition/obs-med-implication"/>
       </reference>
-      <name value="Medication Impact"/>
-      <description value="Abstract profile with common properties for observations that convey the potential impact of a genetic characteristics on a medication"/>
+      <name value="Medication Implication"/>
+      <description value="Abstract profile with common properties for observations that convey the potential implication of a genetic characteristics on a medication"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
     </resource>
@@ -360,8 +360,8 @@
       <reference>
         <reference value="StructureDefinition/obs-metabolism"/>
       </reference>
-      <name value="Medication Metabolism Impact"/>
-      <description value="Assertion of the expected impact of a particular genotype on the ability of the subject to metabolize medications"/>
+      <name value="Medication Metabolism Implication"/>
+      <description value="Assertion of the expected implication of a particular genotype on the ability of the subject to metabolize medications"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
     </resource>
@@ -372,8 +372,8 @@
       <reference>
         <reference value="StructureDefinition/obs-transporter"/>
       </reference>
-      <name value="Medication Transporter Impact"/>
-      <description value="Assertion of the expected impact of a particular genotype on the ability of the subject to actively transport medications"/>
+      <name value="Medication Transporter Implication"/>
+      <description value="Assertion of the expected implication of a particular genotype on the ability of the subject to actively transport medications"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
     </resource>
@@ -384,8 +384,8 @@
       <reference>
         <reference value="StructureDefinition/obs-efficacy"/>
       </reference>
-      <name value="Medication Efficacy Impact"/>
-      <description value="Assertion of the expected impact of a particular genotype on the efficacy of medications for the subject"/>
+      <name value="Medication Efficacy Implication"/>
+      <description value="Assertion of the expected implication of a particular genotype on the efficacy of medications for the subject"/>
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
     </resource>
@@ -431,9 +431,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-som-impact"/>
+        <reference value="StructureDefinition/obs-som-implication"/>
       </reference>
-      <name value="Somatic Impact"/>
+      <name value="Somatic Implication"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions"/>
       <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
@@ -445,7 +445,7 @@
       <reference>
         <reference value="StructureDefinition/obs-som-diagnostic"/>
       </reference>
-      <name value="Somatic Diagnostic Impact"/>
+      <name value="Somatic Diagnostic Implication"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer"/>
       <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
@@ -457,7 +457,7 @@
       <reference>
         <reference value="StructureDefinition/obs-som-prognostic"/>
       </reference>
-      <name value="Somatic Prognostic Impact"/>
+      <name value="Somatic Prognostic Implication"/>
       <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions"/>
       <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
@@ -469,8 +469,8 @@
       <reference>
         <reference value="StructureDefinition/obs-som-predictive"/>
       </reference>
-      <name value="Somatic Predictive Impact"/>
-      <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the impact of a specified medication or combination of medications"/>
+      <name value="Somatic Predictive Implication"/>
+      <description value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the implication of a specified medication or combination of medications"/>
       <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
     </resource>
