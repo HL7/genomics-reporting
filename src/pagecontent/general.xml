@@ -57,7 +57,7 @@
     As shown in the diagram above, all of the observations may hang directly off of the <a href="diagnosticreport.html">diagnostic report</a>  However, they can also be part of a <a href="obs-gen-panel.html">panel</a>.  In this version of the specification, no guidance is provided on when or if panels should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on panel supports a nested tree-structure of panels if appropriate, though more than two levels of panels is likely excessive.
   </p>
   <p>
-    Any organization of observations into panels or sub-panels is purely for navigation and presentation purposes.  It carries no additional "meaning".  Each observation can be interpreted on its own without knowing the associated panel or sub-panel.  The organization of observations in panels does not assert any relationship between observations.
+    Any organization of observations into panels or sub-panels is purely for navigation and presentation purposes.  It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated panel or sub-panel and must be able to stand alone as a resource and be independently valuable. The organization of observations in panels does not assert any relationship between observations.
   </p>
   <p>
     However, it <b>is</b> possible for relationships to exist between the different observation components of a genomics report.  Such relationships are asserted directly on one of the affected observations.  Some of these relationship types are defined on the basis of the high-level observation category the observation belongs to.  Others will be defined for narrower categories or explicit observation types.  The high-level category relationships are shown in the following diagram:
@@ -78,9 +78,9 @@
     The relationships between categories are as follows:
   </p>
   <ul>
-    <li><i>Genetic Interpretations</i> can be "derived from" <i>Genetic Findings</i>.  For example, an interpretation asserting that "deletions or duplications were found" might be supported by observations of variants that contain deletions and/or duplications.</li>
-    <li><i>Genetic Impacts</i> MUST be "derived from" <i>Genetic Findings</i>.  For example, in a genomic report, it's not acceptable to assert "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that assertion.</li>
-    <li>Every <i>Recommended Action</i> will have a reason relationship to either a <i>Genetic Interpretation</i> or <i>Genetic Assertion</i>.  For example: a recommendation to increase the dosage of a medication might be tied to a genetic interpretation indicating that the patient is an increased metabolizer of that medication; an assertion that re-testing should be performed on a variant that was detected but had low quality metrics for certainty. </li>
+    <li><i>Genetic Interpretations</i> should be "derived from" <i>Genetic Findings</i>.  For example, an interpretation that "deletions or duplications were found" might be supported by observations of variants that contain deletions and/or duplications.</li>
+    <li><i>Genetic Implications</i> should be "derived from" <i>Genetic Findings</i>.  For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
+    <li>Every <i>Recommended Action</i> will have a reason relationship to either a <i>Genetic Interpretation</i> or <i>Genetic Finding</i>.  For example: a recommendation to increase the dosage of a medication might be tied to a genetic interpretation indicating that the patient is an increased metabolizer of that medication; another possible recommendation is that re-testing should be performed on a variant that was detected but had low quality metrics for certainty.</li>
   </ul>
   <p>
     This diagram also shows a specific example of a <i>Recommended Action</i> - the <a href="task-rec-followup.html">Recommended Followup</a> which includes suggestions for confirmatory testing, additional testing and/or genetic counselling.
@@ -161,7 +161,7 @@
   <p>The primary focus of genetic testing is making Genetic Findings.  These are the fine and/or coarse-grained descriptions of a specimen's genetic characteristics.  It is this information that leads to the actionable <i>Genetic Impacts</i> and the <i>Overall Interpretations</i> for the report.
   </p>
   <a name="fig5"> </a>
-  <img src="1-general-fig5-genetic-findings.png" alt="Class diagram showing relationship of Descriptive and Computable genetic findings as well as genotypes, haplotypes, variations and sequences."/>
+  <img src="1-general-fig5-genetic-findings.png" alt="Class diagram showing relationship of Computable genetic findings as well as genotypes, haplotypes, variations and sequences."/>
   <p>
     <b>Figure 5: Genetic Findings</b>
   </p>
