@@ -1,0 +1,268 @@
+{
+  "DO_NOT_EDIT_THIS_FILE": "This file is generated.  Any edits made will be overwritten",
+  "tool": "jekyll",
+  "logging": ["html"],
+  "version": "4.0.0",
+  "fixed-business-version": "0.3",
+  "html-template": "template-page.html",
+  "md-template": "template-page-md.html",
+  "license": "CC0-1.0",
+  "npm-name": "hl7.fhir.uv.genomics-reporting",
+  "paths": {
+    "resources": ["resources", "../src/resources", "../src/vocabulary", "../src/examples"],
+    "pages": ["../src/images", "pages"],
+    "temp": "../temp/pages",
+    "output": "../output",
+    "txCache": "txcache",
+    "history" : "history.html",
+    "qa": "../temp/qa",
+    "specification": "http://build.fhir.org/"
+  },
+  "suppressedWarningFile": "../src/ignoreWarnings.txt",
+  "includeHeadings": false,
+  "pre-process": [
+    {"folder": "../framework/config",
+     "relativePath": ""},
+    {"folder": "../framework/assets",
+     "relativePath": "assets"},
+    {"folder": "../framework/includes",
+     "relativePath": "_includes"},
+    {"folder": "../src/includes",
+     "relativePath": "_includes",
+     "transform": "../framework/xslt/processPages.xslt"},
+    {"folder": "../src/data",
+     "relativePath": "_data"},
+    {"folder": "../src/pagecontent",
+     "relativePath": "_includes",
+     "transform": "../framework/xslt/processPages.xslt"}
+  ],
+  "extraTemplates": [
+    {
+      "name": "mappings",
+      "description": "Mappings"
+    },
+    {
+      "name": "examples",
+      "description": "Examples"
+    },
+    {
+      "name": "profile-xml",
+      "description": "Profile XML"
+    },
+    {
+      "name": "profile-json",
+      "description": "Profile JSON"
+    },
+    {
+      "name": "profile-ttl",
+      "description": "Profile Turtle"
+    }
+  ],
+  "defaults": {
+    "Any": {
+      "java" : false,
+      "template-base": "../framework/templates/template-instance-base.html",
+      "template-format": "../framework/templates/template-instance-format.html",
+      "base": "{{[id]}}.html",
+      "format": "{{[id]}}.{{[fmt]}}.html"
+    },
+    "ImplementationGuide": {
+      "template-base": "",
+      "template-format": ""
+    },
+    "StructureDefinition": {
+      "template-base": "../framework/templates/template-profile.html",
+      "template-defns": "../framework/templates/template-profile-definitions.html",
+      "template-mappings": "../framework/templates/template-profile-mappings.html",
+      "template-examples": "../framework/templates/template-profile-examples.html",
+      "template-profile-xml": "../framework/templates/template-profile-xml.html",
+      "template-profile-json": "../framework/templates/template-profile-json.html",
+      "template-profile-ttl": "../framework/templates/template-profile-ttl.html",
+      "base": "{{[id]}}.html",
+      "defns": "{{[id]}}-definitions.html",
+      "mappings": "{{[id]}}-mappings.html",
+      "examples": "{{[id]}}-examples.html",
+      "profile-xml": "{{[id]}}.profile.xml.html",
+      "profile-json": "{{[id]}}.profile.json.html",
+      "profile-ttl": "{{[id]}}.profile.ttl.html"
+    },
+    "ValueSet": {
+      "template-base": "../framework/templates/template-valueset.html",
+      "template-format": "../framework/templates/template-valueset-format.html",
+      "base": "valueset-{{[id]}}.html",
+      "format": "valueset-{{[id]}}.{{[fmt]}}.html"
+    }
+  },
+  "sct-edition" : "http://snomed.info/sct/900000000000207008",
+  "no-inactive-codes" : "true",
+  "canonicalBase": "http://hl7.org/fhir/uv/genomics-reporting",
+  "source": "genomics-reporting.xml",
+  "spreadsheets": [
+    "device-profile-spreadsheet.xml",
+    "diagnosticreport-profile-spreadsheet.xml",
+    "medicationstatement-profile-spreadsheet.xml",
+    "observation-profile-spreadsheet.xml",
+    "servicerequest-profile-spreadsheet.xml",
+    "specimen-profile-spreadsheet.xml",
+    "task-profile-spreadsheet.xml"
+  ],
+  "resources": {
+    "StructureDefinition/obs-base":{
+    },
+    "StructureDefinition/diagnosticreport":{
+    },
+    "StructureDefinition/specimen":{
+    },
+    "StructureDefinition/task-rec-followup":{
+    },
+    "StructureDefinition/servicerequest":{
+    },
+    "StructureDefinition/obs-gen-panel":{
+    },
+    "StructureDefinition/obs-overall":{
+    },
+    "StructureDefinition/obs-deletion-dup":{
+    },
+    "StructureDefinition/obs-comp-gen-finding":{
+    },
+    "StructureDefinition/obs-haplotype":{
+    },
+    "StructureDefinition/obs-genotype":{
+    },
+    "StructureDefinition/obs-cytogenetic-nomenclature":{
+    },
+    "StructureDefinition/obs-variant":{
+    },
+    "StructureDefinition/obs-sequence-phase-reltn":{
+    },
+    "StructureDefinition/obs-implication":{
+    },
+    "StructureDefinition/obs-inh-dis-path":{
+    },
+    "StructureDefinition/obs-region-studied":{
+    },
+    "StructureDefinition/obs-med-implication":{
+    },
+    "StructureDefinition/obs-metabolism":{
+    },
+    "StructureDefinition/obs-transporter":{
+    },
+    "StructureDefinition/obs-efficacy":{
+    },
+    "StructureDefinition/obs-high-risk":{
+    },
+    "StructureDefinition/task-med-chg":{
+    },
+    "StructureDefinition/medicationstatement":{
+    },
+    "StructureDefinition/obs-som-implication":{
+    },
+    "StructureDefinition/obs-som-diagnostic":{
+    },
+    "StructureDefinition/obs-som-prognostic":{
+    },
+    "StructureDefinition/obs-som-predictive":{
+    },
+    "StructureDefinition/dr-relatedArtifact":{
+      "template-base": "../framework/templates/template-ext.html",
+      "template-defns": "../framework/templates/template-ext-definitions.html",
+      "template-mappings": "../framework/templates/template-ext-mappings.html",
+      "template-examples": "",
+      "template-profile-xml": "../framework/templates/template-ext-xml.html",
+      "template-profile-json": "../framework/templates/template-ext-json.html",
+      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
+      "template-format": "",
+      "base": "extension-{{[id]}}.html",
+      "defns": "extension-{{[id]}}-definitions.html",
+      "mappings": "extension-{{[id]}}-mappings.html",
+      "examples": "extension-{{[id]}}-examples.html",
+      "profile-xml": "extension-{{[id]}}.profile.xml.html",
+      "profile-json": "extension-{{[id]}}.profile.json.html",
+      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    },
+    "StructureDefinition/dr-recommendedAction":{
+      "template-base": "../framework/templates/template-ext.html",
+      "template-defns": "../framework/templates/template-ext-definitions.html",
+      "template-mappings": "../framework/templates/template-ext-mappings.html",
+      "template-examples": "",
+      "template-profile-xml": "../framework/templates/template-ext-xml.html",
+      "template-profile-json": "../framework/templates/template-ext-json.html",
+      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
+      "template-format": "",
+      "base": "extension-{{[id]}}.html",
+      "defns": "extension-{{[id]}}-definitions.html",
+      "mappings": "extension-{{[id]}}-mappings.html",
+      "examples": "extension-{{[id]}}-examples.html",
+      "profile-xml": "extension-{{[id]}}.profile.xml.html",
+      "profile-json": "extension-{{[id]}}.profile.json.html",
+      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    },
+    "StructureDefinition/dr-supportingInfo":{
+      "template-base": "../framework/templates/template-ext.html",
+      "template-defns": "../framework/templates/template-ext-definitions.html",
+      "template-mappings": "../framework/templates/template-ext-mappings.html",
+      "template-examples": "",
+      "template-profile-xml": "../framework/templates/template-ext-xml.html",
+      "template-profile-json": "../framework/templates/template-ext-json.html",
+      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
+      "template-format": "",
+      "base": "extension-{{[id]}}.html",
+      "defns": "extension-{{[id]}}-definitions.html",
+      "mappings": "extension-{{[id]}}-mappings.html",
+      "examples": "extension-{{[id]}}-examples.html",
+      "profile-xml": "extension-{{[id]}}.profile.xml.html",
+      "profile-json": "extension-{{[id]}}.profile.json.html",
+      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    },
+    "StructureDefinition/obs-focus":{
+      "template-base": "../framework/templates/template-ext.html",
+      "template-defns": "../framework/templates/template-ext-definitions.html",
+      "template-mappings": "../framework/templates/template-ext-mappings.html",
+      "template-examples": "",
+      "template-profile-xml": "../framework/templates/template-ext-xml.html",
+      "template-profile-json": "../framework/templates/template-ext-json.html",
+      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
+      "template-format": "",
+      "base": "extension-{{[id]}}.html",
+      "defns": "extension-{{[id]}}-definitions.html",
+      "mappings": "extension-{{[id]}}-mappings.html",
+      "examples": "extension-{{[id]}}-examples.html",
+      "profile-xml": "extension-{{[id]}}.profile.xml.html",
+      "profile-json": "extension-{{[id]}}.profile.json.html",
+      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    },
+    "StructureDefinition/obs-recommendedAction":{
+      "template-base": "../framework/templates/template-ext.html",
+      "template-defns": "../framework/templates/template-ext-definitions.html",
+      "template-mappings": "../framework/templates/template-ext-mappings.html",
+      "template-examples": "",
+      "template-profile-xml": "../framework/templates/template-ext-xml.html",
+      "template-profile-json": "../framework/templates/template-ext-json.html",
+      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
+      "template-format": "",
+      "base": "extension-{{[id]}}.html",
+      "defns": "extension-{{[id]}}-definitions.html",
+      "mappings": "extension-{{[id]}}-mappings.html",
+      "examples": "extension-{{[id]}}-examples.html",
+      "profile-xml": "extension-{{[id]}}.profile.xml.html",
+      "profile-json": "extension-{{[id]}}.profile.json.html",
+      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
+    },
+    "Bundle/diagnosticreport-cgexample":{
+    },
+    "Bundle/diagnosticreport-pgxexample":{
+    },
+    "Bundle/CG-IG-HLA-FullBundle-01":{
+    },
+    "DiagnosticReport/diagnosticreport-hla-glstring-r4":{
+    },
+    "Observation/obs-genotype-hla-a-glstring-r4":{
+    },
+    "Observation/obs-haplotype-hla-a-1-r4":{
+    },
+    "Specimen/specimen-hla-r4":{
+    },
+    "ServiceRequest/servicerequest-hla-a-r4":{
+    }
+  }
+}

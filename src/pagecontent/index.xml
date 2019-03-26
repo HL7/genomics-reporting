@@ -10,10 +10,9 @@
     Genomics is a rapidly evolving area of healthcare that involves complex data structures.  There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice.  The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing.  The implementation guide is also transmission protocol-independent - the data structures presented here could be used in RESTful, messaging, document or other paradigms.
   </p>
   <p>
-    This guide covers all aspects of genetic reporting, including:
+    This guide covers all aspects of human genetic reporting, including:
   </p>
   <ul>
-    <li>Human and veterinary as well as bacterial and viral specimens</li>
     <li>Representation of simple discrete variants, structural variants including copy number variants, complex variants as well as gross variations such as extra or missing chromosomes</li>
     <li>Representation of both known variants as well as fully describing de novo variations</li>
     <li>Germline and somatic variations</li>
@@ -101,7 +100,7 @@
     <tbody>
       <tr>
         <th><a href="background.html">Background</a></th>
-        <td>Background on genomic concepts represented within this guide.  It's essential reading for those who may not have a deep knowledge of genetics, but it's recommended for all implementers as it provides definitions for terms as they are used in this implementation guide.  In some cases, agreement on term defitions is not unanimous within the gentics community, so this IG's use of a term may differ from the meaning you may be used to.</td>
+        <td>Background on genomic concepts represented within this guide.  It's essential reading for those who may not have a deep knowledge of genetics, but it's recommended for all implementers as it provides definitions for terms as they are used in this implementation guide.  In some cases, agreement on term definitions is not unanimous within the genetics community, so this IG's use of a term may differ from the meaning you may be used to.</td>
       </tr>
       <tr>
         <th><a href="general.html">General Genomic Reporting</a></th>
@@ -113,11 +112,11 @@
       </tr>
       <tr>
         <th><a href="cytogenomics.html">Cytogenomic Reporting</a></th>
-        <td>Guidance on expressing information gathered by [[cytogenomic - link TBD]] testing techniques including FISH tests, chromosomal analysis, etc.</td>
+        <td>Guidance on expressing information gathered by testing techniques including FISH tests, chromosomal analysis, etc.</td>
       </tr>
       <tr>
         <th><a href="pharmacogenomics.html">Pharmacogenomic Reporting</a></th>
-        <td>Additional guidance and examples related to genetic testing done for the purpose of assessing genetic variations' impact on the use of medications - both for oncology and for general patient treatment</td>
+        <td>Additional guidance and examples related to genetic testing done for the purpose of assessing genetic variations' implication on the use of medications - both for oncology and for general patient treatment</td>
       </tr>
       <tr>
         <th><a href="somatics.html">Somatic Reporting</a></th>
@@ -144,8 +143,8 @@
         <td>A domain analysis model for various use cases in clinical genomics with an emphasis on clinical sequencing</td>
       </tr>
       <tr>
-        <th><a >Appendix D: External Coding Systems</a></th>
-        <td>TODO: Guidance on publicaly available external coding systems</td>
+        <th><a href="codings.html">Appendix D: External Coding Systems</a></th>
+        <td>TODO: Guidance on publicly available external coding systems</td>
       </tr>
     </tbody>
   </table>
@@ -158,6 +157,6 @@
   <a name="credits"> </a>
   <h2>Credits</h2>
   <p>
-    [Work group to decide what they'd like here]
+    The Genomics Reporting Implementation Guide (IG) was created by the <a href="https://confluence.hl7.org/display/CGW/WorkGroup+Home">HL7 Clinical Genomics Work Group</a>
   </p>
 </div>

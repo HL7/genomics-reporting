@@ -1,14 +1,12 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    This section provides guidance on reporting genetic tests that involve sequencing the DNA, RNA or amino acid chains of the specimen.  This includes direct sequencing, shot-gun sequencing, array-based variant testing and other mechanisms.
+    This section provides guidance on reporting genetic tests that involve sequencing the DNA, RNA or amino acid chains of the specimen. This includes direct sequencing, shotgun sequencing, array-based variant testing and other mechanisms.
   </p>
   <p>
-    There are three profiles provided for describing the results of genetic testing:
+    Currently, there is one profile used to model most variant information. In future versions of this implementation guide, HL7 may subdivide Variant into multiple sub-profiles with more specific purpose.
   </p>
   <ul>
-    <li><a href="obs-complex-variant.html">Complex Variant</a></li>
-    <li><a href="obs-described-variant.html">Described Variant</a></li>
-    <li><a href="obs-copy-num-chg.html">Copy Number Change</a></li>
+    <li><a href="obs-variant.html">Variant</a></li>
   </ul>
   <img src="2-sequencing-fig1.png" alt="Diagram showing the sequencing profiles"/>
   <p>
@@ -16,21 +14,23 @@
   </p>
   <p>
     (Profile links:
-    <a href="obs-complex-variant.html">Complex Variant</a>,
-    <a href="obs-described-variant.html">Described Variant</a>,
-    <a href="obs-copy-num-chg.html">Copy Number Change</a>
+    <!--<a href="obs-complex-variant.html">Complex Variant</a>,-->
+    <a href="obs-variant.html">Variant</a>
+    <!--<a href="obs-copy-num-chg.html">Copy Number Change</a>-->
     )
   </p>
   <p>
-    The core of the typical report is a list of identified variants – each with many possible attributes.  <i>Described Variant</i> is a new term that HL7 has assigned to the notion of simple, discrete, or structural variant. We have done this because of the difficulty of drawing a clear line between these other labels for variants. The rules are often driven by the registries to which the variants are submitted and are not necessarily consistent. The difference may be driven by testing methodology rather than a difference in the underlying genetic characteristic.
-  </p>
-  <p>
-    This profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms. An individual variant may be defined and described by multiple attributes delivered as component values. Most of these components are optional, but labs are encouraged to populate what properties they know. Clinicians are accustomed to receiving descriptive information such as the HVGS genomic and amino acid expression, the type of variant (e.g. deletion) and the reference sequence. The identifiers to the online databases can be more easily consumed by CDS systems. In future versions of this implementation guide, HL7 may provide additional guidance on what properties should be sent in which situations and may subdivide Described Variant into multiple sub-profiles with more specific purpose.
+    The core of the typical report is a list of identified variants – each with many possible attributes. The variant profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms. An individual variant may be defined and described by multiple attributes delivered as component values. Most of these components are optional, but labs are encouraged to populate what properties they know. The underlying clinical concept behind each component is mapped to a specific LOINC code. Clinicians are accustomed to receiving descriptive information such as the HVGS genomic and amino acid expression, the type of variant (e.g. deletion) and the reference sequence. The identifiers to online databases can be easily consumed by CDS systems.
   </p>
   <p>
     Note that there are two coordinate systems one can use when referencing positions within a molecular sequence. In particular, information from HGVS is 1-based, with special rules for consideration that can be less than straight forward when switching between insertions and deletions. For clarity and consistency, one must take care not to mix coordinate systems within the same resource instance. If HGVS is used within a resource instance, the rest of the instance should also be 1-based so as not to mix coordinate systems. Below is a picture that could explain the difference between the two systems:
   </p>
   <img src="sequence-coordinate-sys.png" alt="image coordinate system description"/>
+  <p>
+    The <i>Variant</i> profile can reference other Variant observations via <code>hasMember</code> when there is a need to represent a named grouping of variants that has a specified clinical effect or phenotype but is not a recognized <a href="obs-haplotype.html">Haplotype</a> or <a href="obs-genotype.html">Genotype</a>. An example would be a <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/438483/">compound heterozygote</a>, or other types of findings as in the Complex Variant Type component which uses <a href="https://r.details.loinc.org/AnswerList/LL3999-1.html">this LOINC code</a>.
+  </p>
+
+<!--
   <p>
     The <i>Complex Variant</i> profile is used when there is a need to represent a named grouping of variants that often has a specified clinical effect or phenotype.  An example would be a <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/438483/">Compound heterozygote</a>, but could be other types as found in the Complex Variant Type component that use <a href="https://r.details.loinc.org/AnswerList/LL3999-1.html">this LOINC code</a>.  Many of the details of what was found are left to the member <i>Described Variants</i> the <i>Complex Variant</i> points to.
   </p>
@@ -38,8 +38,6 @@
     The <i>Copy Number Change</i> profile is used to document when a copy number variation has been detected.  Using this profile, the type of copy number change can be represented, as well as additional information about the region impacted by the change.
   </p>
 
-  <!--MolecularSequence Resource Definition Section-->
-<!--
   I've commented this out for now because a lot of it no longer applies.  Most elements of sequence aren't being used in the genetic reporting process because the group agreed to treat MolecularSequence as a "definitional" resource and
 <a name="sequence"> </a>
   <h2>MolecularSequence Resource Usage Guide</h2>
