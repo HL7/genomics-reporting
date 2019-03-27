@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Thu, Mar 14, 2019 07:08+0000 for FHIR v4.1.0 
+  Generated on Tue, Mar 26, 2019 21:54+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -28067,7 +28067,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The person or animal or group receiving the medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The visit, admission, or other contact between patient and health care provider during which the medication administration was performed.</xs:documentation>
            </xs:annotation>
@@ -28244,9 +28244,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">A link to a resource representing the person or the group to whom the medication will be given.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care that establishes the context for this event.</xs:documentation>
+              <xs:documentation xml:lang="en">The encounter that establishes the context for this event.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="supportingInformation" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -28398,6 +28398,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Business identifier for this medication.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A code that specifies this medication, or a textual description if no code is available. Usage note: This could be a standard medication code such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary code, optionally with translations to other code systems.</xs:documentation>
@@ -29350,9 +29355,9 @@ The primary difference between a medication statement and a medication administr
               <xs:documentation xml:lang="en">The person, animal or group who is/was taking the medication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter or episode of care that establishes the context for this MedicationStatement.</xs:documentation>
+              <xs:documentation xml:lang="en">The encounter that establishes the context for this MedicationStatement.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
