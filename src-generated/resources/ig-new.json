@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src-generated\\resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\vocabulary"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\examples"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src\\images"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\lloyd\\Documents\\SVN\\genomics-reporting\\src-generated\\pages"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -97,6 +97,15 @@
       },
       "name" : "Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
       "description" : "Full Bundle HLA Typing Example",
+      "exampleCanonical" : "StructureDefinition/diagnosticreport",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Bundle/oncologyexamples-r4"
+      },
+      "name" : "Example - Full Bundle Oncology examples",
+      "description" : "Full Bundle Oncology Example",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
       "groupingId" : "examples"
     },
@@ -396,6 +405,11 @@
         {
           "nameUrl" : "CG-IG-HLA-FullBundle-01.html",
           "title" : "Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "oncologyexamples-r4.html",
+          "title" : "Example - Full Bundle Oncology examples",
           "generation" : "generated"
         },
         {

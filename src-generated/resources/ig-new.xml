@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\genomics-reporting\src-generated\resources"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\genomics-reporting\src\resources"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\genomics-reporting\src\vocabulary"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Users\lloyd\Documents\SVN\genomics-reporting\src\examples"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\genomics-reporting\src\images"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Users\lloyd\Documents\SVN\genomics-reporting\src-generated\pages"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="0.3"/>
@@ -86,6 +86,15 @@
       </reference>
       <name value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
       <description value="Full Bundle HLA Typing Example"/>
+      <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/oncologyexamples-r4"/>
+      </reference>
+      <name value="Example - Full Bundle Oncology examples"/>
+      <description value="Full Bundle Oncology Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
       <groupingId value="examples"/>
     </resource>
@@ -385,6 +394,11 @@
         <page>
           <nameUrl value="CG-IG-HLA-FullBundle-01.html"/>
           <title value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="oncologyexamples-r4.html"/>
+          <title value="Example - Full Bundle Oncology examples"/>
           <generation value="generated"/>
         </page>
         <page>
