@@ -1128,7 +1128,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">obs-gen-panel</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">obs-gen-grouper</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
@@ -2380,7 +2380,7 @@
    xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
  </Worksheet>
- <Worksheet ss:Name="obs-gen-panel">
+ <Worksheet ss:Name="obs-gen-grouper">
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="24" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
@@ -2482,7 +2482,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Not published</Font>       </ss:Data></Comment></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="150">
-    <Cell ss:StyleID="s93"><Data ss:Type="String">obs-gen-panel</Data></Cell>
+    <Cell ss:StyleID="s93"><Data ss:Type="String">obs-gen-grouper</Data></Cell>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s95"><Data ss:Type="String">Observation</Data></Cell>
@@ -2513,7 +2513,7 @@
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.extension</Data></Cell>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Extension{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-recommendedAction}</Data></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data></Cell>
@@ -2543,10 +2543,10 @@
     <Cell ss:StyleID="s107"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:Index="12" ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;TBD-panel&quot;}]}</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s107"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;TBD-grouper&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Genomics Panel</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Genomics Grouper</Data></Cell>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s108"/>
@@ -2610,21 +2610,21 @@
     <Cell ss:StyleID="s111"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">obs-gen-panel-ref</Data></Cell>
+    <Cell ss:StyleID="s123"><Data ss:Type="String">obs-gen-grouper-ref</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.hasMember</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s105"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-panel}</Data></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-grouper}</Data></Cell>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Genetic panel</Data></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Genetic grouper</Data></Cell>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s108"/>

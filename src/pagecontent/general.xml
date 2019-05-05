@@ -16,7 +16,7 @@
   <p>
     (Profile links:
     <a href="diagnosticreport.html">Genomics Report</a>,
-    <a href="obs-gen-panel.html">Genetics Panel</a>,
+    <a href="obs-gen-grouper.html">Grouper</a>,
     Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
     <a href="obs-implication.html">Genetic Implications</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
@@ -38,7 +38,7 @@
         <td>These are observations about the specimen's genetic characteristics.  For example, a chromosomal abnormality, genotype, haplotype or variant that was detected.</td>
       </tr>
       <tr>
-        <th>Genetic Panel</th>
+        <th>Grouper</th>
         <td>The genetic observations can be organized and grouped together in a wide variety of ways.</td>
       </tr>
       <tr>
@@ -54,10 +54,10 @@
     Various Observations including vital signs, lab information, assessments, genetic information, etc. result in different risk assessment. The risk assessment resource captures predicted outcomes for a patient or population on the basis of source information, and the Genomics Report has space for specifically noting this assessment under the DiagnosticReport-risk extension, which links directly to an assessment of prognosis or risk as informed by the diagnostic results (For example, genetic results and possibly by patient genetic family history information). This extension is used when one needs RiskAssessment as an alternate choice for <code>Observation.hasMember</code> or <code>DiagnosticReport.result</code>.
   </p>
   <p>
-    As shown in the diagram above, all of the observations may hang directly off of the <a href="diagnosticreport.html">diagnostic report</a>  However, they can also be part of a <a href="obs-gen-panel.html">panel</a>.  In this version of the specification, no guidance is provided on when or if panels should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on panel supports a nested tree-structure of panels if appropriate, though more than two levels of panels is likely excessive.
+    As shown in the diagram above, all of the observations may hang directly off of the <a href="diagnosticreport.html">diagnostic report</a>  However, they can also be part of a <a href="obs-gen-grouper.html">grouper</a>.  In this version of the specification, no guidance is provided on where or if grouper should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive.
   </p>
   <p>
-    Any organization of observations into panels or sub-panels is purely for navigation and presentation purposes.  It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated panel or sub-panel and must be able to stand alone as a resource and be independently valuable. The organization of observations in panels does not assert any relationship between observations.
+    Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes.  It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
   </p>
   <p>
     However, it <b>is</b> possible for relationships to exist between the different observation components of a genomics report.  Such relationships are asserted directly on one of the affected observations.  Some of these relationship types are defined on the basis of the high-level observation category the observation belongs to.  Others will be defined for narrower categories or explicit observation types.  The high-level category relationships are shown in the following diagram:
@@ -69,7 +69,7 @@
   </p>
   <p>
     (Profile links:
-    <a href="obs-gen-panel.html">Genetics Panel</a>,
+    <a href="obs-gen-grouper.html">Grouper</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
     <a href="obs-implication.html">Genetic Implications</a>
     )
@@ -110,7 +110,7 @@
     <a href="specimen.html">Specimen</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
     Overall Genetic Interpretation (see <a href="#fig6">Figure 6</a>),
-    <a href="obs-gen-panel.html">Genomics Panel</a>,
+    <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-implication.html">Genetic Implications</a>
     )
   </p>
@@ -151,7 +151,7 @@
     <a href="specimen.html">Specimen</a>,
     Genetic Finding (see <a href="#fig5">Figure 5</a>),
     Overall Genetic Interpretation (see <a href="#fig6">Figure 6</a>),
-    <a href="obs-gen-panel.html">Genomics Panel</a>,
+    <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-implication.html">Genetic Implications</a>,
     )
   </p>
