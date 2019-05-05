@@ -1,0 +1,117 @@
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="obs-idh-ex"/>
+  <meta>
+	<profile value="http://build.fhir.org/ig/HL7/genomics-reporting/obs-inh-dis-path.profile.xml.html"/>
+  </meta>
+  <status value="final"/>
+  <category>
+	<coding>
+	  <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+	  <code value="laboratory"/>
+	</coding>
+  </category>
+  <code>
+	<coding>
+	  <system value="http://loinc.org"/>
+	  <code value="53037-8"/>
+	  <display value="Genetic variation clinical significance"/> <!--HL7 CG consider changing display name-->
+	</coding>
+  </code>
+     <!-- REMOVE INVALID REFS
+  <subject>
+	<reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/> 
+    <display value="TestPat"/> 
+  </subject>
+  <issued value="2019-01-07T17:41:18+05:30"/>
+  <encounter> 
+    <reference value="Encounter/example"/> 
+  </encounter> 
+
+
+  <derivedFrom>
+     <reference value="ObsVariant/example"/>
+  </derivedFrom>
+  -->
+  <valueCodeableConcept>
+	<coding>
+	  <system value="http://loinc.org"/>
+	  <code value="LA6668-3"/>
+	  <display value="Pathogenic"/> <!-- should apply to all assoicated phenotype entries-->
+	</coding>
+  </valueCodeableConcept>
+  <component>
+	<code>
+	  <coding>
+		<system value="http://loinc.org"/>
+		<code value="81259-4"/>
+		<display value="Associated phenotype"/>
+	  </coding>
+	</code>
+	<valueCodeableConcept>
+	  <coding>
+		<system value="https://www.ncbi.nlm.nih.gov/medgen/"/>
+		<code value="C0010674"/>
+		<display value="Cystic fibrosis"/>
+	  </coding>
+	  <coding>
+		<system value="https://www.orpha.net/"/>
+		<code value="ORPHA:586"/>
+	  </coding>
+	  <coding>
+		<system value="http://www.omim.org/"/>
+		<code value="219700"/>
+	  </coding>
+	  <text value="Cystic fibrosis"/>
+	</valueCodeableConcept>
+  </component>
+  <component>
+	<code>
+	  <coding>
+		<system value="http://loinc.org"/>
+		<code value="81259-4"/>
+		<display value="Associated phenotype"/>
+	  </coding>
+	</code>
+	<valueCodeableConcept>
+	  <coding>
+		<system value="https://www.ncbi.nlm.nih.gov/medgen/"/>
+		<code value="C0403814"/>
+	  </coding>
+	  <coding>
+		<system value="https://www.orpha.net/"/>
+		<code value="ORPHA:48"/>
+	  </coding>
+	  <coding>
+		<system value="http://www.omim.org/"/>
+		<code value="277180"/>
+	  </coding>
+	  <coding>
+		<system value="http://www.omim.org/"/>
+		<code value="300985"/>
+	  </coding>
+	  <text value="Congenital bilateral absence of the vas deferens"/>
+	</valueCodeableConcept>
+  </component>
+  <component>
+	<code>
+	  <coding>
+		<system value="http://loinc.org"/>
+		<code value="TBD-mode-of-inheritance"/> <!-- it is important that this be true for each of the Assoicated Phenotypes. If not, use multiple idh profile instances-->
+		<display value="Mode of Inheritance"/>
+	  </coding>
+	</code>
+	<valueCodeableConcept>
+	  <coding>
+		<system value="https://ghr.nlm.nih.gov/primer/inheritance/inheritancepatterns"/>
+		<code value="Autosomal recessive"/>
+		<display value="Autosomal recessive"/>
+	  </coding>
+	</valueCodeableConcept>
+  </component>  
+  <dr-relatedArtifact>
+	<reference value="https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"/>
+  </dr-relatedArtifact>
+  <dr-relatedArtifact>
+	<reference value="https://www.ncbi.nlm.nih.gov/pubmed/23974870,21520337,21228398,25087612,18951463,20880762,20460946,7539342,23891399,12955726"/>
+  </dr-relatedArtifact>
+</Observation>

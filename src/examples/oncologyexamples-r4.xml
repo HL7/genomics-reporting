@@ -2,14 +2,9 @@
    <id value="oncologyexamples-r4"/>
    <type value="transaction"/>
    <entry>
-      <fullUrl value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+      <fullUrl value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
       <resource>
          <Patient xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>identifier</b>: 1007</p><p><b>name</b>: Carrot John Mr </p><p><b>gender</b>: male</p><p><b>birthDate</b>: Dec 31, 1962</p><p><b>generalPractitioner</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p>
-               </div>
-            </text>
             <identifier>
                <value value="1007"/>
             </identifier>
@@ -21,7 +16,7 @@
             <gender value="male"/>
             <birthDate value="1962-12-31"/>
             <generalPractitioner>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </generalPractitioner>
          </Patient>
       </resource>
@@ -31,13 +26,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+      <fullUrl value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
       <resource>
          <Practitioner xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>identifier</b>: 4654765876</p><p><b>name</b>: Akerman Philip Prof </p><p><b>address</b>: Castro Valley CA </p></div>
-            </text>
             <identifier>
                <value value="4654765876"/>
             </identifier>
@@ -58,23 +49,19 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+      <fullUrl value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
       <resource>
          <Specimen xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>identifier</b>: 076e1948-2217-11e9-94d8-12e241dc1f66</p><p><b>status</b>: available</p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><h3>Collections</h3><table class="grid"><tr><td>-</td><td><b>Collector</b></td></tr><tr><td>*</td><td><a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></td></tr></table></div>
-            </text>
             <identifier>
                <value value="076e1948-2217-11e9-94d8-12e241dc1f66"/>
             </identifier>
             <status value="available"/>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <collection>
                <collector>
-                  <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+                  <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
                </collector>
             </collection>
          </Specimen>
@@ -85,13 +72,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:1aef952c-a1a0-4a0d-9659-36bd4061fd97"/>
+      <fullUrl value="urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>code</b>: Tumor Mutational Burden <span style="background: LightGoldenRodYellow">(Details : {LOINC code '123-4' = '123-4', given as 'Tumor Mutational Burden'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>value</b>: 25.0 somatic variants per megabase of sequenced DNA<span style="background: LightGoldenRodYellow"> (Details: UCUM code v/Mb = 'v/Mb')</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p></div>
-            </text>
             <status value="final"/>
             <code>
                <coding>
@@ -101,10 +84,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueQuantity>
                <value value="25.0"/>
@@ -113,7 +96,7 @@
                <code value="v/Mb"/>
             </valueQuantity>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
          </Observation>
       </resource>
@@ -123,35 +106,26 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:431e5641-0ee1-43a6-8961-f9cec5969228"/>
+      <fullUrl value="urn:uuid:64b91716-6431-41bd-8fd4-7ac99bebdee9"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>code</b>: Tumor Mutational Burden <span style="background: LightGoldenRodYellow">(Details : {LOINC code '123-4' = '123-4', given as 'Tumor Mutational Burden'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>value</b>: 25.0 somatic variants per megabase of sequenced DNA<span style="background: LightGoldenRodYellow"> (Details: UCUM code v/Mb = 'v/Mb')</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p></div>
-            </text>
             <status value="final"/>
             <code>
                <coding>
                   <system value="http://loinc.org"/>
                   <code value="123-4"/>
-                  <display value="Tumor Mutational Burden"/>
+                  <display value="MSI status"/>
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
-            <valueQuantity>
-               <value value="25.0"/>
-               <unit value="somatic variants per megabase of sequenced DNA"/>
-               <system value="http://unitsofmeasure.org"/>
-               <code value="v/Mb"/>
-            </valueQuantity>
+            <valueString value="High"/>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
          </Observation>
       </resource>
@@ -161,13 +135,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657"/>
+      <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: Variant Assess <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LL1971-2' = 'Variant Assess', given as 'Variant Assess'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>value</b>: Present <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA9633-4' = 'Present', given as 'Present'})</span></p><p><b>method</b>: Sequencing <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26398-0' = 'Sequencing', given as 'Sequencing'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><blockquote><p><b>component</b></p><p><b>code</b>: Genomic DNA change (gHGVS) <span style="background: LightGoldenRodYellow">(Details : {LOINC code '81290-9' = 'Genomic DNA change (gHGVS)', given as 'Genomic DNA change (gHGVS)'})</span></p><p><b>value</b>: 9:g.5073770G&gt;T <span style="background: LightGoldenRodYellow">(Details : {http://varnomen.hgvs.org code 'null' = 'null', given as '9:g.5073770G&gt;T'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Amino acid change (pHGVS) <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48005-3' = 'Amino acid change (pHGVS)', given as 'Amino acid change (pHGVS)'})</span></p><p><b>value</b>: p.Val617Phe <span style="background: LightGoldenRodYellow">(Details : {http://varnomen.hgvs.org code 'null' = 'null', given as 'p.Val617Phe'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Amino acid change type <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48006-1' = 'Amino acid change [Type]', given as 'Amino acid change type'})</span></p><p><b>value</b>: missense variant <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA6698-0' = 'Missense', given as 'missense variant'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Genomic source class <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48002-0' = 'Genomic source class [Type]', given as 'Genomic source class'})</span></p><p><b>value</b>: Unknown <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA6683-2' = 'Germline', given as 'Unknown'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Gene studied ID <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48018-6' = 'Gene studied [ID]', given as 'Gene studied ID'})</span></p><p><b>value</b>: JAK2 <span style="background: LightGoldenRodYellow">(Details : {https://www.genenames.org/ code 'null' = 'null', given as 'JAK2'})</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -183,10 +153,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -203,7 +173,7 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <component>
                <code>
@@ -290,13 +260,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:eb20f8dd-da42-499e-bb89-e19764cbc433"/>
+      <fullUrl value="urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: Variant Assess <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LL1971-2' = 'Variant Assess', given as 'Variant Assess'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>value</b>: Present <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA9633-4' = 'Present', given as 'Present'})</span></p><p><b>method</b>: Sequencing <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26398-0' = 'Sequencing', given as 'Sequencing'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><blockquote><p><b>component</b></p><p><b>code</b>: Genomic DNA change (gHGVS) <span style="background: LightGoldenRodYellow">(Details : {LOINC code '81290-9' = 'Genomic DNA change (gHGVS)', given as 'Genomic DNA change (gHGVS)'})</span></p><p><b>value</b>: 4:g.55972974T&gt;A <span style="background: LightGoldenRodYellow">(Details : {http://varnomen.hgvs.org code 'null' = 'null', given as '4:g.55972974T&gt;A'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Amino acid change (pHGVS) <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48005-3' = 'Amino acid change (pHGVS)', given as 'Amino acid change (pHGVS)'})</span></p><p><b>value</b>: p.Gln472His <span style="background: LightGoldenRodYellow">(Details : {http://varnomen.hgvs.org code 'null' = 'null', given as 'p.Gln472His'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Amino acid change type <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48006-1' = 'Amino acid change [Type]', given as 'Amino acid change type'})</span></p><p><b>value</b>: missense variant <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA6698-0' = 'Missense', given as 'missense variant'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Genomic source class <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48002-0' = 'Genomic source class [Type]', given as 'Genomic source class'})</span></p><p><b>value</b>: Unknown <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA6683-2' = 'Germline', given as 'Unknown'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Gene studied ID <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48018-6' = 'Gene studied [ID]', given as 'Gene studied ID'})</span></p><p><b>value</b>: KDR <span style="background: LightGoldenRodYellow">(Details : {https://www.genenames.org/ code 'null' = 'null', given as 'KDR'})</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -312,10 +278,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -332,7 +298,7 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <component>
                <code>
@@ -419,13 +385,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:1b83c5b3-af60-4f94-9dfe-90a8ab95baee"/>
+      <fullUrl value="urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: Variant Assess <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LL1971-2' = 'Variant Assess', given as 'Variant Assess'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>value</b>: Present <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA9633-4' = 'Present', given as 'Present'})</span></p><p><b>method</b>: Sequencing <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26398-0' = 'Sequencing', given as 'Sequencing'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><blockquote><p><b>component</b></p><p><b>code</b>: Genomic DNA change (gHGVS) <span style="background: LightGoldenRodYellow">(Details : {LOINC code '81290-9' = 'Genomic DNA change (gHGVS)', given as 'Genomic DNA change (gHGVS)'})</span></p><p><b>value</b>: 2:g.212578380del <span style="background: LightGoldenRodYellow">(Details : {http://varnomen.hgvs.org code 'null' = 'null', given as '2:g.212578380del'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Amino acid change (pHGVS) <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48005-3' = 'Amino acid change (pHGVS)', given as 'Amino acid change (pHGVS)'})</span></p><p><b>value</b>: null <span style="background: LightGoldenRodYellow">(Details : {http://varnomen.hgvs.org code 'null' = 'null)</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Amino acid change type <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48006-1' = 'Amino acid change [Type]', given as 'Amino acid change type'})</span></p><p><b>value</b>: splice region variant <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA6698-0' = 'Missense', given as 'splice region variant'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Genomic source class <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48002-0' = 'Genomic source class [Type]', given as 'Genomic source class'})</span></p><p><b>value</b>: Unknown <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA6683-2' = 'Germline', given as 'Unknown'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: Gene studied ID <span style="background: LightGoldenRodYellow">(Details : {LOINC code '48018-6' = 'Gene studied [ID]', given as 'Gene studied ID'})</span></p><p><b>value</b>: ERBB4 <span style="background: LightGoldenRodYellow">(Details : {https://www.genenames.org/ code 'null' = 'null', given as 'ERBB4'})</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -441,10 +403,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
                <coding>
@@ -461,7 +423,7 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <component>
                <code>
@@ -547,13 +509,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:f8f8b8a7-f0d8-4928-b264-e7e2ec58f921"/>
+      <fullUrl value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: TBD-somatic-predictive <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-somatic-predictive' = 'TBD-somatic-predictive', given as 'TBD-somatic-predictive'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>method</b>: Computational analysis <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26811-2' = 'Computational analysis', given as 'Computational analysis'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><p><b>derivedFrom</b>: <a href="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657">urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657</a></p><blockquote><p><b>component</b></p><p><b>code</b>: AMP Guidelines <span style="background: LightGoldenRodYellow">(Details : {http://amp.org code 'AMP Guidelines' = 'AMP Guidelines', given as 'AMP Guidelines'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-cancer <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-cancer' = 'TBD-cancer', given as 'TBD-cancer'})</span></p><p><b>value</b>: Polycythemia vera (PV) <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-medication <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-medication' = 'TBD-medication', given as 'TBD-medication'})</span></p><p><b>value</b>: Ruxolitinib <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -569,10 +527,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <method>
                <coding>
@@ -582,10 +540,10 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <derivedFrom>
-               <reference value="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
             </derivedFrom>
             <component>
                <code>
@@ -628,13 +586,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:327fe37e-6a43-468a-9d3f-2d150108bf5d"/>
+      <fullUrl value="urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: TBD-somatic-predictive <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-somatic-predictive' = 'TBD-somatic-predictive', given as 'TBD-somatic-predictive'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>method</b>: Computational analysis <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26811-2' = 'Computational analysis', given as 'Computational analysis'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><p><b>derivedFrom</b>: <a href="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657">urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657</a></p><blockquote><p><b>component</b></p><p><b>code</b>: AMP Guidelines <span style="background: LightGoldenRodYellow">(Details : {http://amp.org code 'AMP Guidelines' = 'AMP Guidelines', given as 'AMP Guidelines'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-cancer <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-cancer' = 'TBD-cancer', given as 'TBD-cancer'})</span></p><p><b>value</b>: Polycythemia vera (PV) <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-medication <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-medication' = 'TBD-medication', given as 'TBD-medication'})</span></p><p><b>value</b>: AT9283 <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -650,10 +604,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <method>
                <coding>
@@ -663,10 +617,10 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <derivedFrom>
-               <reference value="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
             </derivedFrom>
             <component>
                <code>
@@ -709,13 +663,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:be522e1f-4364-4155-8fcc-1dd7a05e4d19"/>
+      <fullUrl value="urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: TBD-somatic-predictive <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-somatic-predictive' = 'TBD-somatic-predictive', given as 'TBD-somatic-predictive'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>method</b>: Computational analysis <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26811-2' = 'Computational analysis', given as 'Computational analysis'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><p><b>derivedFrom</b>: <a href="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657">urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657</a></p><blockquote><p><b>component</b></p><p><b>code</b>: AMP Guidelines <span style="background: LightGoldenRodYellow">(Details : {http://amp.org code 'AMP Guidelines' = 'AMP Guidelines', given as 'AMP Guidelines'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-cancer <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-cancer' = 'TBD-cancer', given as 'TBD-cancer'})</span></p><p><b>value</b>: Polycythemia vera (PV) <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-medication <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-medication' = 'TBD-medication', given as 'TBD-medication'})</span></p><p><b>value</b>: SNX-5422 <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -731,10 +681,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <method>
                <coding>
@@ -744,10 +694,10 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <derivedFrom>
-               <reference value="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
             </derivedFrom>
             <component>
                <code>
@@ -790,13 +740,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:6eafe502-191e-475e-9b46-5684bb71e4fe"/>
+      <fullUrl value="urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>category</b>: Laboratory <span style="background: LightGoldenRodYellow">(Details : {http://terminology.hl7.org/CodeSystem/observation-category code 'laboratory' = 'Laboratory)</span></p><p><b>code</b>: TBD-somatic-predictive <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-somatic-predictive' = 'TBD-somatic-predictive', given as 'TBD-somatic-predictive'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>method</b>: Computational analysis <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'LA26811-2' = 'Computational analysis', given as 'Computational analysis'})</span></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><p><b>derivedFrom</b>: <a href="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657">urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657</a></p><blockquote><p><b>component</b></p><p><b>code</b>: AMP Guidelines <span style="background: LightGoldenRodYellow">(Details : {http://amp.org code 'AMP Guidelines' = 'AMP Guidelines', given as 'AMP Guidelines'})</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-cancer <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-cancer' = 'TBD-cancer', given as 'TBD-cancer'})</span></p><p><b>value</b>: Polycythemia vera (PV) <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote><blockquote><p><b>component</b></p><p><b>code</b>: TBD-medication <span style="background: LightGoldenRodYellow">(Details : {LOINC code 'TBD-medication' = 'TBD-medication', given as 'TBD-medication'})</span></p><p><b>value</b>: TG02 <span style="background: LightGoldenRodYellow">(Details )</span></p></blockquote></div>
-            </text>
             <status value="final"/>
             <category>
                <coding>
@@ -812,10 +758,10 @@
                </coding>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <method>
                <coding>
@@ -825,10 +771,10 @@
                </coding>
             </method>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <derivedFrom>
-               <reference value="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
             </derivedFrom>
             <component>
                <code>
@@ -871,13 +817,9 @@
       </request>
    </entry>
    <entry>
-      <fullUrl value="urn:uuid:ff97cc59-13c3-4467-8e1d-db6dce8caab7"/>
+      <fullUrl value="urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5"/>
       <resource>
          <DiagnosticReport xmlns="http://hl7.org/fhir">
-            <text>
-               <status value="generated"/>
-               <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>status</b>: final</p><p><b>code</b>: Genetic analysis report <span style="background: LightGoldenRodYellow">(Details : {LOINC code '51969-4' = 'Genetic analysis report', given as 'Genetic analysis report'})</span></p><p><b>subject</b>: <a href="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a">urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a</a></p><p><b>performer</b>: <a href="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f">urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f</a></p><p><b>specimen</b>: <a href="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce">urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce</a></p><p><b>result</b>: </p><ul><li><a href="urn:uuid:1aef952c-a1a0-4a0d-9659-36bd4061fd97">TMB value analysis</a></li><li><a href="urn:uuid:431e5641-0ee1-43a6-8961-f9cec5969228">TMB status analysis</a></li><li><a href="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657">SNV analysis for JAK2 variant</a></li><li><a href="urn:uuid:eb20f8dd-da42-499e-bb89-e19764cbc433">SNV analysis for KDR variant</a></li><li><a href="urn:uuid:1b83c5b3-af60-4f94-9dfe-90a8ab95baee">SNV analysis for ERBB4 variant</a></li><li><a href="urn:uuid:f8f8b8a7-f0d8-4928-b264-e7e2ec58f921">Therapy match result 1</a></li><li><a href="urn:uuid:327fe37e-6a43-468a-9d3f-2d150108bf5d">Therapy match result 2</a></li><li><a href="urn:uuid:be522e1f-4364-4155-8fcc-1dd7a05e4d19">Therapy match result 3</a></li><li><a href="urn:uuid:6eafe502-191e-475e-9b46-5684bb71e4fe">Therapy match result 4</a></li></ul></div>
-            </text>
             <status value="final"/>
             <code>
                <coding>
@@ -888,48 +830,48 @@
                <text value="Genetic analysis report"/>
             </code>
             <subject>
-               <reference value="urn:uuid:1240e8a9-23e7-4c07-9f6b-f264d26b572a"/>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
-               <reference value="urn:uuid:fa5da32c-09fd-4648-a4d6-d0c8309a8a2f"/>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <specimen>
-               <reference value="urn:uuid:c7d5842a-4491-4ee9-a948-145a09b154ce"/>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
             <result>
-               <reference value="urn:uuid:1aef952c-a1a0-4a0d-9659-36bd4061fd97"/>
+               <reference value="urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f"/>
                <display value="TMB value analysis"/>
             </result>
             <result>
-               <reference value="urn:uuid:431e5641-0ee1-43a6-8961-f9cec5969228"/>
-               <display value="TMB status analysis"/>
+               <reference value="urn:uuid:64b91716-6431-41bd-8fd4-7ac99bebdee9"/>
+               <display value="MSI status analysis"/>
             </result>
             <result>
-               <reference value="urn:uuid:0727df02-9c02-42ad-93e7-c68d411a1657"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
                <display value="SNV analysis for JAK2 variant"/>
             </result>
             <result>
-               <reference value="urn:uuid:eb20f8dd-da42-499e-bb89-e19764cbc433"/>
+               <reference value="urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd"/>
                <display value="SNV analysis for KDR variant"/>
             </result>
             <result>
-               <reference value="urn:uuid:1b83c5b3-af60-4f94-9dfe-90a8ab95baee"/>
+               <reference value="urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01"/>
                <display value="SNV analysis for ERBB4 variant"/>
             </result>
             <result>
-               <reference value="urn:uuid:f8f8b8a7-f0d8-4928-b264-e7e2ec58f921"/>
+               <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
                <display value="Therapy match result 1"/>
             </result>
             <result>
-               <reference value="urn:uuid:327fe37e-6a43-468a-9d3f-2d150108bf5d"/>
+               <reference value="urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b"/>
                <display value="Therapy match result 2"/>
             </result>
             <result>
-               <reference value="urn:uuid:be522e1f-4364-4155-8fcc-1dd7a05e4d19"/>
+               <reference value="urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20"/>
                <display value="Therapy match result 3"/>
             </result>
             <result>
-               <reference value="urn:uuid:6eafe502-191e-475e-9b46-5684bb71e4fe"/>
+               <reference value="urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4"/>
                <display value="Therapy match result 4"/>
             </result>
          </DiagnosticReport>
@@ -939,4 +881,4 @@
          <url value="DiagnosticReport"/>
       </request>
    </entry>
-</Bundle>
+</Bundle>   

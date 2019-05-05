@@ -99,9 +99,18 @@
       <reference>
         <reference value="Bundle/oncologyexamples-r4"/>
       </reference>
-      <name value="Example - Full Bundle Oncology examples"/>
+      <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/obs-idh-ex"/>
+      </reference>
+      <name value="Example - Inherited Disease Pathogenicity"/>
+      <description value="Inherited Disease Pathogenicity"/>
+      <exampleCanonical value="StructureDefinition/obs-inh-dis-path"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -404,7 +413,12 @@
         </page>
         <page>
           <nameUrl value="oncologyexamples-r4.html"/>
-          <title value="Example - Full Bundle Oncology examples"/>
+          <title value="Example - Full Bundle Oncology Example"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="obs-idh-ex.html"/>
+          <title value="Example - Inherited Disease Pathogenicity"/>
           <generation value="generated"/>
         </page>
         <page>

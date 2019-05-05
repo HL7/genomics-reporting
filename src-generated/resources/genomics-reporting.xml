@@ -195,9 +195,18 @@
       <reference>
         <reference value="Bundle/oncologyexamples-r4"/>
       </reference>
-      <name value="Example - Full Bundle Oncology examples"/>
+      <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
       <exampleCanonical value="StructureDefinition/diagnosticreport"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/obs-idh-ex"/>
+      </reference>
+      <name value="Example - Inherited Disease Pathogenicity"/>
+      <description value="Inherited Disease Pathogenicity"/>
+      <exampleCanonical value="StructureDefinition/obs-inh-dis-path"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -500,32 +509,37 @@
 </page>
 <page>
 <nameUrl value="oncologyexamples-r4.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Full Bundle Oncology examples"/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="obs-idh-ex.html"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-hla-glstring-r4.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-genotype-hla-a-glstring-r4.html"/>
-<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-haplotype-hla-a-1-r4.html"/>
-<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
+<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen-hla-r4.html"/>
-<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
+<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="servicerequest-hla-a-r4.html"/>
-<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
+<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
 <generation value="generated"/>
 </page>
 </page>
