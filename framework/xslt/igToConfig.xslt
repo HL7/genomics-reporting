@@ -214,7 +214,7 @@
       "format": "valueset-{{[id]}}.{{[fmt]}}.html"
     }
   },
-  "sct-edition" : "http://snomed.info/sct/</xsl:text>
+  "sct-edition" : "http://snomed.info/sct/900000000000207008</xsl:text>
     <xsl:value-of select="$snomedReleaseNumber"/>
     <xsl:text>",
   "no-inactive-codes" : "true",
