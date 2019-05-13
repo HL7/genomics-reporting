@@ -33,8 +33,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>380</WindowTopX>
   <WindowTopY>460</WindowTopY>
-  <ActiveSheet>6</ActiveSheet>
-  <FirstVisibleSheet>5</FirstVisibleSheet>
+  <ActiveSheet>9</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1161,7 +1160,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">obs-cytogenetic-nomenclature</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">obs-structural-genetic-finding</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
@@ -1266,7 +1265,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>41</ActiveRow>
+     <ActiveRow>18</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2871,21 +2870,21 @@
     <Cell ss:StyleID="s124"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">obs-cytogenetic-nomenclature</Data></Cell>
+    <Cell ss:StyleID="s123"><Data ss:Type="String">obs-structural-genetic-finding</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.hasMember</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s105"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-cytogenetic-nomenclature}</Data></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-structural-genetic-finding}</Data></Cell>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s105"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Cytogenetic Nomenclature</Data></Cell>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Structural Genetic Finding</Data></Cell>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s108"/>
@@ -5116,7 +5115,6 @@
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <Zoom>70</Zoom>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -5377,7 +5375,7 @@
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-cytogenetic-nomenclature}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-complex-variant}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(MolecularSequence)</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-structural-genetic-finding}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-complex-variant}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(MolecularSequence)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6061,7 +6059,7 @@
     <Cell ss:StyleID="s107"><Data ss:Type="String">0..*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-cytogenetic-nomenclature}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(MolecularSequence)</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-structural-genetic-finding}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(MolecularSequence)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6546,7 +6544,7 @@
    xmlns="urn:schemas-microsoft-com:office:excel">
   </AutoFilter>
  </Worksheet>
- <Worksheet ss:Name="obs-cytogenetic-nomenclature">
+ <Worksheet ss:Name="obs-structural-genetic-finding">
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="25" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
@@ -6648,7 +6646,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Not published</Font>       </ss:Data></Comment></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="75">
-    <Cell ss:StyleID="s93"><Data ss:Type="String">obs-cytogenetic-nomenclature</Data></Cell>
+    <Cell ss:StyleID="s93"><Data ss:Type="String">obs-structural-genetic-finding</Data></Cell>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s94"/>
     <Cell ss:StyleID="s95"><Data ss:Type="String">Observation</Data></Cell>
@@ -6662,7 +6660,7 @@
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
     <Cell ss:StyleID="s97"/>
-    <Cell ss:StyleID="s96"><Data ss:Type="String">ObsCytogenticNomenclature</Data></Cell>
+    <Cell ss:StyleID="s96"><Data ss:Type="String">ObsStructuralGeneticFinding</Data></Cell>
     <Cell ss:StyleID="s98"><Data ss:Type="String">Fully describes a variant with a single code.  Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.</Data></Cell>
     <Cell ss:StyleID="s99"/>
     <Cell ss:StyleID="s98"/>
@@ -6731,7 +6729,7 @@
     <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Observation.specimen</Data></Cell>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">0..1</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data></Cell>
@@ -7259,6 +7257,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -7278,8 +7277,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>17</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
