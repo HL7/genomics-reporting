@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sun, May 12, 2019 23:12+0000 for FHIR v4.1.0 
+  Generated on Sat, Jun 1, 2019 15:31+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -377,6 +377,7 @@
       <xs:element ref="BodyStructure"/>
       <xs:element ref="Bundle"/>
       <xs:element ref="CapabilityStatement"/>
+      <xs:element ref="CapabilityStatement2"/>
       <xs:element ref="CarePlan"/>
       <xs:element ref="CareTeam"/>
       <xs:element ref="CatalogEntry"/>
@@ -393,6 +394,7 @@
       <xs:element ref="Composition"/>
       <xs:element ref="ConceptMap"/>
       <xs:element ref="Condition"/>
+      <xs:element ref="ConditionDefinition"/>
       <xs:element ref="Consent"/>
       <xs:element ref="Contract"/>
       <xs:element ref="Coverage"/>
@@ -4918,12 +4920,12 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:element name="AdverseEvent" type="AdverseEvent">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.</xs:documentation>
+      <xs:documentation xml:lang="en">An event (i.e. any change to current patient status) that may be related to unintended effects on a patient or research subject.  The unintended effects may require additional monitoring, treatment or hospitalization or may result in death.  The AdverseEvent resource also extends to potential or avoided events that could have had such effects.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="AdverseEvent">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.</xs:documentation>
+      <xs:documentation xml:lang="en">An event (i.e. any change to current patient status) that may be related to unintended effects on a patient or research subject.  The unintended effects may require additional monitoring, treatment or hospitalization or may result in death.  The AdverseEvent resource also extends to potential or avoided events that could have had such effects.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -5035,7 +5037,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdverseEvent.SuspectEntity">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.</xs:documentation>
+      <xs:documentation xml:lang="en">An event (i.e. any change to current patient status) that may be related to unintended effects on a patient or research subject.  The unintended effects may require additional monitoring, treatment or hospitalization or may result in death.  The AdverseEvent resource also extends to potential or avoided events that could have had such effects.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -5058,7 +5060,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdverseEvent.Causality">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.</xs:documentation>
+      <xs:documentation xml:lang="en">An event (i.e. any change to current patient status) that may be related to unintended effects on a patient or research subject.  The unintended effects may require additional monitoring, treatment or hospitalization or may result in death.  The AdverseEvent resource also extends to potential or avoided events that could have had such effects.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -5084,14 +5086,14 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdverseEvent.SupportingInfo">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.</xs:documentation>
+      <xs:documentation xml:lang="en">An event (i.e. any change to current patient status) that may be related to unintended effects on a patient or research subject.  The unintended effects may require additional monitoring, treatment or hospitalization or may result in death.  The AdverseEvent resource also extends to potential or avoided events that could have had such effects.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="item" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Relevant past history for the subject.  In a clinical care context, an example being a patient had an adverse event following penciliin and the patient was given penicillin in the past.  In a clinical trials context, an example is a bunion or rash that was present prior to the study.
+              <xs:documentation xml:lang="en">Relevant past history for the subject.  In a clinical care context, an example being a patient had an adverse event following a penciliin administration and the patient had a previously documented penicillin allergy.  In a clinical trials context, an example is a bunion or rash that was present prior to the study.
 Additionally, the supporting item can be a document that is relevant to this instance of the adverse event that is not part of the subject's medical history.  For example, a clinical note, staff list, or material safety data sheet (MSDS).</xs:documentation>
            </xs:annotation>
           </xs:element>
@@ -7801,6 +7803,386 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="CapabilityStatement2" type="CapabilityStatement2">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="CapabilityStatement2">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this capability statement2 when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this capability statement2 is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the capability statement2 is stored on different servers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the capability statement2 when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the capability statement2 author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A natural language name identifying the capability statement2. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the capability statement2.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of this capability statement2. Enables tracking the life-cycle of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this capability statement2 is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="date" minOccurs="1" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the capability statement2 was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the capability statement2 changes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the capability statement2.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A free text natural language description of the capability statement2 from a consumer's perspective. Typically, this is used when the capability statement describes a desired rather than an actual solution, for example as a formal expression of requirements as part of an RFP.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate capability statement2 instances.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A legal or geographic region in which the capability statement2 is intended to be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explanation of why this capability statement2 is needed and why it has been designed as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the capability statement2 and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement2.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="kind" minOccurs="1" maxOccurs="1" type="CapabilityStatementKind">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="instantiates" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to a canonical URL of another CapabilityStatement2 that this software implements. This capability statement is a published API description that corresponds to a business service. The server may actually implement a subset of the capability statement it claims to implement, so the capability statement must specify the full capability details.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="imports" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Reference to a canonical URL of another CapabilityStatement2 that this software adds to. The capability statement automatically includes everything in the other statement, and it is not duplicated, though the server may repeat the same resources, interactions and operations to add additional details to them.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="software" type="CapabilityStatement2.Software" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="implementation" type="CapabilityStatement2.Implementation" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies a specific implementation instance that is described by the capability statement - i.e. a particular installation, rather than the capabilities of a software program.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="fhirVersion" minOccurs="1" maxOccurs="1" type="FHIRVersion">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The version of the FHIR specification that this CapabilityStatement2 describes (which SHALL be the same as the FHIR version of the CapabilityStatement2 itself). There is no default value.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="format" minOccurs="1" maxOccurs="unbounded" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of the formats supported by this implementation using their content types.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="patchFormat" minOccurs="0" maxOccurs="unbounded" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of the patch formats supported by this implementation using their content types.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="implementationGuide" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of implementation guides that the server does (or should) support in their entirety.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="rest" type="CapabilityStatement2.Rest" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A definition of the restful capabilities of the solution, if any.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Software">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Name the software is known by.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The version identifier for the software covered by this statement.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="releaseDate" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Date this version of the software was released.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Implementation">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Information about the specific installation that this capability statement relates to.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="url">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="custodian" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Rest">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="mode" minOccurs="1" maxOccurs="1" type="RestfulCapabilityMode">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies whether this portion of the statement is describing the ability to initiate or receive restful operations.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Information about the system's restful capabilities that apply across all applications, such as security.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="resource" type="CapabilityStatement2.Resource" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A specification of the restful capabilities of the solution for a specific resource type.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="interaction" type="CapabilityStatement2.Interaction1" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A specification of restful operations supported by the system.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="searchParam" type="CapabilityStatement2.SearchParam" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Search parameters that are supported for searching all resources for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="operation" type="CapabilityStatement2.Operation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Definition of an operation or a named query together with its parameters and their meaning and type.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="compartment" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Resource">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A type of resource exposed via the restful interface.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="profile" minOccurs="0" maxOccurs="1" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A specification of the profile that describes the solution's overall support for the resource, including any constraints on cardinality, bindings, lengths or other limitations. See further discussion in [Using Profiles](profiling.html#profile-uses).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="supportedProfile" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A list of profiles that represent different use cases supported by the system. For a server, &quot;supported by the system&quot; means the system hosts/produces a set of resources that are conformant to a particular profile, and allows clients that use its services to search using this profile and to find appropriate data. For a client, it means the system will search by this profile and process data according to the guidance implicit in the profile. See further discussion in [Using Profiles](profiling.html#profile-uses).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Additional information about the resource type used by the system.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="interaction" type="CapabilityStatement2.Interaction" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies a restful operation supported by the solution.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="searchParam" type="CapabilityStatement2.SearchParam" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Search parameters for implementations to support and/or make use of - either references to ones defined in the specification, or additional ones defined for/by the implementation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="operation" type="CapabilityStatement2.Operation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Definition of an operation or a named query together with its parameters and their meaning and type. Consult the definition of the operation for details about how to invoke the operation, and the parameters.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Interaction">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="TypeRestfulInteraction">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Coded identifier of the operation, supported by the system resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.SearchParam">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the search parameter used in the interface.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="definition" minOccurs="0" maxOccurs="1" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute URI that is a formal reference to where this parameter was first defined, so that a client can be confident of the meaning of the search parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="SearchParamType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of value a search parameter refers to, and how the content is interpreted.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Operation">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the operation or query. For an operation, this is the name  prefixed with $ and used in the URL. For a query, this is the name used in the _query parameter when the query is called.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="definition" minOccurs="1" maxOccurs="1" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Where the formal definition can be found. If a server references the base definition of an Operation (i.e. from the specification itself such as ```http://hl7.org/fhir/OperationDefinition/ValueSet-expand```), that means it supports the full capabilities of the operation - e.g. both GET and POST invocation.  If it only supports a subset, it must define its own custom [[[OperationDefinition]]] with a 'base' of the original OperationDefinition.  The custom definition would describe the specific subset of functionality supported.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Interaction1">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="SystemRestfulInteraction">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A coded identifier of the operation, supported by the system.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="CarePlan" type="CarePlan">
     <xs:annotation>
       <xs:documentation xml:lang="en">Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.</xs:documentation>
@@ -7926,7 +8308,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="activity" type="CarePlan.Activity" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies an action that has occurred or is a planned action to occur as part of the plan. For example, a medication to be used, lab tests to perform, self-monitoring that has occurred, education etc.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -8252,6 +8634,11 @@ into another (possibly the same) biological entity.</xs:documentation>
       <xs:enumeration value="option">
         <xs:annotation>
           <xs:documentation xml:lang="en">Option</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="directive">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Directive</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -12898,7 +13285,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="asserter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Individual who is making the condition statement.</xs:documentation>
+              <xs:documentation xml:lang="en">Individual or device that is making the condition statement.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="stage" type="Condition.Stage" minOccurs="0" maxOccurs="unbounded">
@@ -12964,6 +13351,330 @@ into another (possibly the same) biological entity.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConditionDefinition" type="ConditionDefinition">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="ConditionDefinition">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this condition definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this condition definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the condition definition is stored on different servers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this condition definition when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the condition definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the condition definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A natural language name identifying the condition definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the condition definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subtitle" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An explanatory or alternate title for the event definition giving additional information about its content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of this condition definition. Enables tracking the life-cycle of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A Boolean value to indicate that this condition definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the condition definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the condition definition changes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the condition definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A free text natural language description of the condition definition from a consumer's perspective.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate condition definition instances.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A legal or geographic region in which the condition definition is intended to be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identification of the condition, problem or diagnosis.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="severity" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A subjective assessment of the severity of the condition as evaluated by the clinician.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="bodySite" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The anatomical location where this condition manifests itself.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="stage" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Clinical stage or grade of a condition. May include formal severity assessments.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="hasSeverity" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether Severity is appropriate to collect for this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="hasBodySite" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether bodySite is appropriate to collect for this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="hasStage" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether stage is appropriate to collect for this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="definition" minOccurs="0" maxOccurs="unbounded" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Formal definitions of the condition. These may be references to ontologies, published clinical protocols or research papers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="observation" type="ConditionDefinition.Observation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Observations particularly relevant to this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="medication" type="ConditionDefinition.Medication" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Medications particularly relevant for this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="precondition" type="ConditionDefinition.Precondition" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An observation that suggests that this condition applies.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="team" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Appropriate team for this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="questionnaire" type="ConditionDefinition.Questionnaire" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Questionnaire for this condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="plan" type="ConditionDefinition.Plan" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Plan that is appropriate.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConditionDefinition.Observation">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Category that is relevant.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Code for relevant Observation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConditionDefinition.Medication">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Category that is relevant.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Code for relevant Medication.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConditionDefinition.Precondition">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ConditionPreconditionType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Kind of pre-condition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Code for relevant Observation.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Value of Observation.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="valueQuantity" type="Quantity"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConditionDefinition.Questionnaire">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="purpose" minOccurs="1" maxOccurs="1" type="ConditionQuestionnairePurpose">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Use of the questionnaire.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reference" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Specific Questionnaire.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConditionDefinition.Plan">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A definition of a condition and information relevant to managing it.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="role" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Use for the plan.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reference" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The actual plan.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ConditionQuestionnairePurpose-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="preadmit">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Pre-admit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="diff-diagnosis">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Diff Diagnosis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="outcome">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Outcome</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ConditionQuestionnairePurpose">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The use of a questionnaire.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ConditionQuestionnairePurpose-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ConditionPreconditionType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="sensitive">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Sensitive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="specific">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Specific</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ConditionPreconditionType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Kind of precondition for the condition.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ConditionPreconditionType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -13526,7 +14237,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="publicationStatus" minOccurs="1" maxOccurs="1" type="ContractResourcePublicationStatusCodes">
             <xs:annotation>
-              <xs:documentation xml:lang="en">draft | active | retired | unknown.</xs:documentation>
+              <xs:documentation xml:lang="en">amended | appended | cancelled | disputed | entered-in-error | executable +.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
@@ -19333,6 +20044,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="zh">能力声明</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="CapabilityStatement2">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">CapabilityStatement2</xs:documentation>
+          <xs:documentation xml:lang="en">CapabilityStatement2</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="CarePlan">
         <xs:annotation>
           <xs:documentation xml:lang="en">CarePlan</xs:documentation>
@@ -19471,6 +20188,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="fr">Condition</xs:documentation>
           <xs:documentation xml:lang="es">Condición</xs:documentation>
           <xs:documentation xml:lang="zh">情况</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ConditionDefinition">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">ConditionDefinition</xs:documentation>
+          <xs:documentation xml:lang="en">ConditionDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Consent">
@@ -23409,14 +24132,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="primarySource" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates if this record was captured as a secondary 'reported' record rather than as an original primary source-of-truth record.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reportOrigin" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+              <xs:documentation xml:lang="en">Typically the source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="informationSourceCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="informationSourceReference" type="Reference"/>
+          </xs:choice>
           <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The service delivery location where the vaccine administration occurred.</xs:documentation>
@@ -23464,12 +24189,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Reasons why the vaccine was administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes why the immunization occurred in coded or textual form.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reasonReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Condition, Observation or DiagnosticReport that supports why the immunization was administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates another resource (Condition, Observation or DiagnosticReport) whose existence justifies this immunization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="isSubpotent" minOccurs="0" maxOccurs="1" type="boolean">
@@ -23824,7 +24549,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Vaccine(s) or vaccine group that pertain to the recommendation.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="targetDisease" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="targetDisease" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The targeted disease for the recommendation.</xs:documentation>
            </xs:annotation>
@@ -34533,7 +35258,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="actor" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The practitioner who was involved in the procedure.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates who or what performed the procedure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="onBehalfOf" minOccurs="0" maxOccurs="1" type="Reference">
