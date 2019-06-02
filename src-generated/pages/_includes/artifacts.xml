@@ -11,13 +11,6 @@
 <tbody>
 <tr>
 <td style="column-width:30%">
-<a href="obs-base.html">
-                        •  Genetic Observation Common Properties</a>
-</td>
-<td>Base profile that defines characteristics shared by all genetic observations</td>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="diagnosticreport.html">
                         •  Genomics Report</a>
 </td>
@@ -60,13 +53,6 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="obs-comp-gen-finding.html">
-                        •  Computable Genetic Finding</a>
-</td>
-<td>Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)</td>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="obs-haplotype.html">
                         •  Haplotype</a>
 </td>
@@ -81,13 +67,6 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="obs-structural-genetic-finding.html">
-                        •  Structural Genetic Finding</a>
-</td>
-<td>Fully describes a variant with a single code.  Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.</td>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="obs-variant.html">
                         •  Variant</a>
 </td>
@@ -99,13 +78,6 @@
                         •  Sequence Phase Relationship</a>
 </td>
 <td>Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="obs-implication.html">
-                        •  Genetic Implication</a>
-</td>
-<td>Abstract profile for observations describing the implication of one or more genetic observations.</td>
 </tr>
 <tr>
 <td style="column-width:30%">
@@ -130,13 +102,6 @@
 <p>
 <table>
 <tbody>
-<tr>
-<td style="column-width:30%">
-<a href="obs-som-implication.html">
-                        •  Somatic Implication</a>
-</td>
-<td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions</td>
-</tr>
 <tr>
 <td style="column-width:30%">
 <a href="obs-som-diagnostic.html">
@@ -167,13 +132,6 @@
 <p>
 <table>
 <tbody>
-<tr>
-<td style="column-width:30%">
-<a href="obs-med-implication.html">
-                        •  Medication Implication</a>
-</td>
-<td>Abstract profile with common properties for observations that convey the potential implication of a genetic characteristics on a medication</td>
-</tr>
 <tr>
 <td style="column-width:30%">
 <a href="obs-metabolism.html">
@@ -224,10 +182,62 @@
 <p>Profiles for reporting cytogenetic results</p>
 <p>
 <table>
-<tbody/>
+<tbody>
+<tr>
+<td style="column-width:30%">
+<a href="obs-structural-genetic-finding.html">
+                        •  Structural Genetic Finding</a>
+</td>
+<td>Fully describes a variant with a single code.  Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.</td>
+</tr>
+</tbody>
 </table>
 </p>
 <a name="5"> </a>
+<h3>Abstract </h3>
+<p>Abstract profiles holding common properties, outlining similarities in implementable profiles</p>
+<p>
+<table>
+<tbody>
+<tr>
+<td style="column-width:30%">
+<a href="obs-base.html">
+                        •  Genetic Observation Common Properties</a>
+</td>
+<td>Base profile that defines characteristics shared by all genetic observations</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="obs-comp-gen-finding.html">
+                        •  Computable Genetic Finding</a>
+</td>
+<td>Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="obs-implication.html">
+                        •  Genetic Implication</a>
+</td>
+<td>Abstract profile for observations describing the implication of one or more genetic observations.</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="obs-med-implication.html">
+                        •  Medication Implication</a>
+</td>
+<td>Abstract profile with common properties for observations that convey the potential implication of a genetic characteristics on a medication</td>
+</tr>
+<tr>
+<td style="column-width:30%">
+<a href="obs-som-implication.html">
+                        •  Somatic Implication</a>
+</td>
+<td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions</td>
+</tr>
+</tbody>
+</table>
+</p>
+<a name="6"> </a>
 <h3>Extensions </h3>
 <p>Extensions defined as part of the CG implementation guide</p>
 <p>
@@ -271,7 +281,7 @@
 </tbody>
 </table>
 </p>
-<a name="6"> </a>
+<a name="7"> </a>
 <h3>Example(s) </h3>
 <p>Example(s) showing the use of the CG profiles</p>
 <p>
