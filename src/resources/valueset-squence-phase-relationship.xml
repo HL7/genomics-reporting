@@ -1,0 +1,33 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <status value="active"/>
+    <compose>
+        <include>
+            <system value=" http://fhirtest.uhn.ca/baseR4/CodeSystem/Sequence-Phase-Relationship"/>
+        </include>
+    </compose>
+    <expansion>
+        <identifier value="8cdbf9f4-71b7-4da0-9ecc-c8a2bfb6b44a"/>
+        <timestamp value="2019-06-04T14:53:34+00:00"/>
+        <total value="4"/>
+        <contains>
+            <system value=" http://fhirtest.uhn.ca/baseR4/CodeSystem/Sequence-Phase-Relationship"/>
+            <code value="cis"/>
+            <display value="cis"/>
+        </contains>
+        <contains>
+            <system value=" http://fhirtest.uhn.ca/baseR4/CodeSystem/Sequence-Phase-Relationship"/>
+            <code value="trans"/>
+            <display value="trans"/>
+        </contains>
+        <contains>
+            <system value=" http://fhirtest.uhn.ca/baseR4/CodeSystem/Sequence-Phase-Relationship"/>
+            <code value="indeterminate"/>
+            <display value="indeterminate"/>
+        </contains>
+        <contains>
+            <system value=" http://fhirtest.uhn.ca/baseR4/CodeSystem/Sequence-Phase-Relationship"/>
+            <code value="unknown"/>
+            <display value="unknown"/>
+        </contains>
+    </expansion>
+</ValueSet>
