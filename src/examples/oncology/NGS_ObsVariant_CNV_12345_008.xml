@@ -24,6 +24,10 @@
     <reference value="Patient/12345" />
   </subject>
 
+  <performer>
+    <reference value="Organization/CeGaT" />
+  </performer>
+
   <valueCodeableConcept>
     <coding>
       <system value="http://loinc.org"/>
@@ -40,10 +44,6 @@
     </coding>
   </method>
 
-  <performer>
-    <reference value="Organization/CeGaT" />
-  </performer>
-
   <specimen>
     <identifier>
       <system value="http://slk-kliniken.de/fhir/namingSystem/tissueID"/>
@@ -59,11 +59,11 @@
         <display value="Genomic structural variant copy number"/>
       </coding>
     </code>
-    <valueCount>
+    <valueQuantity>
       <value value="3" />
       <system value="http://unitsofmeasure.org" />
       <code value="1" />
-    </valueCount>
+    </valueQuantity>
   </component>
   <component>
     <code>

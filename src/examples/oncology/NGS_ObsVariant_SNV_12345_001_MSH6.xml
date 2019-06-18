@@ -24,6 +24,10 @@
     <reference value="Patient/12345" />
   </subject>
 
+  <performer>
+    <reference value="Organization/CeGaT" />
+  </performer>
+
   <valueCodeableConcept>
     <coding>
       <system value="http://loinc.org"/>
@@ -39,10 +43,6 @@
       <display value="Sequencing"/>
     </coding>
   </method>
-
-  <performer>
-    <reference value="Organization/CeGaT" />
-  </performer>
 
   <specimen>
     <identifier>
@@ -215,6 +215,5 @@
     </code>
     <valueString value="A"/>
   </component>
-
 
 </Observation>

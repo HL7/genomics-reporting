@@ -24,6 +24,10 @@
     <reference value="Patient/12345" />
   </subject>
 
+  <performer>
+    <reference value="Organization/CeGaT"/>
+  </performer>
+
   <valueCodeableConcept>
     <coding>
       <system value="http://loinc.org"/>
@@ -40,11 +44,7 @@
     </coding>
   </method>
 
-  <performer>
-    <reference value="Organization/CeGaT"/>
-  </performer>
-
-  <<specimen>
+  <specimen>
     <identifier>
       <system value="http://slk-kliniken.de/fhir/namingSystem/tissueID"/>
       <value value="16-123456-23"/>
@@ -221,7 +221,9 @@
     </code>
     <valueQuantity>
       <value value="120"/>
-      <code value="1"/>
+      <unit value="reads per base pair"/>
+      <system value="http://unitsofmeasure.org/"/>
+      <code value="{reads}/{base}"/>
     </valueQuantity>
   </component>
   <component>
