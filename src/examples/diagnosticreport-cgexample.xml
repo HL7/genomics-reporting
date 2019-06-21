@@ -14,7 +14,7 @@ New:
   <id value="diagnosticreport-cgexample"/>
   <type value="collection"/>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/DiagnosticReport/report"/>
+    <fullUrl value="http://example.org/fhir/DiagnosticReport/report"/>
     <resource>
       <DiagnosticReport>
         <id value="report"/>
@@ -99,9 +99,6 @@ New:
         <result>
           <reference value="Observation/overall-interp"/>
         </result>
-        <result>
-          <reference value="Observation/deletion-dup-overall"/>
-        </result>
         <!--        <result>
           <reference value="Observation/negatives"/>
         </result>-->
@@ -114,10 +111,9 @@ New:
         <result>
           <reference value="Observation/dis-path"/>
         </result>
-        <!--
         <result>
           <reference value="Observation/complex-variant"/>
-        </result>-->
+        </result>
         <result>
           <reference value="Observation/complex-dis-path"/>
         </result>
@@ -134,7 +130,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Patient/patient"/>
+    <fullUrl value="http://example.org/fhir/Patient/patient"/>
     <resource>
       <Patient>
         <id value="patient"/>
@@ -146,7 +142,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Specimen/specimen"/>
+    <fullUrl value="http://example.org/fhir/Specimen/specimen"/>
     <resource>
       <Specimen>
         <!-- This would contain details about the type of specimen, processing, etc. -->
@@ -165,7 +161,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Organization/lab"/>
+    <fullUrl value="http://example.org/fhir/Organization/lab"/>
     <resource>
       <Organization>
         <id value="lab"/>
@@ -178,7 +174,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/DiagnosticRequest/request"/>
+    <fullUrl value="http://example.org/fhir/DiagnosticRequest/request"/>
     <resource>
       <ServiceRequest>
         <id value="request"/>
@@ -209,7 +205,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/overall-interp"/>
+    <fullUrl value="http://example.org/fhir/Observation/overall-interp"/>
     <resource>
       <Observation>
         <id value="overall-interp"/>
@@ -260,55 +256,8 @@ New:
       </Observation>
     </resource>
   </entry>
-  <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/deletion-dup-overall"/>
-    <resource>
-      <Observation>
-        <id value="deletion-dup-overall"/>
-        <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-deletion-dup"/>
-        </meta>
-        <text>
-          <status value="generated"/>
-          <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
-        </text>
-        <status value="final"/>
-        <category>
-          <coding>
-            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
-            <code value="laboratory"/>
-          </coding>
-        </category>
-        <code>
-          <coding>
-            <system value="http://loinc.org"/>
-            <code value="83006-7"/>
-            <display value="Deletion-duplication overall interpretation"/>
-          </coding>
-        </code>
-        <subject>
-          <reference value="Patient/patient"/>
-        </subject>
-        <effectiveDateTime value="2016"/>
-        <performer>
-          <reference value="Organization/lab"/>
-        </performer>
-        <valueCodeableConcept>
-          <coding>
-            <!-- A.9 Deletion-duplication overall interpretation -->
-            <system value="http://loinc.org"/>
-            <code value="LA26803-9"/>
-            <display value="No deletion or duplication detected in studied region"/>
-          </coding>
-        </valueCodeableConcept>
-        <specimen>
-          <reference value="Specimen/specimen"/>
-        </specimen>
-      </Observation>
-    </resource>
-  </entry>
   <!--  <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/negatives"/>
+    <fullUrl value="http://example.org/fhir/Observation/negatives"/>
     <resource>
       <Observation>
         <id value="negatives"/>
@@ -483,7 +432,7 @@ New:
     </resource>
   </entry>-->
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/iscn"/>
+    <fullUrl value="http://example.org/fhir/Observation/iscn"/>
     <resource>
       <Observation>
         <id value="iscn"/>
@@ -529,7 +478,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/discrete-variant"/>
+    <fullUrl value="http://example.org/fhir/Observation/discrete-variant"/>
     <resource>
       <!-- This observation represents the sequence that was found (or not) -->
       <!-- Panel B -->
@@ -552,7 +501,7 @@ New:
         <code>
           <coding>
             <system value="http://loinc.org"/>
-            <code value="TBD-Described"/>
+            <code value="69548-6"/>
             <display value="Genetic variant assessment"/>
           </coding>
         </code>
@@ -938,7 +887,7 @@ New:
             <coding>
               <!-- B.27 Basis for allelic phase -->
               <system value="http://loinc.org"/>
-              <code value="LA6429-3"/>
+              <code value="LA26429-3"/>
               <display value="Inferred from population data"/>
             </coding>
           </valueCodeableConcept>
@@ -1024,7 +973,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/dis-path"/>
+    <fullUrl value="http://example.org/fhir/Observation/dis-path"/>
     <resource>
       <Observation>
         <id value="dis-path"/>
@@ -1086,14 +1035,13 @@ New:
       </Observation>
     </resource>
   </entry>
-  <!--
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/complex-variant"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-variant"/>
     <resource>
       <Observation>
         <id value="complex-variant"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-complex-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1144,17 +1092,13 @@ New:
             </coding>
           </code>
           <valueCodeableConcept>
-
             <coding>
-
               <system value="http://example.org/clinvar"/>
               <version value="???"/>
-
               <code value="16895"/>
               <display value="NM_000106.5(CYP2D):c.[886C>T;457G>C] – Haplotype"/>
             </coding>
             <coding>
-
               <system value="http://example.org/hgvs"/>
               <code value="c.[886C>T;457G>C"/>
             </coding>
@@ -1169,7 +1113,6 @@ New:
           </code>
           <valueCodeableConcept>
             <coding>
-
               <system value="http://loinc.org"/>
               <code value="LA26218-0"/>
               <display value="Haplotype"/>
@@ -1178,9 +1121,9 @@ New:
         </component>
       </Observation>
     </resource>
-  </entry> -->
+  </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/complex-dis-path"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-dis-path"/>
     <resource>
       <Observation>
         <id value="complex-dis-path"/>
@@ -1243,7 +1186,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/complex-component-D"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-component-D"/>
     <resource>
       <!-- Panel D -->
       <Observation>
@@ -1265,7 +1208,7 @@ New:
         <code>
           <coding>
             <system value="http://loinc.org"/>
-            <code value="TBD-Described"/>
+            <code value="69548-6"/>
             <display value="Genetic variant assessment"/>
           </coding>
         </code>
@@ -1410,7 +1353,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/complex-component-E"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-component-E"/>
     <resource>
       <!-- Panel E -->
       <Observation>
@@ -1428,18 +1371,11 @@ New:
             <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
             <code value="laboratory"/>
           </coding>
-          <!--TODO: don't think this is the right place for this-->
-          <!--<coding>-->
-            <!--&lt;!&ndash; B.1 Variant category &ndash;&gt;-->
-            <!--<system value="http://loinc.org"/>-->
-            <!--<code value="LA26801-3"/>-->
-            <!--<display value="Simple Variant"/>-->
-          <!--</coding>-->
         </category>
         <code>
           <coding>
             <system value="http://loinc.org"/>
-            <code value="TBD-Described"/>
+            <code value="69548-6"/>
             <display value="Genetic variant assessment"/>
           </coding>
         </code>
@@ -1532,7 +1468,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/pharmPanel"/>
+    <fullUrl value="http://example.org/fhir/Observation/pharmPanel"/>
     <resource>
       <Observation>
         <!-- D Pharmacogenomics results grouper -->
@@ -1561,10 +1497,6 @@ New:
             <system value="http://loinc.org"/>
             <code value="TBD-panel"/>
           </coding>
-          <coding>
-            <system value="http://loinc.org"/>
-            <code value="82118-1"/>
-          </coding>
         </code>
         <subject>
           <reference value="Patient/patient"/>
@@ -1590,7 +1522,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/haplotype"/>
+    <fullUrl value="http://example.org/fhir/Observation/haplotype"/>
     <resource>
       <Observation>
         <id value="haplotype"/>
@@ -1640,7 +1572,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/genotype"/>
+    <fullUrl value="http://example.org/fhir/Observation/genotype"/>
     <resource>
       <Observation>
         <id value="genotype"/>
@@ -1730,7 +1662,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/metab"/>
+    <fullUrl value="http://example.org/fhir/Observation/metab"/>
     <resource>
       <Observation>
         <id value="metab"/>
@@ -1793,7 +1725,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/efficacy"/>
+    <fullUrl value="http://example.org/fhir/Observation/efficacy"/>
     <resource>
       <Observation>
         <id value="efficacy"/>
@@ -1856,7 +1788,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Observation/highrisk"/>
+    <fullUrl value="http://example.org/fhir/Observation/highrisk"/>
     <resource>
       <Observation>
         <id value="highrisk"/>
@@ -1919,7 +1851,7 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://hl7.org/fhir/uv/genomics-reporting/Task/usage"/>
+    <fullUrl value="http://example.org/fhir/Task/usage"/>
     <resource>
       <Task>
         <!-- G1 -->

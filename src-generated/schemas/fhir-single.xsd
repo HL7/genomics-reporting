@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sat, Jun 8, 2019 15:25+0000 for FHIR v4.1.0 
+  Generated on Wed, Jun 19, 2019 03:07+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -29196,11 +29196,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate.</xs:documentation>
+              <xs:documentation xml:lang="en">A specific date/time or interval of time during which the administration took place (or did not take place). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate.</xs:documentation>
             </xs:annotation>
-            <xs:element name="effectiveDateTime" type="dateTime"/>
-            <xs:element name="effectivePeriod" type="Period"/>
+            <xs:element name="occurenceDateTime" type="dateTime"/>
+            <xs:element name="occurencePeriod" type="Period"/>
           </xs:choice>
+          <xs:element name="recorded" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date the occurrence of the  MedicationAdministration was first captured in the record - potentially significantly after the occurrence of the event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="performer" type="MedicationAdministration.Performer" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates who or what performed the medication administration and how they were involved.</xs:documentation>
@@ -30057,7 +30062,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the type of medication request (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates the grouping or category of medication request (for example, where the medication is expected to be consumed or administered (i.e. inpatient or outpatient)).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="priority" minOccurs="0" maxOccurs="1" type="RequestPriority">
@@ -30472,7 +30477,7 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The interval of time during which it is being asserted that the patient is/was/will be taking the medication (or was not taking, when the MedicationUsage.taken element is No).</xs:documentation>
+              <xs:documentation xml:lang="en">The interval of time during which it is being asserted that the patient is/was/will be taking the medication (or was not taking, when the MedicationUsage.status element is NotTaken).</xs:documentation>
             </xs:annotation>
             <xs:element name="effectiveDateTime" type="dateTime"/>
             <xs:element name="effectivePeriod" type="Period"/>

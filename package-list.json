@@ -1,0 +1,33 @@
+{
+  "package-id": "hl7.fhir.uv.genomics-reporting",
+  "title": "Genetic Reporting Implementation Guide",
+  "canonical": "http://hl7.org/fhir/uv/genomics-reporting",
+  "introduction": "Genomics is a rapidly evolving area of healthcare that involves complex data structures. There is significant value in sharing this information in a way that is consistent, computable and that can accomodate onging evolution of medical science and practice. The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing. This implementation guide tries to provide guidance that will enable improved interoperable and computable sharing of genetic testing results.\r\n\r\nThis guide covers all aspects of genetic reporting, including:\r\n\r\n* Human and veterinary as well as bacterial and viral specimens\r\n* Representation of simple discrete variants, structural variants including copy number variants, complex variants as well as gross variations such as extra or missing chromosomes\r\n* Representation of both known/catalogued variants as well as fully describing non-catalogued variations\r\n* Germline and somatic variations\r\n* Relevance of identified variations from the perspective of disease pathology, pharmacogenoomics, transplant suitability (e.g. HLA typing), etc.\r\n* Full and partial DNA sequencing, including whole genome and exome studies\r\n* Mosaicism (differing genetic characteristics for different specimens from the same subject)\r\n* Mitochondrial DNA variations",
+  "list": [
+    {
+      "version": "current",
+      "desc": "Continuous Integration Build (latest in version control)",
+      "path": "http://build.fhir.org/ig/HL7/genomics-reporting",
+      "status": "ci-build",
+      "current": true
+    },
+    {
+      "version": "0.3.0",
+      "date": "2018-12-04",
+      "desc": "STU 1 Ballot #2",
+      "path": "http://hl7.org/fhir/uv/genomics-reporting/2019Jan",
+      "status": "ballot",
+      "sequence": "STU 1",
+      "fhirversion": "3.6.0"
+    },
+    {
+      "version": "0.1.0",
+      "date": "2018-04-04",
+      "desc": "STU 1 Ballot",
+      "path": "http://hl7.org/fhir/uv/genomics-reporting/2018May",
+      "status": "ballot",
+      "sequence": "STU 1",
+      "fhirversion": "3.3.0"
+    }
+  ]
+}
