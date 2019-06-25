@@ -29,12 +29,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>16580</WindowHeight>
+  <WindowHeight>16640</WindowHeight>
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>380</WindowTopX>
   <WindowTopY>460</WindowTopY>
-  <ActiveSheet>30</ActiveSheet>
-  <FirstVisibleSheet>23</FirstVisibleSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1071,6 +1069,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <Selected/>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
@@ -16013,13 +16012,13 @@
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Y</Data></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">todo</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">SeqPhaseRelationship</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Cis | Trans</Data></Cell>
-    <Cell ss:StyleID="s108"><Data ss:Type="String">If Cis, indicates that both sequences appear on the same DNA strand.  If Trans, indicates that they appear on opposite strands</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Cis | Trans | Unknown</Data></Cell>
+    <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s109"><Data ss:Type="String">Using ISCN nomenclature is highly recommended for reporting structural variants.</Data></Cell>
@@ -16542,7 +16541,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>4</LeftColumnRightPane>
+   <LeftColumnRightPane>8</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -16550,6 +16549,7 @@
     </Pane>
     <Pane>
      <Number>1</Number>
+     <ActiveCol>4</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
@@ -38956,7 +38956,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -38977,8 +38976,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>25</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>27</ActiveRow>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
