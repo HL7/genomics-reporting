@@ -31,12 +31,12 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "TBD-panel"
+  "code" : "TBD-grouper"
 }, "valueSet" :null}####
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "The code \"TBD-panel\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-panel) is not  valid in the value set All codes known to the system"
+  "error" : "The code \"TBD-grouper\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-grouper) is not  valid in the value set All codes known to the system"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -111,12 +111,12 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "TBD-Described"
+  "code" : "69548-6"
 }, "valueSet" :null}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"TBD-Described\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-Described) is not  valid in the value set All codes known to the system"
+  "display" : "Genetic variant assessment",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -391,12 +391,12 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "TBD-sequence-phase-relation"
+  "code" : "82120-7"
 }, "valueSet" :null}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"TBD-sequence-phase-relation\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-sequence-phase-relation) is not  valid in the value set All codes known to the system"
+  "display" : "Allelic phase",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -541,12 +541,12 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "TBD-RegionsStudied"
+  "code" : "53041-0"
 }, "valueSet" :null}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"TBD-RegionsStudied\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-RegionsStudied) is not  valid in the value set All codes known to the system"
+  "display" : "DNA region of interest panel",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -591,6 +591,16 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
+  "code" : "51959-5"
+}, "valueSet" :null}####
+v: {
+  "display" : "Range(s) of DNA sequence examined",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
   "code" : "81247-9"
 }, "valueSet" :null}####
 v: {
@@ -630,6 +640,86 @@ v: {
 }
 -------------------------------------------------------------------------------------
 {"code" : {
+  "system" : "http://loinc.org",
+  "code" : "123-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"123-4\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#123-4) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LL1971-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Variant Assess",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26398-0"
+}, "valueSet" :null}####
+v: {
+  "display" : "Sequencing",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6698-0"
+}, "valueSet" :null}####
+v: {
+  "display" : "Missense",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6683-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Germline",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26811-2"
+}, "valueSet" :null}####
+v: {
+  "display" : "Computational analysis",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "51969-4"
+}, "valueSet" :null}####
+v: {
+  "display" : "Genetic analysis report",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA6668-3"
+}, "valueSet" :null}####
+v: {
+  "display" : "Pathogenic",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
   "coding" : [{
     "system" : "http://loinc.org",
     "code" : "81247-9"
@@ -661,35 +751,13 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "83006-7",
-  "display" : "Deletion-duplication overall interpretation"
-}, "valueSet" :null}####
-v: {
-  "display" : "Deletion-duplication overall interpretation",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA26803-9",
-  "display" : "No deletion or duplication detected in studied region"
-}, "valueSet" :null}####
-v: {
-  "display" : "No deletion or duplication detected in studied region",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "TBD-Described",
+  "code" : "69548-6",
   "display" : "Genetic variant assessment"
 }, "valueSet" :null}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"TBD-Described\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-Described) is not  valid in the value set All codes known to the system"
+  "display" : "Genetic variant assessment",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -760,16 +828,6 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "82120-7"
-}, "valueSet" :null}####
-v: {
-  "display" : "Allelic phase",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
   "code" : "LA26814-6",
   "display" : "1st set of variants in cis relation to each other"
 }, "valueSet" :null}####
@@ -791,13 +849,13 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "LA6429-3",
+  "code" : "LA26429-3",
   "display" : "Inferred from population data"
 }, "valueSet" :null}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"LA6429-3\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#LA6429-3) is not  valid in the value set All codes known to the system"
+  "display" : "Inferred from population data",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -813,23 +871,23 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "LA26801-3",
-  "display" : "Simple Variant"
+  "code" : "LA26218-0",
+  "display" : "Haplotype"
 }, "valueSet" :null}####
 v: {
-  "display" : "Simple variant",
+  "display" : "Haplotype",
   "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "82118-1"
+  "code" : "TBD-panel"
 }, "valueSet" :null}####
 v: {
-  "display" : "Pharmacogenomics result panel",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"TBD-panel\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-panel) is not  valid in the value set All codes known to the system"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -1063,76 +1121,19 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "81247-9",
-  "display" : "Master HL7 genetic variant reporting panel"
+  "code" : "123-4",
+  "display" : "Tumor Mutational Burden"
 }, "valueSet" :null}####
 v: {
-  "display" : "Master HL7 genetic variant reporting panel",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://loinc.org",
-    "code" : "81247-9",
-    "display" : "Master HL7 genetic variant reporting panel"
-  },
-  {
-    "system" : "http://loinc.org",
-    "code" : "53767-0",
-    "display" : "HLA-A+B+C SBT [Interpretation] by High resolution"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://loinc.org"
-    }]
-  }
-}}####
-v: {
-  "display" : "HLA-A+B+C SBT [Interpretation] by High resolution",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "53767-0"
-}, "valueSet" :null}####
-v: {
-  "display" : "HLA-A+B+C SBT [Interpretation] by High resolution",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "53767-0",
-  "display" : "HLA-A+B+C SBT [Interpretation] by High resolution"
-}, "valueSet" :null}####
-v: {
-  "display" : "HLA-A+B+C SBT [Interpretation] by High resolution",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "57290-9",
-  "display" : "HLA-A [Type] by High resolution"
-}, "valueSet" :null}####
-v: {
-  "display" : "HLA-A [Type] by High resolution",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code \"123-4\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#123-4) is not  valid in the value set All codes known to the system"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
   "code" : "123-4",
-  "display" : "Tumor Mutational Burden"
+  "display" : "MSI status"
 }, "valueSet" :null}####
 v: {
   "display" : "",
@@ -1306,108 +1307,6 @@ v: {
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "51969-4"
-}, "valueSet" :null}####
-v: {
-  "display" : "Genetic analysis report",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "51969-4",
-  "display" : "Genetic analysis report"
-}, "valueSet" :null}####
-v: {
-  "display" : "Genetic analysis report",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "123-4"
-}, "valueSet" :null}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"123-4\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#123-4) is not  valid in the value set All codes known to the system"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LL1971-2"
-}, "valueSet" :null}####
-v: {
-  "display" : "Variant Assess",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA26398-0"
-}, "valueSet" :null}####
-v: {
-  "display" : "Sequencing",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA6698-0"
-}, "valueSet" :null}####
-v: {
-  "display" : "Missense",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA6683-2"
-}, "valueSet" :null}####
-v: {
-  "display" : "Germline",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA26811-2"
-}, "valueSet" :null}####
-v: {
-  "display" : "Computational analysis",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA6668-3"
-}, "valueSet" :null}####
-v: {
-  "display" : "Pathogenic",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "123-4",
-  "display" : "MSI status"
-}, "valueSet" :null}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"123-4\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#123-4) is not  valid in the value set All codes known to the system"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
   "code" : "53037-8",
   "display" : "Genetic variation clinical significance"
 }, "valueSet" :null}####
@@ -1440,74 +1339,47 @@ v: {
 }
 -------------------------------------------------------------------------------------
 {"code" : {
-  "system" : "http://loinc.org",
-  "code" : "TBD-grouper"
-}, "valueSet" :null}####
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "81247-9",
+    "display" : "Master HL7 genetic variant reporting panel"
+  },
+  {
+    "system" : "http://loinc.org",
+    "code" : "53767-0",
+    "display" : "HLA-A+B+C SBT [Interpretation] by High resolution"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org"
+    }]
+  }
+}}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The code \"TBD-grouper\" is not valid in the system http://loinc.org; The code provided (http://loinc.org#TBD-grouper) is not  valid in the value set All codes known to the system"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "53041-0"
-}, "valueSet" :null}####
-v: {
-  "display" : "DNA region of interest panel",
+  "display" : "HLA-A+B+C SBT [Interpretation] by High resolution",
   "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "51959-5"
+  "code" : "53767-0"
 }, "valueSet" :null}####
 v: {
-  "display" : "Range(s) of DNA sequence examined",
+  "display" : "HLA-A+B+C SBT [Interpretation] by High resolution",
   "severity" : null,
   "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://loinc.org",
-  "code" : "69548-6"
+  "code" : "57290-9",
+  "display" : "HLA-A [Type] by High resolution"
 }, "valueSet" :null}####
 v: {
-  "display" : "Genetic variant assessment",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA26429-3",
-  "display" : "Inferred from population data"
-}, "valueSet" :null}####
-v: {
-  "display" : "Inferred from population data",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "69548-6",
-  "display" : "Genetic variant assessment"
-}, "valueSet" :null}####
-v: {
-  "display" : "Genetic variant assessment",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://loinc.org",
-  "code" : "LA26218-0",
-  "display" : "Haplotype"
-}, "valueSet" :null}####
-v: {
-  "display" : "Haplotype",
+  "display" : "HLA-A [Type] by High resolution",
   "severity" : null,
   "error" : ""
 }
