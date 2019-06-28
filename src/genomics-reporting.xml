@@ -22,9 +22,9 @@
   <packageId value="hl7.fhir.uv.genomics-reporting"/>
   <fhirVersion value="4.0.0"/>
   <definition>
-    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+<!--    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="device-profile-spreadsheet.xml"/>
-    </extension>
+    </extension>   -->
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="diagnosticreport-profile-spreadsheet.xml"/>
     </extension>
@@ -478,7 +478,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/dr-relatedArtifact"/>
+        <reference value="StructureDefinition/relatedArtifact"/>
       </reference>
       <name value="Related Artifact"/>
       <description value="Captures citations, evidence and other supporting documentation for the observation or report"/>
@@ -490,10 +490,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/dr-recommendedAction"/>
+        <reference value="StructureDefinition/recommendedAction"/>
       </reference>
-      <name value="Recommended Action - DiagnosticReport"/>
-      <description value="References a proposed action that is recommended based on the results of the diagnostic report"/>
+      <name value="Recommended Action"/>
+      <description value="References a proposed action that is recommended based on the results of the report or observations"/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
@@ -502,34 +502,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/dr-supportingInfo"/>
+        <reference value="StructureDefinition/supportingInfo"/>
       </reference>
       <name value="Supporting Information"/>
       <description value="Additional information relevant to interpreting/understanding the report"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/obs-focus"/>
-      </reference>
-      <name value="Focus"/>
-      <description value="Allows an observation to be made about multiple things."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/obs-recommendedAction"/>
-      </reference>
-      <name value="Recommended Action - Observation"/>
-      <description value="References a proposed action that is recommended based on the results of the observation."/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>

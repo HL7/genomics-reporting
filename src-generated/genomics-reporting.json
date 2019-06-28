@@ -98,7 +98,6 @@
   "canonicalBase": "http://hl7.org/fhir/uv/genomics-reporting",
   "source": "genomics-reporting.xml",
   "spreadsheets": [
-    "device-profile-spreadsheet.xml",
     "diagnosticreport-profile-spreadsheet.xml",
     "medicationstatement-profile-spreadsheet.xml",
     "observation-profile-spreadsheet.xml",
@@ -161,7 +160,7 @@
     },
     "StructureDefinition/obs-som-predictive":{
     },
-    "StructureDefinition/dr-relatedArtifact":{
+    "StructureDefinition/relatedArtifact":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",
@@ -178,7 +177,7 @@
       "profile-json": "extension-{{[id]}}.profile.json.html",
       "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
     },
-    "StructureDefinition/dr-recommendedAction":{
+    "StructureDefinition/recommendedAction":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",
@@ -195,41 +194,7 @@
       "profile-json": "extension-{{[id]}}.profile.json.html",
       "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
     },
-    "StructureDefinition/dr-supportingInfo":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html",
-      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
-    },
-    "StructureDefinition/obs-focus":{
-      "template-base": "../framework/templates/template-ext.html",
-      "template-defns": "../framework/templates/template-ext-definitions.html",
-      "template-mappings": "../framework/templates/template-ext-mappings.html",
-      "template-examples": "",
-      "template-profile-xml": "../framework/templates/template-ext-xml.html",
-      "template-profile-json": "../framework/templates/template-ext-json.html",
-      "template-profile-ttl": "../framework/templates/template-ext-ttl.html",
-      "template-format": "",
-      "base": "extension-{{[id]}}.html",
-      "defns": "extension-{{[id]}}-definitions.html",
-      "mappings": "extension-{{[id]}}-mappings.html",
-      "examples": "extension-{{[id]}}-examples.html",
-      "profile-xml": "extension-{{[id]}}.profile.xml.html",
-      "profile-json": "extension-{{[id]}}.profile.json.html",
-      "profile-ttl": "extension-{{[id]}}.profile.ttl.html"
-    },
-    "StructureDefinition/obs-recommendedAction":{
+    "StructureDefinition/supportingInfo":{
       "template-base": "../framework/templates/template-ext.html",
       "template-defns": "../framework/templates/template-ext-definitions.html",
       "template-mappings": "../framework/templates/template-ext-mappings.html",

@@ -1,8 +1,16 @@
 <Observation xmlns="http://hl7.org/fhir">
   <id value="obs-idh-ex"/>
   <meta>
-	<profile value="http://build.fhir.org/ig/HL7/genomics-reporting/obs-inh-dis-path.profile.xml.html"/>
+    <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-inh-dis-path"/>
   </meta>
+  <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/relatedArtifact">
+    <valueRelatedArtifact>
+      <type value="citation"/>
+      <url value="https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"/>
+    </valueRelatedArtifact>
+<!--      <reference value="https://www.ncbi.nlm.nih.gov/pubmed/23974870,21520337,21228398,25087612,18951463,20880762,20460946,7539342,23891399,12955726"/>
+-->
+  </extension>
   <status value="final"/>
   <category>
 	<coding>
@@ -19,13 +27,13 @@
   </code>
      <!-- REMOVE INVALID REFS
   <subject>
-	<reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/> 
-    <display value="TestPat"/> 
+	<reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+    <display value="TestPat"/>
   </subject>
   <issued value="2019-01-07T17:41:18+05:30"/>
-  <encounter> 
-    <reference value="Encounter/example"/> 
-  </encounter> 
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
 
 
   <derivedFrom>
@@ -107,11 +115,5 @@
 		<display value="Autosomal recessive"/>
 	  </coding>
 	</valueCodeableConcept>
-  </component>  
-  <dr-relatedArtifact>
-	<reference value="https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"/>
-  </dr-relatedArtifact>
-  <dr-relatedArtifact>
-	<reference value="https://www.ncbi.nlm.nih.gov/pubmed/23974870,21520337,21228398,25087612,18951463,20880762,20460946,7539342,23891399,12955726"/>
-  </dr-relatedArtifact>
+  </component>
 </Observation>

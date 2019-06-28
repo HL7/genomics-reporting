@@ -21,7 +21,9 @@
   <packageId value="hl7.fhir.uv.genomics-reporting"/>
   <fhirVersion value="4.0.0"/>
   <definition>
-    
+<!--    <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
+      <valueUri value="device-profile-spreadsheet.xml"/>
+    </extension>   -->
     
     
     
@@ -161,8 +163,6 @@
     
     
     <!-- Extensions -->
-    
-    
     
     
     
@@ -466,78 +466,68 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="extension-dr-relatedArtifact.html"/>
+<nameUrl value="extension-relatedArtifact.html"/>
 <ns27:title xmlns:ns27="http://hl7.org/fhir" value="Related Artifact"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="extension-dr-recommendedAction.html"/>
-<ns28:title xmlns:ns28="http://hl7.org/fhir" value="Recommended Action - DiagnosticReport"/>
+<nameUrl value="extension-recommendedAction.html"/>
+<ns28:title xmlns:ns28="http://hl7.org/fhir" value="Recommended Action"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="extension-dr-supportingInfo.html"/>
+<nameUrl value="extension-supportingInfo.html"/>
 <ns29:title xmlns:ns29="http://hl7.org/fhir" value="Supporting Information"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="extension-obs-focus.html"/>
-<ns30:title xmlns:ns30="http://hl7.org/fhir" value="Focus"/>
-<generation value="generated"/>
-</page>
-<page>
-<nameUrl value="extension-obs-recommendedAction.html"/>
-<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Recommended Action - Observation"/>
-<generation value="generated"/>
-</page>
-<page>
 <nameUrl value="diagnosticreport-cgexample.html"/>
-<ns32:title xmlns:ns32="http://hl7.org/fhir" value="Example - Genomics Reporting"/>
+<ns30:title xmlns:ns30="http://hl7.org/fhir" value="Example - Genomics Reporting"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-pgxexample.html"/>
-<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example - Pharmacogenomics"/>
+<ns31:title xmlns:ns31="http://hl7.org/fhir" value="Example - Pharmacogenomics"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="CG-IG-HLA-FullBundle-01.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns32:title xmlns:ns32="http://hl7.org/fhir" value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="oncologyexamples-r4.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
+<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-idh-ex.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-hla-glstring-r4.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-genotype-hla-a-glstring-r4.html"/>
-<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-haplotype-hla-a-1-r4.html"/>
-<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen-hla-r4.html"/>
-<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
+<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="servicerequest-hla-a-r4.html"/>
-<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
 <generation value="generated"/>
 </page>
 </page>

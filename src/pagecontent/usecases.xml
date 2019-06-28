@@ -20,7 +20,7 @@
 		<li>Public Health</li>
 		<li>Clinical and Research Data Warehouses</li>
 	</ol>
-	
+
 	<a name="specimenIdentification"> </a>
 	<h2>Specimen Identification</h2>
 	<ul>
@@ -138,13 +138,6 @@
     	Search for patient by ID
     </p>
     <pre class="http">GET /Patient?subject=123</pre>
-    
-    <!--
-    <p>
-    	Given diagnostic report, return associated family history information
-    </p>
-    <pre class="http">GET /DiagnosticReport?_profile=http://hl7.org/fhir/StructureDefinition/diagnosticreport-geneticsFamilyMemberHistory&amp;_Id=123</pre>
-    -->
 
     <p>
     	Search for variants given gene and variant classification
@@ -177,13 +170,13 @@
     	Find specimens collected from specific specimen body sites
     </p>
     <pre class="http">GET /Observation?component-code-value=http://snomed.info/sct|85151006</pre>
-    
+
     <!--
     <p>
     	Find specimens from this patient's pedigree
     </p>
     <pre class="hhtp">GET /FamilyMemberHistory?patient=123</pre>
-    
+
     <p>
     	Find specimens based on patient disease status
     </p>
@@ -201,7 +194,7 @@
         Find specimens based on instrument identifier
     </p>
     <pre class="http">GET /Specimen?container.identifier=48736-15394-75465</pre>
-    
+
     <a name="timeBased"></a>
     <h3>Time-Based Queries</h3>
     <p>

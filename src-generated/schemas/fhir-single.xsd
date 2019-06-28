@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Jun 19, 2019 03:07+0000 for FHIR v4.1.0 
+  Generated on Wed, Jun 26, 2019 19:45+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -8920,6 +8920,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Notes and comments about this catalog entry.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="estimatedDuration" minOccurs="0" maxOccurs="1" type="Duration">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Estimated duration of the orderable item of this  entry of the catalog.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="billingCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Billing code associated to the  item in the context of this  entry of the catalog.</xs:documentation>
@@ -12069,12 +12074,12 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="recipient" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).</xs:documentation>
+              <xs:documentation xml:lang="en">The entity (e.g. person, organization, clinical information system, care team or device) which is the target of the communication.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="sender" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The entity (e.g. person, organization, clinical information system, or device) which was the source of the communication.</xs:documentation>
+              <xs:documentation xml:lang="en">The entity (e.g. person, organization, clinical information system, or device) which is the source of the communication.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -12272,7 +12277,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="requester" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The device, individual, or organization who initiated the request and has responsibility for its activation.</xs:documentation>
+              <xs:documentation xml:lang="en">The device, individual, or organization who asks for the information to be shared.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="recipient" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -12280,7 +12285,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The entity (e.g. person, organization, clinical information system, device, group, or care team) which is the intended target of the communication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="sender" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="informationProvider" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The entity (e.g. person, organization, clinical information system, or device) which is to be the source of the communication.</xs:documentation>
            </xs:annotation>
@@ -40057,6 +40062,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The usual time that a specimen of this kind is retained after the ordered tests are completed, for the purpose of additional testing.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="singleUse" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Specimen can be used by only one test or panel if the value is &quot;true&quot;.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="rejectionCriterion" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Criterion for rejection of the specimen in its container by the laboratory.</xs:documentation>
@@ -40065,6 +40075,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="handling" type="SpecimenDefinition.Handling" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="testingDestination" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Where the specimen will be tested: e.g., lab, sector, device or any combination of these.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
