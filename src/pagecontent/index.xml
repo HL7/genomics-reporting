@@ -5,7 +5,7 @@
     </p>
   </blockquote>
   <a name="scope"> </a>
-  <h2>Scope</h2>
+  <h3>Scope</h3>
   <p>
     Genomics is a rapidly evolving area of healthcare that involves complex data structures.  There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice.  The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing.  The implementation guide is also transmission protocol-independent - the data structures presented here could be used in RESTful, messaging, document or other paradigms.
   </p>
@@ -25,7 +25,7 @@
     At present, this implementation guide focuses solely on data structures - what data should be/might be present and how it should be organized.  It does not address workflows around how reports are requested, created, approved, routed, delivered, amended, etc.  The implementation guide is also paradigm-independent -  the data structures presented here could be used in RESTful, messaging, documents or other mechanisms.
   </p>
   <a name="principles"> </a>
-  <h2>Guiding principles</h2>
+  <h3>Guiding principles</h3>
   <p>
     This guide adheres to a set of design approaches:
   </p>
@@ -43,12 +43,12 @@
     Together, these principles should make adoption easier and allow systems to more easily adapt in a compatible way as genetic reporting continues to evolve.
   </p>
   <a name="previous"> </a>
-  <h2>Previous Specifications</h2>
+  <h3>Previous Specifications</h3>
   <p>
     FHIR STU3 included a set of profiles that provided guidance on how to convey genetic orders, results and observations.  Those profiles are superceded by this implementation guide.  Guidance for converting from these older profiles is found <a href="conversion.html">here</a>.
   </p>
   <a name="fhir"> </a>
-  <h2>Understanding FHIR</h2>
+  <h3>Understanding FHIR</h3>
   <p>
     This implementation guide is based on the HL7 <a href="{{site.data.fhir.path}}index.html">FHIR</a> standard.  It uses terminology, notations and design principles that are
     specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well
@@ -86,7 +86,7 @@
     <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
   </p>
   <a name="content"> </a>
-  <h2>Content and organization</h2>
+  <h3>Content and organization</h3>
   <p>
     This implementation guide is organized into a set of sections. The first two sections are applicable to all types of genetic reporting. All implementers intending to do clinical genomic reporting should read 'Background' and 'General Genomic Reporting.'
   </p>
@@ -155,7 +155,7 @@
   </blockquote>
 
   <a name="credits"> </a>
-  <h2>Credits</h2>
+  <h3>Credits</h3>
   <p>
     The Genomics Reporting Implementation Guide (IG) was created by the <a href="https://confluence.hl7.org/display/CGW/WorkGroup+Home">HL7 Clinical Genomics Work Group</a>
   </p>

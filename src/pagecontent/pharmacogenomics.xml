@@ -9,13 +9,13 @@
   </p>
   
   <a name="general"> </a>
-  <h2>General guidance</h2>
+  <h3>General guidance</h3>
   <p>
     While not specifically profiled in this version of the IG, some additional constraints will typically apply to somatic profiles.  Patient will usually be present, however pharmacogenomics can theoretically be relevant for environmental samples (e.g. to determine the most effective way to deal with a persistent environmental pathogen).
   </p>
 
   <a name="implications"> </a>
-  <h2>Pharmacogenomic-specific Genetic Implications</h2>
+  <h3>Pharmacogenomic-specific Genetic Implications</h3>
   <img src="4-pharmacogenomics-fig1-implications.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Usage Implication task"/>
   <p>
     <b>Figure 1: Pharmacogenomic Implications</b>
@@ -53,7 +53,7 @@
 <!--
   <a name="examples"> </a>
 
-  <h2>Pharmacogenomic Example Instances</h2>
+  <h3>Pharmacogenomic Example Instances</h3>
   <p>
     The following section walks through a specific <a href="diagnosticreport-pgxexample.html">pharmacogenomics example</a>.
   </p>
@@ -77,7 +77,7 @@
     DiagnosticReport.result will be used to point to the Medication Metabolism Implication.
   </p>
   <a name="computable"> </a>
-  <h3>Pharmacogenomic-specific Computable Genetic Findings</h3>
+  <h4>Pharmacogenomic-specific Computable Genetic Findings</h4>
   <img src="pgx-example-genetic-finding.png" alt="image to show the genetic finding detail of the pharmacogenomics example"/>
   <p>
     From the diagram above, Genotype, Haplotype and Variant profiles will are used. Each of the profile have the similar structure with Genetic Finding and Computable Finding, which means that Genotype, Haplotype and Variant profiles are inheriting the elements from Genetic Finding and Computable Finding.
@@ -141,7 +141,7 @@
     DiagnosticReport is used to record all these genetic finding elements by using “result” pointer, and each of these genetics finding elements will have a pointer point to their corresponding sequences.
   </p>
   <a name="additional"> </a>
-  <h2>Pharmacogenomic-specific Guidance and Recommendations</h2>
+  <h3>Pharmacogenomic-specific Guidance and Recommendations</h3>
   <p>
     Recommendation for the medication usage will be stored on Task resource. Within the overall diagram, it is called Medication Usage Implication. It contains the following fields:
   </p>

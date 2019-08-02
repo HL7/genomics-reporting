@@ -4,13 +4,13 @@
     This section covers additional guidelines related to genetic assessments related to the histocompatibility and immunogenetics, include matching of donor and recipient tissue for donation, including bone marrow, organ and other tissue donations, and cellular therapy.  In particular, it covers additional guidance related to reports dealing with HLA (Human Leukocyte Antigens) genotyping.
   </p>
   <a name="general"> </a>
-  <h2>General guidance</h2>
+  <h3>General guidance</h3>
   <p>
     While not specifically profiled in this version of the IG, some additional constraints will typically apply to somatic profiles.  Patient will typically be mandatory as transplant genomics is not relevant for environmental samples. Exceptions would include when de-identified samples are sent to a typing laboratory, and patient information is stored separately at an organization.
   </p>
 
   <a name="diagnosticreport-hla-genotyping-results-profile"> </a>
-  <h2>HLA genotyping results</h2>
+  <h3>HLA genotyping results</h3>
   <p>
     Human leukocyte antigen (HLA) genotyping is fundamental for research and clinical practice in immunogenetics and histocompatibility. Pointers to external locations refer to registered methods, raw NGS reads, and reference standards can be conveyed in this profile. Information about allele assignment including ambiguous results and the allele database used for assignments is stored in extensions.
   </p>
@@ -41,7 +41,7 @@
     The profiles for HLA genotyping have not yet been converted to align with the core profiles of this IG.  This work will be completed prior to the August ballot cycle.
   </p>
   <a name="hla-dg-genotype"> </a>
-  <h3>HLA - DiagnosticReport and Genotype</h3>
+  <h4>HLA - DiagnosticReport and Genotype</h4>
   <p>
     In a simple case, the Genomics Report (DiagnosticReport) refers to an Genotype Observation for each HLA gene. The HLA alleles found in the genotype are typically assigned to alleles found in the the Immuno Polymorphism Database (IPD) through the international ImMunoGeneTics (IMGT) project (found <a href="https://www.ebi.ac.uk/ipd/imgt/hla">here</a>) and preferably expressed as a <a href="https://www.ncbi.nlm.nih.gov/pubmed/23849068">Genotype List String (GLString)</a> using a <a href="https://glstring.org">GLString Code</a>.
   </p>
@@ -52,7 +52,7 @@
   <img src="histocompatibility-fig1-hla-a-genotype.png" alt="Genetic test report for HLA-A genotyping, with molecular sequence data used to derive the genotype." width="50%" height="50%" style="border:1px solid black" />
   <p>Figure 1</p>
   <a name="hla-alleles"> </a>
-  <h3>HLA - Adding the individual alleles</h3>
+  <h4>HLA - Adding the individual alleles</h4>
   <p>It is often desirable to identify sequence data that was used to derive individual HLA alleles. This can be done by adding another Observation to capture this, shown in Figure 2.</p>
   <a name="fig2"> </a>
   <img src="histocompatibility-fig2-hla-a-genotype-allele.png" alt="Genetic test report for HLA-A genotyping, with molecular sequence data used to derive each allele." width="50%" height="50%" style="border:1px solid black" />
@@ -60,7 +60,7 @@
   <p>We use the Haplotype Observation for this purpose. In domains other than HLA (e.g. Pharmacogenomics), it is common to consider gene-level alleles as named haplotypes  of a set of smaller variants (<a href="https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E">Variation Modelling Collaboration Data Model and Specification</a>). This is not how the HLA community considers Haplotype, which is typically used to describe a set of gene-level alleles from different HLA genes that are found on the same DNA molecule. To be able to represent this latter description, this IG will need to consider how to represent "haplotypes of haplotypes."
   </p>
   <a name="hla-multiplealleles"> </a>
-  <h3>HLA - reporting multiple HLA genes</h3>
+  <h4>HLA - reporting multiple HLA genes</h4>
   <p>
     This pattern can be extended to multiple HLA genes in a single report. An example for HLA-A, HLA-B, and HLA-C is shown in Figure 3.
   </p>
@@ -74,7 +74,7 @@
   <img src="histocompatibility-fig4-hla-abc-genotype-allele.png" alt="Genetic test report for HLA-A, -B, and -C genotyping, with molecular sequence data used to derive each genotype." width="70%" height="70%" style="border:1px solid black"/>
   <p>Figure 4</p>
   <a name="hla-ambiguity"> </a>
-  <h3>HLA - Reporting Ambiguity</h3>
+  <h4>HLA - Reporting Ambiguity</h4>
   <p>
     HLA allele assignment is often ambiguous. Genotype ambiguity results from an inability to establish chromosomal phase between identified polymorphisms. Allele ambiguity results when the polymorphisms that distinguish alleles fall outside of the regions assessed by the genotyping system.
   </p>
@@ -94,7 +94,7 @@
       &lt;/coding>
 &lt;/valueCodeableConcept></pre>
   <a name="hla-examples"> </a>
-  <h3>HLA Examples</h3>
+  <h4>HLA Examples</h4>
   <ul>
     <li><a href="diagnosticreport-hla-glstring-r4.html">DiagnosticReport for HLA-A, HLA-B, HLA-C</a></li>
     <li><a href="obs-genotype-hla-a-glstring-r4.html">Genotype Observation for HLA-A</a></li>
@@ -103,7 +103,7 @@
   </ul>
 
   <a name="diagnosticreport-kir-genotyping-results-profile"> </a>
-    <h2>KIR genotyping results</h2>
+    <h3>KIR genotyping results</h3>
   <p>
     TBD: Considerations for reporting Killer-cell immunoglobin like receptor (KIR) genes.
   </p>

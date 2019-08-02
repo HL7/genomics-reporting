@@ -4,7 +4,7 @@
   </p>
 
   <a name="diagnosticreport"> </a>
-  <h2>Diagnostic Report</h2>
+  <h3>Diagnostic Report</h3>
   <p>
     The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis.  (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab.)  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of five categories:
   </p>
@@ -89,7 +89,7 @@
   <!-- Yanked the old diagnostic report genetics stuff as it no longer applies and is covered either above or below. -->
   <!-- HLA content doesn't belong in the 'general' section.  Yanked it and moved it over to transplants where this stuff will be covered.  However, all of the old profiles will need to be re-done.  We can't reference them in this IG. -->
   <a name="general"> </a>
-  <h2>General Relationships</h2>
+  <h3>General Relationships</h3>
   <p>
     To allow searching and appropriate navigation, the diagnostic report, observations and tasks cannot stand on their own.  They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc.  FHIR design principles dictate that these associations be present on <i>every</i> resource instance.  That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc.  However, this is still relatively lightweight because the information is included by reference only.
   </p>
@@ -157,7 +157,7 @@
   </p>
 
   <a name="findings"> </a>
-  <h2>Genetic Findings</h2>
+  <h3>Genetic Findings</h3>
   <p>The primary focus of genetic testing is making Genetic Findings.  These are the fine and/or coarse-grained descriptions of a specimen's genetic characteristics.  It is this information that leads to the actionable <i>Genetic Implications</i> and the <i>Overall Interpretations</i> for the report.
   </p>
   <a name="fig5"> </a>
@@ -240,7 +240,7 @@
   </p>
 
   <a name="interpretations"> </a>
-  <h2>Genetic Interpretations</h2>
+  <h3>Genetic Interpretations</h3>
   <a name="fig6"> </a>
   <img src="1-general-fig6-interpretations.png" alt="Class diagram showing common interpretations."/>
   <p>
@@ -259,7 +259,7 @@
   </ul>
 
   <a name="implications"> </a>
-  <h2>Genetic Implications</h2>
+  <h3>Genetic Implications</h3>
   <blockquote class="stu-note">
     <p>
       At present, implications are noted as explicit observations about the patient/subject.  However, it's not clear this is the correct approach.  The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way.  This would allow saying "this variant is associated with an increase risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert.  Feedback is welcome.
@@ -333,7 +333,7 @@
   </p>
 
   <a name="other"> </a>
-  <h2>Other content</h2>
+  <h3>Other content</h3>
   <p>
     The profiles describing the detailed observations within a genomics report are found in the other sections of this implementation guide based on what type of testing and reporting is being done:
   </p>

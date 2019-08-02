@@ -39,13 +39,13 @@
 
   I've commented this out for now because a lot of it no longer applies.  Most elements of sequence aren't being used in the genetic reporting process because the group agreed to treat MolecularSequence as a "definitional" resource and
 <a name="sequence"> </a>
-  <h2>MolecularSequence Resource Usage Guide</h2>
+  <h3>MolecularSequence Resource Usage Guide</h3>
   <p>
     The MolecularSequence resource is designed for next-generation sequencing data. Patients' observed sequences should be represented by recording reference sequence id/string and detected variants. To specify how it proceed, here is a picture below:
   </p>
   <img src="sequence-outline.png" alt="image sequence layout"/>
   <a name="sequence-element"></a>
-  <h3>Main Elements Definition</h3>
+  <h4>Main Elements Definition</h4>
   <p>
     MolecularSequence.coordinateSystem: This element shall be constrained into only two possible values: 0 for 0-based system and 1 for 1-based system. Below is the picture that could explain what's the difference between these two systems:
   </p>
@@ -103,7 +103,7 @@
   </ul>
 
   <a name="relationship-sequence"></a>
-  <h2>Relationship among MolecularSequence resource and genetics profiles</h2>
+  <h3>Relationship among MolecularSequence resource and genetics profiles</h3>
   <img src="general-relationship.png" alt="General relationship between sequence and other resource"/>
   <p><b>Pointers to MolecularSequence resource</b></p>
   <p>
