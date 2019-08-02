@@ -108,7 +108,7 @@
     </xsl:choose>
     <text>",
     "txCache": "txcache",
-    "history" : "history.html",
+    "history" : "http://hl7.org/fhir/uv/genomics-reporting/history.html",
     "qa": "../temp</text>
     <xsl:if test="$additional">
       <xsl:value-of select="$additional"/>
@@ -233,8 +233,8 @@
             <xsl:with-param name="split" select="'/'"/>
           </xsl:call-template>
         </xsl:variable>
-        <xsl:value-of select="concat('    {&#xa;      &quot;name&quot; : &quot;', $code, '&quot;,&#xa;      &quot;version&quot; : &quot;', f:version/@value, 
-        '&quot;,&#xa;      &quot;location&quot; : &quot;', f:uri/@value, 
+        <xsl:value-of select="concat('    {&#xa;      &quot;name&quot; : &quot;', $code, '&quot;,&#xa;      &quot;version&quot; : &quot;', f:version/@value,
+        '&quot;,&#xa;      &quot;location&quot; : &quot;', f:uri/@value,
         '&quot;,&#xa;      &quot;source&quot; : &quot;../../', $code, '2/website&quot;&#xa;    }')"/>
         <xsl:if test="position()!=last()">
           <xsl:text>,&#xa;</xsl:text>
