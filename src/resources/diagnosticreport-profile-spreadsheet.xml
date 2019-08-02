@@ -21,7 +21,7 @@
   <WindowTopX>380</WindowTopX>
   <WindowTopY>460</WindowTopY>
   <ActiveSheet>2</ActiveSheet>
-  <RefModeR1C1/>
+  <DoNotCalculateBeforeSave/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1224,8 +1224,9 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font>       </ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Aliases</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Other names - semi-colon separated</Font>       </ss:Data></Comment><NamedCell
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Other names - semi-colon separated</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Card.</Data><Comment ss:Author=""><ss:Data
        xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
@@ -1474,10 +1475,11 @@
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="120">
-    <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s100"><Data ss:Type="String">valueReference</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s102"><Data ss:Type="String">DiagnosticReport.extension.valueReference</Data><NamedCell
+    <Cell ss:StyleID="s102"><Data ss:Type="String">DiagnosticReport.extension.value[x]</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><Data ss:Type="String">1..1</Data><NamedCell
@@ -1539,10 +1541,11 @@
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="120">
-    <Cell ss:StyleID="s100"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s100"><Data ss:Type="String">valueReference</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s102"><Data ss:Type="String">DiagnosticReport.extension.valueReference</Data><NamedCell
+    <Cell ss:StyleID="s102"><Data ss:Type="String">DiagnosticReport.extension.value[x]</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s101"><Data ss:Type="String">1..1</Data><NamedCell
@@ -3267,9 +3270,9 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>1</TopRowBottomPane>
+   <TopRowBottomPane>8</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>6</LeftColumnRightPane>
+   <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -3281,10 +3284,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
+     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>0</ActiveRow>
+     <ActiveRow>10</ActiveRow>
      <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
