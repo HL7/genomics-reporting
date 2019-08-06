@@ -101,10 +101,10 @@ New:
         </result>
         <!--        <result>
           <reference value="Observation/negatives"/>
-        </result>-->
+        </result>
         <result>
           <reference value="Observation/iscn"/>
-        </result>
+        </result>-->
         <result>
           <reference value="Observation/discrete-variant"/>
         </result>
@@ -430,7 +430,7 @@ New:
         </component>
       </Observation>
     </resource>
-  </entry>-->
+  </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/iscn"/>
     <resource>
@@ -465,7 +465,6 @@ New:
           <reference value="Organization/lab"/>
         </performer>
         <valueCodeableConcept>
-          <!-- A.11 - Variant ISCN -->
           <coding>
             <system value="http://example.org/icsn"/>
             <code value="???"/>
@@ -477,6 +476,7 @@ New:
       </Observation>
     </resource>
   </entry>
+-->
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/discrete-variant"/>
     <resource>

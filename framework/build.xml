@@ -54,7 +54,7 @@
     </condition>
   </target>
   <target name="local-downloads" depends="local-setup" if="downloads" description="--Download current IG generator files">
-    <get src="https://fhir.github.io/latest-ig-publisher/org.hl7.fhir.publisher.jar" dest="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" usetimestamp="true"/>
+    <get src="${jar.publisher}" dest="${dir.srcgenned}" usetimestamp="true"/>
     <get src="${fhirspec}fhir-single.xsd" dest="${dir.schemas}" usetimestamp="true"/>
     <get src="${fhirspec}fhir-xhtml.xsd" dest="${dir.schemas}" usetimestamp="true"/>
     <get src="${fhirspec}xml.xsd" dest="${dir.schemas}" usetimestamp="true"/>
@@ -65,6 +65,7 @@
       <file file="${basedir}/${dir.framework.assets}/js/jquery.js"/>
     </copy>
     <fail unless="guidename" message="'guidename' must be defined in properties.txt. e.g. 'sdc'"/>
+    <fail unless="guidename" message="'guideid' must be defined in properties.txt. e.g. 'hl7.fhir.uv.sdc'"/>
     <fail unless="version" message="'version' must be defined in properties.txt.  e.g. '2.0'"/>
     <fail unless="fhirspec" message="'fhirspec' must be defined in properties.txt. e.g. 'http://build.fhir.org/'"/>
     <fail unless="copyrightyear" message="'copyrightyear' must be defined in properties.txt. e.g. '2015+'"/>
@@ -75,10 +76,11 @@
   "excludejson":"${excludejson}",
   "excludettl":"${excludettl}",
   "assets":"",
+  "child":"${additionalVersion}/",
   "headingOffset":""
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt"/>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guideid}.xml" style="${dir.xslt}/fixIg.xslt">
       <param name="alternate" expression="${additionalVersion}"/>
     </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}.json" style="${dir.xslt}/igToConfig.xslt">
@@ -121,12 +123,13 @@
   "excludejson":"${excludejson}",
   "excludettl":"${excludettl}",
   "assets":"../",
+  "child":"",
   "headingOffset":"${childHeadingOffset}."
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.altincludes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt">
       <param name="version" expression="${additionalVersion}"/>
     </xslt>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}${additionalVersion}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}${additionalVersion}/${guideid}.xml" style="${dir.xslt}/fixIg.xslt">
       <param name="version" expression="${additionalVersion}"/>
       <param name="altVNumber" expression="${additionalVNumber}"/>
     </xslt>
@@ -149,13 +152,13 @@
     <get src="${otherfhirspec}xmldsig-core-schema.xsd" dest="${dir.schemas}${additionalVersion}" usetimestamp="true"/>
   </target>
   <target name="publish-ig-continuous" unless="additionalVersion" depends="extra-downloads" if="continuous" description="--> Run the IG build">
-    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
+    <java jar="${dir.srcgenned}/org.hl7.fhir.publisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm} -watch"/>
     </java>
   </target>
   <target name="publish-ig-once" depends="extra-downloads" unless="continuous" description="--> Run the IG build">
-    <java jar="${dir.srcgenned}/org.hl7.fhir.igpublisher.jar" fork="true" failonerror="true" maxmemory="2048m">
+    <java jar="${dir.srcgenned}/org.hl7.fhir.publisher.jar" fork="true" failonerror="true" maxmemory="2048m">
       <jvmarg line="-Dfile.encoding=UTF-8"/>
       <arg line="-ig ${basedir}/${dir.srcgenned}/${guidename}.json ${txParm}"/>
     </java>

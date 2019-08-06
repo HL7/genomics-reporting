@@ -1,31 +1,31 @@
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "genomics-reporting",
+  "id" : "hl7.fhir.uv.genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
-  "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
+  "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
   "version" : "0.3",
   "name" : "GenomicsReporting",
   "status" : "draft",
@@ -63,6 +63,11 @@
       "id" : "pharmacogenomics",
       "name" : "Pharmacogenomics",
       "description" : "Profiles for reports relating to genetic implication on medication use and effectiveness"
+    },
+    {
+      "id" : "cytogenomics",
+      "name" : "Cytogenomics",
+      "description" : "Profiles for reporting cytogenetic results"
     },
     {
       "id" : "abstract",
@@ -190,6 +195,11 @@
         {
           "nameUrl" : "sequencing.html",
           "title" : "Variant Reporting",
+          "generation" : "html"
+        },
+        {
+          "nameUrl" : "cytogenomics.html",
+          "title" : "Cytogenomic Reporting",
           "generation" : "html"
         },
         {
