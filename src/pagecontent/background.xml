@@ -19,15 +19,6 @@
   	Because DNA, RNA and even amino acid sequences can be exceptionally long - and are virtually the same for long stretches within a given species - reporting is typically done on the basis of differences between the sequence observed in the tested specimen and the sequence in a <strong>reference sequence</strong>. Such differences are called <strong>variations</strong>. They are not usually reported as a complete enumeration of the whole sequence of interest. This approach is also used because clinical relevance of genetic tests is based on the presence of divergence from the norm. Note that a sequence might still be relevant even if it is unchanged from the reference. 
   </p>
   <p>
-    While reporting variations from a reference covers many use cases, there are also genetic regions with so many variations found in a population there is no single 'normal' reference sequence. In those cases, often the full sequence is reported. A known version of that sequence can also be designated as a reference for comparison.
-  </p>
-  <p>
-  	Variations can be described at different levels of granularity, ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g. as seen in microsatellite instability) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms/Variations, abbreviated SNP or SNV depending on the context).
-  </p>
-  <p>
-    "Known" variations are often assigned codes and catalogued into code systems. This allows easy linking of knowledge to information found in a particular specimen. Reports can simply specify the <strong>code</strong> and know that clinicians can look up relevant information associated with the code. However, sometimes variations are detected that do not (yet) have a standardized code. In these cases, a description of the variation and where it was located must be communicated. Often, even when a code is known, the details about the location and type of change are communicated.
-  </p>
-  <p>
     Observed genetic findings (such as wild type, single variants, and co-occurring variants) can be collectively expressed as haplotypes and genotypes. Haplotypes describe a set of genetic findings that appear on a single DNA molecule. Genotypes describe combinations of haplotypes or variations at similar positions across both parental chromosomes. See <a href="sequencing.html">Variant Reporting</a> for more information.
   </p>
 
@@ -66,11 +57,20 @@
 
 
   <a name="variant"> </a>
-  <h3>Variant Detection</h3>
+  <h3>Variant Detection and Reporting</h3>
   <p>
     DNA, RNA and amino acid sequences can all be examined through a variety of mechanisms, ranging from direct sequencing, inference from microarrays, and mass spectrometry.
   </p>
   <p>
-    Variations are detected by comparing a patients genetic sequence with a reference using a variety of techniques each with their own trade-offs in terms of applicability, cost, speed, availability, and precision. Some can only be used for DNA but not RNA or amino acid sequences or can only detect certain types of changes, for example.
+    Variations are detected by comparing a patients genetic sequence with a reference using a variety of techniques. Each of these techniques come with their own trade-offs in terms of applicability, cost, speed, availability, and precision. For example, some techniques can only be used for DNA but not RNA or amino acid sequences. Others can only detect certain types of changes.
+  </p>
+  <p>
+    While reporting variations from a reference covers many use cases, there are also genetic regions with so many variations found in a population there is no single 'normal' reference sequence. In those cases, often the full sequence is reported. A known version of that sequence can also be designated as a reference for comparison.
+  </p>
+  <p>
+    Variations can be described at different levels of granularity, ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g. as seen in microsatellite instability) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms/Variations, abbreviated SNP or SNV depending on the context).
+  </p>
+  <p>
+    "Known" variations are often assigned codes and catalogued into code systems. This allows easy linking of knowledge to information found in a particular specimen. Reports can simply specify the <strong>code</strong> and know that clinicians can look up relevant information associated with the code. However, sometimes variations are detected that do not (yet) have a standardized code. In these cases, a description of the variation and where it was located must be communicated. Often, even when a code is known, the details about the location and type of change are communicated.
   </p>
 </div>
