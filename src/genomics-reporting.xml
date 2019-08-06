@@ -55,10 +55,12 @@
       <name value="Pharmacogenomics"/>
       <description value="Profiles for reports relating to genetic implication on medication use and effectiveness"/>
     </grouping>
+    <!--
     <grouping id="cytogenomics">
       <name value="Cytogenomics"/>
       <description value="Profiles for reporting cytogenetic results"/>
     </grouping>
+  -->
     <grouping id="abstract">
       <name value="Abstract"/>
       <description value="Abstract profiles holding common properties, outlining similarities in implementable profiles"/>
@@ -191,6 +193,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+    <!--    
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -203,7 +206,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="cytogenomics"/>
     </resource>
-    <!--
+
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -623,11 +626,13 @@
           <title value="Variant Reporting"/>
           <generation value="html"/>
         </page>
+        <!--
         <page>
           <nameUrl value="cytogenomics.html"/>
           <title value="Cytogenomic Reporting"/>
           <generation value="html"/>
         </page>
+      -->
         <page>
           <nameUrl value="pharmacogenomics.html"/>
           <title value="Pharmacogenomic Reporting"/>

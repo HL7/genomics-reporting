@@ -10,7 +10,7 @@
   <Author>Grahame</Author>
   <LastAuthor>James Jones</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-08-05T02:23:50Z</LastSaved>
+  <LastSaved>2019-08-06T04:18:07Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -33,8 +33,8 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>380</WindowTopX>
   <WindowTopY>460</WindowTopY>
-  <ActiveSheet>12</ActiveSheet>
-  <FirstVisibleSheet>7</FirstVisibleSheet>
+  <ActiveSheet>30</ActiveSheet>
+  <FirstVisibleSheet>21</FirstVisibleSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1143,7 +1143,7 @@
     <Cell ss:StyleID="s77"><Data ss:Type="String">obs-variant</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">obs-structural-genetic-finding</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1232,7 +1232,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>1</TopRowBottomPane>
+   <TopRowBottomPane>8</TopRowBottomPane>
    <SplitVertical>1</SplitVertical>
    <LeftColumnRightPane>1</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -1245,10 +1245,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
+     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>18</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2363,7 +2364,7 @@
   </AutoFilter>
  </Worksheet>
  <Worksheet ss:Name="obs-gen-grouper">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="23" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="22" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="178"/>
@@ -2828,32 +2829,6 @@
     <Cell ss:StyleID="s124"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">obs-structural-genetic-finding</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-structural-genetic-finding}</Data></Cell>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Y</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Structural Genetic Finding</Data></Cell>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">TBD</Data></Cell>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s124"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s123"><Data ss:Type="String">obs-genotype</Data></Cell>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
@@ -3026,7 +3001,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>2</ActiveRow>
+     <ActiveRow>15</ActiveRow>
+     <RangeSelection>R16</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -5332,7 +5308,7 @@
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-structural-genetic-finding}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(MolecularSequence)</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(MolecularSequence)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -5774,8 +5750,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>4</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -6016,7 +5991,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">0..*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-structural-genetic-finding}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(MolecularSequence)</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant}|Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype}|Reference(MolecularSequence)</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -6490,8 +6465,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>4</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -7219,7 +7193,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>4</LeftColumnRightPane>
+   <LeftColumnRightPane>15</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -7227,14 +7201,15 @@
     </Pane>
     <Pane>
      <Number>1</Number>
+     <ActiveCol>4</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>18</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -12287,7 +12262,7 @@
    <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='obs-variant'!R1C1:R77C24"
     ss:Hidden="1"/>
   </Names>
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="86" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="89" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s111" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s111" ss:AutoFitWidth="0" ss:Width="140"/>
@@ -14992,6 +14967,84 @@
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s110"/>
    </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="75" ss:StyleID="s85">
+    <Cell ss:StyleID="s121"><Data ss:Type="String">cytogenomic-nomenclature</Data></Cell>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data></Cell>
+    <Cell ss:StyleID="s93"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">0..1</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s93"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s111"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s93"><Data ss:Type="String">Cytogenomic Nomenclature</Data></Cell>
+    <Cell ss:StyleID="s97"><Data ss:Type="String">Fully describes a variant with a single code.  Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.</Data></Cell>
+    <Cell ss:StyleID="s98"/>
+    <Cell ss:StyleID="s97"/>
+    <Cell ss:StyleID="s98"/>
+    <Cell ss:StyleID="s99"/>
+    <Cell ss:StyleID="s100"/>
+    <Cell ss:StyleID="s100"/>
+    <Cell ss:StyleID="s102"/>
+    <Cell ss:StyleID="s102"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="120" ss:StyleID="s85">
+    <Cell ss:StyleID="s103"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.code</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s111"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;81291-7&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Variant ISCN</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">ISCN is a syntax for describing cytogenetic findings, from classical karyotypes to details that can be observed with copy number methodologies. Using ISCN nomenclature is highly recommended for reporting structural variants.</Data></Cell>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="75" ss:StyleID="s85">
+    <Cell ss:StyleID="s103"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.valueCodeableConcept</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"><Data ss:Type="String">Using ISCN nomenclature is highly recommended for reporting structural variants.</Data></Cell>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"><Data ss:Type="String">A.11</Data></Cell>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+   </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
    <PageSetup>
@@ -15005,13 +15058,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>80</TopRowBottomPane>
+   <TopRowBottomPane>83</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>12</LeftColumnRightPane>
+   <LeftColumnRightPane>15</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -15027,8 +15079,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>84</ActiveRow>
-     <ActiveCol>17</ActiveCol>
+     <ActiveRow>88</ActiveRow>
+     <ActiveCol>18</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -15668,8 +15720,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -16397,7 +16449,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>8</LeftColumnRightPane>
+   <LeftColumnRightPane>15</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -16412,8 +16464,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>18</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -16571,7 +16623,7 @@
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">ObsMedimplication</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s97"><Data ss:Type="String">Abstract profile for observations describing the implication of one or more genetic observations.</Data><NamedCell
+    <Cell ss:StyleID="s97"><Data ss:Type="String">Abstract profile for observations describing the implication of one or more genomic observations.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s98"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -19083,7 +19135,7 @@
     <Pane>
      <Number>0</Number>
      <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveCol>15</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -19273,7 +19325,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genetic variation's effect on drug metabolism</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic variation's effect on drug metabolism</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Predicted phenotype for drug efficacy. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -19598,7 +19650,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>4</LeftColumnRightPane>
+   <LeftColumnRightPane>10</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -19606,14 +19658,15 @@
     </Pane>
     <Pane>
      <Number>1</Number>
+     <ActiveCol>4</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -19805,7 +19858,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genetic variation's effect on transporter function</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic variation's effect on transporter function</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -20146,8 +20199,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -20337,7 +20390,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genetic variation's effect on drug efficiency</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic variation's effect on drug efficiency</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Predicted phenotype for ability of drug to bind to intended site in order to deliver intended affect. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -20677,8 +20730,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -20868,7 +20921,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genetic variation's effect on high-risk allele</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic variation's effect on high-risk allele</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">todo</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -21183,8 +21236,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -24115,7 +24168,7 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">E.g. Pathognomonic, Supportive, Argues Against, Rules Out</Data></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Indicates the diagnostic predictive nature of the associated genetic findings for the specified cancer - i.e. patient definitely has/may have/definitely doesn't have.</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">Indicates the diagnostic predictive nature of the associated genomic findings for the specified cancer - i.e. patient definitely has/may have/definitely doesn't have.</Data></Cell>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
@@ -26557,10 +26610,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <LeftColumnVisible>8</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>2</ActiveRow>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>15</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -38749,6 +38804,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -38768,8 +38824,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>27</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>22</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
