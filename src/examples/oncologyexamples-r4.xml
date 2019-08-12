@@ -77,11 +77,7 @@
          <Observation xmlns="http://hl7.org/fhir">
             <status value="final"/>
             <code>
-               <coding>
-                  <system value="http://loinc.org"/>
-                  <code value="123-4"/>
-                  <display value="Tumor Mutational Burden"/>
-               </coding>
+               <text value="Tumor Mutational Burden"/>
             </code>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -111,11 +107,7 @@
          <Observation xmlns="http://hl7.org/fhir">
             <status value="final"/>
             <code>
-               <coding>
-                  <system value="http://loinc.org"/>
-                  <code value="123-4"/>
-                  <display value="MSI status"/>
-               </coding>
+               <text value="MSI status"/>
             </code>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -217,7 +209,7 @@
                   <coding>
                      <system value="http://loinc.org"/>
                      <code value="LA6698-0"/>
-                     <display value="missense variant"/>
+                     <display value="Missense"/>
                   </coding>
                </valueCodeableConcept>
             </component>
@@ -233,7 +225,7 @@
                   <coding>
                      <system value="http://loinc.org"/>
                      <code value="LA6683-2"/>
-                     <display value="Unknown"/>
+                     <display value="Germline"/>
                   </coding>
                </valueCodeableConcept>
             </component>
@@ -342,7 +334,7 @@
                   <coding>
                      <system value="http://loinc.org"/>
                      <code value="LA6698-0"/>
-                     <display value="missense variant"/>
+                     <display value="Missense"/>
                   </coding>
                </valueCodeableConcept>
             </component>
@@ -358,7 +350,7 @@
                   <coding>
                      <system value="http://loinc.org"/>
                      <code value="LA6683-2"/>
-                     <display value="Unknown"/>
+                     <display value="Germline"/>
                   </coding>
                </valueCodeableConcept>
             </component>
@@ -466,7 +458,7 @@
                   <coding>
                      <system value="http://loinc.org"/>
                      <code value="LA6698-0"/>
-                     <display value="splice region variant"/>
+                     <display value="Missense"/>
                   </coding>
                </valueCodeableConcept>
             </component>
@@ -482,7 +474,7 @@
                   <coding>
                      <system value="http://loinc.org"/>
                      <code value="LA6683-2"/>
-                     <display value="Unknown"/>
+                     <display value="Germline"/>
                   </coding>
                </valueCodeableConcept>
             </component>
@@ -520,11 +512,7 @@
                </coding>
             </category>
             <code>
-               <coding>
-                  <system value="http://loinc.org"/>
-                  <code value="TBD-somatic-predictive"/>
-                  <display value="TBD-somatic-predictive"/>
-               </coding>
+               <text value="TBD-somatic-predictive"/>
             </code>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -556,11 +544,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-cancer"/>
-                     <display value="TBD-cancer"/>
-                  </coding>
+                  <text value="TBD-cancer"/>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -568,11 +552,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-medication"/>
-                     <display value="TBD-medication"/>
-                  </coding>
+                  <text value="TBD-medication"/>
                </code>
                <valueCodeableConcept>
                   <text value="Ruxolitinib"/>
@@ -597,11 +577,7 @@
                </coding>
             </category>
             <code>
-               <coding>
-                  <system value="http://loinc.org"/>
-                  <code value="TBD-somatic-predictive"/>
-                  <display value="TBD-somatic-predictive"/>
-               </coding>
+               <text value="TBD-somatic-predictive"/>
             </code>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -633,11 +609,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-cancer"/>
-                     <display value="TBD-cancer"/>
-                  </coding>
+                  <text value="TBD-cancer"/>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -645,11 +617,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-medication"/>
-                     <display value="TBD-medication"/>
-                  </coding>
+                  <text value="TBD-medication"/>
                </code>
                <valueCodeableConcept>
                   <text value="AT9283"/>
@@ -674,11 +642,7 @@
                </coding>
             </category>
             <code>
-               <coding>
-                  <system value="http://loinc.org"/>
-                  <code value="TBD-somatic-predictive"/>
-                  <display value="TBD-somatic-predictive"/>
-               </coding>
+               <text value="TBD-somatic-predictive"/>
             </code>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -710,11 +674,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-cancer"/>
-                     <display value="TBD-cancer"/>
-                  </coding>
+                  <text value="TBD-cancer"/>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -722,11 +682,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-medication"/>
-                     <display value="TBD-medication"/>
-                  </coding>
+                  <text value="TBD-medication"/>
                </code>
                <valueCodeableConcept>
                   <text value="SNX-5422"/>
@@ -751,11 +707,7 @@
                </coding>
             </category>
             <code>
-               <coding>
-                  <system value="http://loinc.org"/>
-                  <code value="TBD-somatic-predictive"/>
-                  <display value="TBD-somatic-predictive"/>
-               </coding>
+               <text value="TBD-somatic-predictive"/>
             </code>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -787,11 +739,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-cancer"/>
-                     <display value="TBD-cancer"/>
-                  </coding>
+                  <text value="TBD-cancer"/>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -799,11 +747,7 @@
             </component>
             <component>
                <code>
-                  <coding>
-                     <system value="http://loinc.org"/>
-                     <code value="TBD-medication"/>
-                     <display value="TBD-medication"/>
-                  </coding>
+                  <text value="TBD-medication"/>
                </code>
                <valueCodeableConcept>
                   <text value="TG02"/>
@@ -816,6 +760,90 @@
          <url value="Observation"/>
       </request>
    </entry>
+
+   <entry>
+      <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12f"/>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+                  <code value="laboratory"/>
+               </coding>
+            </category>
+            <code>
+               <text value="TBD-grouper"/>
+            </code>
+            <hasMember>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
+               <display value="SNV analysis for JAK2 variant"/>
+            </hasMember>
+            <hasMember>
+               <reference value="urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd"/>
+               <display value="SNV analysis for KDR variant"/>
+            </hasMember>
+            <hasMember>
+               <reference value="urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01"/>
+               <display value="SNV analysis for ERBB4 variant"/>
+            </hasMember>
+
+            <hasMember>
+               <reference value="urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f"/>
+               <display value="TMB value analysis"/>
+            </hasMember>
+            <hasMember>
+               <reference value="urn:uuid:64b91716-6431-41bd-8fd4-7ac99bebdee9"/>
+               <display value="MSI status analysis"/>
+            </hasMember>
+
+         </Observation>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Observation"/>
+      </request>
+   </entry>
+
+   <entry>
+      <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+                  <code value="laboratory"/>
+               </coding>
+            </category>
+            <code>
+               <text value="TBD-grouper"/>
+            </code>
+            <hasMember>
+               <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
+               <display value="Therapy match result 1"/>
+            </hasMember>
+            <hasMember>
+               <reference value="urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b"/>
+               <display value="Therapy match result 2"/>
+            </hasMember>
+            <hasMember>
+               <reference value="urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20"/>
+               <display value="Therapy match result 3"/>
+            </hasMember>
+            <hasMember>
+               <reference value="urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4"/>
+               <display value="Therapy match result 4"/>
+            </hasMember>
+         </Observation>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Observation"/>
+      </request>
+   </entry>
+
+
    <entry>
       <fullUrl value="urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5"/>
       <resource>
@@ -838,42 +866,17 @@
             <specimen>
                <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
+
             <result>
-               <reference value="urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f"/>
-               <display value="TMB value analysis"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12f"/>
+               <display value="Variants and other biomarker tests"/>
             </result>
+
             <result>
-               <reference value="urn:uuid:64b91716-6431-41bd-8fd4-7ac99bebdee9"/>
-               <display value="MSI status analysis"/>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
+               <display value="Therapy Match Results"/>
             </result>
-            <result>
-               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
-               <display value="SNV analysis for JAK2 variant"/>
-            </result>
-            <result>
-               <reference value="urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd"/>
-               <display value="SNV analysis for KDR variant"/>
-            </result>
-            <result>
-               <reference value="urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01"/>
-               <display value="SNV analysis for ERBB4 variant"/>
-            </result>
-            <result>
-               <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
-               <display value="Therapy match result 1"/>
-            </result>
-            <result>
-               <reference value="urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b"/>
-               <display value="Therapy match result 2"/>
-            </result>
-            <result>
-               <reference value="urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20"/>
-               <display value="Therapy match result 3"/>
-            </result>
-            <result>
-               <reference value="urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4"/>
-               <display value="Therapy match result 4"/>
-            </result>
+            
          </DiagnosticReport>
       </resource>
       <request>

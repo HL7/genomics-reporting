@@ -26,7 +26,7 @@
     Note that there are three coordinate systems one can use when referencing positions within a molecular sequence. For a detailed description of the three options, see <a href="https://s.details.loinc.org/LOINC/92822-6.html?sections=Comprehensive">here</a>.  For clarity and consistency, one must take care not to mix coordinate systems within the same resource instance.
   </p>
   <p>
-    The <i>Variant</i> profile can reference other Variant observations via <code>hasMember</code> when there is a need to represent a named grouping of variants that has a specified clinical effect or phenotype but is not a recognized <a href="obs-haplotype.html">Haplotype</a> or <a href="obs-genotype.html">Genotype</a>. An example would be a <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/438483/">compound heterozygote</a>, or other types of findings as in the Complex Variant Type component which uses <a href="https://r.details.loinc.org/AnswerList/LL3999-1.html">this LOINC code</a>.
+    The <i>Variant</i> profile can reference other Variant observations via <code>hasMember</code> when there is a need to represent a named grouping of variants that has a specified clinical effect or phenotype but is not a recognized <a href="obs-haplotype.html">Haplotype</a> or <a href="obs-genotype.html">Genotype</a>. An example would be a <a href="compound-heterozygote.html">compound heterozygote</a> as described <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/438483/">here</a>, or other types of findings as in the Complex Variant Type component which uses <a href="https://r.details.loinc.org/AnswerList/LL3999-1.html">this LOINC code</a>.
   </p>
 
 <!--

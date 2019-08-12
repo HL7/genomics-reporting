@@ -3,27 +3,27 @@
   "id" : "hl7.fhir.uv.genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
   "version" : "0.3",
@@ -118,6 +118,15 @@
       "name" : "Example - Full Bundle Oncology Example",
       "description" : "Full Bundle Oncology Example",
       "exampleCanonical" : "StructureDefinition/diagnosticreport",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Bundle/compound-heterozygote"
+      },
+      "name" : "Example - Complex Variant",
+      "description" : "Compound Heterozygote Variant Example",
+      "exampleCanonical" : "StructureDefinition/obs-variant",
       "groupingId" : "examples"
     },
     {
@@ -410,6 +419,11 @@
         {
           "nameUrl" : "oncologyexamples-r4.html",
           "title" : "Example - Full Bundle Oncology Example",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "compound-heterozygote.html",
+          "title" : "Example - Complex Variant",
           "generation" : "generated"
         },
         {

@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 6, 2019 06:50+0000 for FHIR v4.1.0 
+  Generated on Sun, Aug 11, 2019 20:15+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -455,6 +455,7 @@
       <xs:element ref="MessageHeader"/>
       <xs:element ref="MolecularSequence"/>
       <xs:element ref="NamingSystem"/>
+      <xs:element ref="NutritionIntake"/>
       <xs:element ref="NutritionOrder"/>
       <xs:element ref="Observation"/>
       <xs:element ref="ObservationDefinition"/>
@@ -506,6 +507,7 @@
       <xs:element ref="TerminologyCapabilities"/>
       <xs:element ref="TestReport"/>
       <xs:element ref="TestScript"/>
+      <xs:element ref="Topic"/>
       <xs:element ref="ValueSet"/>
       <xs:element ref="VerificationResult"/>
       <xs:element ref="VisionPrescription"/>
@@ -573,6 +575,7 @@
            <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
            <xs:element name="valueUsageContext" type="UsageContext"/>
            <xs:element name="valueDosage" type="Dosage"/>
+           <xs:element name="valueMeta" type="Meta"/>
          </xs:choice>
         </xs:sequence>
         <xs:attribute name="url" type="uri-primitive" use="required"/>
@@ -3021,6 +3024,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
            <xs:element name="defaultValueTriggerDefinition" type="TriggerDefinition"/>
            <xs:element name="defaultValueUsageContext" type="UsageContext"/>
            <xs:element name="defaultValueDosage" type="Dosage"/>
+           <xs:element name="defaultValueMeta" type="Meta"/>
          </xs:choice>
           <xs:element name="meaningWhenMissing" type="markdown" minOccurs="0" maxOccurs="1">
             <xs:annotation>
@@ -3085,6 +3089,7 @@ The type is the Canonical URL of Resource Definition that is the type this refer
            <xs:element name="fixedTriggerDefinition" type="TriggerDefinition"/>
            <xs:element name="fixedUsageContext" type="UsageContext"/>
            <xs:element name="fixedDosage" type="Dosage"/>
+           <xs:element name="fixedMeta" type="Meta"/>
          </xs:choice>
         <xs:choice minOccurs="0" maxOccurs="1">
            <xs:annotation>
@@ -3149,6 +3154,7 @@ When pattern[x] is used to constrain a complex object, it means that each proper
            <xs:element name="patternTriggerDefinition" type="TriggerDefinition"/>
            <xs:element name="patternUsageContext" type="UsageContext"/>
            <xs:element name="patternDosage" type="Dosage"/>
+           <xs:element name="patternMeta" type="Meta"/>
          </xs:choice>
           <xs:element name="example" type="ElementDefinition.Example" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
@@ -3441,6 +3447,7 @@ When pattern[x] is used to constrain a complex object, it means that each proper
            <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
            <xs:element name="valueUsageContext" type="UsageContext"/>
            <xs:element name="valueDosage" type="Dosage"/>
+           <xs:element name="valueMeta" type="Meta"/>
          </xs:choice>
         </xs:sequence>
       </xs:extension>
@@ -8972,6 +8979,11 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="onBehalfOf" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The organization of the practitioner.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="timing" minOccurs="0" maxOccurs="1" type="Timing">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">When the member is generally available within this care team.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
@@ -20883,6 +20895,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="zh">命名系统</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="NutritionIntake">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">NutritionIntake</xs:documentation>
+          <xs:documentation xml:lang="en">NutritionIntake</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="NutritionOrder">
         <xs:annotation>
           <xs:documentation xml:lang="en">NutritionOrder</xs:documentation>
@@ -21328,6 +21346,15 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="fr">ScriptTest</xs:documentation>
           <xs:documentation xml:lang="es">ScriptDePrueba</xs:documentation>
           <xs:documentation xml:lang="zh">测试脚本</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Topic">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Topic</xs:documentation>
+          <xs:documentation xml:lang="en">Topic</xs:documentation>
+          <xs:documentation xml:lang="fr">Sujet</xs:documentation>
+          <xs:documentation xml:lang="es">Tema</xs:documentation>
+          <xs:documentation xml:lang="zh">话题</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ValueSet">
@@ -30863,7 +30890,7 @@ The primary difference between a medicationusage and a medicationadministration 
               <xs:documentation xml:lang="en">Whether the Medicinal Product is subject to additional monitoring for regulatory reasons.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="specialMeasures" minOccurs="0" maxOccurs="unbounded" type="string">
+          <xs:element name="specialMeasure" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Whether the Medicinal Product is subject to special measures for regulatory reasons.</xs:documentation>
            </xs:annotation>
@@ -30972,7 +30999,7 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Type of the product name.</xs:documentation>
+              <xs:documentation xml:lang="en">Type of the product name, such as rINN or BAN.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="namePart" type="MedicinalProductDefinition.NamePart" minOccurs="0" maxOccurs="unbounded">
@@ -31045,7 +31072,7 @@ The primary difference between a medicationusage and a medicationadministration 
         <xs:sequence>
           <xs:element name="operationType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of manufacturing operation.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of manufacturing operation e.g. manufacturing itself, re-packaging.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="authorisationReferenceNumber" minOccurs="0" maxOccurs="1" type="Identifier">
@@ -32353,6 +32380,232 @@ The primary difference between a medicationusage and a medicationadministration 
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="NamingSystemType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NutritionIntake" type="NutritionIntake">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A record of food or fluid that is being consumed by a patient.   A NutritionIntake may indicate that the patient may be consuming the food or fluid now or has consumed the food or fluid in the past.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay or through an app that tracks food or fluids consumed.   The consumption information may come from sources such as the patient's memory, from a nutrition label,  or from a clinician documenting observed intake.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="NutritionIntake">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A record of food or fluid that is being consumed by a patient.   A NutritionIntake may indicate that the patient may be consuming the food or fluid now or has consumed the food or fluid in the past.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay or through an app that tracks food or fluids consumed.   The consumption information may come from sources such as the patient's memory, from a nutrition label,  or from a clinician documenting observed intake.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifiers associated with this Nutrition Intake that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A plan, proposal or order that is fulfilled in whole or in part by this event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A larger event of which this particular event is a component or step.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="NutritionIntakeStatusCodes">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code representing the patient or other source's judgment about the state of the intake that this assertion is about.  Generally, this will be active or completed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="statusReason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Captures the reason for the current state of the NutritionIntake.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="category" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates where the food or fluid was  consumed or prescribed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="consumedItem" type="NutritionIntake.ConsumedItem" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">What food or fluid product or item was consumed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="ingredientLabel" type="NutritionIntake.IngredientLabel" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Total nutrient amounts for the whole meal, product, serving, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The person, animal or group who is/was consuming the food or fluid.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The encounter that establishes the context for this NutritionIntake.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The interval of time during which it is being asserted that the patient is/was consuming the food or fluid.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="effectiveDateTime" type="dateTime"/>
+            <xs:element name="effectivePeriod" type="Period"/>
+          </xs:choice>
+          <xs:element name="dateAsserted" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date when the Nutrition Intake was asserted by the information source.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="informationSource" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The person or organization that provided the information about the consumption of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived from other resources.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="derivedFrom" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Allows linking the NutritionIntake to the underlying NutritionOrder, or to other information, such as AllergyIntolerance, that supports or is used to derive the NutritionIntake.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reason for why the food or fluid is /was consumed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reasonReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Condition or observation that supports why the food or fluid is /was consumed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Provides extra information about the Nutrition Intake that is not conveyed by the other attributes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NutritionIntake.ConsumedItem">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A record of food or fluid that is being consumed by a patient.   A NutritionIntake may indicate that the patient may be consuming the food or fluid now or has consumed the food or fluid in the past.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay or through an app that tracks food or fluids consumed.   The consumption information may come from sources such as the patient's memory, from a nutrition label,  or from a clinician documenting observed intake.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates what a category of item that was consumed: eg., food, fluid, enteral, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="nutritionProduct" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifies the food or fluid product that was consumed. This is potentially a link to a resource representing the details of the food product (TBD) or a simple attribute carrying a code that identifies the food from a known list of foods.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="schedule" minOccurs="0" maxOccurs="1" type="Timing">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Scheduled frequency of consumption.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="amount" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Quantity of the specified food.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="rate" minOccurs="0" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Rate at which enteral feeding was administered.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="notConsumed" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicator when a patient is in a setting where it is helpful to know if food was not consumed, such as it was refused, held (as in tube feedings), or otherwise not provided. If a consumption is being recorded from an app, such as MyFitnessPal, this indicator will likely not be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="notConsumedReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Document the reason the food or fluid was not consumed, such as refused, held, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NutritionIntake.IngredientLabel">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A record of food or fluid that is being consumed by a patient.   A NutritionIntake may indicate that the patient may be consuming the food or fluid now or has consumed the food or fluid in the past.  The source of this information can be the patient, significant other (such as a family member or spouse), or a clinician.  A common scenario where this information is captured is during the history taking process during a patient visit or stay or through an app that tracks food or fluids consumed.   The consumption information may come from sources such as the patient's memory, from a nutrition label,  or from a clinician documenting observed intake.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="nutrient" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Total nutrient consumed. This could be a macronutrient (protein, fat, carbohydrate), or a vitamin and mineral.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="amount" minOccurs="1" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Total amount of nutrient consumed.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NutritionIntakeStatusCodes-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="active">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Completed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered-in-error">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="intended">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Intended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stopped">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Stopped</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="on-hold">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">On Hold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="not-taken">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not Taken</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NutritionIntakeStatusCodes">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A coded concept indicating the current status of a NutritionIntake.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="NutritionIntakeStatusCodes-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -34376,6 +34629,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
             <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
             <xs:element name="valueUsageContext" type="UsageContext"/>
             <xs:element name="valueDosage" type="Dosage"/>
+            <xs:element name="valueMeta" type="Meta"/>
           </xs:choice>
           <xs:element name="resource" minOccurs="0" maxOccurs="1" type="ResourceContainer">
             <xs:annotation>
@@ -41206,6 +41460,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="defaultValueTriggerDefinition" type="TriggerDefinition"/>
             <xs:element name="defaultValueUsageContext" type="UsageContext"/>
             <xs:element name="defaultValueDosage" type="Dosage"/>
+            <xs:element name="defaultValueMeta" type="Meta"/>
           </xs:choice>
           <xs:element name="element" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
@@ -41626,20 +41881,35 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:element name="Subscription" type="Subscription">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</xs:documentation>
+      <xs:documentation xml:lang="en">The subscription resource describes a particular client's request to be notified about a Topic.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Subscription">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</xs:documentation>
+      <xs:documentation xml:lang="en">The subscription resource describes a particular client's request to be notified about a Topic.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this code system when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A natural language name identifying the subscription.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="SubscriptionStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">The status of the subscription, which marks the server state for managing the subscription.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="topic" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The reference to the topic to be notified about.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactPoint">
@@ -41657,14 +41927,19 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A description of why this subscription is defined.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="criteria" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="filterBy" type="Subscription.FilterBy" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The rules that the server should use to determine when to generate notifications for this subscription.</xs:documentation>
+              <xs:documentation xml:lang="en">The filter properties to be applied to narrow the topic stream.  When multiple filters are applied, evaluates to true if all the conditions are met; otherwise it returns false.   (i.e., logical AND).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="error" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="error" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A record of the last error that occurred when the server processed a notification.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="eventCount" minOccurs="0" maxOccurs="1" type="unsignedInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A record of  the number of events for which the server has attempted delivery on this subscription (i.e., the number of events that occurred while the subscription is in an &quot;active&quot; or &quot;error&quot; state -- not &quot;requested&quot; or &quot;off&quot;).   Server Initializes to 0 for a new subscription.  Repeated attempts at delivery of the *same* event notification do not increment this counter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="channel" type="Subscription.Channel" minOccurs="1" maxOccurs="1">
@@ -41676,14 +41951,40 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="Subscription.Channel">
+  <xs:complexType name="Subscription.FilterBy">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The subscription resource is used to define a push-based subscription from a server to another system. Once a subscription is registered with the server, the server checks every resource that is created or updated, and if the resource matches the given criteria, it sends a message on the defined &quot;channel&quot; so that another system can take an appropriate action.</xs:documentation>
+      <xs:documentation xml:lang="en">The subscription resource describes a particular client's request to be notified about a Topic.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="SubscriptionChannelType">
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The filter label (=key) as defined in the `Topic.canFilterBy.name`  element.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="matchType" minOccurs="0" maxOccurs="1" type="SubscriptionFilterByMatchType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The operator to apply to the filter value when determining matches (Search modifiers).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The literal value or resource path as is legal in search - for example, &quot;Patient/123&quot; or &quot;le1950&quot;.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Subscription.Channel">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The subscription resource describes a particular client's request to be notified about a Topic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of channel to send notifications on.</xs:documentation>
            </xs:annotation>
@@ -41693,17 +41994,73 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The url that describes the actual end-point to send messages to.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="payload" minOccurs="0" maxOccurs="1" type="code">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. If the payload is not present, then there is no payload in the notification, just a notification. The mime type &quot;text/plain&quot; may also be used for Email and SMS subscriptions.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="header" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Additional headers / information to send as part of the notification.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="heartbeatPeriod" minOccurs="0" maxOccurs="1" type="unsignedInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If present,  a 'hearbeat&quot; notification (keepalive) is sent via this channel with an the interval period equal to this elements integer value in seconds.    If not present, a heartbeat notification is not sent.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="payload" type="Subscription.Payload" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The payload mimetype and content.  If the payload is not present, then there is no payload in the notification, just a notification.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Subscription.Payload">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The subscription resource describes a particular client's request to be notified about a Topic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="contentType" minOccurs="0" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The mime type to send the payload in - either application/fhir+xml, or application/fhir+json. The mime type &quot;text/plain&quot; may also be used for Email and SMS subscriptions.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="content" minOccurs="0" maxOccurs="1" type="SubscriptionPayloadContent">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">How much of the resource content to deliver in the notification payload. The choices are an empty payload, only the resource id, or the full resource content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SubscriptionPayloadContent-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="empty">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">empty</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="id-only">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">id-only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="full-resource">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">full-resource</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SubscriptionPayloadContent">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Codes to represent how much resource content to send in the notification payload.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="SubscriptionPayloadContent-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -41742,43 +42099,43 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="SubscriptionChannelType-list">
+  <xs:simpleType name="SubscriptionFilterByMatchType-list">
     <xs:restriction base="code-primitive">
-      <xs:enumeration value="rest-hook">
+      <xs:enumeration value="=">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Rest Hook</xs:documentation>
+          <xs:documentation xml:lang="en">=</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="websocket">
+      <xs:enumeration value="in">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Websocket</xs:documentation>
+          <xs:documentation xml:lang="en">in</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="email">
+      <xs:enumeration value="not-in">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Email</xs:documentation>
+          <xs:documentation xml:lang="en">not-in</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="sms">
+      <xs:enumeration value="above">
         <xs:annotation>
-          <xs:documentation xml:lang="en">SMS</xs:documentation>
+          <xs:documentation xml:lang="en">above</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="message">
+      <xs:enumeration value="below">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Message</xs:documentation>
+          <xs:documentation xml:lang="en">below</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="SubscriptionChannelType">
+  <xs:complexType name="SubscriptionFilterByMatchType">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The type of method used to execute a subscription.</xs:documentation>
+      <xs:documentation xml:lang="en">Operator to apply to filter label.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="SubscriptionChannelType-list" use="optional"/>
+        <xs:attribute name="value" type="SubscriptionFilterByMatchType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -41956,7 +42313,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Supporting literature.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="comment" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
               <xs:documentation xml:lang="en">Textual comment about this record of a substance.</xs:documentation>
            </xs:annotation>
@@ -42059,7 +42416,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="molecularFormula" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Molecular formula.</xs:documentation>
+              <xs:documentation xml:lang="en">Molecular formula for this moiety of this substance, typically using the Hill system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
@@ -42147,7 +42504,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="molecularFormula" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Molecular formula.</xs:documentation>
+              <xs:documentation xml:lang="en">Molecular formula of this substance, typically using the Hill system.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="molecularFormulaByMoiety" minOccurs="0" maxOccurs="1" type="string">
@@ -42281,7 +42638,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Status of the code assignment.</xs:documentation>
+              <xs:documentation xml:lang="en">Status of the code assignment, for example 'provisional', 'approved'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusDate" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -42289,7 +42646,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The date at which the code status is changed as part of the terminology maintenance.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="comment" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
               <xs:documentation xml:lang="en">Any comment can be provided in this field, if necessary.</xs:documentation>
            </xs:annotation>
@@ -42317,12 +42674,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Name type.</xs:documentation>
+              <xs:documentation xml:lang="en">Name type, for example 'systematic',  'scientific, 'brand'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the name.</xs:documentation>
+              <xs:documentation xml:lang="en">The status of the name, for example 'current', 'proposed'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="preferred" minOccurs="0" maxOccurs="1" type="boolean">
@@ -42332,7 +42689,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="language" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Language of the name.</xs:documentation>
+              <xs:documentation xml:lang="en">Human language that the name is written in.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="domain" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -42347,12 +42704,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="synonym" type="SubstanceDefinition.Name" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A synonym of this name.</xs:documentation>
+              <xs:documentation xml:lang="en">A synonym of this particular name, by which the substance is also known.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="translation" type="SubstanceDefinition.Name" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A translation for this name.</xs:documentation>
+              <xs:documentation xml:lang="en">A translation for this name into another human language.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="official" type="SubstanceDefinition.Official" minOccurs="0" maxOccurs="unbounded">
@@ -42383,7 +42740,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the official name.</xs:documentation>
+              <xs:documentation xml:lang="en">The status of the official name, for example 'provisional', 'approved'.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -43908,6 +44265,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
             <xs:element name="valueUsageContext" type="UsageContext"/>
             <xs:element name="valueDosage" type="Dosage"/>
+            <xs:element name="valueMeta" type="Meta"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>
@@ -43978,6 +44336,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="valueTriggerDefinition" type="TriggerDefinition"/>
             <xs:element name="valueUsageContext" type="UsageContext"/>
             <xs:element name="valueDosage" type="Dosage"/>
+            <xs:element name="valueMeta" type="Meta"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>
@@ -45841,6 +46200,286 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="TestScriptRequestMethodCode-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Topic" type="Topic">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Describes a stream of resource state changes identified by trigger criteria and annotated with labels useful to filter projections from this topic.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="Topic">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Describes a stream of resource state changes identified by trigger criteria and annotated with labels useful to filter projections from this topic.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An absolute URL that is used to identify this Topic when it is referenced in a specification, model, design or an instance. This SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at which this Topic is (or will be) published. The URL SHOULD include the major version of the Topic. For more information see [Technical and Business Versions](resource.html#versions).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Business identifiers assigned to this Topic by the performer and/or other systems.  These identifiers remain constant as the resource is updated and propagates from server to server.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the Topic when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the Topic author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions are orderable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the Topic, for example, &quot;admission&quot;.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="derivedFromCanonical" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The canonical URL pointing to another FHIR-defined Topic that is adhered to in whole or in part by this Topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="derivedFromUri" minOccurs="0" maxOccurs="unbounded" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The URL pointing to an externally-defined subscription topic or other definition that is adhered to in whole or in part by this definition.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The current state of the Topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A flag to indicate that this Topic is authored for testing purposes (or education/evaluation/marketing), and is not intended to be used for genuine usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">For draft definitions, indicates the date of initial creation.  For active definitions, represents the date of activation.  For withdrawn definitions, indicates the date of withdrawal.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Helps establish the &quot;authority/credibility&quot; of the Topic.  May also allow for contact.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A free text natural language description of the Topic from the consumer's perspective.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching of code system definitions.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A jurisdiction in which the Topic is intended to be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Explains why this Topic is needed and why it has been designed as it has.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A copyright statement relating to the Topic and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the Topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date on which the asset content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date on which the asset content was last reviewed. Review happens periodically after that, but doesn't change the original approval date.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The period during which the Topic content was or is planned to be effective.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="resourceTrigger" type="Topic.ResourceTrigger" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The criteria for including updates to a nominated resource in the topic.  Thie criteria may be just a human readable description and/or a full FHIR search string or FHIRPath expression.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="canFilterBy" type="Topic.CanFilterBy" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">List of properties by which messages on the topic can be filtered.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Topic.ResourceTrigger">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Describes a stream of resource state changes identified by trigger criteria and annotated with labels useful to filter projections from this topic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The human readable description of what triggers inclusion into this topic -  for example, &quot;Beginning of a clinical encounter&quot;.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="resourceType" minOccurs="0" maxOccurs="unbounded" type="ResourceType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The list of resource types that are candidates for this topic.  For example, the Encounter resource is updated in an 'admission' topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="methodCriteria" minOccurs="0" maxOccurs="unbounded" type="InteractionTrigger">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The REST interaction based rules that the server should use to determine when to trigger a notification for this topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="queryCriteria" type="Topic.QueryCriteria" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The FHIR query based rules that the server should use to determine when to trigger a notification for this topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="fhirPathCriteria" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The FHIRPath based rules that the server should use to determine when to trigger a notification for this topic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Topic.QueryCriteria">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Describes a stream of resource state changes identified by trigger criteria and annotated with labels useful to filter projections from this topic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="previous" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The FHIR query based rules are applied to the previous resource state.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="current" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The FHIR query based rules are applied to the current resource state.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="requireBoth" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If set to true, both current and previous criteria must evaluate true to  trigger a notification for this topic.  Otherwise a notification for this topic will be triggered if either one evaluates to true.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Topic.CanFilterBy">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Describes a stream of resource state changes identified by trigger criteria and annotated with labels useful to filter projections from this topic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A search parameter (like &quot;patient&quot;) which is a label for the filter.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="matchType" minOccurs="0" maxOccurs="unbounded" type="TopicFilterByMatchType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Allowable operators to apply when determining matches (Search Modifiers).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Description of how this filter parameter is intended to be used.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="InteractionTrigger-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="create">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">create</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="update">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">update</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="delete">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">delete</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InteractionTrigger">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">FHIR RESTful interaction used for topic trigger.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="InteractionTrigger-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TopicFilterByMatchType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="=">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">=</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="in">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">in</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="not-in">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">not-in</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="above">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">above</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="below">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">below</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TopicFilterByMatchType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Operator to apply to filter label.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="TopicFilterByMatchType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
