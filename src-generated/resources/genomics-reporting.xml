@@ -70,7 +70,7 @@
     
     
     
-    <!--    
+    <!--
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -219,6 +219,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/compound-heterozygote"/>
+      </reference>
+      <name value="Example - Complex Variant"/>
+      <description value="Compound Heterozygote Variant Example"/>
+      <exampleCanonical value="StructureDefinition/obs-variant"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Observation/obs-idh-ex"/>
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
@@ -363,7 +372,7 @@
 </page>
 <page>
 <nameUrl value="task-rec-followup.html"/>
-<ns3:title xmlns:ns3="http://hl7.org/fhir" value="Recomended Followup"/>
+<ns3:title xmlns:ns3="http://hl7.org/fhir" value="Recommended Followup"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -512,33 +521,38 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="compound-heterozygote.html"/>
+<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example - Complex Variant"/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="obs-idh-ex.html"/>
-<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-hla-glstring-r4.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-genotype-hla-a-glstring-r4.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-haplotype-hla-a-1-r4.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen-hla-r4.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
+<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="servicerequest-hla-a-r4.html"/>
-<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
 <generation value="generated"/>
 </page>
 </page>

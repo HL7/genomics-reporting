@@ -80,7 +80,7 @@
   "headingOffset":""
 }</echo>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.includes}/artifacts.xml" style="${dir.xslt}/createArtifactSummary.xslt"/>
-    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guideid}.xml" style="${dir.xslt}/fixIg.xslt">
+    <xslt in="${dir.src}/${guidename}.xml" out="${dir.resources}/${guidename}.xml" style="${dir.xslt}/fixIg.xslt">
       <param name="alternate" expression="${additionalVersion}"/>
     </xslt>
     <xslt in="${dir.src}/${guidename}.xml" out="${dir.srcgenned}/${guidename}.json" style="${dir.xslt}/igToConfig.xslt">

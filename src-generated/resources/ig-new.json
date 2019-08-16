@@ -1,6 +1,6 @@
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "hl7.fhir.uv.genomics-reporting",
+  "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
     "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
@@ -25,7 +25,7 @@
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
     "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
-  "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
+  "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
   "name" : "GenomicsReporting",
   "status" : "draft",
@@ -63,11 +63,6 @@
       "id" : "pharmacogenomics",
       "name" : "Pharmacogenomics",
       "description" : "Profiles for reports relating to genetic implication on medication use and effectiveness"
-    },
-    {
-      "id" : "cytogenomics",
-      "name" : "Cytogenomics",
-      "description" : "Profiles for reporting cytogenetic results"
     },
     {
       "id" : "abstract",
@@ -204,11 +199,6 @@
         {
           "nameUrl" : "sequencing.html",
           "title" : "Variant Reporting",
-          "generation" : "html"
-        },
-        {
-          "nameUrl" : "cytogenomics.html",
-          "title" : "Cytogenomic Reporting",
           "generation" : "html"
         },
         {

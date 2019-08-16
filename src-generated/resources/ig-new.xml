@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="hl7.fhir.uv.genomics-reporting"/>
+  <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
     <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
@@ -20,7 +20,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
     <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
-  <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting"/>
+  <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="0.3"/>
   <name value="GenomicsReporting"/>
   <status value="draft"/>
@@ -55,10 +55,6 @@
     <grouping id="pharmacogenomics">
       <name value="Pharmacogenomics"/>
       <description value="Profiles for reports relating to genetic implication on medication use and effectiveness"/>
-    </grouping>
-    <grouping id="cytogenomics">
-      <name value="Cytogenomics"/>
-      <description value="Profiles for reporting cytogenetic results"/>
     </grouping>
     <grouping id="abstract">
       <name value="Abstract"/>
@@ -192,11 +188,6 @@
         <page>
           <nameUrl value="sequencing.html"/>
           <title value="Variant Reporting"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="cytogenomics.html"/>
-          <title value="Cytogenomic Reporting"/>
           <generation value="html"/>
         </page>
         <page>
