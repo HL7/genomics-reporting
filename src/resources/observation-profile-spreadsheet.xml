@@ -10,7 +10,7 @@
   <Author>Grahame</Author>
   <LastAuthor>Patrick Werner</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-08-20T11:05:24Z</LastSaved>
+  <LastSaved>2019-08-20T11:29:49Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -34,7 +34,7 @@
   <WindowTopX>2780</WindowTopX>
   <WindowTopY>1560</WindowTopY>
   <ActiveSheet>33</ActiveSheet>
-  <FirstVisibleSheet>25</FirstVisibleSheet>
+  <FirstVisibleSheet>18</FirstVisibleSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1024,7 +1024,7 @@
    </Borders>
    <Interior/>
   </Style>
-  <Style ss:ID="s180">
+  <Style ss:ID="s179">
    <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
   </Style>
  </Styles>
@@ -1251,7 +1251,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>19</ActiveRow>
+     <ActiveRow>10</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2530,7 +2530,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;TBD-grouper&quot;}]}</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;grouper&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genomics Grouper</Data></Cell>
@@ -3000,11 +3000,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <LeftColumnVisible>3</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>15</ActiveRow>
-     <RangeSelection>R16</RangeSelection>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -15063,7 +15064,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>1</TopRowBottomPane>
+   <TopRowBottomPane>18</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -15076,10 +15077,12 @@
     </Pane>
     <Pane>
      <Number>2</Number>
+     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>23</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -15703,7 +15706,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>11</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -15716,12 +15719,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>15</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -15785,11 +15787,14 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">If Y, indicates the element must be supported by conformant systems.  Defaults to N</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Binding</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font>       </ss:Data></Comment></Cell>
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Color="#000000">        </Font><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Value</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font>       </ss:Data></Comment></Cell>
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Pattern</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Like 'value' however while instance values must contain the specified components, they may contain others.</Font><Font
@@ -16449,7 +16454,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>15</LeftColumnRightPane>
+   <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -16457,7 +16462,6 @@
     </Pane>
     <Pane>
      <Number>1</Number>
-     <ActiveCol>4</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
@@ -16465,7 +16469,7 @@
     <Pane>
      <Number>0</Number>
      <ActiveRow>4</ActiveRow>
-     <ActiveCol>18</ActiveCol>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -38828,8 +38832,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>27</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>28</ActiveRow>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -39625,8 +39629,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">System</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The URL of the external code system from which the list is selected.  Must be the same for all codes if specified.</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The URL of the external code system from which the list is selected.  Must be the same for all codes if specified.</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Parent</Data><Comment
@@ -40405,14 +40408,13 @@
         x:Family="Swiss" html:Size="8" html:Color="#000000">The code to be sent over the wire</Font>       </ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Id</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Unique number for the code.  Required when System is not specified, not permitted otherwise</Font><Font
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Unique number for the code.  Required when System is not specified, not permitted otherwise</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">System</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The URL of the external code system from which the list is selected.  Must be the same for all codes if specified.</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The URL of the external code system from which the list is selected.  Must be the same for all codes if specified.</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Parent</Data><Comment
@@ -40443,8 +40445,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s92"><Data ss:Type="String">Committee Notes</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Additional notes about the code.  Not published</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Additional notes about the code.  Not published</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
@@ -40477,11 +40478,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">effect-transporter-function</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">effect-transporter-function</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">effect-transporter-function</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">effect-transporter-function</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s174"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
@@ -40491,11 +40492,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-diagnostic</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-diagnostic</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-diagnostic</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-diagnostic</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s171"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s171"><Data ss:Type="Number">1</Data></Cell>
@@ -40505,11 +40506,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-prognostic</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">5</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-prognostic</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s174"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
@@ -40519,11 +40520,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-prognostic-medication</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-medication</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">6</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-prognostic-medication</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-medication</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s174"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
@@ -40533,11 +40534,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-prognostic-treatment</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-treatment</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">7</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-prognostic-treatment</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-treatment</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s171"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s171"><Data ss:Type="Number">1</Data></Cell>
@@ -40547,11 +40548,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-predictive</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">8</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-predictive</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s174"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
@@ -40561,11 +40562,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-predictive-medication</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive-medication</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">9</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">somatic-predictive-medication</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive-medication</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s174"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
@@ -40575,11 +40576,11 @@
     <Cell ss:StyleID="s175"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s180"><Data ss:Type="String">associated-cancer</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">associated-cancer</Data></Cell>
     <Cell ss:StyleID="s160" ss:Formula="=R[-1]C+1"><Data ss:Type="Number">10</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s174"/>
-    <Cell ss:StyleID="s180"><Data ss:Type="String">associated-cancer</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">associated-cancer</Data></Cell>
     <Cell ss:StyleID="s174"/>
     <Cell ss:StyleID="s171"><Data ss:Type="String">0.1</Data></Cell>
     <Cell ss:StyleID="s171"><Data ss:Type="Number">1</Data></Cell>
@@ -41154,7 +41155,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>1</SplitVertical>
-   <LeftColumnRightPane>6</LeftColumnRightPane>
+   <LeftColumnRightPane>1</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -41162,15 +41163,13 @@
     </Pane>
     <Pane>
      <Number>1</Number>
-     <ActiveCol>1</ActiveCol>
     </Pane>
     <Pane>
      <Number>2</Number>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>10</ActiveRow>
-     <ActiveCol>8</ActiveCol>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
