@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sun, Aug 11, 2019 20:15+0000 for FHIR v4.1.0 
+  Generated on Wed, Aug 21, 2019 20:53+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -443,7 +443,6 @@
       <xs:element ref="ManufacturedItemDefinition"/>
       <xs:element ref="Measure"/>
       <xs:element ref="MeasureReport"/>
-      <xs:element ref="Media"/>
       <xs:element ref="Medication"/>
       <xs:element ref="MedicationAdministration"/>
       <xs:element ref="MedicationDispense"/>
@@ -954,6 +953,31 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
           <xs:element name="creation" type="dateTime" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">The date that the attachment was first created.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="height" type="positiveInt" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Height of the image in pixels (photo/video).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="width" type="positiveInt" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Width of the image in pixels (photo/video).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="frames" type="positiveInt" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="duration" type="decimal" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The duration of the recording in seconds - for audio and video.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="pages" type="positiveInt" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The number of pages when printed.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -6365,7 +6389,7 @@ The duration (usually in minutes) could also be provided to indicate the length 
           </xs:element>
           <xs:element name="securityContext" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. Media, DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.</xs:documentation>
+              <xs:documentation xml:lang="en">This element identifies another resource that can be used as a proxy of the security sensitivity to use when deciding and enforcing access control rules for the Binary resource. Given that the Binary resource contains very few elements that can be used to determine the sensitivity of the data and relationships to individuals, the referenced resource stands in as a proxy equivalent for this purpose. This referenced resource may be related to the Binary (e.g. DocumentReference), or may be some non-related Resource purely as a security proxy. E.g. to identify that the binary resource relates to a patient, and access should only be granted to applications that have access to the patient.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="data" minOccurs="0" maxOccurs="1" type="base64Binary">
@@ -8966,7 +8990,7 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="role" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="role" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates specific responsibility of an individual within the care team, such as &quot;Primary care physician&quot;, &quot;Trained social worker counselor&quot;, &quot;Caregiver&quot;, etc.</xs:documentation>
            </xs:annotation>
@@ -8981,16 +9005,13 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The organization of the practitioner.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="timing" minOccurs="0" maxOccurs="1" type="Timing">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">When the member is generally available within this care team.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates when the specific member or organization did (or is intended to) come into effect and end.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="coveragePeriod" type="Period"/>
+            <xs:element name="coverageTiming" type="Timing"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -13863,12 +13884,12 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:element name="Consent" type="Consent">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Consent">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -13914,13 +13935,16 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The organization that manages the consent, and the framework within which it is executed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="sourceAttachment" minOccurs="0" maxOccurs="unbounded" type="Attachment">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The source on which this consent statement is based. The source might be a scanned original paper form, or a reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="sourceAttachment" type="Attachment"/>
-            <xs:element name="sourceReference" type="Reference"/>
-          </xs:choice>
+              <xs:documentation xml:lang="en">The source on which this consent statement is based. The source might be a scanned original paper form.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="sourceReference" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A reference to a consent that links back to such a source, a reference to a document repository (e.g. XDS) that stores the original consent document.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="policy" type="Consent.Policy" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.</xs:documentation>
@@ -13947,7 +13971,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Consent.Policy">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -13968,7 +13992,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Consent.Verification">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -13994,7 +14018,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Consent.Provision">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -14060,7 +14084,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Consent.Actor">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -14081,7 +14105,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Consent.Data">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
+      <xs:documentation xml:lang="en">A record of a healthcare consumer’s  choices  or choices made on their behalf by a third party, which permits or denies identified recipient(s) or recipient role(s) to perform one or more actions within a given policy context, for specific purposes and periods of time.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -17740,12 +17764,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:element name="DocumentReference" type="DocumentReference">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* seralized object with a mime-type, so includes formal patient centric documents (CDA), clniical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="DocumentReference">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* seralized object with a mime-type, so includes formal patient centric documents (CDA), clniical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -17837,7 +17861,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="DocumentReference.RelatesTo">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* seralized object with a mime-type, so includes formal patient centric documents (CDA), clniical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -17858,7 +17882,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="DocumentReference.Content">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* seralized object with a mime-type, so includes formal patient centric documents (CDA), clniical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -17879,7 +17903,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="DocumentReference.Context">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. Provides metadata about the document so that the document can be discovered and managed. The scope of a document is any seralized object with a mime-type, so includes formal patient centric documents (CDA), cliical notes, scanned paper, and non-patient specific documents like policy text.</xs:documentation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* seralized object with a mime-type, so includes formal patient centric documents (CDA), clniical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -17917,6 +17941,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="related" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Related identifiers or resources associated with the DocumentReference.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A procedure that is fulfilled in whole or in part by the creation of this media.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -20794,16 +20823,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="en">MeasureReport</xs:documentation>
           <xs:documentation xml:lang="es">ReporteMedida</xs:documentation>
           <xs:documentation xml:lang="zh">指标报告</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Media">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Media</xs:documentation>
-          <xs:documentation xml:lang="en">Media</xs:documentation>
-          <xs:documentation xml:lang="it">Media</xs:documentation>
-          <xs:documentation xml:lang="fr">Média</xs:documentation>
-          <xs:documentation xml:lang="es">Medio</xs:documentation>
-          <xs:documentation xml:lang="zh">媒体</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Medication">
@@ -29110,135 +29129,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="MeasureReportType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Media" type="Media">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="Media">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">A photo, video, or audio recording acquired or used in healthcare. The actual content may be inline or provided by direct reference.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Identifiers associated with the image - these may include identifiers for the image itself, identifiers for the context of its collection (e.g. series ids) and context ids such as accession numbers or other workflow identifiers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A procedure that is fulfilled in whole or in part by the creation of this media.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A larger event of which this particular event is a component or step.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="EventStatus">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The current state of the {{title}}.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A code that classifies whether the media is an image, video or audio recording or some other media category.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="modality" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Details of the type of the media - usually, how it was acquired (what type of device). If images sourced from a DICOM system, are wrapped in a Media resource, then this is the modality.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="view" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the imaging view e.g. Lateral or Antero-posterior (AP).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Who/What this Media is a record of.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The encounter that establishes the context for this media.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date and time(s) at which the media was collected.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="createdDateTime" type="dateTime"/>
-            <xs:element name="createdPeriod" type="Period"/>
-          </xs:choice>
-          <xs:element name="issued" minOccurs="0" maxOccurs="1" type="instant">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date and time this version of the media was made available to providers, typically after having been reviewed.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="operator" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The person who administered the collection of the image.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reasonCode" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Describes why the event occurred in coded or textual form.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="bodySite" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates the site on the subject's body where the observation was made (i.e. the target site).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="deviceName" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the device / manufacturer of the device  that was used to make the recording.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="device" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The device used to collect the media.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="height" minOccurs="0" maxOccurs="1" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Height of the image in pixels (photo/video).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="width" minOccurs="0" maxOccurs="1" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Width of the image in pixels (photo/video).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="frames" minOccurs="0" maxOccurs="1" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The number of frames in a photo. This is used with a multi-page fax, or an imaging acquisition context that takes multiple slices in a single image, or an animated gif. If there is more than one frame, this SHALL have a value in order to alert interface software that a multi-frame capable rendering widget is required.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="duration" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The duration of the recording in seconds - for audio and video.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="content" minOccurs="1" maxOccurs="1" type="Attachment">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The actual content of the media - inline or by direct reference to the media source file.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Comments made about the media by the performer, subject or other participants.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

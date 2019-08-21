@@ -10,7 +10,7 @@
   <Author>Grahame</Author>
   <LastAuthor>Patrick Werner</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-08-21T10:43:38Z</LastSaved>
+  <LastSaved>2019-08-21T22:26:09Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -29,12 +29,11 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17440</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>2780</WindowTopX>
-  <WindowTopY>1520</WindowTopY>
-  <ActiveSheet>24</ActiveSheet>
-  <FirstVisibleSheet>16</FirstVisibleSheet>
+  <WindowHeight>19420</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>460</WindowTopY>
+  <ActiveSheet>3</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -2445,8 +2444,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Short description or code1 | code2 | code3 +</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s91"><Data ss:Type="String">Definition</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Full definition - required</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Full definition - required</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s91"><Data ss:Type="String">Requirements</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -2535,7 +2533,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;grouper&quot;}]}</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;grouper&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genomics Grouper</Data></Cell>
@@ -3005,7 +3003,9 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <LeftColumnVisible>3</LeftColumnVisible>
+   <Zoom>136</Zoom>
+   <Selected/>
+   <LeftColumnVisible>5</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -9847,8 +9847,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Pattern</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Like 'value' however while instance values must contain the specified components, they may contain others.</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Like 'value' however while instance values must contain the specified components, they may contain others.</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Example</Data><Comment
@@ -10168,7 +10167,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;mode-of-inheritance&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;mode-of-inheritance&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12258,8 +12257,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>16</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveRow>9</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -15795,12 +15794,11 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">If Y, indicates the element must be supported by conformant systems.  Defaults to N</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Binding</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Value</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font><Font
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Pattern</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
@@ -19865,7 +19863,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes-codes&quot;,&quot;code&quot;:&quot;effect-transporter-function&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;effect-transporter-function&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -20210,7 +20208,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
+     <ActiveRow>14</ActiveRow>
      <ActiveCol>17</ActiveCol>
     </Pane>
    </Panes>
@@ -21494,7 +21492,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;associated-cancer&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;associated-cancer&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -23999,7 +23997,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>5</ActiveRow>
+     <ActiveRow>4</ActiveRow>
      <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
@@ -24174,7 +24172,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;somatic-diagnostic&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-diagnostic&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">E.g. Pathognomonic, Supportive, Argues Against, Rules Out</Data></Cell>
@@ -26626,7 +26624,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
+     <ActiveRow>3</ActiveRow>
      <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
@@ -26773,7 +26771,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -26877,7 +26875,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic-medication&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic-medication&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -26955,7 +26953,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic-treatment&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic-treatment&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -29580,7 +29578,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;somatic-predictive&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-predictive&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -29684,7 +29682,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;somatic-predictive-medication&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-predictive-medication&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -32638,7 +32636,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;region-scope&quot;}]}</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;region-scope&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:Index="17" ss:StyleID="s108"/>
@@ -32713,7 +32711,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;region-coverage&quot;}]}</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;region-coverage&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:Index="17" ss:StyleID="s108"/>
@@ -32993,7 +32991,6 @@
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <Zoom>168</Zoom>
-   <Selected/>
    <TopRowVisible>18</TopRowVisible>
    <LeftColumnVisible>5</LeftColumnVisible>
    <Panes>
