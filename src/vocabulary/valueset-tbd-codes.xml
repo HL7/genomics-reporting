@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir">
+    <id value="TBD-codes"/>
     <status value="active"/>
     <compose>
         <include>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes"/>
         </include>
     </compose>
     <expansion>
@@ -59,6 +60,16 @@
             <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes"/>
             <code value="associated-cancer"/>
             <display value="associated-cancer"/>
+        </contains>
+        <contains>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes"/>
+            <code value="region-scope"/>
+            <display value="region-scope"/>
+        </contains>
+        <contains>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes"/>
+            <code value="region-coverage"/>
+            <display value="region-coverage"/>
         </contains>
     </expansion>
 </ValueSet>

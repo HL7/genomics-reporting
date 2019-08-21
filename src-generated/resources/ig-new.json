@@ -78,6 +78,11 @@
       "id" : "examples",
       "name" : "Example(s)",
       "description" : "Example(s) showing the use of the CG profiles"
+    },
+    {
+      "id" : "vocab",
+      "name" : "Vocab",
+      "description" : "vocab"
     }],
     "resource" : [{
       "reference" : {
@@ -177,6 +182,22 @@
       "description" : "ServiceRequest example: High-resolution HLA-A genotyping",
       "exampleCanonical" : "StructureDefinition/servicerequest",
       "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/TBD-codes"
+      },
+      "name" : "TBD-codes",
+      "description" : "TBD-codes",
+      "groupingId" : "vocab"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/TBD-codes"
+      },
+      "name" : "TBD-codes",
+      "description" : "TBD-codes",
+      "groupingId" : "vocab"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -444,6 +465,16 @@
         {
           "nameUrl" : "servicerequest-hla-a-r4.html",
           "title" : "Example - Service request for high-resolution HLA-A genotyping",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "TBD-codes.html",
+          "title" : "TBD-codes",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-TBD-codes.html",
+          "title" : "TBD-codes",
           "generation" : "generated"
         }]
       },

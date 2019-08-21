@@ -68,6 +68,10 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </grouping>
+    <grouping id="vocab">
+      <name value="Vocab"/>
+      <description value="vocab"/>
+    </grouping>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -166,6 +170,22 @@
       <description value="ServiceRequest example: High-resolution HLA-A genotyping"/>
       <exampleCanonical value="StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/TBD-codes"/>
+      </reference>
+      <name value="TBD-codes"/>
+      <description value="TBD-codes"/>
+      <groupingId value="vocab"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/TBD-codes"/>
+      </reference>
+      <name value="TBD-codes"/>
+      <description value="TBD-codes"/>
+      <groupingId value="vocab"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -433,6 +453,16 @@
         <page>
           <nameUrl value="servicerequest-hla-a-r4.html"/>
           <title value="Example - Service request for high-resolution HLA-A genotyping"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="TBD-codes.html"/>
+          <title value="TBD-codes"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-TBD-codes.html"/>
+          <title value="TBD-codes"/>
           <generation value="generated"/>
         </page>
       </page>

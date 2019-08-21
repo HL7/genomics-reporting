@@ -73,6 +73,10 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </grouping>
+      <grouping id="vocab">
+          <name value="Vocab"/>
+          <description value="vocab"/>
+      </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -612,6 +616,23 @@
       <exampleCanonical value="StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
     </resource>
+    <resource>
+      <reference>
+          <reference value="CodeSystem/TBD-codes"/>
+      </reference>
+      <name value="TBD-codes"/>
+      <description value="TBD-codes"/>
+      <groupingId value="vocab"/>
+    </resource>
+      <resource>
+          <reference>
+              <reference value="ValueSet/TBD-codes"/>
+          </reference>
+          <name value="TBD-codes"/>
+          <description value="TBD-codes"/>
+          <groupingId value="vocab"/>
+      </resource>
+
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
