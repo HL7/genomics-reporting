@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -182,6 +182,22 @@
       "description" : "ServiceRequest example: High-resolution HLA-A genotyping",
       "exampleCanonical" : "StructureDefinition/servicerequest",
       "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/tbd-codes"
+      },
+      "name" : "TBD-codes",
+      "description" : "TBD-codes",
+      "groupingId" : "vocab"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/tbd-codes"
+      },
+      "name" : "TBD-codes-vs",
+      "description" : "TBD-codes-vs",
+      "groupingId" : "vocab"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -449,6 +465,16 @@
         {
           "nameUrl" : "servicerequest-hla-a-r4.html",
           "title" : "Example - Service request for high-resolution HLA-A genotyping",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "tbd-codes.html",
+          "title" : "TBD-codes",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-tbd-codes.html",
+          "title" : "TBD-codes-vs",
           "generation" : "generated"
         }]
       },
