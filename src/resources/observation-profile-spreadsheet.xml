@@ -8,9 +8,9 @@
  xmlns:html="http://www.w3.org/TR/REC-html40">
  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
   <Author>Grahame</Author>
-  <LastAuthor>Patrick Werner</LastAuthor>
+  <LastAuthor>James Jones</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-08-21T22:26:09Z</LastSaved>
+  <LastSaved>2019-08-25T19:29:31Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -29,11 +29,12 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>19420</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
-  <WindowTopX>32767</WindowTopX>
-  <WindowTopY>460</WindowTopY>
-  <ActiveSheet>3</ActiveSheet>
+  <WindowHeight>15560</WindowHeight>
+  <WindowWidth>27640</WindowWidth>
+  <WindowTopX>780</WindowTopX>
+  <WindowTopY>960</WindowTopY>
+  <ActiveSheet>17</ActiveSheet>
+  <FirstVisibleSheet>10</FirstVisibleSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1022,6 +1023,9 @@
     <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="3"/>
    </Borders>
    <Interior/>
+  </Style>
+  <Style ss:ID="s179">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Color="#000000"/>
   </Style>
  </Styles>
  <Worksheet ss:Name="Instructions">
@@ -2428,20 +2432,25 @@
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Binding for coded data - either from local Bindings tab or declared elsewhere</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Value</Data><Comment ss:Author=""><ss:Data
-       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font>       </ss:Data></Comment></Cell>
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">        </Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The fixed value for this element.  XML for complex elements, string for simple data types</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Pattern</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Like 'value' however while instance values must contain the specified components, they may contain others.</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Example</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">An example of the expected sort of value for this element.</Font>       </ss:Data></Comment></Cell>
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Color="#000000">        </Font><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">An example of the expected sort of value for this element.</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Max Length</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The longest content allowed to be sent by conformant systems.  Only allowed for simple data types</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Short Name</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Short description or code1 | code2 | code3 +</Font>       </ss:Data></Comment></Cell>
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Color="#000000">        </Font><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Short description or code1 | code2 | code3 +</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s91"><Data ss:Type="String">Definition</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Full definition - required</Font><Font
@@ -2532,8 +2541,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
+    <Cell><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-grouper&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;grouper&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genomics Grouper</Data></Cell>
@@ -3004,13 +3014,12 @@
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <Zoom>136</Zoom>
-   <Selected/>
-   <LeftColumnVisible>5</LeftColumnVisible>
+   <LeftColumnVisible>8</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>3</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>10</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -3749,7 +3758,7 @@
     <Pane>
      <Number>0</Number>
      <ActiveRow>2</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -10167,7 +10176,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;mode-of-inheritance&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-mode-of-inheritance&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -19863,7 +19872,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;effect-transporter-function&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-effect-transporter-function&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -20188,6 +20197,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -20208,8 +20218,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>14</ActiveRow>
-     <ActiveCol>17</ActiveCol>
+     <ActiveRow>2</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -21492,7 +21501,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;associated-cancer&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-associated-cancer&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -24170,9 +24179,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-diagnostic&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-somatic-diagnostic&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">E.g. Pathognomonic, Supportive, Argues Against, Rules Out</Data></Cell>
@@ -26618,14 +26627,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Zoom>174</Zoom>
-   <TopRowVisible>1</TopRowVisible>
-   <LeftColumnVisible>7</LeftColumnVisible>
+   <Zoom>75</Zoom>
    <Panes>
     <Pane>
      <Number>3</Number>
      <ActiveRow>3</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -26769,9 +26776,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-somatic-prognostic&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -26873,9 +26880,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic-medication&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-somatic-prognostic-medication&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -26951,9 +26958,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic-treatment&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-somatic-prognostic-treatment&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -29425,14 +29432,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Zoom>181</Zoom>
-   <TopRowVisible>5</TopRowVisible>
-   <LeftColumnVisible>4</LeftColumnVisible>
+   <TopRowVisible>1</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>9</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -29576,9 +29581,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-predictive&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-somatic-predictive&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -29680,9 +29685,9 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-predictive-medication&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-somatic-predictive-medication&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -32154,14 +32159,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Zoom>188</Zoom>
-   <TopRowVisible>3</TopRowVisible>
-   <LeftColumnVisible>5</LeftColumnVisible>
+   <Zoom>75</Zoom>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -32635,8 +32638,8 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;region-scope&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-region-scope&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:Index="17" ss:StyleID="s108"/>
@@ -32710,8 +32713,8 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;region-coverage&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD-codes</Data></Cell>
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TBD-codes&quot;,&quot;code&quot;:&quot;TBD-codes-region-coverage&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:Index="17" ss:StyleID="s108"/>
@@ -32990,14 +32993,13 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Zoom>168</Zoom>
+   <Zoom>56</Zoom>
    <TopRowVisible>18</TopRowVisible>
-   <LeftColumnVisible>5</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
      <ActiveRow>18</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -38768,11 +38770,11 @@
     <Cell ss:StyleID="s149"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s148"/>
-    <Cell ss:StyleID="s148"/>
-    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s103"><Data ss:Type="String">TBD-codes</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">TBD Codes</Data></Cell>
+    <Cell ss:StyleID="s148"><Data ss:Type="String">code list</Data></Cell>
+    <Cell ss:StyleID="s148"><Data ss:Type="String">example</Data></Cell>
+    <Cell ss:StyleID="s148"><Data ss:Type="String">#TBD-codes</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
@@ -38846,7 +38848,7 @@
     <Pane>
      <Number>0</Number>
      <ActiveRow>28</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -39605,8 +39607,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveCol>6</ActiveCol>
-     <RangeSelection>C7:C9</RangeSelection>
+     <ActiveRow>9</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -40386,8 +40388,792 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>8</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+  <AutoFilter x:Range="R1C1:R1C12"
+   xmlns="urn:schemas-microsoft-com:office:excel">
+  </AutoFilter>
+ </Worksheet>
+ <Worksheet ss:Name="TBD-codes">
+  <Names>
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='TBD-codes'!R1C1:R1C12"
+    ss:Hidden="1"/>
+  </Names>
+  <Table ss:ExpandedColumnCount="12" ss:ExpandedRowCount="51" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s168" ss:DefaultColumnWidth="65"
+   ss:DefaultRowHeight="15">
+   <Column ss:StyleID="s168" ss:Width="80"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="35"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="155"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="80" ss:Span="1"/>
+   <Column ss:Index="6" ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="245"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="90"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="87"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="99"/>
+   <Column ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="84" ss:Span="1"/>
+   <Column ss:Index="12" ss:StyleID="s168" ss:AutoFitWidth="0" ss:Width="242"/>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s88"><Data ss:Type="String">Code</Data><Comment ss:Author=""><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">The code to be sent over the wire</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Id</Data><Comment ss:Author=""><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Unique number for the code.  Required when System is not specified, not permitted otherwise</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">System</Data><Comment
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The URL of the external code system from which the list is selected.  Must be the same for all codes if specified.</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Parent</Data><Comment
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The code this code is a specialization of (if any).  Content should be &quot;#&quot; + the Id of the parent code</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Display</Data><Comment
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Display value for code.  Omit if the code *is* the display value (as for internal codes)</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Definition</Data><Comment
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Meaning of the code.  Include unless meaning obvious to all users.  Required if display not</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Version</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Experimental</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">Publisher</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">v2</Data><Comment ss:Author=""><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Mappings to v2 codes - See wiki for syntax</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s89"><Data ss:Type="String">v3</Data><Comment ss:Author=""><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40">        <Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Mappings to v3 codes - See wiki for syntax</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s92"><Data ss:Type="String">Committee Notes</Data><Comment
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Additional notes about the code.  Not published</Font>       </ss:Data></Comment><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">grouper</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s171"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">grouper</Data></Cell>
+    <Cell ss:StyleID="s171"/>
+    <Cell ss:StyleID="s171"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s157"/>
+    <Cell ss:StyleID="s157"/>
+    <Cell ss:StyleID="s172"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">mode-of-inheritance</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">mode-of-inheritance</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">effect-transporter-function</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">effect-transporter-function</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-diagnostic</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-diagnostic</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-medication</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-medication</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-treatment</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-prognostic-treatment</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive-medication</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">somatic-predictive-medication</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">associated-cancer</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">associated-cancer</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">region-scope</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">region-scope</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s179"><Data ss:Type="String">region-coverage</Data></Cell>
+    <Cell ss:StyleID="s179"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s179"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s179"><Data ss:Type="String">region-coverage</Data></Cell>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s174"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s171"><Data ss:Type="String">HL7 CG</Data></Cell>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s173"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s148"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s160"/>
+    <Cell ss:StyleID="s175"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s176"/>
+    <Cell ss:StyleID="s163"/>
+    <Cell ss:StyleID="s151"/>
+    <Cell ss:StyleID="s177"/>
+    <Cell ss:StyleID="s177"/>
+    <Cell ss:StyleID="s177"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s174"/>
+    <Cell ss:StyleID="s163"/>
+    <Cell ss:StyleID="s163"/>
+    <Cell ss:StyleID="s178"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="7" ss:StyleID="s177"/>
+    <Cell ss:StyleID="s177"/>
+    <Cell ss:StyleID="s177"/>
+   </Row>
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>1</SplitHorizontal>
+   <TopRowBottomPane>1</TopRowBottomPane>
+   <SplitVertical>1</SplitVertical>
+   <LeftColumnRightPane>1</LeftColumnRightPane>
+   <ActivePane>0</ActivePane>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+    </Pane>
+    <Pane>
+     <Number>1</Number>
+    </Pane>
+    <Pane>
+     <Number>2</Number>
+    </Pane>
+    <Pane>
+     <Number>0</Number>
+     <ActiveRow>16</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

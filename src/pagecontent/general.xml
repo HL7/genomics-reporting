@@ -1,12 +1,50 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <p>
+   <p>
     This section defines the "core" profiles and concepts that would be expected to be present in most genomic reports, regardless of type and how those profiles relate to each other.  Concepts covered include the genomics report itself and the high-level categories of observations and other elements that make up the report, such as patient, specimen, variants, haplotypes, genotypes, etc.
   </p>
+
+
+  <a name="observations"> </a>
+  <h3>Genomic Observations</h3>
+  <p>
+    This guide defines a number of Observation profiles, with common underlying components and constraints being inherited from abstract profiles as shown in the following diagram. The profiles and their specific usage will be defined in more detail below and on the other pages of this guide.
+  </p>
+
+  <a name="inheritance"> </a>
+  <img src="1-general-fig0-high-level.png" alt="Class diagram showing the inheritance structure for genomic observations."/>
+  <p>
+    <b>Figure 0: Defined Genomic Observations</b>
+  </p>
+  <p>
+    (Profile links:
+    <a href="obs-base.html">Genomic Observation Common Properties</a>,
+    <a href="obs-overall.html">Overall Interpretation</a>,
+    <a href="obs-region-studied.html">Region Studied</a>,
+    <a href="obs-gen-grouper.html">Grouper</a>,
+    <a href="obs-comp-gen-finding.html">Genomic Finding (abstract)</a>,
+    <a href="obs-variant.html">Variant</a>,
+    <a href="obs-haplotype.html">Haplotype</a>,
+    <a href="obs-genotype.html">Genotype</a>,
+    <a href="obs-sequence-phase-reltn.html">Sequence Phase Relationship</a>,
+    <a href="obs-implication.html">Genomic Implication (abstract)</a>,
+    <a href="obs-inh-dis-path.html">Inherited Disease Pathogenicity</a>,
+    <a href="obs-med-implication.html">Medication Implication (abstract)</a>,
+    <a href="obs-efficacy.html">Medication Efficacy Implication</a>,
+    <a href="obs-transporter.html">Medication Transport Implication</a>,
+    <a href="obs-metabolism.html">Medication Metabolism Implication</a>,
+    <a href="obs-high-risk.html">High Risk Allele</a>,
+    <a href="obs-som-implication.html">Somatic Implication (abstract)</a>,
+    <a href="obs-som-diagnostic.html">Somatic Diagnostic Implication</a>,
+    <a href="obs-som-prognostic.html">Somatic Prognostic Implication</a>,
+    <a href="obs-som-predictive.html">Somatic Predictive Implication</a>)
+  </p>
+
+
 
   <a name="diagnosticreport"> </a>
   <h3>Diagnostic Report</h3>
   <p>
-    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis.  (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab.)  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of five categories:
+    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab).  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of six categories:
   </p>
   <a name="fig1"> </a>
   <img src="1-general-fig1-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
@@ -17,11 +55,10 @@
     (Profile links:
     <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="obs-gen-grouper.html">Grouper</a>,
-    Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
-    <a href="obs-implication.html">Genomic Implications</a>,
-    Genomic Finding (see <a href="#fig5">Figure 5</a>),
-    <a href="obs-region-studied.html">Region Studied</a>
-    )
+    <a href="obs-overall.html">Overall Interpretation</a>,
+    Genomic Implications (see <a href="#fig7">Figure 7</a>,
+    Genomic Findings (see <a href="#fig5">Figure 5</a>,
+    <a href="obs-region-studied.html">Region Studied</a>)
   </p>
   <table>
     <tbody>
@@ -44,6 +81,10 @@
       <tr>
         <th>Region Studied</th>
         <td>These are observations describing the region or regions that were studied as part of this Genomics Report.</td>
+      </tr>
+      <tr>
+        <th>Other Observations</th>
+        <td>The results of tests other than sequenced genomic variants may also be included the report.</td>
       </tr>
     </tbody>
   </table>
@@ -72,9 +113,11 @@
   </p>
   <p>
     (Profile links:
-    <a href="obs-gen-grouper.html">Grouper</a>,
-    Genomic Finding (see <a href="#fig5">Figure 5</a>),
-    <a href="obs-implication.html">Genomic Implications</a>
+    Genomic Implications (see <a href="#fig7">Figure 7</a>,
+    Genomic Findings (see <a href="#fig5">Figure 5</a>,
+    <a href="obs-overall.html">Overall Interpretation</a>,
+    <a href="task-rec-followup.html">Recommended Followup</a>,
+    
     )
   </p>
   <p>
@@ -89,12 +132,14 @@
     This diagram also shows a specific example of a <i>Recommended Action</i> - the <a href="task-rec-followup.html">Recommended Followup</a> which includes suggestions for confirmatory testing, additional testing and/or genomic counselling.
   </p>
 
+
+
   <!-- Yanked the old diagnostic report genomics stuff as it no longer applies and is covered either above or below. -->
   <!-- HLA content doesn't belong in the 'general' section.  Yanked it and moved it over to transplants where this stuff will be covered.  However, all of the old profiles will need to be re-done.  We can't reference them in this IG. -->
   <a name="general"> </a>
   <h3>General Relationships</h3>
   <p>
-    To allow searching and appropriate navigation, the diagnostic report, observations and tasks cannot stand on their own.  They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc.  FHIR design principles dictate that these associations be present on <i>every</i> resource instance.  That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc.  However, this is still relatively lightweight because the information is included by reference only.
+    To allow searching and appropriate navigation, the diagnostic report, observations and tasks must be able to stand on their own.  They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc.  FHIR design principles dictate that these associations be present on <i>every</i> resource instance.  That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc.  However, this is still relatively lightweight because the information is included by reference only.
   </p>
   <p>
     The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile.  Note that there is no expectation that all relationships will point to the same instances.  In special cases, a genomic report may involve multiple patients or multiple specimens.
@@ -112,7 +157,7 @@
     <a href="obs-base.html">Genomic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
     Genomic Finding (see <a href="#fig5">Figure 5</a>),
-    Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
+    <a href="obs-overall.html">Overall Genomic Interpretation</a>,
     <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-implication.html">Genomic Implications</a>
     )
@@ -153,7 +198,7 @@
     <a href="obs-base.html">Genomic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
     Genomic Finding (see <a href="#fig5">Figure 5</a>),
-    Overall Genomic Interpretation (see <a href="#fig6">Figure 6</a>),
+    <a href="obs-overall.html">Overall Interpretation</a>,
     <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-implication.html">Genomic Implications</a>,
     )
@@ -243,6 +288,7 @@
 
   <a name="interpretations"> </a>
   <h3>Genomic Interpretations</h3>
+  <!--
   <a name="fig6"> </a>
   <img src="1-general-fig6-interpretations.png" alt="Class diagram showing common interpretations."/>
   <p>
@@ -253,13 +299,14 @@
     <a href="obs-overall.html">Genomic Analysis Overall Coded Interpretation</a>
     )
   </p>
+-->
   <p>
-    Overall interpretations are high-level summary observations that apply to the whole report.  Typically there will only be one of each type - or at least one of each type for a given request for genomic test.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?":
+    Overall interpretations are high-level summary observations that apply to the whole report.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?":
   </p>
-  <ul>
-    <li><a href="obs-overall.html">Genomic Analysis Overall Coded Interpretation</a> is what the laboratory declares as the summary result of the test (e.g. Positive, Negative, Unknown) and is typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease was found or not.</li>
-  </ul>
-
+  <p>
+    <a href="obs-overall.html">Genomic Analysis Overall Coded Interpretation</a> is what the laboratory declares as the summary result of the test (e.g. Positive, Negative, Unknown) and is typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease was found or not.
+  </p>
+  
   <a name="implications"> </a>
   <h3>Genomic Implications</h3>
   <blockquote class="stu-note">
