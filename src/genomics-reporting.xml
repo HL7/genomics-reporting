@@ -49,11 +49,11 @@
     </grouping>
     <grouping id="somatics">
       <name value="Somatics"/>
-      <description value="Profiles related to the reporting of somatic genetic issues"/>
+      <description value="Profiles related to the reporting of somatic genomic issues"/>
     </grouping>
     <grouping id="pharmacogenomics">
       <name value="Pharmacogenomics"/>
-      <description value="Profiles for reports relating to genetic implication on medication use and effectiveness"/>
+      <description value="Profiles for reports relating to genomic implication on medication use and effectiveness"/>
     </grouping>
     <!--
     <grouping id="cytogenomics">
@@ -84,8 +84,8 @@
       <reference>
         <reference value="StructureDefinition/obs-base"/>
       </reference>
-      <name value="Genetic Observation Common Properties"/>
-      <description value="Base profile that defines characteristics shared by all genetic observations"/>
+      <name value="Genomic Observation Common Properties"/>
+      <description value="Base profile that defines characteristics shared by all genomic observations"/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -132,8 +132,8 @@
       <reference>
         <reference value="StructureDefinition/servicerequest"/>
       </reference>
-      <name value="Request for Genetics Test"/>
-      <description value="The lab order or request that triggered the execution of the genetics test"/>
+      <name value="Request for Genomics Test"/>
+      <description value="The lab order or request that triggered the execution of the genomics test"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -145,7 +145,7 @@
         <reference value="StructureDefinition/obs-gen-grouper"/>
       </reference>
       <name value="Observation Grouper"/>
-      <description value="Organizes information within a genetic report"/>
+      <description value="Organizes information within a genomic report"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -157,7 +157,7 @@
         <reference value="StructureDefinition/obs-overall"/>
       </reference>
       <name value="Genomic analysis overall interpretation"/>
-      <description value="Provides a coarse overall interpretation of the genetic results reported."/>
+      <description value="Provides a coarse overall interpretation of the genomic results reported."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -166,10 +166,10 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-comp-gen-finding"/>
+        <reference value="StructureDefinition/obs-gen-finding"/>
       </reference>
-      <name value="Computable Genetic Finding"/>
-      <description value="Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)"/>
+      <name value="Genomic Finding"/>
+      <description value="Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)"/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -255,8 +255,8 @@
       <reference>
         <reference value="StructureDefinition/obs-implication"/>
       </reference>
-      <name value="Genetic Implication"/>
-      <description value="Abstract profile for observations describing the implication of one or more genetic observations."/>
+      <name value="Genomic Implication"/>
+      <description value="Abstract profile for observations describing the implication of one or more genomic observations."/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -354,7 +354,7 @@
         <reference value="StructureDefinition/obs-med-implication"/>
       </reference>
       <name value="Medication Implication"/>
-      <description value="Abstract profile with common properties for observations that convey the potential implication of a genetic characteristics on a medication"/>
+      <description value="Abstract profile with common properties for observations that convey the potential implication of a genomic characteristics on a medication"/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>

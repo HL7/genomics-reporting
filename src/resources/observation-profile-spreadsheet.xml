@@ -8,9 +8,9 @@
  xmlns:html="http://www.w3.org/TR/REC-html40">
  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
   <Author>Grahame</Author>
-  <LastAuthor>Patrick Werner</LastAuthor>
+  <LastAuthor>James Jones</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-08-21T22:26:09Z</LastSaved>
+  <LastSaved>2019-08-26T02:35:34Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -29,11 +29,11 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>19420</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
-  <WindowTopX>32767</WindowTopX>
-  <WindowTopY>460</WindowTopY>
-  <ActiveSheet>3</ActiveSheet>
+  <WindowHeight>15500</WindowHeight>
+  <WindowWidth>27640</WindowWidth>
+  <WindowTopX>780</WindowTopX>
+  <WindowTopY>960</WindowTopY>
+  <ActiveSheet>1</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1128,7 +1128,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
-    <Cell ss:StyleID="s77"><Data ss:Type="String">obs-comp-gen-finding</Data></Cell>
+    <Cell ss:StyleID="s77"><Data ss:Type="String">obs-gen-finding</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
@@ -1233,6 +1233,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -1252,8 +1253,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>0</ActiveRow>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>14</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -3003,9 +3003,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Zoom>136</Zoom>
-   <Selected/>
-   <LeftColumnVisible>5</LeftColumnVisible>
+   <LeftColumnVisible>3</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -4496,10 +4494,10 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
  </Worksheet>
- <Worksheet ss:Name="obs-comp-gen-finding">
+ <Worksheet ss:Name="obs-gen-finding">
   <Names>
    <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='obs-comp-gen-finding'!R1C1:R11C24" ss:Hidden="1"/>
+    ss:RefersTo="='obs-gen-finding'!R1C1:R11C24" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="16" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
@@ -4629,7 +4627,7 @@
       ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="90">
-    <Cell ss:StyleID="s121"><Data ss:Type="String">ObsCompGenFinding</Data><NamedCell
+    <Cell ss:StyleID="s121"><Data ss:Type="String">ObsGenFinding</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s94"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -4646,7 +4644,7 @@
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s93"><Data ss:Type="String">ObsCompGenFinding</Data><NamedCell
+    <Cell ss:StyleID="s93"><Data ss:Type="String">ObsGenFinding</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s97"><Data ss:Type="String">Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)&#10;</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -5059,7 +5057,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>6</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -5072,12 +5070,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>13</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -5226,7 +5223,7 @@
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-comp-gen-finding}</Data><NamedCell
+    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-finding}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -5759,7 +5756,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>4</ActiveRow>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -5908,7 +5906,7 @@
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-comp-gen-finding}</Data><NamedCell
+    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-finding}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s96"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -6474,7 +6472,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>4</ActiveRow>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -9814,8 +9813,10 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font>       </ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s90"><Data ss:Type="String">Element</Data><Comment
-      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
-        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font>       </ss:Data></Comment><NamedCell
+      ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
+        html:Color="#000000">        </Font><Font html:Face="Tahoma"
+        x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font><Font
+        html:Color="#000000">       </Font></ss:Data></Comment><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Aliases</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -10033,7 +10034,7 @@
     <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">0..1</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">0..*</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -10049,7 +10050,8 @@
     <Cell ss:StyleID="s107"><Data ss:Type="String">The possible phenotype associated with the genetic variant found in this study.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">If sending multiple phenotypes, break up the assertions based on the independently assessed conditions, whether they be a single term or a collection of co-occurring terms.</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s109"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12237,7 +12239,7 @@
    <SplitHorizontal>1</SplitHorizontal>
    <TopRowBottomPane>3</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
-   <LeftColumnRightPane>4</LeftColumnRightPane>
+   <LeftColumnRightPane>14</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
    <Panes>
     <Pane>
@@ -12257,8 +12259,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>9</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>17</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -12419,7 +12421,7 @@
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-comp-gen-finding}</Data><NamedCell
+    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-finding}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s93"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -15070,7 +15072,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>18</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -15083,12 +15085,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>23</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -15850,7 +15851,7 @@
     <Cell ss:StyleID="s93"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
-    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-base}</Data></Cell>
+    <Cell ss:StyleID="s93"><Data ss:Type="String">{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-finding}</Data></Cell>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
     <Cell ss:StyleID="s96"/>
@@ -16473,8 +16474,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>4</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -20426,7 +20427,8 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:StyleID="s103"><Data ss:Type="String">LL539-8</Data><NamedCell
+      ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -20740,7 +20742,7 @@
     <Pane>
      <Number>0</Number>
      <ActiveRow>3</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -32169,7 +32171,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="obs-region-studied">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="29" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="26" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -32530,7 +32532,7 @@
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">0..1</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
@@ -32589,81 +32591,6 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="210">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">region-scope</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">0..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Region Scope</Data></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Defines the scope of the regions examined</Data></Cell>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="210">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.code</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;region-scope&quot;}]}</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="17" ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="120">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.value[x]</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">N</Data></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
-    <Cell ss:StyleID="s111"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genome|Exome|GenePanel|SpecificVariants</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
@@ -32990,14 +32917,13 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <Zoom>168</Zoom>
-   <TopRowVisible>18</TopRowVisible>
-   <LeftColumnVisible>5</LeftColumnVisible>
+   <Zoom>91</Zoom>
+   <TopRowVisible>10</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>18</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>12</ActiveRow>
+     <ActiveCol>5</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -38343,7 +38269,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">todo</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Binding not yet defined</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">unbound</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">example</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">example</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
@@ -38358,7 +38284,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL378-1</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic source class values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL378-1"><Data
       ss:Type="String">http://loinc.org/vs/LL378-1</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38374,7 +38300,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL380-7</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Amino acid change type values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL380-7"><Data
       ss:Type="String">http://loinc.org/vs/LL380-7</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38390,7 +38316,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL381-5</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Allelic state type values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL381-5"><Data
       ss:Type="String">http://loinc.org/vs/LL381-5</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38406,7 +38332,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL539-8</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genotype Medication Efficacy values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">preferred</Data></Cell>
     <Cell ss:StyleID="s126" ss:HRef="http://loinc.org/vs/LL539-8"><Data
       ss:Type="String">http://loinc.org/vs/LL539-8</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38422,7 +38348,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL541-4</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Overall genetic assessment values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">preferred</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL541-4"><Data
       ss:Type="String">http://loinc.org/vs/LL541-4</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38438,7 +38364,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1035-6</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">ISCN Band Levels</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL1035-6"><Data
       ss:Type="String">http://loinc.org/vs/LL1035-6</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38454,7 +38380,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1036-4</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Chromosome Banding Methods</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL1036-4"><Data
       ss:Type="String">http://loinc.org/vs/LL1036-4</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38470,7 +38396,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1038-0</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Cell Phases</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL1038-0"><Data
       ss:Type="String">http://loinc.org/vs/LL1038-0</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38486,7 +38412,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1039-8</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Human reference sequence assembly release numbers</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL1039-8"><Data
       ss:Type="String">http://loinc.org/vs/LL1039-8</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38502,7 +38428,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1040-6</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Human reference sequence NCBI build IDs</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">preferred</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">preferred</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL1040-6"><Data
       ss:Type="String">http://loinc.org/vs/LL1040-6</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38518,7 +38444,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1041-4</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Copy Number Change Types</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL1041-4"><Data
       ss:Type="String">http://loinc.org/vs/LL1041-4</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38534,7 +38460,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL1971-2</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genetic Variant Assessment</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s126" ss:HRef="http://loinc.org/vs/LL1971-2"><Data
       ss:Type="String">http://loinc.org/vs/LL1971-2</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38550,7 +38476,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL2353-2</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">High Risk Allele values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s167" ss:HRef="http://loinc.org/vs/LL2353-2"><Data
       ss:Type="String">http://loinc.org/vs/LL2353-2</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38566,7 +38492,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL3856-3</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genotype Medication Metabolism values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">preferred</Data></Cell>
     <Cell ss:StyleID="s126" ss:HRef="http://loinc.org/vs/LL3856-3"><Data
       ss:Type="String">http://loinc.org/vs/LL3856-3</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38582,7 +38508,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL3999-1</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Complex variant type</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL3999-1"><Data
       ss:Type="String">http://loinc.org/vs/LL3999-1</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38598,7 +38524,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4025-4</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Allelic phase values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL4025-4"><Data
       ss:Type="String">http://loinc.org/vs/LL4025-4</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38614,7 +38540,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4033-8</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">DNA change type values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">example</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL4033-8"><Data
       ss:Type="String">http://loinc.org/vs/LL4033-8</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38630,7 +38556,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4034-6</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Genetic sequence variation clinical significance values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL4034-6"><Data
       ss:Type="String">http://loinc.org/vs/LL4034-6</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38646,7 +38572,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4048-6</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Variant analysis method type</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">extensible</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL4048-6"><Data
       ss:Type="String">http://loinc.org/vs/LL4048-6</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38662,7 +38588,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4050-2</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Allelic phase basis values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">extensible</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL4050-2"><Data
       ss:Type="String">http://loinc.org/vs/LL4050-2</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38678,7 +38604,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4165-8</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Simple vs. Structural variant</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s166" ss:HRef="http://loinc.org/vs/LL4165-8"><Data
       ss:Type="String">http://loinc.org/vs/LL4165-8</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38694,7 +38620,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL4166-6</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Deletion/duplication detection values</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s126" ss:HRef="http://loinc.org/vs/LL4166-6"><Data
       ss:Type="String">http://loinc.org/vs/LL4166-6</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38710,7 +38636,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">LL5323-2</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Base coordinate systems start and end measurements for variants</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">preferred</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">preferred</Data></Cell>
     <Cell ss:StyleID="s126" ss:HRef="http://loinc.org/vs/LL5323-2"><Data
       ss:Type="String">http://loinc.org/vs/LL5323-2</Data></Cell>
     <Cell ss:StyleID="s148"/>
@@ -38726,7 +38652,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">HGNC</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">HGNC: Human Gene Nomenclature Committee</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">extensible</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">extensible</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">valueset-hgnc</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
@@ -38741,7 +38667,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">HGVS</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">HGVS: Sequence Variant Nomenclature from the Human Genome Variation Society </Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">value set</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">required</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">valueset-hgvs</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
@@ -38756,7 +38682,7 @@
     <Cell ss:StyleID="s103"><Data ss:Type="String">SeqPhaseRelationship</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Sequence Phase Relationship Types</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">code list</Data></Cell>
-    <Cell ss:StyleID="s148"><Data ss:Type="String">example</Data></Cell>
+    <Cell ss:StyleID="Default"><Data ss:Type="String">required</Data></Cell>
     <Cell ss:StyleID="s148"><Data ss:Type="String">#SeqPhaseRelationship</Data></Cell>
     <Cell ss:StyleID="s148"/>
     <Cell ss:StyleID="s148"/>
@@ -38845,7 +38771,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>28</ActiveRow>
+     <ActiveRow>5</ActiveRow>
      <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
