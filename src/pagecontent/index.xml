@@ -85,6 +85,9 @@
     <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a> and
     <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
   </p>
+  <p>
+    Many Observation profiles and components in this guide require sending codes from http://loinc.org. If necessary for implementation (e.g., to map to a local system), equivalent codes from other code systems may *also* be sent, following the <a href="{{site.data.fhir.path}}observation.html#usingcodes">guidance</a> on observation.
+  </p>
   <a name="content"> </a>
   <h3>Content and organization</h3>
   <p>
