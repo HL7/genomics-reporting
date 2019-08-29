@@ -11,9 +11,9 @@
   </p>
 
   <a name="inheritance"> </a>
-  <img src="1-general-fig0-high-level.png" alt="Class diagram showing the inheritance structure for genomic observations."/>
+  <img src="1-general-fig1-observations.png" alt="Class diagram showing the inheritance structure for genomic observations."/>
   <p>
-    <b>Figure 0: Defined Genomic Observations</b>
+    <b>Figure 1: Defined Genomic Observations</b>
   </p>
   <p>
     (Profile links:
@@ -46,8 +46,8 @@
   <p>
     The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab).  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of six categories:
   </p>
-  <a name="fig1"> </a>
-  <img src="1-general-fig1-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
+  <a name="fig2"> </a>
+  <img src="1-general-fig2-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
     <b>Figure 1: Genomic Report Overview</b>
   </p>
@@ -57,7 +57,7 @@
     <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-overall.html">Overall Interpretation</a>,
     Genomic Implications (see <a href="#fig7">Figure 7</a>,
-    Genomic Findings (see <a href="#fig5">Figure 5</a>,
+    Genomic Findings (see <a href="#fig6">Figure 6</a>,
     <a href="obs-region-studied.html">Region Studied</a>)
   </p>
   <table>
@@ -106,15 +106,15 @@
   <p>
     Note that it <b>is</b> possible for relationships to exist between the different observation components of a genomics report.  Such relationships are asserted directly on one of the affected observations.  Some of these relationship types are defined on the basis of the high-level observation category the observation belongs to.  Others will be defined for narrower categories or explicit observation types.  The high-level category relationships are shown in the following diagram:
   </p>
-  <a name="fig2"> </a>
-  <img src="1-general-fig2-category-relationships.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
+  <a name="fig3"> </a>
+  <img src="1-general-fig3-category-relationships.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
-    <b>Figure 2: Genomic Report Category Relationships</b>
+    <b>Figure 3: Genomic Report Category Relationships</b>
   </p>
   <p>
     (Profile links:
     Genomic Implications (see <a href="#fig7">Figure 7</a>,
-    Genomic Findings (see <a href="#fig5">Figure 5</a>,
+    Genomic Findings (see <a href="#fig6">Figure 6</a>,
     <a href="obs-overall.html">Overall Interpretation</a>,
     <a href="task-rec-followup.html">Recommended Followup</a>,
     
@@ -144,19 +144,19 @@
   <p>
     The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile.  Note that there is no expectation that all relationships will point to the same instances.  In special cases, a genomic report may involve multiple patients or multiple specimens.
   </p>
-  <a name="fig3"> </a>
-  <img src="1-general-fig3-other-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
+  <a name="fig4"> </a>
+  <img src="1-general-fig4-other-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
   <p>
     <b>Figure 3: Genomic Report Other Relationships</b>
   </p>
   <p>
     (Profile links:
-    Recommended Action (see <a href="#fig2">Figure 2</a>),
+    Recommended Action (see <a href="#fig3">Figure 3</a>),
     <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>,
     <a href="obs-base.html">Genomic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
-    Genomic Finding (see <a href="#fig5">Figure 5</a>),
+    Genomic Finding (see <a href="#fig6">Figure 6</a>),
     <a href="obs-overall.html">Overall Genomic Interpretation</a>,
     <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-implication.html">Genomic Implications</a>
@@ -179,10 +179,10 @@
   <p>
     Orders for genomic tests can point to other sources of information used to support the analysis performed as part of genomic testing.  Genomic reports can refer to this the information that was considered as part of the report - whether provided as part of the order or made available subsequently by the patient or clinicians or otherwise retrieved.  Figure 4 (below) shows these relationships, which can be to various Observations, FamilyMemberHistory records (including records that comply with <a href="{{site.data.fhir.path}}family-member-history-genetics.html">Family member history for genomics analysis</a> and <a href="{{site.data.fhir.path}}riskassessment.html">RiskAssessments</a>.  In some cases, the lab or other reporting organization may generate risk assessments as part of their reports.
   </p>
-  <a name="fig4"> </a>
-  <img src="1-general-fig4-supporting-info.png" alt="Class diagram showing supportingInfo links from ServiceRequest and DiagnosticReport."/>
+  <a name="fig5"> </a>
+  <img src="1-general-fig5-supporting-info.png" alt="Class diagram showing supportingInfo links from ServiceRequest and DiagnosticReport."/>
   <p>
-    <b>Figure 4: Genomics Report Supporting Information</b>
+    <b>Figure 5: Genomics Report Supporting Information</b>
   </p>
   <p>
     (Profile links:
@@ -192,12 +192,12 @@
   </p>
   <p>
     (Profile links:
-    Recommended Action (see <a href="#fig2">Figure 2</a>),
+    Recommended Action (see <a href="#fig3">Figure 3</a>),
     <a href="diagnosticreport.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>,
     <a href="obs-base.html">Genomic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
-    Genomic Finding (see <a href="#fig5">Figure 5</a>),
+    Genomic Finding (see <a href="#fig6">Figure 6</a>),
     <a href="obs-overall.html">Overall Interpretation</a>,
     <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-implication.html">Genomic Implications</a>,
@@ -208,18 +208,18 @@
   <h3>Genomic Findings</h3>
   <p>The primary focus of genomic testing is making Genomic Findings.  These are the fine and/or coarse-grained descriptions of a specimen's genomic characteristics.  It is this information that leads to the actionable <i>Genomic Implications</i> and the <i>Overall Interpretations</i> for the report.
   </p>
-  <a name="fig5"> </a>
-  <img src="1-general-fig5-genetic-findings.png" alt="Class diagram showing relationship of Computable genomic findings as well as genotypes, haplotypes, variations and sequences."/>
+  <a name="fig6"> </a>
+  <img src="1-general-fig6-genetic-findings.png" alt="Class diagram showing relationship of Computable genomic findings as well as genotypes, haplotypes, variations and sequences."/>
   <p>
-    <b>Figure 5: Genomic Findings</b>
+    <b>Figure 6: Genomic Findings</b>
   </p>
   <p>
     (Profile links:
-    Recommended Action (see <a href="#fig2">Figure 2</a>),
+    Recommended Action (see <a href="#fig3">Figure 3</a>),
     <a href="obs-gen-finding.html">Computable Genomic Finding</a>,
     <a href="obs-genotype.html">Genotype</a>,
     <a href="obs-haplotype.html">Haplotype</a>,
-    Variation (see Variant Reporting <a href="#fig1">Figure 1</a>),
+    Variation (see <a href="sequencing.html">Variant Reporting</a>),
     <a href="obs-sequence-phase-reltn.html">Sequence Phase Relationship</a>
     )
   </p>
@@ -288,18 +288,7 @@
 
   <a name="interpretations"> </a>
   <h3>Genomic Interpretations</h3>
-  <!--
-  <a name="fig6"> </a>
-  <img src="1-general-fig6-interpretations.png" alt="Class diagram showing common interpretations."/>
-  <p>
-    <b>Figure 6: Genomic Interpretations</b>
-  </p>
-  <p>
-    (Profile links:
-    <a href="obs-overall.html">Genomic Analysis Overall Coded Interpretation</a>
-    )
-  </p>
--->
+
   <p>
     Overall interpretations are high-level summary observations that apply to the whole report.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?":
   </p>
