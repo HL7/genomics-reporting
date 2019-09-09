@@ -8,6 +8,7 @@
       <type value="citation"/>
       <url value="https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"/>
     </valueRelatedArtifact>
+    
 <!--      <reference value="https://www.ncbi.nlm.nih.gov/pubmed/23974870,21520337,21228398,25087612,18951463,20880762,20460946,7539342,23891399,12955726"/>
 -->
   </extension>
@@ -22,9 +23,16 @@
 	<coding>
 	  <system value="http://loinc.org"/>
 	  <code value="53037-8"/>
-	  <display value="Genetic variation clinical significance"/> <!--HL7 CG consider changing display name-->
+	  <display value="Genetic variation clinical significance [Imp]"/> <!--HL7 CG consider changing display name-->
 	</coding>
   </code>
+  <valueCodeableConcept>
+	<coding>
+	  <system value="http://loinc.org"/>
+	  <code value="LA6668-3"/>
+	  <display value="Pathogenic"/> <!-- should apply to all assoicated phenotype entries-->
+	</coding>
+  </valueCodeableConcept>
      <!-- REMOVE INVALID REFS
   <subject>
 	<reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -35,18 +43,12 @@
     <reference value="Encounter/example"/>
   </encounter>
 
-
+-->
   <derivedFrom>
-     <reference value="ObsVariant/example"/>
+     <reference value="Observation/SNVexample"/>
   </derivedFrom>
-  -->
-  <valueCodeableConcept>
-	<coding>
-	  <system value="http://loinc.org"/>
-	  <code value="LA6668-3"/>
-	  <display value="Pathogenic"/> <!-- should apply to all assoicated phenotype entries-->
-	</coding>
-  </valueCodeableConcept>
+  
+
   <component>
 	<code>
 	  <coding>
@@ -103,9 +105,9 @@
   <component>
 	<code>
 	  <coding>
-		<system value="http://loinc.org"/>
-		<code value="TBD-mode-of-inheritance"/> <!-- it is important that this be true for each of the Assoicated Phenotypes. If not, use multiple idh profile instances-->
-		<display value="Mode of Inheritance"/>
+		<system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+		<code value="mode-of-inheritance"/> <!-- it is important that this be true for each of the Assoicated Phenotypes. If not, use multiple idh profile instances-->
+		<display value="mode-of-inheritance"/>
 	  </coding>
 	</code>
 	<valueCodeableConcept>

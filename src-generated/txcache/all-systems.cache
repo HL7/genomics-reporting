@@ -15,3 +15,33 @@ v: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "LA6576-8",
+    "display" : "Positive"
+  },
+  {
+    "system" : "http://snomed.info/sct",
+    "code" : "10828004",
+    "display" : "Positive"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "filter" : [{
+        "property" : "LIST",
+        "op" : "=",
+        "value" : "LL541-4"
+      }]
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The filter \"LIST = LL541-4\" was not understood in the context of http://loinc.org"
+}
+-------------------------------------------------------------------------------------
