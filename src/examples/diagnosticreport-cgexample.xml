@@ -564,52 +564,7 @@ New:
             </coding>
           </valueCodeableConcept>
         </component>
-        <!--        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="51959-5"/>
-            </coding>
-          </code>-->
-        <!-- A.6 Ranges of DNA sequence examined -->
-        <!--          <valueRange>
-            <low>
-              <value value="2000753"/>
-            </low>
-            <high>
-              <value value="2234579"/>
-            </high>
-          </valueRange>
-        </component>-->
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-            </coding>
-          </code>
-          <!-- A.7 Description of ranges of DNA sequences examined -->
-          <!-- CLEM: is this needed here? -->
-          <valueString value="All coding regions and appropriate flanking regions"/>
-        </component>
-        <!--        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="62374-4"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <coding>-->
-        <!-- A.12 Human reference sequence assembly version -->
-        <!-- This has to be listed for each variant where it's relevant as there's no inheritance in FHIR -->
-        <!-- Need to define a proper URL for this -->
-        <!--              <system value="http://loinc.org"/>
-              <code value="LA14029-5"/>
-              <display value="GRCh37"/>
-            </coding>
-          </valueCodeableConcept>
-        </component>-->
+        
         <component>
           <code>
             <coding>
@@ -860,22 +815,8 @@ New:
             <code value="1"/>
           </valueQuantity>
         </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="82120-7"/>
-            </coding>
-          </code>
-          <valueCodeableConcept>
-            <coding>
-              <!-- B.26 Allelic phase -->
-              <system value="http://loinc.org"/>
-              <code value="LA26814-6"/>
-              <display value="1st set of variants in cis relation to each other"/>
-            </coding>
-          </valueCodeableConcept>
-        </component>
+        
+        <!-- now observation.method for sequence-phase-rel
         <component>
           <code>
             <coding>
@@ -885,13 +826,13 @@ New:
           </code>
           <valueCodeableConcept>
             <coding>
-              <!-- B.27 Basis for allelic phase -->
+               B.27 Basis for allelic phase 
               <system value="http://loinc.org"/>
               <code value="LA26429-3"/>
               <display value="Inferred from population data"/>
             </coding>
           </valueCodeableConcept>
-        </component>
+        </component>-->
         <!-- Structual variant-specific elements -->
         <component>
           <code>
@@ -1084,6 +1025,7 @@ New:
         <hasMember>
           <reference value="Observation/complex-component-E"/>
         </hasMember>
+        <!-- obs-complex-variant
         <component>
           <code>
             <coding>
@@ -1104,6 +1046,7 @@ New:
             </coding>
           </valueCodeableConcept>
         </component>
+        -->
         <component>
           <code>
             <coding>
@@ -1249,17 +1192,6 @@ New:
               <display value="NM_000106.5(CYP2D6):c.886C>T (p.Arg296Cys)"/>
             </coding>
           </valueCodeableConcept>
-        </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-            </coding>
-          </code>
-          <!-- A.7 Description of ranges of DNA sequences examined -->
-          <!-- CLEM: is this needed here? -->
-          <valueString value="All coding regions and appropriate flanking regions"/>
         </component>
         <component>
           <code>
@@ -1416,17 +1348,6 @@ New:
               <display value="NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)"/>
             </coding>
           </valueCodeableConcept>
-        </component>
-        <component>
-          <code>
-            <coding>
-              <system value="http://loinc.org"/>
-              <code value="81293-3"/>
-            </coding>
-          </code>
-          <!-- A.7 Description of ranges of DNA sequences examined -->
-          <!-- CLEM: is this needed here? -->
-          <valueString value="All coding regions and appropriate flanking regions"/>
         </component>
         <component>
           <code>
