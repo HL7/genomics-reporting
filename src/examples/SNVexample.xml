@@ -1,10 +1,9 @@
 <Observation xmlns="http://hl7.org/fhir">
   <id value="SNVexample"/>
-  <!--
+  
   <meta>
     <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
   </meta>
-  -->
   
 
   <status value="final"/>
@@ -82,13 +81,11 @@
       </coding>
     </code>
     <valueCodeableConcept>
-      <!--
       <coding>
         <system value="http://hl7.org/fhir/sid/chromloc"/>
         <code value="chrX"/>
         <display value="chrX"/>
       </coding>
-    -->
     <text value ="chrX"/>
     </valueCodeableConcept>
   </component>
@@ -138,7 +135,7 @@
     <valueCodeableConcept>
       <coding>
         <system value="http://varnomen.hgvs.org"/>
-        <!--<code value="p.(Ala412Val)"/> error -->
+        <code value="p.(Ala412Val)"/>
         <display value="p.(Ala412Val)"/>
       </coding>
     </valueCodeableConcept>
