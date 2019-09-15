@@ -10,7 +10,7 @@
     Genomics is a rapidly evolving area of healthcare that involves complex data structures.  There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice.  The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing.  The implementation guide is also transmission protocol-independent - the data structures presented here could be used in RESTful, messaging, document or other paradigms.
   </p>
   <p>
-    This guide covers all aspects of human genomic reporting, including:
+    This guide covers all aspects of human genomic genomics-reporting, including:
   </p>
   <ul>
     <li>Representation of simple discrete variants, structural variants including copy number variants, complex variants as well as gross variations such as extra or missing chromosomes</li>
@@ -32,7 +32,7 @@
   <ul>
     <li>It is intended to be international in scope and only leverages terminologies which are freely available to all countries.</li>
     <li>It avoids pre-coordinating the type of variant, medication or other information into the Observation.code as this makes it easier to leverage industry standard terminologies for genomic information (e.g. HGVS) and avoids needing to duplicate this information into observation coding systems such as LOINC.</li>
-    <li>It maximizes the use of resources that are in common use by laboratory reporting systems for other clinical areas - specifically <a href="{{site.data.fhir.path}}/observation.html">Observation</a> and <a href="{{site.data.fhir.path}}/genomics-report.html">DiagnosticReport</a>.  This eases implementation and also reduces the chance of data being lost by systems that might not have been designed to specifically accommodate genomic-related information.</li>
+    <li>It maximizes the use of resources that are in common use by laboratory reporting systems for other clinical areas - specifically <a href="{{site.data.fhir.path}}observation.html">Observation</a> and <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a>.  This eases implementation and also reduces the chance of data being lost by systems that might not have been designed to specifically accommodate genomic-related information.</li>
     <li>It minimizes the use of FHIR extensions, also with an objective of reducing the risk of data loss when information is passed to systems that might not explicitly support this implementation guide.</li>
     <li>It uses separate observations for each independently useful assertion.  This maximizes the discoverability and queriability of the data.</li>
     <li>It tries to ensure that data is captured in a manner that's consistent regardless of the type of testing that was done to ensure data can be consistently queried even if captured differently (e.g. variations identified in assay tests are reported in the same manner as those identified through direct sequencing).</li>
