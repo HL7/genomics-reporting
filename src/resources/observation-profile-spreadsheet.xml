@@ -10,7 +10,7 @@
   <Author>Grahame</Author>
   <LastAuthor>James Jones</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-09-15T15:19:45Z</LastSaved>
+  <LastSaved>2019-09-15T17:22:48Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -33,7 +33,7 @@
   <WindowWidth>28040</WindowWidth>
   <WindowTopX>760</WindowTopX>
   <WindowTopY>460</WindowTopY>
-  <ActiveSheet>5</ActiveSheet>
+  <ActiveSheet>2</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1230,7 +1230,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>8</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>1</SplitVertical>
    <LeftColumnRightPane>1</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -1243,11 +1243,10 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>28</ActiveRow>
+     <ActiveRow>6</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -1420,7 +1419,7 @@
     <Cell ss:StyleID="s102"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="60">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">bodyStructure</Data><NamedCell
+    <Cell ss:StyleID="s103"><Data ss:Type="String">BodyStructure</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -1449,7 +1448,7 @@
     <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="60">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">secondaryFinding</Data><NamedCell
+    <Cell ss:StyleID="s103"><Data ss:Type="String">SecondaryFinding</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -2335,6 +2334,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -2356,7 +2356,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>14</ActiveRow>
+     <ActiveRow>10</ActiveRow>
      <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
@@ -2505,13 +2505,13 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Extension{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommendedAction}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Extension{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction}</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:Index="12" ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">recommendedAction</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">RecommendedAction</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
@@ -3003,12 +3003,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <TopRowVisible>1</TopRowVisible>
+   <LeftColumnVisible>8</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>20</ActiveRow>
-     <ActiveCol>8</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -4281,7 +4281,6 @@
     <VerticalResolution>0</VerticalResolution>
    </Print>
    <Zoom>85</Zoom>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -5845,14 +5844,14 @@
     <Cell ss:StyleID="s102"/>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="60">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">relatedArtifact</Data></Cell>
+    <Cell ss:StyleID="s103"><Data ss:Type="String">RelatedArtifact</Data></Cell>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.extension</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Extension{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/relatedArtifact}</Data></Cell>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Extension{http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact}</Data></Cell>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -8253,8 +8252,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>6</ActiveRow>
-     <ActiveCol>11</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>7</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -10727,7 +10726,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>2</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>4</SplitVertical>
    <LeftColumnRightPane>4</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -13645,7 +13644,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>9</ActiveRow>
+     <ActiveRow>2</ActiveRow>
      <ActiveCol>8</ActiveCol>
     </Pane>
    </Panes>
@@ -38248,8 +38247,7 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveCol>6</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
