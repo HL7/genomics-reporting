@@ -1,0 +1,34 @@
+<ValueSet xmlns='http://hl7.org/fhir'>
+  <id value="functional-annotation"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="cg"/>
+  </extension>
+  <url value='http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-annotation'/>
+  <version value='1.0.0'/>
+  <name value='FunctionalAnnotation'/>
+  <title value='Functional Annotation'/>
+  <status value='active'/>
+  <experimental value='false'/>
+  <date value='2019-07-18'/>
+  <publisher value='HL7 (Clinical Genomics)'/>
+  <contact>
+    <telecom>
+      <system value='other'/>
+      <value value='https://confluence.hl7.org/display/CGW/WorkGroup+Home'/>
+    </telecom>
+  </contact>
+  <description value='Functional annotation of a variant'/>
+  <compose>
+    <include>
+      <system value='http://sequenceontology.org'/>
+      <filter>
+        <property value='SO Accession'/>
+        <op value='='/>
+        <value value='SO:0001537'/>
+      </filter>
+    </include>
+  </compose>
+</ValueSet>
