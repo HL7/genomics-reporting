@@ -25,7 +25,7 @@
   <a name="diagnosticreport"> </a>
   <h3>DiagnosticReport-genetics</h3>
   <p>
-    Guidance for converting from the <a href="http://hl7.org/fhir/stu3/genomics.html#diagnosticreport-genetics">STU3 DiagnosticReport-genetics</a> profile to the <a href="diagnosticreport.html">Genomics Report</a> profile.
+    Guidance for converting from the <a href="http://hl7.org/fhir/stu3/genomics.html#diagnosticreport-genetics">STU3 DiagnosticReport-genetics</a> profile to the <a href="genomics-report.html">Genomics Report</a> profile.
   </p>
   <p>
     The STU3 profile prohibited the population of codedDiagnosis element and asserted 3 optional repeating extensions - geneticsAssessedCOndition, geneticsFamilyMemberHistory and geneticsAnalysis.  In the R4 profile, we no longer prohibit the inclusion of codeDiagnosis.  While it would be unusual for a lab to assert diagosis, it is possible that some organizations, with appropriate knowledge of the patient and clinician oversight could do so.  The R4 profile merely provides guidance on this element.

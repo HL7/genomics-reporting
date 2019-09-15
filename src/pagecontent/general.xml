@@ -44,7 +44,7 @@
   <a name="diagnosticreport"> </a>
   <h3>Diagnostic Report</h3>
   <p>
-    The <a href="diagnosticreport.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab).  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of six categories:
+    The <a href="genomics-report.html">diagnostic report</a> is the focus of all genomic reporting.  It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.).  It also typically includes a rendered version for review by a clinician.  It also groups together all "relevant" information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab).  The information found is expressed as FHIR <a href="{{site.data.fhir.path}}/observation.html">Observations</a>.  These observations fall into one of six categories:
   </p>
   <a name="fig2"> </a>
   <img src="1-general-fig2-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
@@ -53,7 +53,7 @@
   </p>
   <p>
     (Profile links:
-    <a href="diagnosticreport.html">Genomics Report</a>,
+    <a href="genomics-report.html">Genomics Report</a>,
     <a href="obs-gen-grouper.html">Grouper</a>,
     <a href="obs-overall.html">Overall Interpretation</a>,
     Genomic Implications (see <a href="#fig7">Figure 7</a>,
@@ -95,7 +95,7 @@
     Various Observations including vital signs, lab information, assessments, genomic information, etc. result in different risk assessment. The risk assessment resource captures predicted outcomes for a patient or population on the basis of source information, and the Genomics Report has space for specifically noting this assessment under the DiagnosticReport-risk extension, which links directly to an assessment of prognosis or risk as informed by the diagnostic results (For example, genomic results and possibly by patient genomic family history information). This extension is used when one needs RiskAssessment as an alternate choice for <code>Observation.hasMember</code> or <code>DiagnosticReport.result</code>.
   </p>
   <p>
-    As shown in the diagram above, all of the observations may hang directly off of the <a href="diagnosticreport.html">diagnostic report</a>  However, they can also be part of a <a href="obs-gen-grouper.html">grouper</a>.  In this version of the specification, no guidance is provided on where or if grouper should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
+    As shown in the diagram above, all of the observations may hang directly off of the <a href="genomics-report.html">diagnostic report</a>  However, they can also be part of a <a href="obs-gen-grouper.html">grouper</a>.  In this version of the specification, no guidance is provided on where or if grouper should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
   </p>
   <p>
     Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes.  It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
@@ -152,7 +152,7 @@
   <p>
     (Profile links:
     Recommended Action (see <a href="#fig3">Figure 3</a>),
-    <a href="diagnosticreport.html">Genomics Report</a>,
+    <a href="genomics-report.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>,
     <a href="obs-base.html">Genomic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
@@ -166,7 +166,7 @@
     A few key points to take from this diagram:
   </p>
   <ul>
-    <li><a href="servicerequest.html">Request for Genomic Test</a> and the <a href="diagnosticreport.html">reports resulting from them</a> can be associated to patients, to <a href="specimen.html">specimens</a> or both.</li>
+    <li><a href="servicerequest.html">Request for Genomic Test</a> and the <a href="genomics-report.html">reports resulting from them</a> can be associated to patients, to <a href="specimen.html">specimens</a> or both.</li>
     <li>Specimens may be linked to a specific subject, but they can also be stand-alone.  For example, genomic testing of a sample swabbed from a counter-top.</li>
     <li>Family member history and tasks are always associated with a patient, not a specimen.</li>
     <li>All genomic observations are derived from a <a href="obs-base.html">common abstract profile</a> that asserts they should have a category, effective date, issued date and status.</li>
@@ -186,14 +186,14 @@
   </p>
   <p>
     (Profile links:
-    <a href="diagnosticreport.html">Genomics Report</a>,
+    <a href="genomics-report.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>
     )
   </p>
   <p>
     (Profile links:
     Recommended Action (see <a href="#fig3">Figure 3</a>),
-    <a href="diagnosticreport.html">Genomics Report</a>,
+    <a href="genomics-report.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>,
     <a href="obs-base.html">Genomic Observation Common Properties</a>,
     <a href="specimen.html">Specimen</a>,
