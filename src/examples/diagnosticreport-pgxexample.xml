@@ -2,7 +2,7 @@
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <!-- Note: Profiles are declared on most resources to support automatic validation.  However, in production, instances might not have profile declarations present - or at least not profiles defined in this implementation guide -->
   <id value="diagnosticreport-pgxexample"/>
-  <type value="collection"/>
+  <type value="transaction"/>
   <entry>
     <fullUrl value="http://example.org/fhir/DiagnosticReport/pgx-report"/>
     <resource>
@@ -11,7 +11,7 @@
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
         </meta>
-        <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommendedAction">
+        <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction">
           <valueReference>
             <reference value="Task/med-usage-impact-task-pgx-example"/>
           </valueReference>
@@ -64,7 +64,12 @@
         </result>
       </DiagnosticReport>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="DiagnosticReport"/>
+    </request>
   </entry>
+
   <entry>
     <fullUrl value="http://example.org/fhir/Patient/patient"/>
     <resource>
@@ -76,6 +81,10 @@
         </text>
       </Patient>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Patient"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/Specimen/specimen"/>
@@ -94,7 +103,12 @@
         </subject>
       </Specimen>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Patient"/>
+    </request>
   </entry>
+
   <entry>
     <fullUrl value="http://example.org/fhir/Organization/lab"/>
     <resource>
@@ -107,7 +121,12 @@
         <name value="Some lab"/>
       </Organization>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Organization"/>
+    </request>
   </entry>
+
   <entry>
     <fullUrl value="http://example.org/fhir/ServiceRequest/pgx-request"/>
     <resource>
@@ -136,7 +155,12 @@
         </reasonCode>
       </ServiceRequest>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="ServiceRequest"/>
+    </request>
   </entry>
+
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/med-impact-pgx-example"/>
     <resource>
@@ -195,7 +219,12 @@
         </component>
       </Observation>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
   </entry>
+
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/genotype-pgx-example"/>
     <resource>
@@ -254,7 +283,12 @@
         </component>
       </Observation>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
   </entry>
+
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/haplotype-1-pgx-example"/>
     <resource>
@@ -310,6 +344,10 @@
         </component>
       </Observation>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/haplotype-2-pgx-example"/>
@@ -366,6 +404,10 @@
         </component>
       </Observation>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/variant-1-pgx-example"/>
@@ -475,6 +517,10 @@
         </component>
       </Observation>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/variant-2-pgx-example"/>
@@ -599,6 +645,10 @@
         </component>
       </Observation>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/MolecularSequence/sequence-1-pgx-example"/>
@@ -620,6 +670,10 @@
         </referenceSeq>
       </MolecularSequence>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="MolecularSequence"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/MolecularSequence/sequence-2-pgx-example"/>
@@ -641,6 +695,10 @@
         </referenceSeq>
       </MolecularSequence>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="MolecularSequence"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/Task/med-usage-impact-task-pgx-example"/>
@@ -672,6 +730,10 @@
         </reasonReference>
       </Task>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Task"/>
+    </request>
   </entry>
   <entry>
     <fullUrl value="http://example.org/fhir/MedicationStatement/current-med-example"/>
@@ -694,5 +756,9 @@
         </subject>
       </MedicationStatement>
     </resource>
+    <request>
+      <method value="POST"/>
+      <url value="MedicationStatement"/>
+    </request>
   </entry>
 </Bundle>

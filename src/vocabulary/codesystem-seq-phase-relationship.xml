@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+    <id value="tbd-codes"/>
+    <meta>
+        <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+    </meta>
+    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+        <valueCode value="cg"/>
+    </extension>
+    <url value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+    <version value="0.3"/>
+    <name value="TBDcodes"/>
+    <title value="TBD-codes"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2019-08-21"/>
+    <publisher value="HL7 (Clinical Genomics)"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://hl7.org/fhir"/>
+        </telecom>
+        <telecom>
+            <system value="email"/>
+            <value value="fhir@lists.hl7.org"/>
+        </telecom>
+    </contact>
+    <description
+            value="These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."/>
+    <caseSensitive value="true"/>
+    <valueSet
+            value="http://hl7.org/fhir/uv/genomics-reporting/ValueSet/tbd-codes"/>
+    <content value="complete"/>
+    <concept>
+        <code value="grouper"/>
+        <display value="grouper"/>
+        <definition value="A means to bundle several observations such as one would find in a genetics test panel."/>
+    </concept>
+    <concept>
+        <code value="mode-of-inheritance"/>
+        <display value="mode-of-inheritance"/>
+        <definition value="This is actually LOINC code 79742-3. And the IG will be updated"/>
+    </concept>
+    <concept>
+        <code value="effect-transporter-function"/>
+        <display value="effect-transporter-function"/>
+        <definition value="Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance."/>
+    </concept>
+    <concept>
+        <code value="somatic-diagnostic"/>
+        <display value="somatic-diagnostic"/>
+        <definition value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer. Example values are: Pathognomonic, Supportive, Argues Against, Rules Out."/>
+    </concept>
+    <concept>
+        <code value="somatic-prognostic"/>
+        <display value="Somatic Prognostic Implication"/>
+        <definition value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."/>
+    </concept>
+    <concept>
+        <code value="somatic-prognostic-medication"/>
+        <display value="somatic-prognostic-medication"/>
+        <definition value="The medication or medication class whose implication on the cancer is being predicted. (Same as somatic-predictive-medication)."/>
+    </concept>
+    <concept>
+        <code value="somatic-prognostic-treatment"/>
+        <display value="somatic-prognostic-treatment"/>
+        <definition value="The non-medication therapy (procedure) whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc."/>
+    </concept>
+    <concept>
+        <code value="somatic-predictive"/>
+        <display value="Somatic variant predicted effect on Cancer medication"/>
+        <definition value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts an impact on medication efficay or prediction of an adverse event caused by a medication. Example values are: Resistant, Responsive, Not-Responsive, Sensitive, Reduced-Sensitivity, Adverse Response."/>
+    </concept>
+    <concept>
+        <code value="somatic-predictive-medication"/>
+        <display value="somatic-predictive-medication"/>
+        <definition value="The medication or medication class whose implication on the cancer is being predicted."/>
+    </concept>
+    <concept>
+        <code value="associated-cancer"/>
+        <display value="associated-cancer"/>
+        <definition value="Associated Cancer"/>
+    </concept>
+    <concept>
+        <code value="region-coverage"/>
+        <display value="region-coverage"/>
+        <definition value = "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."/>
+    </concept>
+    <concept>
+        <code value="functional-annotation"/>
+        <display value="functional-annotation"/>
+        <definition value="Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."/>
+    </concept>
+</CodeSystem>

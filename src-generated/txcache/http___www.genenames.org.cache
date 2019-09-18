@@ -41,3 +41,23 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://www.genenames.org"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.genenames.org",
+    "code" : "HGNC:2621",
+    "display" : "CYP2C19"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://www.genenames.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.genenames.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc\" is not known; The code system \"http://www.genenames.org\" is not known for the code \"HGNC:2621\"; The code provided (http://www.genenames.org#HGNC:2621) is not  valid in the value set HGNC"
+}
+-------------------------------------------------------------------------------------
