@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Wed, Sep 18, 2019 19:00+0000 for FHIR v4.1.0 
+  Generated on Sat, Sep 21, 2019 17:23+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -4406,71 +4406,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
        </xs:extension>
      </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="ConceptMapEquivalence-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="relatedto">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Related To</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="equivalent">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Equivalent</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="equal">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Equal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="wider">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Wider</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="subsumes">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Subsumes</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="narrower">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Narrower</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="specializes">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Specializes</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="inexact">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Inexact</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="unmatched">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Unmatched</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="disjoint">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Disjoint</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ConceptMapEquivalence">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-       <xs:extension base="Element">
-         <xs:attribute name="value" type="ConceptMapEquivalence-list" use="optional"/>
-       </xs:extension>
-     </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="DocumentReferenceStatus-list">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="current">
@@ -5370,6 +5305,11 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="AdverseEventStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The current state of the data entry of the adverse event or potential adverse event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="actuality" minOccurs="1" maxOccurs="1" type="AdverseEventActuality">
             <xs:annotation>
               <xs:documentation xml:lang="en">Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.</xs:documentation>
@@ -5395,11 +5335,14 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">The date (and perhaps time) when the adverse event occurred.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="occurrenceDateTime" type="dateTime"/>
+            <xs:element name="occurrencePeriod" type="Period"/>
+            <xs:element name="occurrenceTiming" type="Timing"/>
+          </xs:choice>
           <xs:element name="detected" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation xml:lang="en">Estimated or actual date the AdverseEvent began, in the opinion of the reporter.</xs:documentation>
@@ -5438,11 +5381,6 @@ A coverage may only be responsible for specific types of charges, and the sequen
           <xs:element name="participant" type="AdverseEvent.Participant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates who or what participated in the adverse event and how they were involved.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="detector" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Who or what identified a change in physiological state or condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="suspectEntity" type="AdverseEvent.SuspectEntity" minOccurs="0" maxOccurs="unbounded">
@@ -5578,6 +5516,41 @@ Additionally, the supporting item can be a document that is relevant to this ins
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="AdverseEventActuality-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AdverseEventStatus-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="in-progress">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">In Progress</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Completed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered-in-error">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AdverseEventStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Codes identifying the lifecycle stage of an event.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AdverseEventStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -13461,7 +13434,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="unmapped" type="ConceptMap.Unmapped" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">What to do when there is no mapping for the source concept. &quot;Unmapped&quot; does not include codes that are unmatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.</xs:documentation>
+              <xs:documentation xml:lang="en">What to do when there is no mapping to a target concept from the source concept.  This provides the &quot;default&quot; to be applied when there is no target concept mapping specified.  The 'unmapped' element is ignored if a code is specified to have relationship = not-related-to.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -13483,6 +13456,11 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="display" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The display for the code. The display is only provided to help editors when editing the concept map.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="noMap" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If noMap = true this indicates that no mapping to a target concept exists for this source concept.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="target" type="ConceptMap.Target" minOccurs="0" maxOccurs="unbounded">
@@ -13511,9 +13489,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The display for the code. The display is only provided to help editors when editing the concept map.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="equivalence" minOccurs="1" maxOccurs="1" type="ConceptMapEquivalence">
+          <xs:element name="relationship" minOccurs="1" maxOccurs="1" type="ConceptMapRelationship">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).</xs:documentation>
+              <xs:documentation xml:lang="en">The relationship between the source and target concepts. The relationship is read from target to source (e.g. the target is 'broader' than the source).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="comment" minOccurs="0" maxOccurs="1" type="string">
@@ -13528,7 +13506,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="product" type="ConceptMap.DependsOn" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.</xs:documentation>
+              <xs:documentation xml:lang="en">A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the relationship (e.g., equivalent) cannot be relied on.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -15531,7 +15509,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subscriberId" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="subscriberId" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">The insurer assigned ID for the Subscriber.</xs:documentation>
            </xs:annotation>
@@ -15543,7 +15521,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="dependent" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A unique identifier for a dependent under the coverage.</xs:documentation>
+              <xs:documentation xml:lang="en">A designator for a dependent under the coverage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relationship" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -29122,7 +29100,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
         <xs:sequence>
           <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The actual ingredient - either a substance (simple ingredient) or another medication of a medication.</xs:documentation>
+              <xs:documentation xml:lang="en">The ingredient (substance or medication) that the ingredient.strength relates to.  This is represented as a concept from a code system or described in another resource (Substance or Medication).</xs:documentation>
             </xs:annotation>
             <xs:element name="itemCodeableConcept" type="CodeableConcept"/>
             <xs:element name="itemReference" type="Reference"/>
@@ -29220,6 +29198,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="instantiatesUri" minOccurs="0" maxOccurs="unbounded" type="uri">
             <xs:annotation>
               <xs:documentation xml:lang="en">The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationAdministration.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A plan that is fulfilled in whole or in part by this MedicationDispense.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -29400,6 +29383,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifiers associated with this Medication Dispense that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A plan that is fulfilled in whole or in part by this MedicationDispense.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -30003,7 +29991,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Specifies if changes are allowed when dispensing a medication from a regulatory perspective.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="schedule" type="MedicationKnowledge.Schedule" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="schedule" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifies the schedule of a medication in jurisdiction.</xs:documentation>
            </xs:annotation>
@@ -30032,22 +30020,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="allowed" minOccurs="1" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifies if regulation allows for changes in the medication when dispensing.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MedicationKnowledge.Schedule">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Information about a medication that is used to support knowledge.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="schedule" minOccurs="1" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the specific drug schedule.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
