@@ -210,7 +210,7 @@ New:
       <Observation>
         <id value="overall-interp"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-overall"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -238,7 +238,7 @@ New:
           <reference value="Organization/lab"/>
         </performer>
         <valueCodeableConcept>
-          <!-- A.8 Genomic analysis overall interpretation -->
+          <!-- A.8 Overall Interpretation -->
           <coding>
             <system value="http://loinc.org"/>
             <code value="LA6576-8"/>
@@ -276,7 +276,7 @@ New:
           <coding>
             <system value="http://loinc.org"/>
             <code value="51968-6"/>
-            <display value="Genomic analysis overall interpretation"/>
+            <display value="Overall Interpretation"/>
           </coding>
         </code>
         <subject>
@@ -485,7 +485,7 @@ New:
       <Observation>
         <id value="discrete-variant"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -919,7 +919,7 @@ New:
       <Observation>
         <id value="dis-path"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-inh-dis-path"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -982,7 +982,7 @@ New:
       <Observation>
         <id value="complex-variant"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1071,7 +1071,7 @@ New:
       <Observation>
         <id value="complex-dis-path"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-inh-dis-path"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1135,7 +1135,7 @@ New:
       <Observation>
         <id value="complex-component-D"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1291,7 +1291,7 @@ New:
       <Observation>
         <id value="complex-component-E"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1395,7 +1395,7 @@ New:
         <!-- D Pharmacogenomics results grouper -->
         <id value="pharmPanel"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-grouper"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1448,7 +1448,7 @@ New:
       <Observation>
         <id value="haplotype"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1498,7 +1498,7 @@ New:
       <Observation>
         <id value="genotype"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1588,7 +1588,7 @@ New:
       <Observation>
         <id value="metab"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-metabolism"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-metabolism"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1651,7 +1651,7 @@ New:
       <Observation>
         <id value="efficacy"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-efficacy"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-efficacy"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1714,7 +1714,7 @@ New:
       <Observation>
         <id value="highrisk"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-high-risk"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-high-risk"/>
         </meta>
         <text>
           <status value="generated"/>

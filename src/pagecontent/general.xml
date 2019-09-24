@@ -17,26 +17,26 @@
   </p>
   <p>
     (Profile links:
-    <a href="obs-base.html">Genomic Observation Common Properties</a>,
-    <a href="obs-overall.html">Overall Interpretation</a>,
-    <a href="obs-region-studied.html">Region Studied</a>,
-    <a href="obs-gen-grouper.html">Grouper</a>,
-    <a href="obs-gen-finding.html">Genomic Finding (abstract)</a>,
-    <a href="obs-variant.html">Variant</a>,
-    <a href="obs-haplotype.html">Haplotype</a>,
-    <a href="obs-genotype.html">Genotype</a>,
-    <a href="obs-sequence-phase-reltn.html">Sequence Phase Relationship</a>,
-    <a href="obs-implication.html">Genomic Implication (abstract)</a>,
-    <a href="obs-inh-dis-path.html">Inherited Disease Pathogenicity</a>,
-    <a href="obs-med-implication.html">Medication Implication (abstract)</a>,
-    <a href="obs-efficacy.html">Medication Efficacy Implication</a>,
-    <a href="obs-transporter.html">Medication Transport Implication</a>,
-    <a href="obs-metabolism.html">Medication Metabolism Implication</a>,
-    <a href="obs-high-risk.html">High Risk Allele</a>,
-    <a href="obs-som-implication.html">Somatic Implication (abstract)</a>,
-    <a href="obs-som-diagnostic.html">Somatic Diagnostic Implication</a>,
-    <a href="obs-som-prognostic.html">Somatic Prognostic Implication</a>,
-    <a href="obs-som-predictive.html">Somatic Predictive Implication</a>)
+    <a href="genomics-base.html">Genomics Base</a>,
+    <a href="overall-interpretation.html">Overall Interpretation</a>,
+    <a href="region-studied.html">Region Studied</a>,
+    <a href="grouper.html">Grouper</a>,
+    <a href="finding.html">Genomic Finding (abstract)</a>,
+    <a href="variant.html">Variant</a>,
+    <a href="haplotype.html">Haplotype</a>,
+    <a href="genotype.html">Genotype</a>,
+    <a href="sequence-phase-relationship.html">Sequence Phase Relationship</a>,
+    <a href="implication.html">Genomic Implication (abstract)</a>,
+    <a href="inherited-disease-pathogenicity.html">Inherited Disease Pathogenicity</a>,
+    <a href="medication-implication.html">Medication Implication (abstract)</a>,
+    <a href="medication-efficacy.html">Medication Efficacy Implication</a>,
+    <a href="medication-transporter.html">Medication Transport Implication</a>,
+    <a href="medication-metabolism.html">Medication Metabolism Implication</a>,
+    <a href="medication-high-risk.html">High Risk Allele</a>,
+    <a href="somatic-implication.html">Somatic Implication (abstract)</a>,
+    <a href="somatic-diagnostic.html">Somatic Diagnostic Implication</a>,
+    <a href="somatic-prognostic.html">Somatic Prognostic Implication</a>,
+    <a href="somatic-predictive.html">Somatic Predictive Implication</a>)
   </p>
 
 
@@ -54,11 +54,11 @@
   <p>
     (Profile links:
     <a href="genomics-report.html">Genomics Report</a>,
-    <a href="obs-gen-grouper.html">Grouper</a>,
-    <a href="obs-overall.html">Overall Interpretation</a>,
+    <a href="grouper.html">Grouper</a>,
+    <a href="overall-interpretation.html">Overall Interpretation</a>,
     Genomic Implications (see <a href="#fig7">Figure 7</a>,
     Genomic Findings (see <a href="#fig6">Figure 6</a>,
-    <a href="obs-region-studied.html">Region Studied</a>)
+    <a href="region-studied.html">Region Studied</a>)
   </p>
   <table>
     <tbody>
@@ -95,7 +95,7 @@
     Various Observations including vital signs, lab information, assessments, genomic information, etc. result in different risk assessment. The risk assessment resource captures predicted outcomes for a patient or population on the basis of source information, and the Genomics Report has space for specifically noting this assessment under the DiagnosticReport-risk extension, which links directly to an assessment of prognosis or risk as informed by the diagnostic results (For example, genomic results and possibly by patient genomic family history information). This extension is used when one needs RiskAssessment as an alternate choice for <code>Observation.hasMember</code> or <code>DiagnosticReport.result</code>.
   </p>
   <p>
-    As shown in the diagram above, all of the observations may hang directly off of the <a href="genomics-report.html">diagnostic report</a>  However, they can also be part of a <a href="obs-gen-grouper.html">grouper</a>.  In this version of the specification, no guidance is provided on where or if grouper should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
+    As shown in the diagram above, all of the observations may hang directly off of the <a href="genomics-report.html">diagnostic report</a>  However, they can also be part of a <a href="grouper.html">grouper</a>.  In this version of the specification, no guidance is provided on where or if grouper should be used.  This is left up to the discretion of the reporting lab.  Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure.  The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
   </p>
   <p>
     Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes.  It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
@@ -115,7 +115,7 @@
     (Profile links:
     Genomic Implications (see <a href="#fig7">Figure 7</a>,
     Genomic Findings (see <a href="#fig6">Figure 6</a>,
-    <a href="obs-overall.html">Overall Interpretation</a>,
+    <a href="overall-interpretation.html">Overall Interpretation</a>,
     <a href="task-rec-followup.html">Recommended Followup</a>,
     
     )
@@ -154,12 +154,12 @@
     Recommended Action (see <a href="#fig3">Figure 3</a>),
     <a href="genomics-report.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>,
-    <a href="obs-base.html">Genomic Observation Common Properties</a>,
+    <a href="genomics-base.html">Genomics Base</a>,
     <a href="specimen.html">Specimen</a>,
     Genomic Finding (see <a href="#fig6">Figure 6</a>),
-    <a href="obs-overall.html">Overall Genomic Interpretation</a>,
-    <a href="obs-gen-grouper.html">Grouper</a>,
-    <a href="obs-implication.html">Genomic Implications</a>
+    <a href="overall-interpretation.html">Overall Genomic Interpretation</a>,
+    <a href="grouper.html">Grouper</a>,
+    <a href="implication.html">Genomic Implications</a>
     )
   </p>
   <p>
@@ -169,7 +169,7 @@
     <li><a href="servicerequest.html">Request for Genomic Test</a> and the <a href="genomics-report.html">reports resulting from them</a> can be associated to patients, to <a href="specimen.html">specimens</a> or both.</li>
     <li>Specimens may be linked to a specific subject, but they can also be stand-alone.  For example, genomic testing of a sample swabbed from a counter-top.</li>
     <li>Family member history and tasks are always associated with a patient, not a specimen.</li>
-    <li>All genomic observations are derived from a <a href="obs-base.html">common abstract profile</a> that asserts they should have a category, effective date, issued date and status.</li>
+    <li>All genomic observations are derived from a <a href="genomics-base.html">common abstract profile</a> that asserts they should have a category, effective date, issued date and status.</li>
     <li>The effective date is the date the genomic specimen was collected and the issued date is when the observation was performed.</li>
     <li>Of the different types of observations, Genomic Findings all have exactly one specimen.  The remainder might be associated with a specimen, but might not.  Observations may also be associated with a particular BodyStructure, such as a fetus, tumor or lesion.</li>
     <li>Genomic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request.  All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
@@ -195,12 +195,12 @@
     Recommended Action (see <a href="#fig3">Figure 3</a>),
     <a href="genomics-report.html">Genomics Report</a>,
     <a href="servicerequest.html">Request for Genomic Test</a>,
-    <a href="obs-base.html">Genomic Observation Common Properties</a>,
+    <a href="genomics-base.html">Genomics Base</a>,
     <a href="specimen.html">Specimen</a>,
     Genomic Finding (see <a href="#fig6">Figure 6</a>),
-    <a href="obs-overall.html">Overall Interpretation</a>,
-    <a href="obs-gen-grouper.html">Grouper</a>,
-    <a href="obs-implication.html">Genomic Implications</a>,
+    <a href="overall-interpretation.html">Overall Interpretation</a>,
+    <a href="grouper.html">Grouper</a>,
+    <a href="implication.html">Genomic Implications</a>,
     )
   </p>
 
@@ -216,11 +216,11 @@
   <p>
     (Profile links:
     Recommended Action (see <a href="#fig3">Figure 3</a>),
-    <a href="obs-gen-finding.html">Computable Genomic Finding</a>,
-    <a href="obs-genotype.html">Genotype</a>,
-    <a href="obs-haplotype.html">Haplotype</a>,
+    <a href="finding.html">Computable Genomic Finding</a>,
+    <a href="genotype.html">Genotype</a>,
+    <a href="haplotype.html">Haplotype</a>,
     Variation (see <a href="sequencing.html">Variant Reporting</a>),
-    <a href="obs-sequence-phase-reltn.html">Sequence Phase Relationship</a>
+    <a href="sequence-phase-relationship.html">Sequence Phase Relationship</a>
     )
   </p>
   <!--
@@ -232,8 +232,8 @@
     Computable findings can be subdivided into three types of observations:
   </p>
   <ul>
-    <li><a href="obs-genotype.html">Genotypes</a> describe combinations of genomic variations that together are associated with a particular phenotype - i.e. a specific physical, behavioral or risk-associated difference associated with the organism whose specimen was tested.</li>
-    <li><a href="obs-haplotype.html">Haplotypes</a> describe a set of genomic variations that appear on a single strand of DNA - and which are therefore typically inherited together</li>
+    <li><a href="genotype.html">Genotypes</a> describe combinations of genomic variations that together are associated with a particular phenotype - i.e. a specific physical, behavioral or risk-associated difference associated with the organism whose specimen was tested.</li>
+    <li><a href="haplotype.html">Haplotypes</a> describe a set of genomic variations that appear on a single strand of DNA - and which are therefore typically inherited together</li>
     <li><i>Variants</i> are specific differences or combinations of differences between parts of one or more specimen sequences and the equivalent portions of the reference sequence(s) for that organism.  </li>
   </ul>
   <p>
@@ -293,7 +293,7 @@
     Overall interpretations are high-level summary observations that apply to the whole report.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?":
   </p>
   <p>
-    <a href="obs-overall.html">Genomic Analysis Overall Coded Interpretation</a> is what the laboratory declares as the summary result of the test (e.g. Positive, Negative, Unknown) and is typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease was found or not.
+    <a href="overall-interpretation.html">Genomic Analysis Overall Coded Interpretation</a> is what the laboratory declares as the summary result of the test (e.g. Positive, Negative, Unknown) and is typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease was found or not.
   </p>
   
   <a name="implications"> </a>
@@ -310,8 +310,8 @@
   </p>
   <p>
     (Profile links:
-    <a href="obs-implication.html">Genomic Implications</a>,
-    <a href="obs-inh-dis-path.html">Inherited Disease Pathogenicity</a>
+    <a href="implication.html">Genomic Implications</a>,
+    <a href="inherited-disease-pathogenicity.html">Inherited Disease Pathogenicity</a>
     )
   </p>
   <p>

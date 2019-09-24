@@ -22,25 +22,25 @@
   </p>
   <p>
     (Profile links:
-    <a href="obs-implication.html">Genetic Implication</a>,
-    <a href="obs-med-implication.html">Medication Implication</a>,
-    <a href="obs-high-risk.html">High Risk Allele</a>,
-    <a href="obs-metabolism.html">Medication Metabolism Implication</a>,
-    <a href="obs-transporter.html">Medication Transporter Implication</a>,
-    <a href="obs-efficacy.html">Medication Efficacy Implication</a>
+    <a href="implication.html">Genetic Implication</a>,
+    <a href="medication-implication.html">Medication Implication</a>,
+    <a href="medication-high-risk.html">High Risk Allele</a>,
+    <a href="medication-metabolism.html">Medication Metabolism Implication</a>,
+    <a href="medication-transporter.html">Medication Transporter Implication</a>,
+    <a href="medication-efficacy.html">Medication Efficacy Implication</a>
     )
   </p>
   <p>
-    All pharmacogenomic implication profiles inherit from the abstract <a href="obs-implication.html">Genetic Implication</a> profile.  They also inherit from a common abstract <a href="obs-med-implication.html">Medication Implication</a> profile which includes the mandatory code that identifies the medication whose implication is being described.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
+    All pharmacogenomic implication profiles inherit from the abstract <a href="implication.html">Genetic Implication</a> profile.  They also inherit from a common abstract <a href="medication-implication.html">Medication Implication</a> profile which includes the mandatory code that identifies the medication whose implication is being described.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
   </p>
   <p>
     There are three types of implications defined in this profile:
   </p>
   <ul>
-    <li><a href="obs-metabolism.html">Medication Metabolism Implication</a> describes the implication of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have implications on appropriate dosage.</li>
-    <li><a href="obs-transporter.html">Medication Transporter Implication</a> describes the implication of the associated genetic findings on how well the specified medication is transported by the patient - which can have implications on appropriate dosage.</li>
-    <li><a href="obs-efficacy.html">Medication Efficacy Implication</a> describes how the associated genetic findings affect the ability of the patient's body to respond to the medication (predicted phenotype) - distinct from metabolic impact, this is in regards to molecular function. This can influence the appropriateness of the medication for the patient.</li>
-    <li><a href="obs-high-risk.html">High Risk Allele</a> indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  I.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics.</li>
+    <li><a href="medication-metabolism.html">Medication Metabolism Implication</a> describes the implication of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have implications on appropriate dosage.</li>
+    <li><a href="medication-transporter.html">Medication Transporter Implication</a> describes the implication of the associated genetic findings on how well the specified medication is transported by the patient - which can have implications on appropriate dosage.</li>
+    <li><a href="medication-efficacy.html">Medication Efficacy Implication</a> describes how the associated genetic findings affect the ability of the patient's body to respond to the medication (predicted phenotype) - distinct from metabolic impact, this is in regards to molecular function. This can influence the appropriateness of the medication for the patient.</li>
+    <li><a href="medication-high-risk.html">High Risk Allele</a> indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  I.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics.</li>
   </ul>
   <p>
     These implications can all be associated with the <a href="task-med-chg.html">Medication Usage Implication</a> profile which allows making a recommendation for the patient's medication therapy (e.g. discontinuing a medication, altering dosage, etc.).

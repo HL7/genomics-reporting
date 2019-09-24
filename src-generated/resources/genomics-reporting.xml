@@ -153,7 +153,7 @@
       </reference>
       <name value="Example - Complex Variant"/>
       <description value="Compound Heterozygote Variant Example"/>
-      <exampleCanonical value="StructureDefinition/obs-variant"/>
+      <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -162,7 +162,7 @@
       </reference>
       <name value="Example - NGS"/>
       <description value="SNV example"/>
-      <exampleCanonical value="StructureDefinition/obs-variant"/>
+      <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -172,7 +172,7 @@
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
       <description value="Inherited Disease Pathogenicity"/>
-      <exampleCanonical value="StructureDefinition/obs-inh-dis-path"/>
+      <exampleCanonical value="StructureDefinition/inherited-disease-pathogenicity"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -186,20 +186,20 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Observation/obs-genotype-hla-a-glstring-r4"/>
+        <reference value="Observation/genotype-hla-a-glstring-r4"/>
       </reference>
       <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
       <description value="HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01"/>
-      <exampleCanonical value="StructureDefinition/obs-genotype"/>
+      <exampleCanonical value="StructureDefinition/genotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
-        <reference value="Observation/obs-haplotype-hla-a-1-r4"/>
+        <reference value="Observation/haplotype-hla-a-1-r4"/>
       </reference>
       <name value="Example - Observation for a single HLA-A allele"/>
       <description value="HLA-A allele observaation: HLA-A*03:01:01:01"/>
-      <exampleCanonical value="StructureDefinition/obs-haplotype"/>
+      <exampleCanonical value="StructureDefinition/haplotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -310,8 +310,8 @@
         <title value="Artifact List"/>
         <generation value="html"/>
       <page>
-<nameUrl value="obs-base.html"/>
-<ns0:title xmlns:ns0="http://hl7.org/fhir" value="Genomic Observation Common Properties"/>
+<nameUrl value="genomics-base.html"/>
+<ns0:title xmlns:ns0="http://hl7.org/fhir" value="Genomics Base"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -335,77 +335,77 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-gen-grouper.html"/>
-<ns5:title xmlns:ns5="http://hl7.org/fhir" value="Observation Grouper"/>
+<nameUrl value="grouper.html"/>
+<ns5:title xmlns:ns5="http://hl7.org/fhir" value="Grouper"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-overall.html"/>
-<ns6:title xmlns:ns6="http://hl7.org/fhir" value="Genomic analysis overall interpretation"/>
+<nameUrl value="overall-interpretation.html"/>
+<ns6:title xmlns:ns6="http://hl7.org/fhir" value="Overall Interpretation"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-gen-finding.html"/>
+<nameUrl value="finding.html"/>
 <ns7:title xmlns:ns7="http://hl7.org/fhir" value="Genomic Finding"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-haplotype.html"/>
+<nameUrl value="haplotype.html"/>
 <ns8:title xmlns:ns8="http://hl7.org/fhir" value="Haplotype"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-genotype.html"/>
+<nameUrl value="genotype.html"/>
 <ns9:title xmlns:ns9="http://hl7.org/fhir" value="Genotype"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-variant.html"/>
+<nameUrl value="variant.html"/>
 <ns10:title xmlns:ns10="http://hl7.org/fhir" value="Variant"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-sequence-phase-reltn.html"/>
+<nameUrl value="sequence-phase-relationship.html"/>
 <ns11:title xmlns:ns11="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-implication.html"/>
+<nameUrl value="implication.html"/>
 <ns12:title xmlns:ns12="http://hl7.org/fhir" value="Genomic Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-inh-dis-path.html"/>
+<nameUrl value="inherited-disease-pathogenicity.html"/>
 <ns13:title xmlns:ns13="http://hl7.org/fhir" value="Inherited Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-region-studied.html"/>
+<nameUrl value="region-studied.html"/>
 <ns14:title xmlns:ns14="http://hl7.org/fhir" value="Region Studied"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-med-implication.html"/>
+<nameUrl value="medication-implication.html"/>
 <ns15:title xmlns:ns15="http://hl7.org/fhir" value="Medication Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-metabolism.html"/>
+<nameUrl value="medication-metabolism.html"/>
 <ns16:title xmlns:ns16="http://hl7.org/fhir" value="Medication Metabolism Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-transporter.html"/>
+<nameUrl value="medication-transporter.html"/>
 <ns17:title xmlns:ns17="http://hl7.org/fhir" value="Medication Transporter Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-efficacy.html"/>
+<nameUrl value="medication-efficacy.html"/>
 <ns18:title xmlns:ns18="http://hl7.org/fhir" value="Medication Efficacy Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-high-risk.html"/>
+<nameUrl value="medication-high-risk.html"/>
 <ns19:title xmlns:ns19="http://hl7.org/fhir" value="High Risk Allele"/>
 <generation value="generated"/>
 </page>
@@ -420,22 +420,22 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-som-implication.html"/>
+<nameUrl value="somatic-implication.html"/>
 <ns22:title xmlns:ns22="http://hl7.org/fhir" value="Somatic Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-som-diagnostic.html"/>
+<nameUrl value="somatic-diagnostic.html"/>
 <ns23:title xmlns:ns23="http://hl7.org/fhir" value="Somatic Diagnostic Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-som-prognostic.html"/>
+<nameUrl value="somatic-prognostic.html"/>
 <ns24:title xmlns:ns24="http://hl7.org/fhir" value="Somatic Prognostic Implication"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-som-predictive.html"/>
+<nameUrl value="somatic-predictive.html"/>
 <ns25:title xmlns:ns25="http://hl7.org/fhir" value="Somatic Predictive Implication"/>
 <generation value="generated"/>
 </page>
@@ -505,12 +505,12 @@
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-genotype-hla-a-glstring-r4.html"/>
+<nameUrl value="genotype-hla-a-glstring-r4.html"/>
 <ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
-<nameUrl value="obs-haplotype-hla-a-1-r4.html"/>
+<nameUrl value="haplotype-hla-a-1-r4.html"/>
 <ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
