@@ -6,10 +6,10 @@
   <a name="location"> </a>
   <h4>Variant Location properties</h4>
   <p>
-    These are properties that help to describe <i>where</i> a particular variation occurs. Considering the reference sequence <code>genomic-ref-seq:48013-7</code> and coordinate system <code>coordinate-system:92822-6</code>, the component <code>allele-start-end:81254-5</code> can denote the first and last genomic positions in the reference that correspond to changes. If the observation points to a <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a> resource as a reference sequence, then that resource will carry this information under <code>variant.start</code> and <code>variant.end</code>.
+    These are properties that help to describe <i>where</i> a particular variation occurs. Considering the reference sequence <code>genomic-ref-seq:48013-7</code> and coordinate system <code>coordinate-system:92822-6</code>, the component <code>exact-start-end</code> can denote the first and last genomic positions in the reference that correspond to changes. If the observation points to a <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a> resource as a reference sequence, then that resource will carry this information under <code>variant.start</code> and <code>variant.end</code>.
   </p>
   <p>
-  	Additionally, if the exact start and end positions are unknown, <code>outer-start-end:81301-4</code> and <code>inner-start-end:81302-2</code> can be used to deliver the boundaries of where the variant begins and ends.
+  	Additionally, if the exact start and end positions are unknown, <code>outer-start-end</code> and <code>inner-start-end</code> can be used to deliver the boundaries of where the variant begins and ends.
   </p>
   <a name="Variant Change"> </a>
   <h4>Variant Change Components</h4>

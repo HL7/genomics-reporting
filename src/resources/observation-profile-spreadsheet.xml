@@ -29,11 +29,11 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17040</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>380</WindowTopX>
-  <WindowTopY>460</WindowTopY>
-  <ActiveSheet>1</ActiveSheet>
+  <WindowHeight>22820</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
+  <ActiveSheet>10</ActiveSheet>
   <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
@@ -1227,7 +1227,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -3752,8 +3751,8 @@
  </Worksheet>
  <Worksheet ss:Name="finding">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase"
-    ss:RefersTo="='finding'!R1C1:R10C24" ss:Hidden="1"/>
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=finding!R1C1:R10C24"
+    ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="15" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
@@ -4309,7 +4308,7 @@
  </Worksheet>
  <Worksheet ss:Name="genotype">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='genotype'!R1C1:R5C24"
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=genotype!R1C1:R5C24"
     ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="21" x:FullColumns="1"
@@ -4993,7 +4992,7 @@
  </Worksheet>
  <Worksheet ss:Name="haplotype">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='haplotype'!R1C1:R6C24"
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=haplotype!R1C1:R6C24"
     ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="22" x:FullColumns="1"
@@ -5738,8 +5737,7 @@
    <Row ss:AutoFitHeight="0" ss:Height="45" ss:StyleID="s87">
     <Cell ss:StyleID="s88"><Data ss:Type="String">Profile Name</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">The name of an element for the purposes of this profile (used for slicing, code generation, etc. (see wiki for more details)</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">The name of an element for the purposes of this profile (used for slicing, code generation, etc. (see wiki for more details)</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Discriminator</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -10757,7 +10755,7 @@
  </Worksheet>
  <Worksheet ss:Name="variant">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='variant'!R1C1:R80C24"
+   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=variant!R1C1:R80C24"
     ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="92" x:FullColumns="1"
@@ -12787,7 +12785,7 @@
     <Cell ss:StyleID="s110"><NamedCell ss:Name="_FilterDatabase"/></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="150">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">allele-start-end</Data><NamedCell
+    <Cell ss:StyleID="s103"><Data ss:Type="String">exact-start-end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s104"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12801,12 +12799,11 @@
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
+    <Cell ss:Index="13" ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic Allele start-end</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Exact start-end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">The genomic allele location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C&gt;T (p.Arg417Cys), the genomic allele location is Chr3: 128906220 on Assembly GRCh38</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">This  location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C&gt;T (p.Arg417Cys), the  location is Chr3: 128906220 on Assembly GRCh38</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12834,7 +12831,7 @@
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;81254-5&quot;}]}</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;exact-start-end&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12896,7 +12893,7 @@
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic Allele start</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Exact Start</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -12925,7 +12922,7 @@
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Genomic Allele end</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Exact End</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">Optional since many representations (VCF, SPDI) only provide a single position</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -13043,9 +13040,9 @@
     <Cell ss:Index="12" ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Structural variant outer start and end</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Variant outer start and end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">The genomic coordinates of the widest genomic range in which the structural variant might reside.</Data><NamedCell
+    <Cell ss:StyleID="s107"><Data ss:Type="String">The genomic coordinates of the widest genomic range in which the  variant might reside.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s108"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -13071,7 +13068,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;81301-4&quot;}]}</Data><NamedCell
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;outer-start-end&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -13185,7 +13182,7 @@
     <Cell ss:Index="12" ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">Structural variant inner start and end</Data><NamedCell
+    <Cell ss:StyleID="s106"><Data ss:Type="String">Variant inner start and end</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">The genomic coordinates of the narrowest genomic range in which the structural variant might reside.</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
@@ -13213,7 +13210,7 @@
     <Cell ss:StyleID="s106"><Data ss:Type="String">Y</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
-    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://loinc.org&quot;,&quot;code&quot;:&quot;81302-2&quot;}]}</Data><NamedCell
+    <Cell ss:Index="12" ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;inner-start-end&quot;}]}</Data><NamedCell
       ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
     <Cell ss:StyleID="s106"><NamedCell ss:Name="_FilterDatabase"/></Cell>
@@ -13618,6 +13615,7 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
+   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -13637,7 +13635,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>76</ActiveRow>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -17064,8 +17063,8 @@
  </Worksheet>
  <Worksheet ss:Name="medication-metabolism">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='medication-metabolism'!R1C1:R4C24"
-    ss:Hidden="1"/>
+   <NamedRange ss:Name="_FilterDatabase"
+    ss:RefersTo="='medication-metabolism'!R1C1:R4C24" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="15" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
@@ -17593,8 +17592,8 @@
  </Worksheet>
  <Worksheet ss:Name="medication-high-risk">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='medication-high-risk'!R1C1:R4C24"
-    ss:Hidden="1"/>
+   <NamedRange ss:Name="_FilterDatabase"
+    ss:RefersTo="='medication-high-risk'!R1C1:R4C24" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="14" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
@@ -18631,8 +18630,8 @@
  </Worksheet>
  <Worksheet ss:Name="medication-efficacy">
   <Names>
-   <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="='medication-efficacy'!R1C1:R4C24"
-    ss:Hidden="1"/>
+   <NamedRange ss:Name="_FilterDatabase"
+    ss:RefersTo="='medication-efficacy'!R1C1:R4C24" ss:Hidden="1"/>
   </Names>
   <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="15" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
@@ -24571,8 +24570,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s90"><Data ss:Type="String">Element</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Aliases</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
@@ -27378,8 +27376,7 @@
         html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Used when discriminator can't be specified to explain how to differentiate slices</Font>       </ss:Data></Comment></Cell>
     <Cell ss:StyleID="s90"><Data ss:Type="String">Element</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40"><Font
-        html:Color="#000000">        </Font><Font html:Face="Tahoma"
-        x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font><Font
+        html:Face="Tahoma" x:Family="Swiss" html:Size="8" html:Color="#000000">Format is ResourceName.componentName.componentName</Font><Font
         html:Color="#000000">       </Font></ss:Data></Comment></Cell>
     <Cell ss:StyleID="s89"><Data ss:Type="String">Aliases</Data><Comment
       ss:Author=""><ss:Data xmlns="http://www.w3.org/TR/REC-html40">        <Font
