@@ -35,7 +35,7 @@
             <display value="Present"/>
           </coding>
         </valueCodeableConcept>
-		
+
 		<!--HGVS which was unpaceked-->
         <!--component>
           <code>
@@ -53,8 +53,8 @@
             </coding>
           </valueCodeableConcept>
         </component-->
-		
-		
+
+
 		<component>
           <code>
             <coding>
@@ -73,9 +73,9 @@
 		<component>
           <code>
             <coding>
-              <system value="http://loinc.org"/>
-              <code value="81254-5"/>
-              <display value="allele-start-end"/>
+              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes/"/>
+              <code value="exact-start-end"/>
+              <display value="Variant exact start and end"/>
             </coding>
           </code>
           <valueRange>
@@ -85,7 +85,7 @@
 		  <high>
 		  <value value="769"/>
 		  </high>
-		  </valueRange>	  
+		  </valueRange>
         </component>
 		<component>
           <code>
@@ -96,7 +96,7 @@
             </coding>
           </code>
           <valueString value="G"/>
-        </component>	
+        </component>
 		<component>
           <code>
             <coding>
@@ -107,7 +107,7 @@
           </code>
           <valueString value="A"/>
         </component>
-	
+
       </Observation>
     </resource>
     <request>
@@ -149,9 +149,9 @@
             <display value="Present"/>
           </coding>
         </valueCodeableConcept>
-		
+
 		<!--HGVS which was unpaceked-->
-        <!--component> 
+        <!--component>
           <code>
             <coding>
               <system value="http://loinc.org"/>
@@ -160,7 +160,7 @@
             </coding>
           </code>
           <valueCodeableConcept>
-            <coding>		
+            <coding>
 			HGVS which was unpaceked
 			<system value="http://varnomen.hgvs.org"/>
               <display value="NM_022787.3:c.53A&gt;G"/>
@@ -185,9 +185,9 @@
 		<component>
           <code>
             <coding>
-              <system value="http://loinc.org"/>
-              <code value="81254-5"/>
-              <display value="allele-start-end"/>
+              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+              <code value="exact-start-end"/>
+              <display value="Variant exact start and end"/>
             </coding>
           </code>
           <valueRange>
@@ -197,7 +197,7 @@
 		  <high>
 		  <value value="53"/>
 		  </high>
-		  </valueRange>	  
+		  </valueRange>
         </component>
 		<component>
           <code>
@@ -208,7 +208,7 @@
             </coding>
           </code>
           <valueString value="A"/>
-        </component>	
+        </component>
 		<component>
           <code>
             <coding>
@@ -218,7 +218,7 @@
             </coding>
           </code>
           <valueString value="G"/>
-        </component>		
+        </component>
       </Observation>
     </resource>
     <request>
@@ -229,7 +229,7 @@
   <entry>
     <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12a"/>
     <resource>
-      <Observation> 
+      <Observation>
         <meta>
           <profile
                    value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
