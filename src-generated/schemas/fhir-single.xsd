@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sun, Sep 15, 2019 03:30+0000 for FHIR v4.1.0 
+  Generated on Fri, Sep 27, 2019 06:44+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -410,7 +410,6 @@
       <xs:element ref="DiagnosticReport"/>
       <xs:element ref="DocumentManifest"/>
       <xs:element ref="DocumentReference"/>
-      <xs:element ref="EffectEvidenceSynthesis"/>
       <xs:element ref="Encounter"/>
       <xs:element ref="Endpoint"/>
       <xs:element ref="EnrollmentRequest"/>
@@ -477,19 +476,15 @@
       <xs:element ref="RegulatedAuthorization"/>
       <xs:element ref="RelatedPerson"/>
       <xs:element ref="RequestGroup"/>
-      <xs:element ref="ResearchDefinition"/>
-      <xs:element ref="ResearchElementDefinition"/>
       <xs:element ref="ResearchStudy"/>
       <xs:element ref="ResearchSubject"/>
       <xs:element ref="RiskAssessment"/>
-      <xs:element ref="RiskEvidenceSynthesis"/>
       <xs:element ref="Schedule"/>
       <xs:element ref="SearchParameter"/>
       <xs:element ref="ServiceRequest"/>
       <xs:element ref="Slot"/>
       <xs:element ref="Specimen"/>
       <xs:element ref="SpecimenDefinition"/>
-      <xs:element ref="Statistic"/>
       <xs:element ref="StructureDefinition"/>
       <xs:element ref="StructureMap"/>
       <xs:element ref="Subscription"/>
@@ -1694,6 +1689,179 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="Statistic">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A fact or piece of data from a  study of a large quantity of numerical data.  A mathematical or quantified characteristic of a group of observations.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A description of the content value of the statistic.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="note" type="Annotation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="statisticType" type="CodeableConcept" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Type of statistic, eg relative risk.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="Quantity" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Statistic value.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="sampleSize" type="Statistic.SampleSize" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of samples in the statistic.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="attributeEstimate" type="Statistic.AttributeEstimate" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An estimate of the precision of the statistic.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Statistic.SampleSize">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A fact or piece of data from a  study of a large quantity of numerical data.  A mathematical or quantified characteristic of a group of observations.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Human-readable summary of population sample size.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="note" type="Annotation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnote or explanatory note about the sample size.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="numberOfStudies" type="integer" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of participants in the population.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="numberOfParticipants" type="integer" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the sample size.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="knownDataCount" type="integer" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of participants with known results for measured variables.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="numeratorCount" type="integer" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of participants with “positive” results, only used to report actual numerator count for a proportion.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Statistic.AttributeEstimate">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A fact or piece of data from a  study of a large quantity of numerical data.  A mathematical or quantified characteristic of a group of observations.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Human-readable summary of the estimate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="note" type="Annotation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnote or explanatory note about the estimate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="type" type="CodeableConcept" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The estimateType of precision estimate, eg confidence interval or p value type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="Quantity" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The singular quantity of the precision estimate, for precision estimates represented as single values; also used to report unit of measure.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="level" type="decimal" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Use 95 for a 95% confidence interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="range" type="Range" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Lower bound of confidence interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="estimateQualifier" type="Statistic.EstimateQualifier" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An estimate of the precision of the estimate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Statistic.EstimateQualifier">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A fact or piece of data from a  study of a large quantity of numerical data.  A mathematical or quantified characteristic of a group of observations.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Human-readable summary of the estimate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="note" type="Annotation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnote or explanatory note about the estimate.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="type" type="CodeableConcept" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The estimateType of attribute estimate, eg confidence interval or p value type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" type="Quantity" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The singular quantity of the attribute estimate, for attribute estimates represented as single values; also used to report unit of measure.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="level" type="decimal" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Use 95 for a 95% confidence interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="range" type="Range" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Lower bound of confidence interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Coding">
     <xs:annotation>
       <xs:documentation xml:lang="en">A reference to a code defined by a terminology system.</xs:documentation>
@@ -1841,6 +2009,70 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
           <xs:element name="denominator" type="Quantity" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">The value of the denominator.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrderedDistribution">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">An ordered list (distribution) of statistics.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" type="string" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A description of the content and value of the statistic.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="note" type="Annotation" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="numberOfIntervals" type="integer" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Number of intervals in an array, eg 4 for quartiles.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="bottomOfFirstInterval" type="Quantity" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Bottom of first interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="interval" type="OrderedDistribution.Interval" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="topOfInterval" type="Quantity" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Singular value of the statistic at the upper bound of the interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrderedDistribution.Interval">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">An ordered list (distribution) of statistics.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="rankOrder" type="integer" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Relative order of interval.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="intervalStatistic" type="Statistic" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Values and parameters for a single statistic related to the interval.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -4174,71 +4406,6 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
        </xs:extension>
      </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="ConceptMapEquivalence-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="relatedto">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Related To</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="equivalent">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Equivalent</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="equal">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Equal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="wider">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Wider</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="subsumes">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Subsumes</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="narrower">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Narrower</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="specializes">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Specializes</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="inexact">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Inexact</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="unmatched">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Unmatched</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="disjoint">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Disjoint</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ConceptMapEquivalence">
-    <xs:annotation>
-      <xs:documentation xml:lang="en"></xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-       <xs:extension base="Element">
-         <xs:attribute name="value" type="ConceptMapEquivalence-list" use="optional"/>
-       </xs:extension>
-     </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="DocumentReferenceStatus-list">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="current">
@@ -5138,6 +5305,11 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">Business identifiers assigned to this adverse event by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="AdverseEventStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The current state of the data entry of the adverse event or potential adverse event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="actuality" minOccurs="1" maxOccurs="1" type="AdverseEventActuality">
             <xs:annotation>
               <xs:documentation xml:lang="en">Whether the event actually happened, or just had the potential to. Note that this is independent of whether anyone was affected or harmed or how severely.</xs:documentation>
@@ -5163,11 +5335,14 @@ A coverage may only be responsible for specific types of charges, and the sequen
               <xs:documentation xml:lang="en">The Encounter during which AdverseEvent was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+          <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation xml:lang="en">The date (and perhaps time) when the adverse event occurred.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+            </xs:annotation>
+            <xs:element name="occurrenceDateTime" type="dateTime"/>
+            <xs:element name="occurrencePeriod" type="Period"/>
+            <xs:element name="occurrenceTiming" type="Timing"/>
+          </xs:choice>
           <xs:element name="detected" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation xml:lang="en">Estimated or actual date the AdverseEvent began, in the opinion of the reporter.</xs:documentation>
@@ -5206,11 +5381,6 @@ A coverage may only be responsible for specific types of charges, and the sequen
           <xs:element name="participant" type="AdverseEvent.Participant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates who or what participated in the adverse event and how they were involved.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="detector" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Who or what identified a change in physiological state or condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="suspectEntity" type="AdverseEvent.SuspectEntity" minOccurs="0" maxOccurs="unbounded">
@@ -5346,6 +5516,41 @@ Additionally, the supporting item can be a document that is relevant to this ins
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="AdverseEventActuality-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AdverseEventStatus-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="in-progress">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">In Progress</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completed">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Completed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered-in-error">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AdverseEventStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Codes identifying the lifecycle stage of an event.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AdverseEventStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -8960,11 +9165,6 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Identifies the patient or group whose intended care is handled by the team.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The Encounter during which this CareTeam was created or to which the creation of this record is tightly associated.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
               <xs:documentation xml:lang="en">Indicates when the team did (or is intended to) come into effect and end.</xs:documentation>
@@ -11271,7 +11471,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Business identifiers assigned to this clinical impression by the performer or other systems which remain constant as the resource is updated and propagates from server to server.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="ClinicalImpressionStatus">
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="EventStatus">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifies the workflow status of the assessment.</xs:documentation>
            </xs:annotation>
@@ -11393,11 +11593,31 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="ClinicalImpressionStatus-list">
+  <xs:simpleType name="EventStatus-list">
     <xs:restriction base="code-primitive">
+      <xs:enumeration value="preparation">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Preparation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="in-progress">
         <xs:annotation>
           <xs:documentation xml:lang="en">In Progress</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="not-done">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Not Done</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="on-hold">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">On Hold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="stopped">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Stopped</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="completed">
@@ -11410,16 +11630,21 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ClinicalImpressionStatus">
+  <xs:complexType name="EventStatus">
     <xs:annotation>
       <xs:documentation xml:lang="en">The workflow state of a clinical impression.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="ClinicalImpressionStatus-list" use="optional"/>
+        <xs:attribute name="value" type="EventStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -12355,61 +12580,6 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="EventStatus-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="preparation">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Preparation</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="in-progress">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">In Progress</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="not-done">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Not Done</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="on-hold">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">On Hold</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="stopped">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Stopped</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="completed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Completed</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="entered-in-error">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="unknown">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Unknown</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="EventStatus">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The status of the communication.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="EventStatus-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="CommunicationRequest" type="CommunicationRequest">
     <xs:annotation>
       <xs:documentation xml:lang="en">A request to convey information; e.g. the CDS system proposes that an alert be sent to a responsible provider, the CDS system proposes that the public health agency be notified about a reportable condition.</xs:documentation>
@@ -13264,7 +13434,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="unmapped" type="ConceptMap.Unmapped" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">What to do when there is no mapping for the source concept. &quot;Unmapped&quot; does not include codes that are unmatched, and the unmapped element is ignored in a code is specified to have equivalence = unmatched.</xs:documentation>
+              <xs:documentation xml:lang="en">What to do when there is no mapping to a target concept from the source concept.  This provides the &quot;default&quot; to be applied when there is no target concept mapping specified.  The 'unmapped' element is ignored if a code is specified to have relationship = not-related-to.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -13286,6 +13456,11 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="display" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The display for the code. The display is only provided to help editors when editing the concept map.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="noMap" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If noMap = true this indicates that no mapping to a target concept exists for this source concept.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="target" type="ConceptMap.Target" minOccurs="0" maxOccurs="unbounded">
@@ -13314,9 +13489,9 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The display for the code. The display is only provided to help editors when editing the concept map.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="equivalence" minOccurs="1" maxOccurs="1" type="ConceptMapEquivalence">
+          <xs:element name="relationship" minOccurs="1" maxOccurs="1" type="ConceptMapRelationship">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The equivalence between the source and target concepts (counting for the dependencies and products). The equivalence is read from target to source (e.g. the target is 'wider' than the source).</xs:documentation>
+              <xs:documentation xml:lang="en">The relationship between the source and target concepts. The relationship is read from target to source (e.g. the target is 'broader' than the source).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="comment" minOccurs="0" maxOccurs="1" type="string">
@@ -13331,7 +13506,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="product" type="ConceptMap.DependsOn" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.</xs:documentation>
+              <xs:documentation xml:lang="en">A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the relationship (e.g., equivalent) cannot be relied on.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -15334,7 +15509,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The party who has signed-up for or 'owns' the contractual relationship to the policy or to whom the benefit of the policy for services rendered to them or their family is due.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subscriberId" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="subscriberId" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">The insurer assigned ID for the Subscriber.</xs:documentation>
            </xs:annotation>
@@ -15346,7 +15521,7 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="dependent" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A unique identifier for a dependent under the coverage.</xs:documentation>
+              <xs:documentation xml:lang="en">A designator for a dependent under the coverage.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relationship" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -17983,394 +18158,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="EffectEvidenceSynthesis" type="EffectEvidenceSynthesis">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="EffectEvidenceSynthesis">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this effect evidence synthesis when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this effect evidence synthesis is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the effect evidence synthesis is stored on different servers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this effect evidence synthesis when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the effect evidence synthesis when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the effect evidence synthesis author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A natural language name identifying the effect evidence synthesis. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the effect evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this effect evidence synthesis. Enables tracking the life-cycle of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the effect evidence synthesis was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the effect evidence synthesis changes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization or individual that published the effect evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the effect evidence synthesis from a consumer's perspective.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate effect evidence synthesis instances.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A legal or geographic region in which the effect evidence synthesis is intended to be used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the effect evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the effect evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The period during which the effect evidence synthesis content was or is planned to be in active use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Descriptive topics related to the content of the EffectEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individiual or organization primarily involved in the creation and maintenance of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for internal coherence of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for review of some aspect of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization responsible for officially endorsing the content for use in some setting.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="synthesisType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of synthesis eg meta-analysis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="studyType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of study eg randomized trial.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="population" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the population for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposure" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the exposure for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposureAlternative" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the comparison exposure for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="outcome" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resomece that defines the outcome for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="sampleSize" type="EffectEvidenceSynthesis.SampleSize" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the size of the sample involved in the synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="resultsByExposure" type="EffectEvidenceSynthesis.ResultsByExposure" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the results for each exposure considered in the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="effectEstimate" type="EffectEvidenceSynthesis.EffectEstimate" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The estimated effect of the exposure variant.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="certainty" type="EffectEvidenceSynthesis.Certainty" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the certainty of the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EffectEvidenceSynthesis.SampleSize">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of sample size.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numberOfStudies" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Number of studies included in this evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numberOfParticipants" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Number of participants included in this evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EffectEvidenceSynthesis.ResultsByExposure">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of results by exposure state.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposureState" minOccurs="0" maxOccurs="1" type="ExposureState">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Whether these results are for the exposure state or alternative exposure state.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="variantState" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Used to define variant exposure states such as low-risk state.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="riskEvidenceSynthesis" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Reference to a RiskEvidenceSynthesis resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EffectEvidenceSynthesis.EffectEstimate">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Examples include relative risk and mean difference.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="variantState" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Used to define variant exposure states such as low-risk state.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="value" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The point estimate of the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="unitOfMeasure" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the UCUM unit for the outcome.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="precisionEstimate" type="EffectEvidenceSynthesis.PrecisionEstimate" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the precision of the estimate for the effect.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EffectEvidenceSynthesis.PrecisionEstimate">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Examples include confidence interval and interquartile range.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="level" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Use 95 for a 95% confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="from" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Lower bound of confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="to" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Upper bound of confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EffectEvidenceSynthesis.Certainty">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A rating of the certainty of the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="certaintySubcomponent" type="EffectEvidenceSynthesis.CertaintySubcomponent" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of a component of the overall certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EffectEvidenceSynthesis.CertaintySubcomponent">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of subcomponent of certainty rating.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A rating of a subcomponent of rating certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="ExposureState-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="exposure">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Exposure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="exposure-alternative">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Exposure Alternative</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ExposureState">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Whether the results by exposure is describing the results for the primary exposure of interest (exposure) or the alternative state (exposureAlternative).</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="ExposureState-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="Encounter" type="Encounter">
     <xs:annotation>
       <xs:documentation xml:lang="en">An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.</xs:documentation>
@@ -19335,12 +19122,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:element name="Evidence" type="Evidence">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Evidence resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
+      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Evidence">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Evidence resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
+      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -19348,67 +19135,27 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this evidence when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this evidence is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the evidence is stored on different servers.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this evidence when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this summary is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the summary is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this evidence when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
+              <xs:documentation xml:lang="en">A formal identifier that is used to identify this summary when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the evidence when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the evidence author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A natural language name identifying the evidence. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
+              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the summary when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the summary author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the evidence.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="shortTitle" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="subtitle" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An explanatory or alternate title for the Evidence giving additional information about its content.</xs:documentation>
+              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the summary.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this evidence. Enables tracking the life-cycle of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the evidence was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence changes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization or individual that published the evidence.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the evidence from a consumer's perspective.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
+              <xs:documentation xml:lang="en">The status of this summary. Enables tracking the life-cycle of the content.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
@@ -19416,14 +19163,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate evidence instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A legal or geographic region in which the evidence is intended to be used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the evidence and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence.</xs:documentation>
+              <xs:documentation xml:lang="en">The date  (and optionally time) when the summary was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the summary changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
@@ -19436,54 +19178,203 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
+          <xs:element name="contributor" minOccurs="0" maxOccurs="unbounded" type="Contributor">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The period during which the evidence content was or is planned to be in active use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Descriptive topics related to the content of the Evidence. Topics provide a high-level categorization grouping types of Evidences that can be useful for filtering and searching.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individiual or organization primarily involved in the creation and maintenance of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for internal coherence of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for review of some aspect of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization responsible for officially endorsing the content for use in some setting.</xs:documentation>
+              <xs:documentation xml:lang="en">Contact detail and role for contributor to summary.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
+              <xs:documentation xml:lang="en">Link or citation to artifact associated with the summary.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="exposureBackground" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the population for the research.</xs:documentation>
+              <xs:documentation xml:lang="en">A free text natural language description of the evidence from a consumer's perspective.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="exposureVariant" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="assertion" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the exposure for the research.</xs:documentation>
+              <xs:documentation xml:lang="en">Declarative description of the Evidence.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="outcome" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resomece that defines the outcome for the research.</xs:documentation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="referentGroup" type="Evidence.ReferentGroup" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Group being referenced.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="variableDefinition" type="Evidence.VariableDefinition" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Evidence variable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="synthesisType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The particular type of synthesis if this is a synthesis summary.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="studyType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of study that produced this summary.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="statistic" minOccurs="0" maxOccurs="unbounded" type="Statistic">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The statistic value(s).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="distribution" minOccurs="0" maxOccurs="unbounded" type="OrderedDistribution">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Ordered distribution.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="certainty" type="Evidence.Certainty" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Level of certainty.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Evidence.ReferentGroup">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Textual description of referent group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="evidenceSource" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Various information categories of group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="intendedGroup" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Non-actual group that is a set of characteristics.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="directnessMatch" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indication of quality of match between intended group to actual group.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Evidence.VariableDefinition">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Description of the variable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="variableRole" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">exposure | referenceExposure | measuredVariable | confounder.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="actualDefinition" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Definition of the actual variable related to the statistic(s).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="intendedDefinition" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Definition of the intended variable related to the Evidence.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="directnessMatch" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indication of quality of match between intended variable to actual variable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Evidence.Certainty">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Textual description of certainty.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="note" minOccurs="0" maxOccurs="1" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Rating of certainty.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="certaintySubcomponent" type="Evidence.CertaintySubcomponent" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Subcomponent of certainty.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Evidence.CertaintySubcomponent">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Textual description of certainty subcomponent.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="note" minOccurs="0" maxOccurs="1" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Textual note of certainty subcomponent.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Rating of certainty subcomponent.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -19633,7 +19524,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The type of evidence element, a population, an exposure, or an outcome.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="characteristic" type="EvidenceVariable.Characteristic" minOccurs="1" maxOccurs="unbounded">
+          <xs:element name="actual" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">True if the actual variable measured, false if a conceptual representation of the intended variable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="characteristic" type="EvidenceVariable.Characteristic" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">A characteristic that defines the members of the evidence element. Multiple characteristics are applied with &quot;and&quot; semantics.</xs:documentation>
            </xs:annotation>
@@ -19665,9 +19561,19 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
             <xs:element name="definitionDataRequirement" type="DataRequirement"/>
             <xs:element name="definitionTriggerDefinition" type="TriggerDefinition"/>
           </xs:choice>
-          <xs:element name="usageContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+          <xs:element name="method" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.</xs:documentation>
+              <xs:documentation xml:lang="en">Method used for describing characteristic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="device" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Device used for determining characteristic.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="booleanSet" minOccurs="0" maxOccurs="unbounded" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Use booleanSet to define the members of the population, such as Age Ranges, Genders, Settings.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="exclude" minOccurs="0" maxOccurs="1" type="boolean">
@@ -20584,12 +20490,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="zh">领域资源</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="EffectEvidenceSynthesis">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">EffectEvidenceSynthesis</xs:documentation>
-          <xs:documentation xml:lang="en">EffectEvidenceSynthesis</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="Encounter">
         <xs:annotation>
           <xs:documentation xml:lang="en">Encounter</xs:documentation>
@@ -21159,18 +21059,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="zh">请求分组</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ResearchDefinition">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">ResearchDefinition</xs:documentation>
-          <xs:documentation xml:lang="en">ResearchDefinition</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ResearchElementDefinition">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">ResearchElementDefinition</xs:documentation>
-          <xs:documentation xml:lang="en">ResearchElementDefinition</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="ResearchStudy">
         <xs:annotation>
           <xs:documentation xml:lang="en">ResearchStudy</xs:documentation>
@@ -21202,12 +21090,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="fr">ÉvaluationRisques</xs:documentation>
           <xs:documentation xml:lang="es">EvaluacionDeRiesgo</xs:documentation>
           <xs:documentation xml:lang="zh">风险评估</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="RiskEvidenceSynthesis">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">RiskEvidenceSynthesis</xs:documentation>
-          <xs:documentation xml:lang="en">RiskEvidenceSynthesis</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Schedule">
@@ -21264,12 +21146,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:documentation xml:lang="it">DefinizioneCampione</xs:documentation>
           <xs:documentation xml:lang="es">DefinicionDeEspecimen</xs:documentation>
           <xs:documentation xml:lang="zh">标本定义</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Statistic">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Statistic</xs:documentation>
-          <xs:documentation xml:lang="en">Statistic</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="StructureDefinition">
@@ -27187,9 +27063,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The quantity of substance in the unit of presentation, or in the volume (or mass) of the single pharmaceutical product or manufactured item.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="presentationLowLimit" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:element name="presentationHighLimit" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A lower limit for the quantity of substance in the unit of presentation. For use when there is a range of strengths, this is the lower limit, with the presentation attribute becoming the upper limit.</xs:documentation>
+              <xs:documentation xml:lang="en">An upper limit for the quantity of substance in the unit of presentation. For use when there is a range of strengths, this is the high limit, with the presentation attribute becoming the lower limit.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="concentration" minOccurs="0" maxOccurs="1" type="Ratio">
@@ -27197,9 +27073,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The strength per unitary volume (or mass).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="concentrationLowLimit" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:element name="concentrationHighLimit" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A lower limit for the strength per unitary volume (or mass), for when there is a range. The concentration attribute then becomes the upper limit.</xs:documentation>
+              <xs:documentation xml:lang="en">An upper limit for the strength per unitary volume (or mass), for when there is a range. The concentration attribute then becomes the lower limit.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="measurementPoint" minOccurs="0" maxOccurs="1" type="string">
@@ -27240,9 +27116,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="strengthLowLimit" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:element name="strengthHighLimit" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance.</xs:documentation>
+              <xs:documentation xml:lang="en">Strength expressed in terms of a reference substance, upper limit.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="measurementPoint" minOccurs="0" maxOccurs="1" type="string">
@@ -29224,7 +29100,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
         <xs:sequence>
           <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation xml:lang="en">The actual ingredient - either a substance (simple ingredient) or another medication of a medication.</xs:documentation>
+              <xs:documentation xml:lang="en">The ingredient (substance or medication) that the ingredient.strength relates to.  This is represented as a concept from a code system or described in another resource (Substance or Medication).</xs:documentation>
             </xs:annotation>
             <xs:element name="itemCodeableConcept" type="CodeableConcept"/>
             <xs:element name="itemReference" type="Reference"/>
@@ -29322,6 +29198,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="instantiatesUri" minOccurs="0" maxOccurs="unbounded" type="uri">
             <xs:annotation>
               <xs:documentation xml:lang="en">The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationAdministration.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A plan that is fulfilled in whole or in part by this MedicationDispense.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -29502,6 +29383,11 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Identifiers associated with this Medication Dispense that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate. They are business identifiers assigned to this resource by the performer or other systems and remain constant as the resource is updated and propagates from server to server.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A plan that is fulfilled in whole or in part by this MedicationDispense.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="unbounded" type="Reference">
@@ -30105,7 +29991,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Specifies if changes are allowed when dispensing a medication from a regulatory perspective.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="schedule" type="MedicationKnowledge.Schedule" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="schedule" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifies the schedule of a medication in jurisdiction.</xs:documentation>
            </xs:annotation>
@@ -30134,22 +30020,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="allowed" minOccurs="1" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifies if regulation allows for changes in the medication when dispensing.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MedicationKnowledge.Schedule">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Information about a medication that is used to support knowledge.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="schedule" minOccurs="1" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the specific drug schedule.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -37716,522 +37586,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ResearchDefinition" type="ResearchDefinition">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The ResearchDefinition resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="ResearchDefinition">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The ResearchDefinition resource describes the conditional state (population and any exposures being compared within the population) and outcome (if specified) that the knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this research definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this research definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the research definition is stored on different servers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this research definition when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the research definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the research definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A natural language name identifying the research definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the research definition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="shortTitle" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="subtitle" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An explanatory or alternate title for the ResearchDefinition giving additional information about its content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this research definition. Enables tracking the life-cycle of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A Boolean value to indicate that this research definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The intended subjects for the ResearchDefinition. If this element is not provided, a Patient subject is assumed, but the subject of the ResearchDefinition can be anything.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="subjectReference" type="Reference"/>
-          </xs:choice>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the research definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the research definition changes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization or individual that published the research definition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the research definition from a consumer's perspective.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="comment" minOccurs="0" maxOccurs="unbounded" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate research definition instances.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A legal or geographic region in which the research definition is intended to be used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Explanation of why this research definition is needed and why it has been designed as it has.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A detailed description, from a clinical perspective, of how the ResearchDefinition is used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the research definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research definition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The period during which the research definition content was or is planned to be in active use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Descriptive topics related to the content of the ResearchDefinition. Topics provide a high-level categorization grouping types of ResearchDefinitions that can be useful for filtering and searching.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individiual or organization primarily involved in the creation and maintenance of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for internal coherence of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for review of some aspect of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization responsible for officially endorsing the content for use in some setting.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="library" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a Library resource containing the formal logic used by the ResearchDefinition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="population" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a ResearchElementDefinition resource that defines the population for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposure" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a ResearchElementDefinition resource that defines the exposure for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposureAlternative" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a ResearchElementDefinition resource that defines the exposureAlternative for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="outcome" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a ResearchElementDefinition resomece that defines the outcome for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ResearchElementDefinition" type="ResearchElementDefinition">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The ResearchElementDefinition resource describes a &quot;PICO&quot; element that knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="ResearchElementDefinition">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The ResearchElementDefinition resource describes a &quot;PICO&quot; element that knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this research element definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this research element definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the research element definition is stored on different servers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this research element definition when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the research element definition when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the research element definition author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence. To provide a version consistent with the Decision Support Service specification, use the format Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the Decision Support Service specification. Note that a version is required for non-experimental active artifacts.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A natural language name identifying the research element definition. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the research element definition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="shortTitle" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="subtitle" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An explanatory or alternate title for the ResearchElementDefinition giving additional information about its content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this research element definition. Enables tracking the life-cycle of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A Boolean value to indicate that this research element definition is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The intended subjects for the ResearchElementDefinition. If this element is not provided, a Patient subject is assumed, but the subject of the ResearchElementDefinition can be anything.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="subjectReference" type="Reference"/>
-          </xs:choice>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the research element definition was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the research element definition changes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization or individual that published the research element definition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the research element definition from a consumer's perspective.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="comment" minOccurs="0" maxOccurs="unbounded" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate research element definition instances.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A legal or geographic region in which the research element definition is intended to be used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Explanation of why this research element definition is needed and why it has been designed as it has.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A detailed description, from a clinical perspective, of how the ResearchElementDefinition is used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the research element definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research element definition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The period during which the research element definition content was or is planned to be in active use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Descriptive topics related to the content of the ResearchElementDefinition. Topics provide a high-level categorization grouping types of ResearchElementDefinitions that can be useful for filtering and searching.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individiual or organization primarily involved in the creation and maintenance of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for internal coherence of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for review of some aspect of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization responsible for officially endorsing the content for use in some setting.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="library" minOccurs="0" maxOccurs="unbounded" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a Library resource containing the formal logic used by the ResearchElementDefinition.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ResearchElementType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The type of research element, a population, an exposure, or an outcome.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="variableType" minOccurs="0" maxOccurs="1" type="VariableType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="characteristic" type="ResearchElementDefinition.Characteristic" minOccurs="1" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A characteristic that defines the members of the research element. Multiple characteristics are applied with &quot;and&quot; semantics.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ResearchElementDefinition.Characteristic">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The ResearchElementDefinition resource describes a &quot;PICO&quot; element that knowledge (evidence, assertion, recommendation) is about.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:choice minOccurs="1" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Define members of the research element using Codes (such as condition, medication, or observation), Expressions ( using an expression language such as FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the last year).</xs:documentation>
-            </xs:annotation>
-            <xs:element name="definitionCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="definitionCanonical" type="canonical"/>
-            <xs:element name="definitionExpression" type="Expression"/>
-            <xs:element name="definitionDataRequirement" type="DataRequirement"/>
-          </xs:choice>
-          <xs:element name="usageContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exclude" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">When true, members with this characteristic are excluded from the element.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="unitOfMeasure" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the UCUM unit for the outcome.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="studyEffectiveDescription" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A narrative description of the time period the study covers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates what effective period the study covers.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="studyEffectiveDateTime" type="dateTime"/>
-            <xs:element name="studyEffectivePeriod" type="Period"/>
-            <xs:element name="studyEffectiveDuration" type="Duration"/>
-            <xs:element name="studyEffectiveTiming" type="Timing"/>
-          </xs:choice>
-          <xs:element name="studyEffectiveTimeFromStart" minOccurs="0" maxOccurs="1" type="Duration">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates duration from the study initiation.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="studyEffectiveGroupMeasure" minOccurs="0" maxOccurs="1" type="GroupMeasure">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates how elements are aggregated within the study effective period.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="participantEffectiveDescription" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A narrative description of the time period the study covers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates what effective period the study covers.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="participantEffectiveDateTime" type="dateTime"/>
-            <xs:element name="participantEffectivePeriod" type="Period"/>
-            <xs:element name="participantEffectiveDuration" type="Duration"/>
-            <xs:element name="participantEffectiveTiming" type="Timing"/>
-          </xs:choice>
-          <xs:element name="participantEffectiveTimeFromStart" minOccurs="0" maxOccurs="1" type="Duration">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates duration from the participant's study entry.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="participantEffectiveGroupMeasure" minOccurs="0" maxOccurs="1" type="GroupMeasure">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates how elements are aggregated within the study effective period.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="ResearchElementType-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="population">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Population</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="exposure">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Exposure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="outcome">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Outcome</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="ResearchElementType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The possible types of research elements (E.g. Population, Exposure, Outcome).</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="ResearchElementType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="VariableType-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="dichotomous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Dichotomous</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="continuous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Continuous</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="descriptive">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Descriptive</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="VariableType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The possible types of variables for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="VariableType-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="ResearchStudy" type="ResearchStudy">
     <xs:annotation>
       <xs:documentation xml:lang="en">A process where a researcher or organization plans and then executes a series of steps intended to increase the field of healthcare-related knowledge.  This includes studies of safety, efficacy, comparative effectiveness and other information about medications, devices, therapies and other interventional and investigative techniques.  A ResearchStudy involves the gathering of information about human or animal subjects.</xs:documentation>
@@ -38766,333 +38120,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="rationale" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">Additional information explaining the basis for the prediction.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="RiskEvidenceSynthesis" type="RiskEvidenceSynthesis">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="RiskEvidenceSynthesis">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this risk evidence synthesis when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this risk evidence synthesis is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the risk evidence synthesis is stored on different servers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this risk evidence synthesis when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the risk evidence synthesis when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the risk evidence synthesis author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A natural language name identifying the risk evidence synthesis. This name should be usable as an identifier for the module by machine processing applications such as code generation.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the risk evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this risk evidence synthesis. Enables tracking the life-cycle of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the risk evidence synthesis was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the risk evidence synthesis changes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization or individual that published the risk evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the risk evidence synthesis from a consumer's perspective.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate risk evidence synthesis instances.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A legal or geographic region in which the risk evidence synthesis is intended to be used.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A copyright statement relating to the risk evidence synthesis and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the risk evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The period during which the risk evidence synthesis content was or is planned to be in active use.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics provide a high-level categorization grouping types of EffectEvidenceSynthesiss that can be useful for filtering and searching.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individiual or organization primarily involved in the creation and maintenance of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for internal coherence of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization primarily responsible for review of some aspect of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An individual or organization responsible for officially endorsing the content for use in some setting.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="synthesisType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of synthesis eg meta-analysis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="studyType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of study eg randomized trial.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="population" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the population for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposure" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resource that defines the exposure for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="outcome" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to a EvidenceVariable resomece that defines the outcome for the research.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="sampleSize" type="RiskEvidenceSynthesis.SampleSize" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the size of the sample involved in the synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="riskEstimate" type="RiskEvidenceSynthesis.RiskEstimate" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The estimated risk of the outcome.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="certainty" type="RiskEvidenceSynthesis.Certainty" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the certainty of the risk estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RiskEvidenceSynthesis.SampleSize">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of sample size.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numberOfStudies" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Number of studies included in this evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numberOfParticipants" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Number of participants included in this evidence synthesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RiskEvidenceSynthesis.RiskEstimate">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of risk estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Examples include proportion and mean.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="value" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The point estimate of the risk estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="unitOfMeasure" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Specifies the UCUM unit for the outcome.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="denominatorCount" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The sample size for the group that was measured for this risk estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numeratorCount" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The number of group members with the outcome of interest.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="precisionEstimate" type="RiskEvidenceSynthesis.PrecisionEstimate" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the precision of the estimate for the effect.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RiskEvidenceSynthesis.PrecisionEstimate">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Examples include confidence interval and interquartile range.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="level" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Use 95 for a 95% confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="from" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Lower bound of confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="to" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Upper bound of confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RiskEvidenceSynthesis.Certainty">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A rating of the certainty of the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="certaintySubcomponent" type="RiskEvidenceSynthesis.CertaintySubcomponent" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of a component of the overall certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RiskEvidenceSynthesis.CertaintySubcomponent">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a population plus exposure state where the risk estimate is derived from a combination of research studies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of subcomponent of certainty rating.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A rating of a subcomponent of rating certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -40373,354 +39400,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="SpecimenContainedPreference-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Statistic" type="Statistic">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="Statistic">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="DomainResource">
-        <xs:sequence>
-          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this statistic when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this statistic is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the statistic is stored on different servers.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A formal identifier that is used to identify this statistic when it is represented in other formats, or referenced in a specification, model, design or an instance.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The identifier that is used to identify this version of the statistic when it is referenced in a specification, model, design or instance. This is an arbitrary value managed by the statistic author and is not expected to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not available. There is also no expectation that versions can be placed in a lexicographical sequence.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A short, descriptive, user-friendly title for the statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of this statistic. Enables tracking the life-cycle of the content.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date  (and optionally time) when the statistic was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the statistic changes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate evidence instances.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was approved by the publisher. Approval happens once when the content is officially approved for usage.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="statisticPublisher" type="Statistic.StatisticPublisher" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The individual or organization that produced this statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contributor" minOccurs="0" maxOccurs="unbounded" type="Contributor">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact detail and role for contributor to statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Link to artifact associated with statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the statistic from a consumer's perspective.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="synthesisType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The particular type of synthesis if this is a synthesis statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="studyType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The type of study that produced this statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposureBackground" minOccurs="1" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">TBD.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposure" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">TBD.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="exposureVariant" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Exposure or intervention or exposure state.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="measuredVariable" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Outcome or characteristic that is measured.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="statisticType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The effect or risk estimate type.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The statistic value.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="sampleSize" type="Statistic.SampleSize" minOccurs="0" maxOccurs="1">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Population sample size.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="precisionEstimate" type="Statistic.PrecisionEstimate" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">An estimate of the precision of the statistic.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="pValue" type="Statistic.PValue" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The probability that this statistic would be the same given the null hypothesis.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="certainty" type="Statistic.Certainty" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of the certainty of the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Statistic.StatisticPublisher">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details for the  publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Statistic.SampleSize">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of population sample size.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Footnote or explanatory note about the sample size.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numberOfStudies" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Number of participants in the population.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numberOfParticipants" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the sample size.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="knownDataCount" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">TBD.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="numeratorCount" minOccurs="0" maxOccurs="1" type="integer">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">TBD.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Statistic.PrecisionEstimate">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of the estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Footnote or explanatory note about the estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The estimate type.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="level" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Use 95 for a 95% confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="from" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Lower bound of confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="to" minOccurs="0" maxOccurs="1" type="decimal">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Upper bound of confidence interval.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Statistic.PValue">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of the estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Footnote or explanatory note about the p value.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">TBD.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Actual p value.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="range" minOccurs="0" maxOccurs="1" type="Range">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">TBD.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Statistic.Certainty">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of the certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A rating of the certainty of the effect estimate.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="certaintySubcomponent" type="Statistic.CertaintySubcomponent" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A description of a component of the overall certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Statistic.CertaintySubcomponent">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">The Statistic resource codifies a statistical measure and corresponding certainty.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Human-readable summary of the subcomponent.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A human-readable string to clarify or explain concepts about the resource.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Type of subcomponent of certainty rating.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A rating of a subcomponent of rating certainty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
