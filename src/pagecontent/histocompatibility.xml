@@ -31,14 +31,16 @@
     These principles were implemented in a technical specification by extending an existing XML based format for exchanging histocompatibility and immunogenetic genotyping data called <a href="https://bioinformatics.bethematchclinical.org/hla-resources/hml">Histoimmunogenetics Markup Language (HML)</a> to include results from NGS methodologies. The resulting schema may be found in <a href="https://schemas.nmdp.org">here</a>. The National Marrow Donor Program (NMDP)/Be The Match uses this format for reporting HLA genotyping from potential donors and for patients needing stem cell transplants.
   </p>
   <p>
-    Both MIRING and HML were used to inform mapping data elements to FHIR resources such as Patient, Specimen, MolecularSequence, Genotype Observation, Haplotype Observation, and DiagnosticReport where possible.
+    Both MIRING and HML were used to inform mapping data elements to FHIR resources profiled in this IG, such as Patient, Specimen, MolecularSequence, Genotype Observation, Haplotype Observation, and DiagnosticReport. Examples are found at the end of this page.
   </p>
   <ul>
     <li>Minimum information for reporting next generation sequence genotyping (MIRING): Guidelines for reporting HLA and KIR genotyping via next generation sequencing (see <a href="https://www.ncbi.nlm.nih.gov/pubmed/26407912">here</a> )</li>
     <li>Histoimmunogenetics Markup Language 1.0: Reporting Next Generation Sequencing-based HLA and KIR Genotyping (see <a href="https://www.ncbi.nlm.nih.gov/pubmed/26319908">here</a> )</li>
   </ul>
+  <a name="hla-allele-nomenclature-assignment"> </a>
+  <h4>HLA - Nomenclature and Allele Assignment</h4>
   <p>
-    The profiles for HLA genotyping have not yet been converted to align with the core profiles of this IG.  This work will be completed prior to the August ballot cycle.
+Once HLA is typed, perhaps using targeted probes, exon sequencing, or full gene sequencing, the results are analyzed and assigned to one or more of the <a href="https://www.ebi.ac.uk/ipd/imgt/hla">IMGT/HLA</a> gene alleles using the <a href="http://hla.alleles.org/nomenclature/naming.html">HLA nomenclature</a>. While the actual results may be a haplotype of exons, the results are assigned to an allele from a known list. This allows results from different HLA genotyping methodologies to be compared, for example for donor/recipient transplant matching. However, reducing the results to HLA nomenclature may introduce ambiguity in the actual results. For example, an allele may be reported at only a two-field protein level (e.g., HLA-B*57:01) which represents any of over forty DNA variants, while the actual data may represent a single full gene (e.g., HLA-B*57:01:01:05). The nomenclature may also over represent the quality of the data. For example, when a full gene allele name is assigned to the results, it is unknown how the data was captured (probes, exon-only sequence, or full gene sequencing). Methodology is captured separately in the report. Also, this system cannot easily capture novel alleles as it represents a closed-world of possible alleles. Earlier scientific articles and data may reference HLA serotypes (e.g. HLA-B57), recognizable by the absence of an asterisk in the name, which does not capture any molcular information. The IMGT/HLA allele database is updated every three months to account for the discovery of new alleles, and the deletion or renaming of old alleles. This is why it is important to include the IMGT/HLA version when the HLA allele is assigned.
   </p>
   <a name="hla-dg-genotype"> </a>
   <h4>HLA - DiagnosticReport and Genotype</h4>
@@ -57,7 +59,7 @@
   <a name="fig2"> </a>
   <img src="histocompatibility-fig2-hla-a-genotype-allele.png" alt="Genetic test report for HLA-A genotyping, with molecular sequence data used to derive each allele." width="50%" height="50%" style="border:1px solid black" />
   <p>Figure 2</p>
-  <p>We use the Haplotype Observation for this purpose. In domains other than HLA (e.g. Pharmacogenomics), it is common to consider gene-level alleles as named haplotypes  of a set of smaller variants (<a href="https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E">Variation Modelling Collaboration Data Model and Specification</a>). This is not how the HLA community considers Haplotype, which is typically used to describe a set of gene-level alleles from different HLA genes that are found on the same DNA molecule. To be able to represent this latter description, this IG will need to consider how to represent "haplotypes of haplotypes."
+  <p>We use the Haplotype Observation for this purpose. In domains other than HLA (e.g. Pharmacogenomics), it is common to consider gene-level alleles as named haplotypes of a set of smaller variants (<a href="https://docs.google.com/document/d/12E8WbQlvfZWk5NrxwLytmympPby6vsv60RxCeD5wc1E">Variation Modelling Collaboration Data Model and Specification</a>). This is not how the HLA community considers Haplotype, which is typically used to describe a set of gene-level alleles from different HLA genes that are found on the same DNA molecule. To be able to represent this latter description, this IG allows the representation "haplotypes of haplotypes."
   </p>
   <a name="hla-multiplealleles"> </a>
   <h4>HLA - reporting multiple HLA genes</h4>
@@ -73,6 +75,7 @@
   <a name="fig4"> </a>
   <img src="histocompatibility-fig4-hla-abc-genotype-allele.png" alt="Genetic test report for HLA-A, -B, and -C genotyping, with molecular sequence data used to derive each genotype." width="70%" height="70%" style="border:1px solid black"/>
   <p>Figure 4</p>
+
   <a name="hla-ambiguity"> </a>
   <h4>HLA - Reporting Ambiguity</h4>
   <p>
@@ -87,14 +90,75 @@
     For example, this valueCodeableConcept would be used to describe a genotype for HLA-B, based on the 3.31.0 release of the IMGT-IPD/HLA database, that is ambiguous for one of the alleles in the genotype (HLA-B*07:02:01:01/HLA-B*07:02:01:03), and unambiguous for the other (HLA-B*13:02:01:01).
   </p>
 <pre>&lt;valueCodeableConcept>
-      &lt;coding>
-          &lt;system value="https://glstring.org"/>
-          &lt;version value="1.0"/>
-          &lt;code value="hla#3.31.0#HLA-B*07:02:01:01/HLA-B*07:02:01:03+HLA-B*13:02:01:01"/>
-      &lt;/coding>
+    &lt;coding>
+        &lt;system value="https://glstring.org"/>
+        &lt;code value="hla#3.31.0#HLA-B*07:02:01:01/HLA-B*07:02:01:03+HLA-B*13:02:01:01"/>
+    &lt;/coding>
 &lt;/valueCodeableConcept></pre>
+  <a name="hla-loinc"> </a>
+  <h4>HLA - LOINC, and codes</h4>
+  <p>
+  The Observations used in this IG require specific codes. For example, the Genotype Observation requires a <tt>code.coding</tt> using a LOINC code that reprepresents "Genotype display name". To indicate that this genotype is for HLA-A, we use the <tt>component</tt> for Gene Studied. Together this <tt>code.coding</tt> and the <tt>component</tt> indicate that this Observation is a Genotype for HLA-A. This 'post-coordination' of the Observation <tt>code</tt> allows for reporting for any genotype and gene name combination.
+</p>
+<pre>&lt;code>
+    &lt;coding>
+        &lt;system value="http://loinc.org"/>
+        &lt;code value="84413-4"/>
+        &lt;display value="Genotype display name"/>
+    &lt;/coding>
+&lt;/code>
+...
+&lt;component>
+    &lt;code>
+        &lt;coding>
+            &lt;system value="http://loinc.org"/>
+            &lt;code value="48018-6"/>
+            &lt;display value="Gene studied [ID]"/>
+        &lt;/coding>
+    &lt;/code>
+    &lt;valueCodeableConcept>
+        &lt;coding>
+            &lt;system value="https://www.genenames.org"/>
+            &lt;code value="HGNC:4931"/>
+            &lt;display value="HLA-A"/>
+        &lt;/coding>
+    &lt;/valueCodeableConcept>
+&lt;/component></pre>
+<p>
+  Often a lab will use another LOINC code to represent this, or use a local code system. This can be included as an additional coding. For example, at the time of this writing, there are ten different LOINC codes related to typing of HLA-A. As long as the alternative coding is conceptual the same or is subsumed by the other, an additional <tt>code.coding</tt> can be included if the lab or healthcare system uses it in their current system. e.g.,
+</p>
+<pre>&lt;code>
+    &lt;coding>
+        &lt;system value="http://loinc.org"/>
+        &lt;code value="84413-4"/>
+        &lt;display value="Genotype display name"/>
+    &lt;/coding>
+    &lt;coding>
+        &lt;system value="http://loinc.org"/>
+        &lt;code value="13298-5"/>
+        &lt;display value="HLA-A [Type]"/>
+    &lt;/coding>
+&lt;/code>
+...
+&lt;component>
+    &lt;code>
+        &lt;coding>
+            &lt;system value="http://loinc.org"/>
+            &lt;code value="48018-6"/>
+            &lt;display value="Gene studied [ID]"/>
+        &lt;/coding>
+    &lt;/code>
+    &lt;valueCodeableConcept>
+        &lt;coding>
+            &lt;system value="https://www.genenames.org"/>
+            &lt;code value="HGNC:4931"/>
+            &lt;display value="HLA-A"/>
+        &lt;/coding>
+    &lt;/valueCodeableConcept>
+&lt;/component></pre>
+
   <a name="hla-examples"> </a>
-  <h4>HLA Examples</h4>
+  <h4>HLA - Examples</h4>
   <ul>
     <li><a href="diagnosticreport-hla-glstring-r4.html">DiagnosticReport for HLA-A, HLA-B, HLA-C</a></li>
     <li><a href="genotype-hla-a-glstring-r4.html">Genotype Observation for HLA-A</a></li>
