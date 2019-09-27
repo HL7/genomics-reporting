@@ -85,9 +85,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-base"/>
+        <reference value="StructureDefinition/genomics-base"/>
       </reference>
-      <name value="Genomic Observation Common Properties"/>
+      <name value="Genomics Base"/>
       <description
         value="Base profile that defines characteristics shared by all genomic observations"/>
       <exampleBoolean value="false"/>
@@ -152,9 +152,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-gen-grouper"/>
+        <reference value="StructureDefinition/grouper"/>
       </reference>
-      <name value="Observation Grouper"/>
+      <name value="Grouper"/>
       <description value="Organizes information within a genomic report"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
@@ -165,9 +165,9 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-overall"/>
+        <reference value="StructureDefinition/overall-interpretation"/>
       </reference>
-      <name value="Genomic analysis overall interpretation"/>
+      <name value="Overall Interpretation"/>
       <description
         value="Provides a coarse overall interpretation of the genomic results reported."/>
       <exampleBoolean value="false"/>
@@ -179,7 +179,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-gen-finding"/>
+        <reference value="StructureDefinition/finding"/>
       </reference>
       <name value="Genomic Finding"/>
       <description
@@ -193,7 +193,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-haplotype"/>
+        <reference value="StructureDefinition/haplotype"/>
       </reference>
       <name value="Haplotype"/>
       <description
@@ -207,7 +207,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-genotype"/>
+        <reference value="StructureDefinition/genotype"/>
       </reference>
       <name value="Genotype"/>
       <description
@@ -221,7 +221,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-variant"/>
+        <reference value="StructureDefinition/variant"/>
       </reference>
       <name value="Variant"/>
       <description
@@ -235,7 +235,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-sequence-phase-reltn"/>
+        <reference value="StructureDefinition/sequence-phase-relationship"/>
       </reference>
       <name value="Sequence Phase Relationship"/>
       <description
@@ -249,7 +249,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-implication"/>
+        <reference value="StructureDefinition/implication"/>
       </reference>
       <name value="Genomic Implication"/>
       <description
@@ -263,7 +263,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-inh-dis-path"/>
+        <reference value="StructureDefinition/inherited-disease-pathogenicity"/>
       </reference>
       <name value="Inherited Disease Pathogenicity"/>
       <description
@@ -277,7 +277,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-region-studied"/>
+        <reference value="StructureDefinition/region-studied"/>
       </reference>
       <name value="Region Studied"/>
       <description value="Provides a description of the region studied."/>
@@ -290,7 +290,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-med-implication"/>
+        <reference value="StructureDefinition/medication-implication"/>
       </reference>
       <name value="Medication Implication"/>
       <description
@@ -304,7 +304,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-metabolism"/>
+        <reference value="StructureDefinition/medication-metabolism"/>
       </reference>
       <name value="Medication Metabolism Implication"/>
       <description
@@ -318,7 +318,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-transporter"/>
+        <reference value="StructureDefinition/medication-transporter"/>
       </reference>
       <name value="Medication Transporter Implication"/>
       <description
@@ -332,7 +332,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-efficacy"/>
+        <reference value="StructureDefinition/medication-efficacy"/>
       </reference>
       <name value="Medication Efficacy Implication"/>
       <description
@@ -346,7 +346,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-high-risk"/>
+        <reference value="StructureDefinition/medication-high-risk"/>
       </reference>
       <name value="High Risk Allele"/>
       <description value="Assertion of whether the patient has a high-risk allele"/>
@@ -388,7 +388,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-som-implication"/>
+        <reference value="StructureDefinition/somatic-implication"/>
       </reference>
       <name value="Somatic Implication"/>
       <description
@@ -402,7 +402,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-som-diagnostic"/>
+        <reference value="StructureDefinition/somatic-diagnostic"/>
       </reference>
       <name value="Somatic Diagnostic Implication"/>
       <description
@@ -416,7 +416,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-som-prognostic"/>
+        <reference value="StructureDefinition/somatic-prognostic"/>
       </reference>
       <name value="Somatic Prognostic Implication"/>
       <description
@@ -430,7 +430,7 @@
         <valueBoolean value="true"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/obs-som-predictive"/>
+        <reference value="StructureDefinition/somatic-predictive"/>
       </reference>
       <name value="Somatic Predictive Implication"/>
       <description
@@ -512,6 +512,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="DiagnosticReport/report-CYP2C19"/>
+      </reference>
+      <name value="Example - CYP2C19 report from 1000 Genomes"/>
+      <description value="CYP2C19 report from 1000 Genomes"/>
+      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/oncology-report-example"/>
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
@@ -534,7 +543,7 @@
       </reference>
       <name value="Example - Complex Variant"/>
       <description value="Compound Heterozygote Variant Example"/>
-      <exampleCanonical value="StructureDefinition/obs-variant"/>
+      <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -543,7 +552,7 @@
       </reference>
       <name value="Example - NGS"/>
       <description value="SNV example"/>
-      <exampleCanonical value="StructureDefinition/obs-variant"/>
+      <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -553,7 +562,7 @@
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
       <description value="Inherited Disease Pathogenicity"/>
-      <exampleCanonical value="StructureDefinition/obs-inh-dis-path"/>
+      <exampleCanonical value="StructureDefinition/inherited-disease-pathogenicity"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -567,20 +576,20 @@
     </resource>
     <resource>
       <reference>
-        <reference value="Observation/obs-genotype-hla-a-glstring-r4"/>
+        <reference value="Observation/genotype-hla-a-glstring-r4"/>
       </reference>
       <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
       <description value="HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01"/>
-      <exampleCanonical value="StructureDefinition/obs-genotype"/>
+      <exampleCanonical value="StructureDefinition/genotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
-        <reference value="Observation/obs-haplotype-hla-a-1-r4"/>
+        <reference value="Observation/haplotype-hla-a-1-r4"/>
       </reference>
       <name value="Example - Observation for a single HLA-A allele"/>
       <description value="HLA-A allele observaation: HLA-A*03:01:01:01"/>
-      <exampleCanonical value="StructureDefinition/obs-haplotype"/>
+      <exampleCanonical value="StructureDefinition/haplotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -605,16 +614,16 @@
       <reference>
         <reference value="CodeSystem/tbd-codes"/>
       </reference>
-      <name value="TBD-codes"/>
-      <description value="TBD-codes"/>
+      <name value="tbd-codes"/>
+      <description value="tbd-codes"/>
       <groupingId value="vocab"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/tbd-codes"/>
       </reference>
-      <name value="TBD-codes-vs"/>
-      <description value="TBD-codes-vs"/>
+      <name value="tbd-codes-vs"/>
+      <description value="tbd-codes-vs"/>
       <groupingId value="vocab"/>
     </resource>
     <page>
@@ -638,6 +647,11 @@
         <page>
           <nameUrl value="sequencing.html"/>
           <title value="Variant Reporting"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="Glossary.html"/>
+          <title value="Glossary"/>
           <generation value="html"/>
         </page>
         <page>

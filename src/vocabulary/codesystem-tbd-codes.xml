@@ -9,8 +9,8 @@
     </extension>
     <url value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
     <version value="0.3"/>
-    <name value="TBDcodes"/>
-    <title value="TBD-codes"/>
+    <name value="ToBeDeterminedCodes"/>
+    <title value="tbd-codes"/>
     <status value="draft"/>
     <experimental value="false"/>
     <date value="2019-08-21"/>
@@ -90,5 +90,20 @@
         <code value="functional-annotation"/>
         <display value="functional-annotation"/>
         <definition value="Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."/>
+    </concept>
+    <concept>
+        <code value="exact-start-end"/>
+        <display value="Variant exact start and end"/>
+        <definition value="The genomic coordinates of the exact genomic range in which the variant resides."/>
+    </concept>
+    <concept>
+        <code value="inner-start-end"/>
+        <display value="Variant inner start and end"/>
+        <definition value="The genomic coordinates of the inner genomic range in which the variant might reside."/>
+    </concept>
+    <concept>
+        <code value="outer-start-end"/>
+        <display value="Variant outer start and end"/>
+        <definition value="The genomic coordinates of the outer genomic range in which the variant might reside."/>
     </concept>
 </CodeSystem>

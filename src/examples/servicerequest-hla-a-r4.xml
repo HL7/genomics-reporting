@@ -11,15 +11,10 @@
     </text>
     <identifier>
         <system value="https:/aDonorRegistry.com"/>
-        <value value="199688.2.1..1.83"/>
+        <value value="1234.5678"/>
     </identifier>
-
-    <!-- status is required -->
     <status value="completed"/>
-
-    <!-- intent is required -->
     <intent value="order"/>
-
     <category>
         <coding>
             <system value="http://snomed.info/sct"/>
@@ -31,31 +26,28 @@
     <code>
         <coding>
             <system value="http://loinc.org"/>
-            <code value="57290-9"/>
-            <display value="HLA-A [Type] by High resolution"/>
+            <code value="13298-5"/>
+            <display value="HLA-A [Type]"/>
         </coding>
     </code>
 
     <!-- subject is required, but this test is for a de-identified sample, so we stub in the specimen identifier -->
     <subject>
-        <display value="001^246802468"/>
+        <identifier value="001^24680"/>
     </subject>
-
-    <!-- REMOVE INVALID REFS
     <requester>
-        <reference value="Organization/123"/>
+        <reference value="http://example/r4/Organization/123"/>
         <type value="Organization"/>
         <display value="aDonorRegistry"/>
     </requester>
     <performer>
-        <reference value="Organization/456"/>
+        <reference value="http://example/r4/Organization/456"/>
         <type value="Organization"/>
         <display value="aTypingLab, Inc"/>
     </performer>
     <specimen>
-        <reference value="Specimen/f456"/>
+        <reference value="http://example/r4/Specimen/f456"/>
         <type value="Specimen"/>
         <display value="buccal swab: 123456789"/>
     </specimen>
--->
 </ServiceRequest>

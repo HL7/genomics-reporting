@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\perem\\Documents\\GitHub\\genomics-reporting\\src-generated\\resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\perem\\Documents\\GitHub\\genomics-reporting\\src\\resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\perem\\Documents\\GitHub\\genomics-reporting\\src\\vocabulary"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\perem\\Documents\\GitHub\\genomics-reporting\\src\\examples"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\perem\\Documents\\GitHub\\genomics-reporting\\src\\images"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\perem\\Documents\\GitHub\\genomics-reporting\\src-generated\\pages"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -113,6 +113,15 @@
     },
     {
       "reference" : {
+        "reference" : "DiagnosticReport/report-CYP2C19"
+      },
+      "name" : "Example - CYP2C19 report from 1000 Genomes",
+      "description" : "CYP2C19 report from 1000 Genomes",
+      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
         "reference" : "Bundle/oncology-report-example"
       },
       "name" : "Example - Full Bundle Oncology Example",
@@ -135,7 +144,7 @@
       },
       "name" : "Example - Complex Variant",
       "description" : "Compound Heterozygote Variant Example",
-      "exampleCanonical" : "StructureDefinition/obs-variant",
+      "exampleCanonical" : "StructureDefinition/variant",
       "groupingId" : "examples"
     },
     {
@@ -144,7 +153,7 @@
       },
       "name" : "Example - NGS",
       "description" : "SNV example",
-      "exampleCanonical" : "StructureDefinition/obs-variant",
+      "exampleCanonical" : "StructureDefinition/variant",
       "groupingId" : "examples"
     },
     {
@@ -153,7 +162,7 @@
       },
       "name" : "Example - Inherited Disease Pathogenicity",
       "description" : "Inherited Disease Pathogenicity",
-      "exampleCanonical" : "StructureDefinition/obs-inh-dis-path",
+      "exampleCanonical" : "StructureDefinition/inherited-disease-pathogenicity",
       "groupingId" : "examples"
     },
     {
@@ -167,20 +176,20 @@
     },
     {
       "reference" : {
-        "reference" : "Observation/obs-genotype-hla-a-glstring-r4"
+        "reference" : "Observation/genotype-hla-a-glstring-r4"
       },
       "name" : "Example - HLA genotyping for HLA-A, using GLStrings",
       "description" : "HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01",
-      "exampleCanonical" : "StructureDefinition/obs-genotype",
+      "exampleCanonical" : "StructureDefinition/genotype",
       "groupingId" : "examples"
     },
     {
       "reference" : {
-        "reference" : "Observation/obs-haplotype-hla-a-1-r4"
+        "reference" : "Observation/haplotype-hla-a-1-r4"
       },
       "name" : "Example - Observation for a single HLA-A allele",
       "description" : "HLA-A allele observaation: HLA-A*03:01:01:01",
-      "exampleCanonical" : "StructureDefinition/obs-haplotype",
+      "exampleCanonical" : "StructureDefinition/haplotype",
       "groupingId" : "examples"
     },
     {
@@ -205,16 +214,16 @@
       "reference" : {
         "reference" : "CodeSystem/tbd-codes"
       },
-      "name" : "TBD-codes",
-      "description" : "TBD-codes",
+      "name" : "tbd-codes",
+      "description" : "tbd-codes",
       "groupingId" : "vocab"
     },
     {
       "reference" : {
         "reference" : "ValueSet/tbd-codes"
       },
-      "name" : "TBD-codes-vs",
-      "description" : "TBD-codes-vs",
+      "name" : "tbd-codes-vs",
+      "description" : "tbd-codes-vs",
       "groupingId" : "vocab"
     }],
     "page" : {
@@ -238,6 +247,11 @@
         {
           "nameUrl" : "sequencing.html",
           "title" : "Variant Reporting",
+          "generation" : "html"
+        },
+        {
+          "nameUrl" : "Glossary.html",
+          "title" : "Glossary",
           "generation" : "html"
         },
         {
@@ -286,8 +300,8 @@
         "title" : "Artifact List",
         "generation" : "html",
         "page" : [{
-          "nameUrl" : "obs-base.html",
-          "title" : "Genomic Observation Common Properties",
+          "nameUrl" : "genomics-base.html",
+          "title" : "Genomics Base",
           "generation" : "generated"
         },
         {
@@ -311,77 +325,77 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-gen-grouper.html",
-          "title" : "Observation Grouper",
+          "nameUrl" : "grouper.html",
+          "title" : "Grouper",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-overall.html",
-          "title" : "Genomic analysis overall interpretation",
+          "nameUrl" : "overall-interpretation.html",
+          "title" : "Overall Interpretation",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-gen-finding.html",
+          "nameUrl" : "finding.html",
           "title" : "Genomic Finding",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-haplotype.html",
+          "nameUrl" : "haplotype.html",
           "title" : "Haplotype",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-genotype.html",
+          "nameUrl" : "genotype.html",
           "title" : "Genotype",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-variant.html",
+          "nameUrl" : "variant.html",
           "title" : "Variant",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-sequence-phase-reltn.html",
+          "nameUrl" : "sequence-phase-relationship.html",
           "title" : "Sequence Phase Relationship",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-implication.html",
+          "nameUrl" : "implication.html",
           "title" : "Genomic Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-inh-dis-path.html",
+          "nameUrl" : "inherited-disease-pathogenicity.html",
           "title" : "Inherited Disease Pathogenicity",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-region-studied.html",
+          "nameUrl" : "region-studied.html",
           "title" : "Region Studied",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-med-implication.html",
+          "nameUrl" : "medication-implication.html",
           "title" : "Medication Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-metabolism.html",
+          "nameUrl" : "medication-metabolism.html",
           "title" : "Medication Metabolism Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-transporter.html",
+          "nameUrl" : "medication-transporter.html",
           "title" : "Medication Transporter Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-efficacy.html",
+          "nameUrl" : "medication-efficacy.html",
           "title" : "Medication Efficacy Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-high-risk.html",
+          "nameUrl" : "medication-high-risk.html",
           "title" : "High Risk Allele",
           "generation" : "generated"
         },
@@ -396,22 +410,22 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-som-implication.html",
+          "nameUrl" : "somatic-implication.html",
           "title" : "Somatic Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-som-diagnostic.html",
+          "nameUrl" : "somatic-diagnostic.html",
           "title" : "Somatic Diagnostic Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-som-prognostic.html",
+          "nameUrl" : "somatic-prognostic.html",
           "title" : "Somatic Prognostic Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-som-predictive.html",
+          "nameUrl" : "somatic-predictive.html",
           "title" : "Somatic Predictive Implication",
           "generation" : "generated"
         },
@@ -446,6 +460,11 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "report-CYP2C19.html",
+          "title" : "Example - CYP2C19 report from 1000 Genomes",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "oncology-report-example.html",
           "title" : "Example - Full Bundle Oncology Example",
           "generation" : "generated"
@@ -476,12 +495,12 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-genotype-hla-a-glstring-r4.html",
+          "nameUrl" : "genotype-hla-a-glstring-r4.html",
           "title" : "Example - HLA genotyping for HLA-A, using GLStrings",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "obs-haplotype-hla-a-1-r4.html",
+          "nameUrl" : "haplotype-hla-a-1-r4.html",
           "title" : "Example - Observation for a single HLA-A allele",
           "generation" : "generated"
         },
@@ -497,12 +516,12 @@
         },
         {
           "nameUrl" : "tbd-codes.html",
-          "title" : "TBD-codes",
+          "title" : "tbd-codes",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "valueset-tbd-codes.html",
-          "title" : "TBD-codes-vs",
+          "nameUrl" : "valueset-tbd-codes-vs.html",
+          "title" : "tbd-codes-vs",
           "generation" : "generated"
         }]
       },

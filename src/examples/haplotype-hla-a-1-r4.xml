@@ -1,10 +1,10 @@
 <Observation xmlns="http://hl7.org/fhir">
     <!-- The purpose of this is to link a MolecularSequence to a particular HLA-A allele assignment. -->
     <!-- This resource instance and another for a different HLA-A allele can then be used to construct an HLA-A genotype. -->
-    <!-- obs-haplotype is used for HLA alleles because full gene alleles are described as 'named haplotypes' of a series of shorter variants in other genomics domains.-->
-    <id value="obs-haplotype-hla-a-1-r4"/>
+    <!-- haplotype is used for HLA alleles because full gene alleles are described as 'named haplotypes' of a series of shorter variants in other genomics domains.-->
+    <id value="haplotype-hla-a-1-r4"/>
     <meta>
-        <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+        <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
     </meta>
     <text>
         <status value="generated"/>
@@ -12,13 +12,11 @@
             <pre>Observation for HLA-A*03:01:01:01 allele</pre>
         </div>
     </text>
-    <!-- REMOVE INVALID REFS
     <basedOn>
-        <reference value="ServiceRequest/f123"/>
+        <reference value="http://example.org/r4/ServiceRequest/f123"/>
         <type value="ServiceRequest"/>
         <display value="Sequence-based typing of HLA-A for sample 001-246802468"/>
     </basedOn>
--->
     <status value="final"/>
     <category>
         <coding>
@@ -40,13 +38,11 @@
         </coding>
     </code>
     <effectiveDateTime value="2018-07-26"/>
-    <!-- REMOVE INVALID REFS
     <performer>
-        <reference value="Organization/f345"/>
+        <reference value="http://example.org/r4/Organization/f345"/>
         <type value="Organization"/>
         <display value="aTypingLab, Inc"/>
     </performer>
--->
     <valueCodeableConcept>
         <coding>
             <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
@@ -54,17 +50,15 @@
             <code value="HLA-A*03:01:01:01"/>
         </coding>
     </valueCodeableConcept>
-    <!-- REMOVE INVALID REFS
     <specimen>
-        <reference value="Specimen/f456"/>
+        <reference value="http://example.org/r4/Specimen/f456"/>
         <display value="buccal swab: 123456789"/>
     </specimen>
     <derivedFrom>
-        <reference value="MolecularSequence/f567"/>
+        <reference value="http://example.org/r4/MolecularSequence/f567"/>
         <type value="MolecularSequence"/>
         <display value="Sequence for HLA-A*03:01:01:01"/>
     </derivedFrom>
--->
     <component>
         <code>
             <coding>

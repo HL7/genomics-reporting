@@ -134,7 +134,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
             </meta>
             <status value="final"/>
             <category>
@@ -146,8 +146,8 @@
             <code>
                <coding>
                   <system value="http://loinc.org"/>
-                  <code value="LL1971-2"/>
-                  <display value="Variant Assess"/>
+                  <code value="69548-6"/>
+                  <display value="Genetic variant assessment"/>
                </coding>
             </code>
             <subject>
@@ -262,7 +262,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
             </meta>
             <status value="final"/>
             <category>
@@ -274,8 +274,8 @@
             <code>
                <coding>
                   <system value="http://loinc.org"/>
-                  <code value="LL1971-2"/>
-                  <display value="Variant Assess"/>
+                  <code value="69548-6"/>
+                  <display value="Genetic variant assessment"/>
                </coding>
             </code>
             <subject>
@@ -390,7 +390,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-variant"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
             </meta>
             <status value="final"/>
             <category>
@@ -402,8 +402,8 @@
             <code>
                <coding>
                   <system value="http://loinc.org"/>
-                  <code value="LL1971-2"/>
-                  <display value="Variant Assess"/>
+                  <code value="69548-6"/>
+                  <display value="Genetic variant assessment"/>
                </coding>
             </code>
             <subject>
@@ -517,7 +517,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-som-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
             </meta>
             <status value="final"/>
             <category>
@@ -527,8 +527,15 @@
                </coding>
             </category>
             <code>
-               <text value="TBD-somatic-predictive"/>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="somatic-predictive"/>
+                  <display value="Somatic variant predicted effect on Cancer medication"/>
+               </coding>
             </code>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
@@ -551,15 +558,21 @@
             <component>
                <code>
                   <coding>
-                     <system value="http://amp.org"/>
-                     <code value="AMP Guidelines"/>
-                     <display value="AMP Guidelines"/>
+                     <system value="http://loinc.org"/>
+                     <code value="93044-6"/>
+                     <display value="Level of Evidence"/>
                   </coding>
                </code>
+               <valueCodeableConcept>
+                  <text value="AMP Guidelines"/>
+               </valueCodeableConcept>
             </component>
             <component>
                <code>
-                  <text value="TBD-cancer"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="associated-cancer"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -567,13 +580,17 @@
             </component>
             <component>
                <code>
-                  <text value="TBD-medication"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-predictive-medication"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="Ruxolitinib"/>
                </valueCodeableConcept>
             </component>
          </Observation>
+
       </resource>
       <request>
          <method value="POST"/>
@@ -585,7 +602,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-som-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
             </meta>
             <status value="final"/>
             <category>
@@ -595,8 +612,15 @@
                </coding>
             </category>
             <code>
-               <text value="TBD-somatic-predictive"/>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="somatic-predictive"/>
+                  <display value="Somatic variant predicted effect on Cancer medication"/>
+               </coding>
             </code>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
@@ -619,15 +643,21 @@
             <component>
                <code>
                   <coding>
-                     <system value="http://amp.org"/>
-                     <code value="AMP Guidelines"/>
-                     <display value="AMP Guidelines"/>
+                     <system value="http://loinc.org"/>
+                     <code value="93044-6"/>
+                     <display value="Level of Evidence"/>
                   </coding>
                </code>
+               <valueCodeableConcept>
+                  <text value="AMP Guidelines"/>
+               </valueCodeableConcept>
             </component>
             <component>
                <code>
-                  <text value="TBD-cancer"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="associated-cancer"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -635,7 +665,10 @@
             </component>
             <component>
                <code>
-                  <text value="TBD-medication"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-predictive-medication"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="AT9283"/>
@@ -653,7 +686,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-som-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
             </meta>
             <status value="final"/>
             <category>
@@ -663,8 +696,15 @@
                </coding>
             </category>
             <code>
-               <text value="TBD-somatic-predictive"/>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="somatic-predictive"/>
+                  <display value="Somatic variant predicted effect on Cancer medication"/>
+               </coding>
             </code>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
@@ -687,15 +727,21 @@
             <component>
                <code>
                   <coding>
-                     <system value="http://amp.org"/>
-                     <code value="AMP Guidelines"/>
-                     <display value="AMP Guidelines"/>
+                     <system value="http://loinc.org"/>
+                     <code value="93044-6"/>
+                     <display value="Level of Evidence"/>
                   </coding>
                </code>
+               <valueCodeableConcept>
+                  <text value="AMP Guidelines"/>
+               </valueCodeableConcept>
             </component>
             <component>
                <code>
-                  <text value="TBD-cancer"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="associated-cancer"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -703,13 +749,18 @@
             </component>
             <component>
                <code>
-                  <text value="TBD-medication"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-predictive-medication"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="SNX-5422"/>
                </valueCodeableConcept>
             </component>
          </Observation>
+
+
       </resource>
       <request>
          <method value="POST"/>
@@ -721,7 +772,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-som-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
             </meta>
             <status value="final"/>
             <category>
@@ -731,8 +782,15 @@
                </coding>
             </category>
             <code>
-               <text value="TBD-somatic-predictive"/>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="somatic-predictive"/>
+                  <display value="Somatic variant predicted effect on Cancer medication"/>
+               </coding>
             </code>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
@@ -755,15 +813,21 @@
             <component>
                <code>
                   <coding>
-                     <system value="http://amp.org"/>
-                     <code value="AMP Guidelines"/>
-                     <display value="AMP Guidelines"/>
+                     <system value="http://loinc.org"/>
+                     <code value="93044-6"/>
+                     <display value="Level of Evidence"/>
                   </coding>
                </code>
+               <valueCodeableConcept>
+                  <text value="AMP Guidelines"/>
+               </valueCodeableConcept>
             </component>
             <component>
                <code>
-                  <text value="TBD-cancer"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="associated-cancer"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="Polycythemia vera (PV)"/>
@@ -771,7 +835,10 @@
             </component>
             <component>
                <code>
-                  <text value="TBD-medication"/>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-predictive-medication"/>
+                  </coding>
                </code>
                <valueCodeableConcept>
                   <text value="TG02"/>
@@ -790,7 +857,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-grouper"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
             </meta>
             <status value="final"/>
             <category>
@@ -837,7 +904,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-gen-grouper"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
             </meta>
             <status value="final"/>
             <category>
@@ -879,7 +946,7 @@
       <resource>
          <DiagnosticReport xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnosticreport"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
             </meta>
             <status value="final"/>
             <code>

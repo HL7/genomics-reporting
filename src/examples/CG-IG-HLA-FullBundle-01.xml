@@ -390,7 +390,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -491,7 +491,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -592,7 +592,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -822,7 +822,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -923,7 +923,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1010,7 +1010,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1239,7 +1239,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1326,7 +1326,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-haplotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1413,7 +1413,7 @@ and include the following:
     <resource>
       <Observation>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/obs-genotype"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1464,7 +1464,7 @@ and include the following:
           <reference value="urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"/>
           <display value="buccal swab from John Storm"/>
         </specimen>
-        <!-- derivedFrom are Haplotype observations -->
+        <!-- derivedFrom are Named Haplotype observations -->
         <derivedFrom>
           <reference value="urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47"/>
           <type value="Observation"/>
@@ -1519,7 +1519,7 @@ and include the following:
     <resource>
       <DiagnosticReport>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnosticreport"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1575,6 +1575,11 @@ Lab: aTypingLab Inc
             <system value="http://loinc.org"/>
             <code value="81247-9"/>
             <display value="Master HL7 genetic variant reporting panel"/>
+          </coding>
+          <coding>
+            <system value="http://genenames.org"/>
+            <code value="588"/>
+            <display value="Histocompatibility complex (HLA)"/>
           </coding>
         </code>
         <subject>
