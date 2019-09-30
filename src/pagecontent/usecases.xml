@@ -76,6 +76,7 @@
 	<a name="clinicalSequencing"> </a>
 	<h4>Clinical Sequencing – Germline Testing</h4>
 
+	<a name="allObsVariants"> </a>
 	<h5>
 		Get all observed variants for a specific patient. 
 	</h5>	
@@ -87,12 +88,14 @@
 	<p>
 		69548-6: LOINC code for “Genetic variant assessment”
 	</p>
+	<a name="allObsVariantsSpecimen"> </a>
 	<h5>Get all variants for a specific specimen.
 	</h5>
 	<pre class="http">GET /Observation?specimen:Specimen=123&amp;code=http://loinc.org|69548-6</pre>
 	<p>
 		69548-6: LOINC code for “Genetic variant assessment”
 	</p>
+	<a name="unknownSignificance"> </a>
 	<h5>
 		For a chart review, get references to all DNA sequences related to mutations with an interpretation “Unknown Significance” for a specific Patient. 
 	</h5>
