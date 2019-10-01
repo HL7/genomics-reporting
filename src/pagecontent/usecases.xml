@@ -3,12 +3,16 @@
 		We show use of the FHIR design we are proposing for these cases:
 	</p>
 	<p>
-	The major patterns for FHIR querying to be aware of involve queries with component-code and component-value-concept on Observation Resource (see Observation Resource specific search operations https://www.hl7.org/fhir/observation.html#search). More complex queries use filters or _include (see FHIR CORE https://www.hl7.org/fhir/search.html#revinclude ). The types of queries and combinations are nearly limitless. Add to the firepower of FHIR queries an algorithm with control logic and you will find many powerful operations. FHIR offers additional resources for querying beyond the scope of these examples.
+	A basic understanding of FHIR querying is expected. Two items to be aware of: 
+	1) FHIR querying in these examples rely upon queries with component-code and component-value-concept uaing Observation Resource (see Observation Resource specific search operations https://www.hl7.org/fhir/observation.html#search). 
+	2) More complex queries use _include (see FHIR CORE https://www.hl7.org/fhir/search.html#revinclude ). 
+	
+	FHIR offers additional resources for querying beyond the scope of these examples. Zulip and the HL7 CG WG list serv are good places to connect wih help.
 
 	</p>
 	
 	<ol>
-		<li>Specimen Identification
+		<li><a href="usecases.html#specimen-identification">Specimen Identification </a>
 			<ol>
 				<li>Get references to all variants obtained from germline analysis.</li>
 				<!--li>Explore antibacterial drug resistance over time (non-patient DNA)</li-->
@@ -33,7 +37,10 @@
 		<li>Tumor testing for biomarkers/mutations (somatic / tumor specific)</li>
 	</ul>
 	<a name="germline"> </a>
-	<h4>Get references to all variants obtained where the analysis has been designated as germline</h4>
+	<h4>Get references to all variants obtained where the analysis has been designated as germline. </h4>
+	<p>
+	This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of Observation varaint. "component-code-value-concept" is a construct to use the code of a component and the code of a value for the component. The value in this case is "Germline" with LOINC code LA6683-2.
+	</p>
 	<pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6683-2</pre>
 	<p>
 		48002-0: LOINC code for “Genomic Source Class”
@@ -45,7 +52,10 @@
 		*Return a bundle of genetics Observation instances
 	</p>
 	<a name="somatic"></a>
-	<h4>Get references to all variants obtained where the analysis has been designated as somatic for a specific specimen</h4>
+	<h4>Get references to all variants obtained where the analysis has been designated as somatic for a specific specimen.</h4>
+	<p>
+	 This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of Observation varaint. "component-code-value-concept" is a construct to use the code of a component and the code of a value for the component. The value in this case is "Somatic" with LOINC code LA6684-0. Also, the query constrains to specimen with id 1234. ID in this case refers to a specific instance of specimen. The specimen id query queries the specimen linked to a specific instance of Obbsewrvation varaint.
+	 </p>
 	<pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6684-0&amp;specimen:Specimen=1234</pre>
 	<p>
 		48002-0: LOINC code for “Genomic Source Class”
@@ -61,7 +71,7 @@
 	<p>
 		The goal of this profile methodology is to get references from all variants obtained from somatic analysis that were identified as having somatic origin. Changes in the population of cells with particular mutations will change overtime as well as in conjunction with events such as therapy. For instance, targeted chemotherapy may kill a specific population of cancer cells with specific mutations and other cancer cell populations may survive and continue to divide. Therefore, clearly annotating these specimens as somatic variants and capturing annotations related to a time relevant to a treatment timeline may be critical for analysis.
 		
-		The following query retrieves all variants annotated as somatic which arrived on July 4, 2015
+		The following query retrieves all variants annotated as somatic which arrived on July 4, 2015.  This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of Observation varaint. "component-code-value-concept" is a construct to use the code of a component and the code of a value for the component. The value in this case is "Somatic" with LOINC code LA6684-0. Additionally, the query constrains to those instances where the date field equals "2015-07-04."
 	</p>
 	<pre class="http">GET /Observation?subject:Patient=123&amp;component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6684-0&amp;date=2015-07-04</pre>
 		<p>
@@ -80,7 +90,7 @@
 	<h5>
 		Get all observed variants for a specific patient. 
 	</h5>	
-	<p>	The query below retrieves specifically the variants which are directly attributed to the patient.
+	<p>	The query below retrieves specifically the variants which are directly attributed to the patient. The Observation Variant profile uses LOINC code 69548-6 for the value of Observation.code. In this case the query is constrained by a Patient with id "123.
 		
 		Note to the implementer: It is currently beyond this spec to follow specimen links to Patient ids. Some variants maybe reported only with a link to a specimen. In this case a query must first be performed to find all specimens related to the pateint and then the query for all variants related to the specimen can be run. Or, one could devise a more complicated query which finds all variants for all specimens of a patient. This is currently left as an exercise, also there are questions about performance which are determinant on the data store layer underneath the server.
 	</p>
@@ -89,7 +99,7 @@
 		69548-6: LOINC code for “Genetic variant assessment”
 	</p>
 	<a name="allObsVariantsSpecimen"> </a>
-	<h5>Get all variants for a specific specimen.
+	<h5>Get all variants for a specific specimen. The Observation Variant profile uses LOINC code 69548-6 for the value of Observation.code. In this case constrained by a specimen with id "123."
 	</h5>
 	<pre class="http">GET /Observation?specimen:Specimen=123&amp;code=http://loinc.org|69548-6</pre>
 	<p>
@@ -99,10 +109,12 @@
 	<h5>
 		For a chart review, get references to all DNA sequences related to mutations with an interpretation “Unknown Significance” for a specific Patient. 
 	</h5>
-		<p>The following query returns all the related haplotype, genotype and variant calls which have been annotated with "Unknown Significance."
+		<p>The following query returns all the related haplotype, genotype and variant calls which have been annotated with "Unknown Significance."  This query uses LOINC code 53037-8 for “Genetic disease sequence variant interpretation," part of the variant profile of Observation varaint. "code-value-concept" is a construct to use the code of an observation and the code of a value for the Observation instance. The value in this case is "Unknown Significance" with LOINC code LA6682-4. Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the Observation.derived-from link. "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the annotation of "Unknown Significance" is derived from. The iterate modifier is needed as the direct target of a derived-from relationship can be a hapolotype which has a derived-from relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes the number of observations returned larger).
 		
-		Note to the implementer: It is currently beyond this spec to follow specimen links to Patient ids. Some variants maybe reported only with a link to a specimen. In this case a query must first be performed to find all specimens related to the patient and then a query for all variants related to each patient specimen can be run. Or, one could devise a more complicated query which finds all variants for all specimens of a patient. This is currently left as an exercise, also there are questions about performance which are determinant on the data store layer underneath the server.
+		Note to the implementer: It is currently beyond this spec to follow specimen links to Patient ids. Some variants maybe reported only with a link to a specimen. In this case a query must first be performed to find all specimens related to the patient and then a query for all variants related to each patient specimen can be run. Or, one could devise a more complicated query which finds all variants for all specimens of a patient. This is currently left as an exercise, also there are questions about performance which are determinant on the data store layer underneath the server. 
+		
 		It maybe safer to perform both a subject and specimen query to ensure all reported variants for a patient are found.
+		
 	</p>
 	
 	<pre class="http">GET /Observation?subject:Patient=123&amp;code-value-concept=http://loinc.org|53037-8$http://loinc.org|LA26333-7&amp;_include:iterate=Observation:derived-from</pre>
@@ -133,13 +145,15 @@ code=69548-6&_include=Observation:
 	<p>
 		Today clinicians translate (i.e. manually re-enter) genetic data into tools for decision making. This includes family history tools and drug dosage calculators. In the future, this data will automatically be incorporated into clinical decision making tools. 
 		
-		This query returns all the reported variants with referenced medication implications and those implications.
+		This query returns all the reported variants with referenced medication implications and those implications. 
+		
+		This query uses LOINC code 53037-8 for “Genetic disease sequence variant interpretation," part of the variant profile of Observation varaint. "component-code" is a construct to use the code of a component. The value in this case is "Medication Assessed" with LOINC code 51963-7. Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the Observation.derived-from link. "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the medication assessment is derived from. The iterate modifier is needed as the direct target of a derived-from relationship can be a hapolotype which has a derived-from relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes the number of observations returned larger).
 		
 	</p>
 	<a name="getPharmacogenomic"></a> 
 	<pre class="http">GET /Observation?subject=123&amp;Observation?component-code=http://loinc.org|51963-7&amp;_include:iterate=Observation:derived-from</pre>
 	<p>
-		51963-7 : LOINC code for “Medication Assessed ”
+		51963-7 : LOINC code for “Medication Assessed”
 	</p>
 	<p>
 		"_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the medication assessment is derived from. The iterate modifier is needed as the direct target of a derived-from relationship can be a hapolotype which has a derived-from relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes the number of observations returned larger).
@@ -150,7 +164,10 @@ code=69548-6&_include=Observation:
 		Today Registrars manually translate clinical data into public health reporting systems. This data is used to monitor and improve public health (e.g. surveillance and clinical research). In the future, this data will be extracted from the EHR in an automated (or semi-automated) fashion.
 	</p>
 	<p>
-		For a breast cancer clinical genomic study, get all genetic observations of patients where the variant is associated with breast cancer as a genetic risk. There is some heterogenity in the codes which maybe used to indicate phenotypes. Here we have used the NCI metathesuars code for Breast Cancer as a likely code to be used.
+		For a breast cancer clinical genomic study, get all genetic observations of patients where the variant is associated with breast cancer as a genetic risk. There is some heterogenity in the codes which maybe used to indicate phenotypes. Here we have used the NCI metathesuars code for Breast Cancer, "C9335," as a likely code to be used. The following query returns all varaints that have an annotation of "Breast Cancer" using the NCI metathesuars code for Breast Cancer, "C9335."
+		 
+		"code-value-concept" is a construct to use the code of an Observation instance and the code of a value for the Observation. The Observation.code = 81259-4, "Associated Phenotype," is used for the iG's "Inherited Disease Pathogenicity" profile. The value in this case is NCI metathesuars code for Breast Cancer, "C9335." Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the Observation.derived-from link. "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the annotation is derived from. The iterate modifier is needed as the direct target of a derived-from relationship can be a hapolotype which has a derived-from relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes the number of observations returned larger).
+		
 	</p>
 	<pre class="http">GET /Observation?subject:Patient=123&amp;code-value-concept=http://loinc.org|81259-4$http://ncimeta.nci.nih.gov|C9335&amp;_include:iterate=Observation:derived-from</pre>
 	
@@ -159,6 +176,9 @@ code=69548-6&_include=Observation:
 	</p>
 	<p>
 		http://ncimeta.nci.nih.gov|C9335 : NCI metathesaurus code for "Breast Cancer"
+	</p>
+	<p>
+	"_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the annotation of "Unknown Significance" is derived from. The iterate modifier is needed as the direct target of a derived-from relationship can be a hapolotype which has a derived-from relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes the number of observations returned larger).
 	</p>
 	
 	
@@ -181,6 +201,9 @@ code=69548-6&_include=Observation:
 	<h4> Compound heterozygotic variant retrieval</h4>
 	<p>
 		This query returns compound herterozygotic variant observations and the variant observations they are composed from. Adding a patient or specimen identifier would filter the result to a specific patient or specimen. 
+		
+		This query uses LOINC code 81263-6 for a component with code of “Complex variant type," part of the variant profile of Observation variant. "component-code-value-concept" is a construct to use the code of a component and the code of a value for the component. The value in this case is "Compound heterozygous" with LOINC code LA26217-2. Additionally, "_include:iterate=Observation:has-member" tells the FHIR API to look for variants that compose the complex variant. The iterate modifier is used as complex variants can have nested variants.
+		
 	</p>
 	<pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|81263-6$http://loinc.org|LA26217-2&amp;_include:iterate=Observation:has-member</pre>
 	<p>
@@ -196,6 +219,9 @@ code=69548-6&_include=Observation:
     <h4>
     	Search for variants with a given gene <!--and variant classification-->
     </h4>
+	<p>
+		This query uses the value of the "Gene studied ID (HGNC)" component, with LOINC code 48018-6, to find an instance of Observation Variant with the HGNC id for EGFR. "component-code-value-concept" is a construct to use the code of a component and the code of a value for the component. The value in this case is HGNC gene id "HGNC:3236" for EGFR. Note to avoid errors, the gene id's from HGNC must be appended with "HGNC:"
+	</p>
     <!--pre class="http">GET /Observation?component-code-value=http://www.genenames.org|3236&amp;component-code-value=http://loinc.org|LA6684-0</pre-->
 	<pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|48018-6$https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:3236</pre>
 		<!--pre class="http">GET /Observation?subject:Patient=123&amp;code-value-concept=http://loinc.org|53037-8$http://loinc.org|LA26333-7&amp;_include:iterate=Observation:derived-from</pre-->
@@ -208,8 +234,10 @@ code=69548-6&_include=Observation:
     <h4>Variant ID based query</h4>
     <p>
     	Find all patients with a set of variants identified by a variant id. In this case we are looking to see if there is an observation of ClinVar ID 182302. Which has HGVS of NM_000059.3:c.1-59_1-57delGAA. 
+		
+		This query uses the value of the "Discrete Genetic Variant" component, with LOINC code 81252-9, to find an instance of Observation Variant with a ClinVar id "182302." "component-code-value-concept" is a construct to use the code of a component and the code of a value for the component. The value in this case is ClinVar ID 182302.
     </p>
-	<pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|81263-6$http://www.ncbi.nlm.nih.gov/clinvar/variation|182302</pre>
+	<pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|81263-6$http://www.ncbi.nlm.nih.gov/clinvar|182302</pre>
 	<p>
 		81252-9: LOINC code for “Discrete Genetic Variant”
 	</p>
@@ -228,13 +256,13 @@ code=69548-6&_include=Observation:
     <a name="getAPatient"></a>
     <h4>Get a Patient's Family members' genetics report</h4>
     <p>
-    	This example is proposed by Kevin Hughes. Family history is useful for clinicians to know more about the condition of the patient.
+    	This example is proposed by Kevin Hughes. Family history is useful for clinicians to know more about the condition of the patient. This uses the FamilyMemberHistory extension to find the family history of patient "123."
     </p>
     <pre class="http">GET /FamilyMemberHistory?patient=123</pre>
 	    <a name="other"></a>
     <h3>Other Genomics Use Case</h3>
     <p>
-    	During the development of the FHIR Genomics design, CGWG participants have commented on the earlier use cases and/or proposed new use cases. In this section, we list describe of these new cases and demonstrate how the proposed design will address them.
+    	During the development of the FHIR Genomics design, CGWG participants have commented on the earlier use cases and/or proposed new use cases. In this section, we list describe new cases and demonstrate how the proposed design will address them.
     </p>
     <a name="panel"></a>
     <h4>Panel</h4>

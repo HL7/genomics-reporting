@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Sep 27, 2019 20:23+0000 for FHIR v4.1.0 
+  Generated on Mon, Sep 30, 2019 20:25+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -32798,6 +32798,7 @@ The primary difference between a medicationusage and a medicationadministration 
             <xs:element name="valueTime" type="time"/>
             <xs:element name="valueDateTime" type="dateTime"/>
             <xs:element name="valuePeriod" type="Period"/>
+            <xs:element name="valueAttachment" type="Attachment"/>
           </xs:choice>
           <xs:element name="dataAbsentReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -32926,6 +32927,7 @@ The primary difference between a medicationusage and a medicationadministration 
             <xs:element name="valueTime" type="time"/>
             <xs:element name="valueDateTime" type="dateTime"/>
             <xs:element name="valuePeriod" type="Period"/>
+            <xs:element name="valueAttachment" type="Attachment"/>
           </xs:choice>
           <xs:element name="dataAbsentReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
