@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Sep 30, 2019 20:25+0000 for FHIR v4.1.0 
+  Generated on Wed, Oct 2, 2019 12:28+0000 for FHIR v4.1.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.1.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -41124,9 +41124,14 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The molecular weight or weight range (for proteins, polymers or nucleic acids).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="source" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="sourceCoding" minOccurs="0" maxOccurs="unbounded" type="Coding">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Supporting literature.</xs:documentation>
+              <xs:documentation xml:lang="en">Describes the source of information.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="sourceDocument" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Supporting literature about the source of information.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="representation" type="SubstanceDefinition.Representation" minOccurs="0" maxOccurs="unbounded">
@@ -41387,9 +41392,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
             <xs:element name="amountRatio" type="Ratio"/>
             <xs:element name="amountString" type="string"/>
           </xs:choice>
-          <xs:element name="amountRatioLowLimit" minOccurs="0" maxOccurs="1" type="Ratio">
+          <xs:element name="amountRatioHighLimit" minOccurs="0" maxOccurs="1" type="Ratio">
             <xs:annotation>
-              <xs:documentation xml:lang="en">For use when the numeric.</xs:documentation>
+              <xs:documentation xml:lang="en">For use when the numeric has an uncertain range.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="amountType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
