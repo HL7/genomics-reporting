@@ -1,18 +1,86 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+   
 <p>
-    The following table represents most of the codeableConcepts presented in this guide and identifies corresponding profiles and valuesets where possible.
+    The following table represents most of the codeableConcepts presented in this guide and identifies corresponding profiles and valuesets where possible. View the individual profiles and sections under 'quick links' for more information on suggested usage.
 </p>
 
+ <style type="text/css">
+        #constrainer {
+            overflow-x: hidden;
+            width: 1001px;
+        }
+        #constrainer table {
+            overflow-y: scroll;
+            table-layout: fixed;
+            overflow: hidden;
+            word-break: break-word;
+        }
+        #constrainer tbody {
+            overflow-x: hidden;
+            display: block;
+            height: 500px;
+            width:1000px;
+        }
+        #constrainer thead {
+            display: table-row;
+        }
 
-<table>
-<tr>
-    <th>Profile</th>
-    <th>Display and Code</th>
-    <th>Description</th>
-    <th>Sample Values</th>
-    <th>Value Set</th>
-    <th width="15%">Value IDs</th>
-</tr>
+        table {
+            border-collapse: collapse;
+            border: 1px solid lightgrey;
+            overflow-y: scroll;
+        }
+        th, td {
+            border: 1px solid gray;
+        }
+        th {
+            background-color: lightgrey;
+            border-width: 1px;
+        }
+        td {
+            border-width: 1px;
+            text-align:left;
+            vertical-align:top
+        }
+        tr:first-child td {
+            border-top-width: 0;
+        }
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+        th:nth-child(1), td:nth-child(1) {
+          width: 75px;
+          }
+        th:nth-child(2), td:nth-child(2) {
+          width: 100px;
+        }
+        th:nth-child(3), td:nth-child(3) {
+          width: 500px;
+         }
+        th:nth-child(4), td:nth-child(4) {
+          width: 150px;
+         }
+        th:nth-child(5), td:nth-child(5) {
+          width: 75px;
+         }
+        th:nth-child(6), td:nth-child(6) {
+          width: 100px;
+         }
+    </style>
+
+<div id="constrainer">
+    <table style="margin-bottom:0">
+        <thead>
+            <th>Profile</th>
+            <th>Display and Code</th>
+            <th>Description</th>
+            <th>Sample Values</th>
+            <th>Value Set</th>
+            <th>Value IDs</th>
+        </thead>
+    </table>
+    <table>
+        <tbody>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Genetic variant assessment
@@ -528,5 +596,7 @@
     <td></td>
     <td></td>
 </tr>
+</tbody>
 </table>
+</div>
 </div>
