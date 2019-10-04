@@ -5,6 +5,7 @@
 </p>
 
  <style type="text/css">
+
         #constrainer {
             overflow-x: hidden;
             width: 1001px;
@@ -22,20 +23,22 @@
             width:1000px;
         }
         #constrainer thead {
-            display: table-row;
+            display: block;
         }
 
         table {
             border-collapse: collapse;
-            border: 1px solid lightgrey;
+            border: 1px solid grey;
             overflow-y: scroll;
         }
-        th, td {
+        td {
             border: 1px solid gray;
         }
         th {
             background-color: lightgrey;
             border-width: 1px;
+            border-bottom-width: 0px;
+            vertical-align:middle;
         }
         td {
             border-width: 1px;
@@ -49,22 +52,22 @@
             background-color: #eee;
         }
         th:nth-child(1), td:nth-child(1) {
-          width: 75px;
+          width: 90px;
           }
         th:nth-child(2), td:nth-child(2) {
           width: 100px;
         }
         th:nth-child(3), td:nth-child(3) {
-          width: 500px;
+          width: 490px;
          }
         th:nth-child(4), td:nth-child(4) {
           width: 150px;
          }
         th:nth-child(5), td:nth-child(5) {
-          width: 75px;
+          width: 80px;
          }
         th:nth-child(6), td:nth-child(6) {
-          width: 100px;
+          width: 90px;
          }
     </style>
 
@@ -82,10 +85,10 @@
     <table>
         <tbody>
 <tr>
-    <td><a href="variant.html">variant</a></td>
+    <td><a href="variant.html">variant</a><br/>(code)</td>
     <td>Genetic variant assessment
 (69548-6)</td>
-    <td>Where testing scenarios are intended to assess the prescence or absence of a known set of DNA variants (e.g. tumor profiling using genotyping technology), then the Genetic Variant Assessment is used in conjunction with answer list supports structured communication of these findings. Of note, 'No Call' is different from 'Absent', because 'No Call' did not result in the determination of the marker's presents or absents. This may be due to test failure or specimen specific context which renders the test ineffective. If not searching for specific variations and merely reporting what's found, this element should be set to "Present".</td>
+    <td>This profile is used to convery the presence or absence of a particular variant. Of note, 'No Call' is different from 'Absent', because 'No Call' did not result in the determination of the marker's presents or absents. This may be due to test failure or specimen specific context which renders the test ineffective. If not searching for specific variations and merely reporting what's found, the profile's value should be set to "Present". Details about the specific variant in consideration must be populated in the relevant components where available.</td>
     <td>Indeterminate, No call, Present, Absent</td>
     <td><a href="http://loinc.org/vs/LL1971-2">LL1971-2</a></td>
     <td>LA11884-6, LA18198-4, LA9633-4, LA9634-2</td>
@@ -94,7 +97,7 @@
     <td><a href="variant.html">variant</a></td>
     <td>method
 (N/A)</td>
-    <td>Indicates the method of variant analysis</td>
+    <td>Indicates the method of variant analysis. This list is currently extensible, allowing for codification of other method types here at varying degrees of granularity. The work group is considering additional approaches to modeling testing methods and is requesting implementer feedback at this time.</td>
     <td>Sequencing, Oligo aCGH, SNP array, BAC aCGH, Curated, Digital array, FISH, Gene expression array, Karyotyping, MAPH, MALDI-TOF, Multiple complete digestion, MLPA, Optical mapping, PCR, qPCR (real-time PCR), ROMA, Merging, Denaturing high-pressure liquid chromatography (DHPLC), DNA hybridization, Computational analysis, Single-stranded conformational polymorphism (SSCP), Restriction fragment length polymorphism (RFLP)</td>
     <td><a href="http://loinc.org/vs/LL4048-6">LL4048-6</a></td>
     <td>LA26398-0, LA26399-8, LA26400-4, LA26401-2, LA26402-0, LA26403-8, LA26404-6, LA26405-3, LA26406-1, LA26407-9, LA26408-7, LA26414-5, LA26415-2, LA26417-8, LA26418-6, LA26419-4, LA26420-2, LA26808-8, LA26809-6, LA26810-4, LA26811-2, LA26812-0, LA26813-8</td>
@@ -103,74 +106,74 @@
     <td><a href="variant.html">variant</a></td>
     <td>DNA change (c.HGVS)
 (48004-6)</td>
-    <td>Human Genome Variation Society (HGVS) nomenclature for a single DNA marker.</td>
-    <td></td>
+    <td>Human Genome Variation Society (HGVS) nomenclature for a single DNA marker. The 'c' here denotes a coding sequence, </td>
+    <td>(strings in HGVS notation starting with "c.", e.g., c.78G>T)</td>
     <td>HGVS</td>
-    <td></td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>DNA change type
 (48019-4)</td>
-    <td>Codified type for associated DNA Marker. DNA Marker's use the HGVS notation which implies the DNA Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience.</td>
-    <td>Duplication, Insertion, Insertion/Deletion, Inversion, Substitution, Deletion, Wild type</td>
-    <td><a href="http://loinc.org/vs/LL379-9">LL379-9</a></td>
-    <td>LA6686-5, LA6687-3, LA6688-1, LA6689-9, LA6690-7, LA6692-3, LA9658-1</td>
+    <td>Codified type for associated DNA change. The concurrent use of this code along with an HGVS component will display a standard and explicit type for convenience. To avoid duplication of efforts, we have bound this element to sequence ontology, specifically any terms under SO:0002072, "sequence_comparison".</td>
+    <td>Duplication, Insertion, Insertion/Deletion, Inversion, Substitution, Deletion, Wild type, etc (all terms under SO:0002072)</td>
+    <td><a href="http://sequenceontology.org">SO:0002072</a></td>
+    <td>(too many to list)</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>functional annotation
 (tbd)</td>
-    <td>Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537.
+    <td>Annotated changes to sequence features caused by this variant. Values are from the sequence ontology under SO:0001537, "structural_variant".
 </td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>stop lost, stop gained, silent mutation, feature amplification, gene fusion, etc (all terms under SO:001537).</td>
+    <td><a href="http://sequenceontology.org">SO:0001537</a></td>
+    <td>(too many to list)</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Simple var ID
 (81252-9)</td>
-    <td>This term is used to report the unique identifier of the simple variant found in this study.  If this is present, the components can be omitted but they might be included to avoid a need to look up the information in a registry.Typically only one code would be present, though multiple codings expressing the variant in different code systems are possible.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>This term is used to report the unique identifier of the simple variant found in this study. The identifier may come from various sources, including NCBI's ClinVar and Ensembl. For example, the variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys) has the ClinVar ID 30880 and would be reported in OBX-5 as 30880^NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)^ClinVar. [http://www.ncbi.nlm.nih.gov/clinvar/variation/30880/] Typically only one code would be present, though multiple codings expressing the variant in different code systems are possible. See <a href="codings.html">Appendix D</a> for more information on code systems.</td>
+    <td>(ClinVar IDs, eg)</td>
+    <td><a href="http://www.ncbi.nlm.nih.gov/clinvar">clinvar</a>, eg</td>
+    <td>(too many to list)</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>dbSNP ID
 (81255-2)</td>
-    <td>The unique identifier for the variant represented as a small nucleotide polymorphism (SNP). The dbSNP ID is used routinely as the base identifier in pharmacogenomics as well as arrCGH studies. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the dbSNP ID is 368949613. [http://www.ncbi.nlm.nih.gov/clinvar/variation/30880/]</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>The dbSNP ID is used routinely as the base identifier in pharmacogenomics as well as arrCGH studies. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the dbSNP ID is 368949613. [http://www.ncbi.nlm.nih.gov/clinvar/variation/30880/]. Note that the dbSNP ID alone does not fully describe the change, just its location and length.</td>
+    <td>(dbSNP IDs)</td>
+    <td><a href="http://www.ncbi.nlm.nih.gov/projects/SNP">dbSNP</a></td>
+    <td>(too many to list)</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Genomic DNA change (gHGVS)
+    <td>Genomic DNA change (g.HGVS)
 (81290-9)</td>
-    <td>The name of a structural variant reported using HGVS nomenclature.</td>
-    <td></td>
+    <td>The name of a genomic/structural variant reported using HGVS nomenclature.</td>
+    <td>(strings in HGVS notation starting with "g.", e.g., g.35476G>T)</td>
     <td>HGVS</td>
-    <td></td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Genomic source class [Type]
 (48002-0)</td>
-    <td>The genomic class of the specimen being analyzed: Germline for inherited genome, somatic for cancer genome, and prenatal for fetal genome.</td>
+    <td>The genomic class of the specimen being analyzed: Germline for inherited genome, somatic for cancer genome, and fetal for prenatal genome.</td>
     <td>Fetal, Likely germline, Likely somatic, Likely fetal, Unknown genomic origin, De novo, Germline, Somatic</td>
     <td><a href="http://loinc.org/vs/LL378-1">LL378-1</a></td>
     <td>LA10429-1, LA18194-3, LA18195-0, LA18196-8, LA18197-6, LA26807-0, LA6683-2, LA6684-0</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Amino acid change (pHGVS)
+    <td>Amino acid change (p.HGVS)
 (48005-3)</td>
-    <td>Human Genome Variation Society (HGVS) nomenclature for an amino acid sequence. This value is derivable from the DNA Marker value if available. It is provided for convenience. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples.</td>
-    <td></td>
+    <td>Human Genome Variation Society (HGVS) nomenclature for an amino acid sequence. This value is derivable from the DNA Marker values if available. It is provided for convenience. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples.</td>
+    <td>(strings in HGVS notation starting with "p.", e.g., p.(Arg727Ser))</td>
     <td>HGVS</td>
-    <td></td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
@@ -185,38 +188,37 @@
     <td><a href="variant.html">variant</a></td>
     <td>Transcript ref sequence ID
 (51958-7)</td>
-    <td>This field carries the ID for the transcribed reference sequence, which is the part of the genomic reference sequence that is converted to messenger RNA (i.e., after the introns are removed).  Only needed if the transcript sequence or genomic reference sequence versions don't indicate the version</td>
+    <td>This field carries the ID for the transcribed reference sequence, which is the part of the genomic reference sequence that is converted to messenger RNA (i.e., after the introns are removed). For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq). The transcript reference sequence ID may be reporting using various coding systems including NCBI's RefSeq ("NM_..."), Ensembl ("ENST..."), and LRG ("LRG..." plus "t1" to indicate transcript). See <a href="codings.html">Appendix D</a> for more information on code systems.</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td>(too many to list)</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Genomic reference sequence ID
 (48013-7)</td>
-    <td>This field carries the ID for the genomic reference sequence. The genomic reference sequence is a contiguous stretch of chromosome DNA that spans all of the exons of the gene and includes transcribed and non transcribed stretches. For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq) or use the LRG identifiers, without transcript (t or p) extensions -- when they become available. (See- Report sponsored by GEN2PHEN at the European Bioinformatics Institute at Hinxton UK April 24-25, 2008).
- The NCI RefSeq genomic IDs are distinguished by a prefix of"NG" for genes from the nuclear chromosomes and prefix of "NC" for genes from mitochondria. The LRG Identifiers have a prefix of "LRG_" Mitochondrial genes are not in the scope of LRG</td>
+    <td>This field carries the ID for the genomic reference sequence. The genomic reference sequence is a contiguous stretch of chromosome DNA that spans all of the exons of the gene and includes transcribed and non transcribed stretches. For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq) or use the LRG identifiers, without transcript (t or p) extensions -- when they become available. The NCBI RefSeq genomic IDs are distinguished by a prefix of "NG" for genes from the nuclear chromosomes and prefix of "NC" for genes from mitochondria. The LRG Identifiers have a prefix of "LRG_". See <a href="codings.html">Appendix D</a> for more information on code systems.</td>
     <td></td>
     <td></td>
-    <td></td>
+    <td>(too many to list)</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Sample variant allelic frequency [NFr]
 (81258-6)</td>
-    <td>Specifies the number of reads that identified the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>The fraction of all reads in a study sample at a given genomic locus that identify the allele (variant) in question.</td>
+    <td>quantity</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Allelic read depth
 (82121-5)</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Specifies the number of reads that identified the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
+    <td>counts</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
@@ -232,78 +234,78 @@
     <td>Gen struct var copy num
 (82155-3)</td>
     <td>The copy number of the large variant. In HGVS, this is the numeric value following the “X”. It is a unit-less value. Note that a copy number of 1 implies a deletion. The copy number can usually be inferred from the HGVS or ISCN fields.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>counts</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Ref nucleotide
 (69547-8)</td>
-    <td>Reference values ("normal") examined within the Reference Sequence.  This is used in a genotyping test to define the reference and variable nucleotide strings. That is if the sequence variation is an insertion, then Reference Nucleotide will be blank and Variable Nucleotide will contain the inserted nucleotides. In contrast, if the sequence variation is a deletion, then the Reference Nucleotide will contain the deleted nucliotieds, and the Variable Nucleotide will be blank.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Reference values ("normal") examined within the DNA Reference Sequence.  This is used in a genotyping test to define the reference and variable nucleotide strings. That is if the sequence variation is an insertion, then Reference Nucleotide will be blank and Variable Nucleotide will contain the inserted nucleotides. In contrast, if the sequence variation is a deletion, then the Reference Nucleotide will contain the deleted nucliotieds, and the Variable Nucleotide will be blank.</td>
+    <td>string</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Alt allele
 (69551-0)</td>
     <td>The genomic alternate allele is the contiguous segment of DNA in the test sample that differs from the reference allele at the same location and thus defines a variant.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>string</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Genomic coordinate system [Type]
 (92822-6)</td>
-    <td>Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides.</td>
+    <td>Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use. These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides.</td>
     <td>0-based interval counting, 0-based character counting, 1-based character counting</td>
     <td><a href="http://loinc.org/vs/LL5323-2">LL5323-2</a></td>
     <td>LA30100-4, LA30101-2, LA30102-0</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Gen allele loc ID
+    <td>exact start-end
 (81254-5)</td>
-    <td>The genomic allele location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the genomic allele location is Chr3: 128906220 on Assembly GRCh38</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Also known as Gen allele loc ID, the genomic allele location is the first genomic position in the reference that contains a change. Use this component when the exact endpoints for the change are known. For a variant where the change is only one base long, the 'high' value of the range need not be sent. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the 'low' genomic allele location is 128906220 (on Chr3 in Assembly GRCh38, 1-based character counting). The 'high' value need not be sent.</td>
+    <td>(low count, optional higher count)</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Struct var len
+    <td>Variant length
 (81300-6)</td>
-    <td>Length of the structural variant, which information may be ascertained in some but not all types of structural variants.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Previously called Struct var len, the length of the variant, which information may be ascertained in some but not all types of variants.</td>
+    <td>(count)</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Struct var outer start-end NumRange
+    <td>Variant outer start-end
 (81301-4)</td>
-    <td>The genomic coordinates of the widest genomic range in which the structural variant might reside.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>The genomic coordinates of the widest genomic range in which the variant might reside. Used when the exact boundaries of the variant are not clear.</td>
+    <td>(low count, higher count)</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Struct var inner start-end NumRange
+    <td>Variant inner start-end
 (81302-2)</td>
-    <td>The genomic coordinates of the narrowest genomic range in which the structural variant might reside.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>The genomic coordinates of the narrowest genomic range in which the variant might reside. Used when the exact boundaries of the variant are not clear.</td>
+    <td>(low count, higher count)</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
     <td>Chromosome copy number change [Type]
 (62378-5)</td>
-    <td>The type of the chromosome copy number change</td>
+    <td>The type of the chromosome copy number change.</td>
     <td>Copy number gain, Copy number loss</td>
     <td><a href="http://loinc.org/vs/LL1041-4">LL1041-4</a></td>
     <td>LA14033-7, LA14034-5</td>
@@ -312,10 +314,10 @@
     <td><a href="variant.html">variant</a></td>
     <td>Struct var rep arrCGH Rto
 (81299-0)</td>
-    <td>todo</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>For a Comparative genomic hybridization array test, the resulting ratio of the fluorescence intensities, which is proportional to the ratio of the copy numbers of DNA sequences in the test and reference genomes.</td>
+    <td>(quantity)</td>
+    <td>N/A</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
@@ -328,12 +330,12 @@
 </tr>
 <tr>
     <td><a href="variant.html">variant</a></td>
-    <td>Struct var ISCN name
+    <td>Struct var ISCN
 (81291-7)</td>
-    <td>Fully describes a variant with a single code.Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Fully describes a variant with a single code in the International System for Human Cytogenetic Nomenclature. Typically a large aberrant variant such as a mosaic, abnormal chromosome numbers, etc. See <a href="codings.html">Appendix D</a> for more information on code systems.</td>
+    <td>N/A</td>
+    <td>ISCN</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="implication.html">implication</a></td>
@@ -348,10 +350,10 @@
     <td><a href="finding.html">finding</a></td>
     <td>Gene studied ID
 (48018-6)</td>
-    <td>HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiplegene studied components . The required codingwill use the HGNC gene symbol as the display text and HGNC gene ID as the code.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiplegene studied components. The required codingwill use the HGNC gene symbol as the display text and HGNC gene ID as the code, eg code=HGNC:1100, display="BRCA1".</td>
+    <td>N/A</td>
+    <td>HGNC gene IDs</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="finding.html">finding</a></td>
@@ -366,7 +368,7 @@
     <td><a href="finding.html">finding</a></td>
     <td>Human reference sequence assembly version
 (62374-4)</td>
-    <td></td>
+    <td>The version of the human reference sequence assembly (extensible).</td>
     <td>GRCh37, NCBI Build 36.1, NCBI Build 35, NCBI Build 34</td>
     <td><a href="http://loinc.org/vs/LL1040-6">LL1040-6</a></td>
     <td>LA14029-5, LA14030-3, LA14031-1, LA14032-9</td>
@@ -375,7 +377,7 @@
     <td><a href="inherited-disease-pathogenicity.html">inh-dis-path</a></td>
     <td>Genetic variation clinical significance [Imp]
 (53037-8)</td>
-    <td></td>
+    <td>Single DNA marker or individual allele interpretation in the context of the assessed genetic disease.</td>
     <td>Likely pathogenic, Uncertain significance, Likely benign, Pathogenic, Benign</td>
     <td><a href="http://loinc.org/vs/LL4034-6">LL4034-6</a></td>
     <td>LA26332-9, LA26333-7, LA26334-5, LA6668-3, LA6675-8</td>
@@ -384,10 +386,10 @@
     <td><a href="inherited-disease-pathogenicity.html">inh-dis-path</a></td>
     <td>Prob assoc phenotype
 (81259-4)</td>
-    <td>The possible phenotype associated with the genetic variant found in this study.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>The possible phenotype associated with the genetic variant found in this study. If sending multiple phenotypes, break up the assertions based on the independently assessed conditions, whether they be a single term or a collection of co-occurring terms. </td>
+    <td>N/A</td>
+    <td>(HPO, eg)</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="overall-interpretation.html">interpretation</a></td>
@@ -400,18 +402,18 @@
 </tr>
 <tr>
     <td><a href="overall-interpretation.html">genotype</a></td>
-    <td>Genotype name Patient
+    <td>Genotype name
 (84413-4)</td>
-    <td>A finding that a patient has a specific genotype</td>
+    <td>The specific genotype observed</td>
     <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="haplotype.html">haplotype</a></td>
-    <td>Haplotype name Bld/T
+    <td>Haplotype name
 (84414-2)</td>
-    <td>A finding that a patient has a specific haplotype</td>
+    <td>The specific haplotype observed</td>
     <td></td>
     <td></td>
     <td></td>
@@ -439,7 +441,7 @@
     <td>Medication assessed
 (51963-7)</td>
     <td>The medication whose impact is being described</td>
-    <td></td>
+    <td>(RxNorm, eg)</td>
     <td></td>
     <td></td>
 </tr>
@@ -466,7 +468,7 @@
     <td>Genomic variation's effect on transporter function
 (tbd)</td>
     <td>Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance.  Source of list: https://www.nature.com/articles/gim201687/tables/2</td>
-    <td></td>
+    <td>Increased function, Normal function, Decreased function, Poor function</td>
     <td></td>
     <td></td>
 </tr>
@@ -481,91 +483,63 @@
 </tr>
 <tr>
     <td><a href="region-studied.html">region-studied</a></td>
-    <td>DNA region of interest Pnl
+    <td>DNA region of interest
 (53041-0)</td>
-    <td>The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance).</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance). This Obvservation does not carry a value.</td>
+    <td>N/A - no value</td>
+    <td>N/A</td>
+    <td>N/A - no value</td>
 </tr>
 <tr>
     <td><a href="region-studied.html">region-studied</a></td>
-    <td>Gene studied ID
-(48018-6)</td>
-    <td>HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiplegene studied components . The required codingwill use the HGNC gene symbol as the display text and HGNC gene ID as the code.</td>
-    <td></td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="region-studied.html">region-studied</a></td>
-    <td>Gene Mut Tested Bld/T
+    <td>Gene Mutations
 (36908-2)</td>
-    <td>Gene mutations that were tested for</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Also known as "Gene Mut Tested Bld/T", specific Gene mutations that were tested for</td>
+    <td>N/A</td>
+    <td>HGVS</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="region-studied.html">region-studied</a></td>
-    <td>
+    <td>Region coverage
 (tbd)</td>
     <td>When sequencing, what % of the region was covered</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>N/A</td>
+    <td>%</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="region-studied.html">region-studied</a></td>
-    <td>DNA range(s) examined Nar
+    <td>Region description
 (81293-3)</td>
-    <td>Description of region examined</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Also known as "DNA range(s) examined Nar", description of the region examined</td>
+    <td>N/A</td>
+    <td>(string)</td>
+    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="region-studied.html">region-studied</a></td>
     <td>DNA region of interest NumRange
 (51959-5)</td>
-    <td>This term is used to report the region(s) of interest for sequencing studies as one or more numeric ranges that identify the parts of the reference sequence that are sequenced. These can be recorded as one or more HL7 numeric ranges using repeat delimiters to seperate multiple such ranges.</td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>This term is used to report the region(s) of interest for sequencing studies as one or more numeric ranges that identify the parts of the reference sequence that are sequenced. These can be recorded as one or more HL7 numeric ranges using repeat delimiters to seperate multiple such ranges (use along with 92822-6 and 48013-7).</td>
+    <td>N/A</td>
+    <td>(ranges)</td>
+    <td>N/A</td>
 </tr>
-<tr>
-    <td><a href="region-studied.html">region-studied</a></td>
-    <td>Genomic coordinate system [Type]
-(92822-6)</td>
-    <td></td>
-    <td>0-based interval counting, 0-based character counting, 1-based character counting</td>
-    <td><a href="http://loinc.org/vs/LL5323-2">LL5323-2</a></td>
-    <td>LA30100-4, LA30101-2, LA30102-0</td>
-</tr>
-<tr>
-    <td><a href="region-studied.html">region-studied</a></td>
-    <td>Genomic reference sequence ID
-(48013-7)</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-</tr>
+
 <tr>
     <td><a href="somatic-diagnostic.html">somatic-diagnostic</a></td>
-    <td>
-(tbd)</td>
+    <td>(tbd profile code)</td>
     <td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer . Indicates the diagnostic predictive nature of the associated genomic findings for the specified cancer - i.e. patient definitely has/may have/definitely doesn't have.</td>
-    <td></td>
+    <td>E.g. Pathognomonic, Supportive, Argues Against, Rules Out</td>
     <td></td>
     <td></td>
 </tr>
 <tr>
     <td><a href="somatic-prognostic.html">somatic-prognostic</a></td>
-    <td>
-(tbd)</td>
+    <td>(tbd profile code</td>
     <td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions . The predicted outcome for the cancer either on its own or in conjunction with the specified intervention(s)</td>
-    <td></td>
+    <td>E.g. Better outcome, poorer outcome</td>
     <td></td>
     <td></td>
 </tr>
@@ -589,10 +563,10 @@
 </tr>
 <tr>
     <td><a href="somatic-predictive.html">somatic-predictive</a></td>
-    <td>
-(tbd)</td>
+    <td>(tbd profile code)</td>
     <td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the impact of a specified medication or combination of medications</td>
-    <td></td>
+    <td>E.g. Resistant, Responsive, Not-Responsive, Sensitive, Reduced-Sensitivity, Adverse Response
+</td>
     <td></td>
     <td></td>
 </tr>

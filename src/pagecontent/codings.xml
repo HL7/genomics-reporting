@@ -7,7 +7,7 @@
     <style type="text/css">
         #constrainer {
             overflow-x: hidden;
-            width: 1172px;
+            width: 1168px;
         }
         #constrainer table {
             overflow-y: scroll;
@@ -19,23 +19,24 @@
             overflow-x: hidden;
             display: block;
             height: 500px;
-            width:1171px;
+            width:1167px;
         }
         #constrainer thead {
-            display: table-row;
+            display: block;
         }
 
         table {
             border-collapse: collapse;
-            border: 1px solid lightgrey;
+            border: 1px solid grey;
             overflow-y: scroll;
         }
-        th, td {
+        td {
             border: 1px solid gray;
         }
         th {
             background-color: lightgrey;
             border-width: 1px;
+            border-bottom-width: 0px;
         }
         td {
             border-width: 1px;
@@ -44,6 +45,7 @@
         }
         tr:first-child td {
             border-top-width: 0;
+            border-left-width: 0;
         }
         tr:nth-child(even) {
             background-color: #eee;
