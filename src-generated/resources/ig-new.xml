@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="0.3"/>
@@ -68,9 +68,13 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </grouping>
-    <grouping id="vocab">
-      <name value="Vocab"/>
-      <description value="vocab"/>
+    <grouping id="codesystems">
+      <name value="Code Systems"/>
+      <description value="Code Systems defined in this implementation guide"/>
+    </grouping>
+    <grouping id="valuesets">
+      <name value="Value Sets"/>
+      <description value="Value Sets defined in this implementation guide"/>
     </grouping>
     <resource>
       <reference>
@@ -202,17 +206,49 @@
       <reference>
         <reference value="CodeSystem/tbd-codes"/>
       </reference>
-      <name value="tbd-codes"/>
-      <description value="tbd-codes"/>
-      <groupingId value="vocab"/>
+      <name value="TBD Code System"/>
+      <description value="Code System for codes yet to be defined in LOINC"/>
+      <groupingId value="codesystems"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/seq-phase-relationship"/>
+      </reference>
+      <name value="Sequence Phase Relationship"/>
+      <description value="Code System for specific types of relationships"/>
+      <groupingId value="codesystems"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/tbd-codes"/>
       </reference>
-      <name value="tbd-codes-vs"/>
-      <description value="tbd-codes-vs"/>
-      <groupingId value="vocab"/>
+      <name value="TBD Value Set"/>
+      <description value="Value Set for codes yet to be defined in LOINC"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/dna-change-type"/>
+      </reference>
+      <name value="DNA Change Type"/>
+      <description value="DNA change type for variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/functional-annotation"/>
+      </reference>
+      <name value="Functional Annotations"/>
+      <description value="Functional annotations for variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/seq-phase-relationship"/>
+      </reference>
+      <name value="Sequence Phase Relationship"/>
+      <description value="Value Setm for specific types of relationships"/>
+      <groupingId value="valuesets"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -504,12 +540,32 @@
         </page>
         <page>
           <nameUrl value="tbd-codes.html"/>
-          <title value="tbd-codes"/>
+          <title value="TBD Code System"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="seq-phase-relationship.html"/>
+          <title value="Sequence Phase Relationship"/>
           <generation value="generated"/>
         </page>
         <page>
           <nameUrl value="valueset-tbd-codes.html"/>
-          <title value="tbd-codes-vs"/>
+          <title value="TBD Value Set"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-dna-change-type.html"/>
+          <title value="DNA Change Type"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-functional-annotation.html"/>
+          <title value="Functional Annotations"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-seq-phase-relationship.html"/>
+          <title value="Sequence Phase Relationship"/>
           <generation value="generated"/>
         </page>
       </page>

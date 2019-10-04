@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="seq-phase-relationship"/>
+  <meta>
+      <profile value="http://hl7.org/fhir/StructureDefinition/shareablecodesystem"/>
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+      <valueCode value="cg"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/seq-phase-relationship"/>
+  <version value="0.3"/>
+  <name value="SequencePhaseRelationship"/>
+  <title value="seq-phase-relationship"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2019-08-21"/>
+  <publisher value="HL7 (Clinical Genomics)"/>
+  <contact>
+      <telecom>
+          <system value="url"/>
+          <value value="http://hl7.org/fhir"/>
+      </telecom>
+      <telecom>
+          <system value="email"/>
+          <value value="fhir@lists.hl7.org"/>
+      </telecom>
+  </contact>
+  <contact>
+    <telecom>
+      <system value="url"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+    </telecom>
+  </contact>
+  <description value="Sequence Phase Relationship Types"/>
+  <caseSensitive value="true"/>
+  <valueSet value="http://hl7.org/fhir/uv/genomics-reporting/ValueSet/seq-phase-relationship"/>
+  <content value="complete"/>
+  <concept>
+    <code value="Cis"/>
+    <display value="Cis"/>
+    <definition value="Phase is in cis (same chromosome)"/>
+  </concept>
+  <concept>
+    <code value="Trans"/>
+    <display value="Trans"/>
+    <definition value="Phase is in trans (different chromosomes)"/>
+  </concept>
+  <concept>
+    <code value="Indeterminate"/>
+    <display value="Indeterminate"/>
+    <definition value="Phase is unable to be determined"/>
+  </concept>
+  <concept>
+    <code value="Unknown"/>
+    <display value="Unknown"/>
+    <definition value="Phase is unknown"/>
+  </concept>
+</CodeSystem>

@@ -75,9 +75,13 @@
       <name value="Example(s)"/>
       <description value="Example(s) showing the use of the CG profiles"/>
     </grouping>
-    <grouping id="vocab">
-      <name value="Vocab"/>
-      <description value="vocab"/>
+    <grouping id="codesystems">
+      <name value="Code Systems"/>
+      <description value="Code Systems defined in this implementation guide"/>
+    </grouping>
+    <grouping id="valuesets">
+      <name value="Value Sets"/>
+      <description value="Value Sets defined in this implementation guide"/>
     </grouping>
     <resource>
       <extension
@@ -614,17 +618,49 @@
       <reference>
         <reference value="CodeSystem/tbd-codes"/>
       </reference>
-      <name value="tbd-codes"/>
-      <description value="tbd-codes"/>
-      <groupingId value="vocab"/>
+      <name value="TBD Code System"/>
+      <description value="Code System for codes yet to be defined in LOINC"/>
+      <groupingId value="codesystems"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/seq-phase-relationship"/>
+      </reference>
+      <name value="Sequence Phase Relationship"/>
+      <description value="Code System for specific types of relationships"/>
+      <groupingId value="codesystems"/>
     </resource>
     <resource>
       <reference>
         <reference value="ValueSet/tbd-codes"/>
       </reference>
-      <name value="tbd-codes-vs"/>
-      <description value="tbd-codes-vs"/>
-      <groupingId value="vocab"/>
+      <name value="TBD Value Set"/>
+      <description value="Value Set for codes yet to be defined in LOINC"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/dna-change-type"/>
+      </reference>
+      <name value="DNA Change Type"/>
+      <description value="DNA change type for variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/functional-annotation"/>
+      </reference>
+      <name value="Functional Annotations"/>
+      <description value="Functional annotations for variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/seq-phase-relationship"/>
+      </reference>
+      <name value="Sequence Phase Relationship"/>
+      <description value="Value Setm for specific types of relationships"/>
+      <groupingId value="valuesets"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

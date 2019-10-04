@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -80,9 +80,14 @@
       "description" : "Example(s) showing the use of the CG profiles"
     },
     {
-      "id" : "vocab",
-      "name" : "Vocab",
-      "description" : "vocab"
+      "id" : "codesystems",
+      "name" : "Code Systems",
+      "description" : "Code Systems defined in this implementation guide"
+    },
+    {
+      "id" : "valuesets",
+      "name" : "Value Sets",
+      "description" : "Value Sets defined in this implementation guide"
     }],
     "resource" : [{
       "reference" : {
@@ -214,17 +219,49 @@
       "reference" : {
         "reference" : "CodeSystem/tbd-codes"
       },
-      "name" : "tbd-codes",
-      "description" : "tbd-codes",
-      "groupingId" : "vocab"
+      "name" : "TBD Code System",
+      "description" : "Code System for codes yet to be defined in LOINC",
+      "groupingId" : "codesystems"
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/seq-phase-relationship"
+      },
+      "name" : "Sequence Phase Relationship",
+      "description" : "Code System for specific types of relationships",
+      "groupingId" : "codesystems"
     },
     {
       "reference" : {
         "reference" : "ValueSet/tbd-codes"
       },
-      "name" : "tbd-codes-vs",
-      "description" : "tbd-codes-vs",
-      "groupingId" : "vocab"
+      "name" : "TBD Value Set",
+      "description" : "Value Set for codes yet to be defined in LOINC",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/dna-change-type"
+      },
+      "name" : "DNA Change Type",
+      "description" : "DNA change type for variants",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/functional-annotation"
+      },
+      "name" : "Functional Annotations",
+      "description" : "Functional annotations for variants",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/seq-phase-relationship"
+      },
+      "name" : "Sequence Phase Relationship",
+      "description" : "Value Setm for specific types of relationships",
+      "groupingId" : "valuesets"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -516,12 +553,32 @@
         },
         {
           "nameUrl" : "tbd-codes.html",
-          "title" : "tbd-codes",
+          "title" : "TBD Code System",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "seq-phase-relationship.html",
+          "title" : "Sequence Phase Relationship",
           "generation" : "generated"
         },
         {
           "nameUrl" : "valueset-tbd-codes.html",
-          "title" : "tbd-codes-vs",
+          "title" : "TBD Value Set",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-dna-change-type.html",
+          "title" : "DNA Change Type",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-functional-annotation.html",
+          "title" : "Functional Annotations",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-seq-phase-relationship.html",
+          "title" : "Sequence Phase Relationship",
           "generation" : "generated"
         }]
       },
