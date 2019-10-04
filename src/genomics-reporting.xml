@@ -83,6 +83,10 @@
       <name value="Value Sets"/>
       <description value="Value Sets defined in this implementation guide"/>
     </grouping>
+    <grouping id="conceptmaps">
+      <name value="Concept Maps"/>
+      <description value="Concept Maps defined in this implementation guide"/>
+    </grouping>
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -661,6 +665,14 @@
       <name value="Sequence Phase Relationship"/>
       <description value="Value Setm for specific types of relationships"/>
       <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ConceptMap/dna-change-type"/>
+      </reference>
+      <name value="Concept mapping for DNA Change Type"/>
+      <description value="Mapping LOINC answers to SequenceOntology"/>
+      <groupingId value="conceptmaps"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

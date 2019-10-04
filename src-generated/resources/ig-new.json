@@ -88,6 +88,11 @@
       "id" : "valuesets",
       "name" : "Value Sets",
       "description" : "Value Sets defined in this implementation guide"
+    },
+    {
+      "id" : "conceptmaps",
+      "name" : "Concept Maps",
+      "description" : "Concept Maps defined in this implementation guide"
     }],
     "resource" : [{
       "reference" : {
@@ -262,6 +267,14 @@
       "name" : "Sequence Phase Relationship",
       "description" : "Value Setm for specific types of relationships",
       "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ConceptMap/dna-change-type"
+      },
+      "name" : "Concept mapping for DNA Change Type",
+      "description" : "Mapping LOINC answers to SequenceOntology",
+      "groupingId" : "conceptmaps"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -579,6 +592,11 @@
         {
           "nameUrl" : "valueset-seq-phase-relationship.html",
           "title" : "Sequence Phase Relationship",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "dna-change-type.html",
+          "title" : "Concept mapping for DNA Change Type",
           "generation" : "generated"
         }]
       },

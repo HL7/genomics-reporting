@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="dna-change-type"/>
+  <url value='http://hl7.org/fhir/uv/genomics-reporting/ConceptMap/dna-change-type'/>
+  <version value="0.3"/>
+  <name value="DNAChangeType"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2019-10-04"/>
+  <publisher value='HL7 (Clinical Genomics)'/>
+  <contact>
+    <telecom>
+      <system value='other'/>
+      <value value='https://confluence.hl7.org/display/CGW/WorkGroup+Home'/>
+    </telecom>
+  </contact>
+  <description value="LOINC and SequenceOntology mappings for dna change type"/>
+  <sourceCanonical value="http://loinc.org"/>
+  <targetCanonical value="http://www.sequenceontology.org"/>
+  <group>
+    <source value="http://loinc.org"/>
+    <target value="http://www.sequenceontology.org"/>
+    <element>
+      <code value="LA9658-1"/>
+      <display value="Wild type"/>
+      <target>
+        <code value="SO:0002073"/>
+        <display value="no_sequence_alteration"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="LA6692-3"/>
+      <display value="Deletion"/>
+      <target>
+        <code value="SO:0000159"/>
+        <display value="deletion"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="LA6686-5"/>
+      <display value="Duplication"/>
+      <target>
+        <code value="SO:1000035"/>
+        <display value="duplication"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="LA6687-3"/>
+      <display value="Insertion"/>
+      <target>
+        <code value="SO:0000667"/>
+        <display value="insertion"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="LA6688-1"/>
+      <display value="Insertion/Deletion"/>
+      <target>
+        <code value="SO:1000032"/>
+        <display value="delins"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="LA6689-9"/>
+      <display value="Inversion"/>
+      <target>
+        <code value="SO:1000036"/>
+        <display value="inversion"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="LA6690-7"/>
+      <display value="Substitution"/>
+      <target>
+        <code value="SO:1000002"/>
+        <display value="substitution"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

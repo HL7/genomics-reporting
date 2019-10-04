@@ -65,6 +65,10 @@
       <name value="Value Sets"/>
       <description value="Value Sets defined in this implementation guide"/>
     </grouping>
+    <grouping id="conceptmaps">
+      <name value="Concept Maps"/>
+      <description value="Concept Maps defined in this implementation guide"/>
+    </grouping>
     
     
     
@@ -271,6 +275,14 @@
       <name value="Sequence Phase Relationship"/>
       <description value="Value Setm for specific types of relationships"/>
       <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ConceptMap/dna-change-type"/>
+      </reference>
+      <name value="Concept mapping for DNA Change Type"/>
+      <description value="Mapping LOINC answers to SequenceOntology"/>
+      <groupingId value="conceptmaps"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -588,6 +600,11 @@
 <page>
 <nameUrl value="valueset-seq-phase-relationship.html"/>
 <ns48:title xmlns:ns48="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="dna-change-type.html"/>
+<ns49:title xmlns:ns49="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
 <generation value="generated"/>
 </page>
 </page>

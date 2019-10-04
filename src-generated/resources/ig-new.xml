@@ -76,6 +76,10 @@
       <name value="Value Sets"/>
       <description value="Value Sets defined in this implementation guide"/>
     </grouping>
+    <grouping id="conceptmaps">
+      <name value="Concept Maps"/>
+      <description value="Concept Maps defined in this implementation guide"/>
+    </grouping>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -249,6 +253,14 @@
       <name value="Sequence Phase Relationship"/>
       <description value="Value Setm for specific types of relationships"/>
       <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ConceptMap/dna-change-type"/>
+      </reference>
+      <name value="Concept mapping for DNA Change Type"/>
+      <description value="Mapping LOINC answers to SequenceOntology"/>
+      <groupingId value="conceptmaps"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -566,6 +578,11 @@
         <page>
           <nameUrl value="valueset-seq-phase-relationship.html"/>
           <title value="Sequence Phase Relationship"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="dna-change-type.html"/>
+          <title value="Concept mapping for DNA Change Type"/>
           <generation value="generated"/>
         </page>
       </page>
