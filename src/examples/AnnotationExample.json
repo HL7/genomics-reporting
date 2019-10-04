@@ -1,0 +1,281 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "AnnotationExample",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div  xmlns='http://www.w3.org/1999/xhtml'><p>Genomic variant(s) in LDLR have been identified, suggesting possible familial hypercholesterolemia.</p></div>"
+  },
+  "status":"final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "81247-9",
+        "display": "Master HL7 genetic variant reporting panel"
+      }
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Observation",
+      "id": "1",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "LABORATORY"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "53037-8",
+            "display": "Genetic variation clinical significance [Imp]"
+          }
+        ]
+      },
+      "subject": {
+        "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA6668-3",
+            "display": "Pathogenic"
+          }
+        ]
+      },
+      "derivedFrom":[{
+        "reference": "#2"
+      }],
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "81259-4",
+                "display": "Associated phenotype"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "238076009",
+                "display": "Primary hypercholesterolemia (disorder)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "2",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory",
+              "display": "LABORATORY"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "69548-6",
+            "display": "Genetic variant assessment"
+          }
+        ]
+      },
+      "subject": {
+        "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA9633-4",
+            "display": "present"
+          }
+        ]
+      },
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "62374-4",
+                "display": "Human reference sequence assembly version"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA14029-5",
+                "display": "GRCh37"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "81252-9",
+                "display": "Discrete genetic variant"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://www.ncbi.nlm.nih.gov/clinvar",
+                "code": "3683"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "48013-7",
+                "display": "Genomic reference sequence ID"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+                "code": "NC_000019.9"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "53034-5",
+                "display": "Allelic state"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA6706-1",
+                "display": "heterozygous"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "69547-8",
+                "display": "Genomic ref allele [ID]"
+              }
+            ]
+          },
+          "valueString": "C"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "69551-0",
+                "display": "Genomic alt allele [ID]"
+              }
+            ]
+          },
+          "valueString": "T"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "92822-6",
+                "display": "Genomic coord system"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA30102-0"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes",
+                "code": "exact-start-end",
+                "display": "Variant exact start and end"
+              }
+            ]
+          },
+          "valueRange": {
+            "low": {
+              "value": 11210928
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "result": [
+    {
+      "reference": "#1"
+    },
+    {
+      "reference": "#2"
+    }
+  ]
+}
