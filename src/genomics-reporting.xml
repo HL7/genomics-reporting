@@ -563,6 +563,24 @@
       <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="DiagnosticReport/AnnotationExample"/>
+      </reference>
+      <name value="Example of PGx Annotation"/>
+      <description value="PGx Annotation example"/>
+      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/HLAB1502-pgx-example"/>
+      </reference>
+      <name value="Example - High Risk Allele (HLA-B*15:02)"/>
+      <description value="High Risk Allele (HLA-B*15:02)"/>
+      <exampleCanonical value="StructureDefinition/medication-high-risk"/>
+      <groupingId value="examples"/>
+    </resource>
 
     <resource>
       <reference>
@@ -663,7 +681,15 @@
         <reference value="ValueSet/seq-phase-relationship"/>
       </reference>
       <name value="Sequence Phase Relationship"/>
-      <description value="Value Setm for specific types of relationships"/>
+      <description value="Value Set for specific types of relationships"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/variant-inheritance"/>
+      </reference>
+      <name value="Variant Inheritance"/>
+      <description value="origins of variants"/>
       <groupingId value="valuesets"/>
     </resource>
     <resource>

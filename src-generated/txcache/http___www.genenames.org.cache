@@ -61,3 +61,23 @@ v: {
   "error" : "The code system \"http://www.genenames.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc\" is not known; The code system \"http://www.genenames.org\" is not known for the code \"HGNC:2621\"; The code provided (http://www.genenames.org#HGNC:2621) is not  valid in the value set HGNC"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.genenames.org",
+    "code" : "HGNC:4932",
+    "display" : "HLA-B"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://www.genenames.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.genenames.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc\" is not known; The code system \"http://www.genenames.org\" is not known for the code \"HGNC:4932\"; The code provided (http://www.genenames.org#HGNC:4932) is not  valid in the value set HGNC"
+}
+-------------------------------------------------------------------------------------

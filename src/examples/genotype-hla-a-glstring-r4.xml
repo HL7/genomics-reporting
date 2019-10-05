@@ -12,7 +12,7 @@ HLA-A*03:01:01:01+HLA-A*30:01:01</pre>
         </div>
     </text>
     <basedOn>
-        <reference value="http://example.org/r4/ServiceRequest/f123"/>
+        <!--<reference value="http://example.org/r4/ServiceRequest/f123"/>-->
         <display value="Sequence-based typing of HLA-A for sample-id=123456789"/>
     </basedOn>
     <status value="final"/>
@@ -36,7 +36,7 @@ HLA-A*03:01:01:01+HLA-A*30:01:01</pre>
     </code>
     <effectiveDateTime value="2018-07-26"/>
     <performer>
-        <reference value="http://example.org/r4/Oranization/f345"/>
+        <!--<reference value="http://example.org/r4/Oranization/f345"/>-->
         <type value="Organization"/>
         <display value="aTypingLab, Inc"/>
     </performer>
@@ -51,16 +51,16 @@ HLA-A*03:01:01:01+HLA-A*30:01:01</pre>
         <text value="PACBIO Sequel"/>
     </method>
     <specimen>
-        <reference value="http://example.org/r4/Specimen/f456"/>
+        <!--<reference value="http://example.org/r4/Specimen/f456"/>-->
         <display value="buccal swab: 123456789"/>
     </specimen>
     <derivedFrom>
-        <reference value="http://example.org/r4/Observation/f567"/>
+        <!--<<reference value="http://example.org/r4/Observation/f567"/>-->
         <type value="Observation"/>
         <display value="HLA-A Allele: HLA-A*03:01:01:01"/>
     </derivedFrom>
     <derivedFrom>
-        <reference value="Observation/f568"/>
+        <!--<<reference value="Observation/f568"/>-->
         <type value="Observation"/>
         <display value="HLA-A Allele: HLA-A*30:01:01"/>
     </derivedFrom>

@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -168,6 +168,24 @@
     },
     {
       "reference" : {
+        "reference" : "DiagnosticReport/AnnotationExample"
+      },
+      "name" : "Example of PGx Annotation",
+      "description" : "PGx Annotation example",
+      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Bundle/HLAB1502-pgx-example"
+      },
+      "name" : "Example - High Risk Allele (HLA-B*15:02)",
+      "description" : "High Risk Allele (HLA-B*15:02)",
+      "exampleCanonical" : "StructureDefinition/medication-high-risk",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
         "reference" : "Observation/obs-idh-ex"
       },
       "name" : "Example - Inherited Disease Pathogenicity",
@@ -265,7 +283,15 @@
         "reference" : "ValueSet/seq-phase-relationship"
       },
       "name" : "Sequence Phase Relationship",
-      "description" : "Value Setm for specific types of relationships",
+      "description" : "Value Set for specific types of relationships",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/variant-inheritance"
+      },
+      "name" : "Variant Inheritance",
+      "description" : "origins of variants",
       "groupingId" : "valuesets"
     },
     {
@@ -535,6 +561,16 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "AnnotationExample.html",
+          "title" : "Example of PGx Annotation",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "HLAB1502-pgx-example.html",
+          "title" : "Example - High Risk Allele (HLA-B*15:02)",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "obs-idh-ex.html",
           "title" : "Example - Inherited Disease Pathogenicity",
           "generation" : "generated"
@@ -592,6 +628,11 @@
         {
           "nameUrl" : "valueset-seq-phase-relationship.html",
           "title" : "Sequence Phase Relationship",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-variant-inheritance.html",
+          "title" : "Variant Inheritance",
           "generation" : "generated"
         },
         {

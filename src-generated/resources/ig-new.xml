@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="0.3"/>
@@ -154,6 +154,24 @@
     </resource>
     <resource>
       <reference>
+        <reference value="DiagnosticReport/AnnotationExample"/>
+      </reference>
+      <name value="Example of PGx Annotation"/>
+      <description value="PGx Annotation example"/>
+      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/HLAB1502-pgx-example"/>
+      </reference>
+      <name value="Example - High Risk Allele (HLA-B*15:02)"/>
+      <description value="High Risk Allele (HLA-B*15:02)"/>
+      <exampleCanonical value="StructureDefinition/medication-high-risk"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Observation/obs-idh-ex"/>
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
@@ -251,7 +269,15 @@
         <reference value="ValueSet/seq-phase-relationship"/>
       </reference>
       <name value="Sequence Phase Relationship"/>
-      <description value="Value Setm for specific types of relationships"/>
+      <description value="Value Set for specific types of relationships"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/variant-inheritance"/>
+      </reference>
+      <name value="Variant Inheritance"/>
+      <description value="origins of variants"/>
       <groupingId value="valuesets"/>
     </resource>
     <resource>
@@ -521,6 +547,16 @@
           <generation value="generated"/>
         </page>
         <page>
+          <nameUrl value="AnnotationExample.html"/>
+          <title value="Example of PGx Annotation"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="HLAB1502-pgx-example.html"/>
+          <title value="Example - High Risk Allele (HLA-B*15:02)"/>
+          <generation value="generated"/>
+        </page>
+        <page>
           <nameUrl value="obs-idh-ex.html"/>
           <title value="Example - Inherited Disease Pathogenicity"/>
           <generation value="generated"/>
@@ -578,6 +614,11 @@
         <page>
           <nameUrl value="valueset-seq-phase-relationship.html"/>
           <title value="Sequence Phase Relationship"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-variant-inheritance.html"/>
+          <title value="Variant Inheritance"/>
           <generation value="generated"/>
         </page>
         <page>

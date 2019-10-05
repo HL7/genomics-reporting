@@ -2090,3 +2090,208 @@ v: {
   "error" : ""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA19541-4"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "High risk",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "83009-1",
+  "display" : "Genetic variation's effect on high-risk allele"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Genetic variation's effect on high-risk allele",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "LA19541-4",
+    "display" : "High risk"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "filter" : [{
+        "property" : "LIST",
+        "op" : "=",
+        "value" : "LL2353-2"
+      }]
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The filter \"LIST = LL2353-2\" was not understood in the context of http://loinc.org"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "81259-4",
+  "display" : "Prob assoc phenotype"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Associated phenotype",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26421-0",
+  "display" : "Consider alternative medication"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Consider alternative medication",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA26421-0",
+  "display" : "Consider alternative medication"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "filter" : [{
+        "property" : "LIST",
+        "op" : "=",
+        "value" : "LL4049-4"
+      }]
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The filter \"LIST = LL4049-4\" was not understood in the context of http://loinc.org"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA30200-2"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Very strong evidence pathogenic",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "93044-6",
+  "display" : "Level of evidence"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Level of evidence",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "LA30200-2",
+    "display" : "Very strong evidence pathogenic"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "filter" : [{
+        "property" : "LIST",
+        "op" : "=",
+        "value" : "LL5356-2"
+      }]
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The filter \"LIST = LL5356-2\" was not understood in the context of http://loinc.org"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "81247-9",
+    "display" : "Master HL7 genetic variant reporting panel"
+  }],
+  "text" : "Genetic analysis report"
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "Master HL7 genetic variant reporting panel",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "LA9633-4",
+    "display" : "present"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org",
+      "filter" : [{
+        "property" : "LIST",
+        "op" : "=",
+        "value" : "LL1971-2"
+      }]
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The filter \"LIST = LL1971-2\" was not understood in the context of http://loinc.org"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "69551-0",
+  "display" : "Genomic alt allele [ID]"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Genomic alt allele [ID]",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://loinc.org",
+  "code" : "LA9633-4",
+  "display" : "present"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "Present",
+  "severity" : null,
+  "error" : ""
+}
+-------------------------------------------------------------------------------------

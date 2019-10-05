@@ -533,15 +533,15 @@
                   <display value="Somatic variant predicted effect on Cancer medication"/>
                </coding>
             </code>
-            <valueCodeableConcept>
-               <text value="Responsive"/>
-            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <method>
                <coding>
                   <system value="http://loinc.org"/>
@@ -618,15 +618,15 @@
                   <display value="Somatic variant predicted effect on Cancer medication"/>
                </coding>
             </code>
-            <valueCodeableConcept>
-               <text value="Responsive"/>
-            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <method>
                <coding>
                   <system value="http://loinc.org"/>
@@ -702,15 +702,15 @@
                   <display value="Somatic variant predicted effect on Cancer medication"/>
                </coding>
             </code>
-            <valueCodeableConcept>
-               <text value="Responsive"/>
-            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <method>
                <coding>
                   <system value="http://loinc.org"/>
@@ -788,15 +788,15 @@
                   <display value="Somatic variant predicted effect on Cancer medication"/>
                </coding>
             </code>
-            <valueCodeableConcept>
-               <text value="Responsive"/>
-            </valueCodeableConcept>
             <subject>
                <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
             </subject>
             <performer>
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
+            <valueCodeableConcept>
+               <text value="Responsive"/>
+            </valueCodeableConcept>
             <method>
                <coding>
                   <system value="http://loinc.org"/>
@@ -867,7 +867,11 @@
                </coding>
             </category>
             <code>
-               <text value="TBD-grouper"/>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="grouper"/>
+                  <display value="grouper"/>
+               </coding>
             </code>
             <hasMember>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
@@ -914,7 +918,11 @@
                </coding>
             </category>
             <code>
-               <text value="TBD-grouper"/>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="grouper"/>
+                  <display value="grouper"/>
+               </coding>
             </code>
             <hasMember>
                <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
@@ -952,8 +960,8 @@
             <code>
                <coding>
                   <system value="http://loinc.org"/>
-                  <code value="51969-4"/>
-                  <display value="Genetic analysis report"/>
+                  <code value="81247-9"/>
+                  <display value="Master HL7 genetic variant reporting panel"/>
                </coding>
                <text value="Genetic analysis report"/>
             </code>

@@ -70,3 +70,28 @@ v: {
   "error" : "The code system \"http://genenames.org\" is not known for the code \"588\""
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://loinc.org",
+    "code" : "81247-9",
+    "display" : "Master HL7 genetic variant reporting panel"
+  },
+  {
+    "system" : "http://genenames.org",
+    "code" : "HGNC:588",
+    "display" : "Histocompatibility complex (HLA)"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://loinc.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "Master HL7 genetic variant reporting panel",
+  "severity" : "warning",
+  "error" : "The code system \"http://genenames.org\" is not known for the code \"HGNC:588\""
+}
+-------------------------------------------------------------------------------------
