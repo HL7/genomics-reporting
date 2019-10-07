@@ -170,8 +170,8 @@
       "reference" : {
         "reference" : "DiagnosticReport/AnnotationExample"
       },
-      "name" : "Example of PGx Annotation",
-      "description" : "PGx Annotation example",
+      "name" : "Example - ACMG Screening",
+      "description" : "ACMG Screening",
       "exampleCanonical" : "StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
@@ -253,6 +253,22 @@
       "name" : "Sequence Phase Relationship",
       "description" : "Code System for specific types of relationships",
       "groupingId" : "codesystems"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/hgvs"
+      },
+      "name" : "HGVS Value Set",
+      "description" : "Value Set for HGVS",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/hgnc"
+      },
+      "name" : "HGNC Value Set",
+      "description" : "Value Set for HGNC (genes and gene groups)",
+      "groupingId" : "valuesets"
     },
     {
       "reference" : {
@@ -562,7 +578,7 @@
         },
         {
           "nameUrl" : "AnnotationExample.html",
-          "title" : "Example of PGx Annotation",
+          "title" : "Example - ACMG Screening",
           "generation" : "generated"
         },
         {
@@ -608,6 +624,16 @@
         {
           "nameUrl" : "seq-phase-relationship.html",
           "title" : "Sequence Phase Relationship",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-hgvs.html",
+          "title" : "HGVS Value Set",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-hgnc.html",
+          "title" : "HGNC Value Set",
           "generation" : "generated"
         },
         {

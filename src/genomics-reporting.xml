@@ -567,8 +567,8 @@
       <reference>
         <reference value="DiagnosticReport/AnnotationExample"/>
       </reference>
-      <name value="Example of PGx Annotation"/>
-      <description value="PGx Annotation example"/>
+      <name value="Example - ACMG Screening"/>
+      <description value="ACMG Screening"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
@@ -651,6 +651,22 @@
       <name value="Sequence Phase Relationship"/>
       <description value="Code System for specific types of relationships"/>
       <groupingId value="codesystems"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/hgvs"/>
+      </reference>
+      <name value="HGVS Value Set"/>
+      <description value="Value Set for HGVS"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/hgnc"/>
+      </reference>
+      <name value="HGNC Value Set"/>
+      <description value="Value Set for HGNC (genes and gene groups)"/>
+      <groupingId value="valuesets"/>
     </resource>
     <resource>
       <reference>

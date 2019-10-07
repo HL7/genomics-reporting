@@ -177,8 +177,8 @@
       <reference>
         <reference value="DiagnosticReport/AnnotationExample"/>
       </reference>
-      <name value="Example of PGx Annotation"/>
-      <description value="PGx Annotation example"/>
+      <name value="Example - ACMG Screening"/>
+      <description value="ACMG Screening"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
@@ -261,6 +261,22 @@
       <name value="Sequence Phase Relationship"/>
       <description value="Code System for specific types of relationships"/>
       <groupingId value="codesystems"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/hgvs"/>
+      </reference>
+      <name value="HGVS Value Set"/>
+      <description value="Value Set for HGVS"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/hgnc"/>
+      </reference>
+      <name value="HGNC Value Set"/>
+      <description value="Value Set for HGNC (genes and gene groups)"/>
+      <groupingId value="valuesets"/>
     </resource>
     <resource>
       <reference>
@@ -570,7 +586,7 @@
 </page>
 <page>
 <nameUrl value="AnnotationExample.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example of PGx Annotation"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - ACMG Screening"/>
 <generation value="generated"/>
 </page>
 <page>
@@ -619,33 +635,43 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="valueset-hgvs.html"/>
+<ns47:title xmlns:ns47="http://hl7.org/fhir" value="HGVS Value Set"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="valueset-hgnc.html"/>
+<ns48:title xmlns:ns48="http://hl7.org/fhir" value="HGNC Value Set"/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="valueset-tbd-codes.html"/>
-<ns47:title xmlns:ns47="http://hl7.org/fhir" value="TBD Value Set"/>
+<ns49:title xmlns:ns49="http://hl7.org/fhir" value="TBD Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-dna-change-type.html"/>
-<ns48:title xmlns:ns48="http://hl7.org/fhir" value="DNA Change Type"/>
+<ns50:title xmlns:ns50="http://hl7.org/fhir" value="DNA Change Type"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-functional-annotation.html"/>
-<ns49:title xmlns:ns49="http://hl7.org/fhir" value="Functional Annotations"/>
+<ns51:title xmlns:ns51="http://hl7.org/fhir" value="Functional Annotations"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-seq-phase-relationship.html"/>
-<ns50:title xmlns:ns50="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
+<ns52:title xmlns:ns52="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-variant-inheritance.html"/>
-<ns51:title xmlns:ns51="http://hl7.org/fhir" value="Variant Inheritance"/>
+<ns53:title xmlns:ns53="http://hl7.org/fhir" value="Variant Inheritance"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="dna-change-type.html"/>
-<ns52:title xmlns:ns52="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
+<ns54:title xmlns:ns54="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
 <generation value="generated"/>
 </page>
 </page>
