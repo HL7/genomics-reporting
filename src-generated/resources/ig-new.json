@@ -76,8 +76,8 @@
     },
     {
       "id" : "examples",
-      "name" : "Example(s)",
-      "description" : "Example(s) showing the use of the CG profiles"
+      "name" : "Examples",
+      "description" : "Examples showing the use of the CG profiles"
     },
     {
       "id" : "codesystems",
@@ -150,11 +150,20 @@
     },
     {
       "reference" : {
+        "reference" : "Bundle/oncology-diagnostic"
+      },
+      "name" : "Example - Melanoma implication",
+      "description" : "Small example report with 1 reported variant and somatic diagnostic implication",
+      "exampleCanonical" : "StructureDefinition/somatic-diagnostic",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
         "reference" : "Bundle/oncologyexamples-r4"
       },
       "name" : "Example - Full Bundle Oncology Example",
       "description" : "Full Bundle Oncology Example",
-      "exampleCanonical" : "StructureDefinition/grouper",
+      "exampleCanonical" : "StructureDefinition/somatic-predictive",
       "groupingId" : "examples"
     },
     {
@@ -582,6 +591,11 @@
         {
           "nameUrl" : "oncology-report-example.html",
           "title" : "Example - Multiple Oncology Variant Report Example",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "oncology-diagnostic.html",
+          "title" : "Example - Melanoma implication",
           "generation" : "generated"
         },
         {

@@ -631,3 +631,36 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://www.genenames.org/geneId"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://www.genenames.org/geneId",
+  "code" : "HGNC:1097"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.genenames.org/geneId\" is not known for the code \"HGNC:1097\"; The code provided (http://www.genenames.org/geneId#HGNC:1097) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://www.genenames.org/geneId",
+    "code" : "HGNC:1097",
+    "display" : "BRAF"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://www.genenames.org/geneId"
+    },
+    {
+      "system" : "http://www.genenames.org/genegroup"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://www.genenames.org/geneId\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc\" is not known; The code system \"http://www.genenames.org/geneId\" is not known for the code \"HGNC:1097\"; The code provided (http://www.genenames.org/geneId#HGNC:1097) is not  valid in the value set HGNC"
+}
+-------------------------------------------------------------------------------------

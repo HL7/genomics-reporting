@@ -54,8 +54,8 @@
       <description value="Extensions defined as part of the CG implementation guide"/>
     </grouping>
     <grouping id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the CG profiles"/>
+      <name value="Examples"/>
+      <description value="Examples showing the use of the CG profiles"/>
     </grouping>
     <grouping id="codesystems">
       <name value="Code Systems"/>
@@ -159,11 +159,20 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/oncology-diagnostic"/>
+      </reference>
+      <name value="Example - Melanoma implication"/>
+      <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
+      <exampleCanonical value="StructureDefinition/somatic-diagnostic"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/oncologyexamples-r4"/>
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/grouper"/>
+      <exampleCanonical value="StructureDefinition/somatic-predictive"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -595,113 +604,118 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="oncology-diagnostic.html"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - Melanoma implication"/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="oncologyexamples-r4.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="compound-heterozygote.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Complex Variant (HGVS)"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Complex Variant (HGVS)"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="complexVariant-nonHGVS.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Complex Variant (unpacked)"/>
+<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - Complex Variant (unpacked)"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="SNVexample.html"/>
-<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - NGS"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - NGS"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="AnnotationExample.html"/>
-<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Variant with ACMG Screening"/>
+<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - Variant with ACMG Screening"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="HLAB1502-pgx-example.html"/>
-<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - High Risk Allele (HLA-B*15:02)"/>
+<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - High Risk Allele (HLA-B*15:02)"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-idh-ex.html"/>
-<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
+<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-hla-glstring-r4.html"/>
-<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns43:title xmlns:ns43="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="genotype-hla-a-glstring-r4.html"/>
-<ns43:title xmlns:ns43="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+<ns44:title xmlns:ns44="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="haplotype-hla-a-1-r4.html"/>
-<ns44:title xmlns:ns44="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
+<ns45:title xmlns:ns45="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen-hla-r4.html"/>
-<ns45:title xmlns:ns45="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
+<ns46:title xmlns:ns46="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="servicerequest-hla-a-r4.html"/>
-<ns46:title xmlns:ns46="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
+<ns47:title xmlns:ns47="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="tbd-codes.html"/>
-<ns47:title xmlns:ns47="http://hl7.org/fhir" value="TBD Code System"/>
+<ns48:title xmlns:ns48="http://hl7.org/fhir" value="TBD Code System"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="seq-phase-relationship.html"/>
-<ns48:title xmlns:ns48="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
+<ns49:title xmlns:ns49="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-hgvs.html"/>
-<ns49:title xmlns:ns49="http://hl7.org/fhir" value="HGVS Value Set"/>
+<ns50:title xmlns:ns50="http://hl7.org/fhir" value="HGVS Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-hgnc.html"/>
-<ns50:title xmlns:ns50="http://hl7.org/fhir" value="HGNC Value Set"/>
+<ns51:title xmlns:ns51="http://hl7.org/fhir" value="HGNC Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-tbd-codes.html"/>
-<ns51:title xmlns:ns51="http://hl7.org/fhir" value="TBD Value Set"/>
+<ns52:title xmlns:ns52="http://hl7.org/fhir" value="TBD Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-dna-change-type.html"/>
-<ns52:title xmlns:ns52="http://hl7.org/fhir" value="DNA Change Type"/>
+<ns53:title xmlns:ns53="http://hl7.org/fhir" value="DNA Change Type"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-functional-annotation.html"/>
-<ns53:title xmlns:ns53="http://hl7.org/fhir" value="Functional Annotations"/>
+<ns54:title xmlns:ns54="http://hl7.org/fhir" value="Functional Annotations"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-seq-phase-relationship.html"/>
-<ns54:title xmlns:ns54="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
+<ns55:title xmlns:ns55="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-variant-inheritance.html"/>
-<ns55:title xmlns:ns55="http://hl7.org/fhir" value="Variant Inheritance"/>
+<ns56:title xmlns:ns56="http://hl7.org/fhir" value="Variant Inheritance"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="dna-change-type.html"/>
-<ns56:title xmlns:ns56="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
+<ns57:title xmlns:ns57="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
 <generation value="generated"/>
 </page>
 </page>

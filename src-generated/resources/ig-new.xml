@@ -65,8 +65,8 @@
       <description value="Extensions defined as part of the CG implementation guide"/>
     </grouping>
     <grouping id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the CG profiles"/>
+      <name value="Examples"/>
+      <description value="Examples showing the use of the CG profiles"/>
     </grouping>
     <grouping id="codesystems">
       <name value="Code Systems"/>
@@ -136,11 +136,20 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/oncology-diagnostic"/>
+      </reference>
+      <name value="Example - Melanoma implication"/>
+      <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
+      <exampleCanonical value="StructureDefinition/somatic-diagnostic"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/oncologyexamples-r4"/>
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/grouper"/>
+      <exampleCanonical value="StructureDefinition/somatic-predictive"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -568,6 +577,11 @@
         <page>
           <nameUrl value="oncology-report-example.html"/>
           <title value="Example - Multiple Oncology Variant Report Example"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="oncology-diagnostic.html"/>
+          <title value="Example - Melanoma implication"/>
           <generation value="generated"/>
         </page>
         <page>

@@ -549,11 +549,20 @@
     </resource>
     <resource>
       <reference>
+        <reference value="Bundle/oncology-diagnostic"/>
+      </reference>
+      <name value="Example - Melanoma implication"/>
+      <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
+      <exampleCanonical value="StructureDefinition/somatic-diagnostic"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/oncologyexamples-r4"/>
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/grouper"/>
+      <exampleCanonical value="StructureDefinition/somatic-predictive"/>
       <groupingId value="examples"/>
     </resource>
     <resource>

@@ -1,0 +1,380 @@
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+   <id value="oncology-diagnostic"/>
+   <type value="transaction"/>
+   <entry>
+      <fullUrl value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+      <resource>
+         <Patient xmlns="http://hl7.org/fhir">
+            <identifier>
+               <value value="1007"/>
+            </identifier>
+            <name>
+               <given value="Carrot"/>
+               <given value="John"/>
+               <given value="Mr"/>
+            </name>
+            <gender value="male"/>
+            <birthDate value="1962-12-31"/>
+            <generalPractitioner>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+            </generalPractitioner>
+         </Patient>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Patient"/>
+      </request>
+   </entry>
+   <entry>
+      <fullUrl value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+      <resource>
+         <Practitioner xmlns="http://hl7.org/fhir">
+            <identifier>
+               <value value="4654765876"/>
+            </identifier>
+            <name>
+               <given value="Akerman"/>
+               <given value="Philip"/>
+               <given value="Prof"/>
+            </name>
+            <address>
+               <city value="Castro Valley"/>
+               <state value="CA"/>
+            </address>
+         </Practitioner>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Practitioner"/>
+      </request>
+   </entry>
+   <entry>
+      <fullUrl value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
+      <resource>
+         <Specimen xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
+            </meta>
+            <identifier>
+               <value value="076e1948-2217-11e9-94d8-12e241dc1f66"/>
+            </identifier>
+            <status value="available"/>
+            <subject>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+            </subject>
+            <collection>
+               <collector>
+                  <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+               </collector>
+            </collection>
+         </Specimen>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Specimen"/>
+      </request>
+   </entry>
+   <entry>
+      <fullUrl value="urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f"/>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <status value="final"/>
+            <code>
+               <text value="Tumor Mutational Burden"/>
+            </code>
+            <subject>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+            </subject>
+            <performer>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+            </performer>
+            <valueQuantity>
+               <value value="25.0"/>
+               <unit value="somatic variants per megabase of sequenced DNA"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="v/Mb"/>
+            </valueQuantity>
+            <specimen>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
+            </specimen>
+         </Observation>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Observation"/>
+      </request>
+   </entry>
+   
+   <entry>
+      <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
+            </meta>
+            <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+                  <code value="laboratory"/>
+               </coding>
+            </category>
+            <code>
+               <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="69548-6"/>
+                  <display value="Genetic variant assessment"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+            </subject>
+            <performer>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+            </performer>
+            <valueCodeableConcept>
+               <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="LA9633-4"/>
+                  <display value="Present"/>
+               </coding>
+            </valueCodeableConcept>
+            <method>
+               <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="LA26398-0"/>
+                  <display value="Sequencing"/>
+               </coding>
+            </method>
+            <specimen>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
+            </specimen>
+            <component>
+              <code>
+                <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="62374-4"/>
+                  <display value="Human reference sequence assembly version"/>
+                </coding>
+              </code>
+              <valueCodeableConcept>
+                <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="LA14029-5"/>
+                  <display value="GRCh37"/>
+                </coding>
+              </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="81290-9"/>
+                     <display value="Genomic DNA change (gHGVS)"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://varnomen.hgvs.org"/>
+                     <display value="NC_000007.13:g.140453136A>T"/>
+                  </coding>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="81252-9"/>
+                     <display value="Discrete genetic variant"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://www.ncbi.nlm.nih.gov/clinvar"/>
+                     <code value="13961"/>
+                     <display value="Clinvar ID 13961"/>
+                  </coding>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="48005-3"/>
+                     <display value="Amino acid change (pHGVS)"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://varnomen.hgvs.org"/>
+                     <display value="p.Val600Glu"/>
+                  </coding>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="48006-1"/>
+                     <display value="Amino acid change type"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="LA6698-0"/>
+                     <display value="Missense"/>
+                  </coding>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="48018-6"/>
+                     <display value="Gene studied ID"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="http://www.genenames.org/geneId"/>
+                     <code value="HGNC:1097"/>
+                     <display value="BRAF"/>
+                  </coding>
+               </valueCodeableConcept>
+            </component>
+         </Observation>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Observation"/>
+      </request>
+   </entry>
+
+   <entry>
+      <fullUrl value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
+      <resource>
+         <Observation xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-diagnostic"/>
+            </meta>
+            <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact">
+               <valueRelatedArtifact>
+                  <type value="justification"/>
+                  <display value="https://pmkb.weill.cornell.edu/therapies/103"/>
+               </valueRelatedArtifact>
+            </extension>
+            <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+                  <code value="laboratory"/>
+               </coding>
+            </category>
+            <code>
+               <coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                  <code value="somatic-diagnostic"/>
+               </coding>
+            </code>
+            <subject>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+            </subject>
+            <performer>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+            </performer>
+            <valueCodeableConcept>
+               <text value="Supportive"/>
+            </valueCodeableConcept>
+            <method>
+               <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="LA26811-2"/>
+                  <display value="Computational analysis"/>
+               </coding>
+            </method>
+            <specimen>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
+            </specimen>
+            <derivedFrom>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
+            </derivedFrom>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="93044-6"/>
+                     <display value="Level of Evidence"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <coding>
+                     <system value="AMP/ASCO/CAP guidelines"/>
+                     <code value="A"/>
+                     <display value="Level A evidence"/>
+                  </coding>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="associated-cancer"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <text value="melanoma"/>
+               </valueCodeableConcept>
+            </component>
+         </Observation>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Observation"/>
+      </request>
+   </entry>
+
+   <entry>
+      <fullUrl value="urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5"/>
+      <resource>
+         <DiagnosticReport xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
+            </meta>
+            <status value="final"/>
+            <code>
+               <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="81247-9"/>
+                  <display value="Master HL7 genetic variant reporting panel"/>
+               </coding>
+               <text value="Genetic analysis report"/>
+            </code>
+            <subject>
+               <reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
+            </subject>
+            <performer>
+               <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
+            </performer>
+            <specimen>
+               <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
+            </specimen>
+
+            <result>
+               <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
+               <display value="BRAF V600E mutation observed"/>
+            </result>
+
+            <result>
+               <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
+               <display value="melanoma implicated"/>
+            </result>
+            
+         </DiagnosticReport>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="DiagnosticReport"/>
+      </request>
+   </entry>
+</Bundle>   

@@ -921,3 +921,41 @@ v: {
   "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.A791V\"; The code provided (http://varnomen.hgvs.org#p.A791V) is not  valid in the value set HGVS"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "display" : "NC_000007.13:g.140453136A>T"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"\"; The code provided (http://varnomen.hgvs.org#) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "display" : "p.Val600Glu"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"\"; The code provided (http://varnomen.hgvs.org#) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
