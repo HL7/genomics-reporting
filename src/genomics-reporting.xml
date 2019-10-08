@@ -72,8 +72,8 @@
       <description value="Extensions defined as part of the CG implementation guide"/>
     </grouping>
     <grouping id="examples">
-      <name value="Example(s)"/>
-      <description value="Example(s) showing the use of the CG profiles"/>
+      <name value="Examples"/>
+      <description value="Examples showing the use of the CG profiles"/>
     </grouping>
     <grouping id="codesystems">
       <name value="Code Systems"/>
@@ -497,6 +497,8 @@
       <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/overall-interpretation"/>
+
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -505,7 +507,7 @@
       </reference>
       <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/medication-efficacy"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -524,15 +526,24 @@
       </reference>
       <name value="Example - CYP2C19 report from 1000 Genomes"/>
       <description value="CYP2C19 report from 1000 Genomes"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/region-studied"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="DiagnosticReport/sequence-phase-relation-CYP2C19"/>
+      </reference>
+      <name value="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
+      <description value="Phase relation on CYP2C19 report"/>
+      <exampleCanonical value="StructureDefinition/sequence-phase-relationship"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
         <reference value="Bundle/oncology-report-example"/>
       </reference>
-      <name value="Example - Full Bundle Oncology Example"/>
-      <description value="Full Bundle Oncology Example"/>
+      <name value="Example - Multiple Oncology Variant Report Example"/>
+      <description value="Oncology Example Report with 12 reported variants"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
@@ -542,15 +553,24 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/grouper"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
         <reference value="Bundle/compound-heterozygote"/>
       </reference>
-      <name value="Example - Complex Variant"/>
+      <name value="Example - Complex Variant (HGVS)"/>
       <description value="Compound Heterozygote Variant Example"/>
+      <exampleCanonical value="StructureDefinition/variant"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/complexVariant-nonHGVS"/>
+      </reference>
+      <name value="Example - Complex Variant (unpacked)"/>
+      <description value="Compound Heterozygote Variant example, using position, reference, and alternate allele instead of HGVS."/>
       <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
@@ -567,8 +587,8 @@
       <reference>
         <reference value="DiagnosticReport/AnnotationExample"/>
       </reference>
-      <name value="Example - ACMG Screening"/>
-      <description value="ACMG Screening"/>
+      <name value="Example - Variant with ACMG Screening"/>
+      <description value="ACMG annotated variant"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>

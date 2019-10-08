@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/examples"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/images"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "0.3",
@@ -100,7 +100,7 @@
       },
       "name" : "Example - Genomics Reporting",
       "description" : "Test instance showing data from the CG v2 spec",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "StructureDefinition/overall-interpretation",
       "groupingId" : "examples"
     },
     {
@@ -109,7 +109,7 @@
       },
       "name" : "Example - Pharmacogenomics",
       "description" : "Pharmacogenomic Report Example instances",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "StructureDefinition/medication-efficacy",
       "groupingId" : "examples"
     },
     {
@@ -127,15 +127,24 @@
       },
       "name" : "Example - CYP2C19 report from 1000 Genomes",
       "description" : "CYP2C19 report from 1000 Genomes",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "StructureDefinition/region-studied",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "DiagnosticReport/sequence-phase-relation-CYP2C19"
+      },
+      "name" : "Example - subset of CYP2C19 report from 1000 Genomes showing phase",
+      "description" : "Phase relation on CYP2C19 report",
+      "exampleCanonical" : "StructureDefinition/sequence-phase-relationship",
       "groupingId" : "examples"
     },
     {
       "reference" : {
         "reference" : "Bundle/oncology-report-example"
       },
-      "name" : "Example - Full Bundle Oncology Example",
-      "description" : "Full Bundle Oncology Example",
+      "name" : "Example - Multiple Oncology Variant Report Example",
+      "description" : "Oncology Example Report with 12 reported variants",
       "exampleCanonical" : "StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
@@ -145,15 +154,24 @@
       },
       "name" : "Example - Full Bundle Oncology Example",
       "description" : "Full Bundle Oncology Example",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "StructureDefinition/grouper",
       "groupingId" : "examples"
     },
     {
       "reference" : {
         "reference" : "Bundle/compound-heterozygote"
       },
-      "name" : "Example - Complex Variant",
+      "name" : "Example - Complex Variant (HGVS)",
       "description" : "Compound Heterozygote Variant Example",
+      "exampleCanonical" : "StructureDefinition/variant",
+      "groupingId" : "examples"
+    },
+    {
+      "reference" : {
+        "reference" : "Bundle/complexVariant-nonHGVS"
+      },
+      "name" : "Example - Complex Variant (unpacked)",
+      "description" : "Compound Heterozygote Variant example, using position, reference, and alternate allele instead of HGVS.",
       "exampleCanonical" : "StructureDefinition/variant",
       "groupingId" : "examples"
     },
@@ -170,8 +188,8 @@
       "reference" : {
         "reference" : "DiagnosticReport/AnnotationExample"
       },
-      "name" : "Example - ACMG Screening",
-      "description" : "ACMG Screening",
+      "name" : "Example - Variant with ACMG Screening",
+      "description" : "ACMG annotated variant",
       "exampleCanonical" : "StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
@@ -557,8 +575,13 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "sequence-phase-relation-CYP2C19.html",
+          "title" : "Example - subset of CYP2C19 report from 1000 Genomes showing phase",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "oncology-report-example.html",
-          "title" : "Example - Full Bundle Oncology Example",
+          "title" : "Example - Multiple Oncology Variant Report Example",
           "generation" : "generated"
         },
         {
@@ -568,7 +591,12 @@
         },
         {
           "nameUrl" : "compound-heterozygote.html",
-          "title" : "Example - Complex Variant",
+          "title" : "Example - Complex Variant (HGVS)",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "complexVariant-nonHGVS.html",
+          "title" : "Example - Complex Variant (unpacked)",
           "generation" : "generated"
         },
         {
@@ -578,7 +606,7 @@
         },
         {
           "nameUrl" : "AnnotationExample.html",
-          "title" : "Example - ACMG Screening",
+          "title" : "Example - Variant with ACMG Screening",
           "generation" : "generated"
         },
         {

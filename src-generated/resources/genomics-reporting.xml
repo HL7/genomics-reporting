@@ -108,6 +108,8 @@
       <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/overall-interpretation"/>
+
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -116,7 +118,7 @@
       </reference>
       <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/medication-efficacy"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -134,15 +136,24 @@
       </reference>
       <name value="Example - CYP2C19 report from 1000 Genomes"/>
       <description value="CYP2C19 report from 1000 Genomes"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/region-studied"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="DiagnosticReport/sequence-phase-relation-CYP2C19"/>
+      </reference>
+      <name value="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
+      <description value="Phase relation on CYP2C19 report"/>
+      <exampleCanonical value="StructureDefinition/sequence-phase-relationship"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
         <reference value="Bundle/oncology-report-example"/>
       </reference>
-      <name value="Example - Full Bundle Oncology Example"/>
-      <description value="Full Bundle Oncology Example"/>
+      <name value="Example - Multiple Oncology Variant Report Example"/>
+      <description value="Oncology Example Report with 12 reported variants"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
@@ -152,15 +163,24 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="StructureDefinition/grouper"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
       <reference>
         <reference value="Bundle/compound-heterozygote"/>
       </reference>
-      <name value="Example - Complex Variant"/>
+      <name value="Example - Complex Variant (HGVS)"/>
       <description value="Compound Heterozygote Variant Example"/>
+      <exampleCanonical value="StructureDefinition/variant"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Bundle/complexVariant-nonHGVS"/>
+      </reference>
+      <name value="Example - Complex Variant (unpacked)"/>
+      <description value="Compound Heterozygote Variant example, using position, reference, and alternate allele instead of HGVS."/>
       <exampleCanonical value="StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
@@ -177,8 +197,8 @@
       <reference>
         <reference value="DiagnosticReport/AnnotationExample"/>
       </reference>
-      <name value="Example - ACMG Screening"/>
-      <description value="ACMG Screening"/>
+      <name value="Example - Variant with ACMG Screening"/>
+      <description value="ACMG annotated variant"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
@@ -565,113 +585,123 @@
 <generation value="generated"/>
 </page>
 <page>
+<nameUrl value="sequence-phase-relation-CYP2C19.html"/>
+<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
+<generation value="generated"/>
+</page>
+<page>
 <nameUrl value="oncology-report-example.html"/>
-<ns33:title xmlns:ns33="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
+<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example - Multiple Oncology Variant Report Example"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="oncologyexamples-r4.html"/>
-<ns34:title xmlns:ns34="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
+<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - Full Bundle Oncology Example"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="compound-heterozygote.html"/>
-<ns35:title xmlns:ns35="http://hl7.org/fhir" value="Example - Complex Variant"/>
+<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - Complex Variant (HGVS)"/>
+<generation value="generated"/>
+</page>
+<page>
+<nameUrl value="complexVariant-nonHGVS.html"/>
+<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - Complex Variant (unpacked)"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="SNVexample.html"/>
-<ns36:title xmlns:ns36="http://hl7.org/fhir" value="Example - NGS"/>
+<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - NGS"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="AnnotationExample.html"/>
-<ns37:title xmlns:ns37="http://hl7.org/fhir" value="Example - ACMG Screening"/>
+<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Variant with ACMG Screening"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="HLAB1502-pgx-example.html"/>
-<ns38:title xmlns:ns38="http://hl7.org/fhir" value="Example - High Risk Allele (HLA-B*15:02)"/>
+<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - High Risk Allele (HLA-B*15:02)"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="obs-idh-ex.html"/>
-<ns39:title xmlns:ns39="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
+<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - Inherited Disease Pathogenicity"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="diagnosticreport-hla-glstring-r4.html"/>
-<ns40:title xmlns:ns40="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="genotype-hla-a-glstring-r4.html"/>
-<ns41:title xmlns:ns41="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
+<ns43:title xmlns:ns43="http://hl7.org/fhir" value="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="haplotype-hla-a-1-r4.html"/>
-<ns42:title xmlns:ns42="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
+<ns44:title xmlns:ns44="http://hl7.org/fhir" value="Example - Observation for a single HLA-A allele"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="specimen-hla-r4.html"/>
-<ns43:title xmlns:ns43="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
+<ns45:title xmlns:ns45="http://hl7.org/fhir" value="Example - Buccal swab for HLA typing"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="servicerequest-hla-a-r4.html"/>
-<ns44:title xmlns:ns44="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
+<ns46:title xmlns:ns46="http://hl7.org/fhir" value="Example - Service request for high-resolution HLA-A genotyping"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="tbd-codes.html"/>
-<ns45:title xmlns:ns45="http://hl7.org/fhir" value="TBD Code System"/>
+<ns47:title xmlns:ns47="http://hl7.org/fhir" value="TBD Code System"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="seq-phase-relationship.html"/>
-<ns46:title xmlns:ns46="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
+<ns48:title xmlns:ns48="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-hgvs.html"/>
-<ns47:title xmlns:ns47="http://hl7.org/fhir" value="HGVS Value Set"/>
+<ns49:title xmlns:ns49="http://hl7.org/fhir" value="HGVS Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-hgnc.html"/>
-<ns48:title xmlns:ns48="http://hl7.org/fhir" value="HGNC Value Set"/>
+<ns50:title xmlns:ns50="http://hl7.org/fhir" value="HGNC Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-tbd-codes.html"/>
-<ns49:title xmlns:ns49="http://hl7.org/fhir" value="TBD Value Set"/>
+<ns51:title xmlns:ns51="http://hl7.org/fhir" value="TBD Value Set"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-dna-change-type.html"/>
-<ns50:title xmlns:ns50="http://hl7.org/fhir" value="DNA Change Type"/>
+<ns52:title xmlns:ns52="http://hl7.org/fhir" value="DNA Change Type"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-functional-annotation.html"/>
-<ns51:title xmlns:ns51="http://hl7.org/fhir" value="Functional Annotations"/>
+<ns53:title xmlns:ns53="http://hl7.org/fhir" value="Functional Annotations"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-seq-phase-relationship.html"/>
-<ns52:title xmlns:ns52="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
+<ns54:title xmlns:ns54="http://hl7.org/fhir" value="Sequence Phase Relationship"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="valueset-variant-inheritance.html"/>
-<ns53:title xmlns:ns53="http://hl7.org/fhir" value="Variant Inheritance"/>
+<ns55:title xmlns:ns55="http://hl7.org/fhir" value="Variant Inheritance"/>
 <generation value="generated"/>
 </page>
 <page>
 <nameUrl value="dna-change-type.html"/>
-<ns54:title xmlns:ns54="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
+<ns56:title xmlns:ns56="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
 <generation value="generated"/>
 </page>
 </page>
