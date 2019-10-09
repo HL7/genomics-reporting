@@ -25,7 +25,7 @@
   </h4>
   <p>
     This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of
-    Observation varaint. "component-code-value-concept" is a construct to use the code of a
+    Observation variant. "component-code-value-concept" is a construct to use the code of a
     component and the code of a value for the component. The value in this case is "Germline" with
     LOINC code LA6683-2.
   </p>
@@ -47,11 +47,11 @@
   </h4>
   <p>
     This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of
-    Observation varaint. "component-code-value-concept" is a construct to use the code of a
+    Observation variant. "component-code-value-concept" is a construct to use the code of a
     component and the code of a value for the component. The value in this case is "Somatic" with
     LOINC code LA6684-0. Also, the query constrains to specimen with id 1234. ID in this case refers
     to a specific instance of specimen. The specimen id query queries the specimen linked to a
-    specific instance of Obbsewrvation varaint.
+    specific instance of Observation variant.
   </p>
   <pre class="http">
   GET /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6684-0&amp;specimen:Specimen=1234
@@ -74,11 +74,11 @@
     as therapy. For instance, targeted chemotherapy may kill a specific population of cancer cells
     with specific mutations and other cancer cell populations may survive and continue to divide.
     Therefore, clearly annotating these specimens as somatic variants and capturing annotations
-    related to a time relevant to a treatment timeline may be critical for analysis.
+    related to a time relevant to a treatment time-line may be critical for analysis.
 
     The following query retrieves all variants annotated as somatic which arrived on July 4, 2015.
     This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of
-    Observation varaint. "component-code-value-concept" is a construct to use the code of a
+    Observation variant. "component-code-value-concept" is a construct to use the code of a
     component and the code of a value for the component. The value in this case is "Somatic" with
     LOINC code LA6684-0. Additionally, the query constrains to those instances where the date field
     equals "2015-07-04."
@@ -106,7 +106,7 @@
 
     Note to the implementer: It is currently beyond this spec to follow specimen links to Patient
     ids. Some variants maybe reported only with a link to a specimen. In this case a query must
-    first be performed to find all specimens related to the pateint and then the query for all
+    first be performed to find all specimens related to the patient and then the query for all
     variants related to the specimen can be run. Or, one could devise a more complicated query which
     finds all variants for all specimens of a patient. This is currently left as an exercise, also
     there are questions about performance which are determinant on the data store layer underneath
@@ -131,7 +131,7 @@
   </h5>
   <p>The following query returns all the related haplotype, genotype and variant calls which have
     been annotated with "Unknown Significance." This query uses LOINC code 53037-8 for “Genetic
-    disease sequence variant interpretation," part of the variant profile of Observation varaint.
+    disease sequence variant interpretation," part of the variant profile of Observation variant.
     "code-value-concept" is a construct to use the code of an observation and the code of a value
     for the Observation instance. The value in this case is "Unknown Significance" with LOINC code
     LA6682-4. Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the
@@ -192,7 +192,7 @@ code=69548-6&_include=Observation:
     implications.
 
     This query uses LOINC code 53037-8 for “Genetic disease sequence variant interpretation," part
-    of the variant profile of Observation varaint. "component-code" is a construct to use the code
+    of the variant profile of Observation variant. "component-code" is a construct to use the code
     of a component. The value in this case is "Medication Assessed" with LOINC code 51963-7.
     Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the
     Observation.derived-from link. "_include:iterate=Observation:derived-from" tells the FHIR API to
@@ -225,14 +225,14 @@ code=69548-6&_include=Observation:
   <p>
     For a breast cancer clinical genomic study, get all genetic observations of patients where the
     variant is associated with breast cancer as a genetic risk. There is some heterogenity in the
-    codes which maybe used to indicate phenotypes. Here we have used the NCI metathesuars code for
-    Breast Cancer, "C9335," as a likely code to be used. The following query returns all varaints
-    that have an annotation of "Breast Cancer" using the NCI metathesuars code for Breast Cancer,
+    codes which maybe used to indicate phenotypes. Here we have used the NCI metathesaurus code for
+    Breast Cancer, "C9335," as a likely code to be used. The following query returns all variants
+    that have an annotation of "Breast Cancer" using the NCI metathesaurus code for Breast Cancer,
     "C9335."
 
     "code-value-concept" is a construct to use the code of an Observation instance and the code of a
     value for the Observation. The Observation.code = 81259-4, "Associated Phenotype," is used for
-    the iG's "Inherited Disease Pathogenicity" profile. The value in this case is NCI metathesuars
+    the iG's "Inherited Disease Pathogenicity" profile. The value in this case is NCI metathesaurus
     code for Breast Cancer, "C9335." Additionally, the "_include:iterate=Observation:derived-from"
     iteratively follows the Observation.derived-from link.
     "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the
