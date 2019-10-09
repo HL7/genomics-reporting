@@ -1169,3 +1169,63 @@ v: {
   "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"2:g.212578380del\"; The code provided (http://varnomen.hgvs.org#2:g.212578380del) is not  valid in the value set HGVS"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "NM_022787.3:c.769G>A"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"NM_022787.3:c.769G>A\"; The code provided (http://varnomen.hgvs.org#NM_022787.3:c.769G>A) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "NM_022787.3:c.53A>G"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"NM_022787.3:c.53A>G\"; The code provided (http://varnomen.hgvs.org#NM_022787.3:c.53A>G) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "NM_022787.3:c.769G>A",
+    "display" : "NM_022787.3:c.769G>A"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"NM_022787.3:c.769G>A\"; The code provided (http://varnomen.hgvs.org#NM_022787.3:c.769G>A) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "NM_022787.3:c.53A>G",
+    "display" : "NM_022787.3:c.53A>G"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"NM_022787.3:c.53A>G\"; The code provided (http://varnomen.hgvs.org#NM_022787.3:c.53A>G) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
