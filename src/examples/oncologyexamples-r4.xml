@@ -184,6 +184,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="9:g.5073770G>T"/>
                      <display value="9:g.5073770G>T"/>
                   </coding>
                </valueCodeableConcept>
@@ -199,6 +200,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="p.Val617Phe"/>
                      <display value="p.Val617Phe"/>
                   </coding>
                </valueCodeableConcept>
@@ -312,6 +314,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="4:g.55972974T>A"/>
                      <display value="4:g.55972974T>A"/>
                   </coding>
                </valueCodeableConcept>
@@ -327,6 +330,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="p.Gln472His"/>
                      <display value="p.Gln472His"/>
                   </coding>
                </valueCodeableConcept>
@@ -440,11 +444,12 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="2:g.212578380del"/>
                      <display value="2:g.212578380del"/>
                   </coding>
                </valueCodeableConcept>
             </component>
-            <component>
+            <!--component>
                <code>
                   <coding>
                      <system value="http://loinc.org"/>
@@ -457,7 +462,7 @@
                      <system value="http://varnomen.hgvs.org"/>
                   </coding>
                </valueCodeableConcept>
-            </component>
+            </component-->
             <component>
                <code>
                   <coding>
@@ -984,7 +989,7 @@
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
                <display value="Therapy Match Results"/>
             </result>
-            
+
          </DiagnosticReport>
       </resource>
       <request>
@@ -992,4 +997,4 @@
          <url value="DiagnosticReport"/>
       </request>
    </entry>
-</Bundle>   
+</Bundle>

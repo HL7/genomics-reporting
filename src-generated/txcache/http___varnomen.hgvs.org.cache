@@ -959,3 +959,213 @@ v: {
   "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"\"; The code provided (http://varnomen.hgvs.org#) is not  valid in the value set HGVS"
 }
 -------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "NC_000007.13:g.140453136A>T"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"NC_000007.13:g.140453136A>T\"; The code provided (http://varnomen.hgvs.org#NC_000007.13:g.140453136A>T) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "p.Val600Glu"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.Val600Glu\"; The code provided (http://varnomen.hgvs.org#p.Val600Glu) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "9:g.5073770G>T"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"9:g.5073770G>T\"; The code provided (http://varnomen.hgvs.org#9:g.5073770G>T) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "p.Val617Phe"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.Val617Phe\"; The code provided (http://varnomen.hgvs.org#p.Val617Phe) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "4:g.55972974T>A"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"4:g.55972974T>A\"; The code provided (http://varnomen.hgvs.org#4:g.55972974T>A) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "p.Gln472His"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.Gln472His\"; The code provided (http://varnomen.hgvs.org#p.Gln472His) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://varnomen.hgvs.org",
+  "code" : "2:g.212578380del"
+}, "valueSet" :null, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" is not known for the code \"2:g.212578380del\"; The code provided (http://varnomen.hgvs.org#2:g.212578380del) is not  valid in the value set All codes known to the system"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "NC_000007.13:g.140453136A>T",
+    "display" : "NC_000007.13:g.140453136A>T"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"NC_000007.13:g.140453136A>T\"; The code provided (http://varnomen.hgvs.org#NC_000007.13:g.140453136A>T) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "p.Val600Glu",
+    "display" : "p.Val600Glu"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.Val600Glu\"; The code provided (http://varnomen.hgvs.org#p.Val600Glu) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "9:g.5073770G>T",
+    "display" : "9:g.5073770G>T"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"9:g.5073770G>T\"; The code provided (http://varnomen.hgvs.org#9:g.5073770G>T) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "p.Val617Phe",
+    "display" : "p.Val617Phe"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.Val617Phe\"; The code provided (http://varnomen.hgvs.org#p.Val617Phe) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "4:g.55972974T>A",
+    "display" : "4:g.55972974T>A"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"4:g.55972974T>A\"; The code provided (http://varnomen.hgvs.org#4:g.55972974T>A) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "p.Gln472His",
+    "display" : "p.Gln472His"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"p.Gln472His\"; The code provided (http://varnomen.hgvs.org#p.Gln472His) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "coding" : [{
+    "system" : "http://varnomen.hgvs.org",
+    "code" : "2:g.212578380del",
+    "display" : "2:g.212578380del"
+  }]
+}, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://varnomen.hgvs.org"
+    }]
+  }
+}, "lang":"null"}####
+v: {
+  "display" : "",
+  "severity" : "error",
+  "error" : "The code system \"http://varnomen.hgvs.org\" in the include in \"http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs\" is not known; The code system \"http://varnomen.hgvs.org\" is not known for the code \"2:g.212578380del\"; The code provided (http://varnomen.hgvs.org#2:g.212578380del) is not  valid in the value set HGVS"
+}
+-------------------------------------------------------------------------------------
