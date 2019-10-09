@@ -94,26 +94,26 @@
 
     The java validator is the most often updated tool (<a href = "https://wiki.hl7.org/Using_the_FHIR_Validator">https://wiki.hl7.org/Using_the_FHIR_Validator</a>) but you might find this notepad plugin useful (<a href = "https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation">https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation</a>)
 
-    When validating be sure to declare -ig http://hl7.org/fhir/ig/HL7/genomics-reporting.
-    Some example usages of the java validator are:
+    NOTE: It is important that your examples declare the profile in the meta tag, like this:
+<pre>
+  &lt;meta&gt;
+    &lt;profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/&gt;
+  &lt;/meta&gt;
+</pre>
+
+    Some example usages of the java validator (NOTE: these online references are for the "current build" and would need to be adjusted as needed):
     <ul>
       <li>
         validating one of the examples in the IG, showing how to reference everything from an online location
         <code>
-        java -jar org.hl7.fhir.validator.jar http://build.fhir.org/ig/HL7/genomics-reporting/Observation-SNVexample.xml -version 4.0 -ig http://build.fhir.org/ig/HL7/genomics-reporting/ImplementationGuide-hl7.fhir.uv.genomics-reporting.xml -profile http://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.xml
+java -jar org.hl7.fhir.validator.jar http://build.fhir.org/ig/HL7/genomics-reporting/Observation-SNVexample.xml -version 4.0 -ig hl7.fhir.uv.genomics-reporting
         </code>
       </li>
       <li>
         if you have an example in your local directory, you can do this
         <code>
-        java -jar org.hl7.fhir.validator.jar report-CYP2C19.xml -version 4.0 -ig http://build.fhir.org/ig/HL7/genomics-reporting/ImplementationGuide-hl7.fhir.uv.genomics-reporting.xml -profile http://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomics-report.xml
-      </code>
-      </li>
-      <li>
-        if you have the package for the IG in the .fhir package directory, you can reference it by its packageId#version (#dev is used when you have run the IP Publisher build locally)
-        <code>
-        java -jar org.hl7.fhir.validator.jar report-CYP2C19.xml -version 4.0 -ig hl7.fhir.uv.genomics-reporting#dev -profile http://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomics-report.xml
-      </code>
+java -jar org.hl7.fhir.validator.jar report-CYP2C19.xml -version 4.0 -ig hl7.fhir.uv.genomics-reporting
+        </code>
       </li>
     </ul>
   </p>
