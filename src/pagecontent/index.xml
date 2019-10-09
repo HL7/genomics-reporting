@@ -92,58 +92,21 @@
 
 
 
-    For learning about validation, please refer to https://www.hl7.org/fhir/validation.html. The java validator is the most often updated tool (<a href = "https://wiki.hl7.org/Using_the_FHIR_Validator">https://wiki.hl7.org/Using_the_FHIR_Validator</a>) but you might find this notepad plugin useful (<a href = "https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation">https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation</a>)
+    For learning about validation, please refer to <a ref="{{site.data.fhir.path}}validation.html">https://www.hl7.org/fhir/validation.html</a>. 
+  
+    The java validator is the most often updated tool (<a href = "https://wiki.hl7.org/Using_the_FHIR_Validator">https://wiki.hl7.org/Using_the_FHIR_Validator</a>) but you might find this notepad plugin useful (<a href = "https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation">https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation</a>)
 
-
-
-    <b>When validating be sure to declare -ig http://hl7.org/fhir/ig/HL7/genomics-reporting.</b>
-
-
-
-
-
-
-
+    When validating be sure to declare -ig http://hl7.org/fhir/ig/HL7/genomics-reporting.
     Some example usages of the java validator are:
-
-
-
     <ul>
-
-
-
       <li>
-
-
-
       Checking against all the structure definitions in the IG: java -jar org.hl7.fhir.validator.jar &lt;your instance&gt; -ig http://hl7.org/fhir/ig/HL7/genomics-reporting
-
-
-
       </li>
-
-
-
       <li>
-
-
-
       Checking against a specific profile from the CG IG: java -jar org.hl7.fhir.validator.jar &lt;your instance&gt; -ig http://hl7.org/fhir/ig/HL7/genomics-reporting -profile &lt;profile you want to validate against&gt;
-
-
-
       </li>
-
-
-
     </ul>
-
-
-
     But note that JSON can also be validated.
-
-
-
   </p>
   <a name="content"> </a>
   <h3>Content and organization</h3>
