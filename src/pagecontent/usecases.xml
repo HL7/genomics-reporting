@@ -289,8 +289,7 @@ code=69548-6&_include=Observation:
     the complex variant. The iterate modifier is used as complex variants can have nested variants.
 
   </p>
-  <pre class="http">GET
-    /Observation?component-code-value-concept=http://loinc.org|81263-6$http://loinc.org|LA26217-2&amp;_include:iterate=Observation:has-member
+  <pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|81263-6$http://loinc.org|LA26217-2&amp;_include:iterate=Observation:has-member
   </pre>
   <p>
     81263-6: LOINC code for “Complex variant type”
@@ -324,6 +323,7 @@ code=69548-6&_include=Observation:
   <p>
     https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:3236 : HGNC id for EGFR
   </p>
+  <a name="variant ID"></a>
   <h4>Variant ID based query</h4>
   <p>
     Find all patients with a set of variants identified by a variant id. In this case we are looking
@@ -335,8 +335,7 @@ code=69548-6&_include=Observation:
     "component-code-value-concept" is a construct to use the code of a component and the code of a
     value for the component. The value in this case is ClinVar ID 182302.
   </p>
-  <pre class="http">GET
-    /Observation?component-code-value-concept=http://loinc.org|81263-6$http://www.ncbi.nlm.nih.gov/clinvar|182302
+  <pre class="http">GET /Observation?component-code-value-concept=http://loinc.org|81263-6$http://www.ncbi.nlm.nih.gov/clinvar|182302
   </pre>
   <p>
     81252-9: LOINC code for “Discrete Genetic Variant”
