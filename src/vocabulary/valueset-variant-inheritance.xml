@@ -24,11 +24,11 @@
   <description value='A quality inhering in a variant by virtue of its origin.'/>
   <compose>
     <include>
-      <system value='http://sequenceontology.org'/>
+      <system value="http://sequenceontology.org"/>
       <filter>
-        <property value='SO Accession'/>
-        <op value='='/>
-        <value value='SO:0001762'/>
+        <property value="concept"/>
+        <op value="descendent-of"/>
+        <value value="SO:0001762"/>
       </filter>
     </include>
     <include>
