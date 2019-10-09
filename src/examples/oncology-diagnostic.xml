@@ -104,7 +104,7 @@
          <url value="Observation"/>
       </request>
    </entry>
-   
+
    <entry>
       <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
       <resource>
@@ -176,6 +176,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="NC_000007.13:g.140453136A>T"/>
                      <display value="NC_000007.13:g.140453136A>T"/>
                   </coding>
                </valueCodeableConcept>
@@ -207,6 +208,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="p.Val600Glu"/>
                      <display value="p.Val600Glu"/>
                   </coding>
                </valueCodeableConcept>
@@ -308,11 +310,12 @@
                   </coding>
                </code>
                <valueCodeableConcept>
-                  <coding>
+                  <!--coding>
                      <system value="AMP/ASCO/CAP guidelines"/>
                      <code value="A"/>
                      <display value="Level A evidence"/>
-                  </coding>
+                  </coding-->
+                  <text value="AMP/ASCO/CAP guidelines - Level A"/>
                </valueCodeableConcept>
             </component>
             <component>
@@ -369,7 +372,7 @@
                <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
                <display value="melanoma implicated"/>
             </result>
-            
+
          </DiagnosticReport>
       </resource>
       <request>
@@ -377,4 +380,4 @@
          <url value="DiagnosticReport"/>
       </request>
    </entry>
-</Bundle>   
+</Bundle>

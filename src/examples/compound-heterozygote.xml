@@ -9,7 +9,7 @@
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
    <id value="compound-heterozygote"/>
    <type value="transaction"/>
-   
+
    <entry>
       <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
       <resource>
@@ -50,6 +50,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="NM_022787.3:c.769G>A"/>
                      <display value="NM_022787.3:c.769G>A"/>
                   </coding>
                </valueCodeableConcept>
@@ -100,6 +101,7 @@
                <valueCodeableConcept>
                   <coding>
                      <system value="http://varnomen.hgvs.org"/>
+                     <code value="NM_022787.3:c.53A>G"/>
                      <display value="NM_022787.3:c.53A>G"/>
                   </coding>
                </valueCodeableConcept>
@@ -139,7 +141,7 @@
                   <display value="Present"/>
                </coding>
             </valueCodeableConcept>
-            
+
             <hasMember>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
                <display value="NM_022787.3:c.53A>G"/>
@@ -172,4 +174,4 @@
          <url value="Observation"/>
       </request>
    </entry>
-</Bundle>   
+</Bundle>
