@@ -88,21 +88,7 @@
   <p>
     Many Observation profiles and components in this guide require sending codes from http://loinc.org. If necessary for implementation (e.g., to map to a local system), equivalent codes from other code systems may *also* be sent, following the <a href="{{site.data.fhir.path}}observation.html#usingcodes">guidance</a> on observation.
   </p>
-  <p>
-    For learning about validation, please refer to https://www.hl7.org/fhir/validation.html. The java validator is the most often updated tool (<a href = "https://wiki.hl7.org/Using_the_FHIR_Validator">https://wiki.hl7.org/Using_the_FHIR_Validator</a>) but you might find this notepad plugin useful (<a href = "https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation">https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation</a>)
-    <b>When validating be sure to declare -ig http://hl7.org/fhir/ig/HL7/genomics-reporting.</b>
 
-    Some example usages of the java validator are:
-    <ul>
-      <li>
-      Checking against all the structure definitions in the IG: java -jar org.hl7.fhir.validator.jar <your profile> -ig http://hl7.org/fhir/ig/HL7/genomics-reporting
-      </li>
-      <li>
-      Checking against a specific profile from the CG IG: java -jar org.hl7.fhir.validator.jar <your profile> -ig http://hl7.org/fhir/ig/HL7/genomics-reporting -profile <profile you want to validate against>
-      </li>
-    </ul>
-    But note that JSON can also be validated.
-  </p>
   <a name="content"> </a>
   <h3>Content and organization</h3>
   <p>
