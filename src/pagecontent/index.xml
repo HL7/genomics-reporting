@@ -98,10 +98,10 @@
     Some example usages of the java validator are:
     <ul>
       <li>
-      Checking against all the structure definitions in the IG: java -jar org.hl7.fhir.validator.jar &lt;your instance&gt; -ig http://hl7.org/fhir/ig/HL7/genomics-reporting
+      Checking against all the structure definitions in the IG: java -jar org.hl7.fhir.validator.jar &lt;your instance&gt; -version 4.0.0 -ig hl7.fhir.uv.genomics-reporting#0.4
       </li>
       <li>
-      Checking against a specific profile from the CG IG: java -jar org.hl7.fhir.validator.jar &lt;your instance&gt; -ig http://hl7.org/fhir/ig/HL7/genomics-reporting -profile &lt;profile you want to validate against&gt;
+      Checking against a specific profile from the CG IG: java -jar org.hl7.fhir.validator.jar &lt;your instance&gt; -version 4.0.0 -ig hl7.fhir.uv.genomics-reporting#0.4 -profile &lt;profile you want to validate against&gt;
       </li>
     </ul>
   </p>
