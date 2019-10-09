@@ -29,8 +29,8 @@
     component and the code of a value for the component. The value in this case is "Germline" with
     LOINC code LA6683-2.
   </p>
-  <pre class="http">GET
-    /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6683-2
+  <pre class="http">
+  GET /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6683-2
   </pre>
   <p>
     48002-0: LOINC code for “Genomic Source Class”
@@ -53,8 +53,8 @@
     to a specific instance of specimen. The specimen id query queries the specimen linked to a
     specific instance of Obbsewrvation varaint.
   </p>
-  <pre class="http">GET
-    /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6684-0&amp;specimen:Specimen=1234
+  <pre class="http">
+  GET /Observation?component-code-value-concept=http://loinc.org|48002-0$http://loinc.org|LA6684-0&amp;specimen:Specimen=1234
   </pre>
   <p>
     48002-0: LOINC code for “Genomic Source Class”
@@ -314,8 +314,8 @@ code=69548-6&_include=Observation:
     avoid errors, the gene id's from HGNC must be appended with "HGNC:"
   </p>
   <!--pre class="http">GET /Observation?component-code-value=http://www.genenames.org|3236&amp;component-code-value=http://loinc.org|LA6684-0</pre-->
-  <pre class="http">GET
-    /Observation?component-code-value-concept=http://loinc.org|48018-6$https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:3236
+  <pre class="http">
+  GET /Observation?component-code-value-concept=http://loinc.org|48018-6$https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:3236
   </pre>
   <!--pre class="http">GET /Observation?subject:Patient=123&amp;code-value-concept=http://loinc.org|53037-8$http://loinc.org|LA26333-7&amp;_include:iterate=Observation:derived-from</pre-->
   <p>
