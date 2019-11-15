@@ -26,7 +26,7 @@
     "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "name" : "GenomicsReporting",
   "title" : "Genomics Reporting Implementation Guide",
   "status" : "draft",
@@ -155,7 +155,7 @@
       },
       "name" : "Example - Melanoma implication",
       "description" : "Small example report with 1 reported variant and somatic diagnostic implication",
-      "exampleCanonical" : "StructureDefinition/somatic-diagnostic",
+      "exampleCanonical" : "StructureDefinition/somatic-implication",
       "groupingId" : "examples"
     },
     {
@@ -164,7 +164,7 @@
       },
       "name" : "Example - Full Bundle Oncology Example",
       "description" : "Full Bundle Oncology Example",
-      "exampleCanonical" : "StructureDefinition/somatic-predictive",
+      "exampleCanonical" : "StructureDefinition/somatic-implication",
       "groupingId" : "examples"
     },
     {
@@ -336,6 +336,14 @@
       },
       "name" : "Variant Inheritance",
       "description" : "origins of variants",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/somatic-classes"
+      },
+      "name" : "Somatic Implication Classes",
+      "description" : "Somatic implication classes",
       "groupingId" : "valuesets"
     },
     {
@@ -535,21 +543,6 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "somatic-diagnostic.html",
-          "title" : "Somatic Diagnostic Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-prognostic.html",
-          "title" : "Somatic Prognostic Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-predictive.html",
-          "title" : "Somatic Predictive Implication",
-          "generation" : "generated"
-        },
-        {
           "nameUrl" : "extension-RelatedArtifact.html",
           "title" : "Related Artifact",
           "generation" : "generated"
@@ -702,6 +695,11 @@
         {
           "nameUrl" : "valueset-variant-inheritance.html",
           "title" : "Variant Inheritance",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-somatic-classes.html",
+          "title" : "Somatic Implication Classes",
           "generation" : "generated"
         },
         {

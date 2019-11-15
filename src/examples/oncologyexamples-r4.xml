@@ -522,7 +522,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-implication"/>
             </meta>
             <status value="final"/>
             <category>
@@ -534,8 +534,7 @@
             <code>
                <coding>
                   <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                  <code value="somatic-predictive"/>
-                  <display value="Somatic variant predicted effect on Cancer medication"/>
+                  <code value="somatic-implication"/>
                </coding>
             </code>
             <subject>
@@ -545,7 +544,10 @@
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
-               <text value="Responsive"/>
+              <coding>
+                 <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                 <code value="somatic-predictive"/>
+              </coding>
             </valueCodeableConcept>
             <method>
                <coding>
@@ -587,11 +589,22 @@
                <code>
                   <coding>
                      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                     <code value="somatic-predictive-medication"/>
+                     <code value="somatic-medication"/>
                   </coding>
                </code>
                <valueCodeableConcept>
                   <text value="Ruxolitinib"/>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-effect"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <text value="Responsive"/>
                </valueCodeableConcept>
             </component>
          </Observation>
@@ -607,7 +620,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-implication"/>
             </meta>
             <status value="final"/>
             <category>
@@ -619,8 +632,7 @@
             <code>
                <coding>
                   <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                  <code value="somatic-predictive"/>
-                  <display value="Somatic variant predicted effect on Cancer medication"/>
+                  <code value="somatic-implication"/>
                </coding>
             </code>
             <subject>
@@ -630,7 +642,10 @@
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
-               <text value="Responsive"/>
+              <coding>
+                 <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                 <code value="somatic-predictive"/>
+              </coding>
             </valueCodeableConcept>
             <method>
                <coding>
@@ -672,11 +687,22 @@
                <code>
                   <coding>
                      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                     <code value="somatic-predictive-medication"/>
+                     <code value="somatic-medication"/>
                   </coding>
                </code>
                <valueCodeableConcept>
                   <text value="AT9283"/>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-effect"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <text value="Responsive"/>
                </valueCodeableConcept>
             </component>
          </Observation>
@@ -691,7 +717,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-implication"/>
             </meta>
             <status value="final"/>
             <category>
@@ -703,8 +729,7 @@
             <code>
                <coding>
                   <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                  <code value="somatic-predictive"/>
-                  <display value="Somatic variant predicted effect on Cancer medication"/>
+                  <code value="somatic-implication"/>
                </coding>
             </code>
             <subject>
@@ -714,7 +739,10 @@
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
-               <text value="Responsive"/>
+              <coding>
+                 <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                 <code value="somatic-predictive"/>
+              </coding>
             </valueCodeableConcept>
             <method>
                <coding>
@@ -756,11 +784,22 @@
                <code>
                   <coding>
                      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                     <code value="somatic-predictive-medication"/>
+                     <code value="somatic-medication"/>
                   </coding>
                </code>
                <valueCodeableConcept>
                   <text value="SNX-5422"/>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-effect"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <text value="Responsive"/>
                </valueCodeableConcept>
             </component>
          </Observation>
@@ -777,7 +816,7 @@
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
             <meta>
-               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-predictive"/>
+               <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-implication"/>
             </meta>
             <status value="final"/>
             <category>
@@ -789,8 +828,7 @@
             <code>
                <coding>
                   <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                  <code value="somatic-predictive"/>
-                  <display value="Somatic variant predicted effect on Cancer medication"/>
+                  <code value="somatic-implication"/>
                </coding>
             </code>
             <subject>
@@ -800,7 +838,10 @@
                <reference value="urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"/>
             </performer>
             <valueCodeableConcept>
-               <text value="Responsive"/>
+              <coding>
+                 <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                 <code value="somatic-predictive"/>
+              </coding>
             </valueCodeableConcept>
             <method>
                <coding>
@@ -842,11 +883,22 @@
                <code>
                   <coding>
                      <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
-                     <code value="somatic-predictive-medication"/>
+                     <code value="somatic-medication"/>
                   </coding>
                </code>
                <valueCodeableConcept>
                   <text value="TG02"/>
+               </valueCodeableConcept>
+            </component>
+            <component>
+               <code>
+                  <coding>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <code value="somatic-effect"/>
+                  </coding>
+               </code>
+               <valueCodeableConcept>
+                  <text value="Responsive"/>
                </valueCodeableConcept>
             </component>
          </Observation>

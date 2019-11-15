@@ -403,48 +403,6 @@
       <description
         value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions"/>
       <exampleBoolean value="false"/>
-      <groupingId value="abstract"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/somatic-diagnostic"/>
-      </reference>
-      <name value="Somatic Diagnostic Implication"/>
-      <description
-        value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="somatics"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/somatic-prognostic"/>
-      </reference>
-      <name value="Somatic Prognostic Implication"/>
-      <description
-        value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="somatics"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/somatic-predictive"/>
-      </reference>
-      <name value="Somatic Predictive Implication"/>
-      <description
-        value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the implication of a specified medication or combination of medications"/>
-      <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
     </resource>
     <!-- Extensions -->
@@ -554,7 +512,7 @@
       </reference>
       <name value="Example - Melanoma implication"/>
       <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
-      <exampleCanonical value="StructureDefinition/somatic-diagnostic"/>
+      <exampleCanonical value="StructureDefinition/somatic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -563,7 +521,7 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/somatic-predictive"/>
+      <exampleCanonical value="StructureDefinition/somatic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -736,6 +694,14 @@
       </reference>
       <name value="Variant Inheritance"/>
       <description value="origins of variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/somatic-classes"/>
+      </reference>
+      <name value="Somatic Implication Classes"/>
+      <description value="Somatic implication classes"/>
       <groupingId value="valuesets"/>
     </resource>
     <resource>

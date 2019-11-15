@@ -40,74 +40,9 @@ v: {
   }
 }, "lang":"null"}####
 v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "The filter \"LIST = LL541-4\" was not understood in the context of http://loinc.org"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://loinc.org",
-    "code" : "81247-9",
-    "display" : "Master HL7 genetic variant reporting panel"
-  },
-  {
-    "system" : "http://genenames.org",
-    "code" : "588",
-    "display" : "Histocompatibility complex (HLA)"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://loinc.org"
-    }]
-  }
-}, "lang":"null"}####
-v: {
-  "display" : "Master HL7 genetic variant reporting panel",
-  "severity" : "warning",
-  "error" : "The code system \"http://genenames.org\" is not known for the code \"588\""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://loinc.org",
-    "code" : "81247-9",
-    "display" : "Master HL7 genetic variant reporting panel"
-  },
-  {
-    "system" : "http://genenames.org",
-    "code" : "HGNC:588",
-    "display" : "Histocompatibility complex (HLA)"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://loinc.org"
-    }]
-  }
-}, "lang":"null"}####
-v: {
-  "display" : "Master HL7 genetic variant reporting panel",
-  "severity" : "warning",
-  "error" : "The code system \"http://genenames.org\" is not known for the code \"HGNC:588\""
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://www.genenames.org/geneId"
-    },
-    {
-      "system" : "http://www.genenames.org/genegroup"
-    }]
-  }
-}}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://www.genenames.org/geneId"
+  "display" : "Positive",
+  "severity" : null,
+  "error" : ""
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -164,24 +99,15 @@ v: {
   "resourceType" : "ValueSet",
   "compose" : {
     "include" : [{
-      "system" : "http://sequenceontology.org",
-      "filter" : [{
-        "property" : "SO Accession",
-        "op" : "=",
-        "value" : "SO:0001762"
-      }]
+      "system" : "http://www.genenames.org/geneId"
     },
     {
-      "system" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-      "concept" : [{
-        "code" : "asked-unknown",
-        "display" : "Don't know"
-      }]
+      "system" : "http://www.genenames.org/genegroup"
     }]
   }
 }}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
+  "error" : "Error from server: Unable to provide support for code system http://www.genenames.org/geneId"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{

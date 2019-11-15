@@ -21,7 +21,7 @@
     <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
-  <version value="1.0.0"/>
+  <version value="1.1.0"/>
   <name value="GenomicsReporting"/>
   <title value="Genomics Reporting Implementation Guide"/>
   <status value="draft"/>
@@ -141,7 +141,7 @@
       </reference>
       <name value="Example - Melanoma implication"/>
       <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
-      <exampleCanonical value="StructureDefinition/somatic-diagnostic"/>
+      <exampleCanonical value="StructureDefinition/somatic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -150,7 +150,7 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/somatic-predictive"/>
+      <exampleCanonical value="StructureDefinition/somatic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -322,6 +322,14 @@
       </reference>
       <name value="Variant Inheritance"/>
       <description value="origins of variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/somatic-classes"/>
+      </reference>
+      <name value="Somatic Implication Classes"/>
+      <description value="Somatic implication classes"/>
       <groupingId value="valuesets"/>
     </resource>
     <resource>
@@ -521,21 +529,6 @@
           <generation value="generated"/>
         </page>
         <page>
-          <nameUrl value="somatic-diagnostic.html"/>
-          <title value="Somatic Diagnostic Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="somatic-prognostic.html"/>
-          <title value="Somatic Prognostic Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="somatic-predictive.html"/>
-          <title value="Somatic Predictive Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
           <nameUrl value="extension-RelatedArtifact.html"/>
           <title value="Related Artifact"/>
           <generation value="generated"/>
@@ -688,6 +681,11 @@
         <page>
           <nameUrl value="valueset-variant-inheritance.html"/>
           <title value="Variant Inheritance"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-somatic-classes.html"/>
+          <title value="Somatic Implication Classes"/>
           <generation value="generated"/>
         </page>
         <page>
