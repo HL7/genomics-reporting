@@ -293,6 +293,36 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+    <!--unified implications-->
+    <resource>
+      <extension
+        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/diagnostic-implication"/>
+      </reference>
+      <name value="Diagnostic Implication"/>
+      <description
+        value="Profile with properties for observations that convey the potential impact of genomic characteristics on a diagnosis"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <extension
+        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/therapeutic-implication"/>
+      </reference>
+      <name value="Therapeutic Implication"/>
+      <description
+        value="Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+
     <!--pgx-->
     <resource>
       <extension
