@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "1.1.0",
@@ -348,6 +348,14 @@
     },
     {
       "reference" : {
+        "reference" : "ValueSet/pharmacogenomic-classes"
+      },
+      "name" : "Pharmacogenomic Implication Classes",
+      "description" : "Pharmacogenomic implication classes",
+      "groupingId" : "valuesets"
+    },
+    {
+      "reference" : {
         "reference" : "ConceptMap/dna-change-type"
       },
       "name" : "Concept mapping for DNA Change Type",
@@ -505,26 +513,6 @@
         {
           "nameUrl" : "medication-implication.html",
           "title" : "Medication Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-metabolism.html",
-          "title" : "Medication Metabolism Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-transporter.html",
-          "title" : "Medication Transporter Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-efficacy.html",
-          "title" : "Medication Efficacy Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-high-risk.html",
-          "title" : "High Risk Allele",
           "generation" : "generated"
         },
         {
@@ -700,6 +688,11 @@
         {
           "nameUrl" : "valueset-somatic-classes.html",
           "title" : "Somatic Implication Classes",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-pharmacogenomic-classes.html",
+          "title" : "Pharmacogenomic Implication Classes",
           "generation" : "generated"
         },
         {

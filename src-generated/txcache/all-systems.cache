@@ -40,9 +40,9 @@ v: {
   }
 }, "lang":"null"}####
 v: {
-  "display" : "Positive",
-  "severity" : null,
-  "error" : ""
+  "display" : "",
+  "severity" : "error",
+  "error" : "Unable to provide support for code system http://snomed.info/sct version http://snomed.info/sct/900000000000207008900000000000207008"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -67,7 +67,7 @@ v: {
 v: {
   "display" : "Master HL7 genetic variant reporting panel",
   "severity" : "warning",
-  "error" : "The code system \"http://genenames.org/geneId\" is not known for the code \"HGNC:588\""
+  "error" : "The code system \"http://genenames.org/geneId\" is not known (encountered paired with code = \"HGNC:588\")"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
@@ -92,7 +92,7 @@ v: {
 v: {
   "display" : "Master HL7 genetic variant reporting panel",
   "severity" : "warning",
-  "error" : "The code system \"http://genenames.org/geneId\" is not known for the code \"588\""
+  "error" : "The code system \"http://genenames.org/geneId\" is not known (encountered paired with code = \"588\")"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{

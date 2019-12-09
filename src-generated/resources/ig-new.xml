@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
+    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reportingDEV/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="1.1.0"/>
@@ -334,6 +334,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/pharmacogenomic-classes"/>
+      </reference>
+      <name value="Pharmacogenomic Implication Classes"/>
+      <description value="Pharmacogenomic implication classes"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="ConceptMap/dna-change-type"/>
       </reference>
       <name value="Concept mapping for DNA Change Type"/>
@@ -491,26 +499,6 @@
         <page>
           <nameUrl value="medication-implication.html"/>
           <title value="Medication Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="medication-metabolism.html"/>
-          <title value="Medication Metabolism Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="medication-transporter.html"/>
-          <title value="Medication Transporter Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="medication-efficacy.html"/>
-          <title value="Medication Efficacy Implication"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="medication-high-risk.html"/>
-          <title value="High Risk Allele"/>
           <generation value="generated"/>
         </page>
         <page>
@@ -686,6 +674,11 @@
         <page>
           <nameUrl value="valueset-somatic-classes.html"/>
           <title value="Somatic Implication Classes"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="valueset-pharmacogenomic-classes.html"/>
+          <title value="Pharmacogenomic Implication Classes"/>
           <generation value="generated"/>
         </page>
         <page>

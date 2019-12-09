@@ -293,6 +293,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+    <!--pgx-->
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -303,10 +304,12 @@
       </reference>
       <name value="Medication Implication"/>
       <description
-        value="Abstract profile with common properties for observations that convey the potential implication of a genomic characteristics on a medication"/>
+        value="Profile with properties for observations that convey the potential implication of a genomic characteristics on a medication"/>
       <exampleBoolean value="false"/>
-      <groupingId value="abstract"/>
+      <groupingId value="pharmacogenomic"/>
     </resource>
+
+    <!--
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -362,6 +365,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
     </resource>
+    -->
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -705,6 +709,14 @@
       <groupingId value="valuesets"/>
     </resource>
     <resource>
+      <reference>
+        <reference value="ValueSet/pharmacogenomic-classes"/>
+      </reference>
+      <name value="Pharmacogenomic Implication Classes"/>
+      <description value="Pharmacogenomic implication classes"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>      
       <reference>
         <reference value="ConceptMap/dna-change-type"/>
       </reference>
