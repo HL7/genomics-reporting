@@ -1,0 +1,14 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+   <p>
+    Use this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a FHIR Genomics report (that may or may not contain any variants). If the patient or the specified region has not been studied, the operation returns a 404 error.	
+  </p>
+
+<p>Here is a figure:</p>
+  <img src="find-variants-fig1.png" alt="Request variants in range x..y"/>
+
+<p>Here is a figure:</p>
+  <img src="find-variants-fig2.png" alt="Operation response codes."/>
+
+
+
+</div>
