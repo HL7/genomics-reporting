@@ -1,0 +1,48 @@
+<OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<id value="find-variants"/>
+	<name value="find-variants"/>
+	<title value="find variants"/>
+	<status value="draft"/>
+	<kind value="operation"/>
+	<description value="se this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a FHIR Genomics report (that may or may not contain any variants). If the patient or the specified region has not been studied, the operation returns a 404 error."/>
+	<affectsState value="false"/>
+	<code value="find-variants"/>
+	<system value="true"/>
+	<system value="true"/>
+	<type value="true"/>
+	<instance value="true"/>
+	<parameter>
+		<name value="subject"/>
+		<use value="in"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="The subject of interest."/>
+		<type value="string"/>
+		<searchType value="reference"/>
+	</parameter>
+	<parameter>
+		<name value="region"/>
+		<use value="in"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="Region of interest is specified as a 0-based integer interval range. Variants that overlap the range are returned. (Note that an insertion that starts before the range, regardless of length, would not overlap the range, and would therefore not be returned)."/>
+		<type value="Range"/>
+	</parameter>
+	<parameter>
+		<name value="genomicRefSeq"/>
+		<use value="in"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="Genomic reference sequence is a valid NCBI chromosome-level ('NC_') build 37 or build 38 identifier, or a valid mitochondrion identifier (NC_012920.1, NC_001807.4)."/>
+		<type value="string"/>
+		<searchType value="token"/>
+	</parameter>
+	<parameter>
+		<name value="genomicsReport"/>
+		<use value="out"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="Returned report contains a diagnostic report which contains a single region studied profile, which reflects back the query parameters; zero to many variants found in the region; and zero to many sequence phase relationships between found variants. If the region hasn't been studied, return a 404 response code."/>
+		<type value="DiagnosticReport"/>
+	</parameter>
+</OperationDefinition>

@@ -89,6 +89,14 @@
       <description value="Concept Maps defined in this implementation guide"/>
     </grouping>
     <resource>
+      <reference>
+        <reference value="OperationDefinition/find-variants"/>
+      </reference>
+      <name value="Find variants"/>
+      <description value="Find variants operation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -611,7 +619,6 @@
       <exampleCanonical value="StructureDefinition/medication-high-risk"/>
       <groupingId value="examples"/>
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/obs-idh-ex"/>
