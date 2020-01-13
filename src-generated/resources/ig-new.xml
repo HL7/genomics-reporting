@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="1.0.0"/>
@@ -81,6 +81,19 @@
       <name value="Concept Maps"/>
       <description value="Concept Maps defined in this implementation guide"/>
     </grouping>
+    <grouping id="operations">
+      <name value="Operations"/>
+      <description value="Operations defined in this implementation guide"/>
+    </grouping>
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-variants"/>
+      </reference>
+      <name value="Find variants"/>
+      <description value="Find variants operation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -406,6 +419,11 @@
         <title value="Artifact List"/>
         <generation value="html"/>
         <page>
+          <nameUrl value="find-variants.html"/>
+          <title value="Find variants"/>
+          <generation value="generated"/>
+        </page>
+        <page>
           <nameUrl value="genomics-base.html"/>
           <title value="Genomics Base"/>
           <generation value="generated"/>
@@ -695,6 +713,11 @@
           <title value="Concept mapping for DNA Change Type"/>
           <generation value="generated"/>
         </page>
+      </page>
+      <page>
+        <nameUrl value="operations.html"/>
+        <title value="Operations"/>
+        <generation value="html"/>
       </page>
       <page>
         <nameUrl value="usecases.html"/>

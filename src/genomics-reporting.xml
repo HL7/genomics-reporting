@@ -88,6 +88,10 @@
       <name value="Concept Maps"/>
       <description value="Concept Maps defined in this implementation guide"/>
     </grouping>
+    <grouping id="operations">
+      <name value="Operations"/>
+      <description value="Operations defined in this implementation guide"/>
+    </grouping>
     <resource>
       <reference>
         <reference value="OperationDefinition/find-variants"/>
@@ -95,6 +99,7 @@
       <name value="Find variants"/>
       <description value="Find variants operation"/>
       <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
     </resource>
     <resource>
       <extension
