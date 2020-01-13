@@ -93,15 +93,6 @@
       <description value="Operations defined in this implementation guide"/>
     </grouping>
     <resource>
-      <reference>
-        <reference value="OperationDefinition/find-variants"/>
-      </reference>
-      <name value="Find variants"/>
-      <description value="Find variants operation"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="operations"/>
-    </resource>
-    <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
@@ -502,6 +493,15 @@
         value="Additional information relevant to interpreting/understanding the report"/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-variants"/>
+      </reference>
+      <name value="Operation: $find-variants"/>
+      <description value="Find variants operation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
     </resource>
     <!-- Examples -->
     <resource>
