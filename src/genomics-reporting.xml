@@ -494,15 +494,6 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
-    <resource>
-      <reference>
-        <reference value="OperationDefinition/find-variants"/>
-      </reference>
-      <name value="Operation: $find-variants"/>
-      <description value="Find variants operation"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="operations"/>
-    </resource>
     <!-- Examples -->
     <resource>
       <reference>
@@ -512,7 +503,6 @@
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <exampleCanonical value="StructureDefinition/overall-interpretation"/>
-
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -678,6 +668,7 @@
       <exampleCanonical value="StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
     </resource>
+    <!-- Code Systems -->
     <resource>
       <reference>
         <reference value="CodeSystem/tbd-codes"/>
@@ -694,6 +685,7 @@
       <description value="Code System for specific types of relationships"/>
       <groupingId value="codesystems"/>
     </resource>
+	<!-- Value Sets -->
     <resource>
       <reference>
         <reference value="ValueSet/hgvs"/>
@@ -750,6 +742,7 @@
       <description value="origins of variants"/>
       <groupingId value="valuesets"/>
     </resource>
+	<!-- Concept Maps --> 
     <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type"/>
@@ -757,6 +750,16 @@
       <name value="Concept mapping for DNA Change Type"/>
       <description value="Mapping LOINC answers to SequenceOntology"/>
       <groupingId value="conceptmaps"/>
+    </resource>
+	<!-- Operations -->
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-variants"/>
+      </reference>
+      <name value="Operation: $find-variants"/>
+      <description value="Retrieve variants from a specified genomic region"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
