@@ -1,54 +1,18 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    This page describes operations...
+    Operations are a supplement to standard queries, and are used to fulfil a number of purposes, such as where the server needs to play an active role in formulating the content of the response, where the intended purpose is to cause side effects such as the creation of new resources, and for data normalization to abstract away from variability in variant representation. 
   </p>
   <p>
-    Some of the somatic profiles make reference to medications and other therapies.  Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications or other therapies.  Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
+    Genomics operations are analagous to terminology operations in that a specified set of input parameters will yield a consistent result, regardless of a server's internal data structures or a specific server's implementation of the operation. 
   </p>
+  <p>Illustration of terminology operations: <img src="terminology-operations.png" alt="Illustration of terminology operations"/></p>
+  <p>Illustration of genomic operations: <img src="genomic-operations.png" alt="Illustration of genomic operations"/></p>
   
-  <a name="general"> </a>
-  <h3>General guidance</h3>
-  <p>
-    While not specifically profiled in this version of the IG, some additional constraints will typically apply to somatic profiles.  Patient will typically be mandatory as somatics is not relevant for environmental samples.  Body structure will often be identified to allow associating results with specific tumors or lesions - even if multiple samples are drawn over time.
-  </p>
   
-  <a name="implications"> </a>
-  <h3>Somatic-specific Genetic Implications</h3>
-  <img src="5-somatics-fig1-implications.png" alt="Diagram showing the somatic implication profiles"/>
-  <p>
-    <b>Figure 1: Somatic Implications</b>
-  </p>
-  <p>
-    (Profile links:
-    <a href="implication.html">Genetic Implication</a>,
-    <a href="somatic-implication.html">Somatic Implication</a>,
-    <a href="somatic-diagnostic.html">Somatic Diagnostic Implication</a>,
-    <a href="somatic-prognostic.html">Somatic Prognostic Implication</a>,
-    <a href="somatic-predictive.html">Somatic Predictive Implication</a>
-    )
-  </p>
-  <p>
-    This implementation guide defines three somatic-specific implication profiles.  All three are cancer-related and include a mandatory identification of the associated cancer.
-  </p>
-  <p>
-    The <a href="somatic-diagnostic.html">Somatic Diagnostic Implication</a> profile indicates how predictive the associated genetic findings are for a particular type of cancer.  It might positively diagnose the cancer type, support the diagnosis of a particular cancer type, decrease the likelihood of a tumor being a particular cancer type or positively exclude a particular cancer type.
-  </p>
-  <p>
-    The <a href="somatic-prognostic.html">Somatic Prognostic Implication</a> profile indicates that the associated genetic findings have implications for the overall outcome for the cancer patient (either positive or negative).  Those outcomes might be asserted on their own or asserted presuming the patient is receiving the indicated combination of medications and other therapies.  This can be used to recommend or discourage particular therapeutic approaches based on current evidence.</p>
-  <p>
-    The <a href="somatic-predictive.html">Somatic Predictive Implication</a> profile indicates the implication the associated genetic findings on the susceptability/responsiveness of a particular medication or medication combination on the specified cancer type.
-  </p>
-  <p>
-    NOTE: While it would seem like prognostic and predictive implications are expressing the same information, this is not always the case.  A medication may improve outcomes without necessarily significantly implicationing a tumor.  Similarly a medication may implication a tumor but not significantly improve outcomes.  Both types of implications may be relevant and reporting organizations should share what is currently known. The work group acknowledges the profiles in this section are drafts and alternative models will be considered in the next round of balloting.
-  </p>
-  
-  <a name="examples"> </a>
-  <h3>Somatic-specific Example instances</h3> profile indicates the sensitivity of the cancer to a particular medication treatment of one or more medications.
-  <p>Todo</p>
+  <a name="operations"> </a>
+  <h3>Genomic operations</h3>
+  <p>The following operations are defined:</p>
   <ul>
-    <li><a href="oncologyexamples-r4.html">Full transaction bundle</a> containing a Genomics DiagnosticReport referencing, Patient, Practicioner, Specimen, with Tumor Mutational Burden and MSI Status Observations, Variant Observations for JAK2/KDR/ERBB4 SNV analyses, and 4 Somatic Predictive Implication Observations.  
-  </li>
-  </ul>
-
-  
+    <li><a href="find-variants.html">$find-variants</a>: Retrieves variants from a specified genomic region</li>
+  </ul>  
 </div>
