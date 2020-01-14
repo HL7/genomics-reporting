@@ -1,15 +1,14 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    Operations are a supplement to standard queries, and are used to fulfill a number of purposes, such as where the server needs to play an active role in formulating the content of the response, where the intended purpose is to cause side effects such as the creation of new resources, and for data normalization to abstract away from variability in variant representation. 
+    Operations are a supplement to standard queries, and are used to fulfill a number of purposes, such as where the server needs to play an active role in formulating the content of the response, where the intended purpose is to cause side effects such as the creation of new resources, and for data normalization to abstract away from variability in variant representation.
   </p>
   <p>
     Genomics operations are analagous to terminology operations in that a specified set of input parameters will yield a consistent output result, regardless of a server's internal data structures or a specific server's implementation of the operation. The following figure illustrates this:
+  </p>
 	<img src="operations.png" alt="Illustration of genomic operations"/>
-  </p><br/><br/>
-  <a name="operationList"> </a>
   <h3>Operations list</h3>
   <p>The following operations are defined:</p>
   <ul>
     <li><a href="find-variants.html">$find-variants</a>: Retrieves variants from a specified genomic region</li>
-  </ul>  
+  </ul>
 </div>

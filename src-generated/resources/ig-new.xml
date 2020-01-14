@@ -87,15 +87,6 @@
     </grouping>
     <resource>
       <reference>
-        <reference value="OperationDefinition/find-variants"/>
-      </reference>
-      <name value="Find variants"/>
-      <description value="Find variants operation"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="operations"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
       </reference>
       <name value="Example - Genomics Reporting"/>
@@ -345,6 +336,15 @@
       <description value="Mapping LOINC answers to SequenceOntology"/>
       <groupingId value="conceptmaps"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-variants"/>
+      </reference>
+      <name value="Operation: $find-variants"/>
+      <description value="Retrieves variants from a specified genomic region"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
+    </resource>
     <page>
       <nameUrl value="toc.html"/>
       <title value="Table of Contents"/>
@@ -418,11 +418,6 @@
         <nameUrl value="artifacts.html"/>
         <title value="Artifact List"/>
         <generation value="html"/>
-        <page>
-          <nameUrl value="find-variants.html"/>
-          <title value="Find variants"/>
-          <generation value="generated"/>
-        </page>
         <page>
           <nameUrl value="genomics-base.html"/>
           <title value="Genomics Base"/>
@@ -711,6 +706,11 @@
         <page>
           <nameUrl value="dna-change-type.html"/>
           <title value="Concept mapping for DNA Change Type"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="find-variants.html"/>
+          <title value="Operation: $find-variants"/>
           <generation value="generated"/>
         </page>
       </page>

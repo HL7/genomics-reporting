@@ -102,15 +102,6 @@
     }],
     "resource" : [{
       "reference" : {
-        "reference" : "OperationDefinition/find-variants"
-      },
-      "name" : "Find variants",
-      "description" : "Find variants operation",
-      "exampleBoolean" : false,
-      "groupingId" : "operations"
-    },
-    {
-      "reference" : {
         "reference" : "Bundle/diagnosticreport-cgexample"
       },
       "name" : "Example - Genomics Reporting",
@@ -359,6 +350,15 @@
       "name" : "Concept mapping for DNA Change Type",
       "description" : "Mapping LOINC answers to SequenceOntology",
       "groupingId" : "conceptmaps"
+    },
+    {
+      "reference" : {
+        "reference" : "OperationDefinition/find-variants"
+      },
+      "name" : "Operation: $find-variants",
+      "description" : "Retrieves variants from a specified genomic region",
+      "exampleBoolean" : false,
+      "groupingId" : "operations"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -434,11 +434,6 @@
         "title" : "Artifact List",
         "generation" : "html",
         "page" : [{
-          "nameUrl" : "find-variants.html",
-          "title" : "Find variants",
-          "generation" : "generated"
-        },
-        {
           "nameUrl" : "genomics-base.html",
           "title" : "Genomics Base",
           "generation" : "generated"
@@ -726,6 +721,11 @@
         {
           "nameUrl" : "dna-change-type.html",
           "title" : "Concept mapping for DNA Change Type",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "find-variants.html",
+          "title" : "Operation: $find-variants",
           "generation" : "generated"
         }]
       },
