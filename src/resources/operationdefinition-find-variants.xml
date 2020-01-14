@@ -4,7 +4,6 @@
 	<title value="find variants"/>
 	<status value="draft"/>
 	<kind value="operation"/>
-	<description value="(src/resources/operationdefinition-find-variants.xml) Use this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a FHIR Genomics report (that may or may not contain any variants). If the patient or the specified region has not been studied, the operation returns a 404 error."/>
 	<affectsState value="false"/>
 	<code value="find-variants"/>
 	<system value="true"/>
@@ -25,7 +24,7 @@
 		<use value="in"/>
 		<min value="1"/>
 		<max value="1"/>
-		<documentation value="Region of interest is specified as a 0-based integer interval range. Variants that overlap the range are returned. (Note that an insertion that starts before the range, regardless of length, would not overlap the range, and would therefore not be returned)."/>
+		<documentation value="Region of interest is specified as a 0-based integer interval range. Variants that overlap the range are returned."/>
 		<type value="Range"/>
 	</parameter>
 	<parameter>
@@ -42,7 +41,7 @@
 		<use value="out"/>
 		<min value="1"/>
 		<max value="1"/>
-		<documentation value="Returned report contains a diagnostic report which contains a single region studied profile, which reflects back the query parameters; zero to many variants found in the region; and zero to many sequence phase relationships between found variants. If the region hasn't been studied, return a 404 response code."/>
+		<documentation value="Returned report contains a diagnostic report which contains a single region studied profile, which reflects back the query parameters; zero to many variants found in the region; and zero to many sequence phase relationships between found variants."/>
 		<type value="DiagnosticReport"/>
 	</parameter>
 </OperationDefinition>

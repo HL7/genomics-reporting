@@ -1,5 +1,29 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <p>
-    This is the find-variants operations notes page... (src/pagecontent/find-variants-notes)
-  </p>
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>NOTE: Imprecise implementations are allowed, where results contain some records outside the requested range. This is necessary to support many bioinformatics indexing schemes.</p>
+	<p>Valid response codes are shown in the following figure and described further in the table.</p>
+	<img src="find-variants-fig2.png" alt="error codes"/>
+	<table>
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request (region was studied, response is a FHIR Genomics report, that may or may not include any variants)</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Data not found (e.g. no data found for patient, no data present for requested region for patient)</td>
+			</tr>
+		</tbody>
+	</table>
 </div>

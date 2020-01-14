@@ -1,5 +1,97 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <p>
-    This is the find-variants operation intro page... (src/pagecontent/find-variants-intro)
-  </p>
+	<a name="Description"/>
+	<h3>Description</h3>
+	<p>Use this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a FHIR Genomics report (that may or may not contain any variants). If the patient or the specified region has not been studied, the operation returns a 404 error.
+</p>
+	<a name="INParameters"/>
+	<h3>Query IN Parameters</h3>
+	<ul>
+		<li>Region of interest is specified as a 0-based interval range of integers. Variants that overlap the range (variants 1-5 in the picture) would be returned, as would a point mutation at position x, but not a point mutation at position y. (Note that an insertion that starts before x, regardless of length, would not overlap x..y, and would therefore not be returned).</li>
+		<li>Genomic reference sequence is a valid NCBI chromosome-level ('NC_') <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.13/">build 37</a> or <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/">build 38</a> identifier, or a valid mitochondrion identifier (NC_012920.1, NC_001807.4).</li>
+	</ul>
+	<img src="find-variants-fig1.png" alt="region of interest"/>
+	<a name="OUTParameters"> </a>
+	<h3>Query OUT Parameters</h3>
+	<ul>
+		<li>Returned diagnostic report contains a single region studied profile, which reflects back the query parameters; zero to many variants found in the region; and zero to many sequence phase relationships between found variants. If the region hasn't been studied, return a 404 response code. </li>
+		<li>Diagnostic report must be returned as a <b>bundle</b>, with the following constraints. Additional information may optionally be included in the report.</li>
+			<li>1..1 Bundle
+		<ul>
+					<li>1…1 type = ‘collection’</li>
+					<li>1…1 Diagnostic Report
+		<ul>
+							<li>1…1 id</li>
+							<li>1…1 meta
+					<ul>
+									<li>1…1 profile = ‘http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report'</li>
+								</ul>
+							</li>
+							<li>1…1 status = ‘final’</li>
+							<li>1…1 category = ‘GE’</li>
+							<li>1…1 code = ‘81247-9|Master HL7 genetic variant reporting panel’</li>
+							<li>1…1 subject</li>
+							<li>1…1 issued</li>
+							<li>1…1 result:region-studied</li>
+							<li>0…* result:variant</li>
+							<li>0…* result:sequence phase relation</li>
+						</ul>
+					</li>
+					<li>1…1 Observation (RegionStudied)
+		<ul>
+							<li>1…1 id</li>
+							<li>1…1 meta
+					<ul>
+									<li>1…1 profile = ‘http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied’</li>
+								</ul>
+							</li>
+							<li>1…1 status = ‘final’</li>
+							<li>1…1 category = ‘laboratory’</li>
+							<li>1…1 code</li>
+							<li>1…1 subject</li>
+							<li>1…1 component:ranges-examined</li>
+							<li>1…1 component:coordinate-system = ‘0-based interval counting’</li>
+							<li>1…1 component:genomic-ref-seq</li>
+						</ul>
+					</li>
+					<li>0…* Observation (variant)
+		<ul>
+							<li>1…1 id</li>
+							<li>1…1 meta
+					<ul>
+									<li>1…1 profile = ‘http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant’</li>
+								</ul>
+							</li>
+							<li>1…1 status = ‘final’</li>
+							<li>1…1 category = ‘laboratory’</li>
+							<li>1…1 code</li>
+							<li>1…1 subject</li>
+							<li>1…1 valueCodeableConcept</li>
+							<li>1…1 component:genomic-source-class</li>
+							<li>1…1 component:genomic-ref-seq</li>
+							<li>1…1 component:allelic-state</li>
+							<li>1…1 component:ref-allele</li>
+							<li>1…1 component:alt-allele</li>
+							<li>1…1 component:coordinate-system = ‘0-based interval counting’</li>
+							<li>1…1 component:exact-start-end</li>
+						</ul>
+					</li>
+					<li>0…* Observation (sequence phase relationship)
+		<ul>
+							<li>1…1 id</li>
+							<li>1…1 meta
+					<ul>
+									<li>1…1 profile = ‘http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship’</li>
+								</ul>
+							</li>
+							<li>1…1 status = ‘final’</li>
+							<li>1…1 category = ‘laboratory’</li>
+							<li>1…1 code</li>
+							<li>1…1 subject</li>
+							<li>1…1 valueCodeableConcept</li>
+							<li>2…2 derivedFrom:variant</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+	</ul>
 </div>
