@@ -18,7 +18,7 @@
   </li>
 </ul><br/>
 <p>While the specific implementation of an Operation is outside the scope of HL7, we do provide guidance on how the above representations might be normalized such than any would be found and returned in request for variants overlapping, say, the region of the LDLR gene (region=11,089,362-11,133,830; genomicRefSeq=NC_000019.10). There are likely other effective normalization strategies beyond what is described here.</p>
-<p>One approach to normalization is to convert all representations to a canonical form, such as the NCBI's Sequence Position Deletion Insertion (SPDI) format. Variant queries then only need to query a single format.</p>
+<p>One approach to normalization is to convert all representations to a canonical form, such as the <a href="https://www.ncbi.nlm.nih.gov/variation/notation/">NCBI's Sequence Position Deletion Insertion (SPDI)</a> format. Variant queries then only need to query a single format.</p>
 <p>'SPDI' is the NCBI's variation notation for variants with known breakpoints. The notation represents an observed variant sequence using deleted and inserted sequences at a given position in a reference sequence. SPDI notation uses four fields and is written out as four elements delimited by colons S:P:D:I, where S=SequenceId; P=Position, a 0-based coordinate for where the Deleted Sequence starts; D=DeletedSequence, and I=InsertedSequence. Variation Services only support variants where the coordinates of both the upstream and downstream breakpoints are known (e.g. single nucleotide change, deletions at precise coordinates). Such variants can be encoded precisely using the SPDI notation.</p>
 <p><a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI Variation Services</a> provide a rich set of APIs that can be used to normalize variants from many formats (e.g. HGVS, VCF) into SPDI, and to normalize variants in SPDI into a canonical SPDI format. The variant above, in canonical SPDI format, resolves to this: NC_000019.10:11089559:G:A, where it can easily be determined that it overlaps the requested region (NC_000019.10:11,089,362-11,133,830).</p>
 	<a name="Error codes"/>
@@ -47,5 +47,378 @@
 				<td>ERROR: Data not found (e.g. no data found for patient, no data present for requested region for patient)</td>
 			</tr>
 		</tbody>
-	</table>
+	</table>	
+<a name="Examples"/>
+	<h3>Examples</h3>	
+<p>Scenario: Retrieve all variants for patient HG00403 that overlap NC_000001.10:1-500.</p><br/>
+<p><b>IN parameters</b></p>
+
+<pre>
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "subject",
+      "valueString": "HG00403"
+    },
+    {
+      "name": "region",
+      "valueRange": {
+        "low": {
+          "value": 1
+        },
+        "high": {
+          "value": 500
+        }
+      }
+    },
+    {
+      "name": "genomicRefSeq",
+      "valueString": "NC_000001.10"
+    }
+  ]
+}
+</pre>
+
+<br/>
+<p><b>OUT parameters</b></p>
+
+<pre>
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "regionStudied",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "rs-a43751ad52c94",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "53041-0",
+              "display": "DNA region of interest panel"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/HG00403"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "51959-5",
+                  "display": "Range(s) of DNA sequence examined"
+                }
+              ]
+            },
+            "valueRange": {
+              "low": {
+                "value": 1
+              },
+              "high": {
+                "value": 500
+              }
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "92822-6",
+                  "display": "Genomic coord system"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "LA30100-4",
+                  "display": "0-based interval counting"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48013-7",
+                  "display": "Genomic reference sequence ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+                  "code": "NC_000001.10"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "variant",
+      "resourceType": "Observation",
+      "id": "dv-5a7f781e83514",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "69548-6",
+            "display": "Genetic variant assessment"
+          }
+        ]
+      },
+      "subject": {
+        "reference": "Patient/HG00403"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "LA9633-4",
+            "display": "Present"
+          }
+        ]
+      },
+      "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "48002-0",
+                "display": "Genomic source class [Type]"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA6683-2",
+                "display": "Germline"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "62374-4",
+                "display": "Human reference sequence assembly version"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA14029-5",
+                "display": "GRCh37"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "48013-7",
+                "display": "Genomic reference sequence ID"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+                "code": "NC_000001.10"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "53034-5",
+                "display": "Allelic state"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA6706-1",
+                "display": "heterozygous"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "69547-8",
+                "display": "Genomic Ref allele [ID]"
+              }
+            ]
+          },
+          "valueString": "A"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "69551-0",
+                "display": "Genomic Alt allele [ID]"
+              }
+            ]
+          },
+          "valueString": "G"
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "92822-6",
+                "display": "Genomic coord system"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA30100-4",
+                "display": "0-based interval counting"
+              }
+            ]
+          }
+        },
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes",
+                "code": "exact-start-end",
+                "display": "Variant exact start and end"
+              }
+            ]
+          },
+          "valueRange": {
+            "low": {
+              "value": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "sequencePhaseRelationship",
+      "resourceType": "Observation",
+      "id": "sid-dc2a23f0322c4",
+      "meta": {
+        "profile": [
+          "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"
+        ]
+      },
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "laboratory"
+            }
+          ]
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "82120-7",
+            "display": "Allelic phase"
+          }
+        ]
+      },
+      "subject": {
+        "reference": "Patient/HG00403"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/seq-phase-relationship",
+            "code": "Cis",
+            "display": "Cis"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "#dv-5a7f781e83514"
+        },
+        {
+          "reference": "#dv-5a7f781e83514"
+        }
+      ]
+    }
+  ]
+}
+</pre>
+<br/>
+
+	
 </div>
