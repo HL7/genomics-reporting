@@ -21,9 +21,18 @@
 <p>One approach to normalization is to convert all representations to a canonical form, such as the <a href="https://www.ncbi.nlm.nih.gov/variation/notation/">NCBI's Sequence Position Deletion Insertion (SPDI)</a> format. Variant queries then only need to query a single format.</p>
 <p>'SPDI' is the NCBI's variation notation for variants with known breakpoints. The notation represents an observed variant sequence using deleted and inserted sequences at a given position in a reference sequence. SPDI notation uses four fields and is written out as four elements delimited by colons S:P:D:I, where S=SequenceId; P=Position, a 0-based coordinate for where the Deleted Sequence starts; D=DeletedSequence, and I=InsertedSequence. Variation Services only support variants where the coordinates of both the upstream and downstream breakpoints are known (e.g. single nucleotide change, deletions at precise coordinates). Such variants can be encoded precisely using the SPDI notation.</p>
 <p><a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI Variation Services</a> provide a rich set of APIs that can be used to normalize variants from many formats (e.g. HGVS, VCF) into SPDI, and to normalize variants in SPDI into a canonical SPDI format. The variant above, in canonical SPDI format, resolves to this: NC_000019.10:11089559:G:A, where it can easily be determined that it overlaps the requested region (NC_000019.10:11,089,362-11,133,830).</p>
+	<a name="Normalization"/>
+	<h3>Variant liftover</h3>
+<p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:</p> 
+ <ul>
+  <li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A</li>
+  <li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A</li>
+</ul>
+<p>Several groups have identified edge cases that pose genome assembly conversion challenges (e.g. see <a href="https://github.com/PharmGKB/PharmCAT/wiki/Preparing-VCF-Files">PharmGKB's PharmCAT posting</a>; <a href="https://www.biostars.org/p/14187/">Biostars posting</a>). As a result, this operation does not require that implementations perform liftover. An implementation only need respond with variants based on the requested build (the build implicit in the reference sequence). As a result, the entity calling the operation may need to make one call for, say, a build37 range, and then make another call for variants in a corresponding build38 range.</p>
 	<a name="Error codes"/>
 	<h3>Error Codes</h3>
 	<p>NOTE: Imprecise implementations are allowed, where results contain some records outside the requested range. This is necessary to support many bioinformatics indexing schemes.</p>
+    <p>NOTE: An operation need only respond with variants based on the requested build.</p>
 	<p>Valid response codes are shown in the following figure and described further in the table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
 	<img src="find-variants-fig2.png" alt="error codes"/>
 	<table>

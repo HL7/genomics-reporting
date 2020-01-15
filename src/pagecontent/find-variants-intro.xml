@@ -11,9 +11,12 @@
 	</ul>
 	<img src="find-variants-fig1.png" alt="region of interest"/>
 	<a name="OUTParameters"> </a>
-	<h3>OUT Parameters</h3>
+	<h3>OUT Parameters</h3>	
 	<ul>
 		<li>Response shall include 1..1 observation (RegionStudied), 0..* observation (Variant), 0..* observation (SequencePhaseRelationship).</li> 
+		<li>Variants must be represented using a combination of all of these components: genomic-ref-seq; ref-allele; alt-allele; coordinate-system (valued with '0-based interval counting'); exact-start-end. Additional representations can optionally be included.</li>
+		<li>Implicit in this service is that variants in the requested range, regardless of how they are formatted or stored in a server, are returned. See 'Variant normalization' section below for guidance on variant normalization.</li>
+		<li>An implementation only need respond with variants based on the requested build (the build implicit in the reference sequence). See 'Variant liftover' section below for additional comments of normalizing across different builds.</li>
 		<li>If the region hasn't been studied, return a 404 response code. </li>
 	</ul>
 </div>
