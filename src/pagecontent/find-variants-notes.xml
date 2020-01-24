@@ -32,7 +32,7 @@
 	<a name="Error codes"/>
 	<h3>Error Codes</h3>
 	<p>NOTE: Imprecise implementations are allowed, where results contain some records outside the requested range. This is necessary to support many bioinformatics indexing schemes.</p>
-    <p>NOTE: An operation need only respond with variants based on the requested build.</p>
+    <p>NOTE: An operation only needs to respond with variants aligned to the same build implicit in the requested genomic reference sequence.</p>
 	<p>Valid response codes are shown in the following figure and described further in the table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
 	<img src="find-variants-fig2.png" alt="error codes"/>
 	<table>

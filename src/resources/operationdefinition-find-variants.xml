@@ -39,9 +39,9 @@
 	<parameter>
 		<name value="regionStudied"/>
 		<use value="out"/>
-		<min value="1"/>
+		<min value="0"/>
 		<max value="1"/>
-		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied] Must include component:ranges-examined; component:coordinate-system (valued with '0-based interval counting'); component:genomic-ref-seq."/>
+		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied] Must include 1..* component:ranges-examined; 1..1 component:coordinate-system (valued with '0-based interval counting'); 1..1 component:genomic-ref-seq."/>
 		<type value="canonical"/>
 		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
 	</parameter>

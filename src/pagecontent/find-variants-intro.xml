@@ -6,17 +6,18 @@
 	<a name="INParameters"/>
 	<h3>IN Parameters</h3>
 	<ul>
-		<li>Region of interest is specified as a 0-based interval range of integers. Variants that overlap the range (variants 1-5 in the picture) would be returned, as would a point mutation at position x, but not a point mutation at position y. (Note that an insertion that starts before x, regardless of length, would not overlap x..y, and would therefore not be returned).</li>
-		<li>Genomic reference sequence is a valid NCBI chromosome-level ('NC_') <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.13/">build 37</a> or <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/">build 38</a> identifier, or a valid mitochondrion identifier (NC_012920.1, NC_001807.4).</li>
+		<li>The 'region' parameter is specified as a 0-based interval range of integers. Variants that overlap the range (variants 1-5 in the picture) would be returned, as would a point mutation at position x, but not a point mutation at position y. (Note that an insertion that starts before x, regardless of length, would not overlap x..y, and would therefore not be returned).</li>
+		<li>The 'genomicRefSeq' parameter is a genomic reference sequence specified as a valid NCBI chromosome-level ('NC_') <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.13/">build 37</a> or <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/">build 38</a> identifier, or a valid mitochondrion identifier (NC_012920.1, NC_001807.4).</li>
 	</ul>
 	<img src="find-variants-fig1.png" alt="region of interest"/>
 	<a name="OUTParameters"> </a>
 	<h3>OUT Parameters</h3>	
 	<ul>
-		<li>Response shall include 1..1 observation (RegionStudied), 0..* observation (Variant), 0..* observation (SequencePhaseRelationship).</li> 
-		<li>Variants must be represented using a combination of all of these components: genomic-ref-seq; ref-allele; alt-allele; coordinate-system (valued with '0-based interval counting'); exact-start-end. Additional representations can optionally be included.</li>
-		<li>Implicit in this service is that variants in the requested range, regardless of how they are formatted or stored in a server, are returned. See 'Variant normalization' section below for guidance on variant normalization.</li>
-		<li>An implementation only need respond with variants based on the requested build (the build implicit in the reference sequence). See 'Variant liftover' section below for additional comments of normalizing across different builds.</li>
+		<li>Response shall include 0..1 observation (RegionStudied), 0..* observation (Variant), 0..* observation (SequencePhaseRelationship).</li> 
+		<li>The 'regionStudied' parameter is an instance of the observation (RegionStudied) profile, and can optionally be used to reflect back those studied regions that overlap with the query range. For WGS, the entire region of the request may have been studied and can be represented as a single component:ranges-examined. For WES, each examined exon overlapping the query range can be represented in its own component:ranges-examined. For targeted panels, each examined region overlapping the query range can be represented in its own component:ranges-examined.</li>
+		<li>The 'variant' parameter instantiates the observation (Variant) profile, there being one instance for each identified variant. Variants must be represented using a combination of all of these components: genomic-ref-seq; ref-allele; alt-allele; coordinate-system (valued with '0-based interval counting'); exact-start-end. Additional components can optionally be included.</li>
+		<li>Implicit in this service is that variants in the requested range, regardless of how they are formatted/represented/stored in a server, are returned. See 'Variant normalization' section below for guidance on variant normalization.</li>
+		<li>An implementation only needs to respond with variants aligned to the same build implicit in the requested genomic reference sequence. In other words, if the query's genomic reference sequence is a build 38 identifier, a server only needs to respond with variants that were identfied based on a build 38 alignment. See 'Variant liftover' section below for additional comments of normalizing across different builds.</li>
 		<li>If the region hasn't been studied, return a 404 response code. </li>
 	</ul>
 </div>
