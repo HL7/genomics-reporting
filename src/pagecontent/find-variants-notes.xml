@@ -25,14 +25,15 @@
 	<h3>Variant liftover</h3>
 <p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:</p> 
  <ul>
-  <li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A</li>
-  <li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A</li>
+  <li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A (build 37 representation)</li>
+  <li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A (build 38 representation)</li>
 </ul>
-<p>Several groups have identified edge cases that pose genome assembly conversion challenges (e.g. see <a href="https://github.com/PharmGKB/PharmCAT/wiki/Preparing-VCF-Files">PharmGKB's PharmCAT posting</a>; <a href="https://www.biostars.org/p/14187/">Biostars posting</a>). As a result, this operation does not require that implementations perform liftover. An implementation only need respond with variants based on the requested build (the build implicit in the reference sequence). As a result, the entity calling the operation may need to make one call for, say, a build37 range, and then make another call for variants in a corresponding build38 range.</p>
+<p>Several groups have identified edge cases that pose genome assembly conversion challenges (e.g. see <a href="https://github.com/PharmGKB/PharmCAT/wiki/Preparing-VCF-Files">PharmGKB's PharmCAT posting</a>; <a href="https://www.biostars.org/p/14187/">Biostars posting</a>). For example, <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/212026/">NC_000001.11:145923295:C:C</a> (build 38 representation) does not convert to a corresponding build 37 representation using <a href="https://api.ncbi.nlm.nih.gov/variation/v0/spdi/NC_000001.11%3A145923295%3AC%3AC/all_equivalent_contextual">NCBI Variation Services</a>. As a result, there is no requirement that servers normalize all variants against a single build.</p>
+<p>Rather, where a server is storing variants aligned to multiple builds, it will be necessary for the server to lift over the query region into corresponding regions in other builds. For example, a query for variants in NC_000001.11:145507556-145513536 (build 38 range) will also need to query for variants in NC_000001.10:145921556-145927537 (build 37 range) in order to gather variants expressed against build 38 and build 37, respectively.</p>
+<p>Many efficient and open source lift over tools exist (e.g. many are listed <a href="https://genviz.org/module-01-intro/0001/06/02/liftoverTools/">here</a>). As with variant lift over, translating a region between builds can also fail. For example, attempting to liftover NC_000001.11:145923295-145923296 (build 38 range) into a build 37 range with the <a href="https://genome.ucsc.edu/cgi-bin/hgLiftOver">UCSD Lift Over tool</a> fails, because the region is partially deleted in build 37. In the (very uncommon) case of a failed lift over, a server should widen the query region as necessary in order to have a successful lift over. For example, the widened build 38 range NC_000001.11:145923285-145923306 will successfully translate into the build 37 range NC_000001.10:145511787-145511807.</p>
 	<a name="Error codes"/>
 	<h3>Error Codes</h3>
 	<p>NOTE: Imprecise implementations are allowed, where results contain some records outside the requested range. This is necessary to support many bioinformatics indexing schemes.</p>
-    <p>NOTE: An operation only needs to respond with variants aligned to the same build implicit in the requested genomic reference sequence.</p>
 	<p>Valid response codes are shown in the following figure and described further in the table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
 	<img src="find-variants-fig2.png" alt="error codes"/>
 	<table>
