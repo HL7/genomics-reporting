@@ -1,11 +1,11 @@
 <OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-	<id value="find-variants"/>
-	<name value="find-variants"/>
-	<title value="find variants"/>
+	<id value="find-subject-variants"/>
+	<name value="find-subject-variants"/>
+	<title value="find subject variants"/>
 	<status value="active"/>
 	<kind value="operation"/>
 	<affectsState value="false"/>
-	<code value="find-variants"/>
+	<code value="find-subject-variants"/>
 	<system value="true"/>
 	<system value="true"/>
 	<type value="true"/>
@@ -42,8 +42,7 @@
 		<min value="0"/>
 		<max value="1"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied] Must include 1..* component:ranges-examined; 1..1 component:coordinate-system (valued with '0-based interval counting'); 1..1 component:genomic-ref-seq."/>
-		<type value="canonical"/>
-		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
+		<type value="Observation"/>
 	</parameter>
 	<parameter>
 		<name value="variant"/>
@@ -51,8 +50,7 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] Must include valueCodeableConcept; component:genomic-source-class; component:genomic-ref-seq; component:allelic-state; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."/>
-		<type value="canonical"/>
-		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
+		<type value="Observation"/>
 	</parameter>
 	<parameter>
 		<name value="sequencePhaseRelationship"/>
@@ -60,7 +58,6 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship] Must include valueCodeableConcept; 2..2 derivedFrom:variant."/>
-		<type value="canonical"/>
-		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"/>
+		<type value="Observation"/>
 	</parameter>
 </OperationDefinition>
