@@ -42,12 +42,7 @@
 		<min value="0"/>
 		<max value="1"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied] Must include 1..* component:ranges-examined; 1..1 component:coordinate-system (valued with '0-based interval counting'); 1..1 component:genomic-ref-seq."/>
-<<<<<<< HEAD:src/resources/operationdefinition-find-subject-variants.xml
 		<type value="Observation"/>
-=======
-		<type value="Reference"/>
-		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
->>>>>>> 322388fdebbc76a66d236b79e29a23d7cc9e6e23:src/resources/operationdefinition-find-variants.xml
 	</parameter>
 	<parameter>
 		<name value="variant"/>
@@ -55,12 +50,7 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] Must include valueCodeableConcept; component:genomic-source-class; component:genomic-ref-seq; component:allelic-state; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."/>
-<<<<<<< HEAD:src/resources/operationdefinition-find-subject-variants.xml
 		<type value="Observation"/>
-=======
-		<type value="Reference"/>
-		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
->>>>>>> 322388fdebbc76a66d236b79e29a23d7cc9e6e23:src/resources/operationdefinition-find-variants.xml
 	</parameter>
 	<parameter>
 		<name value="sequencePhaseRelationship"/>
@@ -68,11 +58,6 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship] Must include valueCodeableConcept; 2..2 derivedFrom:variant."/>
-<<<<<<< HEAD:src/resources/operationdefinition-find-subject-variants.xml
 		<type value="Observation"/>
-=======
-		<type value="Reference"/>
-		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"/>
->>>>>>> 322388fdebbc76a66d236b79e29a23d7cc9e6e23:src/resources/operationdefinition-find-variants.xml
 	</parameter>
 </OperationDefinition>
