@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src-generated\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src-generated\\pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "1.0.0",
@@ -94,6 +94,11 @@
       "id" : "conceptmaps",
       "name" : "Concept Maps",
       "description" : "Concept Maps defined in this implementation guide"
+    },
+    {
+      "id" : "operations",
+      "name" : "Operations",
+      "description" : "Operations defined in this implementation guide"
     }],
     "resource" : [{
       "reference" : {
@@ -345,6 +350,15 @@
       "name" : "Concept mapping for DNA Change Type",
       "description" : "Mapping LOINC answers to SequenceOntology",
       "groupingId" : "conceptmaps"
+    },
+    {
+      "reference" : {
+        "reference" : "OperationDefinition/find-subject-variants"
+      },
+      "name" : "Operation: $find-subject-variants",
+      "description" : "Retrieves variants from a specified genomic region",
+      "exampleBoolean" : false,
+      "groupingId" : "operations"
     }],
     "page" : {
       "nameUrl" : "toc.html",
@@ -708,7 +722,17 @@
           "nameUrl" : "dna-change-type.html",
           "title" : "Concept mapping for DNA Change Type",
           "generation" : "generated"
+        },
+        {
+          "nameUrl" : "find-subject-variants.html",
+          "title" : "Operation: $find-subject-variants",
+          "generation" : "generated"
         }]
+      },
+      {
+        "nameUrl" : "operations.html",
+        "title" : "Operations",
+        "generation" : "html"
       },
       {
         "nameUrl" : "usecases.html",

@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/resources"/>
+    <valueString value="C:\Users\bdolin\Documents\GitHub\genomics-reporting\src-generated\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/resources"/>
+    <valueString value="C:\Users\bdolin\Documents\GitHub\genomics-reporting\src\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/vocabulary"/>
+    <valueString value="C:\Users\bdolin\Documents\GitHub\genomics-reporting\src\vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/examples"/>
+    <valueString value="C:\Users\bdolin\Documents\GitHub\genomics-reporting\src\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src/images"/>
+    <valueString value="C:\Users\bdolin\Documents\GitHub\genomics-reporting\src\images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/jamesjones/Documents/GitHub/genomics-reporting/src-generated/pages"/>
+    <valueString value="C:\Users\bdolin\Documents\GitHub\genomics-reporting\src-generated\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="1.0.0"/>
@@ -80,6 +80,10 @@
     <grouping id="conceptmaps">
       <name value="Concept Maps"/>
       <description value="Concept Maps defined in this implementation guide"/>
+    </grouping>
+    <grouping id="operations">
+      <name value="Operations"/>
+      <description value="Operations defined in this implementation guide"/>
     </grouping>
     <resource>
       <reference>
@@ -331,6 +335,15 @@
       <name value="Concept mapping for DNA Change Type"/>
       <description value="Mapping LOINC answers to SequenceOntology"/>
       <groupingId value="conceptmaps"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-subject-variants"/>
+      </reference>
+      <name value="Operation: $find-subject-variants"/>
+      <description value="Retrieves variants from a specified genomic region"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -695,6 +708,16 @@
           <title value="Concept mapping for DNA Change Type"/>
           <generation value="generated"/>
         </page>
+        <page>
+          <nameUrl value="find-subject-variants.html"/>
+          <title value="Operation: $find-subject-variants"/>
+          <generation value="generated"/>
+        </page>
+      </page>
+      <page>
+        <nameUrl value="operations.html"/>
+        <title value="Operations"/>
+        <generation value="html"/>
       </page>
       <page>
         <nameUrl value="usecases.html"/>

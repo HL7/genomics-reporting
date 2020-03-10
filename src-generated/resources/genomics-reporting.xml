@@ -70,6 +70,10 @@
       <name value="Concept Maps"/>
       <description value="Concept Maps defined in this implementation guide"/>
     </grouping>
+    <grouping id="operations">
+      <name value="Operations"/>
+      <description value="Operations defined in this implementation guide"/>
+    </grouping>
     
     
     
@@ -110,7 +114,6 @@
       <description value="Test instance showing data from the CG v2 spec"/>
       <exampleCanonical value="StructureDefinition/genomics-report"/>
       <exampleCanonical value="StructureDefinition/overall-interpretation"/>
-
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -221,7 +224,6 @@
       <exampleCanonical value="StructureDefinition/medication-high-risk"/>
       <groupingId value="examples"/>
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/obs-idh-ex"/>
@@ -276,6 +278,7 @@
       <exampleCanonical value="StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
     </resource>
+    <!-- Code Systems -->
     <resource>
       <reference>
         <reference value="CodeSystem/tbd-codes"/>
@@ -292,6 +295,7 @@
       <description value="Code System for specific types of relationships"/>
       <groupingId value="codesystems"/>
     </resource>
+	<!-- Value Sets -->
     <resource>
       <reference>
         <reference value="ValueSet/hgvs"/>
@@ -348,6 +352,7 @@
       <description value="origins of variants"/>
       <groupingId value="valuesets"/>
     </resource>
+	<!-- Concept Maps --> 
     <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type"/>
@@ -355,6 +360,16 @@
       <name value="Concept mapping for DNA Change Type"/>
       <description value="Mapping LOINC answers to SequenceOntology"/>
       <groupingId value="conceptmaps"/>
+    </resource>
+	<!-- Operations -->
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-subject-variants"/>
+      </reference>
+      <name value="Operation: $find-subject-variants"/>
+      <description value="Retrieves variants from a specified genomic region"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -719,8 +734,18 @@
 <ns57:title xmlns:ns57="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
 <generation value="generated"/>
 </page>
+<page>
+<nameUrl value="find-subject-variants.html"/>
+<ns58:title xmlns:ns58="http://hl7.org/fhir" value="Operation: $find-subject-variants"/>
+<generation value="generated"/>
+</page>
 </page>
       <page>
+        <nameUrl value="operations.html"/>
+        <title value="Operations"/>
+        <generation value="html"/>
+      </page>
+	  <page>
         <nameUrl value="usecases.html"/>
         <title value="Query Examples"/>
         <generation value="html"/>

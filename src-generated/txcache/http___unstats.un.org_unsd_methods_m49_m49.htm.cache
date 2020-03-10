@@ -1,19 +1,11 @@
 -------------------------------------------------------------------------------------
 {"code" : {
-  "coding" : [{
-    "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
-    "code" : "001"
-  }]
+  "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+  "code" : "001"
 }, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
     "include" : [{
-      "system" : "urn:iso:std:iso:3166"
-    },
-    {
-      "system" : "urn:iso:std:iso:3166:-2"
-    },
-    {
       "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
       "filter" : [{
         "property" : "class",
@@ -22,17 +14,17 @@
       }]
     }]
   }
-}, "lang":"null"}####
+}, "lang":"null", "useServer":"true", "useClient":"false", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "Unknown code system urn:iso:std:iso:3166:-2"
+  "error" : "Not done yet @ TAreaCodeServices.Close"
 }
 -------------------------------------------------------------------------------------
 {"code" : {
   "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
   "code" : "001"
-}, "valueSet" :null, "lang":"null"}####
+}, "valueSet" :null, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "World",
   "severity" : null,

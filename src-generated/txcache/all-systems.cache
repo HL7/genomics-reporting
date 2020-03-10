@@ -1,98 +1,21 @@
 -------------------------------------------------------------------------------------
 {"code" : {
-  "code" : "text/plain"
+  "code" : "http://hl7.org/fhirpath/System.String"
 }, "valueSet" :{
   "resourceType" : "ValueSet",
   "compose" : {
     "include" : [{
-      "system" : "urn:ietf:bcp:13"
+      "system" : "http://hl7.org/fhir/data-types"
+    },
+    {
+      "system" : "http://hl7.org/fhir/resource-types"
     }]
   }
-}, "lang":"null"}####
-v: {
-  "display" : "text/plain",
-  "severity" : null,
-  "error" : ""
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://loinc.org",
-    "code" : "LA6576-8",
-    "display" : "Positive"
-  },
-  {
-    "system" : "http://snomed.info/sct",
-    "code" : "10828004",
-    "display" : "Positive"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://loinc.org",
-      "filter" : [{
-        "property" : "LIST",
-        "op" : "=",
-        "value" : "LL541-4"
-      }]
-    }]
-  }
-}, "lang":"null"}####
+}, "lang":"null", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
 v: {
   "display" : "",
   "severity" : "error",
-  "error" : "Unable to provide support for code system http://snomed.info/sct version http://snomed.info/sct/900000000000207008900000000000207008"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://loinc.org",
-    "code" : "81247-9",
-    "display" : "Master HL7 genetic variant reporting panel"
-  },
-  {
-    "system" : "http://genenames.org/geneId",
-    "code" : "HGNC:588",
-    "display" : "Histocompatibility complex (HLA)"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://loinc.org"
-    }]
-  }
-}, "lang":"null"}####
-v: {
-  "display" : "Master HL7 genetic variant reporting panel",
-  "severity" : "warning",
-  "error" : "The code system \"http://genenames.org/geneId\" is not known (encountered paired with code = \"HGNC:588\")"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "coding" : [{
-    "system" : "http://loinc.org",
-    "code" : "81247-9",
-    "display" : "Master HL7 genetic variant reporting panel"
-  },
-  {
-    "system" : "http://genenames.org/geneId",
-    "code" : "588",
-    "display" : "Histocompatibility complex (HLA)"
-  }]
-}, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://loinc.org"
-    }]
-  }
-}, "lang":"null"}####
-v: {
-  "display" : "Master HL7 genetic variant reporting panel",
-  "severity" : "warning",
-  "error" : "The code system \"http://genenames.org/geneId\" is not known (encountered paired with code = \"588\")"
+  "error" : "The code system \"\" is not known (encountered paired with code = \"http://hl7.org/fhirpath/System.String\"); The code provided (#http://hl7.org/fhirpath/System.String) is not  valid in the value set FHIRDefinedType"
 }
 -------------------------------------------------------------------------------------
 {"hierarchical" : true, "valueSet" :{
