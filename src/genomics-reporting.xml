@@ -48,14 +48,15 @@
       <description
         value="General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"/>
     </grouping>
+    <!--removing old use case groups
     <grouping id="somatics">
       <name value="Somatics"/>
       <description value="Profiles related to the reporting of somatic genomic issues"/>
-    </grouping>
-    <grouping id="pharmacogenomics">
-      <name value="Pharmacogenomics"/>
+    </grouping>-->
+    <grouping id="implications">
+      <name value="Implications"/>
       <description
-        value="Profiles for reports relating to genomic implication on medication use and effectiveness"/>
+        value="Profiles needed for linking genomic findings to knowledgebases for diagnostic or therapeutic use"/>
     </grouping>
     <!--
     <grouping id="cytogenomics">
@@ -262,7 +263,7 @@
       </reference>
       <name value="Genomic Implication"/>
       <description
-        value="Abstract profile for observations describing the implication of one or more genomic observations."/>
+        value="Abstract profile for observations linking a genomic finding to an external knowledgebase."/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -306,7 +307,7 @@
       <description
         value="Profile with properties for observations that convey the potential impact of genomic characteristics on a diagnosis"/>
       <exampleBoolean value="false"/>
-      <groupingId value="general"/>
+      <groupingId value="implications"/>
     </resource>
     <resource>
       <extension
@@ -320,10 +321,10 @@
       <description
         value="Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."/>
       <exampleBoolean value="false"/>
-      <groupingId value="general"/>
+      <groupingId value="implications"/>
     </resource>
 
-    <!--pgx-->
+    <!--pgx
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -339,7 +340,6 @@
       <groupingId value="pharmacogenomics"/>
     </resource>
 
-    <!--
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -404,11 +404,11 @@
       <reference>
         <reference value="StructureDefinition/task-med-chg"/>
       </reference>
-      <name value="Medication Usage Implication"/>
+      <name value="Medication Usage Task"/>
       <description
-        value="Task describing what sort of change (if any) should be made in a patient's medication based on an identified genotype"/>
+        value="Task describing what sort of change (if any) should be made in a patient's medication based on an identified finding"/>
       <exampleBoolean value="false"/>
-      <groupingId value="pharmacogenomics"/>
+      <groupingId value="implications"/>
     </resource>
     <resource>
       <extension
@@ -422,9 +422,9 @@
       <description
         value="MedicationStatement describing a med potentially being taken by the patient that may require adjustment"/>
       <exampleBoolean value="false"/>
-      <groupingId value="pharmacogenomics"/>
+      <groupingId value="implications"/>
     </resource>
-    <!-- Somatics -->
+    <!-- Somatics 
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -438,7 +438,7 @@
         value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions"/>
       <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
-    </resource>
+    </resource>-->
     <!-- Extensions -->
     <resource>
       <extension
@@ -500,7 +500,7 @@
       </reference>
       <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
-      <exampleCanonical value="StructureDefinition/medication-efficacy"/>
+      <exampleCanonical value="StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -546,7 +546,7 @@
       </reference>
       <name value="Example - Melanoma implication"/>
       <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
-      <exampleCanonical value="StructureDefinition/somatic-implication"/>
+      <exampleCanonical value="StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -555,7 +555,7 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/somatic-implication"/>
+      <exampleCanonical value="StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -600,7 +600,7 @@
       </reference>
       <name value="Example - High Risk Allele (HLA-B*15:02)"/>
       <description value="High Risk Allele (HLA-B*15:02)"/>
-      <exampleCanonical value="StructureDefinition/medication-high-risk"/>
+      <exampleCanonical value="StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -610,7 +610,7 @@
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
       <description value="Inherited Disease Pathogenicity"/>
-      <exampleCanonical value="StructureDefinition/inherited-disease-pathogenicity"/>
+      <exampleCanonical value="StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -730,6 +730,7 @@
       <description value="origins of variants"/>
       <groupingId value="valuesets"/>
     </resource>
+    <!--
     <resource>
       <reference>
         <reference value="ValueSet/somatic-classes"/>
@@ -746,6 +747,7 @@
       <description value="Pharmacogenomic implication classes"/>
       <groupingId value="valuesets"/>
     </resource>
+  -->
     <resource>      
       <reference>
         <reference value="ConceptMap/dna-change-type"/>

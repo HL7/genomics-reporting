@@ -22,7 +22,7 @@
       "id": "1",
       "meta": {
         "profile": [
-          "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"
+          "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
         ]
       },
       "status": "final",
@@ -40,28 +40,39 @@
       "code": {
         "coding": [
           {
-            "system": "http://loinc.org",
-            "code": "53037-8",
-            "display": "Genetic variation clinical significance [Imp]"
+            "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes",
+            "code": "diagnostic-implication",
+            "display": "Diagnostic Implication"
           }
         ]
       },
       "subject": {
         "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
       },
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "http://loinc.org",
-            "code": "LA6668-3",
-            "display": "Pathogenic"
-          }
-        ]
-      },
       "derivedFrom":[{
         "reference": "#2"
       }],
       "component": [
+        {
+          "code": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "53037-8",
+                "display": "Genetic variation clinical significance [Imp]"
+              }
+            ]
+          },
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA6668-3",
+                "display": "Pathogenic"
+              }
+            ]
+          }
+        },
         {
           "code": {
             "coding": [

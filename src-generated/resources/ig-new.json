@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/James.Jones/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/James.Jones/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/James.Jones/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/James.Jones/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/James.Jones/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/James.Jones/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "1.1.0",
@@ -56,14 +56,9 @@
       "description" : "General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"
     },
     {
-      "id" : "somatics",
-      "name" : "Somatics",
-      "description" : "Profiles related to the reporting of somatic genomic issues"
-    },
-    {
-      "id" : "pharmacogenomics",
-      "name" : "Pharmacogenomics",
-      "description" : "Profiles for reports relating to genomic implication on medication use and effectiveness"
+      "id" : "implications",
+      "name" : "Implications",
+      "description" : "Profiles needed for linking genomic findings to knowledgebases for diagnostic or therapeutic use"
     },
     {
       "id" : "abstract",
@@ -110,7 +105,7 @@
       },
       "name" : "Example - Pharmacogenomics",
       "description" : "Pharmacogenomic Report Example instances",
-      "exampleCanonical" : "StructureDefinition/medication-efficacy",
+      "exampleCanonical" : "StructureDefinition/therapeutic-implication",
       "groupingId" : "examples"
     },
     {
@@ -155,7 +150,7 @@
       },
       "name" : "Example - Melanoma implication",
       "description" : "Small example report with 1 reported variant and somatic diagnostic implication",
-      "exampleCanonical" : "StructureDefinition/somatic-implication",
+      "exampleCanonical" : "StructureDefinition/diagnostic-implication",
       "groupingId" : "examples"
     },
     {
@@ -164,7 +159,7 @@
       },
       "name" : "Example - Full Bundle Oncology Example",
       "description" : "Full Bundle Oncology Example",
-      "exampleCanonical" : "StructureDefinition/somatic-implication",
+      "exampleCanonical" : "StructureDefinition/therapeutic-implication",
       "groupingId" : "examples"
     },
     {
@@ -209,7 +204,7 @@
       },
       "name" : "Example - High Risk Allele (HLA-B*15:02)",
       "description" : "High Risk Allele (HLA-B*15:02)",
-      "exampleCanonical" : "StructureDefinition/medication-high-risk",
+      "exampleCanonical" : "StructureDefinition/therapeutic-implication",
       "groupingId" : "examples"
     },
     {
@@ -218,7 +213,7 @@
       },
       "name" : "Example - Inherited Disease Pathogenicity",
       "description" : "Inherited Disease Pathogenicity",
-      "exampleCanonical" : "StructureDefinition/inherited-disease-pathogenicity",
+      "exampleCanonical" : "StructureDefinition/diagnostic-implication",
       "groupingId" : "examples"
     },
     {
@@ -336,22 +331,6 @@
       },
       "name" : "Variant Inheritance",
       "description" : "origins of variants",
-      "groupingId" : "valuesets"
-    },
-    {
-      "reference" : {
-        "reference" : "ValueSet/somatic-classes"
-      },
-      "name" : "Somatic Implication Classes",
-      "description" : "Somatic implication classes",
-      "groupingId" : "valuesets"
-    },
-    {
-      "reference" : {
-        "reference" : "ValueSet/pharmacogenomic-classes"
-      },
-      "name" : "Pharmacogenomic Implication Classes",
-      "description" : "Pharmacogenomic implication classes",
       "groupingId" : "valuesets"
     },
     {
@@ -521,23 +500,13 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "medication-implication.html",
-          "title" : "Medication Implication",
-          "generation" : "generated"
-        },
-        {
           "nameUrl" : "task-med-chg.html",
-          "title" : "Medication Usage Implication",
+          "title" : "Medication Usage Task",
           "generation" : "generated"
         },
         {
           "nameUrl" : "medicationstatement.html",
           "title" : "Current Medication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-implication.html",
-          "title" : "Somatic Implication",
           "generation" : "generated"
         },
         {
@@ -693,16 +662,6 @@
         {
           "nameUrl" : "valueset-variant-inheritance.html",
           "title" : "Variant Inheritance",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "valueset-somatic-classes.html",
-          "title" : "Somatic Implication Classes",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "valueset-pharmacogenomic-classes.html",
-          "title" : "Pharmacogenomic Implication Classes",
           "generation" : "generated"
         },
         {

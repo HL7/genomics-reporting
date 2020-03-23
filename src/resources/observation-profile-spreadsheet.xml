@@ -8,9 +8,9 @@
  xmlns:html="http://www.w3.org/TR/REC-html40">
  <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
   <Author>Grahame</Author>
-  <LastAuthor>James Jones</LastAuthor>
+  <LastAuthor>Microsoft Office User</LastAuthor>
   <Created>2012-03-19T11:12:07Z</Created>
-  <LastSaved>2019-12-09T21:17:31Z</LastSaved>
+  <LastSaved>2020-03-23T12:54:46Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
@@ -29,12 +29,11 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>16340</WindowHeight>
-  <WindowWidth>28040</WindowWidth>
-  <WindowTopX>380</WindowTopX>
-  <WindowTopY>460</WindowTopY>
-  <ActiveSheet>2</ActiveSheet>
-  <RefModeR1C1/>
+  <WindowHeight>15060</WindowHeight>
+  <WindowWidth>27240</WindowWidth>
+  <WindowTopX>1180</WindowTopX>
+  <WindowTopY>1460</WindowTopY>
+  <ActiveSheet>3</ActiveSheet>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -1184,27 +1183,27 @@
     <Cell ss:StyleID="s77"><Data ss:Type="String">implication</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">inherited-disease-pathogenicity</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">medication-implication</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">medication-metabolism</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">medication-transporter</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">medication-efficacy</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">medication-high-risk</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1216,7 +1215,7 @@
     <Cell ss:StyleID="s77"><Data ss:Type="String">diagnostic-implication</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s74"><Data ss:Type="String">published.structure</Data></Cell>
+    <Cell ss:StyleID="s74"/>
     <Cell ss:StyleID="s77"><Data ss:Type="String">somatic-implication</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1286,7 +1285,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>26</ActiveRow>
+     <ActiveRow>18</ActiveRow>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -2280,7 +2280,6 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>600</VerticalResolution>
    </Print>
-   <Selected/>
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
@@ -2314,7 +2313,7 @@
   </AutoFilter>
  </Worksheet>
  <Worksheet ss:Name="grouper">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="20" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="16" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="178"/>
@@ -2598,14 +2597,14 @@
     <Cell ss:StyleID="s124"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">inh-dis-path</Data></Cell>
+    <Cell ss:StyleID="s123"><Data ss:Type="String">diagnositc-implication</Data></Cell>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity}</Data></Cell>
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
@@ -2624,14 +2623,14 @@
     <Cell ss:StyleID="s124"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">somatic-implication</Data></Cell>
+    <Cell ss:StyleID="s123"><Data ss:Type="String">therapeutic-implication</Data></Cell>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/somatic-implication}</Data></Cell>
+    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
@@ -2646,110 +2645,6 @@
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s109"><Data ss:Type="String">TBD</Data></Cell>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s124"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">med-metabolism</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-metabolism}</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Metabolism Implication</Data></Cell>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">TDB</Data></Cell>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s124"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">med-efficacy</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-efficacy}</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Efficacy Implication</Data></Cell>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">TDB</Data></Cell>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s124"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">med-transporter</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-transporter}</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s124"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s123"><Data ss:Type="String">med-high-risk</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.hasMember</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">0..*</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">Reference(Observation){http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-high-risk}</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"><Data ss:Type="String">High-Risk Medication implication</Data></Cell>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">TDB</Data></Cell>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s124"/>
    </Row>
@@ -2899,6 +2794,8 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <Selected/>
+   <TopRowVisible>1</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -5510,7 +5407,7 @@
   </AutoFilter>
  </Worksheet>
  <Worksheet ss:Name="implication">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="66" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="67" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="122"/>
@@ -5656,6 +5553,32 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Citations and supporting info</Data></Cell>
     <Cell ss:StyleID="s107"><Data ss:Type="String">References to literature that supports the implication assertion</Data></Cell>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="60">
+    <Cell ss:StyleID="s103"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.value[x]</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">0..0</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
@@ -5926,18 +5849,33 @@
     <Cell ss:StyleID="s110"/>
    </Row>
    <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s103"><Data ss:Type="String">prognosis</Data></Cell>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s104"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:Index="17" ss:StyleID="s108"/>
+    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s108"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s109"/>
+    <Cell ss:StyleID="s110"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.code</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;prognostic-implication&quot;}]}</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -5955,45 +5893,19 @@
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"/>
+    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.value[x]</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"/>
+    <Cell ss:StyleID="s106"><Data ss:Type="String">E.g. Better outcome, poorer outcome</Data></Cell>
+    <Cell ss:StyleID="s107"><Data ss:Type="String">The predicted outcome for the cancer either on its own or in conjunction with the specified intervention(s)</Data></Cell>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
@@ -7291,11 +7203,13 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <TopRowVisible>1</TopRowVisible>
+   <TopRowVisible>4</TopRowVisible>
+   <LeftColumnVisible>3</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>8</ActiveRow>
+     <ActiveRow>15</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -9342,11 +9256,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <LeftColumnVisible>1</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>1</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -12108,7 +12023,8 @@
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveCol>0</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -14612,7 +14528,7 @@
   </AutoFilter>
  </Worksheet>
  <Worksheet ss:Name="diagnostic-implication">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="67" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="63" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="211"/>
@@ -14764,31 +14680,6 @@
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="90">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.valueCodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s134"><Data ss:Type="String">diagnostic-classes</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="13" ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Indicates the class of implication</Data></Cell>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">N/A</Data></Cell>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s110"/>
    </Row>
@@ -15120,83 +15011,6 @@
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"><Data ss:Type="String">Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign</Data></Cell>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">complex-diagnostic</Data></Cell>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">0..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.code</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-diagnostic&quot;}]}</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="46">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.value[x]</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="13" ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">E.g. Pathognomonic, Supportive, Argues Against, Rules Out</Data></Cell>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
@@ -16417,12 +16231,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
-   <LeftColumnVisible>8</LeftColumnVisible>
+   <LeftColumnVisible>5</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
      <ActiveRow>2</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveCol>11</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -16430,7 +16244,7 @@
   </WorksheetOptions>
  </Worksheet>
  <Worksheet ss:Name="therapeutic-implication">
-  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="82" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="24" ss:ExpandedRowCount="81" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s85" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s85" ss:AutoFitWidth="0" ss:Width="211"/>
@@ -16582,31 +16396,6 @@
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s110"/>
-   </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="90">
-    <Cell ss:StyleID="s103"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.valueCodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s134"><Data ss:Type="String">therapeutic-classes</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:Index="13" ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">Indicates the class of implication</Data></Cell>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s107"/>
-    <Cell ss:StyleID="s108"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"/>
-    <Cell ss:StyleID="s109"><Data ss:Type="String">N/A</Data></Cell>
     <Cell ss:StyleID="s109"/>
     <Cell ss:StyleID="s110"/>
    </Row>
@@ -17258,10 +17047,10 @@
     <Cell ss:StyleID="s110"/>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s103"><Data ss:Type="String">somatic-prognosis</Data></Cell>
+    <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component</Data></Cell>
+    <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:Index="17" ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
@@ -17276,15 +17065,15 @@
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.code</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
+    <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">{&quot;coding&quot;:[{&quot;system&quot;:&quot;http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes&quot;,&quot;code&quot;:&quot;somatic-prognostic&quot;}]}</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
@@ -17302,19 +17091,19 @@
     <Cell ss:StyleID="s103"/>
     <Cell ss:StyleID="s104"/>
     <Cell ss:StyleID="s104"/>
-    <Cell ss:StyleID="s105"><Data ss:Type="String">Observation.component.value[x]</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">1..1</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">CodeableConcept</Data></Cell>
-    <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">todo</Data></Cell>
+    <Cell ss:StyleID="s105"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
     <Cell ss:StyleID="s106"/>
-    <Cell ss:StyleID="s106"><Data ss:Type="String">E.g. Better outcome, poorer outcome</Data></Cell>
-    <Cell ss:StyleID="s107"><Data ss:Type="String">The predicted outcome for the cancer either on its own or in conjunction with the specified intervention(s)</Data></Cell>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s106"/>
+    <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
     <Cell ss:StyleID="s107"/>
     <Cell ss:StyleID="s108"/>
@@ -18612,11 +18401,12 @@
     <HorizontalResolution>600</HorizontalResolution>
     <VerticalResolution>0</VerticalResolution>
    </Print>
+   <TopRowVisible>11</TopRowVisible>
+   <LeftColumnVisible>3</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>2</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveRow>28</ActiveRow>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -41189,7 +40979,7 @@
    <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=Bindings!R1C1:R1C13"
     ss:Hidden="1"/>
   </Names>
-  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="37" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="33" x:FullColumns="1"
    x:FullRows="1" ss:StyleID="s136" ss:DefaultColumnWidth="65"
    ss:DefaultRowHeight="15">
    <Column ss:StyleID="s136" ss:AutoFitWidth="0" ss:Width="137"/>
@@ -41764,34 +41554,6 @@
     <Cell ss:StyleID="s157"/>
     <Cell ss:StyleID="s158"/>
    </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">somatic-classes</Data></Cell>
-    <Cell><Data ss:Type="String">Somatic Classes</Data></Cell>
-    <Cell><Data ss:Type="String">value set</Data></Cell>
-    <Cell><Data ss:Type="String">required</Data></Cell>
-    <Cell><Data ss:Type="String">valueset-somatic-classes</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">pharmacogenomic-classes</Data></Cell>
-    <Cell><Data ss:Type="String">Pharmacogenomic Classes</Data></Cell>
-    <Cell><Data ss:Type="String">value set</Data></Cell>
-    <Cell><Data ss:Type="String">extensible</Data></Cell>
-    <Cell><Data ss:Type="String">valueset-pharmacogenomic-classes</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">therapeutic-classes</Data></Cell>
-    <Cell><Data ss:Type="String">Therapeutic Classes</Data></Cell>
-    <Cell><Data ss:Type="String">value set</Data></Cell>
-    <Cell><Data ss:Type="String">required</Data></Cell>
-    <Cell><Data ss:Type="String">valueset-therapeutic-classes</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell><Data ss:Type="String">diagnostic-classes</Data></Cell>
-    <Cell><Data ss:Type="String">Diagnostic Classes</Data></Cell>
-    <Cell><Data ss:Type="String">value set</Data></Cell>
-    <Cell><Data ss:Type="String">extensible</Data></Cell>
-    <Cell><Data ss:Type="String">valueset-diagnostic-classes</Data></Cell>
-   </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
    <PageSetup>
@@ -41808,7 +41570,7 @@
    <FreezePanes/>
    <FrozenNoSplit/>
    <SplitHorizontal>1</SplitHorizontal>
-   <TopRowBottomPane>9</TopRowBottomPane>
+   <TopRowBottomPane>1</TopRowBottomPane>
    <SplitVertical>1</SplitVertical>
    <LeftColumnRightPane>1</LeftColumnRightPane>
    <ActivePane>0</ActivePane>
@@ -41821,12 +41583,11 @@
     </Pane>
     <Pane>
      <Number>2</Number>
-     <ActiveRow>1</ActiveRow>
     </Pane>
     <Pane>
      <Number>0</Number>
-     <ActiveRow>37</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>19</ActiveRow>
+     <ActiveCol>0</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

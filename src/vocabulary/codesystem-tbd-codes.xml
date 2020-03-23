@@ -62,6 +62,7 @@
         <code value="effect-high-risk-allele"/>
         <display value="High Risk Allele"/>
     </concept>    
+    <!--
     <concept>
         <code value="somatic-implication"/>
         <display value="Somatic Implication"/>
@@ -82,26 +83,31 @@
         <display value="Somatic Diagnostic Implication"/>
         <definition value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer. Example values are: Pathognomonic, Supportive, Argues Against, Rules Out."/>
     </concept>
+-->
     <concept>
-        <code value="somatic-prognostic"/>
-        <display value="Somatic Prognostic Implication"/>
+        <code value="prognostic-implication"/>
+        <display value="Prognostic Implication componeny"/>
         <definition value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."/>
     </concept>
+
     <concept>
         <code value="associated-cancer"/>
         <display value="associated-cancer"/>
         <definition value="Associated Cancer"/>
     </concept>
+    <!--
     <concept>
         <code value="somatic-medication"/>
         <display value="somatic-medication"/>
         <definition value="The medication or medication class associated with this implication"/>
     </concept>
+-->
     <concept>
-        <code value="somatic-treatment"/>
-        <display value="somatic-treatment"/>
+        <code value="associated-therapy"/>
+        <display value="Genomically linked therapy"/>
         <definition value="The non-medication therapy (procedure) associated with this implication"/>
     </concept>
+
     <concept>
         <code value="region-coverage"/>
         <display value="region-coverage"/>
@@ -131,5 +137,15 @@
         <code value="variant-inheritance"/>
         <display value="Variant inheritance"/>
         <definition value="A quality inhering in a variant by virtue of its origin. The terms are in the sequence ontology under SO:0001762"/>
+    </concept>
+    <concept>
+        <code value="diagnostic-implication"/>
+        <display value="Diagnostic Implication"/>
+        <definition value="An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition." />
+    </concept>
+    <concept>
+        <code value="therapeutic-implication"/>
+        <display value="Therapeutic Implication"/>
+        <definition value="An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy." />
     </concept>
 </CodeSystem>
