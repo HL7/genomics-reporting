@@ -27,13 +27,8 @@
     <a href="genotype.html">Genotype</a>,
     <a href="sequence-phase-relationship.html">Sequence Phase Relationship</a>,
     <a href="implication.html">Genomic Implication (abstract)</a>,
-    <a href="inherited-disease-pathogenicity.html">Inherited Disease Pathogenicity</a>,
-    <a href="medication-implication.html">Medication Implication (abstract)</a>,
-    <a href="medication-efficacy.html">Medication Efficacy Implication</a>,
-    <a href="medication-transporter.html">Medication Transport Implication</a>,
-    <a href="medication-metabolism.html">Medication Metabolism Implication</a>,
-    <a href="medication-high-risk.html">High Risk Allele</a>,
-    <a href="somatic-implication.html">Somatic Implications</a>)
+    <a href='therapeutic-implication.html'> Therapeutic Implication</a>,
+    <a href='diagnostic-implication.html'> Diagnostic Implication</a>
   </p>
 
 
@@ -307,26 +302,25 @@
   </p>
   <p>
     (Profile links:
-    <a href="implication.html">Genomic Implications</a>,
-    <a href="inherited-disease-pathogenicity.html">Inherited Disease Pathogenicity</a>
+    <a href="implication.html">Genomic Implication</a>,
+    <a href='therapeutic-implication.html'> Therapeutic Implication</a>,
+    <a href='diagnostic-implication.html'> Diagnostic Implication</a>
     )
   </p>
   <p>
-    Genomic Implications are assertions of likely effects genomic results on the patient, tumor or other subject.  All implications inherit a common set of elements:
+    Genomic Implications are assertions of likely effects genomic results on the patient, tumor or other subject. Implications are relevant for areas of genomic testing including inherited disease, <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a>.  For inherited diseases, a  <a href='diagnostic-implication.html'> diagnostic implication</a> indicates the likelihood of inheritance of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance).  For other more specific guidance, see the <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> pages.
+  </p>
+  <p>
+    Implications inherit a common set of elements:
   </p>
   <ul>
-    <li><code>RelatedArtifact</code> supports conveying references to citations, supporting documentation and other information relevant to the assertion of the implication</li>
-    <li><code>comment</code> contains additional detail and possibly qualification of the asserted Implication</li>
-    <li><code>levelOfEvidence</code> indicates the strength of the evidence behind the assertion</li>
+    <li><code>RelatedArtifact</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication</li>
+    <li><code>note</code> contains additional detail and possibly qualification of the asserted implication</li>
+    <li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
+    <li><code>prognosis (component)</code> indicates the likely diagnostic or therapeutic outcome of the implication</li>
   </ul>
   <p>
-    Only one Implication is defined as a "common" Implication.  However, implications are relevant for other areas of genomic testing including <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> where more implication types will be defined.
-  </p>
-  <p>
-    The "Inherited Disease" Implication indicates the likelihood of inheritance (valueCodeableConcept) of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance).
-  </p>
-  <p>
-    Here are some examples of how the levelOfEvidence component can be used (NOTE - they would be used in the appropriate, use case specific profile):
+    Here are some examples of how the evidence-level component can be used (NOTE - they would be used in the appropriate, use case specific profile):
     <ul>
 
     <li>Coded ACMG (see <a href="https://www.acmg.net/docs/standards_guidelines_for_the_interpretation_of_sequence_variants.pdf">ACMG</a>)<br/>
@@ -375,8 +369,6 @@
   <ul>
     <li>The <a href="sequencing.html">Variant Reporting</a> section deals with all types of variants detected by formal sequencing, including simple/discrete variants, structural variants and complex variants detected by direct sequencing, shotgun-based sequencing and array-based testing for specific variants.</li>
     <!--<li>The <a href="cytogenomics.html">Cytogenomic Reporting</a> section deals with cytogenomic observations.</li>-->
-    <li>The <a href="pharmacogenomics.html">Pharmacogenomic Reporting</a> section deals with genomic testing related to medication results.  It primarily focuses on medication-related implications of variation, haplotype and genotype observations.</li>
-    <li>The <a href="somatics.html">Somatic Reporting</a> section deals with non-germline variations, particularly those related to tumors and genomic-based implications on outcomes and the effectiveness of medications and other interventions.</li>
     <li>The <a href="histocompatibility.html">Histocompatibility Reporting</a> section deals with information related to variations relevant histocompatibility and immunogenomics, including HLA typing.</li>
   </ul>
 
