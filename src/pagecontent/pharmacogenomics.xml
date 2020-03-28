@@ -31,7 +31,7 @@
     )
   </p>
   <p>
-    All pharmacogenomic implication profiles inherit from the abstract <a href="implication.html">Genetic Implication</a> profile.  They also inherit from a common abstract <a href="medication-implication.html">Medication Implication</a> profile which includes the mandatory code that identifies the medication whose implication is being described.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
+    All pharmacogenomic implications are intended to be communicated using components within <a href='therapeutic-implication.html'> Therapeutic implication profile</a>. The profile component medication-assessed is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
   </p>
   <p>
     There are three types of implications defined in this profile:
