@@ -5,7 +5,7 @@
     </p>
   </blockquote>
   <p>
-    This section provides guidance for genomic reporting about the implication of a patient's or tumor's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes several profiles dealing with the implication of medications on cancers.
+    This section provides guidance for genomic reporting about the implication of a patient's or tumor's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
   </p>
   
   <a name="general"> </a>
@@ -27,19 +27,19 @@
     )
   </p>
   <p>
-    All pharmacogenomic implications are intended to be communicated using components within <a href='therapeutic-implication.html'> Therapeutic implication profile</a>. The profile component medication-assessed   is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication.  Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
+    All pharmacogenomic implications are intended to be communicated using components within <a href='therapeutic-implication.html'> Therapeutic implication profile</a>. The profile component medication-assessed is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication. The Therapy-assessed component is not intended for medications. Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
   </p>
   <p>
     There are four types of medication implication component defined in the <a href='therapeutic-implication.html'>profile</a>:
   </p>
   <ul>
-    <li>The component Effect Medication Metabolism describes the implication of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have implications on appropriate dosage.</li>
+	<li>The component Effect Medication Metabolism describes the implication of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have implications on appropriate dosage.</li>
     <li>The component Effect Medication Transport describes the implication of the associated genetic findings on how well the specified medication is transported by the patient - which can have implications on appropriate dosage.</li>
     <li>The component Effect Medication Efficacy describes how the associated genetic findings affect the ability of the patient's body to respond to the medication (predicted phenotype) - distinct from metabolic impact, this is in regards to molecular function. This can influence the appropriateness of the medication for the patient.</li>
     <li>The component Effect Medication High Risk indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  I.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics.</li>
   </ul>
   <p>
-    These implications can all be associated with the <a href="task-med-chg.html">Medication Usage Implication</a> profile which allows making a recommendation for the patient's medication therapy (e.g. discontinuing a medication, altering dosage, etc.).
+    A profile instance using one of the above components can be associated with a <a href="task-med-chg.html">Medication Usage Implication</a> profile which allows making a recommendation for the patient's medication therapy (e.g. discontinuing a medication, altering dosage, etc.). Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note2:  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
   </p>
   <blockquote class="stu-note">
     <p>
