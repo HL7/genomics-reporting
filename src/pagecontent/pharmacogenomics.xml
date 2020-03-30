@@ -5,7 +5,7 @@
     </p>
   </blockquote>
   <p>
-    This section provides guidance for genomic reporting about the implication of a patient's or tumor's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
+    This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
   </p>
 
   <a name="contextualmodifiers"> </a>
@@ -39,8 +39,17 @@
     <li>The component Effect Medication Efficacy describes how the associated genetic findings affect the ability of the patient's body to respond to the medication (predicted phenotype) - distinct from metabolic impact, this is in regards to molecular function. This can influence the appropriateness of the medication for the patient.</li>
     <li>The component Effect Medication High Risk indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  i.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics. For example, in the case of a known adverse event, such as Stevens-Johnson syndrome (SJS), the high-risk component would be used with the associated-phenotype to communicate the risk of SJS</li>
   </ul>
+  
+  <a name="pgxRecommendedAction"> </a>
+  <h3>Including Pharmacogenomic recommended actions</h3>
   <p>
-    A profile instance using one of the above components can be associated with a <a href="task-med-chg.html">Medication Usage Implication</a> profile which allows making a recommendation for the patient's medication therapy (e.g. discontinuing a medication, altering dosage, etc.). Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note2:  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
+	To associate a Therapeutic-implication instance with a recommended action (e.g. discontinuing a medication, altering dosage, 'choose alternative medication') use <a href="task-med-chg.html">Medication Usage Implication</a>, Recommended action, and Current Medication. Use 'related artifact' in Therapeutic-implication for supporting documents such as CPIC guidelines. Take note of ‘intent’, ‘coding’, ’coding.text’, ‘description’ and ‘reason reference’ within Medication Usage Implication. For intent use ‘proposal.’For coding.text you can put a statement like ‘Change to alternative medication' in addition to the code value. 'description' is a useful field for human readable text of the recommendation. Level of evidence is placed into the evidence-level component. Suggest using a code system such as PharmGKB’s https://www.pharmgkb.org/page/clinAnnLevels for values.  
+
+	Medication Usage Implications (task-med-chg) link to therapeutic implications through 'reasonReference'and are included in the report as links for RecommendedAction, DiagnosticReport.extension:RecommendedAction. The  therapeutic implications do not have a link to medication usage implications (task-med-chg): so rev_include is currently necessary to find the therapeutic implication statements relevant to the medication usage implications (guideline, as an example, links are in the therapeutic implication statements not the task-med-chg).
+	
+	</p>
+  <p>
+	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note2:  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
   </p>
   <blockquote class="stu-note">
     <p>
