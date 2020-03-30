@@ -11,7 +11,10 @@
   <a name="contextualmodifiers"> </a>
   <h3>Communicating disease or tumor context</h3>
   <p>
-  If the pharmacogenomics statement has the context of a disease (indication) or a tumor indication use the components "associated phenotype" or "associated cancer" respectively. E.g. If the associated-cancer component is populated, then effect-medication-efficacy pertains to the medication's efficacy on treating the cancer. For oncology related reporting see <a href="somatics.html">Somatic Reporting</a>.
+  In general, treatments and medications have a set of indications for use which are not explicitly stated. However, if a pharmacogenomics statement has a specific context of a disease (indication) or a tumor indication use the components "associated phenotype" or "associated cancer" respectively. 
+  </p>
+  <p>
+  To explicitly link medication or treatment implication to oncology, for example, populate the associated-cancer component. E.g. If the associated-cancer component is populated, then effect-medication-efficacy pertains to the medication's efficacy on treating the cancer. For oncology related reporting in general see <a href="somatics.html">Somatic Reporting</a>.
   </p>
 
   <a name="implications"> </a>
@@ -61,7 +64,7 @@
 	Medication Usage Implications (task-med-chg) link to therapeutic implications through "reasonReference"and are included in the report as links for RecommendedAction, DiagnosticReport.extension:RecommendedAction. The  therapeutic implications do not have a link to medication usage implications (task-med-chg): so rev_include is currently necessary to find the therapeutic implication statements relevant to the medication usage implications. 
   </p>
   <p>
-	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note 2:  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide as it includes how to handle the implication of medications on treating cancer.
+	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note 2:  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide.
   </p>
   <blockquote class="stu-note">
     <p>
