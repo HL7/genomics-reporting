@@ -424,7 +424,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="implications"/>
     </resource>
-    <!-- Somatics 
+    <!-- Somatics
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -489,8 +489,8 @@
       </reference>
       <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
-      <exampleCanonical value="StructureDefinition/overall-interpretation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
 
       <groupingId value="examples"/>
     </resource>
@@ -500,7 +500,7 @@
       </reference>
       <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
-      <exampleCanonical value="StructureDefinition/therapeutic-implication"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -510,7 +510,7 @@
       <name
         value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
       <description value="Full Bundle HLA Typing Example"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -519,7 +519,7 @@
       </reference>
       <name value="Example - CYP2C19 report from 1000 Genomes"/>
       <description value="CYP2C19 report from 1000 Genomes"/>
-      <exampleCanonical value="StructureDefinition/region-studied"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -528,7 +528,7 @@
       </reference>
       <name value="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
       <description value="Phase relation on CYP2C19 report"/>
-      <exampleCanonical value="StructureDefinition/sequence-phase-relationship"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -537,7 +537,7 @@
       </reference>
       <name value="Example - Multiple Oncology Variant Report Example"/>
       <description value="Oncology Example Report with 12 reported variants"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -546,7 +546,7 @@
       </reference>
       <name value="Example - Melanoma implication"/>
       <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
-      <exampleCanonical value="StructureDefinition/diagnostic-implication"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -555,7 +555,7 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/therapeutic-implication"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -564,7 +564,7 @@
       </reference>
       <name value="Example - Complex Variant (HGVS)"/>
       <description value="Compound Heterozygote Variant Example"/>
-      <exampleCanonical value="StructureDefinition/variant"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -573,7 +573,7 @@
       </reference>
       <name value="Example - Complex Variant (unpacked)"/>
       <description value="Compound Heterozygote Variant example, using position, reference, and alternate allele instead of HGVS."/>
-      <exampleCanonical value="StructureDefinition/variant"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -582,7 +582,7 @@
       </reference>
       <name value="Example - NGS"/>
       <description value="SNV example"/>
-      <exampleCanonical value="StructureDefinition/variant"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -591,7 +591,7 @@
       </reference>
       <name value="Example - Variant with ACMG Screening"/>
       <description value="ACMG annotated variant"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -600,7 +600,7 @@
       </reference>
       <name value="Example - High Risk Allele (HLA-B*15:02)"/>
       <description value="High Risk Allele (HLA-B*15:02)"/>
-      <exampleCanonical value="StructureDefinition/therapeutic-implication"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -610,7 +610,7 @@
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
       <description value="Inherited Disease Pathogenicity"/>
-      <exampleCanonical value="StructureDefinition/diagnostic-implication"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -619,7 +619,7 @@
       </reference>
       <name value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
       <description value="DiagnosticReport HLA Typing Example"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -628,7 +628,7 @@
       </reference>
       <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
       <description value="HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01"/>
-      <exampleCanonical value="StructureDefinition/genotype"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -637,7 +637,7 @@
       </reference>
       <name value="Example - Observation for a single HLA-A allele"/>
       <description value="HLA-A allele observaation: HLA-A*03:01:01:01"/>
-      <exampleCanonical value="StructureDefinition/haplotype"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -646,7 +646,7 @@
       </reference>
       <name value="Example - Buccal swab for HLA typing"/>
       <description value="Specimen example: Buccal swab for HLA typing"/>
-      <exampleCanonical value="StructureDefinition/specimen"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -655,7 +655,7 @@
       </reference>
       <name value="Example - Service request for high-resolution HLA-A genotyping"/>
       <description value="ServiceRequest example: High-resolution HLA-A genotyping"/>
-      <exampleCanonical value="StructureDefinition/servicerequest"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -748,7 +748,7 @@
       <groupingId value="valuesets"/>
     </resource>
   -->
-    <resource>      
+    <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type"/>
       </reference>
