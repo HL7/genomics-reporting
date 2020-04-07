@@ -92,6 +92,15 @@
     }],
     "resource" : [{
       "reference" : {
+        "reference" : "StructureDefinition/AdditionalGuidance"
+      },
+      "name" : "Additional Guidance",
+      "description" : "Additional textual guidance",
+      "exampleBoolean" : false,
+      "groupingId" : "extensions"
+    },
+    {
+      "reference" : {
         "reference" : "Bundle/diagnosticreport-cgexample"
       },
       "name" : "Example - Genomics Reporting",
@@ -522,6 +531,11 @@
         {
           "nameUrl" : "extension-SupportingInfo.html",
           "title" : "Supporting Information",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "extension-AdditionalGuidance.html",
+          "title" : "Additional Guidance",
           "generation" : "generated"
         },
         {

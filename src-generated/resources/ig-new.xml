@@ -79,6 +79,15 @@
     </grouping>
     <resource>
       <reference>
+        <reference value="StructureDefinition/AdditionalGuidance"/>
+      </reference>
+      <name value="Additional Guidance"/>
+      <description value="Additional textual guidance"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
       </reference>
       <name value="Example - Genomics Reporting"/>
@@ -509,6 +518,11 @@
         <page>
           <nameUrl value="extension-SupportingInfo.html"/>
           <title value="Supporting Information"/>
+          <generation value="generated"/>
+        </page>
+        <page>
+          <nameUrl value="extension-AdditionalGuidance.html"/>
+          <title value="Additional Guidance"/>
           <generation value="generated"/>
         </page>
         <page>
