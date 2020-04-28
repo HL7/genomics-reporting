@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/vocabulary"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/examples"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/images"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/pages"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="1.1.0"/>
@@ -77,15 +77,6 @@
       <name value="Concept Maps"/>
       <description value="Concept Maps defined in this implementation guide"/>
     </grouping>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/AdditionalGuidance"/>
-      </reference>
-      <name value="Additional Guidance"/>
-      <description value="Additional textual guidance"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="extensions"/>
-    </resource>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -518,11 +509,6 @@
         <page>
           <nameUrl value="extension-SupportingInfo.html"/>
           <title value="Supporting Information"/>
-          <generation value="generated"/>
-        </page>
-        <page>
-          <nameUrl value="extension-AdditionalGuidance.html"/>
-          <title value="Additional Guidance"/>
           <generation value="generated"/>
         </page>
         <page>
