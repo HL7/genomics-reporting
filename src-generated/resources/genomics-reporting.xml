@@ -22,12 +22,12 @@
   <packageId value="hl7.fhir.uv.genomics-reporting"/>
   <fhirVersion value="4.0.1"/>
   <definition>
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     <grouping id="general">
       <name value="General Profiles"/>
       <description value="General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"/>
@@ -71,23 +71,27 @@
       <name value="Concept Maps"/>
       <description value="Concept Maps defined in this implementation guide"/>
     </grouping>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <grouping id="operations">
+      <name value="Operations"/>
+      <description value="Operations defined in this implementation guide"/>
+    </grouping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--unified implications-->
-    
-    
+
+
 
     <!--pgx
     <resource>
@@ -161,8 +165,8 @@
       <groupingId value="pharmacogenomics"/>
     </resource>
     -->
-    
-    
+
+
     <!-- Somatics
     <resource>
       <extension
@@ -179,9 +183,9 @@
       <groupingId value="somatics"/>
     </resource>-->
     <!-- Extensions -->
-    
-    
-    
+
+
+
     <!-- Examples -->
     <resource>
       <reference>
@@ -302,7 +306,6 @@
       <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
-
     <resource>
       <reference>
         <reference value="Observation/obs-idh-ex"/>
@@ -357,6 +360,7 @@
       <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
     </resource>
+    <!-- Code Systems -->
     <resource>
       <reference>
         <reference value="CodeSystem/tbd-codes"/>
@@ -373,6 +377,7 @@
       <description value="Code System for specific types of relationships"/>
       <groupingId value="codesystems"/>
     </resource>
+	<!-- Value Sets -->
     <resource>
       <reference>
         <reference value="ValueSet/hgvs"/>
@@ -454,6 +459,16 @@
       <name value="Concept mapping for DNA Change Type"/>
       <description value="Mapping LOINC answers to SequenceOntology"/>
       <groupingId value="conceptmaps"/>
+    </resource>
+	<!-- Operations -->
+    <resource>
+      <reference>
+        <reference value="OperationDefinition/find-subject-variants"/>
+      </reference>
+      <name value="Operation: $find-subject-variants"/>
+      <description value="Retrieves variants from a specified genomic region"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="operations"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
@@ -778,8 +793,18 @@
 <ns49:title xmlns:ns49="http://hl7.org/fhir" value="Concept mapping for DNA Change Type"/>
 <generation value="generated"/>
 </page>
+<page>
+<nameUrl value="find-subject-variants.html"/>
+<ns58:title xmlns:ns58="http://hl7.org/fhir" value="Operation: $find-subject-variants"/>
+<generation value="generated"/>
+</page>
 </page>
       <page>
+        <nameUrl value="operations.html"/>
+        <title value="Operations"/>
+        <generation value="html"/>
+      </page>
+	  <page>
         <nameUrl value="usecases.html"/>
         <title value="Query Examples"/>
         <generation value="html"/>

@@ -1,0 +1,66 @@
+<OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<id value="find-subject-variants"/>
+	<name value="find-subject-variants"/>
+	<title value="find subject variants"/>
+	<status value="active"/>
+	<kind value="operation"/>
+	<affectsState value="false"/>
+	<code value="find-subject-variants"/>
+	<system value="true"/>
+	<system value="true"/>
+	<type value="true"/>
+	<instance value="true"/>
+	<parameter>
+		<name value="subject"/>
+		<use value="in"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="The subject of interest."/>
+		<type value="string"/>
+		<searchType value="reference"/>
+	</parameter>
+	<parameter>
+		<name value="region"/>
+		<use value="in"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="Region of interest is specified as a 0-based integer interval range. Variants that overlap the range are returned."/>
+		<type value="Range"/>
+	</parameter>
+	<parameter>
+		<name value="genomicRefSeq"/>
+		<use value="in"/>
+		<min value="1"/>
+		<max value="1"/>
+		<documentation value="Genomic reference sequence is a valid NCBI chromosome-level ('NC_') build 37 or build 38 identifier, or a valid mitochondrion identifier (NC_012920.1, NC_001807.4)."/>
+		<type value="string"/>
+		<searchType value="token"/>
+	</parameter>
+	<parameter>
+		<name value="regionStudied"/>
+		<use value="out"/>
+		<min value="0"/>
+		<max value="1"/>
+		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied] Must include 1..* component:ranges-examined; 1..1 component:coordinate-system (valued with '0-based interval counting'); 1..1 component:genomic-ref-seq."/>
+		<type value="Observation"/>
+		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
+	</parameter>
+	<parameter>
+		<name value="variant"/>
+		<use value="out"/>
+		<min value="0"/>
+		<max value="*"/>
+		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] Must include valueCodeableConcept; component:genomic-source-class; component:genomic-ref-seq; component:allelic-state; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."/>
+		<type value="Observation"/>
+		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
+	</parameter>
+	<parameter>
+		<name value="sequencePhaseRelationship"/>
+		<use value="out"/>
+		<min value="0"/>
+		<max value="*"/>
+		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship] Must include valueCodeableConcept; 2..2 derivedFrom:variant."/>
+		<type value="Observation"/>
+		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"/>
+	</parameter>
+</OperationDefinition>
