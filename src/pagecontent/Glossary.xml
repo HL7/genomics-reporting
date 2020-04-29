@@ -1,5 +1,5 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-   
+
 <p>
     The following table represents most of the codeableConcepts presented in this guide and identifies corresponding profiles and valuesets where possible. View the individual profiles and sections under 'quick links' for more information on suggested usage.
 </p>
@@ -338,15 +338,6 @@
     <td>N/A</td>
 </tr>
 <tr>
-    <td><a href="implication.html">implication</a></td>
-    <td>Level of evidence
-(93044-6)</td>
-    <td>Indicates the quality and type of evidence supporting this assertion. E.g. terms from ACMG guidelines for the interpretation of sequence variants or CPIC Clinical Annotation levels of Evidence.</td>
-    <td>Uncertain significance, Very strong evidence pathogenic, Strong evidence pathogenic, Moderate evidence pathogenic, Supporting evidence pathogenic, Supporting evidence benign, Strong evidence benign, Stand-alone evidence pathogenic, Stand-alone evidence benign</td>
-    <td><a href="http://loinc.org/vs/LL5356-2">LL5356-2</a></td>
-    <td>LA26333-7, LA30200-2, LA30201-0, LA30202-8, LA30203-6, LA30204-4, LA30205-1, LA30206-9, LA30207-7</td>
-</tr>
-<tr>
     <td><a href="finding.html">finding</a></td>
     <td>Gene studied ID
 (48018-6)</td>
@@ -372,24 +363,6 @@
     <td>GRCh37, NCBI Build 36.1, NCBI Build 35, NCBI Build 34</td>
     <td><a href="http://loinc.org/vs/LL1040-6">LL1040-6</a></td>
     <td>LA14029-5, LA14030-3, LA14031-1, LA14032-9</td>
-</tr>
-<tr>
-    <td><a href="inherited-disease-pathogenicity.html">inh-dis-path</a></td>
-    <td>Genetic variation clinical significance [Imp]
-(53037-8)</td>
-    <td>Single DNA marker or individual allele interpretation in the context of the assessed genetic disease.</td>
-    <td>Likely pathogenic, Uncertain significance, Likely benign, Pathogenic, Benign</td>
-    <td><a href="http://loinc.org/vs/LL4034-6">LL4034-6</a></td>
-    <td>LA26332-9, LA26333-7, LA26334-5, LA6668-3, LA6675-8</td>
-</tr>
-<tr>
-    <td><a href="inherited-disease-pathogenicity.html">inh-dis-path</a></td>
-    <td>Prob assoc phenotype
-(81259-4)</td>
-    <td>The possible phenotype associated with the genetic variant found in this study. If sending multiple phenotypes, break up the assertions based on the independently assessed conditions, whether they be a single term or a collection of co-occurring terms. </td>
-    <td>N/A</td>
-    <td>(HPO, eg)</td>
-    <td>N/A</td>
 </tr>
 <tr>
     <td><a href="overall-interpretation.html">interpretation</a></td>
@@ -437,51 +410,6 @@
     <td>LA26320-4, LA26321-2, LA26814-6, LA26815-3, LA26816-1, LA26817-9, LA26818-7, LA4489-6, LA46-8</td>
 </tr>
 <tr>
-    <td><a href="medication-implication.html">pgx</a></td>
-    <td>Medication assessed
-(51963-7)</td>
-    <td>The medication whose impact is being described</td>
-    <td>(RxNorm, eg)</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="medication-metabolism.html">metabolism</a></td>
-    <td>Genetic variation's effect on drug metabolism
-(53040-2)</td>
-    <td>Predicted phenotype for drug efficacy. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.</td>
-    <td>Ultrarapid metabolizer, Intermediate metabolizer, Rapid metabolizer, Normal metabolizer, Poor metabolizer</td>
-    <td><a href="http://loinc.org/vs/LL3856-3">LL3856-3</a></td>
-    <td>LA10315-2, LA10317-8, LA25390-8, LA25391-6, LA9657-3</td>
-</tr>
-<tr>
-    <td><a href="medication-efficacy.html">efficacy</a></td>
-    <td>Genetic variation's effect on drug efficacy
-(51961-1)</td>
-    <td>Predicted phenotype for ability of drug to bind to intended site in order to deliver intended affect. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.  Drug efficacy marker interpretation, based on LOINC LL539-8. Look to http://build.fhir.org/ig/HL7/genomics-reporting/task-med-chg.html for guidance. If the variant is predicted to not have an effect then Responsive is the proper choice. Non-responsive implies complete resistance, whereas Resistant indicates residual drug efficacy.</td>
-    <td>Presumed Benign, Benign, Resistant, Responsive, Unknown Significance, Presumed resistant, Presumed responsive, Presumed non-responsive</td>
-    <td><a href="http://loinc.org/vs/LL539-8">LL539-8</a></td>
-    <td>LA6674-1, LA6675-8, LA6676-6, LA6677-4, LA6682-4, LA9660-7, LA9661-5, LA9662-3</td>
-</tr>
-<tr>
-    <td><a href="medication-transporter.html">transporter</a></td>
-    <td>Genomic variation's effect on transporter function
-(tbd)</td>
-    <td>Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance.  Source of list: https://www.nature.com/articles/gim201687/tables/2</td>
-    <td>Increased function, Normal function, Decreased function, Poor function</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="medication-high-risk.html">high-risk</a></td>
-    <td>Genetic variation's effect on high-risk allele
-(83009-1)</td>
-    <td></td>
-    <td>High risk, Low risk</td>
-    <td><a href="http://loinc.org/vs/LL2353-2">LL2353-2</a></td>
-    <td>LA19541-4, LA19542-2</td>
-</tr>
-<tr>
     <td><a href="region-studied.html">region-studied</a></td>
     <td>DNA region of interest
 (53041-0)</td>
@@ -526,49 +454,118 @@
     <td>(ranges)</td>
     <td>N/A</td>
 </tr>
-
 <tr>
-    <td><a href="somatic-diagnostic.html">somatic-diagnostic</a></td>
-    <td>(tbd profile code)</td>
-    <td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer . Indicates the diagnostic predictive nature of the associated genomic findings for the specified cancer - i.e. patient definitely has/may have/definitely doesn't have.</td>
-    <td>E.g. Pathognomonic, Supportive, Argues Against, Rules Out</td>
+    <td><a href="implication.html">implication</a></td>
+    <td>Level of evidence
+(93044-6)</td>
+    <td>Indicates the quality and type of evidence supporting this assertion. E.g. terms from ACMG guidelines for the interpretation of sequence variants or CPIC Clinical Annotation levels of Evidence.</td>
+    <td>Uncertain significance, Very strong evidence pathogenic, Strong evidence pathogenic, Moderate evidence pathogenic, Supporting evidence pathogenic, Supporting evidence benign, Strong evidence benign, Stand-alone evidence pathogenic, Stand-alone evidence benign</td>
+    <td><a href="http://loinc.org/vs/LL5356-2">LL5356-2</a></td>
+    <td>LA26333-7, LA30200-2, LA30201-0, LA30202-8, LA30203-6, LA30204-4, LA30205-1, LA30206-9, LA30207-7</td>
+</tr>
+<tr>
+    <td><a href="implication.html">implication</a></td>
+    <td>Prognosis (TBD code prognosis-implication)</td>
+    <td></td>
+    <td>Better outcome, poorer outcome</td>
     <td></td>
     <td></td>
 </tr>
 <tr>
-    <td><a href="somatic-prognostic.html">somatic-prognostic</a></td>
-    <td>(tbd profile code</td>
-    <td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions . The predicted outcome for the cancer either on its own or in conjunction with the specified intervention(s)</td>
-    <td>E.g. Better outcome, poorer outcome</td>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Associated Phenotype (81259-4)</td>
+    <td>Phenotype associated to the genomic findings</td>
     <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td><a href="somatic-prognostic.html">somatic-prognostic</a></td>
-    <td>medication
-(tbd)</td>
-    <td>The medication or medication class whose implication on the cancer outcome is being predicted. If multiple medications and/or therapies are present, the implication asserted represents the implication of the combination of interventions.</td>
-    <td></td>
-    <td></td>
+    <td>HPO, SNOMED, other</td>
     <td></td>
 </tr>
 <tr>
-    <td><a href="somatic-prognostic.html">somatic-prognostic</a></td>
-    <td>therapy
-(tbd)</td>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Associated Cancer (TBD code associated-cancer)</td>
+    <td>Cancer associated to the genomic findings</td>
+    <td></td>
+    <td>ICD-O, other</td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Medication assessed (51963-7)</td>
+    <td>The medication whose impact is being described</td>
+    <td></td>
+    <td>(RxNorm, eg)</td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Therapy assessed (TBD code associated-therapy)</td>
     <td>The non-medication therapy whose implication on the cancer outcome is being predicted.E.g. altered diet, radiation therapy, surgery, etc. If multiple medications and/or therapies are present, the implication asserted represents the implication of the combination of interventions.</td>
     <td></td>
     <td></td>
     <td></td>
 </tr>
 <tr>
-    <td><a href="somatic-predictive.html">somatic-predictive</a></td>
-    <td>(tbd profile code)</td>
-    <td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the impact of a specified medication or combination of medications</td>
-    <td>E.g. Resistant, Responsive, Not-Responsive, Sensitive, Reduced-Sensitivity, Adverse Response
-</td>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Genetic variation's effect on drug metabolism (53040-2)</td>
+    <td>Predicted phenotype for drug efficacy. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.</td>
+    <td>Ultrarapid metabolizer, Intermediate metabolizer, Rapid metabolizer, Normal metabolizer, Poor metabolizer</td>
+    <td><a href="http://loinc.org/vs/LL3856-3">LL3856-3</a></td>
+    <td>LA10315-2, LA10317-8, LA25390-8, LA25391-6, LA9657-3</td>
+</tr>
+<tr>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Genetic variation's effect on drug efficacy (51961-1)</td>
+    <td>Predicted phenotype for ability of drug to bind to intended site in order to deliver intended affect. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.  Drug efficacy marker interpretation, based on LOINC LL539-8. Look to http://build.fhir.org/ig/HL7/genomics-reporting/task-med-chg.html for guidance. If the variant is predicted to not have an effect then Responsive is the proper choice. Non-responsive implies complete resistance, whereas Resistant indicates residual drug efficacy.</td>
+    <td>Presumed Benign, Benign, Resistant, Responsive, Unknown Significance, Presumed resistant, Presumed responsive, Presumed non-responsive</td>
+    <td><a href="http://loinc.org/vs/LL539-8">LL539-8</a></td>
+    <td>LA6674-1, LA6675-8, LA6676-6, LA6677-4, LA6682-4, LA9660-7, LA9661-5, LA9662-3</td>
+</tr>
+<tr>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Genomic variation's effect on transporter function (tbd)</td>
+    <td>Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance.  Source of list: https://www.nature.com/articles/gim201687/tables/2</td>
+    <td>Increased function, Normal function, Decreased function, Poor function</td>
     <td></td>
     <td></td>
+</tr>
+<tr>
+    <td><a href="therapeutic-implication.html">therapeutic-implication</a></td>
+    <td>Genetic variation's effect on high-risk allele (83009-1)</td>
+    <td></td>
+    <td>High risk, Low risk</td>
+    <td><a href="http://loinc.org/vs/LL2353-2">LL2353-2</a></td>
+    <td>LA19541-4, LA19542-2</td>
+</tr>
+<tr>
+    <td><a href="diagnostic-implication.html">diagnostic-implication</a></td>
+    <td>Associated Phenotype (81259-4)</td>
+    <td>Phenotype associated to the genomic findings</td>
+    <td></td>
+    <td>HPO, SNOMED, other</td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="diagnostic-implication.html">diagnostic-implication</a></td>
+    <td>Associated Cancer (TBD code associated-cancer)</td>
+    <td>Cancer associated to the genomic findings</td>
+    <td></td>
+    <td>ICD-O, other</td>
+    <td></td>
+</tr>
+<tr>
+    <td><a href="diagnostic-implication.html">diagnostic-implication</a></td>
+    <td>Mode of Inheritance (79742-3)</td>
+    <td>Mode of Inheritance</td>
+    <td>Autosomal dominant|Autosomal recessive|X-linked dominant|X-linked recessive|Y-linked|Codominant|Mitochondrial</td>
+    <td><a href="http://loinc.org/vs/LL3731-8">LL3731-8</a></td>
+    <td>LA24640-7, LA24641-5, LA24789-2, LA24949-2, LA24947-6, LA24812-2, LA46-8, LA21413-2, LA4720-4, LA24722-3</td>
+</tr>
+<tr>
+    <td><a href="diagnostic-implication.html">diagnostic-implication</a></td>
+    <td>Clinical Significance (53037-8)</td>
+    <td>DNA marker or individual allele interpretation in the context of the assessed genetic disease.</td>
+    <td>Likely pathogenic, Uncertain significance, Likely benign, Pathogenic, Benign</td>
+    <td><a href="http://loinc.org/vs/LL4034-6">LL4034-6</a></td>
+    <td>LA26332-9, LA26333-7, LA26334-5, LA6668-3, LA6675-8</td>
 </tr>
 </tbody>
 </table>

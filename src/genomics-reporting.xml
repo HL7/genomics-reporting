@@ -48,14 +48,15 @@
       <description
         value="General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"/>
     </grouping>
+    <!--removing old use case groups
     <grouping id="somatics">
       <name value="Somatics"/>
       <description value="Profiles related to the reporting of somatic genomic issues"/>
-    </grouping>
-    <grouping id="pharmacogenomics">
-      <name value="Pharmacogenomics"/>
+    </grouping>-->
+    <grouping id="implications">
+      <name value="Implications"/>
       <description
-        value="Profiles for reports relating to genomic implication on medication use and effectiveness"/>
+        value="Profiles needed for linking genomic findings to knowledgebases for diagnostic or therapeutic use"/>
     </grouping>
     <!--
     <grouping id="cytogenomics">
@@ -266,23 +267,9 @@
       </reference>
       <name value="Genomic Implication"/>
       <description
-        value="Abstract profile for observations describing the implication of one or more genomic observations."/>
+        value="Abstract profile for observations linking a genomic finding to an external knowledgebase."/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/inherited-disease-pathogenicity"/>
-      </reference>
-      <name value="Inherited Disease Pathogenicity"/>
-      <description
-        value="Provides an indication of whether there's a pathologic risk associated with a particular genotype, haplotype, variant or combination there-of, and if so, what the associated pathology is."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="general"/>
     </resource>
     <resource>
       <extension
@@ -297,6 +284,37 @@
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
+    <!--unified implications-->
+    <resource>
+      <extension
+        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/diagnostic-implication"/>
+      </reference>
+      <name value="Diagnostic Implication"/>
+      <description
+        value="Profile with properties for observations that convey the potential impact of genomic characteristics on a diagnosis"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="implications"/>
+    </resource>
+    <resource>
+      <extension
+        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/therapeutic-implication"/>
+      </reference>
+      <name value="Therapeutic Implication"/>
+      <description
+        value="Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="implications"/>
+    </resource>
+
+    <!--pgx
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -307,10 +325,11 @@
       </reference>
       <name value="Medication Implication"/>
       <description
-        value="Abstract profile with common properties for observations that convey the potential implication of a genomic characteristics on a medication"/>
+        value="Profile with properties for observations that convey the potential implication of a genomic characteristics on a medication"/>
       <exampleBoolean value="false"/>
-      <groupingId value="abstract"/>
+      <groupingId value="pharmacogenomics"/>
     </resource>
+
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -366,6 +385,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="pharmacogenomics"/>
     </resource>
+    -->
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -374,11 +394,11 @@
       <reference>
         <reference value="StructureDefinition/task-med-chg"/>
       </reference>
-      <name value="Medication Usage Implication"/>
+      <name value="Medication Usage Task"/>
       <description
-        value="Task describing what sort of change (if any) should be made in a patient's medication based on an identified genotype"/>
+        value="Task describing what sort of change (if any) should be made in a patient's medication based on an identified finding"/>
       <exampleBoolean value="false"/>
-      <groupingId value="pharmacogenomics"/>
+      <groupingId value="implications"/>
     </resource>
     <resource>
       <extension
@@ -392,9 +412,9 @@
       <description
         value="MedicationStatement describing a med potentially being taken by the patient that may require adjustment"/>
       <exampleBoolean value="false"/>
-      <groupingId value="pharmacogenomics"/>
+      <groupingId value="implications"/>
     </resource>
-    <!-- Somatics -->
+    <!-- Somatics
     <resource>
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
@@ -407,50 +427,8 @@
       <description
         value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions"/>
       <exampleBoolean value="false"/>
-      <groupingId value="abstract"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/somatic-diagnostic"/>
-      </reference>
-      <name value="Somatic Diagnostic Implication"/>
-      <description
-        value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer"/>
-      <exampleBoolean value="false"/>
       <groupingId value="somatics"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/somatic-prognostic"/>
-      </reference>
-      <name value="Somatic Prognostic Implication"/>
-      <description
-        value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="somatics"/>
-    </resource>
-    <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/somatic-predictive"/>
-      </reference>
-      <name value="Somatic Predictive Implication"/>
-      <description
-        value="Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the implication of a specified medication or combination of medications"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="somatics"/>
-    </resource>
+    </resource>-->
     <!-- Extensions -->
     <resource>
       <extension
@@ -501,8 +479,9 @@
       </reference>
       <name value="Example - Genomics Reporting"/>
       <description value="Test instance showing data from the CG v2 spec"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
-      <exampleCanonical value="StructureDefinition/overall-interpretation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
+
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -511,7 +490,7 @@
       </reference>
       <name value="Example - Pharmacogenomics"/>
       <description value="Pharmacogenomic Report Example instances"/>
-      <exampleCanonical value="StructureDefinition/medication-efficacy"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -521,7 +500,7 @@
       <name
         value="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
       <description value="Full Bundle HLA Typing Example"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -530,7 +509,7 @@
       </reference>
       <name value="Example - CYP2C19 report from 1000 Genomes"/>
       <description value="CYP2C19 report from 1000 Genomes"/>
-      <exampleCanonical value="StructureDefinition/region-studied"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -539,7 +518,7 @@
       </reference>
       <name value="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
       <description value="Phase relation on CYP2C19 report"/>
-      <exampleCanonical value="StructureDefinition/sequence-phase-relationship"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -548,7 +527,7 @@
       </reference>
       <name value="Example - Multiple Oncology Variant Report Example"/>
       <description value="Oncology Example Report with 12 reported variants"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -557,7 +536,7 @@
       </reference>
       <name value="Example - Melanoma implication"/>
       <description value="Small example report with 1 reported variant and somatic diagnostic implication"/>
-      <exampleCanonical value="StructureDefinition/somatic-diagnostic"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -566,7 +545,7 @@
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
-      <exampleCanonical value="StructureDefinition/somatic-predictive"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -575,7 +554,7 @@
       </reference>
       <name value="Example - Complex Variant (HGVS)"/>
       <description value="Compound Heterozygote Variant Example"/>
-      <exampleCanonical value="StructureDefinition/variant"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -584,7 +563,7 @@
       </reference>
       <name value="Example - Complex Variant (unpacked)"/>
       <description value="Compound Heterozygote Variant example, using position, reference, and alternate allele instead of HGVS."/>
-      <exampleCanonical value="StructureDefinition/variant"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -593,7 +572,7 @@
       </reference>
       <name value="Example - NGS"/>
       <description value="SNV example"/>
-      <exampleCanonical value="StructureDefinition/variant"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -602,7 +581,7 @@
       </reference>
       <name value="Example - Variant with ACMG Screening"/>
       <description value="ACMG annotated variant"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -611,7 +590,7 @@
       </reference>
       <name value="Example - High Risk Allele (HLA-B*15:02)"/>
       <description value="High Risk Allele (HLA-B*15:02)"/>
-      <exampleCanonical value="StructureDefinition/medication-high-risk"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -620,7 +599,7 @@
       </reference>
       <name value="Example - Inherited Disease Pathogenicity"/>
       <description value="Inherited Disease Pathogenicity"/>
-      <exampleCanonical value="StructureDefinition/inherited-disease-pathogenicity"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -629,7 +608,7 @@
       </reference>
       <name value="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
       <description value="DiagnosticReport HLA Typing Example"/>
-      <exampleCanonical value="StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -638,7 +617,7 @@
       </reference>
       <name value="Example - HLA genotyping for HLA-A, using GLStrings"/>
       <description value="HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01"/>
-      <exampleCanonical value="StructureDefinition/genotype"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -647,7 +626,7 @@
       </reference>
       <name value="Example - Observation for a single HLA-A allele"/>
       <description value="HLA-A allele observaation: HLA-A*03:01:01:01"/>
-      <exampleCanonical value="StructureDefinition/haplotype"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -656,7 +635,7 @@
       </reference>
       <name value="Example - Buccal swab for HLA typing"/>
       <description value="Specimen example: Buccal swab for HLA typing"/>
-      <exampleCanonical value="StructureDefinition/specimen"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -665,7 +644,7 @@
       </reference>
       <name value="Example - Service request for high-resolution HLA-A genotyping"/>
       <description value="ServiceRequest example: High-resolution HLA-A genotyping"/>
-      <exampleCanonical value="StructureDefinition/servicerequest"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
       <groupingId value="examples"/>
     </resource>
     <!-- Code Systems -->
@@ -742,7 +721,24 @@
       <description value="origins of variants"/>
       <groupingId value="valuesets"/>
     </resource>
-	<!-- Concept Maps --> 
+    <!--
+    <resource>
+      <reference>
+        <reference value="ValueSet/somatic-classes"/>
+      </reference>
+      <name value="Somatic Implication Classes"/>
+      <description value="Somatic implication classes"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/pharmacogenomic-classes"/>
+      </reference>
+      <name value="Pharmacogenomic Implication Classes"/>
+      <description value="Pharmacogenomic implication classes"/>
+      <groupingId value="valuesets"/>
+    </resource>
+  -->
     <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type"/>

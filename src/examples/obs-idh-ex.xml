@@ -1,7 +1,7 @@
 <Observation xmlns="http://hl7.org/fhir">
   <id value="obs-idh-ex"/>
   <meta>
-    <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"/>
+    <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
   </meta>
   <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact">
     <valueRelatedArtifact>
@@ -21,18 +21,12 @@
   </category>
   <code>
 	<coding>
-	  <system value="http://loinc.org"/>
-	  <code value="53037-8"/>
-	  <display value="Genetic variation clinical significance [Imp]"/> <!--HL7 CG consider changing display name-->
+	  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+	  <code value="diagnostic-implication"/>
+	  <display value="Diagnostic Implication"/> <!--HL7 CG consider changing display name-->
 	</coding>
   </code>
-  <valueCodeableConcept>
-	<coding>
-	  <system value="http://loinc.org"/>
-	  <code value="LA6668-3"/>
-	  <display value="Pathogenic"/> <!-- should apply to all assoicated phenotype entries-->
-	</coding>
-  </valueCodeableConcept>
+
      <!-- REMOVE INVALID REFS
   <subject>
 	<reference value="urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"/>
@@ -49,6 +43,22 @@
   </derivedFrom>
   
 
+  <component>
+	<code>
+	  <coding>
+		<system value="http://loinc.org"/>
+		<code value="53037-8"/>
+		<display value="Genetic variation clinical significance [Imp]"/> <!--HL7 CG consider changing display name-->
+	  </coding>
+	</code>
+    <valueCodeableConcept>
+	  <coding>
+	    <system value="http://loinc.org"/>
+	    <code value="LA6668-3"/>
+	    <display value="Pathogenic"/> <!-- should apply to all assoicated phenotype entries-->
+	  </coding>
+    </valueCodeableConcept>
+  </component>
   <component>
 	<code>
 	  <coding>

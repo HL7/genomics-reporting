@@ -3,30 +3,30 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src-generated\\resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\vocabulary"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\examples"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src\\images"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "C:\\Users\\bdolin\\Documents\\GitHub\\genomics-reporting\\src-generated\\pages"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
-  "version" : "1.0.0",
+  "version" : "1.1.0",
   "name" : "GenomicsReporting",
   "title" : "Genomics Reporting Implementation Guide",
   "status" : "draft",
@@ -56,14 +56,9 @@
       "description" : "General constraints on FHIR resources to be adhered to as part of the CG implementation guide that apply regardless of what area(s) of genomics are of interest"
     },
     {
-      "id" : "somatics",
-      "name" : "Somatics",
-      "description" : "Profiles related to the reporting of somatic genomic issues"
-    },
-    {
-      "id" : "pharmacogenomics",
-      "name" : "Pharmacogenomics",
-      "description" : "Profiles for reports relating to genomic implication on medication use and effectiveness"
+      "id" : "implications",
+      "name" : "Implications",
+      "description" : "Profiles needed for linking genomic findings to knowledgebases for diagnostic or therapeutic use"
     },
     {
       "id" : "abstract",
@@ -106,7 +101,7 @@
       },
       "name" : "Example - Genomics Reporting",
       "description" : "Test instance showing data from the CG v2 spec",
-      "exampleCanonical" : "StructureDefinition/overall-interpretation",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation",
       "groupingId" : "examples"
     },
     {
@@ -115,7 +110,7 @@
       },
       "name" : "Example - Pharmacogenomics",
       "description" : "Pharmacogenomic Report Example instances",
-      "exampleCanonical" : "StructureDefinition/medication-efficacy",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication",
       "groupingId" : "examples"
     },
     {
@@ -124,7 +119,7 @@
       },
       "name" : "Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
       "description" : "Full Bundle HLA Typing Example",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
     {
@@ -133,7 +128,7 @@
       },
       "name" : "Example - CYP2C19 report from 1000 Genomes",
       "description" : "CYP2C19 report from 1000 Genomes",
-      "exampleCanonical" : "StructureDefinition/region-studied",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied",
       "groupingId" : "examples"
     },
     {
@@ -142,7 +137,7 @@
       },
       "name" : "Example - subset of CYP2C19 report from 1000 Genomes showing phase",
       "description" : "Phase relation on CYP2C19 report",
-      "exampleCanonical" : "StructureDefinition/sequence-phase-relationship",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship",
       "groupingId" : "examples"
     },
     {
@@ -151,7 +146,7 @@
       },
       "name" : "Example - Multiple Oncology Variant Report Example",
       "description" : "Oncology Example Report with 12 reported variants",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
     {
@@ -160,7 +155,7 @@
       },
       "name" : "Example - Melanoma implication",
       "description" : "Small example report with 1 reported variant and somatic diagnostic implication",
-      "exampleCanonical" : "StructureDefinition/somatic-diagnostic",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication",
       "groupingId" : "examples"
     },
     {
@@ -169,7 +164,7 @@
       },
       "name" : "Example - Full Bundle Oncology Example",
       "description" : "Full Bundle Oncology Example",
-      "exampleCanonical" : "StructureDefinition/somatic-predictive",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication",
       "groupingId" : "examples"
     },
     {
@@ -178,7 +173,7 @@
       },
       "name" : "Example - Complex Variant (HGVS)",
       "description" : "Compound Heterozygote Variant Example",
-      "exampleCanonical" : "StructureDefinition/variant",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant",
       "groupingId" : "examples"
     },
     {
@@ -187,7 +182,7 @@
       },
       "name" : "Example - Complex Variant (unpacked)",
       "description" : "Compound Heterozygote Variant example, using position, reference, and alternate allele instead of HGVS.",
-      "exampleCanonical" : "StructureDefinition/variant",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant",
       "groupingId" : "examples"
     },
     {
@@ -196,7 +191,7 @@
       },
       "name" : "Example - NGS",
       "description" : "SNV example",
-      "exampleCanonical" : "StructureDefinition/variant",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant",
       "groupingId" : "examples"
     },
     {
@@ -205,7 +200,7 @@
       },
       "name" : "Example - Variant with ACMG Screening",
       "description" : "ACMG annotated variant",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
     {
@@ -214,7 +209,7 @@
       },
       "name" : "Example - High Risk Allele (HLA-B*15:02)",
       "description" : "High Risk Allele (HLA-B*15:02)",
-      "exampleCanonical" : "StructureDefinition/medication-high-risk",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication",
       "groupingId" : "examples"
     },
     {
@@ -223,7 +218,7 @@
       },
       "name" : "Example - Inherited Disease Pathogenicity",
       "description" : "Inherited Disease Pathogenicity",
-      "exampleCanonical" : "StructureDefinition/inherited-disease-pathogenicity",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication",
       "groupingId" : "examples"
     },
     {
@@ -232,7 +227,7 @@
       },
       "name" : "Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings",
       "description" : "DiagnosticReport HLA Typing Example",
-      "exampleCanonical" : "StructureDefinition/genomics-report",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report",
       "groupingId" : "examples"
     },
     {
@@ -241,7 +236,7 @@
       },
       "name" : "Example - HLA genotyping for HLA-A, using GLStrings",
       "description" : "HLA-A genoyping Example: HLA-A*03:01:01:01+HLA-A*30:01:01",
-      "exampleCanonical" : "StructureDefinition/genotype",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype",
       "groupingId" : "examples"
     },
     {
@@ -250,7 +245,7 @@
       },
       "name" : "Example - Observation for a single HLA-A allele",
       "description" : "HLA-A allele observaation: HLA-A*03:01:01:01",
-      "exampleCanonical" : "StructureDefinition/haplotype",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype",
       "groupingId" : "examples"
     },
     {
@@ -259,7 +254,7 @@
       },
       "name" : "Example - Buccal swab for HLA typing",
       "description" : "Specimen example: Buccal swab for HLA typing",
-      "exampleCanonical" : "StructureDefinition/specimen",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen",
       "groupingId" : "examples"
     },
     {
@@ -268,7 +263,7 @@
       },
       "name" : "Example - Service request for high-resolution HLA-A genotyping",
       "description" : "ServiceRequest example: High-resolution HLA-A genotyping",
-      "exampleCanonical" : "StructureDefinition/servicerequest",
+      "exampleCanonical" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest",
       "groupingId" : "examples"
     },
     {
@@ -499,68 +494,28 @@
           "generation" : "generated"
         },
         {
-          "nameUrl" : "inherited-disease-pathogenicity.html",
-          "title" : "Inherited Disease Pathogenicity",
-          "generation" : "generated"
-        },
-        {
           "nameUrl" : "region-studied.html",
           "title" : "Region Studied",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "medication-implication.html",
-          "title" : "Medication Implication",
+          "nameUrl" : "diagnostic-implication.html",
+          "title" : "Diagnostic Implication",
           "generation" : "generated"
         },
         {
-          "nameUrl" : "medication-metabolism.html",
-          "title" : "Medication Metabolism Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-transporter.html",
-          "title" : "Medication Transporter Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-efficacy.html",
-          "title" : "Medication Efficacy Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "medication-high-risk.html",
-          "title" : "High Risk Allele",
+          "nameUrl" : "therapeutic-implication.html",
+          "title" : "Therapeutic Implication",
           "generation" : "generated"
         },
         {
           "nameUrl" : "task-med-chg.html",
-          "title" : "Medication Usage Implication",
+          "title" : "Medication Usage Task",
           "generation" : "generated"
         },
         {
           "nameUrl" : "medicationstatement.html",
           "title" : "Current Medication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-implication.html",
-          "title" : "Somatic Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-diagnostic.html",
-          "title" : "Somatic Diagnostic Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-prognostic.html",
-          "title" : "Somatic Prognostic Implication",
-          "generation" : "generated"
-        },
-        {
-          "nameUrl" : "somatic-predictive.html",
-          "title" : "Somatic Predictive Implication",
           "generation" : "generated"
         },
         {
