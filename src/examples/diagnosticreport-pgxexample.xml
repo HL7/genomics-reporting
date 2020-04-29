@@ -167,7 +167,7 @@
       <Observation>
         <id value="med-impact-pgx-example"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-metabolism"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
         <status value="final"/>
         <category>
@@ -178,11 +178,12 @@
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="53040-2"/>
-            <display value="Genetic variation's effect on drug metabolism"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <code value="therapeutic-implication"/>
+            <display value="Therapeutic Implication"/>
           </coding>
         </code>
+        
         <subject>
           <reference value="Patient/patient"/>
         </subject>
@@ -191,16 +192,27 @@
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        <valueCodeableConcept>
-          <coding>
-            <system value="http://loinc.org"/>
-            <code value="LA25390-8"/>
-            <display value="Rapid metabolizer"/>
-          </coding>
-        </valueCodeableConcept>
+        
+
         <derivedFrom>
           <reference value="Observation/genotype-pgx-example"/>
         </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53040-2"/>
+              <display value="Genetic variation's effect on drug metabolism"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="LA25390-8"/>
+              <display value="Rapid metabolizer"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
         <component>
           <code>
             <coding>

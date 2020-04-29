@@ -81,13 +81,6 @@
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="inherited-disease-pathogenicity.html">
-                        •  Inherited Disease Pathogenicity</a>
-</td>
-<td>Provides an indication of whether there's a pathologic risk associated with a particular genotype, haplotype, variant or combination there-of, and if so, what the associated pathology is.</td>
-</tr>
-<tr>
-<td style="column-width:30%">
 <a href="region-studied.html">
                         •  Region Studied</a>
 </td>
@@ -97,75 +90,31 @@
 </table>
 </p>
 <a name="2"> </a>
-<h3>Somatics </h3>
-<p>Profiles related to the reporting of somatic genomic issues</p>
+<h3>Implications </h3>
+<p>Profiles needed for linking genomic findings to knowledgebases for diagnostic or therapeutic use</p>
 <p>
 <table>
 <tbody>
 <tr>
 <td style="column-width:30%">
-<a href="somatic-diagnostic.html">
-                        •  Somatic Diagnostic Implication</a>
+<a href="diagnostic-implication.html">
+                        •  Diagnostic Implication</a>
 </td>
-<td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof supports or opposes the diagnosis of a particular cancer</td>
+<td>Profile with properties for observations that convey the potential impact of genomic characteristics on a diagnosis</td>
 </tr>
 <tr>
 <td style="column-width:30%">
-<a href="somatic-prognostic.html">
-                        •  Somatic Prognostic Implication</a>
+<a href="therapeutic-implication.html">
+                        •  Therapeutic Implication</a>
 </td>
-<td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="somatic-predictive.html">
-                        •  Somatic Predictive Implication</a>
-</td>
-<td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts the implication of a specified medication or combination of medications</td>
-</tr>
-</tbody>
-</table>
-</p>
-<a name="3"> </a>
-<h3>Pharmacogenomics </h3>
-<p>Profiles for reports relating to genomic implication on medication use and effectiveness</p>
-<p>
-<table>
-<tbody>
-<tr>
-<td style="column-width:30%">
-<a href="medication-metabolism.html">
-                        •  Medication Metabolism Implication</a>
-</td>
-<td>Assertion of the expected implication of a particular genotype on the ability of the subject to metabolize medications</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="medication-transporter.html">
-                        •  Medication Transporter Implication</a>
-</td>
-<td>Assertion of the expected implication of a particular genotype on the ability of the subject to actively transport medications</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="medication-efficacy.html">
-                        •  Medication Efficacy Implication</a>
-</td>
-<td>Assertion of the expected implication of a particular genotype on the efficacy of medications for the subject</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="medication-high-risk.html">
-                        •  High Risk Allele</a>
-</td>
-<td>Assertion of whether the patient has a high-risk allele</td>
+<td>Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy.</td>
 </tr>
 <tr>
 <td style="column-width:30%">
 <a href="task-med-chg.html">
-                        •  Medication Usage Implication</a>
+                        •  Medication Usage Task</a>
 </td>
-<td>Task describing what sort of change (if any) should be made in a patient's medication based on an identified genotype</td>
+<td>Task describing what sort of change (if any) should be made in a patient's medication based on an identified finding</td>
 </tr>
 <tr>
 <td style="column-width:30%">
@@ -177,7 +126,7 @@
 </tbody>
 </table>
 </p>
-<a name="4"> </a>
+<a name="3"> </a>
 <h3>Abstract </h3>
 <p>Abstract profiles holding common properties, outlining similarities in implementable profiles</p>
 <p>
@@ -202,26 +151,12 @@
 <a href="implication.html">
                         •  Genomic Implication</a>
 </td>
-<td>Abstract profile for observations describing the implication of one or more genomic observations.</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="medication-implication.html">
-                        •  Medication Implication</a>
-</td>
-<td>Abstract profile with common properties for observations that convey the potential implication of a genomic characteristics on a medication</td>
-</tr>
-<tr>
-<td style="column-width:30%">
-<a href="somatic-implication.html">
-                        •  Somatic Implication</a>
-</td>
-<td>Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions</td>
+<td>Abstract profile for observations linking a genomic finding to an external knowledgebase.</td>
 </tr>
 </tbody>
 </table>
 </p>
-<a name="5"> </a>
+<a name="4"> </a>
 <h3>Extensions </h3>
 <p>Extensions defined as part of the CG implementation guide</p>
 <p>
@@ -251,7 +186,7 @@
 </tbody>
 </table>
 </p>
-<a name="6"> </a>
+<a name="5"> </a>
 <h3>Examples </h3>
 <p>Examples showing the use of the CG profiles</p>
 <p>
@@ -393,7 +328,7 @@
 </tbody>
 </table>
 </p>
-<a name="7"> </a>
+<a name="6"> </a>
 <h3>Code Systems </h3>
 <p>Code Systems defined in this implementation guide</p>
 <p>
@@ -416,7 +351,7 @@
 </tbody>
 </table>
 </p>
-<a name="8"> </a>
+<a name="7"> </a>
 <h3>Value Sets </h3>
 <p>Value Sets defined in this implementation guide</p>
 <p>
@@ -474,7 +409,7 @@
 </tbody>
 </table>
 </p>
-<a name="9"> </a>
+<a name="8"> </a>
 <h3>Concept Maps </h3>
 <p>Concept Maps defined in this implementation guide</p>
 <p>
@@ -490,7 +425,7 @@
 </tbody>
 </table>
 </p>
-<a name="10"> </a>
+<a name="9"> </a>
 <h3>Operations </h3>
 <p>Operations defined in this implementation guide</p>
 <p>

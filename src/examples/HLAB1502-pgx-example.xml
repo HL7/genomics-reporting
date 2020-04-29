@@ -151,7 +151,7 @@
       <Observation>
         <id value="medication-high-risk"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-high-risk"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
         <status value="final"/>
         <category>
@@ -160,23 +160,36 @@
             <code value="laboratory"/>
           </coding>
         </category>
-        <code>
-          <coding>
-            <system value="http://loinc.org"/>
-            <code value="83009-1"/>
-            <display value="Genetic variation's effect on high-risk allele"/>
-          </coding>
-        </code>
-        <valueCodeableConcept>
-          <coding>
-            <system value="http://loinc.org"/>
-            <code value="LA19541-4"/>
-            <display value="High risk"/>
-          </coding>
-        </valueCodeableConcept>
+       <code>
+        <coding>
+          <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+          <code value="therapeutic-implication"/>
+          <display value="Therapeutic Implication"/>
+        </coding>
+       </code>
+
+
         <derivedFrom>
           <reference value="Observation/genotype-pgx-example"/>
         </derivedFrom>
+        
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="83009-1"/>
+              <display value="Genetic variation's effect on high-risk allele"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="LA19541-4"/>
+              <display value="High risk"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+
         <component>
           <code>
             <coding>
