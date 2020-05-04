@@ -472,6 +472,34 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
+    <resource>
+      <extension
+        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/tmb"/>
+      </reference>
+      <name value="Tumor mutation burden"/>
+      <description
+        value="Tumor mutational burden (TMB), also known as mutation load."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <extension
+        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+        <valueBoolean value="true"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/msi"/>
+      </reference>
+      <name value="Microsatellite instability"/>
+      <description
+        value="Microsatellite instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR). "/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
     <!-- Examples -->
     <resource>
       <reference>
@@ -665,7 +693,14 @@
       <description value="Code System for specific types of relationships"/>
       <groupingId value="codesystems"/>
     </resource>
-	<!-- Value Sets -->
+    <resource>
+      <reference>
+        <reference value="ValueSet/high-low-codes"/>
+      </reference>
+      <name value="High/Low codes"/>
+      <description value="High/Low codes for Observation.interpretation"/>
+      <groupingId value="valuesets"/>
+    </resource>
     <resource>
       <reference>
         <reference value="ValueSet/hgvs"/>

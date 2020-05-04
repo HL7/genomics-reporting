@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "1.1.0",
@@ -272,6 +272,14 @@
       "name" : "Sequence Phase Relationship",
       "description" : "Code System for specific types of relationships",
       "groupingId" : "codesystems"
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/high-low-codes"
+      },
+      "name" : "High/Low codes",
+      "description" : "High/Low codes for Observation.interpretation",
+      "groupingId" : "valuesets"
     },
     {
       "reference" : {
@@ -525,6 +533,16 @@
           "generation" : "generated"
         },
         {
+          "nameUrl" : "tmb.html",
+          "title" : "Tumor mutation burden",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "msi.html",
+          "title" : "Microsatellite instability",
+          "generation" : "generated"
+        },
+        {
           "nameUrl" : "diagnosticreport-cgexample.html",
           "title" : "Example - Genomics Reporting",
           "generation" : "generated"
@@ -627,6 +645,11 @@
         {
           "nameUrl" : "seq-phase-relationship.html",
           "title" : "Sequence Phase Relationship",
+          "generation" : "generated"
+        },
+        {
+          "nameUrl" : "valueset-high-low-codes.html",
+          "title" : "High/Low codes",
           "generation" : "generated"
         },
         {
