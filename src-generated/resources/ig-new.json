@@ -3,27 +3,27 @@
   "id" : "genomics-reporting",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/resources"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/vocabulary"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/examples"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src/images"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
-    "valueString" : "/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/pages"
+    "valueString" : "/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"
   }],
   "url" : "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting",
   "version" : "1.1.0",
@@ -96,6 +96,213 @@
       "description" : "Operations defined in this implementation guide"
     }],
     "resource" : [{
+      "reference" : {
+        "reference" : "StructureDefinition/genomics-base"
+      },
+      "name" : "Genomics Base",
+      "description" : "Base profile that defines characteristics shared by all genomic observations",
+      "exampleBoolean" : false,
+      "groupingId" : "abstract"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/genomics-report"
+      },
+      "name" : "Genomics Report",
+      "description" : "Defines the overall genomic report",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/specimen"
+      },
+      "name" : "Specimen",
+      "description" : "Constraints on Specimen for use with clinical genomics reporting",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/task-rec-followup"
+      },
+      "name" : "Recommended Followup",
+      "description" : "Task describing the followup that is recommended",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/servicerequest"
+      },
+      "name" : "Request for Genomics Test",
+      "description" : "The lab order or request that triggered the execution of the genomics test",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/grouper"
+      },
+      "name" : "Grouper",
+      "description" : "Organizes information within a genomic report",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/overall-interpretation"
+      },
+      "name" : "Overall Interpretation",
+      "description" : "Provides a coarse overall interpretation of the genomic results reported.",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/finding"
+      },
+      "name" : "Genomic Finding",
+      "description" : "Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)",
+      "exampleBoolean" : false,
+      "groupingId" : "abstract"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/haplotype"
+      },
+      "name" : "Haplotype",
+      "description" : "Assertion of a particular haplotype on the basis of one or more variants",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/genotype"
+      },
+      "name" : "Genotype",
+      "description" : "Assertion of a particular genotype on the basis of one or more variants or haplotypes",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/variant"
+      },
+      "name" : "Variant",
+      "description" : "Details about a set of changes in the tested sample compared to a reference sequence.",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/sequence-phase-relationship"
+      },
+      "name" : "Sequence Phase Relationship",
+      "description" : "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/implication"
+      },
+      "name" : "Genomic Implication",
+      "description" : "Abstract profile for observations linking a genomic finding to an external knowledgebase.",
+      "exampleBoolean" : false,
+      "groupingId" : "abstract"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/region-studied"
+      },
+      "name" : "Region Studied",
+      "description" : "Provides a description of the region studied.",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/diagnostic-implication"
+      },
+      "name" : "Diagnostic Implication",
+      "description" : "Profile with properties for observations that convey the potential impact of genomic characteristics on a diagnosis",
+      "exampleBoolean" : false,
+      "groupingId" : "implications"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/therapeutic-implication"
+      },
+      "name" : "Therapeutic Implication",
+      "description" : "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy.",
+      "exampleBoolean" : false,
+      "groupingId" : "implications"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/task-med-chg"
+      },
+      "name" : "Medication Usage Task",
+      "description" : "Task describing what sort of change (if any) should be made in a patient's medication based on an identified finding",
+      "exampleBoolean" : false,
+      "groupingId" : "implications"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/medicationstatement"
+      },
+      "name" : "Current Medication",
+      "description" : "MedicationStatement describing a med potentially being taken by the patient that may require adjustment",
+      "exampleBoolean" : false,
+      "groupingId" : "implications"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/RelatedArtifact"
+      },
+      "name" : "Related Artifact",
+      "description" : "Captures citations, evidence and other supporting documentation for the observation or report",
+      "exampleBoolean" : false,
+      "groupingId" : "extensions"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/RecommendedAction"
+      },
+      "name" : "Recommended Action",
+      "description" : "References a proposed action that is recommended based on the results of the report or observations",
+      "exampleBoolean" : false,
+      "groupingId" : "extensions"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/SupportingInfo"
+      },
+      "name" : "Supporting Information",
+      "description" : "Additional information relevant to interpreting/understanding the report",
+      "exampleBoolean" : false,
+      "groupingId" : "extensions"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/tmb"
+      },
+      "name" : "Tumor mutation burden",
+      "description" : "Tumor mutational burden (TMB), also known as mutation load.",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/msi"
+      },
+      "name" : "Microsatellite instability",
+      "description" : "Microsatellite instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR). ",
+      "exampleBoolean" : false,
+      "groupingId" : "general"
+    },
+    {
       "reference" : {
         "reference" : "Bundle/diagnosticreport-cgexample"
       },

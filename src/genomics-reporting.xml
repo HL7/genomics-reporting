@@ -25,6 +25,7 @@
   <packageId value="hl7.fhir.uv.genomics-reporting"/>
   <fhirVersion value="4.0.1"/>
   <definition>
+<!--
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="diagnosticreport-profile-spreadsheet.xml"/>
     </extension>
@@ -43,6 +44,8 @@
     <extension url="http://hl7.org/fhir/tools-profile-spreadsheet">
       <valueUri value="task-profile-spreadsheet.xml"/>
     </extension>
+  -->
+
     <grouping id="general">
       <name value="General Profiles"/>
       <description
@@ -94,10 +97,12 @@
       <description value="Operations defined in this implementation guide"/>
     </grouping>
     <resource>
+<!--
       <extension
         url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
         <valueBoolean value="true"/>
       </extension>
+-->
       <reference>
         <reference value="StructureDefinition/genomics-base"/>
       </reference>
@@ -108,10 +113,12 @@
       <groupingId value="abstract"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/genomics-report"/>
       </reference>
@@ -121,10 +128,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/specimen"/>
       </reference>
@@ -134,10 +143,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/task-rec-followup"/>
       </reference>
@@ -147,10 +158,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/servicerequest"/>
       </reference>
@@ -161,10 +174,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/grouper"/>
       </reference>
@@ -174,10 +189,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/overall-interpretation"/>
       </reference>
@@ -188,10 +205,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/finding"/>
       </reference>
@@ -202,10 +221,12 @@
       <groupingId value="abstract"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/haplotype"/>
       </reference>
@@ -216,10 +237,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/genotype"/>
       </reference>
@@ -230,10 +253,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/variant"/>
       </reference>
@@ -244,10 +269,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/sequence-phase-relationship"/>
       </reference>
@@ -258,10 +285,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/implication"/>
       </reference>
@@ -272,10 +301,12 @@
       <groupingId value="abstract"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/region-studied"/>
       </reference>
@@ -286,10 +317,12 @@
     </resource>
     <!--unified implications-->
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/diagnostic-implication"/>
       </reference>
@@ -300,10 +333,12 @@
       <groupingId value="implications"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/therapeutic-implication"/>
       </reference>
@@ -387,10 +422,12 @@
     </resource>
     -->
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/task-med-chg"/>
       </reference>
@@ -401,10 +438,12 @@
       <groupingId value="implications"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/medicationstatement"/>
       </reference>
@@ -431,10 +470,12 @@
     </resource>-->
     <!-- Extensions -->
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/RelatedArtifact"/>
       </reference>
@@ -445,10 +486,12 @@
       <groupingId value="extensions"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/RecommendedAction"/>
       </reference>
@@ -459,10 +502,12 @@
       <groupingId value="extensions"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/SupportingInfo"/>
       </reference>
@@ -473,10 +518,12 @@
       <groupingId value="extensions"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/tmb"/>
       </reference>
@@ -487,10 +534,12 @@
       <groupingId value="general"/>
     </resource>
     <resource>
-      <extension
-        url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
-        <valueBoolean value="true"/>
-      </extension>
+      <!--
+            <extension
+              url="http://hl7.org/fhir/StructureDefinition/implementationguide-spreadsheet-profile">
+              <valueBoolean value="true"/>
+            </extension>
+      -->
       <reference>
         <reference value="StructureDefinition/msi"/>
       </reference>

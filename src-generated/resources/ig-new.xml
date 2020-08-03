@@ -3,22 +3,22 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="genomics-reporting"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/resources"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/vocabulary"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/vocabulary"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/examples"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src/images"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src/images"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="/Users/patrickwerner/IdeaProjects/genomics-reporting/src-generated/pages"/>
+    <valueString value="/Users/cerkyp/Documents/GitHub/genomics-reporting/src-generated/pages"/>
   </extension>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
   <version value="1.1.0"/>
@@ -81,6 +81,213 @@
       <name value="Operations"/>
       <description value="Operations defined in this implementation guide"/>
     </grouping>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/genomics-base"/>
+      </reference>
+      <name value="Genomics Base"/>
+      <description value="Base profile that defines characteristics shared by all genomic observations"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="abstract"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/genomics-report"/>
+      </reference>
+      <name value="Genomics Report"/>
+      <description value="Defines the overall genomic report"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/specimen"/>
+      </reference>
+      <name value="Specimen"/>
+      <description value="Constraints on Specimen for use with clinical genomics reporting"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/task-rec-followup"/>
+      </reference>
+      <name value="Recommended Followup"/>
+      <description value="Task describing the followup that is recommended"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/servicerequest"/>
+      </reference>
+      <name value="Request for Genomics Test"/>
+      <description value="The lab order or request that triggered the execution of the genomics test"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/grouper"/>
+      </reference>
+      <name value="Grouper"/>
+      <description value="Organizes information within a genomic report"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/overall-interpretation"/>
+      </reference>
+      <name value="Overall Interpretation"/>
+      <description value="Provides a coarse overall interpretation of the genomic results reported."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/finding"/>
+      </reference>
+      <name value="Genomic Finding"/>
+      <description value="Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="abstract"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/haplotype"/>
+      </reference>
+      <name value="Haplotype"/>
+      <description value="Assertion of a particular haplotype on the basis of one or more variants"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/genotype"/>
+      </reference>
+      <name value="Genotype"/>
+      <description value="Assertion of a particular genotype on the basis of one or more variants or haplotypes"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/variant"/>
+      </reference>
+      <name value="Variant"/>
+      <description value="Details about a set of changes in the tested sample compared to a reference sequence."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/sequence-phase-relationship"/>
+      </reference>
+      <name value="Sequence Phase Relationship"/>
+      <description value="Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/implication"/>
+      </reference>
+      <name value="Genomic Implication"/>
+      <description value="Abstract profile for observations linking a genomic finding to an external knowledgebase."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="abstract"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/region-studied"/>
+      </reference>
+      <name value="Region Studied"/>
+      <description value="Provides a description of the region studied."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/diagnostic-implication"/>
+      </reference>
+      <name value="Diagnostic Implication"/>
+      <description value="Profile with properties for observations that convey the potential impact of genomic characteristics on a diagnosis"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="implications"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/therapeutic-implication"/>
+      </reference>
+      <name value="Therapeutic Implication"/>
+      <description value="Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="implications"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/task-med-chg"/>
+      </reference>
+      <name value="Medication Usage Task"/>
+      <description value="Task describing what sort of change (if any) should be made in a patient&#39;s medication based on an identified finding"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="implications"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/medicationstatement"/>
+      </reference>
+      <name value="Current Medication"/>
+      <description value="MedicationStatement describing a med potentially being taken by the patient that may require adjustment"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="implications"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/RelatedArtifact"/>
+      </reference>
+      <name value="Related Artifact"/>
+      <description value="Captures citations, evidence and other supporting documentation for the observation or report"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/RecommendedAction"/>
+      </reference>
+      <name value="Recommended Action"/>
+      <description value="References a proposed action that is recommended based on the results of the report or observations"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/SupportingInfo"/>
+      </reference>
+      <name value="Supporting Information"/>
+      <description value="Additional information relevant to interpreting/understanding the report"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/tmb"/>
+      </reference>
+      <name value="Tumor mutation burden"/>
+      <description value="Tumor mutational burden (TMB), also known as mutation load."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/msi"/>
+      </reference>
+      <name value="Microsatellite instability"/>
+      <description value="Microsatellite instability&#xA0;(MSI) is the condition of&#xA0;genetic&#xA0;hypermutability (predisposition to&#xA0;mutation) that results from impaired&#xA0;DNA mismatch repair&#xA0;(MMR). "/>
+      <exampleBoolean value="false"/>
+      <groupingId value="general"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
