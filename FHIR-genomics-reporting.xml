@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               url="http://hl7.org/fhir/uv/genomics-reporting"
+               ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting"
+               defaultWorkgroup="cg"
+               defaultVersion="1.0.0"
+               xsi:noNamespaceSchemaLocation="../schemas/specification.xsd"
+               ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/2019Jan">
+   <version code="current" url="http://build.fhir.org/ig/HL7/genomics-reporting"/>
+   <version code="1.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU1"/>
+   <version code="0.3.0" url="http://hl7.org/fhir/uv/genomics-reporting/2019Jan"/>
+   <version code="0.1.0"
+            url="http://hl7.org/fhir/uv/genomics-reporting/2018May"
+            deprecated="true"/>
+   <artifactPageExtension value="-definitions"/>
+   <artifactPageExtension value="-examples"/>
+   <artifactPageExtension value="-mappings"/>
+   <artifact name="Request for Genomics Test"
+             key="StructureDefinition-servicerequest"
+             id="StructureDefinition/servicerequest"/>
+   <artifact name="Specimen"
+             key="StructureDefinition-specimen"
+             id="StructureDefinition/specimen"/>
+   <artifact name="Genomics Report"
+             key="StructureDefinition-genomics-report"
+             id="StructureDefinition/genomics-report"/>
+   <artifact name="Region Studied"
+             key="StructureDefinition-region-studied"
+             id="StructureDefinition/region-studied"/>
+   <artifact name="Grouper"
+             key="StructureDefinition-grouper"
+             id="StructureDefinition/grouper"/>
+   <artifact name="Overall Interpretation"
+             key="StructureDefinition-overall-interpretation"
+             id="StructureDefinition/overall-interpretation"/>
+   <artifact name="Haplotype"
+             key="StructureDefinition-haplotype"
+             id="StructureDefinition/haplotype"/>
+   <artifact name="Genotype"
+             key="StructureDefinition-genotype"
+             id="StructureDefinition/genotype"/>
+   <artifact name="Variant"
+             key="StructureDefinition-variant"
+             id="StructureDefinition/variant"/>
+   <artifact name="Sequence Phase Relationship"
+             key="StructureDefinition-sequence-phase-relationship"
+             id="StructureDefinition/sequence-phase-relationship"/>
+   <artifact name="Tumor mutation burden"
+             key="StructureDefinition-tmb"
+             id="StructureDefinition/tmb"/>
+   <artifact name="Microsatellite instability"
+             key="StructureDefinition-msi"
+             id="StructureDefinition/msi"/>
+   <artifact name="Diagnostic Implication"
+             key="StructureDefinition-diagnostic-implication"
+             id="StructureDefinition/diagnostic-implication"/>
+   <artifact name="Therapeutic Implication"
+             key="StructureDefinition-therapeutic-implication"
+             id="StructureDefinition/therapeutic-implication"/>
+   <artifact name="Current Medication"
+             key="StructureDefinition-medicationstatement"
+             id="StructureDefinition/medicationstatement"/>
+   <artifact name="Medication Usage Task"
+             key="StructureDefinition-task-med-chg"
+             id="StructureDefinition/task-med-chg"/>
+   <artifact name="Recommended Followup"
+             key="StructureDefinition-task-rec-followup"
+             id="StructureDefinition/task-rec-followup"/>
+   <artifact name="Genomics Base"
+             key="StructureDefinition-genomics-base"
+             id="StructureDefinition/genomics-base"/>
+   <artifact name="Genomic Finding"
+             key="StructureDefinition-finding"
+             id="StructureDefinition/finding"/>
+   <artifact name="Genomic Implication"
+             key="StructureDefinition-implication"
+             id="StructureDefinition/implication"/>
+   <artifact name="Related Artifact"
+             key="StructureDefinition-RelatedArtifact"
+             id="StructureDefinition/RelatedArtifact"/>
+   <artifact name="Recommended Action"
+             key="StructureDefinition-RecommendedAction"
+             id="StructureDefinition/RecommendedAction"/>
+   <artifact name="Supporting Information"
+             key="StructureDefinition-SupportingInfo"
+             id="StructureDefinition/SupportingInfo"/>
+   <artifact name="Example - Genomics Reporting"
+             key="Bundle-diagnosticreport-cgexample"
+             id="Bundle/diagnosticreport-cgexample"/>
+   <artifact name="Example - Complex Variant (HGVS)"
+             key="Bundle-compound-heterozygote"
+             id="Bundle/compound-heterozygote"/>
+   <artifact name="Example - Complex Variant (unpacked)"
+             key="Bundle-complexVariant-nonHGVS"
+             id="Bundle/complexVariant-nonHGVS"/>
+   <artifact name="Example - NGS"
+             key="Observation-SNVexample"
+             id="Observation/SNVexample"/>
+   <artifact name="Example - Variant with ACMG Screening"
+             key="DiagnosticReport-AnnotationExample"
+             id="DiagnosticReport/AnnotationExample"/>
+   <artifact name="Example - Inherited Disease Pathogenicity"
+             key="Observation-obs-idh-ex"
+             id="Observation/obs-idh-ex"/>
+   <artifact name="Example - Pharmacogenomics"
+             key="Bundle-diagnosticreport-pgxexample"
+             id="Bundle/diagnosticreport-pgxexample"/>
+   <artifact name="Example - CYP2C19 report from 1000 Genomes"
+             key="DiagnosticReport-report-CYP2C19"
+             id="DiagnosticReport/report-CYP2C19"/>
+   <artifact name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"
+             key="DiagnosticReport-sequence-phase-relation-CYP2C19"
+             id="DiagnosticReport/sequence-phase-relation-CYP2C19"/>
+   <artifact name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"
+             key="Bundle-CG-IG-HLA-FullBundle-01"
+             id="Bundle/CG-IG-HLA-FullBundle-01"/>
+   <artifact name="Example - High Risk Allele (HLA-B*15:02)"
+             key="Bundle-HLAB1502-pgx-example"
+             id="Bundle/HLAB1502-pgx-example"/>
+   <artifact name="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"
+             key="DiagnosticReport-diagnosticreport-hla-glstring-r4"
+             id="DiagnosticReport/diagnosticreport-hla-glstring-r4"/>
+   <artifact name="Example - HLA genotyping for HLA-A, using GLStrings"
+             key="Observation-genotype-hla-a-glstring-r4"
+             id="Observation/genotype-hla-a-glstring-r4"/>
+   <artifact name="Example - Observation for a single HLA-A allele"
+             key="Observation-haplotype-hla-a-1-r4"
+             id="Observation/haplotype-hla-a-1-r4"/>
+   <artifact name="Example - Buccal swab for HLA typing"
+             key="Specimen-specimen-hla-r4"
+             id="Specimen/specimen-hla-r4"/>
+   <artifact name="Example - Service request for high-resolution HLA-A genotyping"
+             key="ServiceRequest-servicerequest-hla-a-r4"
+             id="ServiceRequest/servicerequest-hla-a-r4"/>
+   <artifact name="Example - Multiple Oncology Variant Report Example"
+             key="Bundle-oncology-report-example"
+             id="Bundle/oncology-report-example"/>
+   <artifact name="Example - Melanoma implication"
+             key="Bundle-oncology-diagnostic"
+             id="Bundle/oncology-diagnostic"/>
+   <artifact name="Example - Full Bundle Oncology Example"
+             key="Bundle-oncologyexamples-r4"
+             id="Bundle/oncologyexamples-r4"/>
+   <artifact name="TBD Code System"
+             key="CodeSystem-tbd-codes"
+             id="CodeSystem/tbd-codes"/>
+   <artifact name="Sequence Phase Relationship"
+             key="CodeSystem-seq-phase-relationship"
+             id="CodeSystem/seq-phase-relationship"/>
+   <artifact name="High/Low codes"
+             key="ValueSet-high-low-codes"
+             id="ValueSet/high-low-codes"/>
+   <artifact name="HGVS Value Set" key="ValueSet-hgvs" id="ValueSet/hgvs"/>
+   <artifact name="HGNC Value Set" key="ValueSet-hgnc" id="ValueSet/hgnc"/>
+   <artifact name="TBD Value Set"
+             key="ValueSet-tbd-codes"
+             id="ValueSet/tbd-codes"/>
+   <artifact name="DNA Change Type"
+             key="ValueSet-dna-change-type"
+             id="ValueSet/dna-change-type"/>
+   <artifact name="Functional Annotations"
+             key="ValueSet-functional-annotation"
+             id="ValueSet/functional-annotation"/>
+   <artifact name="Sequence Phase Relationship"
+             key="ValueSet-seq-phase-relationship"
+             id="ValueSet/seq-phase-relationship"/>
+   <artifact name="Variant Inheritance"
+             key="ValueSet-variant-inheritance"
+             id="ValueSet/variant-inheritance"/>
+   <artifact name="Concept mapping for DNA Change Type"
+             key="ConceptMap-dna-change-type"
+             id="ConceptMap/dna-change-type"/>
+   <artifact name="Operation: $find-subject-variants"
+             key="OperationDefinition-find-subject-variants"
+             id="OperationDefinition/find-subject-variants"/>
+   <artifact name="DiagnosticReport" key="DiagnosticReport" deprecated="true"/>
+   <artifact name="Bundle" key="Feed" deprecated="true"/>
+   <artifact name="ImplementationGuide"
+             key="ImplementationGuide"
+             deprecated="true"/>
+   <artifact name="Observation" key="Observation" deprecated="true"/>
+   <artifact name="MolecularSequence" key="Sequence" deprecated="true"/>
+   <artifact name="Task" key="Task" deprecated="true"/>
+   <page name="(NA)" key="NA"/>
+   <page name="(many)" key="many"/>
+   <page name="Table of Contents" key="toc"/>
+   <page name="IG Home Page" key="index"/>
+   <page name="Genomics Background" key="background"/>
+   <page name="General Genomic Reporting" key="general"/>
+   <page name="Variant Reporting" key="sequencing"/>
+   <page name="Glossary" key="Glossary"/>
+   <page name="Pharmacogenomic Reporting" key="pharmacogenomics"/>
+   <page name="Somatic Reporting" key="somatics"/>
+   <page name="Histocompatibility and Immunogenetics Reporting"
+         key="histocompatibility"/>
+   <page name="Conversion from STU3" key="conversion"/>
+   <page name="Appendix A: Relation to v2 reporting" key="v2"/>
+   <page name="Appendix B: Clinical Genomic Apps" key="cgapps"/>
+   <page name="Appendix C: HL7 Domain Analysis Model" key="domain"/>
+   <page name="Appendix D: External Coding Systems" key="codings"/>
+   <page name="Artifact List" key="artifacts"/>
+   <page name="Operations" key="operations"/>
+   <page name="Query Examples" key="usecases"/>
+   <page name="Useful Downloads" key="downloads"/>
+   <page name="(profiles)" key="profiles" deprecated="true"/>
+   <page name="documentation" key="documentation" deprecated="true"/>
+   <page name="genomics" key="genomics" deprecated="true"/>
+</specification>
