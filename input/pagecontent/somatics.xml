@@ -1,0 +1,60 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <p>
+    This section deals with reporting observations related to cancer genomics. This includes reporting variants in a patient identified as having a somatic source class and reporting germ-line variants with known links to somatic events such as increasing risk for developing particular cancers. Beyond reporting variants, we also provide two “implication” profiles to communicate observed links between variants and relevant knowledge bases such as professional guidelines and publications. 
+
+    <!--This sort of reporting is particularly prominent when dealing with cancer-related specimens, but can also include transplanted tissue and other forms of mosaicism.   -->This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Somatic genetic reports supplement this information with a somatics-specific implication profile.  Implementers of this portion of the implementation guide may also be interested in the <a href="pharmacogenomics.html">Pharmacogenomic Reporting</a> section which deals more generally with medication implications, such as general efficacy, metabolism and increased risks based on patient genetic characteristics.
+  </p>
+  <p>
+    Some of the somatic profiles make reference to medications and other therapies.  Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications or other therapies.  Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
+  </p>
+
+  <a name="general"> </a>
+  <h3>General guidance</h3>
+  <p>
+    While not specifically profiled in this version of the IG, some additional constraints will typically apply to somatic profiles.  Patient will typically be mandatory as somatics is not relevant for environmental samples.  Body structure will often be identified to allow associating results with specific tumors or lesions - even if multiple samples are drawn over time.
+  </p>
+
+  <a name="implications"> </a>
+  <h3>Somatic-specific Implications</h3>
+  <img src="5-somatics-fig1-implications.png" alt="Diagram showing the somatic implication profiles"/>
+  <p>
+    <b>Figure 1: Implication Profiles</b>
+  </p>
+  <p>
+    (Profile links:
+    <a href="StructureDefinition-implication.html">Genomic Implication (abstract)</a>,
+    <a href="StructureDefinition-diagnostic-implication.html">Diagnostic Implication</a>
+    <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a>)
+  </p>
+  <p>
+    This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in `Observation.note` as the issuing lab desires.
+  </p>
+  <p>
+    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via Observation.derivedFrom) and a particular type of cancer. The evidence-level and clinical-significance components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines. The prognosis component can also be populated to convey a general indication on the overall outcome for the cancer patient, as described in a linked relatedArtifact.
+
+  </p>
+  <p>
+    <b>Therapeutic implication</b> indicates an association between the identified variant (linked via Observation.derivedFrom) and the efficacy of a particular medication or therapy for the specified cancer type. Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications, therapies, or cancer descriptions. Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles. The associated cancer component can be used to communicate that the variant has repercussions on treatments for cancer. If specimen has specimen.type of ‘tumor’ then the implication and variant are specific to treating the tumor. 
+
+  </p>
+  <p>
+    For a description of use cases populating other optional components on the above implication profiles, see the Pharmacogenomic Reporting section.
+  </p>
+
+
+  <a name="examples"> </a>
+  <h3>Somatic-specific Example instances</h3>
+  <ul>
+    <li>
+      <a href="Bundle-oncologyexamples-r4.html">Full transaction bundle</a> containing a Genomics DiagnosticReport referencing, Patient, Practicioner, Specimen, with Tumor Mutational Burden and MSI Status Observations, Variant Observations for JAK2/KDR/ERBB4 SNV analyses, and 4 derived Therapeutic Implication Observations.
+    </li>
+    <li>
+      <a href="Bundle-oncology-report-example.html">Multiple Oncology Variant Report Example</a> Oncology Example Report with 12 reported somatic variants
+    </li>
+    <li>
+      <a href="Bundle-oncology-diagnostic.html">Melanoma implication</a> Small example report with 1 reported variant and diagnostic implication.
+
+    </li>
+  </ul>
+
+</div>

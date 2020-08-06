@@ -1,0 +1,234 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <a name="overview"> </a>
+  <h3>Mapping from the STU3 Genomics Profiles</h3>
+  <p>
+    The content in this implementation guide supersedes the genomics profiles profiles that were published as part of the STU (which can be found <a href="https://hl7.org/fhir/stu3/genomics.html">here</a>.  This page provides guidance for implementers of those profiles to understand how to map content from those older profiles to those provide in this implementation guide.
+  </p>
+  <a name="why"> </a>
+  <h3>Why new profiles</h3>
+  <p>
+    As mentioned in the <a href="index.html#principles">principles</a> section of the introduction, this implementation guide tries to leverage the Observation resource and minimize the use of extensions.  This approach is expected to maximize the number of systems that can capture, store, convey and otherwise manipulate genomic reporting results.  Over-reliance on extensions increases the risk of information loss, particularly as results pass through systems that may not have been specifically designed to convey genomics-related information.  As a <a href="{{site.data.fhir.path}}versions.html#std-process">Standard for Trial Use</a>, both the prior profiles and the contents of this implementation guide are subject to non-backward compatible change based on feedback from the implementation community and the continuing evolution of the authoring work group's understanding of implementer requirements and how best to express them within FHIR's data structures.</p>
+  <a name="procedurerequest"> </a>
+  <h3>ProcedureRequest-genetics</h3>
+  <p>
+    Guidance for converting from the <a href="https://hl7.org/fhir/stu3/genomics.html#procedurerequest-genetics">STU3 ProcedureRequest-genetics</a> profile to the <a href="StructureDefinition-servicerequest.html">Request for Genetics Test</a> profile.
+  </p>
+  <p>
+    The STU3 model made no assertions about the use of ProcedureRequest beyond the introduction of a single optional repeating complex extension.  In FHIR R4, ProcedureRequest has been renamed to <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a>.  Additional guidance has been provided on a minimum set of data elements to support.
+  </p>
+  <p>
+    More importantly, the mechanism to support ordering of multiple tests has changed.  In alignment with the overall <a href="{{site.data.fhir.path}}request.html">Request</a> pattern, orders for multiple tests are handled with multiple separate service requests.  This allows each request to be managed independently from a fulfillment and status perspective - some tests might be completed successfully, others cancelled or transferred to other labs.  As such, the <code>code</code>, <code>specimen</code> and <code>status</code> elements of the complex extension are now covered by the same-named elements in ServiceRequest.  Multiple service requests can be linked together with a single <code>requisition</code> identifier to indicate that multiple tests were ordered simultaneously as part of a single action.  Support for the requisition element is required as part of the R4 genomics service request profile.
+  </p>
+  <p>
+    The one remaining component of the complex extension is the geneticsObservation component whose purpose is described as being to identify the variant to be tested.  However, Observation is appropriate to identify a variant that has already been found, not one to be looked for.  In R4, serviceRequest has an <code>orderDetail</code> code that can be used for this purpose.  The Observation.value of the Observation pointed to by the geneticsObservation extension component would be sent as the orderDetail code.
+  </p>
+  <a name="diagnosticreport"> </a>
+  <h3>DiagnosticReport-genetics</h3>
+  <p>
+    Guidance for converting from the <a href="https://hl7.org/fhir/stu3/genomics.html#diagnosticreport-genetics">STU3 DiagnosticReport-genetics</a> profile to the <a href="StructureDefinition-genomics-report.html">Genomics Report</a> profile.
+  </p>
+  <p>
+    The STU3 profile prohibited the population of codedDiagnosis element and asserted 3 optional repeating extensions - geneticsAssessedCOndition, geneticsFamilyMemberHistory and geneticsAnalysis.  In the R4 profile, we no longer prohibit the inclusion of codeDiagnosis.  While it would be unusual for a lab to assert diagosis, it is possible that some organizations, with appropriate knowledge of the patient and clinician oversight could do so.  The R4 profile merely provides guidance on this element.
+  </p>
+  <p>
+    The content conveyed by <code>geneticsAssessedCondition</code> is not yet supported by the R4 profile.  As noted in the <a href="general.html">General Genomics Reporting</a> section, the reporting of assessed conditions (and assessed genes, assessed variants, and assessed variants) must be handled differently in FHIR as this information must be conveyed with each Observation where it would affect the interpretation of the Observation.  An R3 mapping will be provided once this issue is resolved, but it is likely that the mechanism will be handled through related Observations and Observation components, not extensions.
+  </p>
+  <p>
+    The purpose of <code>geneticsFamilyMemberHistory</code> is now handled by the more generic <code>supportingInfo</code> extension which can handle a variety of inputs that help to inform the genetic report (or any other type of report).  It is possible that this element will be elevated to a core element of DiagnosticReport.
+  </p>
+  <p>
+    The <code>geneticsAnalysis</code> complex extension is handled by the various "Interpretation" Observations - every interpretation is conveyed as a distinct Observation because each such assertion can stand alone can can also be referenced as the reason for subsequent actions.
+  </p>
+  <a name="observation"> </a>
+  <h3>Observation-genetics</h3>
+  <p>
+    The <a href="https://hl7.org/fhir/stu3/genomics.html#observation-genetics">STU3 Observation-genetics</a> profile largely mapps to the <a href="StructureDefinition-variant.html">Described Variant</a> profile in FHIR.  The STU3 profile makes heavy use of extensions.  In the R4 profiles, these are almost entirely handled as Observation components.  The specific mappings are as follows:
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>R4 Profile</th>
+        <th>R3 Equivalent</th>
+      </tr>
+      <tr>
+        <td>Gene Studied</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsGene.html">Extension: Observation-geneticsGene</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Chromosome Location</td>
+        <td>[Not supported]</td>
+      </tr>
+      <tr>
+        <td>DNA Region Name</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsDNARegionName.html">Extension: Observation-geneticsDNARegionName</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>DNA Change - Transcript (cHGVS)</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Name</a>
+        </td>
+      </tr>
+      <tr>
+        <td>DNA change type</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Variation Code</td>
+        <td>[Not supported]</td>
+      </tr>
+      <tr>
+        <td>dbSNP ID</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsvariant.html">Extension: Observation-geneticsVariant.Id</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomica DNA change (gHGVS)</td>
+        <td>[Not supported]</td>
+      </tr>
+      <tr>
+        <td>Genomic source class</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-geneticsGenomicSourceClass.html">Extension: Observation-geneticsGenomicSourceClass</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Amino acid change (pHGVS)</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsAminoAcidChange.html">Extension: Observation-geneticsAminoAcidChange.Name</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Amino acid change type</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsAminoAcidChange.html">Extension: Observation-geneticsAminoAcidChange.Type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Transcript reference sequence ID</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">MolecularSequence.referenceSeq.referenceSeqId</a> (Can only support one reference sequence)
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic reference sequence ID</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">MolecularSequence.referenceSeq.referenceSeqId</a> (Can only support one reference sequence)
+        </td>
+      </tr>
+      <tr>
+        <td>[Not supported]</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.Name</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Allelic Frequency</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.Frequency</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Allelic phase</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsPhaseSet.html">Extension: Observation-geneticsPhaseSet.Id</a> (inexact map)
+        </td>
+      </tr>
+      <tr>
+        <td>[Not Supported]</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsPhaseSet.html">Extension: Observation-geneticsPhaseSet.Sequence</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Basis for allelic phase</td>
+        <td>[Not supported]</td>
+      </tr>
+      <tr>
+        <td>Allelic state</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsAllele.html">Extension: Observation-geneticsAllele.State</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic structural variant copy number</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/extension-observation-geneticsCopyNumberEvent.html">Extension: Observation-geneticsCopyNumberEvent</a> (inexact map)
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant reported arrCGH [Ratio]</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.reportedaCGHRatio</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic ref allele</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.variant.referenceAllele</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic alt allele</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.variant.observedAllele</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Coordinate System</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.coordinateSystem</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Genomic Allele start-end</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.variant.start,end</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant length</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.length</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant outer start and end</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.outer</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Structural variant inner start and end</td>
+        <td>
+          <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence.structureVariant.inner</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Specimen Source</td>
+        <td>[Not supported]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    TODO - include mapping document from LIN
+  </p>
+  <a name="sequence"> </a>
+  <h3>Sequence -> MolecularSequence Resource</h3>
+  <p>
+    The STU3 <a href="https://hl7.org/fhir/stu3/sequence.html">Sequence</a> Resource has been renamed to <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a> in R4 and has various improvments.
+  </p>
+  <p>TODO - define specific mappings and identify which additional sequence elements (particularly quality elements) should be brought into the Observation profiles</p>
+  <a name="hla"> </a>
+  <h3>HLA genotyping results</h3>
+  <p>
+    This version of the implementation guide has not incorporated
+  </p>
+</div>
