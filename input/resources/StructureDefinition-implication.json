@@ -2362,6 +2362,10 @@
         "slicing": {
           "discriminator": [
             {
+              "type": "type",
+              "path": "resolve()"
+            },
+            {
               "type": "pattern",
               "path": "resolve().code"
             }
@@ -4061,6 +4065,10 @@
         "path": "Observation.derivedFrom",
         "slicing": {
           "discriminator": [
+            {
+              "type": "type",
+              "path": "resolve()"
+            },
             {
               "type": "pattern",
               "path": "resolve().code"
