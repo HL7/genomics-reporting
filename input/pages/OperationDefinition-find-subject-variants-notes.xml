@@ -13,7 +13,7 @@
 	  <li>component:ref-allele: G</li>
 	  <li>component:alt-allele: A</li>
 	  <li>component:coordinate-system: 0-based interval counting</li>
-	  <li>component:exact-start-end: start = 11089559</li>	  
+	  <li>component:exact-start-end: start = 11089559</li>
 	</ul>
   </li>
 </ul><br/>
@@ -23,7 +23,7 @@
 <p><a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI Variation Services</a> provide a rich set of APIs that can be used to normalize variants from many formats (e.g. HGVS, VCF) into SPDI, and to normalize variants in SPDI into a canonical SPDI format. The variant above, in canonical SPDI format, resolves to this: NC_000019.10:11089559:G:A, where it can easily be determined that it overlaps the requested region (NC_000019.10:11,089,362-11,133,830).</p>
 	<a name="Normalization"/>
 	<h3>Variant liftover</h3>
-<p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:</p> 
+<p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:</p>
  <ul>
   <li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A (build 37 representation)</li>
   <li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A (build 38 representation)</li>
@@ -57,9 +57,9 @@
 				<td>ERROR: Data not found (e.g. no data found for patient, no data present for requested region for patient)</td>
 			</tr>
 		</tbody>
-	</table>	
+	</table>
 <a name="Examples"/>
-	<h3>Examples</h3>	
+	<h3>Examples</h3>
 <p>Scenario: Retrieve all variants for patient HG00403 that overlap NC_000001.10:1-500.</p><br/>
 <p><b>IN parameters</b></p>
 
@@ -430,5 +430,5 @@
 </pre>
 <br/>
 
-	
+
 </div>

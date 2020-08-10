@@ -11,9 +11,9 @@
 	</ul>
 	<img src="find-variants-fig1.png" alt="region of interest"/>
 	<a name="OUTParameters"> </a>
-	<h3>OUT Parameters</h3>	
+	<h3>OUT Parameters</h3>
 	<ul>
-		<li>Response shall include 0..1 observation (RegionStudied), 0..* observation (Variant), 0..* observation (SequencePhaseRelationship).</li> 
+		<li>Response shall include 0..1 observation (RegionStudied), 0..* observation (Variant), 0..* observation (SequencePhaseRelationship).</li>
 		<li>The 'regionStudied' parameter is an instance of the observation (RegionStudied) profile, and can optionally be used to reflect back those studied regions that overlap with the query range. For WGS, the entire region of the request may have been studied and can be represented as a single component:ranges-examined. For WES, each examined exon overlapping the query range can be represented in its own component:ranges-examined. For targeted panels, each examined region overlapping the query range can be represented in its own component:ranges-examined.</li>
 		<li>The 'variant' parameter instantiates the observation (Variant) profile, there being one instance for each identified variant. Variants must be represented using a combination of all of these components: genomic-ref-seq; ref-allele; alt-allele; coordinate-system (valued with '0-based interval counting'); exact-start-end. Additional components can optionally be included.</li>
 		<li>Implicit in this service is that variants in the requested range, regardless of how they are formatted/represented/stored in a server, are returned. See <a href="#variant-normalization">'Variant normalization'</a> section below for guidance on variant normalization. Furthermore, where a server is storing variants aligned to multiple builds, it may be necessary for the server to translate or 'lift over' the specified region into corresponding regions in other builds. See <a href="#variant-liftover">'Variant liftover'</a> section below for more details.</li>
