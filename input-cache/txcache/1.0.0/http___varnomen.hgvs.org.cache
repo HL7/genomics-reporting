@@ -8,6 +8,22 @@
   }
 }}####
 e: {
-  "error" : "Error from server: Unable to provide support for code system http://varnomen.hgvs.org"
+  "valueSet" : {
+  "resourceType" : "ValueSet",
+  "status" : "active",
+  "expansion" : {
+    "identifier" : "urn:uuid:56bc83db-779e-4da8-a82c-160aeb81ff7c",
+    "timestamp" : "2020-08-23T22:22:36.443Z",
+    "parameter" : [{
+      "name" : "limitedExpansion",
+      "valueBoolean" : true
+    },
+    {
+      "name" : "excludeNested",
+      "valueBoolean" : true
+    }]
+  }
+},
+  "error" : ""
 }
 -------------------------------------------------------------------------------------

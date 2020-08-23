@@ -47,9 +47,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Mon, Aug 10, 2020 17:20+0000 for FHIR v4.4.0 
+  Generated on Fri, Aug 21, 2020 11:50+0000 for FHIR v4.5.0 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.4.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.5.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
   <xs:import namespace="http://www.w3.org/1999/xhtml" schemaLocation="fhir-xhtml.xsd"/>
@@ -1804,6 +1804,11 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
            <xs:element name="valueQuantity" type="Quantity"  maxOccurs="1"/>
            <xs:element name="valueRange" type="Range"  maxOccurs="1"/>
           </xs:choice>
+          <xs:element name="variable" type="Statistic.Variable" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A variable adjusted for in the adjusted analysis.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1839,6 +1844,43 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
           <xs:element name="knownDataCount" type="integer" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Number of participants with known results for measured variables.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Statistic.Variable">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A fact or piece of data from a  study of a large quantity of numerical data.  A mathematical or quantified characteristic of a group of observations.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have a value for at least one of the defined elements, an @id referenced from the Narrative, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneType">
+        <xs:sequence>
+          <xs:element name="variableDefinition" type="Reference" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Description of the variable.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="handling" type="code" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">How the variable is classified for use in adjusted analysis.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="valueCategory" type="CodeableConcept" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Description for grouping of ordinal or polychotomous variables.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="valueQuantity" type="Quantity" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Discrete value for grouping of ordinal or polychotomous variables.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="valueRange" type="Range" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Range of values for grouping of ordinal or polychotomous variables.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -5115,6 +5157,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       <xs:enumeration value="4.4.0">
         <xs:annotation>
           <xs:documentation xml:lang="en">4.4.0</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4.5.0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">4.5.0</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -14781,7 +14828,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Official human-readable label for the composition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="confidentiality" minOccurs="0" maxOccurs="1" type="vConfidentialityClassification">
+          <xs:element name="confidentiality" minOccurs="0" maxOccurs="1" type="Confidentiality">
             <xs:annotation>
               <xs:documentation xml:lang="en">The code specifying the level of confidentiality of the Composition.</xs:documentation>
            </xs:annotation>
@@ -14951,51 +14998,6 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="vConfidentialityClassification-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="U">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">unrestricted</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="L">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">low</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="M">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">moderate</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="N">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">normal</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="R">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">restricted</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="V">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">very restricted</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="vConfidentialityClassification">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Codes specifying the level of confidentiality of the composition.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="vConfidentialityClassification-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="CompositionStatus-list">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="preliminary">
@@ -15063,6 +15065,51 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="DocumentRelationshipType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="Confidentiality-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">low</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">moderate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">normal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">restricted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">unrestricted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">very restricted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Confidentiality">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Codes specifying the level of confidentiality of the composition.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="Confidentiality-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -18280,12 +18327,12 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="status" minOccurs="0" maxOccurs="1" type="FHIRDeviceStatus">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Status of the Device availability.</xs:documentation>
+              <xs:documentation xml:lang="en">Status of the Device record. This is not the status of the device like availability.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="statusReason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Reason for the dtatus of the Device availability.</xs:documentation>
+              <xs:documentation xml:lang="en">Reason for the status of the Device record. For example, why is the record not active.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="distinctIdentifier" minOccurs="0" maxOccurs="1" type="string">
@@ -18340,7 +18387,8 @@ into another (possibly the same) biological entity.</xs:documentation>
           </xs:element>
           <xs:element name="specialization" type="Device.Specialization" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.</xs:documentation>
+              <xs:documentation xml:lang="en">The device function, including in some cases whether or not the functionality conforms to some standard. For example, a PHD blood pressure specialization indicates that the device conforms to the IEEE 11073-10407 Blood Pressure Specialization. This is NOT an alternate name or an additional descriptive name given by the manufacturer. That would be found in the deviceName element.
+In the PHD case, there are 11073 10101 nomenclature codes that define the specialization standards and that will be used, for example, in the PHD case for the specialization.systemType element. The specialization.version would be the version of the standard if the systemType referred to a standard.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" type="Device.Version" minOccurs="0" maxOccurs="unbounded">
@@ -19888,14 +19936,14 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="masterIdentifier" minOccurs="0" maxOccurs="1" type="Identifier">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
               <xs:documentation xml:lang="en">Other identifiers associated with the document, including version independent identifiers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A procedure that is fulfilled in whole or in part by the creation of this media.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="status" minOccurs="1" maxOccurs="1" type="DocumentReferenceStatus">
@@ -19923,6 +19971,31 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Describes the clinical encounter or type of care that the document content is associated with.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type Code, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="facilityType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The kind of facility where the patient was seen.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="practiceSetting" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">This property may convey specifics about the practice setting where the content was created, often reflecting the clinical specialty.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The time period over which the service that is described by the document was provided.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="instant">
             <xs:annotation>
               <xs:documentation xml:lang="en">When the document reference was created.</xs:documentation>
@@ -19933,9 +20006,9 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Identifies who is responsible for adding the information to the document.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="authenticator" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="attester" type="DocumentReference.Attester" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Which person or organization authenticates that this document is valid.</xs:documentation>
+              <xs:documentation xml:lang="en">A participant who has attested to the accuracy of the composition/document.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="custodian" minOccurs="0" maxOccurs="1" type="Reference">
@@ -19948,7 +20021,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Relationships that this document has with other document references that already exist.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Human-readable description of the source document.</xs:documentation>
            </xs:annotation>
@@ -19963,9 +20036,40 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The document and format referenced.  If there are multiple content element repetitions, these must all represent the same document in different format, or attachment metadata.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" type="DocumentReference.Context" minOccurs="0" maxOccurs="1">
+          <xs:element name="sourcePatientInfo" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The clinical context in which the document was prepared.</xs:documentation>
+              <xs:documentation xml:lang="en">The Patient Information as known when the document was published. May be a reference to a version specific, or contained.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="related" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Related identifiers or resources associated with the DocumentReference.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DocumentReference.Attester">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* serialized object with a mime-type, it includes formal patient-centric documents (CDA), clinical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="mode" minOccurs="1" maxOccurs="1" type="DocumentAttestationMode">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The type of attestation the authenticator offers.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="time" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">When the composition was attested by the party.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="party" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Who attested the composition in the specified way.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -20010,58 +20114,47 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">An identifier of the document encoding, structure, and template that the document conforms to beyond the base format indicated in the mimeType.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="DocumentReference.Context">
+  <xs:simpleType name="DocumentAttestationMode-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="personal">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Personal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="professional">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Professional</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="legal">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Legal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="official">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Official</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocumentAttestationMode">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A reference to a document of any kind for any purpose. While the term “document” implies a more narrow focus, for this resource this &quot;document&quot; encompasses *any* serialized object with a mime-type, it includes formal patient-centric documents (CDA), clinical notes, scanned paper, non-patient specific documents like policy text, as well as a photo, video, or audio recording acquired or used in healthcare.  The DocumentReference resource provides metadata about the document so that the document can be discovered and managed.  The actual content may be inline base64 encoded data or provided by direct reference.</xs:documentation>
+      <xs:documentation xml:lang="en">The way in which a person authenticated a document.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="BackboneElement">
-        <xs:sequence>
-          <xs:element name="encounter" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Describes the clinical encounter or type of care that the document content is associated with.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the type Code, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The time period over which the service that is described by the document was provided.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="facilityType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The kind of facility where the patient was seen.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="practiceSetting" minOccurs="0" maxOccurs="1" type="CodeableConcept">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">This property may convey specifics about the practice setting where the content was created, often reflecting the clinical specialty.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="sourcePatientInfo" minOccurs="0" maxOccurs="1" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The Patient Information as known when the document was published. May be a reference to a version specific, or contained.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="related" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Related identifiers or resources associated with the DocumentReference.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="basedOn" minOccurs="0" maxOccurs="unbounded" type="Reference">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A procedure that is fulfilled in whole or in part by the creation of this media.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-        </xs:sequence>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="DocumentAttestationMode-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -21080,9 +21173,34 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The date on which the resource content was last reviewed. Review happens periodically after approval but does not change the original approval date.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="contributor" minOccurs="0" maxOccurs="unbounded" type="Contributor">
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Contact detail and role for contributor to summary.</xs:documentation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the evidence.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individiual, organization, or device primarily involved in the creation and maintenance of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individiual, organization, or device primarily responsible for internal coherence of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individiual, organization, or device primarily responsible for review of some aspect of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individiual, organization, or device responsible for officially endorsing the content for use in some setting.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
@@ -21588,16 +21706,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The date  (and optionally time) when the evidence variable was published. The date must change when the business version changes and it must change if the status code changes. In addition, it should change when the substantive content of the evidence variable changes.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The name of the organization or individual that published the evidence variable.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">A free text natural language description of the evidence variable from a consumer's perspective.</xs:documentation>
@@ -21611,6 +21719,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
               <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate evidence variable instances.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The name of the organization or individual that published the evidence variable.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Contact details to assist a user in finding and communicating with the publisher.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
@@ -21638,11 +21756,6 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">Related artifacts such as additional documentation, justification, or bibliographic references.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="1" type="EvidenceVariableType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">Used for an outcome to classify.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="actual" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
               <xs:documentation xml:lang="en">True if the actual variable measured, false if a conceptual representation of the intended variable.</xs:documentation>
@@ -21656,6 +21769,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           <xs:element name="characteristic" type="EvidenceVariable.Characteristic" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">A characteristic that defines the members of the evidence element. Multiple characteristics are applied with &quot;and&quot; semantics.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="handling" minOccurs="0" maxOccurs="1" type="EvidenceVariableHandling">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Used for an outcome to classify.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="category" type="EvidenceVariable.Category" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A grouping (or set of values) described along with other groupings to specify the set of groupings allowed for the variable.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -21743,33 +21866,27 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="EvidenceVariableType-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="dichotomous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Dichotomous</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="continuous">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Continuous</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="descriptive">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Descriptive</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="EvidenceVariableType">
+  <xs:complexType name="EvidenceVariable.Category">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The possible types of variables for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceVariable resource describes an element that knowledge (Evidence) is about.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="EvidenceVariableType-list" use="optional"/>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A human-readable title or representation of the grouping.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Value or set of values that define the grouping.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="valueQuantity" type="Quantity"/>
+            <xs:element name="valueRange" type="Range"/>
+          </xs:choice>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -21840,6 +21957,41 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="CharacteristicCombination-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EvidenceVariableHandling-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="continuous">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">continuous variable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dichotomous">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">dichotomous variable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ordinal">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">ordinal variable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="polychotomous">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">polychotomous variable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EvidenceVariableHandling">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The handling of the variable in statistical analysis for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="EvidenceVariableHandling-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -27046,7 +27198,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="fhirVersion" minOccurs="1" maxOccurs="unbounded" type="FHIRVersion">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.4.0. for this version.</xs:documentation>
+              <xs:documentation xml:lang="en">The version(s) of the FHIR specification that this ImplementationGuide targets - e.g. describes how to use. The value of this element is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.5.0. for this version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="dependsOn" type="ImplementationGuide.DependsOn" minOccurs="0" maxOccurs="unbounded">
@@ -33049,7 +33201,7 @@ The primary difference between a medicationusage and a medicationadministration 
           </xs:element>
           <xs:element name="indication" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">General combined description of indication(s) for this product. See also MedicinalProductDefinitionIndication.</xs:documentation>
+              <xs:documentation xml:lang="en">General combined description of indication(s) for this product, for use when a structured set is not available. See also the ClinicalUseIssue resource, which can be used for more structured indications, and can be made to reference to this resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="legalStatusOfSupply" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -42261,7 +42413,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="fhirVersion" minOccurs="0" maxOccurs="1" type="FHIRVersion">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.4.0. for this version.</xs:documentation>
+              <xs:documentation xml:lang="en">The version of the FHIR specification on which this StructureDefinition is based - this is the formal version of the specification, without the revision number, e.g. [publication].[major].[minor], which is 4.5.0. for this version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="mapping" type="StructureDefinition.Mapping" minOccurs="0" maxOccurs="unbounded">
@@ -42647,7 +42799,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Another group that this group adds rules to.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="typeMode" minOccurs="1" maxOccurs="1" type="StructureMapGroupTypeMode">
+          <xs:element name="typeMode" minOccurs="0" maxOccurs="1" type="StructureMapGroupTypeMode">
             <xs:annotation>
               <xs:documentation xml:lang="en">If this is the default rule set to apply for the source type or this combination of types.</xs:documentation>
            </xs:annotation>
@@ -42662,7 +42814,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">A name assigned to an instance of data. The instance must be provided when the mapping is invoked.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="rule" type="StructureMap.Rule" minOccurs="1" maxOccurs="unbounded">
+          <xs:element name="rule" type="StructureMap.Rule" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Transform Rule from source to target.</xs:documentation>
            </xs:annotation>
@@ -42709,7 +42861,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="name" minOccurs="1" maxOccurs="1" type="id">
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
               <xs:documentation xml:lang="en">Name of the rule for internal references.</xs:documentation>
            </xs:annotation>
@@ -42869,12 +43021,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="context" minOccurs="0" maxOccurs="1" type="id">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Type or variable this rule applies to.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="contextType" minOccurs="0" maxOccurs="1" type="StructureMapContextType">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">How to interpret the context.</xs:documentation>
+              <xs:documentation xml:lang="en">Variable this rule applies to.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="element" minOccurs="0" maxOccurs="1" type="string">
@@ -42975,31 +43122,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="StructureMapInputMode-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="StructureMapContextType-list">
-    <xs:restriction base="code-primitive">
-      <xs:enumeration value="type">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Type</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="variable">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Variable</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="StructureMapContextType">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">How to interpret the context.</xs:documentation>
-      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="StructureMapContextType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -43180,11 +43302,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:simpleType name="StructureMapGroupTypeMode-list">
     <xs:restriction base="code-primitive">
-      <xs:enumeration value="none">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Not a Default</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="types">
         <xs:annotation>
           <xs:documentation xml:lang="en">Default for Type Combination</xs:documentation>
@@ -44051,7 +44168,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">Parameters that were used in the measurement of a property (e.g. for viscosity: measured at 20C with a pH of 7.1).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="definingSubstance[x]" minOccurs="0" maxOccurs="1" type="CodeableReference">
+          <xs:element name="definingSubstance" minOccurs="0" maxOccurs="1" type="CodeableReference">
             <xs:annotation>
               <xs:documentation xml:lang="en">A substance upon which a defining property depends (e.g. for solubility: in water, in alcohol).</xs:documentation>
            </xs:annotation>
@@ -46246,7 +46363,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="uri" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">URI for the Code System.</xs:documentation>
+              <xs:documentation xml:lang="en">Canonical identifier for the code system, represented as a URI.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" type="TerminologyCapabilities.Version" minOccurs="0" maxOccurs="unbounded">
@@ -46344,7 +46461,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="incomplete" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allow request for incomplete expansions?</xs:documentation>
+              <xs:documentation xml:lang="en">True if requests for incomplete expansions are allowed.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="parameter" type="TerminologyCapabilities.Parameter" minOccurs="0" maxOccurs="unbounded">
@@ -46370,7 +46487,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Expansion Parameter name.</xs:documentation>
+              <xs:documentation xml:lang="en">Name of the supported expansion parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="string">
