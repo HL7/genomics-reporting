@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/2019Jan" ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting" defaultVersion="1.0.0" defaultWorkgroup="cg" gitUrl="https://github.com/HL7/genomics-reporting" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/uv/genomics-reporting"><version code="current" url="http://build.fhir.org/ig/HL7/genomics-reporting"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/2019Jan" ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting" defaultVersion="2.0.0" defaultWorkgroup="cg" gitUrl="https://github.com/HL7/genomics-reporting" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/uv/genomics-reporting"><version code="current" url="http://build.fhir.org/ig/HL7/genomics-reporting"/>
+<version code="2.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU2"/>
 <version code="1.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU1"/>
 <version code="0.3.0" url="http://hl7.org/fhir/uv/genomics-reporting/2019Jan"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2018May"/>
@@ -9,7 +10,6 @@
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="ConceptMap/dna-change-type" key="ConceptMap-dna-change-type" name="Concept mapping for DNA Change Type"/>
-<artifact id="StructureDefinition/medicationstatement" key="StructureDefinition-medicationstatement" name="Current Medication"/>
 <artifact id="ValueSet/dna-change-type" key="ValueSet-dna-change-type" name="DNA Change Type"/>
 <artifact id="StructureDefinition/diagnostic-implication" key="StructureDefinition-diagnostic-implication" name="Diagnostic Implication"/>
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>

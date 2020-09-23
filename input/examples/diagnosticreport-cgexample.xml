@@ -919,7 +919,7 @@ New:
       <Observation>
         <id value="dis-path"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -934,8 +934,8 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="53037-8"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <code value="diagnostic-implication"/>
           </coding>
         </code>
         <subject>
@@ -946,17 +946,25 @@ New:
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        <valueCodeableConcept>
-          <coding>
-            <!-- B.20 Genetic variation clinical significance -->
-            <system value="http://loinc.org"/>
-            <code value="LA6668-3"/>
-            <display value="Pathogenic"/>
-          </coding>
-        </valueCodeableConcept>
         <derivedFrom>
           <reference value="Observation/discrete-variant"/>
         </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53037-8"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- B.20 Genetic variation clinical significance -->
+              <system value="http://loinc.org"/>
+              <code value="LA6668-3"/>
+              <display value="Pathogenic"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
         <component>
           <code>
             <coding>
@@ -1071,7 +1079,7 @@ New:
       <Observation>
         <id value="complex-dis-path"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/inherited-disease-pathogenicity"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1086,8 +1094,8 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="53037-8"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <code value="diagnostic-implication"/>
           </coding>
         </code>
         <subject>
@@ -1098,17 +1106,25 @@ New:
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        <valueCodeableConcept>
-          <coding>
-            <!-- C.5 Complex variant type -->
-            <system value="http://loinc.org"/>
-            <code value="LA6668-3"/>
-            <display value="Pathogenic"/>
-          </coding>
-        </valueCodeableConcept>
         <derivedFrom>
           <reference value="Observation/complex-variant"/>
         </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53037-8"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- C.5 Complex variant type -->
+              <system value="http://loinc.org"/>
+              <code value="LA6668-3"/>
+              <display value="Pathogenic"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
         <component>
           <code>
             <coding>
@@ -1588,7 +1604,7 @@ New:
       <Observation>
         <id value="metab"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-metabolism"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1603,8 +1619,8 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="53040-2"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <code value="therapeutic-implication"/>
           </coding>
         </code>
         <subject>
@@ -1615,14 +1631,6 @@ New:
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        <valueCodeableConcept>
-          <coding>
-            <!-- F.3 Genetic variation's effect on drug metabolism -->
-            <system value="http://loinc.org"/>
-            <code value="LA25390-8"/>
-            <display value="Rapid metabolizer"/>
-          </coding>
-        </valueCodeableConcept>
         <derivedFrom>
           <reference value="Observation/genotype"/>
         </derivedFrom>
@@ -1642,6 +1650,23 @@ New:
             </coding>
           </valueCodeableConcept>
         </component>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="53040-2"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- F.3 Genetic variation's effect on drug metabolism -->
+              <system value="http://loinc.org"/>
+              <code value="LA25390-8"/>
+              <display value="Rapid metabolizer"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
+
       </Observation>
     </resource>
   </entry>
@@ -1651,7 +1676,7 @@ New:
       <Observation>
         <id value="efficacy"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-efficacy"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1666,8 +1691,8 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="51961-1"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <code value="therapeutic-implication"/>
           </coding>
         </code>
         <subject>
@@ -1678,17 +1703,25 @@ New:
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        <valueCodeableConcept>
-          <coding>
-            <!-- F.4 Genetic variation's effect on drug efficacy -->
-            <system value="http://loinc.org"/>
-            <code value="LA6676-6"/>
-            <display value="Resistant"/>
-          </coding>
-        </valueCodeableConcept>
         <derivedFrom>
           <reference value="Observation/genotype"/>
         </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="51961-1"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- F.4 Genetic variation's effect on drug efficacy -->
+              <system value="http://loinc.org"/>
+              <code value="LA6676-6"/>
+              <display value="Resistant"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
         <component>
           <code>
             <coding>
@@ -1714,7 +1747,7 @@ New:
       <Observation>
         <id value="highrisk"/>
         <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-high-risk"/>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
         <text>
           <status value="generated"/>
@@ -1729,8 +1762,8 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://loinc.org"/>
-            <code value="83009-1"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <code value="therapeutic-implication"/>
           </coding>
         </code>
         <subject>
@@ -1741,17 +1774,25 @@ New:
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        <valueCodeableConcept>
-          <coding>
-            <!-- F.5 Genetic variation’s effect on high-risk allele  -->
-            <system value="http://loinc.org"/>
-            <code value="LA19542-2"/>
-            <display value="Low risk"/>
-          </coding>
-        </valueCodeableConcept>
         <derivedFrom>
           <reference value="Observation/genotype"/>
         </derivedFrom>
+        <component>
+          <code>
+            <coding>
+              <system value="http://loinc.org"/>
+              <code value="83009-1"/>
+            </coding>
+          </code>
+          <valueCodeableConcept>
+            <coding>
+              <!-- F.5 Genetic variation’s effect on high-risk allele  -->
+              <system value="http://loinc.org"/>
+              <code value="LA19542-2"/>
+              <display value="Low risk"/>
+            </coding>
+          </valueCodeableConcept>
+        </component>
         <component>
           <code>
             <coding>

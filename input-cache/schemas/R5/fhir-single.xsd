@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Aug 21, 2020 11:50+0000 for FHIR v4.5.0 
+  Generated on Tue, Sep 22, 2020 18:47+0000 for FHIR v4.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.5.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -5974,12 +5974,12 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:element name="AdministrableProductDefinition" type="AdministrableProductDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A pharmaceutical product described in terms of its composition and dose form.</xs:documentation>
+      <xs:documentation xml:lang="en">A pharmaceutical product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="AdministrableProductDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A pharmaceutical product described in terms of its composition and dose form.</xs:documentation>
+      <xs:documentation xml:lang="en">A pharmaceutical product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -6036,7 +6036,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdministrableProductDefinition.Property">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A pharmaceutical product described in terms of its composition and dose form.</xs:documentation>
+      <xs:documentation xml:lang="en">A pharmaceutical product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -6067,7 +6067,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdministrableProductDefinition.RouteOfAdministration">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A pharmaceutical product described in terms of its composition and dose form.</xs:documentation>
+      <xs:documentation xml:lang="en">A pharmaceutical product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -6113,7 +6113,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdministrableProductDefinition.TargetSpecies">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A pharmaceutical product described in terms of its composition and dose form.</xs:documentation>
+      <xs:documentation xml:lang="en">A pharmaceutical product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -6134,7 +6134,7 @@ A coverage may only be responsible for specific types of charges, and the sequen
   </xs:complexType>
   <xs:complexType name="AdministrableProductDefinition.WithdrawalPeriod">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A pharmaceutical product described in terms of its composition and dose form.</xs:documentation>
+      <xs:documentation xml:lang="en">A pharmaceutical product in the final form which is suitable for administering to a patient (after any mixing of multiple components, dissolution etc. has been performed).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -9383,6 +9383,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Information about the system's restful capabilities that apply across all applications, such as security.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="feature" type="CapabilityStatement2.Feature" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A statement that affirms support for a feature.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="resource" type="CapabilityStatement2.Resource" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">A specification of the restful capabilities of the solution for a specific resource type.</xs:documentation>
@@ -9406,6 +9411,27 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="compartment" minOccurs="0" maxOccurs="unbounded" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">An absolute URI which is a reference to the definition of a compartment that the system supports. The reference is to a CompartmentDefinition resource by its canonical URL .</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapabilityStatement2.Feature">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A Capability Statement documents a set of capabilities (behaviors) of a FHIR Server for a particular version of FHIR that may be used as a statement of actual server functionality or a statement of required or desired server implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A code that describes the feature being reported on.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A value for the feature - maybe true, false, or one of the set of codes allowed in the definition of the feature code.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -9437,6 +9463,11 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Additional information about the resource type used by the system.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="feature" type="CapabilityStatement2.Feature" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A statement that affirms support for a feature, in this context.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="interaction" type="CapabilityStatement2.Interaction" minOccurs="0" maxOccurs="unbounded">
@@ -9475,6 +9506,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="feature" type="CapabilityStatement2.Feature" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A statement that affirms support for a feature, in this context.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9506,6 +9542,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="feature" type="CapabilityStatement2.Feature" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A statement that affirms support for a feature, in this context.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9532,6 +9573,11 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="feature" type="CapabilityStatement2.Feature" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A statement that affirms support for a feature, in this context.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9551,6 +9597,11 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="markdown">
             <xs:annotation>
               <xs:documentation xml:lang="en">Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="feature" type="CapabilityStatement2.Feature" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A statement that affirms support for a feature, in this context.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -9696,9 +9747,9 @@ into another (possibly the same) biological entity.</xs:documentation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="outcome" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
+          <xs:element name="performedActivity" minOccurs="0" maxOccurs="unbounded" type="CodeableReference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Identifies the outcome at the point when the status of the activity is assessed.  For example, the outcome of an education activity could be patient understands (or not).  The reference to an &quot;event&quot; resource, such as Procedure or Encounter or Observation, is the result/outcome of the activity itself.  The activity can be conveyed using CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference to a “request” resource).</xs:documentation>
+              <xs:documentation xml:lang="en">Identifies the activity that was performed. For example, an activity could be patient education, exercise, or a medication administration. The reference to an &quot;event&quot; resource, such as Procedure or Encounter or Observation, represents the activity that was performed. The requested activity can be conveyed using CarePlan.activity.plannedActivityDetail OR using the CarePlan.activity.plannedActivityReference (a reference to a “request” resource).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="progress" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -9706,12 +9757,12 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Notes about the adherence/status/progress of the activity.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="reference" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="plannedActivityReference" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The details of the proposed activity represented in a specific resource.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="detail" type="CarePlan.Detail" minOccurs="0" maxOccurs="1">
+          <xs:element name="plannedActivityDetail" type="CarePlan.PlannedActivityDetail" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.</xs:documentation>
            </xs:annotation>
@@ -9720,7 +9771,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="CarePlan.Detail">
+  <xs:complexType name="CarePlan.PlannedActivityDetail">
     <xs:annotation>
       <xs:documentation xml:lang="en">Describes the intention of how one or more practitioners intend to deliver care for a particular patient, group or community for a period of time, possibly limited to care for a specific condition or set of conditions.</xs:documentation>
     </xs:annotation>
@@ -33148,12 +33199,12 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:element name="MedicinalProductDefinition" type="MedicinalProductDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="MedicinalProductDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -33300,7 +33351,7 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.Contact">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -33321,7 +33372,7 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.Name">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -33352,7 +33403,7 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.NamePart">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -33373,7 +33424,7 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.CountryLanguage">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -33399,7 +33450,7 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.CrossReference">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -33420,7 +33471,7 @@ The primary difference between a medicationusage and a medicationadministration 
   </xs:complexType>
   <xs:complexType name="MedicinalProductDefinition.ManufacturingBusinessOperation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use).</xs:documentation>
+      <xs:documentation xml:lang="en">Detailed definition of a medicinal product, typically for uses other than direct patient care (e.g. regulatory use, drug catalogs).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -36921,7 +36972,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
           </xs:element>
           <xs:element name="manufacturer" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Manufacturer of this package type.</xs:documentation>
+              <xs:documentation xml:lang="en">Manufacturer of this package type. When there are multiple it means these are all possible manufacturers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="batchIdentifier" type="PackagedProductDefinition.BatchIdentifier" minOccurs="0" maxOccurs="unbounded">
@@ -36998,7 +37049,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
           </xs:element>
           <xs:element name="manufacturer" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Manufacturer of this package Item.</xs:documentation>
+              <xs:documentation xml:lang="en">Manufacturer of this package Item. When there are multiple it means these are all possible manufacturers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="property" type="PackagedProductDefinition.Property" minOccurs="0" maxOccurs="unbounded">
@@ -38910,12 +38961,12 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:element name="Procedure" type="Procedure">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</xs:documentation>
+      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient, practitioner, device, organization, or location. For example, this can be a physical intervention on a patient like an operation, or less invasive like long term services, counseling, or hypnotherapy.  This can be a quality or safety inspection for a location, organization, or device.  This can be an accreditation procedure on a practitioner for licensing.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Procedure">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</xs:documentation>
+      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient, practitioner, device, organization, or location. For example, this can be a physical intervention on a patient like an operation, or less invasive like long term services, counseling, or hypnotherapy.  This can be a quality or safety inspection for a location, organization, or device.  This can be an accreditation procedure on a practitioner for licensing.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -38968,7 +39019,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The person, animal or group on which the procedure was performed.</xs:documentation>
+              <xs:documentation xml:lang="en">On whom or what the procedure was performed. This is usually an individual human, but can also be performed on animals, groups of humans or animals, organizations or practitioners (for licensing), locations or devices (for safety inspections or regulatory authorizations).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
@@ -39070,7 +39121,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="Procedure.Performer">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</xs:documentation>
+      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient, practitioner, device, organization, or location. For example, this can be a physical intervention on a patient like an operation, or less invasive like long term services, counseling, or hypnotherapy.  This can be a quality or safety inspection for a location, organization, or device.  This can be an accreditation procedure on a practitioner for licensing.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -39096,7 +39147,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
   </xs:complexType>
   <xs:complexType name="Procedure.FocalDevice">
     <xs:annotation>
-      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient. This can be a physical intervention like an operation, or less invasive like long term services, counseling, or hypnotherapy.</xs:documentation>
+      <xs:documentation xml:lang="en">An action that is or was performed on or for a patient, practitioner, device, organization, or location. For example, this can be a physical intervention on a patient like an operation, or less invasive like long term services, counseling, or hypnotherapy.  This can be a quality or safety inspection for a location, organization, or device.  This can be an accreditation procedure on a practitioner for licensing.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -44002,6 +44053,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="domain" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">If the substance applies to only human or veterinary use.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="grade" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The quality standard, established benchmark, to which substance complies (e.g. USP/NF, Ph. Eur, JP, BP, Company Standard).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">

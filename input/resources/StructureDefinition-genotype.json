@@ -2460,52 +2460,6 @@
         ]
       },
       {
-        "id": "Observation.derivedFrom:molecularSequence",
-        "path": "Observation.derivedFrom",
-        "sliceName": "molecularSequence",
-        "short": "Related measurements the observation is made from",
-        "definition": "MolecularSequence from which this haplotype is derived.",
-        "comment": "All the reference choices that are listed in this element can represent clinical observations and other measurements that may be the source for a derived value.  The most common reference will be another Observation.  For a discussion on the ways Observations can assembled in groups together, see [Notes](http://hl7.org/fhir/observation.html#obsgrouping) below.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.derivedFrom",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MolecularSequence"
-            ]
-          }
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          }
-        ],
-        "mustSupport": false,
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "Relationships established by OBX-4 usage"
-          },
-          {
-            "identity": "rim",
-            "map": ".targetObservation"
-          }
-        ]
-      },
-      {
         "id": "Observation.component",
         "path": "Observation.component",
         "slicing": {
@@ -4495,23 +4449,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
-            ]
-          }
-        ],
-        "mustSupport": false
-      },
-      {
-        "id": "Observation.derivedFrom:molecularSequence",
-        "path": "Observation.derivedFrom",
-        "sliceName": "molecularSequence",
-        "definition": "MolecularSequence from which this haplotype is derived.",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MolecularSequence"
             ]
           }
         ],

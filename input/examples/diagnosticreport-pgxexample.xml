@@ -183,7 +183,7 @@
             <display value="Therapeutic Implication"/>
           </coding>
         </code>
-        
+
         <subject>
           <reference value="Patient/patient"/>
         </subject>
@@ -192,7 +192,7 @@
         <performer>
           <reference value="Organization/lab"/>
         </performer>
-        
+
 
         <derivedFrom>
           <reference value="Observation/genotype-pgx-example"/>
@@ -731,9 +731,6 @@
           <text value="Any Increase does Recommendation Text from the provider"/>
         </code>
         <description value="Any Increase does Recommendation Text from the provider"/>
-        <focus>
-          <reference value="MedicationStatement/current-med-example"/>
-        </focus>
         <for>
           <reference value="Patient/patient"/>
         </for>
@@ -745,32 +742,6 @@
     <request>
       <method value="POST"/>
       <url value="Task"/>
-    </request>
-  </entry>
-  <entry>
-    <fullUrl value="http://example.org/fhir/MedicationStatement/current-med-example"/>
-    <resource>
-      <MedicationStatement>
-        <id value="current-med-example"/>
-        <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medicationstatement"/>
-        </meta>
-        <status value="unknown"/>
-        <medicationCodeableConcept>
-          <coding>
-            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
-            <code value="103"/>
-            <display value="mercaptopurine"/>
-          </coding>
-        </medicationCodeableConcept>
-        <subject>
-          <reference value="Patient/patient"/>
-        </subject>
-      </MedicationStatement>
-    </resource>
-    <request>
-      <method value="POST"/>
-      <url value="MedicationStatement"/>
     </request>
   </entry>
 </Bundle>

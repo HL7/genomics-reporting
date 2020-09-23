@@ -90,9 +90,9 @@
             </performer>
             <valueQuantity>
                <value value="25.0"/>
-               <unit value="somatic variants per megabase of sequenced DNA"/>
+               <unit value="Mutations/Megabase"/>
                <system value="http://unitsofmeasure.org"/>
-               <code value="v/Mb"/>
+               <code value="1/1000000{Base}"/>
             </valueQuantity>
             <specimen>
                <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
@@ -311,7 +311,7 @@
                 <coding>
                   <system value="http://loinc.org"/>
                   <code value="LA6668-3"/>
-                  <display value="Pathogenic"/> 
+                  <display value="Pathogenic"/>
                 </coding>
               </valueCodeableConcept>
             </component>

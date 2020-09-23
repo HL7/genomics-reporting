@@ -2,7 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
   <id value="genomics-reporting"/>
   <url value="http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/genomics-reporting"/>
-  <version value="1.1.0"/>
+  <version value="2.0.0"/>
   <name value="GenomicsReporting"/>
   <title value="Genomics Reporting Implementation Guide"/>
   <status value="draft"/>
@@ -199,16 +199,6 @@
       <name value="Therapeutic Implication"/>
       <description
         value="Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="implications"/>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/medicationstatement"/>
-      </reference>
-      <name value="Current Medication"/>
-      <description
-        value="MedicationStatement describing a med potentially being taken by the patient that may require adjustment"/>
       <exampleBoolean value="false"/>
       <groupingId value="implications"/>
     </resource>

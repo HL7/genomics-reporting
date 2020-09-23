@@ -42,7 +42,7 @@
 		<min value="0"/>
 		<max value="1"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied] Must include 1..* component:ranges-examined; 1..1 component:coordinate-system (valued with '0-based interval counting'); 1..1 component:genomic-ref-seq."/>
-		<type value="Observation"/>
+		<type value="canonical"/>
 		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"/>
 	</parameter>
 	<parameter>
@@ -51,7 +51,7 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] Must include valueCodeableConcept; component:genomic-source-class; component:genomic-ref-seq; component:allelic-state; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."/>
-		<type value="Observation"/>
+		<type value="canonical"/>
 		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
 	</parameter>
 	<parameter>
@@ -60,7 +60,7 @@
 		<min value="0"/>
 		<max value="*"/>
 		<documentation value="[Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship] Must include valueCodeableConcept; 2..2 derivedFrom:variant."/>
-		<type value="Observation"/>
+		<type value="canonical"/>
 		<targetProfile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"/>
 	</parameter>
 </OperationDefinition>
