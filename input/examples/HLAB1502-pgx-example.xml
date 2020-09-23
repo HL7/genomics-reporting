@@ -326,7 +326,7 @@ alternative medications should be given to potential
 cross-reactivity with structurally similar aromatic
 antiepileptic drugs such as oxcarbazepine, phenytoin,
 fosphenytoin and lamotrigine, which can also moderately increase
-risk for SJS/TEN in association with HLA-B*15:02 positivity.</p><p><b>for</b>: Patient/patient</p><p><b>reasonReference</b>: Observation/medication-high-risk</p></div>
+risk for SJS/TEN in association with HLA-B*15:02 positivity.</p><p><b>focus</b>: MedicationStatement/current-med-example</p><p><b>for</b>: Patient/patient</p><p><b>reasonReference</b>: Observation/medication-high-risk</p></div>
         </text>
         <status value="requested"/>
         <intent value="proposal"/>
@@ -350,6 +350,9 @@ cross-reactivity with structurally similar aromatic
 antiepileptic drugs such as oxcarbazepine, phenytoin,
 fosphenytoin and lamotrigine, which can also moderately increase
 risk for SJS/TEN in association with HLA-B*15:02 positivity."/>
+        <focus>
+          <reference value="MedicationStatement/current-med-example"/>
+        </focus>
         <for>
           <reference value="Patient/patient"/>
         </for>
@@ -361,6 +364,36 @@ risk for SJS/TEN in association with HLA-B*15:02 positivity."/>
     <request>
       <method value="POST"/>
       <url value="Task"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="http://example.org/fhir/MedicationStatement/current-med-example"/>
+    <resource>
+      <MedicationStatement>
+        <id value="current-med-example"/>
+        <meta>
+          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medicationstatement"/>
+        </meta>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: current-med-example</p><p><b>meta</b>: </p><p><b>status</b>: unknown</p><p><b>medication</b>: Carbamazepine <span style="background: LightGoldenRodYellow">(Details : {RxNorm code '2002' = 'Carbamazepine', given as 'Carbamazepine'})</span></p><p><b>subject</b>: Patient/patient</p></div>
+        </text>
+        <status value="unknown"/>
+        <medicationCodeableConcept>
+          <coding>
+            <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+            <code value="2002"/>
+            <display value="Carbamazepine"/>
+          </coding>
+        </medicationCodeableConcept>
+        <subject>
+          <reference value="Patient/patient"/>
+        </subject>
+      </MedicationStatement>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="MedicationStatement"/>
     </request>
   </entry>
 </Bundle>
