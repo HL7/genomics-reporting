@@ -78,8 +78,8 @@
       <reference>
         <reference value="StructureDefinition/specimen"/>
       </reference>
-      <name value="Specimen"/>
-      <description value="Constraints on Specimen for use with clinical genomics reporting"/>
+      <name value="Specimen (FSH)"/>
+      <description value="Constraints on Specimen for use with clinical genomics reporting (FSH-authored)"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -164,9 +164,9 @@
       <reference>
         <reference value="StructureDefinition/tmb"/>
       </reference>
-      <name value="Tumor mutation burden"/>
+      <name value="Tumor mutation burden (FSH)"/>
       <description
-        value="Tumor mutational burden (TMB), also known as mutation load."/>
+        value="Tumor mutational burden (TMB), also known as mutation load (FSH-authored)."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -226,9 +226,8 @@
       <reference>
         <reference value="StructureDefinition/genomics-base"/>
       </reference>
-      <name value="Genomics Base"/>
-      <description
-        value="Base profile that defines characteristics shared by all genomic observations"/>
+      <name value="Genomics Base (FSH)"/>
+      <description value="Base profile that defines characteristics shared by all genetic observations. (FSH-authored)"/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -242,6 +241,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
+
     <resource>
       <reference>
         <reference value="StructureDefinition/implication"/>
@@ -485,7 +485,7 @@
       <reference>
         <reference value="ValueSet/high-low-codes"/>
       </reference>
-      <name value="High/Low codes"/>
+      <name value="High/Low codes (FSH)"/>
       <description value="High/Low codes for Observation.interpretation"/>
       <groupingId value="valuesets"/>
     </resource>

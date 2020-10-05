@@ -1,5 +1,5 @@
 ValueSet:       HighLowCodesVS
-Id:             high-low-HighLowCodes
+Id:             high-low-codes
 Title:          "High Low codes"
 Description:    "This value set includes high/low codes for Observation Interpretations"
 
