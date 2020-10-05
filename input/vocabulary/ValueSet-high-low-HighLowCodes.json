@@ -1,0 +1,27 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "HighLowCodesVS",
+  "id": "high-low-HighLowCodes",
+  "title": "High Low codes",
+  "description": "This value set includes high/low codes for Observation Interpretations",
+  "version": "2.0.0",
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/high-low-HighLowCodes",
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+        "concept": [
+          {
+            "code": "H",
+            "display": "High"
+          },
+          {
+            "code": "L",
+            "display": "Low"
+          }
+        ]
+      }
+    ]
+  }
+}
