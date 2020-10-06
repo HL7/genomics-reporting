@@ -1,0 +1,70 @@
+{
+  "resourceType": "Patient",
+  "id": "CGPatientExample01",
+  "identifier": [
+    {
+      "use": "usual",
+      "type": {
+        "coding": [
+          {
+            "code": "MR",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "display": "Medical Record Number"
+          }
+        ]
+      },
+      "system": "http://hospital.example.org",
+      "value": "m123"
+    }
+  ],
+  "name": [
+    {
+      "family": "Everyman",
+      "given": [
+        "Adam",
+        "B."
+      ]
+    }
+  ],
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "555-555-5555",
+          "use": "home"
+        },
+        {
+          "system": "email",
+          "value": "adam.everyman@example.com"
+        }
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1951-01-20",
+  "address": [
+    {
+      "line": [
+        "123 Main St"
+      ],
+      "city": "Anytown",
+      "postalCode": "12345",
+      "country": "US"
+    }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "code": "en-US",
+            "system": "urn:ietf:bcp:47",
+            "display": "English (Region=United States)"
+          }
+        ],
+        "text": "English"
+      }
+    }
+  ]
+}

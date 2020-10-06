@@ -80,7 +80,7 @@
       </reference>
       <name value="Specimen (FSH)"/>
       <description value="Constraints on Specimen for use with clinical genomics reporting (FSH-authored)"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="general"/>
     </resource>
     <resource>
@@ -235,9 +235,9 @@
       <reference>
         <reference value="StructureDefinition/finding"/>
       </reference>
-      <name value="Genomic Finding"/>
+      <name value="Genomic Finding (FSH)"/>
       <description
-        value="Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)"/>
+        value="Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.) (FSH-authored)"/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -461,6 +461,14 @@
       <name value="Example - Full Bundle Oncology Example"/>
       <description value="Full Bundle Oncology Example"/>
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Specimen/GenomicSpecimenExample01"/>
+      </reference>
+      <name value="Example - Genomic Specimen"/>
+      <description value="Genomic Specimen"/>
       <groupingId value="examples"/>
     </resource>
 
