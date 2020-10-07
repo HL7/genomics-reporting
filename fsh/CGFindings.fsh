@@ -1,39 +1,8 @@
-Profile:        GenomicSpecimen
-Parent:         Specimen
-Id:             specimen
-Title:          "Genomics specimen"
-Description:    "A sample to be used for analysis."
-
-* subject 1..1
-* subject only Reference(Patient or Group or Location)
-
-
-Profile:        GenomicsBase
-Parent:         Observation
-Id:             genomics-base
-Title:          "Genomics base"
-Description:    "Base profile that defines characteristics shared by all genetic observations. (FSH version)"
-
-* bodySite from http://hl7.org/fhir/StructureDefinition/bodySite (extensible) // MLT: optimized how this is represented. The original is a duplicate element modeled as an extension. Not sure why this was necessary.
-* category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "code"
-* category ^slicing.rules = #open
-* category ^slicing.ordered = false   // can be omitted, since false is the default
-* category ^slicing.description = "Slice based on the category.code pattern"
-* category contains labCategory 1..*
-* category[labCategory] = ObsCat#laboratory
-* subject 0..1
-* subject only Reference(Patient or Group or Location)
-* performer 0..1
-* performer only Reference(Patient or Organization or Patient or RelatedPerson)
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
-
-
 Profile:        GenomicFinding
 Parent:         GenomicsBase
 Id:             finding
 Title:          "Finding"
-Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.). (FSH version)"
+Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)."
 
 * specimen only Reference(GenomicSpecimen)
 * component ^slicing.discriminator.type = #pattern
@@ -59,7 +28,6 @@ Description:    "Properties common to genetic findings whose results are express
 * component[RefSequenceAssembly].value[x] only CodeableConcept
 * component[RefSequenceAssembly].valueCodeableConcept 1..1
 * component[RefSequenceAssembly].valueCodeableConcept from http://loinc.org/vs/LL378-1 (extensible)
-
 
 Profile:        TMB
 Parent:         GenomicsBase
@@ -88,7 +56,7 @@ Description:    "Definitions for the tmb resource profile. The total number of m
 * component contains
     dna-chg 0..1 and
     dna-chg-type 0..1 and
-    functional-annotation 0..1 and 
+    functional-annotation 0..1 and
     variation-code 0..1 and
     dbSNP-id 0..1 and
     genomic-dna-chg 0..1 and
@@ -100,7 +68,7 @@ Description:    "Definitions for the tmb resource profile. The total number of m
     sample-allelic-frequency 0..1 and
     allelic-read-depth 0..1 and
     allelic-state 0..1 and
-    copy-number 0..1 and 
+    copy-number 0..1 and
     ref-allele 0..1
 
 * component[dna-chg] ^short = "DNA Change - Transcript (cHGVS)"
@@ -193,4 +161,4 @@ Description:    "Definitions for the tmb resource profile. The total number of m
 * component[ref-allele] ^short = "Genomic ref allele"
 * component[ref-allele] ^definition = "Reference values ('normal') examined within the Reference Sequence."
 * component[ref-allele].code = LNC#69547-8
-* component[ref-allele].value[x] only string 
+* component[ref-allele].value[x] only string

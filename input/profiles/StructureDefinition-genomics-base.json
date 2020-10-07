@@ -16,7 +16,7 @@
   "name": "GenomicsBase",
   "title": "Genomics base",
   "status": "active",
-  "description": "Base profile that defines characteristics shared by all genetic observations. (FSH version)",
+  "description": "Base profile that defines characteristics shared by all genetic observations.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -87,6 +87,21 @@
         ]
       },
       {
+        "id": "Observation.extension:bodyStructure",
+        "path": "Observation.extension",
+        "sliceName": "bodyStructure",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/bodySite"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Observation.category",
         "path": "Observation.category",
         "slicing": {
@@ -107,7 +122,7 @@
         "path": "Observation.category",
         "sliceName": "labCategory",
         "min": 1,
-        "max": "*",
+        "max": "1",
         "patternCodeableConcept": {
           "coding": [
             {
@@ -146,14 +161,6 @@
             ]
           }
         ]
-      },
-      {
-        "id": "Observation.bodySite",
-        "path": "Observation.bodySite",
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/StructureDefinition/bodySite"
-        }
       }
     ]
   }

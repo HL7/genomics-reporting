@@ -8,7 +8,6 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name=""/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="ConceptMap/dna-change-type" key="ConceptMap-dna-change-type" name="Concept mapping for DNA Change Type"/>
 <artifact id="ValueSet/dna-change-type" key="ValueSet-dna-change-type" name="DNA Change Type"/>
@@ -21,7 +20,6 @@
 <artifact id="Bundle/complexVariant-nonHGVS" key="Bundle-complexVariant-nonHGVS" name="Example - Complex Variant (unpacked)"/>
 <artifact id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="Example - Full Bundle Oncology Example"/>
-<artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Genomic Specimen"/>
 <artifact id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="Example - Genomics Reporting"/>
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="Example - HLA genotyping for HLA-A, using GLStrings"/>
@@ -31,22 +29,24 @@
 <artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="Example - NGS"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="Example - Observation for a single HLA-A allele"/>
+<artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name="Example - Patient"/>
 <artifact id="Bundle/diagnosticreport-pgxexample" key="Bundle-diagnosticreport-pgxexample" name="Example - Pharmacogenomics"/>
 <artifact id="ServiceRequest/servicerequest-hla-a-r4" key="ServiceRequest-servicerequest-hla-a-r4" name="Example - Service request for high-resolution HLA-A genotyping"/>
+<artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Specimen"/>
 <artifact id="DiagnosticReport/AnnotationExample" key="DiagnosticReport-AnnotationExample" name="Example - Variant with ACMG Screening"/>
 <artifact id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
 <artifact id="ValueSet/functionalannotation" key="ValueSet-functionalannotation" name="Functional Annotation"/>
 <artifact id="ValueSet/functional-annotation" key="ValueSet-functional-annotation" name="Functional Annotations"/>
-<artifact id="StructureDefinition/finding" key="StructureDefinition-finding" name="Genomic Finding (FSH)"/>
+<artifact id="StructureDefinition/finding" key="StructureDefinition-finding" name="Genomic Finding"/>
 <artifact id="StructureDefinition/implication" key="StructureDefinition-implication" name="Genomic Implication"/>
-<artifact id="StructureDefinition/genomics-base" key="StructureDefinition-genomics-base" name="Genomics Base (FSH)"/>
+<artifact id="StructureDefinition/genomics-base" key="StructureDefinition-genomics-base" name="Genomics Base"/>
 <artifact id="StructureDefinition/genomics-report" key="StructureDefinition-genomics-report" name="Genomics Report"/>
 <artifact id="StructureDefinition/genotype" key="StructureDefinition-genotype" name="Genotype"/>
 <artifact id="StructureDefinition/grouper" key="StructureDefinition-grouper" name="Grouper"/>
 <artifact id="ValueSet/hgnc" key="ValueSet-hgnc" name="HGNC Value Set (FSH)"/>
 <artifact id="ValueSet/hgvs" key="ValueSet-hgvs" name="HGVS Value Set (FSH)"/>
 <artifact id="StructureDefinition/haplotype" key="StructureDefinition-haplotype" name="Haplotype"/>
-<artifact id="ValueSet/high-low-codes" key="ValueSet-high-low-codes" name="High/Low codes (FSH)"/>
+<artifact id="ValueSet/high-low-codes" key="ValueSet-high-low-codes" name="High/Low codes"/>
 <artifact deprecated="true" key="ImplementationGuide" name="ImplementationGuide"/>
 <artifact id="StructureDefinition/task-med-chg" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
 <artifact id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite instability"/>
@@ -62,14 +62,14 @@
 <artifact id="StructureDefinition/sequence-phase-relationship" key="StructureDefinition-sequence-phase-relationship" name="Sequence Phase Relationship"/>
 <artifact id="CodeSystem/seq-phase-relationship" key="CodeSystem-seq-phase-relationship" name="Sequence Phase Relationship"/>
 <artifact id="ValueSet/seq-phase-relationship" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationship"/>
-<artifact id="StructureDefinition/specimen" key="StructureDefinition-specimen" name="Specimen (FSH)"/>
+<artifact id="StructureDefinition/specimen" key="StructureDefinition-specimen" name="Specimen"/>
 <artifact id="StructureDefinition/SupportingInfo" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
 <artifact id="CodeSystem/tbd-codes" key="CodeSystem-tbd-codes" name="TBD Code System"/>
 <artifact id="ValueSet/tbd-codes" key="ValueSet-tbd-codes" name="TBD Value Set"/>
 <artifact id="ValueSet/tbd" key="ValueSet-tbd" name="TBD Value Set"/>
 <artifact deprecated="true" key="Task" name="Task"/>
 <artifact id="StructureDefinition/therapeutic-implication" key="StructureDefinition-therapeutic-implication" name="Therapeutic Implication"/>
-<artifact id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor mutation burden (FSH)"/>
+<artifact id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor mutation burden"/>
 <artifact id="StructureDefinition/variant" key="StructureDefinition-variant" name="Variant (FSH)"/>
 <artifact id="ValueSet/variant-inheritance" key="ValueSet-variant-inheritance" name="Variant Inheritance"/>
 <page key="NA" name="(NA)"/>

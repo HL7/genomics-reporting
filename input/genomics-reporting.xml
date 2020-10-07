@@ -78,8 +78,8 @@
       <reference>
         <reference value="StructureDefinition/specimen"/>
       </reference>
-      <name value="Specimen (FSH)"/>
-      <description value="Constraints on Specimen for use with clinical genomics reporting (FSH-authored)"/>
+      <name value="Specimen"/>
+      <description value="Constraints on Specimen for use with clinical genomics reporting"/>
       <exampleBoolean value="true"/>
       <groupingId value="general"/>
     </resource>
@@ -164,9 +164,9 @@
       <reference>
         <reference value="StructureDefinition/tmb"/>
       </reference>
-      <name value="Tumor mutation burden (FSH)"/>
+      <name value="Tumor mutation burden"/>
       <description
-        value="Tumor mutational burden (TMB), also known as mutation load (FSH-authored)."/>
+        value="Tumor mutational burden (TMB), also known as mutation load."/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -226,8 +226,8 @@
       <reference>
         <reference value="StructureDefinition/genomics-base"/>
       </reference>
-      <name value="Genomics Base (FSH)"/>
-      <description value="Base profile that defines characteristics shared by all genetic observations. (FSH-authored)"/>
+      <name value="Genomics Base"/>
+      <description value="Base profile that defines characteristics shared by all genetic observations."/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -235,9 +235,9 @@
       <reference>
         <reference value="StructureDefinition/finding"/>
       </reference>
-      <name value="Genomic Finding (FSH)"/>
+      <name value="Genomic Finding"/>
       <description
-        value="Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.) (FSH-authored)"/>
+        value="Properties common to genomic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)"/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -285,6 +285,22 @@
       <groupingId value="extensions"/>
     </resource>
     <!-- Examples -->
+    <resource>
+      <reference>
+        <reference value="Patient/CGPatientExample01"/>
+      </reference>
+      <name value="Example - Patient"/>
+      <description value="Test instance a patient"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Specimen/GenomicSpecimenExample01"/>
+      </reference>
+      <name value="Example - Specimen"/>
+      <description value="Test instance a specimen"/>
+      <groupingId value="examples"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -463,15 +479,6 @@
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
       <groupingId value="examples"/>
     </resource>
-    <resource>
-      <reference>
-        <reference value="Specimen/GenomicSpecimenExample01"/>
-      </reference>
-      <name value="Example - Genomic Specimen"/>
-      <description value="Genomic Specimen"/>
-      <groupingId value="examples"/>
-    </resource>
-
     <!-- Code Systems -->
     <resource>
       <reference>
@@ -493,7 +500,7 @@
       <reference>
         <reference value="ValueSet/high-low-codes"/>
       </reference>
-      <name value="High/Low codes (FSH)"/>
+      <name value="High/Low codes"/>
       <description value="High/Low codes for Observation.interpretation"/>
       <groupingId value="valuesets"/>
     </resource>
