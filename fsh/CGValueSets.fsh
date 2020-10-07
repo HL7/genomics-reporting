@@ -37,3 +37,10 @@ Id:             functionalannotation
 Title:          "Functional Annotation"
 Description:    "Functional annotation of a variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
+
+ValueSet:       VariantInheritanceVS
+Id:             variant-inheritance 
+Title:          "Variant Inheritance (FSH)"
+Description:    "A quality inhering in a variant by virtue of its origin."
+* include codes from system SEQONT where concept is-a #SO:0001762
+* include codes from system DataAbsentReason

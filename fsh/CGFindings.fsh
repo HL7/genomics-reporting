@@ -69,7 +69,18 @@ Description:    "Definitions for the tmb resource profile. The total number of m
     allelic-read-depth 0..1 and
     allelic-state 0..1 and
     copy-number 0..1 and
-    ref-allele 0..1
+    ref-allele 0..1 and
+    alt-allele 0..1 and
+    coordinate-system 0..1 and
+    exact-start-end 0..1 and
+    variant-length 0..1 and
+    outer-start-end 0..1 and
+    inner-start-end 0..1 and
+    chromosome-copy-number-change-type 0..1 and
+    arrCGH-ratio 0..1 and
+    complex-var-type 0..1 and
+    cytogenomic-nomenclature 0..1 and
+    variant-inheritance 0..1
 
 * component[dna-chg] ^short = "DNA Change - Transcript (cHGVS)"
 * component[dna-chg] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker."
@@ -162,3 +173,62 @@ Description:    "Definitions for the tmb resource profile. The total number of m
 * component[ref-allele] ^definition = "Reference values ('normal') examined within the Reference Sequence."
 * component[ref-allele].code = LNC#69547-8
 * component[ref-allele].value[x] only string
+* component[alt-allele] ^short = "Genomic alt allele"
+* component[alt-allele] ^definition = "The genomic alternate allele is the contiguous segment of DNA in the test sample that differs from the reference allele at the same location and thus defines a variant."
+* component[alt-allele].code = LNC#69551-0
+* component[alt-allele].value[x] only string
+* component[coordinate-system] ^short = "Coordinate System"
+* component[coordinate-system] ^definition = "Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides."
+* component[coordinate-system].code = LNC#92822-6
+* component[coordinate-system].value[x] only CodeableConcept
+* component[coordinate-system].valueCodeableConcept 1..1
+* component[coordinate-system].valueCodeableConcept from http://loinc.org/vs/LL5323-2 (extensible)
+* component[exact-start-end] ^short = "Exact start-end"
+* component[exact-start-end] ^definition = "This location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the location is Chr3: 128906220 on Assembly GRCh38."
+* component[exact-start-end].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[exact-start-end].code.coding.code = #exact-start-end
+* component[exact-start-end].value[x] only Range
+* component[variant-length] ^short = "Structural variant length"
+* component[variant-length] ^definition = "Length of the structural variant, which information may be ascertained in some but not all types of structural variants."
+* component[variant-length].code = LNC#81300-6
+* component[variant-length].value[x] only Quantity  // MLT: follow-up on how to constrain to Count
+* component[outer-start-end] ^short = "Variant outer start and end"
+* component[outer-start-end] ^definition = "The genomic coordinates of the widest genomic range in which the variant might reside."
+* component[outer-start-end].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[outer-start-end].code.coding.code = #outer-start-end
+* component[outer-start-end].value[x] only Range
+* component[inner-start-end] ^short = "Variant inner start and end"
+* component[inner-start-end] ^definition = "The genomic coordinates of the narrowest genomic range in which the structural variant might reside."
+* component[inner-start-end].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[inner-start-end].code.coding.code = #inner-start-end
+* component[inner-start-end].value[x] only Range
+* component[chromosome-copy-number-change-type] ^short = "Chromosome copy number change type"
+* component[chromosome-copy-number-change-type] ^definition = "The type of the chromosome copy number change."
+* component[chromosome-copy-number-change-type].code = LNC#62378-5
+* component[chromosome-copy-number-change-type].value[x] only CodeableConcept
+* component[chromosome-copy-number-change-type].valueCodeableConcept 1..1
+* component[chromosome-copy-number-change-type].valueCodeableConcept from http://loinc.org/vs/LL1041-4 (extensible)
+* component[arrCGH-ratio] ^short = "Structural variant reported arrCGH [Ratio]"
+* component[arrCGH-ratio] ^definition = "todo."
+* component[arrCGH-ratio].code = LNC#81299-0
+* component[arrCGH-ratio].value[x] only SimpleQuantity
+* component[complex-var-type] ^short = "Complex variant type"
+* component[complex-var-type] ^definition = "The type of complex variant, for example, compound heterozygous or haplotype."
+* component[complex-var-type].code = LNC#81263-6
+* component[complex-var-type].value[x] only CodeableConcept
+* component[complex-var-type].valueCodeableConcept 1..1
+* component[complex-var-type].valueCodeableConcept from http://loinc.org/vs/LL3999-1 (extensible)
+* component[cytogenomic-nomenclature] ^short = "Cytogenomic Nomenclature"
+* component[cytogenomic-nomenclature] ^definition = "Fully describes a variant with a single code. Typically a large variant such as a mosaic, abnormal chromosome numbers, etc."
+* component[cytogenomic-nomenclature].code = LNC#81291-7
+* component[cytogenomic-nomenclature].code ^short = "Variant ISCN"
+* component[cytogenomic-nomenclature].value[x] only CodeableConcept
+* component[cytogenomic-nomenclature].valueCodeableConcept 1..1
+// * component[VariationCode].valueCodeableConcept from unbound (example) // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
+* component[variant-inheritance] ^short = "Variant Inheritance"
+* component[variant-inheritance] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
+* component[variant-inheritance].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[variant-inheritance].code.coding.code = #variant-inheritance
+* component[variant-inheritance].value[x] only CodeableConcept
+* component[variant-inheritance].valueCodeableConcept 1..1
+* component[variant-inheritance].valueCodeableConcept from VariantInheritanceVS (extensible)
