@@ -1,0 +1,24 @@
+{
+  "resourceType": "ValueSet",
+  "status": "active",
+  "name": "DNAChangeTypeVS",
+  "id": "dnachangetype",
+  "title": "DNA Change Type",
+  "description": "DNA Change Type of a variant.",
+  "version": "2.0.0",
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dnachangetype",
+  "compose": {
+    "include": [
+      {
+        "system": "http://sequenceontology.org",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "SO:0002072"
+          }
+        ]
+      }
+    ]
+  }
+}

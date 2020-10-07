@@ -144,9 +144,9 @@
       <reference>
         <reference value="StructureDefinition/variant"/>
       </reference>
-      <name value="Variant"/>
+      <name value="Variant (FSH)"/>
       <description
-        value="Details about a set of changes in the tested sample compared to a reference sequence."/>
+        value="Details about a set of changes in the tested sample compared to a reference sequence. (FSH-authored)"/>
       <exampleBoolean value="false"/>
       <groupingId value="general"/>
     </resource>
@@ -501,7 +501,7 @@
       <reference>
         <reference value="ValueSet/hgvs"/>
       </reference>
-      <name value="HGVS Value Set"/>
+      <name value="HGVS Value Set (FSH)"/>
       <description value="Value Set for HGVS"/>
       <groupingId value="valuesets"/>
     </resource>
@@ -509,7 +509,7 @@
       <reference>
         <reference value="ValueSet/hgnc"/>
       </reference>
-      <name value="HGNC Value Set"/>
+      <name value="HGNC Value Set (FSH)"/>
       <description value="Value Set for HGNC (genes and gene groups)"/>
       <groupingId value="valuesets"/>
     </resource>
@@ -527,6 +527,14 @@
       </reference>
       <name value="DNA Change Type"/>
       <description value="DNA change type for variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/dnachangetype"/>
+      </reference>
+      <name value="DNA Change Type (FSH)"/>
+      <description value="DNA change type for variants (FSH-authored)"/>
       <groupingId value="valuesets"/>
     </resource>
     <resource>
