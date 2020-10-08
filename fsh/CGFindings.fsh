@@ -43,8 +43,7 @@ Description:    "Definitions for the tmb resource profile. The total number of m
 Profile:        Variant
 Parent:         GenomicFinding
 Id:             variant
-Title:          "Tumor Mutation Burden"
-Description:    "Definitions for the tmb resource profile. The total number of mutations (changes) found in the DNA of cancer cells. [Source: NCI Dictionary](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tumor-mutational-burden)"
+Title:          "Variant"
 
 * code = LNC#69548-6 //"Genetic variant assessment"
 * method from http://loinc.org/vs/LL4048-6 (extensible)

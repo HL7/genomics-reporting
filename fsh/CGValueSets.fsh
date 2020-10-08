@@ -14,10 +14,10 @@ Description:    "This value set includes all HGNC Codes, which includes multiple
 * include codes from system HGNCGROUP
 
 ValueSet:       HGVSVS
-Id:             hgvs 
+Id:             hgvs
 Title:          "Human Genome Variation Society (HGVS) Nomenclature"
 Description:    "HGVS-nomenclature is used to report and exchange information regarding variants found in DNA, RNA and protein sequences and serves as an international standard. (source: varnomen.hgvs.org)"
-* include codes from system HGVS 
+* include codes from system HGVS
 
 ValueSet:       DNAChangeTypeVS
 Id:             dnachangetype
@@ -27,19 +27,19 @@ Description:    "DNA Change Type of a variant."
 // * include codes from system SEQONT  // MLT: follow-up with intensional value sets where the code has special characters. Trying to represent 'Include codes from http://sequenceontology.org where concept descends from SO:0002072'
 
 ValueSet:       TBDVS
-Id:             tbd 
+Id:             tbd
 Title:          "TBD Value Set"
 Description:    "Value Set for codes yet to be defined in LOINC"
 * include codes from system TBD
 
 ValueSet:       FunctionalAnnotationVS
-Id:             functionalannotation 
+Id:             functionalannotation
 Title:          "Functional Annotation"
 Description:    "Functional annotation of a variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
 ValueSet:       VariantInheritanceVS
-Id:             variant-inheritance 
+Id:             variant-inheritance
 Title:          "Variant Inheritance (FSH)"
 Description:    "A quality inhering in a variant by virtue of its origin."
 * include codes from system SEQONT where concept is-a #SO:0001762
