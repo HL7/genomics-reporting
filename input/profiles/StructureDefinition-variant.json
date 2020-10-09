@@ -16,6 +16,7 @@
   "name": "Variant",
   "title": "Variant",
   "status": "active",
+  "description": "Details about a set of changes in the tested sample compared to a reference sequence.",
   "fhirVersion": "4.0.1",
   "mapping": [
     {
@@ -294,7 +295,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
       },
       {
         "id": "Observation.component:variation-code.valueCodeableConcept",
@@ -341,7 +346,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
       },
       {
         "id": "Observation.component:dbSNP-id.valueCodeableConcept",
@@ -592,7 +601,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
       },
       {
         "id": "Observation.component:transcript-ref-seq.valueCodeableConcept",
@@ -639,7 +652,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
       },
       {
         "id": "Observation.component:genomic-ref-seq.valueCodeableConcept",
@@ -781,9 +798,42 @@
       {
         "id": "Observation.component:copy-number.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
         "type": [
           {
             "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:copy-number.valueQuantity",
+        "path": "Observation.component.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "cnt-3",
+            "severity": "error",
+            "human": "There SHALL be a code with a value of '1' if there is a value. If system is present, it SHALL be UCUM. If present, the value SHALL be a whole number.",
+            "expression": "(code.exists() or value.empty()) and (system.empty() or system = %ucum) and (code.empty() or code = '1') and (value.empty() or value.hasValue().not() or value.toString().contains('.').not())",
+            "source": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
           }
         ]
       },
@@ -1187,7 +1237,11 @@
           {
             "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
       },
       {
         "id": "Observation.component:cytogenomic-nomenclature.valueCodeableConcept",
