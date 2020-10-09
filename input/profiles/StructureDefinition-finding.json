@@ -84,16 +84,16 @@
         }
       },
       {
-        "id": "Observation.component:GeneStudied",
+        "id": "Observation.component:gene-studied",
         "path": "Observation.component",
-        "sliceName": "GeneStudied",
+        "sliceName": "gene-studied",
         "short": "Gene studied [ID]",
         "definition": "HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiple gene studied components. The required coding will use the HGNC gene symbol as the display text and HGNC gene ID as the code.",
         "min": 0,
         "max": "*"
       },
       {
-        "id": "Observation.component:GeneStudied.code",
+        "id": "Observation.component:gene-studied.code",
         "path": "Observation.component.code",
         "patternCodeableConcept": {
           "coding": [
@@ -105,7 +105,7 @@
         }
       },
       {
-        "id": "Observation.component:GeneStudied.value[x]",
+        "id": "Observation.component:gene-studied.value[x]",
         "path": "Observation.component.value[x]",
         "slicing": {
           "discriminator": [
@@ -126,7 +126,7 @@
         ]
       },
       {
-        "id": "Observation.component:GeneStudied.valueCodeableConcept",
+        "id": "Observation.component:gene-studied.valueCodeableConcept",
         "path": "Observation.component.valueCodeableConcept",
         "min": 1,
         "max": "1",
