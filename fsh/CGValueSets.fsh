@@ -33,7 +33,7 @@ Description:    "Value Set for codes yet to be defined in LOINC"
 * include codes from system TBD
 
 ValueSet:       FunctionalAnnotationVS
-Id:             functionalannotation
+Id:             functional-annotations
 Title:          "Functional Annotation"
 Description:    "Functional annotation of a variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
@@ -43,4 +43,4 @@ Id:             variant-inheritance
 Title:          "Variant Inheritance (FSH)"
 Description:    "A quality inhering in a variant by virtue of its origin."
 * include codes from system SEQONT where concept is-a #SO:0001762
-* include codes from system DataAbsentReason
+* DataAbsentReason#asked-unknown
