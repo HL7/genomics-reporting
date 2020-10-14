@@ -1,8 +1,3 @@
-Alias: PubStat = http://hl7.org/fhir/ValueSet/publication-status
-Alias: OpKind = http://hl7.org/fhir/ValueSet/operation-kind
-Alias: dataType = http://hl7.org/fhir/ValueSet/all-types
-Alias: searchParamType = http://hl7.org/fhir/ValueSet/search-param-type
-
 Instance: find-subject-variants
 InstanceOf: OperationDefinition
 Title: "Find Subject Variants"
