@@ -17,19 +17,19 @@ Description:    "Properties common to genetic findings whose results are express
 * component[gene-studied].code = LNC#48018-6
 * component[gene-studied].value[x] only CodeableConcept
 * component[gene-studied].value[x] ^short = "If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
-* component[gene-studied].valueCodeableConcept 1..1
-* component[gene-studied].valueCodeableConcept from HGNCVS (extensible)
+* component[gene-studied].value[x] 1..1
+* component[gene-studied].value[x] from HGNCVS (extensible)
 * component[CytogenicLocation] ^short = "Cytogenetic (chromosome) location"
 * component[CytogenicLocation] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
 * component[CytogenicLocation].code = LNC#48001-2
 * component[CytogenicLocation].value[x] only CodeableConcept
-* component[CytogenicLocation].valueCodeableConcept 1..1
+* component[CytogenicLocation].value[x] 1..1
 * component[RefSequenceAssembly] ^short = "Human reference sequence assembly version"
 * component[RefSequenceAssembly] ^definition = "Human reference sequence assembly version"
 * component[RefSequenceAssembly].code = LNC#62374-4
 * component[RefSequenceAssembly].value[x] only CodeableConcept
-* component[RefSequenceAssembly].valueCodeableConcept 1..1
-* component[RefSequenceAssembly].valueCodeableConcept from http://loinc.org/vs/LL378-1 (extensible)
+* component[RefSequenceAssembly].value[x] 1..1
+* component[RefSequenceAssembly].value[x] from http://loinc.org/vs/LL378-1 (extensible)
 
 Profile:        TMB
 Parent:         GenomicsBase
@@ -88,30 +88,30 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[dna-chg] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker."
 * component[dna-chg].code = LNC#48004-6
 * component[dna-chg].value[x] only CodeableConcept
-* component[dna-chg].valueCodeableConcept 1..1
-* component[dna-chg].valueCodeableConcept from HGVSVS (required)
+* component[dna-chg].value[x] 1..1
+* component[dna-chg].value[x] from HGVSVS (required)
 * component[dna-chg-type] ^short = "DNA Change Type"
 * component[dna-chg-type] ^definition = "Codified type for associated DNA Marker. DNA Marker's use the HGVS notation which implies the DNA Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience."
 * component[dna-chg-type].code = LNC#48019-4
 * component[dna-chg-type].value[x] only CodeableConcept
 * component[dna-chg-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://www.sequenceontology.org/browser/current_release/term/SO:0002072)."
-* component[dna-chg-type].valueCodeableConcept 1..1
-* component[dna-chg-type].valueCodeableConcept from DNAChangeTypeVS (extensible)
+* component[dna-chg-type].value[x] 1..1
+* component[dna-chg-type].value[x] from DNAChangeTypeVS (extensible)
 * component[functional-annotation] ^short = "Functional Annotation"
 * component[functional-annotation] ^definition = "Annotated changes to sequence features caused by this variant."
 * component[functional-annotation].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
 * component[functional-annotation].code.coding.code = #functional-annotation
 * component[functional-annotation].value[x] only CodeableConcept
 * component[functional-annotation].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://www.sequenceontology.org/browser/current_release/term/SO:0001537)."
-* component[functional-annotation].valueCodeableConcept 1..1
-* component[functional-annotation].valueCodeableConcept from FunctionalAnnotationVS (extensible)
+* component[functional-annotation].value[x] 1..1
+* component[functional-annotation].value[x] from FunctionalAnnotationVS (extensible)
 * component[variation-code] ^short = "Variation Code"
 * component[variation-code] ^definition = "The name of a structural variant reported using HGVS nomenclature."
 * component[variation-code].code = LNC#81252-9
 * component[variation-code].value[x] only CodeableConcept
 * component[variation-code].value[x] ^binding.strength = #example
 * component[variation-code].value[x] ^binding.description = "Binding not yet defined"
-* component[variation-code].valueCodeableConcept 1..1
+* component[variation-code].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[dbSNP-id] ^short = "dbSNP ID"
 * component[dbSNP-id] ^definition = "The unique identifier for the variant represented as a small nucleotide polymorphism (SNP). The dbSNP ID is used routinely as the base identifier in pharmacogenomics as well as arrCGH studies. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the dbSNP ID is 368949613. [http://www.ncbi.nlm.nih.gov/clinvar/variation/30880/]."
@@ -119,39 +119,39 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[dbSNP-id].value[x] only CodeableConcept
 * component[dbSNP-id].value[x] ^binding.strength = #example
 * component[dbSNP-id].value[x] ^binding.description = "Binding not yet defined"
-* component[dbSNP-id].valueCodeableConcept 1..1
+* component[dbSNP-id].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[genomic-dna-chg] ^short = "DNA Change - Genomic (gHGVS)"
 * component[genomic-dna-chg] ^definition = "The name of a structural variant reported using HGVS nomenclature."
 * component[genomic-dna-chg].code = LNC#81290-9
 * component[genomic-dna-chg].value[x] only CodeableConcept
-* component[genomic-dna-chg].valueCodeableConcept 1..1
-* component[genomic-dna-chg].valueCodeableConcept from HGVSVS (required)
+* component[genomic-dna-chg].value[x] 1..1
+* component[genomic-dna-chg].value[x] from HGVSVS (required)
 * component[genomic-source-class] ^short = "Genomic Source Class"
 * component[genomic-source-class] ^definition = "The genomic class of the specimen being analyzed: Germline for inherited genome, somatic for cancer genome, and prenatal for fetal genome."
 * component[genomic-source-class].code = LNC#48002-0
 * component[genomic-source-class].value[x] only CodeableConcept
-* component[genomic-source-class].valueCodeableConcept 1..1
-* component[genomic-source-class].valueCodeableConcept from http://loinc.org/vs/LL378-1 (extensible)
+* component[genomic-source-class].value[x] 1..1
+* component[genomic-source-class].value[x] from http://loinc.org/vs/LL378-1 (extensible)
 * component[amino-acid-chg] ^short = "Amino acid change (pHGVS)"
 * component[amino-acid-chg] ^definition = "Human Genome Variation Society (HGVS) nomenclature for an amino acid sequence. This value is derivable from the DNA Marker value if available. It is provided for convenience. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples."
 * component[amino-acid-chg].code = LNC#48005-3
 * component[amino-acid-chg].value[x] only CodeableConcept
-* component[amino-acid-chg].valueCodeableConcept 1..1
-* component[amino-acid-chg].valueCodeableConcept from HGVSVS (required)
+* component[amino-acid-chg].value[x] 1..1
+* component[amino-acid-chg].value[x] from HGVSVS (required)
 * component[amino-acid-chg-type] ^short = "Amino acid change type"
 * component[amino-acid-chg-type] ^definition = "Codified type for associated Amino Acid Marker. Amino Acid Marker's use the HGVS notation which implies the Amino Acid Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience."
 * component[amino-acid-chg-type].code = LNC#48006-1
 * component[amino-acid-chg-type].value[x] only CodeableConcept
-* component[amino-acid-chg-type].valueCodeableConcept 1..1
-* component[amino-acid-chg-type].valueCodeableConcept from http://loinc.org/vs/LL380-7 (extensible)
+* component[amino-acid-chg-type].value[x] 1..1
+* component[amino-acid-chg-type].value[x] from http://loinc.org/vs/LL380-7 (extensible)
 * component[transcript-ref-seq] ^short = "Transcript reference sequence ID"
 * component[transcript-ref-seq] ^definition = "TThis field carries the ID for the transcribed reference sequence, which is the part of the genomic reference sequence that is converted to messenger RNA (i.e., after the introns are removed)."
 * component[transcript-ref-seq].code = LNC#51958-7
 * component[transcript-ref-seq].value[x] only CodeableConcept
 * component[transcript-ref-seq].value[x] ^binding.strength = #example
 * component[transcript-ref-seq].value[x] ^binding.description = "Binding not yet defined"
-* component[transcript-ref-seq].valueCodeableConcept 1..1
+* component[transcript-ref-seq].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[genomic-ref-seq] ^short = "Genomic reference sequence ID"
 * component[genomic-ref-seq] ^definition = "This field carries the ID for the genomic reference sequence. The genomic reference sequence is a contiguous stretch of chromosome DNA that spans all of the exons of the gene and includes transcribed and non transcribed stretches. For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq) or use the LRG identifiers, without transcript (t or p) extensions -- when they become available. (See- Report sponsored by GEN2PHEN at the European Bioinformatics Institute at Hinxton UK April 24-25, 2008). The NCI RefSeq genomic IDs are distinguished by a prefix of 'NG' for genes from the nuclear chromosomes and prefix of 'NC' for genes from mitochondria. The LRG Identifiers have a prefix of 'LRG_' Mitochondrial genes are not in the scope of LRG."
@@ -159,7 +159,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-ref-seq].value[x] only CodeableConcept
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Binding not yet defined"
-* component[genomic-ref-seq].valueCodeableConcept 1..1
+* component[genomic-ref-seq].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[sample-allelic-frequency] ^short = "Sample Allelic Frequency"
 * component[sample-allelic-frequency].code = LNC#81258-6
@@ -173,8 +173,8 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[allelic-state] ^definition = "The level of occurrence of a single DNA Marker within a set of chromosomes. Heterozygous indicates the DNA Marker is only present in one of the two genes contained in homologous chromosomes. Homozygous indicates the DNA Marker is present in both genes contained in homologous chromosomes. Hemizygous indicates the DNA Marker exists in the only single copy of a gene in a non-homologous chromosome (The male X and Y chromosome are non-homologous). Hemiplasmic indicates that the DNA Marker is present in some but not all of the copies of mitochondrial DNA. Homoplasmic indicates that the DNA Maker is present in all of the copies of mitochondrial DNA."
 * component[allelic-state].code = LNC#53034-5
 * component[allelic-state].value[x] only CodeableConcept
-* component[allelic-state].valueCodeableConcept 1..1
-* component[allelic-state].valueCodeableConcept from http://loinc.org/vs/LL381-5 (extensible)
+* component[allelic-state].value[x] 1..1
+* component[allelic-state].value[x] from http://loinc.org/vs/LL381-5 (extensible)
 * component[copy-number] ^short = "Genomic structural variant copy number"
 * component[copy-number] ^definition = "The copy number of the large variant. In HGVS, this is the numeric value following the “X”. It is a unit-less value. Note that a copy number of 1 implies a deletion. The copy number can usually be inferred from the HGVS or ISCN fields."
 * component[copy-number].code = LNC#82155-3
@@ -192,8 +192,8 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coordinate-system] ^definition = "Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides."
 * component[coordinate-system].code = LNC#92822-6
 * component[coordinate-system].value[x] only CodeableConcept
-* component[coordinate-system].valueCodeableConcept 1..1
-* component[coordinate-system].valueCodeableConcept from http://loinc.org/vs/LL5323-2 (extensible)
+* component[coordinate-system].value[x] 1..1
+* component[coordinate-system].value[x] from http://loinc.org/vs/LL5323-2 (extensible)
 * component[exact-start-end] ^short = "Exact start-end"
 * component[exact-start-end] ^definition = "This location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the location is Chr3: 128906220 on Assembly GRCh38."
 * component[exact-start-end].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
@@ -217,8 +217,8 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[chromosome-copy-number-change-type] ^definition = "The type of the chromosome copy number change."
 * component[chromosome-copy-number-change-type].code = LNC#62378-5
 * component[chromosome-copy-number-change-type].value[x] only CodeableConcept
-* component[chromosome-copy-number-change-type].valueCodeableConcept 1..1
-* component[chromosome-copy-number-change-type].valueCodeableConcept from http://loinc.org/vs/LL1041-4 (extensible)
+* component[chromosome-copy-number-change-type].value[x] 1..1
+* component[chromosome-copy-number-change-type].value[x] from http://loinc.org/vs/LL1041-4 (extensible)
 * component[arrCGH-ratio] ^short = "Structural variant reported arrCGH [Ratio]"
 * component[arrCGH-ratio] ^definition = "todo."
 * component[arrCGH-ratio].code = LNC#81299-0
@@ -227,8 +227,8 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[complex-var-type] ^definition = "The type of complex variant, for example, compound heterozygous or haplotype."
 * component[complex-var-type].code = LNC#81263-6
 * component[complex-var-type].value[x] only CodeableConcept
-* component[complex-var-type].valueCodeableConcept 1..1
-* component[complex-var-type].valueCodeableConcept from http://loinc.org/vs/LL3999-1 (extensible)
+* component[complex-var-type].value[x] 1..1
+* component[complex-var-type].value[x] from http://loinc.org/vs/LL3999-1 (extensible)
 * component[cytogenomic-nomenclature] ^short = "Cytogenomic Nomenclature"
 * component[cytogenomic-nomenclature] ^definition = "Fully describes a variant with a single code. Typically a large variant such as a mosaic, abnormal chromosome numbers, etc."
 * component[cytogenomic-nomenclature].code = LNC#81291-7
@@ -236,15 +236,15 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[cytogenomic-nomenclature].value[x] only CodeableConcept
 * component[cytogenomic-nomenclature].value[x] ^binding.strength = #example
 * component[cytogenomic-nomenclature].value[x] ^binding.description = "Binding not yet defined"
-* component[cytogenomic-nomenclature].valueCodeableConcept 1..1
+* component[cytogenomic-nomenclature].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[variant-inheritance] ^short = "Variant Inheritance"
 * component[variant-inheritance] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
 * component[variant-inheritance].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
 * component[variant-inheritance].code.coding.code = #variant-inheritance
 * component[variant-inheritance].value[x] only CodeableConcept
-* component[variant-inheritance].valueCodeableConcept 1..1
-* component[variant-inheritance].valueCodeableConcept from VariantInheritanceVS (extensible)
+* component[variant-inheritance].value[x] 1..1
+* component[variant-inheritance].value[x] from VariantInheritanceVS (extensible)
 
 Profile:        RegionStudied
 Parent:         GenomicsBase
@@ -271,14 +271,14 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[gene-studied].code = LNC#48018-6
 * component[gene-studied].value[x] only CodeableConcept
 * component[gene-studied].value[x] ^short = "If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
-* component[gene-studied].valueCodeableConcept 1..1
-* component[gene-studied].valueCodeableConcept from HGNCVS (extensible)
+* component[gene-studied].value[x] 1..1
+* component[gene-studied].value[x] from HGNCVS (extensible)
 * component[gene-mutations] ^short = "Gene Mutations ID"
 * component[gene-mutations] ^definition = "Gene mutations that were tested for."
 * component[gene-mutations].code = LNC#36908-2
 * component[gene-mutations].value[x] only CodeableConcept
-* component[gene-mutations].valueCodeableConcept 1..1
-* component[gene-mutations].valueCodeableConcept from HGVSVS (required)
+* component[gene-mutations].value[x] 1..1
+* component[gene-mutations].value[x] from HGVSVS (required)
 * component[region-description] ^short = "Region Description"
 * component[region-description] ^definition = "Description of region examined."
 * component[region-description].code = LNC#81293-3
@@ -296,15 +296,15 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[coordinate-system] ^definition = "Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides."
 * component[coordinate-system].code = LNC#92822-6
 * component[coordinate-system].value[x] only CodeableConcept
-* component[coordinate-system].valueCodeableConcept 1..1
-* component[coordinate-system].valueCodeableConcept from http://loinc.org/vs/LL5323-2 (extensible)
+* component[coordinate-system].value[x] 1..1
+* component[coordinate-system].value[x] from http://loinc.org/vs/LL5323-2 (extensible)
 * component[genomic-ref-seq] ^short = "Genomic reference sequence ID"
 * component[genomic-ref-seq] ^definition = "This field carries the ID for the genomic reference sequence. The genomic reference sequence is a contiguous stretch of chromosome DNA that spans all of the exons of the gene and includes transcribed and non transcribed stretches. For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq) or use the LRG identifiers, without transcript (t or p) extensions -- when they become available. (See- Report sponsored by GEN2PHEN at the European Bioinformatics Institute at Hinxton UK April 24-25, 2008). The NCI RefSeq genomic IDs are distinguished by a prefix of \"'NG\" for genes from the nuclear chromosomes and prefix of \"NC\" for genes from mitochondria. The LRG Identifiers have a prefix of \"LRG\" Mitochondrial genes are not in the scope of LRG."
 * component[genomic-ref-seq].code = LNC#48013-7
 * component[genomic-ref-seq].value[x] only CodeableConcept
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Binding not yet defined"
-* component[genomic-ref-seq].valueCodeableConcept 1..1
+* component[genomic-ref-seq].value[x] 1..1
 
 Profile:        MSI
 Parent:         GenomicsBase
