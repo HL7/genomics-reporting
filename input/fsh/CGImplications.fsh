@@ -25,11 +25,11 @@ Description:    "Properties common to genetic implications expressed as computab
 * component[evidence-level] ^short = "Level of Evidence"
 * component[evidence-level].code = LNC#93044-6
 * component[evidence-level].value[x] only CodeableConcept
-* component[evidence-level].valueCodeableConcept 1..1
-* component[evidence-level].valueCodeableConcept from http://loinc.org/vs/LL5356-2 (extensible)
+* component[evidence-level].value[x] 1..1
+* component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (extensible)
 * component[prognosis] ^short = "Prognosis"
 * component[prognosis] ^definition = "E.g. Better outcome, poorer outcome"
 * component[prognosis].code = TBD#prognostic-implication
 * component[prognosis].value[x] only CodeableConcept
-* component[prognosis].valueCodeableConcept 1..1
-//* component[prognosis].valueCodeableConcept from (example) (extensible)
+* component[prognosis].value[x] 1..1
+//* component[prognosis].value[x] from (example) (extensible)
