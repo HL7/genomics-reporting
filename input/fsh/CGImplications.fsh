@@ -33,3 +33,47 @@ Description:    "Properties common to genetic implications expressed as computab
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
 //* component[prognosis].value[x] from (example) (extensible)
+
+Profile:        DiagnosticImplication
+Parent:         GenomicImplication
+Id:             diagnostic-implication
+Title:          "Diagnostic Implication"
+Description:    "Finding of whether a particular genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions."
+* code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* code.coding.code = TBD#diagnostic-implication
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slice based on the component.code pattern"
+* component contains
+    associated-phenotype 0..* and
+    associated-cancer 0..* and
+    mode-of-inheritance	0..1 and
+    clinical-significance 0..1
+* component[associated-phenotype] ^short = "Associated phenotype"
+* component[associated-phenotype] ^definition = "The possible phenotype associated with the genetic variant found in this study."
+* component[associated-phenotype].code = LNC#81259-4
+* component[associated-phenotype].value[x] only CodeableConcept
+* component[associated-phenotype].value[x] ^binding.strength = #example
+* component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
+* component[associated-phenotype].value[x] 1..1
+* component[associated-cancer] ^short = "Associated cancer"
+// * component[associated-cancer] ^definition = "" // MLT: no definition provided.
+* component[associated-cancer].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[associated-cancer].code.coding.code = TBD#associated-cancer
+* component[associated-cancer].value[x] only CodeableConcept
+* component[associated-cancer].value[x] ^binding.strength = #example
+* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
+* component[associated-cancer].value[x] 1..1
+* component[mode-of-inheritance] ^short = "Mode of Inheritance"
+// * component[mode-of-inheritance] ^definition = "" // MLT: no definition provided.
+* component[mode-of-inheritance].code = LNC#79742-3
+* component[mode-of-inheritance].value[x] only CodeableConcept
+* component[mode-of-inheritance].value[x] 1..1
+* component[mode-of-inheritance].value[x] from http://loinc.org/vs/LL3731-8 (preferred)
+* component[clinical-significance] ^short = "Clinical significance"
+// * component[clinical-significance] ^definition = "" // MLT: no definition provided.
+* component[clinical-significance].code = LNC#53037-8
+* component[clinical-significance].value[x] only CodeableConcept
+* component[clinical-significance].value[x] 1..1
+* component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
