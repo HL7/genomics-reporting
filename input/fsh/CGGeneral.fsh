@@ -38,3 +38,14 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * performer only Reference(Patient or Organization or Patient or RelatedPerson)
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named bodyStructure 0..1
+
+Profile:        OverallInterpretation
+Parent:         GenomicsBase
+Id:             overall-interpretation
+Title:          "Genomics base"
+Description:    "Provides a coarse overall interpretation of the genomic results reported."
+* code = LNC#51968-6
+* specimen only Reference(GenomicSpecimen)
+* value[x] only CodeableConcept
+* value[x] 1..1
+* value[x] from http://loinc.org/vs/LL541-4 (preferred)
