@@ -77,3 +77,74 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
 * component[clinical-significance].value[x] only CodeableConcept
 * component[clinical-significance].value[x] 1..1
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
+
+Profile:        TherapeuticImplication
+Parent:         GenomicImplication
+Id:             therapeutic-implication
+Title:          "Therapeutic Implication"
+Description:    "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."
+* code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* code.coding.code = TBD#therapeutic-implication
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slice based on the component.code pattern"
+* component contains
+    associated-phenotype 0..* and
+    associated-cancer 0..* and
+    medication-assessed 0..* and
+    therapy-assessed 0..* and
+    effect-medication-metabolism 0..1 and
+    effect-medication-high-risk 0..1 and
+    effect-medication-efficacy 0..*
+* component[associated-phenotype] ^short = "Associated phenotype"
+* component[associated-phenotype] ^definition = "The possible phenotype associated with the genetic variant found in this study."
+* component[associated-phenotype].code = LNC#81259-4
+* component[associated-phenotype].value[x] only CodeableConcept
+* component[associated-phenotype].value[x] ^binding.strength = #example
+* component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
+* component[associated-phenotype].value[x] 1..1
+* component[associated-cancer] ^short = "Associated cancer"
+// * component[associated-cancer] ^definition = "" // MLT: no definition provided.
+* component[associated-cancer].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[associated-cancer].code.coding.code = TBD#associated-cancer
+* component[associated-cancer].value[x] only CodeableConcept
+* component[associated-cancer].value[x] ^binding.strength = #example
+* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
+* component[associated-cancer].value[x] 1..1
+* component[medication-assessed] ^short = "Medication Assessed"
+* component[medication-assessed] ^definition = "The medication whose implication is being described."
+* component[medication-assessed].code = LNC#51963-7
+* component[medication-assessed].value[x] only CodeableConcept
+* component[medication-assessed].value[x] ^binding.strength = #example
+* component[medication-assessed].value[x] ^binding.description = "Binding not yet defined"
+* component[medication-assessed].value[x] 1..1
+* component[therapy-assessed] ^short = "Associated cancer"
+* component[therapy-assessed] ^definition = "The non-medication therapy whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc."
+* component[therapy-assessed].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
+* component[therapy-assessed].code.coding.code = TBD#therapy-assessed
+* component[therapy-assessed].value[x] only CodeableConcept
+* component[therapy-assessed].value[x] ^binding.strength = #example
+* component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
+* component[therapy-assessed].value[x] 1..1
+* component[effect-medication-metabolism] ^short = "Effect medication metabolism"
+* component[effect-medication-metabolism] ^definition = "Genomic variation's effect on drug metabolism"
+* component[effect-medication-metabolism].code = LNC#53040-2
+* component[effect-medication-metabolism].value[x] only CodeableConcept
+* component[effect-medication-metabolism].value[x] 1..1
+* component[effect-medication-metabolism].value[x] from http://loinc.org/vs/LL3856-3 (preferred)
+* component[effect-medication-high-risk] ^short = "Effect medication high risk"
+// * component[effect-medication-high-risk] ^definition = "" // MLT: no definition provided.
+* component[effect-medication-high-risk].code = LNC#83009-1
+* component[effect-medication-high-risk].value[x] only CodeableConcept
+* component[effect-medication-high-risk].value[x] 1..1
+* component[effect-medication-high-risk].value[x] from http://loinc.org/vs/LL2353-2 (extensible)
+// ******
+// ****** MLT: TODO: Add effect-medication-transport ******
+// ******
+* component[effect-medication-efficacy] ^short = "Effect medication high risk"
+* component[effect-medication-efficacy] ^definition = "Variation's effect on drug efficacy"
+* component[effect-medication-efficacy].code = LNC#51961-1
+* component[effect-medication-efficacy].value[x] only CodeableConcept
+* component[effect-medication-efficacy].value[x] 1..1
+* component[effect-medication-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
