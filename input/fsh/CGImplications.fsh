@@ -148,3 +148,19 @@ Description:    "Profile with properties for observations that convey the potent
 * component[effect-medication-efficacy].value[x] only CodeableConcept
 * component[effect-medication-efficacy].value[x] 1..1
 * component[effect-medication-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
+
+Profile:        TaskMedChg
+Parent:         Task
+Id:             task-med-chg
+Title:          "Medication Usage Task"
+Description:    "Task proposing actions based on genetic results."
+* status = TaskStatus#requested
+* intent = TaskIntent#proposal
+* code from http://loinc.org/vs/LL4049-4
+// * code = LNC#82116-5    //"Medication usage suggestion [Type]"
+// * input[0].valueCodeableConcept 1..*
+// * input[0].valueCodeableConcept from http://loinc.org/vs/LL4049-4 (preferred)
+* focus only Reference(MedicationStatement)
+* for only Reference(Patient)
+* requester only Reference(Organization)
+* reasonReference only Reference(TherapeuticImplication)
