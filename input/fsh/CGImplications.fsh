@@ -154,7 +154,9 @@ Parent:         Task
 Id:             task-med-chg
 Title:          "Medication Usage Task"
 Description:    "Task proposing actions based on genetic results."
+* status 1..1
 * status = TaskStatus#requested
+* intent 1..1
 * intent = TaskIntent#proposal
 * code from http://loinc.org/vs/LL4049-4
 // * code = LNC#82116-5    //"Medication usage suggestion [Type]"
@@ -168,9 +170,11 @@ Description:    "Task proposing actions based on genetic results."
 Profile:        TaskRecFollowup
 Parent:         Task
 Id:             task-rec-followup
-Title:          "Medication Usage Task"
+Title:          "Recommended Followup"
 Description:    "Task describing the followup that is recommended"
+* status 1..1
 * status = TaskStatus#requested
+* intent 1..1
 * intent = TaskIntent#proposal
 * code from http://loinc.org/vs/LL1037-2
 * description = "Recommendation Document"
