@@ -40,24 +40,7 @@ e: {
       "system" : "http://sequenceontology.org",
       "filter" : [{
         "property" : "concept",
-        "op" : "descendent-of",
-        "value" : "SO:0001762"
-      }]
-    }]
-  }
-}}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://sequenceontology.org",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "descendent-of",
+        "op" : "is-a",
         "value" : "SO:0001762"
       }]
     }]
@@ -109,6 +92,23 @@ e: {
       "filter" : [{
         "property" : "concept",
         "op" : "is-a",
+        "value" : "SO:0001762"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
+}
+-------------------------------------------------------------------------------------
+{"hierarchical" : true, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://sequenceontology.org",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
         "value" : "SO:0002072"
       }]
     }]
@@ -133,69 +133,5 @@ e: {
 }}####
 e: {
   "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : false, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://sequenceontology.org",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "SO:0001762"
-      }]
-    }]
-  }
-}}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
-}
--------------------------------------------------------------------------------------
-{"hierarchical" : true, "valueSet" :{
-  "resourceType" : "ValueSet",
-  "compose" : {
-    "include" : [{
-      "system" : "http://sequenceontology.org",
-      "filter" : [{
-        "property" : "concept",
-        "op" : "is-a",
-        "value" : "SO:0001762"
-      }]
-    }]
-  }
-}}####
-e: {
-  "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://sequenceontology.org",
-  "code" : "SO:0001537"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://sequenceontology.org",
-  "code" : "SO:0002072"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
-}
--------------------------------------------------------------------------------------
-{"code" : {
-  "system" : "http://sequenceontology.org",
-  "code" : "SO:0001762"
-}, "valueSet" :null, "lang":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "valueSetMode":"ALL_CHECKS"}####
-v: {
-  "display" : "",
-  "severity" : "error",
-  "error" : "Attempt to use Terminology server when no Terminology server is available"
 }
 -------------------------------------------------------------------------------------
