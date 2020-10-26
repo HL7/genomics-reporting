@@ -164,3 +164,16 @@ Description:    "Task proposing actions based on genetic results."
 * for only Reference(Patient)
 * requester only Reference(Organization)
 * reasonReference only Reference(TherapeuticImplication)
+
+Profile:        TaskRecFollowup
+Parent:         Task
+Id:             task-rec-followup
+Title:          "Medication Usage Task"
+Description:    "Task describing the followup that is recommended"
+* status = TaskStatus#requested
+* intent = TaskIntent#proposal
+* code from http://loinc.org/vs/LL1037-2
+* description = "Recommendation Document"
+* for only Reference(Patient)
+* requester only Reference(Organization)
+* reasonReference only Reference(TherapeuticImplication)

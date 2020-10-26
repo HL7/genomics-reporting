@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Oct 16, 2020 05:23+0000 for FHIR v4.5.0 
+  Generated on Mon, Oct 26, 2020 02:07+0000 for FHIR v4.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.5.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -473,6 +473,7 @@
       <xs:element ref="ImplementationGuide"/>
       <xs:element ref="Ingredient"/>
       <xs:element ref="InsurancePlan"/>
+      <xs:element ref="InventoryReport"/>
       <xs:element ref="Invoice"/>
       <xs:element ref="Library"/>
       <xs:element ref="Linkage"/>
@@ -11002,12 +11003,12 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:element name="Citation" type="Citation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Citation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -11174,7 +11175,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Summary">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11195,7 +11196,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.VariantCitation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11221,7 +11222,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.ArticleTitle">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11247,7 +11248,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.WebLocation">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11268,7 +11269,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Abstract">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11299,7 +11300,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Contributorship">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11325,7 +11326,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Entry">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11391,7 +11392,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.AffiliationInfo">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11417,7 +11418,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Summary1">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11448,7 +11449,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.PublicationForm">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11463,7 +11464,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The collection the cited article is published in.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="periodicRelease" type="Citation.PeriodicRelease" minOccurs="0" maxOccurs="1">
+          <xs:element name="periodicRelease" type="Citation.PeriodicRelease" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The specific issue in which the cited article resides.</xs:documentation>
            </xs:annotation>
@@ -11509,7 +11510,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.PublishedIn">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11550,7 +11551,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.PeriodicRelease">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11581,7 +11582,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.DateOfPublication">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11622,7 +11623,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.KeywordList">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11643,7 +11644,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Keyword">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11664,7 +11665,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.Medline">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11677,16 +11678,6 @@ into another (possibly the same) biological entity.</xs:documentation>
           <xs:element name="owner" minOccurs="0" maxOccurs="1" type="MedlineCitationOwner">
             <xs:annotation>
               <xs:documentation xml:lang="en">Used for owner.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="pmid" minOccurs="0" maxOccurs="1" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">PubMed ID.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="pmidVersion" minOccurs="0" maxOccurs="1" type="positiveInt">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">PubMed ID Version.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="dateCreated" minOccurs="0" maxOccurs="1" type="date">
@@ -11725,7 +11716,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.DateOnPubMed">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -11746,7 +11737,7 @@ into another (possibly the same) biological entity.</xs:documentation>
   </xs:complexType>
   <xs:complexType name="Citation.RelatedArticle">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The Citation.</xs:documentation>
+      <xs:documentation xml:lang="en">The Citation Resource enables reference to any knowledge artifact for purposes of identification and attribution. The Citation Resource supports existing reference structures and developing publication practices such as versioning, expressing complex contributorship roles, and referencing computable resources.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -21170,12 +21161,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:element name="Evidence" type="Evidence">
     <xs:annotation>
-      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+      <xs:documentation xml:lang="en">The Evidence Resource provides a machine-interpretable expression of an evidence concept including the evidence variables (eg population, exposures/interventions, comparators, outcomes, measured variables, confounding variables), the statistics, and the certainty of this evidence.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Evidence">
     <xs:annotation>
-      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+      <xs:documentation xml:lang="en">The Evidence Resource provides a machine-interpretable expression of an evidence concept including the evidence variables (eg population, exposures/interventions, comparators, outcomes, measured variables, confounding variables), the statistics, and the certainty of this evidence.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -21312,7 +21303,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="Evidence.VariableDefinition">
     <xs:annotation>
-      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+      <xs:documentation xml:lang="en">The Evidence Resource provides a machine-interpretable expression of an evidence concept including the evidence variables (eg population, exposures/interventions, comparators, outcomes, measured variables, confounding variables), the statistics, and the certainty of this evidence.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -21353,7 +21344,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="Evidence.Certainty">
     <xs:annotation>
-      <xs:documentation xml:lang="en">This represents statistics, certainty, both the intended and actual population, and evidence variables.</xs:documentation>
+      <xs:documentation xml:lang="en">The Evidence Resource provides a machine-interpretable expression of an evidence concept including the evidence variables (eg population, exposures/interventions, comparators, outcomes, measured variables, confounding variables), the statistics, and the certainty of this evidence.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -21394,12 +21385,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:element name="EvidenceReport" type="EvidenceReport">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The EvidenceReport.</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="EvidenceReport">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The EvidenceReport.</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -21501,7 +21492,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="EvidenceReport.Subject">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The EvidenceReport.</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -21522,7 +21513,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="EvidenceReport.Characteristic">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The EvidenceReport.</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -21558,7 +21549,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="EvidenceReport.RelatesTo">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The EvidenceReport.</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -21581,7 +21572,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
   </xs:complexType>
   <xs:complexType name="EvidenceReport.Section">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The EvidenceReport.</xs:documentation>
+      <xs:documentation xml:lang="en">The EvidenceReport Resource is a specialized container for a collection of resources and codable concepts, adapted to support compositions of Evidence, EvidenceVariable, and Citation resources and related concepts.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
@@ -23050,6 +23041,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
         <xs:annotation>
           <xs:documentation xml:lang="en">InsurancePlan</xs:documentation>
           <xs:documentation xml:lang="en">InsurancePlan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InventoryReport">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">InventoryReport</xs:documentation>
+          <xs:documentation xml:lang="en">InventoryReport</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Invoice">
@@ -29888,6 +29885,210 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InventoryReport" type="InventoryReport">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A report of inventory or stock items.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="InventoryReport">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A report of inventory or stock items.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identifiers for the InventoryReport.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="InventoryReportStatus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of the inventory check or notification - whether this is draft (e.g. the report is still pending some updates) or active.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="countType" minOccurs="1" maxOccurs="1" type="InventoryCountType">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Whether the report is about the current inventory count (snapshot) or a differential change in inventory (change).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="operationType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">What type of operation is being performed - addition or subtraction.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="operationTypeReason" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The reason for this count - regular count, ad-hoc count, new arrivals, etc.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reportedDateTime" minOccurs="1" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">When the report has been submitted.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reporter" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Who submits the report.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reportingPeriod" minOccurs="0" maxOccurs="1" type="Period">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The period the report refers to.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="inventoryListing" type="InventoryReport.InventoryListing" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An inventory listing section (grouped by any of the attributes).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="note" minOccurs="0" maxOccurs="1" type="Annotation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A note associated with the InventoryReport.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InventoryReport.InventoryListing">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A report of inventory or stock items.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="location" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Location of the inventory items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="itemStatus" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of the items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="countingDateTime" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The date and time when the items were counted.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="items" type="InventoryReport.Items" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The item or items in this listing.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InventoryReport.Items">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A report of inventory or stock items.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The category of the item or items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="quantity" minOccurs="1" maxOccurs="1" type="Quantity">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The quantity of the item or items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="item" minOccurs="1" maxOccurs="1" type="CodeableReference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The code or reference to the item type.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="lot" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The lot number of the item or items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="serial" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The serial number of the item.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="expiry" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The expiry date of the item or items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="manufacturingDate" minOccurs="0" maxOccurs="1" type="dateTime">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The manufacturingDate of the item or items.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="InventoryCountType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="snapshot">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Snapshot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="difference">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Difference</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InventoryCountType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The type of count.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="InventoryCountType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="InventoryReportStatus-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="draft">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Draft</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="requested">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Requested</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="active">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered-in-error">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Entered in Error</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InventoryReportStatus">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The status of the InventoryReport.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="InventoryReportStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
