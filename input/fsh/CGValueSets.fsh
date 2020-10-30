@@ -24,7 +24,6 @@ Id:             dnachangetype
 Title:          "DNA Change Type"
 Description:    "DNA Change Type of a variant."
 * include codes from system SEQONT where concept is-a #SO:0002072
-// * include codes from system SEQONT  // MLT: follow-up with intensional value sets where the code has special characters. Trying to represent 'Include codes from http://sequenceontology.org where concept descends from SO:0002072'
 
 ValueSet:       TBDVS
 Id:             tbd
