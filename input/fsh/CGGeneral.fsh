@@ -60,3 +60,21 @@ Description:    "Request that initiated the diagnostic report."
 * subject only Reference(Patient or Group or Location)
 * supportingInfo only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
 * specimen only Reference(GenomicSpecimen)
+
+
+Profile:        SequencePhaseRelationship
+Parent:         GenomicFinding
+Id:             sequence-phase-relationship
+Title:          "Sequence Phase Relationship"
+Description:    "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other."
+* code = LNC#82120-7
+* valueCodeableConcept 1..1
+* valueCodeableConcept from SeqPhaseRelationshipVS (required)
+* method from http://loinc.org/vs/LL4050-2 (extensible)
+* derivedFrom ^slicing.discriminator.type = #pattern
+* derivedFrom ^slicing.discriminator.path = "code"
+* derivedFrom ^slicing.rules = #open
+* derivedFrom ^slicing.description = "Slice based on the component.code pattern"
+* derivedFrom contains Variant 0..*
+* derivedFrom[Variant] only Reference(Variant)
+// * derivedFrom[haplotype] only Reference(haplotype)  // MLT: add when haplotype profile is complete.
