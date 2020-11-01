@@ -32,14 +32,20 @@ Description:    "Value Set for codes yet to be defined in LOINC"
 * include codes from system TBD
 
 ValueSet:       FunctionalAnnotationVS
-Id:             functional-annotations
+Id:             functional-annotation
 Title:          "Functional Annotation"
 Description:    "Functional annotation of a variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
 ValueSet:       VariantInheritanceVS
 Id:             variant-inheritance
-Title:          "Variant Inheritance (FSH)"
+Title:          "Variant Inheritance"
 Description:    "A quality inhering in a variant by virtue of its origin."
 * include codes from system SEQONT where concept is-a #SO:0001762
 * DataAbsentReason#asked-unknown
+
+ValueSet:       SeqPhaseRelationshipVS
+Id:             seq-phase-relationship
+Title:          "Sequence Phase Relationship"
+Description:    "Value Set for specific types of relationships"
+* codes from system SequencePhaseRelationshipCS
