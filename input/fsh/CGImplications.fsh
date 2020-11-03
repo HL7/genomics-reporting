@@ -11,10 +11,12 @@ Description:    "Properties common to genetic implications expressed as computab
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the resolve().code type"
 * derivedFrom 1..*
-* derivedFrom contains variant 0..*
+* derivedFrom contains variant 0..* and
+    genotype 0..* and
+    haplotype 0..*
 * derivedFrom[variant] only Reference(Variant)
-//genotype
-//haplotype
+* derivedFrom[genotype] only Reference(Genotype)
+* derivedFrom[haplotype] only Reference(Haplotype)
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -22,8 +24,8 @@ Description:    "Properties common to genetic implications expressed as computab
 * component contains
     evidence-level 0..1 and
     prognosis 0..1
-* component[evidence-level] ^short = "Level of Evidence"
 * component[evidence-level].code = LNC#93044-6
+* component[evidence-level] ^short = "Level of Evidence"
 * component[evidence-level].value[x] only CodeableConcept
 * component[evidence-level].value[x] 1..1
 * component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (extensible)
@@ -39,7 +41,7 @@ Parent:         GenomicImplication
 Id:             diagnostic-implication
 Title:          "Diagnostic Implication"
 Description:    "Finding of whether a particular genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions."
-* code.coding.code = TbdCodes#diagnostic-implication
+* code = TbdCodes#diagnostic-implication
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -95,32 +97,30 @@ Description:    "Profile with properties for observations that convey the potent
     effect-medication-metabolism 0..1 and
     effect-medication-high-risk 0..1 and
     effect-medication-efficacy 0..*
+* component[associated-phenotype].code = LNC#81259-4
 * component[associated-phenotype] ^short = "Associated phenotype"
 * component[associated-phenotype] ^definition = "The possible phenotype associated with the genetic variant found in this study."
-* component[associated-phenotype].code = LNC#81259-4
 * component[associated-phenotype].value[x] only CodeableConcept
 * component[associated-phenotype].value[x] ^binding.strength = #example
 * component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
 * component[associated-phenotype].value[x] 1..1
+* component[associated-cancer].code = TbdCodes#associated-cancer
 * component[associated-cancer] ^short = "Associated cancer"
 // * component[associated-cancer] ^definition = "" // MLT: no definition provided.
-* component[associated-cancer].code = TbdCodes#associated-cancer
 * component[associated-cancer].value[x] only CodeableConcept
 * component[associated-cancer].value[x] ^binding.strength = #example
 * component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
 * component[associated-cancer].value[x] 1..1
+* component[medication-assessed].code = LNC#51963-7
 * component[medication-assessed] ^short = "Medication Assessed"
 * component[medication-assessed] ^definition = "The medication whose implication is being described."
-* component[medication-assessed].code = LNC#51963-7
 * component[medication-assessed].value[x] only CodeableConcept
 * component[medication-assessed].value[x] ^binding.strength = #example
 * component[medication-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[medication-assessed].value[x] 1..1
 * component[therapy-assessed] ^short = "Associated cancer"
 * component[therapy-assessed] ^definition = "The non-medication therapy whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc."
-// * component[therapy-assessed].code.coding.system from TBDVS
-// * component[therapy-assessed].code.coding.code = TbdCodes#therapy-assessed
-* component[therapy-assessed].code = TbdCodes#therapy-assessed
+* component[therapy-assessed].code = TbdCodes#associated-therapy
 * component[therapy-assessed].value[x] only CodeableConcept
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"

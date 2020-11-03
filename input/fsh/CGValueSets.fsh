@@ -20,7 +20,7 @@ Description:    "HGVS-nomenclature is used to report and exchange information re
 * include codes from system HGVS
 
 ValueSet:       DNAChangeTypeVS
-Id:             dnachangetype
+Id:             dna-change-type
 Title:          "DNA Change Type"
 Description:    "DNA Change Type of a variant."
 * include codes from system SEQONT where concept is-a #SO:0002072
