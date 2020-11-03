@@ -140,11 +140,11 @@ Title:          "Grouper"
 Description:    "Organizes information within a genomic report."
 
 * extension contains RecommendedAction named RecommendedAction 0..*
-* code = TBD#grouper
+* code = TbdCodes#grouper
 * hasMember ^slicing.discriminator.type = #pattern
-* hasMember ^slicing.discriminator.path = "$this.resolve().code"
+* hasMember ^slicing.discriminator.path = "$this.resolve()"
 * hasMember ^slicing.rules = #open
-* hasMember ^slicing.description = "Slice based on the reference profile and code pattern"
+* hasMember ^slicing.description = "Slice based on the reference profile"
 * hasMember contains grouper-ref 0..* and 
     overall 0..1 and
     diagnostic-implication 0..* and
