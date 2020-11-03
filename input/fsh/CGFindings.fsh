@@ -37,7 +37,7 @@ Id:             tmb
 Title:          "Tumor Mutation Burden"
 Description:    "Definitions for the tmb resource profile. The total number of mutations (changes) found in the DNA of cancer cells. [Source: NCI Dictionary](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tumor-mutational-burden)"
 
-* code = LNC#94076-7 // Mutations/Megabase [# Ratio] in Tumor
+* code = LNC#94076-7
 * valueQuantity = UCUM#1/1000000{Base}
 * valueQuantity.unit = "Mutations/Megabase"
 * interpretation from HighLowCodesVS
@@ -48,7 +48,7 @@ Id:             variant
 Title:          "Variant"
 Description:    "Details about a set of changes in the tested sample compared to a reference sequence."
 
-* code = LNC#69548-6 //"Genetic variant assessment"
+* code = LNC#69548-6
 * method from http://loinc.org/vs/LL4048-6 (extensible)
 * valueCodeableConcept from http://loinc.org/vs/LL1971-2 (required)
 * component ^slicing.discriminator.type = #pattern
@@ -246,7 +246,7 @@ Id:             region-studied
 Title:          "Region Studied"
 Description:    "The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance)."
 
-* code = LNC#53041-0 // DNA region of interest panel
+* code = LNC#53041-0
 * value[x] 0..0
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -286,9 +286,9 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[ranges-examined] ^definition = "This term is used to report the region(s) of interest for sequencing studies as one or more numeric ranges that identify the parts of the reference sequence that are sequenced. These can be recorded as one or more HL7 numeric ranges using repeat delimiters to seperate multiple such ranges."
 * component[ranges-examined].code = LNC#51959-5
 * component[ranges-examined].value[x] only Range
+* component[coordinate-system].code = LNC#92822-6
 * component[coordinate-system] ^short = "Coordinate System"
 * component[coordinate-system] ^definition = "Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides."
-* component[coordinate-system].code = LNC#92822-6
 * component[coordinate-system].value[x] only CodeableConcept
 * component[coordinate-system].value[x] 1..1
 * component[coordinate-system].value[x] from http://loinc.org/vs/LL5323-2 (extensible)

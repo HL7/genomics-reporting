@@ -152,3 +152,20 @@ e: {
   "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
 }
 -------------------------------------------------------------------------------------
+{"hierarchical" : false, "valueSet" :{
+  "resourceType" : "ValueSet",
+  "compose" : {
+    "include" : [{
+      "system" : "http://sequenceontology.org",
+      "filter" : [{
+        "property" : "concept",
+        "op" : "is-a",
+        "value" : "SO:0002072"
+      }]
+    }]
+  }
+}}####
+e: {
+  "error" : "Error from server: Unable to provide support for code system http://sequenceontology.org"
+}
+-------------------------------------------------------------------------------------

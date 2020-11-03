@@ -75,9 +75,10 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * derivedFrom ^slicing.discriminator.path = "code"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the component.code pattern"
-* derivedFrom contains Variant 0..*
-* derivedFrom[Variant] only Reference(Variant)
-// * derivedFrom[haplotype] only Reference(haplotype)  // MLT: add when haplotype profile is complete.
+* derivedFrom contains variant 0..* and 
+    haplotype 0..*
+* derivedFrom[variant] only Reference(Variant)
+* derivedFrom[haplotype] only Reference(Haplotype)
 
 Profile:        GenomicsReport
 Parent:         DiagnosticReport
@@ -96,7 +97,7 @@ Description:    "Genomics profile of DiagnosticReport."
 * code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)
 * category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "$this.resolve().code"
+* category ^slicing.discriminator.path = "code"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category code pattern"
 * category contains Genetics 0..1
@@ -149,6 +150,8 @@ Description:    "Organizes information within a genomic report."
     overall 0..1 and
     diagnostic-implication 0..* and
     therapeutic-implication 0..* and
+    haplotype 0..* and
+    genotype 0..* and
     variant 0..* and
     region-studied 0..* and
     sequence-phase-relation 0..* 
@@ -160,6 +163,10 @@ Description:    "Organizes information within a genomic report."
 * hasMember[diagnostic-implication] ^short = "Inherited Disease Pathology"
 * hasMember[therapeutic-implication] only Reference(TherapeuticImplication)
 * hasMember[therapeutic-implication] ^short = "Therapeutic Implication"
+* hasMember[haplotype] only Reference(Haplotype)
+* hasMember[haplotype] ^short = "Haplotype"
+* hasMember[genotype] only Reference(Genotype)
+* hasMember[genotype] ^short = "Genotype"
 * hasMember[variant] only Reference(Variant)
 * hasMember[variant] ^short = "Variant"
 * hasMember[region-studied] only Reference(RegionStudied)
