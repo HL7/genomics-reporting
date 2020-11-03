@@ -6,13 +6,13 @@ Description:    "Properties common to genetic implications expressed as computab
 
 * extension contains http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact named relatedArtifact 0..1
 * value[x] 0..0
-* derivedFrom ^slicing.discriminator.type = #type
-* derivedFrom ^slicing.discriminator.path = "resolve().code"
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "$this.resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the resolve().code type"
 * derivedFrom 1..*
 * derivedFrom contains variant 0..*
-* derivedFrom[variant] only Reference (http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant)
+* derivedFrom[variant] only Reference(Variant)
 //genotype
 //haplotype
 * component ^slicing.discriminator.type = #pattern
@@ -29,7 +29,7 @@ Description:    "Properties common to genetic implications expressed as computab
 * component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (extensible)
 * component[prognosis] ^short = "Prognosis"
 * component[prognosis] ^definition = "E.g. Better outcome, poorer outcome"
-* component[prognosis].code = TBD#prognostic-implication
+* component[prognosis].code = TbdCodes#prognostic-implication
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
 //* component[prognosis].value[x] from (example) (extensible)
@@ -39,8 +39,7 @@ Parent:         GenomicImplication
 Id:             diagnostic-implication
 Title:          "Diagnostic Implication"
 Description:    "Finding of whether a particular genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions."
-* code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
-* code.coding.code = TBD#diagnostic-implication
+* code.coding.code = TbdCodes#diagnostic-implication
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -59,8 +58,7 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
 * component[associated-phenotype].value[x] 1..1
 * component[associated-cancer] ^short = "Associated cancer"
 // * component[associated-cancer] ^definition = "" // MLT: no definition provided.
-* component[associated-cancer].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
-* component[associated-cancer].code.coding.code = TBD#associated-cancer
+* component[associated-cancer].code = TbdCodes#associated-cancer
 * component[associated-cancer].value[x] only CodeableConcept
 * component[associated-cancer].value[x] ^binding.strength = #example
 * component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
@@ -83,8 +81,8 @@ Parent:         GenomicImplication
 Id:             therapeutic-implication
 Title:          "Therapeutic Implication"
 Description:    "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."
-* code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
-* code.coding.code = TBD#therapeutic-implication
+* code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+* code.coding.code = TbdCodes#therapeutic-implication
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -106,8 +104,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[associated-phenotype].value[x] 1..1
 * component[associated-cancer] ^short = "Associated cancer"
 // * component[associated-cancer] ^definition = "" // MLT: no definition provided.
-* component[associated-cancer].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
-* component[associated-cancer].code.coding.code = TBD#associated-cancer
+* component[associated-cancer].code = TbdCodes#associated-cancer
 * component[associated-cancer].value[x] only CodeableConcept
 * component[associated-cancer].value[x] ^binding.strength = #example
 * component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
@@ -121,8 +118,9 @@ Description:    "Profile with properties for observations that convey the potent
 * component[medication-assessed].value[x] 1..1
 * component[therapy-assessed] ^short = "Associated cancer"
 * component[therapy-assessed] ^definition = "The non-medication therapy whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc."
-* component[therapy-assessed].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"
-* component[therapy-assessed].code.coding.code = TBD#therapy-assessed
+// * component[therapy-assessed].code.coding.system from TBDVS
+// * component[therapy-assessed].code.coding.code = TbdCodes#therapy-assessed
+* component[therapy-assessed].code = TbdCodes#therapy-assessed
 * component[therapy-assessed].value[x] only CodeableConcept
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"

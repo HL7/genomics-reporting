@@ -29,7 +29,7 @@ ValueSet:       TBDVS
 Id:             tbd
 Title:          "TBD Value Set"
 Description:    "Value Set for codes yet to be defined in LOINC"
-* include codes from system TBD
+* include codes from system TbdCodes
 
 ValueSet:       FunctionalAnnotationVS
 Id:             functional-annotation
