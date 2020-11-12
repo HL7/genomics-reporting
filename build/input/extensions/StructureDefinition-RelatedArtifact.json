@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "RelatedArtifact",
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact",
+  "version": "1.0.1",
+  "name": "RelatedArtifact",
+  "title": "Related Artifact",
+  "status": "active",
+  "description": "Captures citations, evidence and other supporting documentation for the observation or report.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

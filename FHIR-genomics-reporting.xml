@@ -9,7 +9,7 @@
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
-<artifact id="ConceptMap/dna-change-type" key="ConceptMap-dna-change-type" name="Concept mapping for DNA Change Type"/>
+<artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="Concept mapping for DNA Change Type"/>
 <artifact id="ValueSet/dna-change-type" key="ValueSet-dna-change-type" name="DNA Change Type"/>
 <artifact id="StructureDefinition/diagnostic-implication" key="StructureDefinition-diagnostic-implication" name="Diagnostic Implication"/>
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>
@@ -28,8 +28,10 @@
 <artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="Example - NGS"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="Example - Observation for a single HLA-A allele"/>
+<artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name="Example - Patient"/>
 <artifact id="Bundle/diagnosticreport-pgxexample" key="Bundle-diagnosticreport-pgxexample" name="Example - Pharmacogenomics"/>
 <artifact id="ServiceRequest/servicerequest-hla-a-r4" key="ServiceRequest-servicerequest-hla-a-r4" name="Example - Service request for high-resolution HLA-A genotyping"/>
+<artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Specimen"/>
 <artifact id="DiagnosticReport/AnnotationExample" key="DiagnosticReport-AnnotationExample" name="Example - Variant with ACMG Screening"/>
 <artifact id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
 <artifact id="ValueSet/functional-annotation" key="ValueSet-functional-annotation" name="Functional Annotations"/>
@@ -55,13 +57,15 @@
 <artifact id="StructureDefinition/region-studied" key="StructureDefinition-region-studied" name="Region Studied"/>
 <artifact id="StructureDefinition/RelatedArtifact" key="StructureDefinition-RelatedArtifact" name="Related Artifact"/>
 <artifact id="StructureDefinition/servicerequest" key="StructureDefinition-servicerequest" name="Request for Genomics Test"/>
+<artifact id="StructureDefinition/diagnosticReport-risk" key="StructureDefinition-diagnosticReport-risk" name="Risk Assessment Reference"/>
 <artifact id="StructureDefinition/sequence-phase-relationship" key="StructureDefinition-sequence-phase-relationship" name="Sequence Phase Relationship"/>
-<artifact id="CodeSystem/seq-phase-relationship" key="CodeSystem-seq-phase-relationship" name="Sequence Phase Relationship"/>
+<artifact id="CodeSystem/SequencePhaseRelationshipCS" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship"/>
 <artifact id="ValueSet/seq-phase-relationship" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationship"/>
+<artifact id="StructureDefinition/service-request" key="StructureDefinition-service-request" name="Service Request"/>
 <artifact id="StructureDefinition/specimen" key="StructureDefinition-specimen" name="Specimen"/>
 <artifact id="StructureDefinition/SupportingInfo" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
-<artifact id="CodeSystem/tbd-codes" key="CodeSystem-tbd-codes" name="TBD Code System"/>
-<artifact id="ValueSet/tbd-codes" key="ValueSet-tbd-codes" name="TBD Value Set"/>
+<artifact id="CodeSystem/TbdCodes" key="CodeSystem-TbdCodes" name="TBD Code System"/>
+<artifact id="ValueSet/tbd" key="ValueSet-tbd" name="TBD Value Set"/>
 <artifact deprecated="true" key="Task" name="Task"/>
 <artifact id="StructureDefinition/therapeutic-implication" key="StructureDefinition-therapeutic-implication" name="Therapeutic Implication"/>
 <artifact id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor mutation burden"/>

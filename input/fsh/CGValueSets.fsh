@@ -1,0 +1,51 @@
+ValueSet:       HighLowCodesVS
+Id:             high-low-codes
+Title:          "High Low codes"
+Description:    "This value set includes high/low codes for Observation Interpretations"
+
+* ObsInt#H "High"
+* ObsInt#L "Low"
+
+ValueSet:       HGNCVS
+Id:             hgnc
+Title:          "HUGO Gene Nomenclature Committee Gene Names (HGNC)"
+Description:    "This value set includes all HGNC Codes, which includes multiple code systems. In this guide, Gene IDs from HGNC are used as CodeableConcepts, which must be sent with the HGNC gene ID including the prefix 'HGNC:' as the code and the HGNC 'gene symbol' as display. CAUTION: HGNC also indexes gene groups by numeric ID (without a prefix), and older systems may send HGNC gene IDs without the prefix, so care must be taken to confirm alignment. We have separately included the genegroup code system to draw attention to this ambiguity and potential error."
+* include codes from system HGNCID
+* include codes from system HGNCGROUP
+
+ValueSet:       HGVSVS
+Id:             hgvs
+Title:          "Human Genome Variation Society (HGVS) Nomenclature"
+Description:    "HGVS-nomenclature is used to report and exchange information regarding variants found in DNA, RNA and protein sequences and serves as an international standard. (source: varnomen.hgvs.org)"
+* include codes from system HGVS
+
+ValueSet:       DNAChangeTypeVS
+Id:             dna-change-type
+Title:          "DNA Change Type"
+Description:    "DNA Change Type of a variant."
+* include codes from system SEQONT where concept is-a #SO:0002072
+
+ValueSet:       TBDVS
+Id:             tbd
+Title:          "TBD Value Set"
+Description:    "Value Set for codes yet to be defined in LOINC"
+* include codes from system TbdCodes
+
+ValueSet:       FunctionalAnnotationVS
+Id:             functional-annotation
+Title:          "Functional Annotation"
+Description:    "Functional annotation of a variant."
+* include codes from system SEQONT where concept is-a #SO:0001537
+
+ValueSet:       VariantInheritanceVS
+Id:             variant-inheritance
+Title:          "Variant Inheritance"
+Description:    "A quality inhering in a variant by virtue of its origin."
+* include codes from system SEQONT where concept is-a #SO:0001762
+* DataAbsentReason#asked-unknown
+
+ValueSet:       SeqPhaseRelationshipVS
+Id:             seq-phase-relationship
+Title:          "Sequence Phase Relationship"
+Description:    "Value Set for specific types of relationships"
+* codes from system SequencePhaseRelationshipCS

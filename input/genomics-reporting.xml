@@ -80,7 +80,7 @@
       </reference>
       <name value="Specimen"/>
       <description value="Constraints on Specimen for use with clinical genomics reporting"/>
-      <exampleBoolean value="false"/>
+      <exampleBoolean value="true"/>
       <groupingId value="general"/>
     </resource>
     <resource>
@@ -227,8 +227,7 @@
         <reference value="StructureDefinition/genomics-base"/>
       </reference>
       <name value="Genomics Base"/>
-      <description
-        value="Base profile that defines characteristics shared by all genomic observations"/>
+      <description value="Base profile that defines characteristics shared by all genetic observations."/>
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
@@ -242,6 +241,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="abstract"/>
     </resource>
+
     <resource>
       <reference>
         <reference value="StructureDefinition/implication"/>
@@ -285,6 +285,22 @@
       <groupingId value="extensions"/>
     </resource>
     <!-- Examples -->
+    <resource>
+      <reference>
+        <reference value="Patient/CGPatientExample01"/>
+      </reference>
+      <name value="Example - Patient"/>
+      <description value="Test instance a patient"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Specimen/GenomicSpecimenExample01"/>
+      </reference>
+      <name value="Example - Specimen"/>
+      <description value="Test instance a specimen"/>
+      <groupingId value="examples"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -463,11 +479,10 @@
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
       <groupingId value="examples"/>
     </resource>
-
     <!-- Code Systems -->
     <resource>
       <reference>
-        <reference value="CodeSystem/tbd-codes"/>
+        <reference value="CodeSystem/TbdCodes"/>
       </reference>
       <name value="TBD Code System"/>
       <description value="Code System for codes yet to be defined in LOINC"/>
@@ -475,7 +490,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/seq-phase-relationship"/>
+        <reference value="CodeSystem/SequencePhaseRelationshipCS"/>
       </reference>
       <name value="Sequence Phase Relationship"/>
       <description value="Code System for specific types of relationships"/>
@@ -507,7 +522,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/tbd-codes"/>
+        <reference value="ValueSet/tbd"/>
       </reference>
       <name value="TBD Value Set"/>
       <description value="Value Set for codes yet to be defined in LOINC"/>
@@ -547,7 +562,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ConceptMap/dna-change-type"/>
+        <reference value="ConceptMap/dna-change-type-map"/>
       </reference>
       <name value="Concept mapping for DNA Change Type"/>
       <description value="Mapping LOINC answers to SequenceOntology"/>
