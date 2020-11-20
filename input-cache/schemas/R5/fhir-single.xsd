@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Nov 3, 2020 18:17+0000 for FHIR v4.5.0 
+  Generated on Thu, Nov 19, 2020 13:30+0000 for FHIR v4.5.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.5.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -1791,20 +1791,16 @@ The value of mustSupport SHALL be a FHIRPath resolveable on the type of the Data
     <xs:complexContent>
       <xs:extension base="BackboneType">
         <xs:sequence>
-          <xs:element name="code" type="CodeableConcept" minOccurs="0" maxOccurs="1">
+          <xs:element name="code" type="CodeableConcept" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Description of a component of the method to generate the statistic.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1">
+          <xs:element name="value" type="Quantity" minOccurs="0" maxOccurs="1">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Further specification of a component of the method to generate the statistic.</xs:documentation>
+              <xs:documentation xml:lang="en">Further specification of the quantified value of the component of the method to generate the statistic.</xs:documentation>
             </xs:annotation>
-           <xs:element name="valueCodeableConcept" type="CodeableConcept"  maxOccurs="1"/>
-           <xs:element name="valueBoolean" type="boolean"  maxOccurs="1"/>
-           <xs:element name="valueQuantity" type="Quantity"  maxOccurs="1"/>
-           <xs:element name="valueRange" type="Range"  maxOccurs="1"/>
-          </xs:choice>
+          </xs:element>
           <xs:element name="variable" type="Statistic.Variable" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">A variable adjusted for in the adjusted analysis.</xs:documentation>
@@ -37173,7 +37169,7 @@ For resource issues, this will be a simple XPath limited to element names, repet
               <xs:documentation xml:lang="en">Manufacturer of this package type. When there are multiple it means these are all possible manufacturers.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="package" type="PackagedProductDefinition.Package" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="package" type="PackagedProductDefinition.Package" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">A packaging item, as a container for medically related items, possibly with other packaging items within, or a packaging component, such as bottle cap (which is not a device or a medication manufactured item).</xs:documentation>
            </xs:annotation>
@@ -43618,7 +43614,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The status of the subscription, which marks the server state for managing the subscription.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="topic" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="topic" minOccurs="1" maxOccurs="1" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">The reference to the subscription topic to be notified about.</xs:documentation>
            </xs:annotation>
@@ -43678,6 +43674,16 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">How much of the resource content to deliver in the notification payload. The choices are an empty payload, only the resource id, or the full resource content.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="notificationUrlLocation" minOccurs="0" maxOccurs="1" type="SubscriptionUrlLocation">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If present, where to place URLs of resources in notifications.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="maxCount" minOccurs="0" maxOccurs="1" type="positiveInt">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If present, the maximum number of triggering resources that will be included in a notification bundle (e.g., a server will not include more than this number of trigger resources in a single notification).  Note that this is not a strict limit on the number of entries in a bundle, as dependent resources can be included.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -43689,6 +43695,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="resourceType" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">If the element is a reference to another resource, this element contains &quot;Reference&quot;, and the targetProfile element defines what resources can be referenced. The targetProfile may be a reference to the general definition of a resource (e.g. http://hl7.org/fhir/StructureDefinition/Patient).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="searchParamName" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The filter label (=key) as defined in the `SubscriptionTopic.canfilterBy.searchParamName`  element.</xs:documentation>
@@ -43738,6 +43749,41 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="SubscriptionUrlLocation-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="none">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">none</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="full-url">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">full-url</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="request-response">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">request-response</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="all">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">all</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SubscriptionUrlLocation">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The location, in Bundle.entry, where URLs for resources should be located.</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="SubscriptionUrlLocation-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="SubscriptionStatus" type="SubscriptionStatus">
     <xs:annotation>
       <xs:documentation xml:lang="en">The SubscriptionStatus resource describes the state of a Subscription during notifications.</xs:documentation>
@@ -43751,6 +43797,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
+          <xs:element name="status" minOccurs="0" maxOccurs="1" type="code">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The status of the subscription, which marks the server state for managing the subscription.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="SubscriptionNotificationType">
             <xs:annotation>
               <xs:documentation xml:lang="en">The type of event being conveyed with this notificaiton.</xs:documentation>
@@ -43769,11 +43820,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="subscription" minOccurs="1" maxOccurs="1" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">The reference to the Subscription which generated this notification.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="status" minOccurs="0" maxOccurs="1" type="code">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The status of the subscription, which marks the server state for managing the subscription.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="topic" minOccurs="1" maxOccurs="1" type="canonical">
@@ -43928,14 +43974,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The period during which the SubscriptionTopic content was or is planned to be effective.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="resourceTrigger" type="SubscriptionTopic.ResourceTrigger" minOccurs="0" maxOccurs="1">
+          <xs:element name="resourceTrigger" type="SubscriptionTopic.ResourceTrigger" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The criteria for including updates to a nominated resource in the subscription topic.  Thie criteria may be just a human readable description and/or a full FHIR search string or FHIRPath expression.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="canFilterBy" type="SubscriptionTopic.CanFilterBy" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">List of properties by which Subscriptions on the subscription topic can be filtered.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -43954,9 +43995,9 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The human readable description of what triggers inclusion into this subscription topic -  for example, &quot;Beginning of a clinical encounter&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="resourceType" minOccurs="0" maxOccurs="unbounded" type="ResourceType">
+          <xs:element name="resourceType" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The list of resource types that are candidates for this subscription topic.  For example, the Encounter resource is updated in an 'admission' subscription topic.</xs:documentation>
+              <xs:documentation xml:lang="en">URL of the Resource that is the type used in this trigger.  Relative URLs are relative to the StructureDefinition root of the implemented FHIR version (e.g., http://hl7.org/fhir/StructureDefinition). For example, &quot;Patient&quot; maps to http://hl7.org/fhir/StructureDefinition/Patient.  For more information, see &lt;a href=&quot;elementdefinition-definitions.html#ElementDefinition.type.code&quot;&gt;ElementDefinition.type.code&lt;/a&gt;.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="methodCriteria" minOccurs="0" maxOccurs="unbounded" type="InteractionTrigger">
@@ -43972,6 +44013,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           <xs:element name="fhirPathCriteria" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The FHIRPath based rules that the server should use to determine when to trigger a notification for this topic.  If there are multiple, FHIRPath filters are joined with AND.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="canFilterBy" type="SubscriptionTopic.CanFilterBy" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">List of properties by which Subscriptions on the subscription topic can be filtered.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -43990,9 +44036,19 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
               <xs:documentation xml:lang="en">The FHIR query based rules are applied to the previous resource state.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="resultForCreate" minOccurs="0" maxOccurs="1" type="CriteriaNotExistsBehavior">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">What behavior a server will exhibit if the previous state of a resource does NOT exist (e.g., during a CREATE).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="current" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">The FHIR query based rules are applied to the current resource state.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="resultForDelete" minOccurs="0" maxOccurs="1" type="CriteriaNotExistsBehavior">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">What behavior a server will exhibit if the current state of a resource does NOT exist (e.g., during a DELETE).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="requireBoth" minOccurs="0" maxOccurs="1" type="boolean">
@@ -44057,6 +44113,31 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="InteractionTrigger-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="CriteriaNotExistsBehavior-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="test-passes">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">test passes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="test-fails">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">test fails</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CriteriaNotExistsBehavior">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Behavior a server can exhibit when a criteria state does not exist (e.g., state prior to a create or after a delete).</xs:documentation>
+      <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="CriteriaNotExistsBehavior-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

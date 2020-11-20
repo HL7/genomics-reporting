@@ -22,7 +22,7 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #associated-cancer "associated-cancer"
 * #associated-therapy "Genomically linked therapy" "The non-medication therapy (procedure) associated with this implication."
 * #region-coverage "region-coverage" "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."
-* #functional-annotation "functional-annotation" "Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."
+* #molecular-consequence "molecular-consequence" "Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."
 * #exact-start-end "Variant exact start and end" "The genomic coordinates of the exact genomic range in which the variant resides."
 * #inner-start-end "Variant inner start and end" "The genomic coordinates of the inner genomic range in which the variant might reside."
 * #outer-start-end "Variant outer start and end" "The genomic coordinates of the outer genomic range in which the variant might reside."

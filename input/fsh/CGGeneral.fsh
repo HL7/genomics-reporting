@@ -50,18 +50,6 @@ Description:    "Provides a coarse overall interpretation of the genomic results
 * value[x] 1..1
 * value[x] from http://loinc.org/vs/LL541-4 (preferred)
 
-
-Profile:        GenomicServiceRequest
-Parent:         ServiceRequest
-Id:             service-request
-Title:          "Service Request"
-Description:    "Request that initiated the diagnostic report."
-* doNotPerform 0..0
-* subject only Reference(Patient or Group or Location)
-* supportingInfo only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
-* specimen only Reference(GenomicSpecimen)
-
-
 Profile:        SequencePhaseRelationship
 Parent:         GenomicFinding
 Id:             sequence-phase-relationship
