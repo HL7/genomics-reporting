@@ -34,3 +34,32 @@ Description: "Example for Patient. Supports references to subject for multiple g
 * address.country = "US"
 * communication.language = urn:ietf:bcp:47#en-US "English (Region=United States)"
 * communication.language.text = "English"
+
+Instance: TumorMutationBurdenExample01 
+InstanceOf: TMB
+Description: "Example for Tumor Mutation Burden"
+* id = "TumorMutationBurdenExample01"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/tmb"
+* status = #final "final"
+* subject = Reference(CGPatientExample01)
+* valueQuantity.value = 250
+
+Instance: MicrosatelliteInstabilityExample01 
+InstanceOf: MSI
+Description: "Example for Tumor Mutation Burden"
+* id = "MicrosatelliteInstabilityExample01"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/msi"
+* status = #final "final"
+* subject = Reference(CGPatientExample01)
+* valueCodeableConcept = LNC#LA14122-8 "Stable"
+
+Instance: GenomicsServiceRequestExample01 
+InstanceOf: servicerequest
+Description: "Example for Tumor Mutation Burden"
+* id = "GenomicsServiceRequestExample01"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+* status = RequestStatus#completed "completed"
+* code = LNC#94231-8 "G6PD gene full mutation analysis in Blood or Tissue by Sequencing"
+* subject = Reference(CGPatientExample01)
+* intent = RequestIntent#order "Order"
+* specimen = Reference(GenomicSpecimenExample01)
