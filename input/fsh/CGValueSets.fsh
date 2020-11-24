@@ -31,10 +31,10 @@ Title:          "TBD Value Set"
 Description:    "Value Set for codes yet to be defined in LOINC"
 * include codes from system TbdCodes
 
-ValueSet:       FunctionalAnnotationVS
-Id:             functional-annotation
-Title:          "Functional Annotation"
-Description:    "Functional annotation of a variant."
+ValueSet:       MolecularConsequenceVS
+Id:             molecular-consequence
+Title:          "Molecular Consequence"
+Description:    "Changes in a structural features of a sequence due to the observed variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
 ValueSet:       VariantInheritanceVS
