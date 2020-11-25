@@ -1,9 +1,9 @@
-Extension:   RelatedArtifact
-Id:          RelatedArtifact
+Extension:   RelatedArtifactExtension
+Id:          RelatedArtifactExtension
 Title:       "Related Artifact"
 Description: "Captures citations, evidence and other supporting documentation for the observation or report."
 * ^context[0].type = #element
-* value[x] only Reference(RelatedArtifact)
+* value[x] only RelatedArtifact
 
 Extension:   RecommendedAction
 Id:          RecommendedAction

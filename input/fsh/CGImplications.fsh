@@ -4,7 +4,7 @@ Id:             implication
 Title:          "Genomic Implication"
 Description:    "Properties common to genetic implications expressed as computable discrete elements."
 
-* extension contains http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact named relatedArtifact 0..1
+* extension contains http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifactExtension named relatedArtifact 0..1
 * value[x] 0..0
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "$this.resolve()"
