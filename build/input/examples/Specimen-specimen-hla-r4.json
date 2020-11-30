@@ -1,0 +1,48 @@
+{
+  "resourceType": "Specimen",
+  "id": "specimen-hla-r4",
+  "collection": {
+    "bodySite": {
+      "coding": [
+        {
+          "code": "261063000",
+          "system": "http://snomed.info/sct",
+          "display": "Buccal space"
+        }
+      ]
+    },
+    "method": {
+      "coding": [
+        {
+          "code": "418622002",
+          "system": "http://snomed.info/sct",
+          "display": "Taking oral swab (procedure)"
+        }
+      ]
+    }
+  },
+  "identifier": [
+    {
+      "system": "http://specimensrus.com",
+      "value": "001^123456789"
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+    ]
+  },
+  "receivedTime": "2018-05-01",
+  "subject": {
+    "display": "de-identified patient"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "258564008",
+        "system": "http://snomed.info/sct",
+        "display": "Buccal smear sample"
+      }
+    ]
+  }
+}

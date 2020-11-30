@@ -1,0 +1,112 @@
+{
+  "resourceType": "Observation",
+  "id": "obs-idh-ex",
+  "extension": [
+    {
+      "valueRelatedArtifact": {
+        "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+      },
+      "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "diagnostic-implication",
+        "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+        "display": "Diagnostic Implication"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "53037-8",
+            "system": "http://loinc.org",
+            "display": "Genetic variation clinical significance [Imp]"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA6668-3",
+            "system": "http://loinc.org",
+            "display": "Pathogenic"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "81259-4",
+            "system": "http://loinc.org",
+            "display": "Associated phenotype"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "text": "Cystic fibrosis"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "81259-4",
+            "system": "http://loinc.org",
+            "display": "Associated phenotype"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "text": "Congenital bilateral absence of the vas deferens"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "mode-of-inheritance",
+            "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+            "display": "mode-of-inheritance"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "Autosomalrecessive",
+            "system": "http://ghr.nlm.nih.gov/primer/inheritance/inheritancepatterns",
+            "display": "Autosomal recessive"
+          }
+        ]
+      }
+    }
+  ],
+  "derivedFrom": [
+    {
+      "reference": "Observation/SNVexample"
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+    ]
+  },
+  "status": "final"
+}

@@ -1,0 +1,883 @@
+{
+  "resourceType": "Bundle",
+  "id": "diagnosticreport-pgxexample",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/DiagnosticReport/pgx-report",
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      },
+      "resource": {
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/pgx-request"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "effectiveDateTime": "2016",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction",
+            "valueReference": {
+              "reference": "Task/med-usage-impact-task-pgx-example"
+            }
+          }
+        ],
+        "id": "pgx-report",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "DiagnosticReport",
+        "result": [
+          {
+            "display": "genetics impact for medication metabolism accessment",
+            "reference": "Observation/med-impact-pgx-example"
+          },
+          {
+            "reference": "Observation/genotype-pgx-example"
+          },
+          {
+            "reference": "Observation/haplotype-1-pgx-example"
+          },
+          {
+            "reference": "Observation/haplotype-2-pgx-example"
+          },
+          {
+            "reference": "Observation/variant-1-pgx-example"
+          },
+          {
+            "reference": "Observation/variant-2-pgx-example"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "id": "patient",
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Specimen/specimen",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "id": "specimen",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Organization/lab",
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      },
+      "resource": {
+        "id": "lab",
+        "name": "Some lab",
+        "resourceType": "Organization"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/ServiceRequest/pgx-request",
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "id": "pgx-request",
+        "intent": "original-order",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+          ]
+        },
+        "reasonCode": [
+          {
+            "text": "Worried about family planning"
+          }
+        ],
+        "resourceType": "ServiceRequest",
+        "status": "active",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/med-impact-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "therapeutic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+              "display": "Therapeutic Implication"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "53040-2",
+                  "system": "http://loinc.org",
+                  "display": "Genetic variation's effect on drug metabolism"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA25390-8",
+                  "system": "http://loinc.org",
+                  "display": "Rapid metabolizer"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51963-7",
+                  "system": "http://loinc.org",
+                  "display": "Medication assessed"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "103",
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "display": "mercaptopurine"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/genotype-pgx-example"
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "med-impact-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/genotype-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84413-4",
+              "system": "http://loinc.org",
+              "display": "genotype display name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2623",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "CYP2C9"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/haplotype-1-pgx-example"
+          },
+          {
+            "reference": "Observation/haplotype-2-pgx-example"
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "genotype-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+          ]
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "CYP2C9*4/*35B",
+              "system": "http://www.pharmvar.org",
+              "display": "CYP2C9 *4/*35B"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/haplotype-1-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype Name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2623",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "CYP2C9"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/variant-1-pgx-example"
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "haplotype-1-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "CYP2C9*35B",
+              "system": "http://www.pharmvar.org",
+              "display": "CYP2C9 *35B"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/haplotype-2-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype Name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2623",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "CYP2C9"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/variant-2-pgx-example"
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "haplotype-2-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "CYP2C9*4",
+              "system": "http://www.pharmvar.org",
+              "display": "CYP2C9 *4"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/variant-1-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2623",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "CYP2C9"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81255-2",
+                  "system": "http://loinc.org",
+                  "display": "dbSNP ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "rs12345",
+                  "system": "http://www.ncbi.nlm.nih.gov/SNP"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "69547-8",
+                  "system": "http://loinc.org",
+                  "display": "Ref nucleotide"
+                }
+              ]
+            },
+            "valueString": "T"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "69551-0",
+                  "system": "http://loinc.org",
+                  "display": "Alt allele"
+                }
+              ]
+            },
+            "valueString": "G"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "exact-start-end",
+                  "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+                  "display": "Variant exact start and end"
+                }
+              ]
+            },
+            "valueRange": {
+              "high": {
+                "value": 55227977
+              },
+              "low": {
+                "value": 55227976
+              }
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "MolecularSequence/sequence-1-pgx-example"
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "variant-1-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/variant-2-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2623",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "CYP2C9"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48013-7",
+                  "system": "http://loinc.org",
+                  "display": "Genomic reference sequence ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NG_007726.3",
+                  "system": "http://www.ncbi.nlm.nih.gov/nuccore"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81255-2",
+                  "system": "http://loinc.org",
+                  "display": "dbSNP ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "rs233455",
+                  "system": "http://www.ncbi.nlm.nih.gov/SNP"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "69547-8",
+                  "system": "http://loinc.org",
+                  "display": "Ref nucleotide"
+                }
+              ]
+            },
+            "valueString": "T"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "69551-0",
+                  "system": "http://loinc.org",
+                  "display": "Alt allele"
+                }
+              ]
+            },
+            "valueString": "G"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "exact-start-end",
+                  "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+                  "display": "Variant exact start and end"
+                }
+              ]
+            },
+            "valueRange": {
+              "high": {
+                "value": 55227979
+              },
+              "low": {
+                "value": 55227978
+              }
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "MolecularSequence/sequence-2-pgx-example"
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "variant-2-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MolecularSequence/sequence-1-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "id": "sequence-1-pgx-example",
+        "referenceSeq": {
+          "orientation": "sense",
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "NG-007726.3",
+                "system": "http://www.ncbi.nlm.nih.gov/nuccore"
+              }
+            ]
+          },
+          "windowEnd": 55227980,
+          "windowStart": 55227970
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MolecularSequence/sequence-2-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "id": "sequence-2-pgx-example",
+        "referenceSeq": {
+          "orientation": "sense",
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "NG-007726.3",
+                "system": "http://www.ncbi.nlm.nih.gov/nuccore"
+              }
+            ]
+          },
+          "windowEnd": 55227980,
+          "windowStart": 55227970
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Task/med-usage-impact-task-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      },
+      "resource": {
+        "code": {
+          "text": "Any Increase does Recommendation Text from the provider"
+        },
+        "description": "Any Increase does Recommendation Text from the provider",
+        "focus": {
+          "reference": "MedicationStatement/current-med-example"
+        },
+        "for": {
+          "reference": "Patient/patient"
+        },
+        "id": "med-usage-impact-task-pgx-example",
+        "intent": "proposal",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/task-med-chg"
+          ]
+        },
+        "reasonReference": {
+          "reference": "Observation/med-impact-pgx-example"
+        },
+        "resourceType": "Task",
+        "status": "requested"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MedicationStatement/current-med-example",
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      },
+      "resource": {
+        "id": "current-med-example",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "103",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "display": "mercaptopurine"
+            }
+          ]
+        },
+        "resourceType": "MedicationStatement",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    }
+  ],
+  "type": "transaction"
+}

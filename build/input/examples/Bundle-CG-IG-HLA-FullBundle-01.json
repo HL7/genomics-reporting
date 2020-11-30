@@ -1,0 +1,1446 @@
+{
+  "resourceType": "Bundle",
+  "id": "CG-IG-HLA-FullBundle-01",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "birthDate": "1986-12-31",
+        "gender": "male",
+        "identifier": [
+          {
+            "assigner": {
+              "display": "aDonorRegistry"
+            },
+            "period": {
+              "start": "2012-11-10"
+            },
+            "system": "urn:oid:0.0.0.0.0.0.0",
+            "type": {
+              "coding": [
+                {
+                  "code": "DR",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "use": "usual",
+            "value": "12345"
+          }
+        ],
+        "name": [
+          {
+            "family": "Storm",
+            "given": [
+              "John"
+            ],
+            "text": "John Storm",
+            "use": "official"
+          },
+          {
+            "family": "Storm",
+            "given": [
+              "Johnny"
+            ],
+            "text": "Johnny Storm",
+            "use": "nickname"
+          },
+          {
+            "text": "The Human Torch",
+            "use": "nickname"
+          }
+        ],
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340",
+      "request": {
+        "method": "POST",
+        "url": "Specimen"
+      },
+      "resource": {
+        "accessionIdentifier": {
+          "system": "http://mylabsurl.com",
+          "value": "456"
+        },
+        "identifier": [
+          {
+            "system": "http://myorgsurl.com",
+            "value": "123"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "122555007",
+              "system": "http://snomed.info/sct",
+              "display": "Venous blood specimen"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950",
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      },
+      "resource": {
+        "address": [
+          {
+            "city": "Sometown",
+            "country": "USA",
+            "line": [
+              "123 Main St"
+            ],
+            "postalCode": "99999",
+            "state": "ND",
+            "text": "123 Main St, Sometown, ND 99999",
+            "type": "both",
+            "use": "work"
+          }
+        ],
+        "alias": [
+          "aTL"
+        ],
+        "name": "aTypingLab Inc",
+        "resourceType": "Organization",
+        "telecom": [
+          {
+            "rank": 1,
+            "system": "phone",
+            "use": "work",
+            "value": "1-800-555-1234"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:00ef18ad-ed04-4b2c-81ee-b69bb243f0d5",
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      },
+      "resource": {
+        "address": [
+          {
+            "city": "Anytown",
+            "country": "USA",
+            "line": [
+              "456 Main St"
+            ],
+            "postalCode": "00000",
+            "state": "ND",
+            "text": "456 Main St, Anytown ND, 00000",
+            "type": "both",
+            "use": "work"
+          }
+        ],
+        "alias": [
+          "ADR"
+        ],
+        "name": "aDonorRegistry",
+        "resourceType": "Organization",
+        "telecom": [
+          {
+            "rank": 1,
+            "system": "phone",
+            "use": "work",
+            "value": "1-800-555-6789"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea",
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      },
+      "resource": {
+        "authoredOn": "2016-11-15",
+        "code": {
+          "coding": [
+            {
+              "code": "13303-3",
+              "system": "http://loinc.org",
+              "display": "HLA-A+B+C (class I) [Type]"
+            }
+          ]
+        },
+        "intent": "order",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+          ]
+        },
+        "performer": [
+          {
+            "display": "aTypingLab, Inc",
+            "reference": "urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950",
+            "type": "Organization"
+          }
+        ],
+        "reasonCode": [
+          {
+            "text": "tissue typing for donor registry"
+          }
+        ],
+        "requester": {
+          "display": "aDonorRegistry",
+          "reference": "urn:uuid:00ef18ad-ed04-4b2c-81ee-b69bb243f0d5",
+          "type": "Organization"
+        },
+        "resourceType": "ServiceRequest",
+        "status": "completed",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GCTCCCACTCCATGAGGTATTTCTTCACATCCGTGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCCGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGCCAGAAGATGGAGCCGCGGGCGCCGTGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCAGGAGACACGGAATATGAAGGCCCACTCACAGACTGACCGAGCGAACCTGGGGACCCTGCGCGGCTACTACAACCAGAGCGAGGACG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00001",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-A*01:01:01:01"
+          },
+          "windowEnd": 773,
+          "windowStart": 503
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GTTCTCACACCATCCAGATAATGTATGGCTGCGACGTGGGGCCGGACGGGCGCTTCCTCCGCGGGTACCGGCAGGACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCTTGGACCGCGGCGGACATGGCAGCTCAGATCACCAAGCGCAAGTGGGAGGCGGTCCATGCGGCGGAGCAGCGGAGAGTCTACCTGGAGGGCCGGTGCGTGGACGGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCACGG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00001",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-A*01:01:01:01"
+          },
+          "windowEnd": 1290,
+          "windowStart": 1014
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GCTCCCACTCCATGAGGTATTTCTCCACATCCGTGTCCCGGCCCGGCAGTGGAGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGCCAGAAGATGGAGCCGCGGGCGCCGTGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCAGGAGACACGGAATATGAAGGCCCACTCACAGACTGACCGAGCGAACCTGGGGACCCTGCGCGGCTACTACAACCAGAGCGAGGACG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00002",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-A*01:02"
+          },
+          "windowEnd": 773,
+          "windowStart": 503
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GTTCTCACACCATCCAGATAATGTATGGCTGCGACGTGGGGCCGGACGGGCGCTTCCTCCGCGGGTACCGGCAGGACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCTTGGACCGCGGCGGACATGGCAGCTCAGATCACCAAGCGCAAGTGGGAGGCGGTCCATGCGGCGGAGCAGCGGAGAGTCTACCTGGAGGGCCGGTGCGTGGACGGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCACGG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00002",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-A*01:02"
+          },
+          "windowEnd": 1290,
+          "windowStart": 1014
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4931",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-A"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-A*01:01:01:01, exon 2",
+            "reference": "urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804",
+            "type": "MolecularSequence"
+          },
+          {
+            "display": "HLA-A*01:01:01:01, exon 3",
+            "reference": "urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675",
+            "type": "MolecularSequence"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "HLA-A*01:01:01G",
+              "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+              "display": "HLA-A*01:01:01G",
+              "version": "3.23"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4931",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-A"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-A*01:02, exon 2",
+            "reference": "urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621",
+            "type": "MolecularSequence"
+          },
+          {
+            "display": "HLA-A*01:02, exon 3",
+            "reference": "urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0",
+            "type": "MolecularSequence"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "HLA-A*01:02",
+              "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+              "display": "HLA-A*01:02",
+              "version": "3.23"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "basedOn": [
+          {
+            "display": "Class I HLA genotyping for John Storm",
+            "reference": "urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea",
+            "type": "ServiceRequest"
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84413-4",
+              "system": "http://loinc.org",
+              "display": "Genotype display name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4931",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-A"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-A*01:01:01G, exons 2 and 3",
+            "reference": "urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6",
+            "type": "Observation"
+          },
+          {
+            "display": "HLA-A*01:02, exons 2 and 3",
+            "reference": "urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32",
+            "type": "Observation"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "hla#3.23.0#HLA-A:01:01G+HLA-A*01:02",
+              "system": "http://glstring.org",
+              "version": "1.0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGATCTCCAAGACCAACACACAGACTTACCGAGAGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00162",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-B*15:01:01:01"
+          },
+          "windowEnd": 756,
+          "windowStart": 486
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GGTCTCACACCCTCCAGAGGATGTACGGCTGCGACGTGGGGCCGGACGGGCGCCTCCTCCGCGGGCATGACCAGTCCGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGAGCTCCTGGACCGCGGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGTGGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00162",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-B*15:01:01:01"
+          },
+          "windowEnd": 1277,
+          "windowStart": 1001
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACGGGGAGACACGGAACATGAAGGCCTCCGCGCAGACTTACCGAGAGAACCTGCGGATCGCGCTCCGCTACTACAACCAGAGCGAGGCCG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00381",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-B*57:01:01"
+          },
+          "windowEnd": 755,
+          "windowStart": 485
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:db69e549-6267-4777-b4b9-8813f3329309",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GGTCTCACATCATCCAGGTGATGTATGGCTGCGACGTGGGGCCGGACGGGCGCCTCCTCCGCGGGCATGACCAGTCCGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGAGCTCCTGGACCGCGGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGTGGCGGAGCAGCTGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00381",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-B*57:01:01"
+          },
+          "windowEnd": 1277,
+          "windowStart": 1001
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4932",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-B"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-B*15:01:01:01, exon 2",
+            "reference": "urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670",
+            "type": "MolecularSequence"
+          },
+          {
+            "display": "HLA-B*15:01:01:01, exon 3",
+            "reference": "urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138",
+            "type": "MolecularSequence"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "HGG00041",
+              "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+              "display": "HLA-B*15:01:01G",
+              "version": "3.23"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4932",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-B"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-B*57:01:01, exon 2",
+            "reference": "urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe",
+            "type": "MolecularSequence"
+          },
+          {
+            "display": "HLA-B*57:01:01, exon 3",
+            "reference": "urn:uuid:db69e549-6267-4777-b4b9-8813f3329309",
+            "type": "MolecularSequence"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "HLA-B*57:01:01G",
+              "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+              "display": "HLA-B*57:01:01G",
+              "version": "3.23"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "basedOn": [
+          {
+            "display": "Class I HLA genotyping for John Storm",
+            "reference": "urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea",
+            "type": "ServiceRequest"
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84413-4",
+              "system": "http://loinc.org",
+              "display": "Genotype display name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4932",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-B"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-B*15:01:01G, exons 2 and 3",
+            "reference": "urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a",
+            "type": "Observation"
+          },
+          {
+            "display": "HLA-B*57:01:01G, exons 2 and 3",
+            "reference": "urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5",
+            "type": "Observation"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G",
+              "system": "http://glstring.org",
+              "version": "1.0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GCTCCCACTCCATGAAGTATTTCTTCACATCCGTGTCCCGGCCTGGCCGCGGAGAGCCCCGCTTCATCTCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGTCCGAGAGGGGAGCCGCGGGCGCCGTGGGTGGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGAAGTACAAGCGCCAGGCACAGACTGACCGAGTGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00401",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-C*01:02:01"
+          },
+          "windowEnd": 756,
+          "windowStart": 486
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GGTCTCACACCCTCCAGTGGATGTGTGGCTGCGACCTGGGGCCCGACGGGCGCCTCCTCCGCGGGTATGACCAGTACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGACCTGCGCTCCTGGACCGCCGCGGACACCGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGCGGAGAGCCTACCTGGAGGGCACGTGCGTGGAGTGGCTCCGCAGATACCTGGAGAACGGGAAGGAGACGCTGCAGCGCGCGG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00401",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-C*01:02:01"
+          },
+          "windowEnd": 1278,
+          "windowStart": 1002
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GCTCCCACTCCATGAGGTATTTCTACACCGCTGTGTCCCGGCCCGGCCGCGGGGAGCCCCACTTCATCGCAGTGGGCTACGTGGACGACACGCAGTTCGTGCGGTTCGACAGCGACGCCGCGAGTCCGAGAGGGGAGCCGCGGGCGCCGTGGGTGGAGCAGGAGGGGCCGGAGTATTGGGACCGGGAGACACAGAAGTACAAGCGCCAGGCACAGACTGACCGAGTGAGCCTGCGGAACCTGCGCGGCTACTACAACCAGAGCGAGGCCG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00413",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-C*03:04:01:01"
+          },
+          "windowEnd": 756,
+          "windowStart": 486
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9",
+      "request": {
+        "method": "POST",
+        "url": "MolecularSequence"
+      },
+      "resource": {
+        "coordinateSystem": 0,
+        "observedSeq": "GGTCTCACATCATCCAGAGGATGTATGGCTGCGACGTGGGGCCCGACGGGCGCCTCCTCCGCGGGTATGACCAGTACGCCTACGACGGCAAGGATTACATCGCCCTGAACGAGGATCTGCGCTCCTGGACCGCCGCGGACACGGCGGCTCAGATCACCCAGCGCAAGTGGGAGGCGGCCCGTGAGGCGGAGCAGCTGAGAGCCTACCTGGAGGGCCTGTGCGTGGAGTGGCTCCGCAGATACCTGAAGAATGGGAAGGAGACGCTGCAGCGCGCGG",
+        "referenceSeq": {
+          "referenceSeqId": {
+            "coding": [
+              {
+                "code": "HLA00413",
+                "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+                "version": "3.23"
+              }
+            ],
+            "text": "HLA-C*03:04:01:01"
+          },
+          "windowEnd": 1277,
+          "windowStart": 1001
+        },
+        "resourceType": "MolecularSequence",
+        "type": "dna"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:709c5315-9403-4867-9d82-0b953836665f",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4933",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-C"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-C*01:02:01, exon 2",
+            "reference": "urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0",
+            "type": "MolecularSequence"
+          },
+          {
+            "display": "HLA-C*01:02:01, exon 3",
+            "reference": "urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f",
+            "type": "MolecularSequence"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "HLA-C*01:02:01G",
+              "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+              "display": "HLA-C*01:02:01G",
+              "version": "3.23"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org",
+              "display": "Haplotype name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4933",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-C"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-C*03:04:01:01, exon 2",
+            "reference": "urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce",
+            "type": "MolecularSequence"
+          },
+          {
+            "display": "HLA-C*03:04:01:01, exon 3",
+            "reference": "urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9",
+            "type": "MolecularSequence"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "HLA-C*01:02:01G",
+              "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+              "display": "HLA-C*01:02:01G",
+              "version": "3.23"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0e0a780e-4486-4cd0-bfae-7243c579f208",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "basedOn": [
+          {
+            "display": "Class I HLA genotyping for John Storm",
+            "reference": "urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea",
+            "type": "ServiceRequest"
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84413-4",
+              "system": "http://loinc.org",
+              "display": "Genotype display name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4933",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-C"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "display": "HLA-C*03:04:01G, exons 2 and 3",
+            "reference": "urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47",
+            "type": "Observation"
+          },
+          {
+            "display": "HLA-C*01:02:01G, exons 2 and 3",
+            "reference": "urn:uuid:709c5315-9403-4867-9d82-0b953836665f",
+            "type": "Observation"
+          }
+        ],
+        "effectiveDateTime": "2016-12-15",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "GTR000000000.0",
+              "system": "http://www.ncbi.nlm.nih.gov/gtr"
+            }
+          ],
+          "text": "NGS based Class I HLA-A, -B, -C genotyping"
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "display": "buccal swab from John Storm",
+          "reference": "urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340"
+        },
+        "status": "final",
+        "subject": {
+          "display": "John Storm",
+          "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa",
+          "type": "Patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G",
+              "system": "http://glstring.org",
+              "version": "1.0"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "type": "transaction"
+}

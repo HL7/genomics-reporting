@@ -1,0 +1,470 @@
+{
+  "resourceType": "Bundle",
+  "id": "oncology-diagnostic",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "birthDate": "1962-12-31",
+        "gender": "male",
+        "generalPractitioner": [
+          {
+            "reference": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "1007"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Carrot",
+              "John",
+              "Mr"
+            ]
+          }
+        ],
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef",
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      },
+      "resource": {
+        "address": [
+          {
+            "city": "Castro Valley",
+            "state": "CA"
+          }
+        ],
+        "identifier": [
+          {
+            "value": "4654765876"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Akerman",
+              "Philip",
+              "Prof"
+            ]
+          }
+        ],
+        "resourceType": "Practitioner"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d",
+      "request": {
+        "method": "POST",
+        "url": "Specimen"
+      },
+      "resource": {
+        "collection": {
+          "collector": {
+            "reference": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"
+          }
+        },
+        "identifier": [
+          {
+            "value": "076e1948-2217-11e9-94d8-12e241dc1f66"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "status": "available",
+        "subject": {
+          "reference": "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "code": {
+          "text": "Tumor Mutational Burden"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+        },
+        "valueQuantity": {
+          "code": "1/1000000{Base}",
+          "system": "http://unitsofmeasure.org",
+          "unit": "Mutations/Megabase",
+          "value": 25
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "62374-4",
+                  "system": "http://loinc.org",
+                  "display": "Human reference sequence assembly version"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA14029-5",
+                  "system": "http://loinc.org",
+                  "display": "GRCh37"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81290-9",
+                  "system": "http://loinc.org",
+                  "display": "Genomic DNA change (gHGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NC_000007.13:g.140453136A>T",
+                  "system": "http://varnomen.hgvs.org",
+                  "display": "NC_000007.13:g.140453136A>T"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81252-9",
+                  "system": "http://loinc.org",
+                  "display": "Discrete genetic variant"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "13961",
+                  "system": "http://www.ncbi.nlm.nih.gov/clinvar",
+                  "display": "Clinvar ID 13961"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48005-3",
+                  "system": "http://loinc.org",
+                  "display": "Amino acid change (pHGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "p.Val600Glu",
+                  "system": "http://varnomen.hgvs.org",
+                  "display": "p.Val600Glu"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48006-1",
+                  "system": "http://loinc.org",
+                  "display": "Amino acid change type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6698-0",
+                  "system": "http://loinc.org",
+                  "display": "Missense"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:1097",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "BRAF"
+                }
+              ]
+            }
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "LA26398-0",
+              "system": "http://loinc.org",
+              "display": "Sequencing"
+            }
+          ]
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "diagnostic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+              "display": "Diagnostic Implication"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "53037-8",
+                  "system": "http://loinc.org",
+                  "display": "Genetic variation clinical significance [Imp]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6668-3",
+                  "system": "http://loinc.org",
+                  "display": "Pathogenic"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "93044-6",
+                  "system": "http://loinc.org",
+                  "display": "Level of Evidence"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "AMP/ASCO/CAP guidelines - Level A"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "associated-cancer",
+                  "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "melanoma"
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "LA26811-2",
+              "system": "http://loinc.org",
+              "display": "Computational analysis"
+            }
+          ]
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5",
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      },
+      "resource": {
+        "code": {
+          "text": "Genetic analysis report"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef"
+          }
+        ],
+        "resourceType": "DiagnosticReport",
+        "result": [
+          {
+            "display": "BRAF V600E mutation observed",
+            "reference": "urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"
+          },
+          {
+            "display": "melanoma implicated",
+            "reference": "urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+        }
+      }
+    }
+  ],
+  "type": "transaction"
+}

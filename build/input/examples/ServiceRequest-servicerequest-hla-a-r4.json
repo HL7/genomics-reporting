@@ -1,0 +1,59 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "servicerequest-hla-a-r4",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "108252007",
+          "system": "http://snomed.info/sct",
+          "display": "Laboratory procedure"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "13298-5",
+        "system": "http://loinc.org",
+        "display": "HLA-A [Type]"
+      }
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http:/aDonorRegistry.com",
+      "value": "1234.5678"
+    }
+  ],
+  "intent": "order",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+    ]
+  },
+  "performer": [
+    {
+      "display": "aTypingLab, Inc",
+      "type": "Organization"
+    }
+  ],
+  "priority": "routine",
+  "requester": {
+    "display": "aDonorRegistry",
+    "type": "Organization"
+  },
+  "specimen": [
+    {
+      "display": "buccal swab: 123456789",
+      "type": "Specimen"
+    }
+  ],
+  "status": "completed",
+  "subject": {
+    "identifier": {
+      "value": "001^24680"
+    }
+  }
+}
