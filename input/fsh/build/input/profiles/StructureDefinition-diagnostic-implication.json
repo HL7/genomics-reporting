@@ -1,0 +1,211 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "diagnostic-implication",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication",
+  "version": "1.0.1",
+  "name": "DiagnosticImplication",
+  "title": "Diagnostic Implication",
+  "status": "active",
+  "description": "Finding of whether a particular genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/implication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "diagnostic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:associated-phenotype",
+        "path": "Observation.component",
+        "sliceName": "associated-phenotype",
+        "short": "Associated phenotype",
+        "definition": "The possible phenotype associated with the genetic variant found in this study.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:associated-phenotype.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81259-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:associated-phenotype.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:associated-cancer",
+        "path": "Observation.component",
+        "sliceName": "associated-cancer",
+        "short": "Associated cancer",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:associated-cancer.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "associated-cancer",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:associated-cancer.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:mode-of-inheritance",
+        "path": "Observation.component",
+        "sliceName": "mode-of-inheritance",
+        "short": "Mode of Inheritance",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:mode-of-inheritance.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "79742-3",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:mode-of-inheritance.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://loinc.org/vs/LL3731-8"
+        }
+      },
+      {
+        "id": "Observation.component:clinical-significance",
+        "path": "Observation.component",
+        "sliceName": "clinical-significance",
+        "short": "Clinical significance",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:clinical-significance.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "53037-8",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:clinical-significance.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL4034-6"
+        }
+      }
+    ]
+  }
+}

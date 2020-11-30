@@ -1,0 +1,315 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "therapeutic-implication",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication",
+  "version": "1.0.1",
+  "name": "TherapeuticImplication",
+  "title": "Therapeutic Implication",
+  "status": "active",
+  "description": "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/implication",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code.coding.system",
+        "path": "Observation.code.coding.system",
+        "patternUri": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+      },
+      {
+        "id": "Observation.code.coding.code",
+        "path": "Observation.code.coding.code",
+        "patternCode": "therapeutic-implication"
+      },
+      {
+        "id": "Observation.component:associated-phenotype",
+        "path": "Observation.component",
+        "sliceName": "associated-phenotype",
+        "short": "Associated phenotype",
+        "definition": "The possible phenotype associated with the genetic variant found in this study.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:associated-phenotype.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81259-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:associated-phenotype.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:associated-cancer",
+        "path": "Observation.component",
+        "sliceName": "associated-cancer",
+        "short": "Associated cancer",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:associated-cancer.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "associated-cancer",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:associated-cancer.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:medication-assessed",
+        "path": "Observation.component",
+        "sliceName": "medication-assessed",
+        "short": "Medication Assessed",
+        "definition": "The medication whose implication is being described.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:medication-assessed.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "51963-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:medication-assessed.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:therapy-assessed",
+        "path": "Observation.component",
+        "sliceName": "therapy-assessed",
+        "short": "Associated cancer",
+        "definition": "The non-medication therapy whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:therapy-assessed.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "associated-therapy",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:therapy-assessed.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:effect-medication-metabolism",
+        "path": "Observation.component",
+        "sliceName": "effect-medication-metabolism",
+        "short": "Effect medication metabolism",
+        "definition": "Genomic variation's effect on drug metabolism",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:effect-medication-metabolism.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "53040-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:effect-medication-metabolism.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://loinc.org/vs/LL3856-3"
+        }
+      },
+      {
+        "id": "Observation.component:effect-medication-high-risk",
+        "path": "Observation.component",
+        "sliceName": "effect-medication-high-risk",
+        "short": "Effect medication high risk",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:effect-medication-high-risk.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "83009-1",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:effect-medication-high-risk.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL2353-2"
+        }
+      },
+      {
+        "id": "Observation.component:effect-medication-efficacy",
+        "path": "Observation.component",
+        "sliceName": "effect-medication-efficacy",
+        "short": "Effect medication high risk",
+        "definition": "Variation's effect on drug efficacy",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:effect-medication-efficacy.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "51961-1",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:effect-medication-efficacy.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "preferred",
+          "valueSet": "http://loinc.org/vs/LL539-8"
+        }
+      }
+    ]
+  }
+}

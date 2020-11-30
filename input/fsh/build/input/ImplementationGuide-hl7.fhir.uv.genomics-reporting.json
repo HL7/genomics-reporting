@@ -1,0 +1,526 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "hl7.fhir.uv.genomics-reporting",
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/ImplementationGuide/hl7.fhir.uv.genomics-reporting",
+  "version": "1.0.1",
+  "name": "HL7FHIRImplementationGuideClinicalGenomicsReportingSTU1",
+  "title": "HL7 FHIR Implementation Guide: Clinical Genomics Reporting Release 1 - US Realm | STU1",
+  "status": "active",
+  "publisher": "HL7 Clinical Genomics Working Group",
+  "contact": [
+    {
+      "name": "HL7 Clinical Genomics Working Group",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cg"
+        },
+        {
+          "system": "email",
+          "value": "cg@lists.HL7.org"
+        }
+      ]
+    }
+  ],
+  "description": "The Clinical Genomics Reporting FHIR IG is intended to standardize representation of genomics reporting to FHIR.",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "US",
+          "system": "urn:iso:std:iso:3166",
+          "display": "United States of America"
+        }
+      ]
+    }
+  ],
+  "packageId": "hl7.fhir.uv.genomics-reporting",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/diagnostic-implication"
+        },
+        "name": "Diagnostic Implication",
+        "description": "Finding of whether a particular genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/finding"
+        },
+        "name": "Finding",
+        "description": "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/implication"
+        },
+        "name": "Genomic Implication",
+        "description": "Properties common to genetic implications expressed as computable discrete elements.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/service-request"
+        },
+        "name": "Service Request",
+        "description": "Request that initiated the diagnostic report.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/specimen"
+        },
+        "name": "Genomics specimen",
+        "description": "A sample to be used for analysis.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/genomics-base"
+        },
+        "name": "Genomics base",
+        "description": "Base profile that defines characteristics shared by all genetic observations.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/genomics-report"
+        },
+        "name": "Genomics Report",
+        "description": "Genomics profile of DiagnosticReport.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/servicerequest"
+        },
+        "name": "Genomics service request",
+        "description": "Request that initiated the diagnostic report.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/genotype"
+        },
+        "name": "genotype",
+        "description": "Assertion of a particular genotype on the basis of one or more variants or haplotypes.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/grouper"
+        },
+        "name": "Grouper",
+        "description": "Organizes information within a genomic report.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/haplotype"
+        },
+        "name": "Haplotype",
+        "description": "Assertion of a particular haplotype on the basis of one or more variants.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/msi"
+        },
+        "name": "Microsatellite instability",
+        "description": "Microsatellite instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/overall-interpretation"
+        },
+        "name": "Genomics base",
+        "description": "Provides a coarse overall interpretation of the genomic results reported.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/region-studied"
+        },
+        "name": "Region Studied",
+        "description": "The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance).",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/sequence-phase-relationship"
+        },
+        "name": "Sequence Phase Relationship",
+        "description": "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/tmb"
+        },
+        "name": "Tumor Mutation Burden",
+        "description": "Definitions for the tmb resource profile. The total number of mutations (changes) found in the DNA of cancer cells. [Source: NCI Dictionary](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tumor-mutational-burden)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/task-med-chg"
+        },
+        "name": "Medication Usage Task",
+        "description": "Task proposing actions based on genetic results.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/task-rec-followup"
+        },
+        "name": "Recommended Followup",
+        "description": "Task describing the followup that is recommended",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/therapeutic-implication"
+        },
+        "name": "Therapeutic Implication",
+        "description": "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/variant"
+        },
+        "name": "Variant",
+        "description": "Details about a set of changes in the tested sample compared to a reference sequence.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/diagnosticReport-risk"
+        },
+        "name": "Risk Assessment Reference",
+        "description": "Extension reference to RiskAssessment resource",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/RecommendedAction"
+        },
+        "name": "Recommended Action",
+        "description": "References a proposed action that is recommended based on the results of the diagnostic report.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/RelatedArtifact"
+        },
+        "name": "Related Artifact",
+        "description": "Captures citations, evidence and other supporting documentation for the observation or report.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/SupportingInfo"
+        },
+        "name": "Supporting Information",
+        "description": "Additional information relevant to interpreting/understanding the report.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/dna-change-type"
+        },
+        "name": "DNA Change Type",
+        "description": "DNA Change Type of a variant.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/functional-annotation"
+        },
+        "name": "Functional Annotation",
+        "description": "Functional annotation of a variant.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hgnc"
+        },
+        "name": "HUGO Gene Nomenclature Committee Gene Names (HGNC)",
+        "description": "This value set includes all HGNC Codes, which includes multiple code systems. In this guide, Gene IDs from HGNC are used as CodeableConcepts, which must be sent with the HGNC gene ID including the prefix 'HGNC:' as the code and the HGNC 'gene symbol' as display. CAUTION: HGNC also indexes gene groups by numeric ID (without a prefix), and older systems may send HGNC gene IDs without the prefix, so care must be taken to confirm alignment. We have separately included the genegroup code system to draw attention to this ambiguity and potential error.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/hgvs"
+        },
+        "name": "Human Genome Variation Society (HGVS) Nomenclature",
+        "description": "HGVS-nomenclature is used to report and exchange information regarding variants found in DNA, RNA and protein sequences and serves as an international standard. (source: varnomen.hgvs.org)",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/high-low-codes"
+        },
+        "name": "High Low codes",
+        "description": "This value set includes high/low codes for Observation Interpretations",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/seq-phase-relationship"
+        },
+        "name": "Sequence Phase Relationship",
+        "description": "Value Set for specific types of relationships",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/tbd"
+        },
+        "name": "TBD Value Set",
+        "description": "Value Set for codes yet to be defined in LOINC",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/variant-inheritance"
+        },
+        "name": "Variant Inheritance",
+        "description": "A quality inhering in a variant by virtue of its origin.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/SequencePhaseRelationshipCS"
+        },
+        "name": "Sequence Phase Relationship",
+        "description": "Code System for specific types of relationships",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/TbdCodes"
+        },
+        "name": "ToBeDeterminedCodes ('TbdCodes')",
+        "description": "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/AnnotationExample"
+        },
+        "name": "CGDiagnosticReportExampleAnnotationExample",
+        "description": "Example for DiagnosticReport. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/CG-IG-HLA-FullBundle-01"
+        },
+        "name": "CGBundleExampleCG-IG-HLA-FullBundle-01",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Patient/CGPatientExample01"
+        },
+        "name": "CGPatientExample01",
+        "description": "Example for Patient. Supports references to subject for multiple genomics reporting profile conforming instances.",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Specimen/GenomicSpecimenExample01"
+        },
+        "name": "GenomicSpecimenExample01",
+        "description": "Example for Genomic Specimen",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/HLAB1502-pgx-example"
+        },
+        "name": "CGBundleExampleHLAB1502-pgx-example",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Observation/SNVexample"
+        },
+        "name": "CGObservationExampleSNVexample",
+        "description": "Example for Observation. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/complexVariant-nonHGVS"
+        },
+        "name": "CGBundleExamplecomplexVariant-nonHGVS",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/compound-heterozygote"
+        },
+        "name": "CGBundleExamplecompound-heterozygote",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/diagnosticreport-cgexample"
+        },
+        "name": "CGBundleExamplediagnosticreport-cgexample",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/diagnosticreport-hla-glstring-r4"
+        },
+        "name": "CGDiagnosticReportExamplediagnosticreport-hla-glstring-r4",
+        "description": "Example for DiagnosticReport. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/diagnosticreport-pgxexample"
+        },
+        "name": "CGBundleExamplediagnosticreport-pgxexample",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "ConceptMap/dna-change-type-map"
+        },
+        "name": "Find Subject Variants",
+        "description": "Mapping from http://loinc.org to http://www.sequenceontology.org",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "OperationDefinition/find-subject-variants"
+        },
+        "name": "Find Subject Variants",
+        "description": "Use this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a FHIR Parameters resource containing variants overlapping the region. If the patient or the specified region has not been studied, the operation returns a 404 error.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Observation/genotype-hla-a-glstring-r4"
+        },
+        "name": "CGObservationExamplegenotype-hla-a-glstring-r4",
+        "description": "Example for Observation. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+      },
+      {
+        "reference": {
+          "reference": "Observation/haplotype-hla-a-1-r4"
+        },
+        "name": "CGObservationExamplehaplotype-hla-a-1-r4",
+        "description": "Example for Observation. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+      },
+      {
+        "reference": {
+          "reference": "Observation/obs-idh-ex"
+        },
+        "name": "CGObservationExampleobs-idh-ex",
+        "description": "Example for Observation. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/oncology-diagnostic"
+        },
+        "name": "CGBundleExampleoncology-diagnostic",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/oncology-report-example"
+        },
+        "name": "CGBundleExampleoncology-report-example",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "Bundle/oncologyexamples-r4"
+        },
+        "name": "CGBundleExampleoncologyexamples-r4",
+        "description": "Example for Bundle. ",
+        "exampleBoolean": true
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/report-CYP2C19"
+        },
+        "name": "CGDiagnosticReportExamplereport-CYP2C19",
+        "description": "Example for DiagnosticReport. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+      },
+      {
+        "reference": {
+          "reference": "DiagnosticReport/sequence-phase-relation-CYP2C19"
+        },
+        "name": "CGDiagnosticReportExamplesequence-phase-relation-CYP2C19",
+        "description": "Example for DiagnosticReport. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/servicerequest-hla-a-r4"
+        },
+        "name": "CGServiceRequestExampleservicerequest-hla-a-r4",
+        "description": "Example for ServiceRequest. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+      },
+      {
+        "reference": {
+          "reference": "Specimen/specimen-hla-r4"
+        },
+        "name": "CGSpecimenExamplespecimen-hla-r4",
+        "description": "Example for Specimen. ",
+        "exampleCanonical": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": []
+    },
+    "parameter": [
+      {
+        "code": "copyrightyear",
+        "value": "2019+"
+      },
+      {
+        "code": "releaselabel",
+        "value": "STU1"
+      },
+      {
+        "code": "show-inherited-invariants",
+        "value": "true"
+      },
+      {
+        "code": "path-history",
+        "value": "http://hl7.org/fhir/uv/genomics-reporting/history.html"
+      }
+    ]
+  }
+}

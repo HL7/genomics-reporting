@@ -1,0 +1,222 @@
+{
+  "resourceType": "Observation",
+  "id": "SNVexample",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "69548-6",
+        "system": "http://loinc.org",
+        "display": "Genetic variant assessment"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48018-6",
+            "system": "http://loinc.org",
+            "display": "Gene studied ID"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "HGNC:644",
+            "system": "http://www.genenames.org/geneId",
+            "display": "AR"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48001-2",
+            "system": "http://loinc.org",
+            "display": "Cytogenetic (chromosome) location"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "text": "chrX"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "62374-4",
+            "system": "http://loinc.org",
+            "display": "Human reference sequence assembly version"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA14029-5",
+            "system": "http://loinc.org",
+            "display": "GRCh37"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48002-0",
+            "system": "http://loinc.org",
+            "display": "Genomic source class"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA6684-0",
+            "system": "http://loinc.org",
+            "display": "Somatic"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48005-3",
+            "system": "http://loinc.org",
+            "display": "Amino acid change (pHGVS)"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "p.(Ala412Val)",
+            "system": "http://varnomen.hgvs.org",
+            "display": "p.(Ala412Val)"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48006-1",
+            "system": "http://loinc.org",
+            "display": "Amino acid change type"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA6698-0",
+            "system": "http://loinc.org",
+            "display": "Missense"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "51958-7",
+            "system": "http://loinc.org",
+            "display": "Transcript reference sequence [ID]"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "NM_000044.3",
+            "system": "http://www.ncbi.nlm.nih.gov/refseq",
+            "display": "NM_000044.3"
+          }
+        ]
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "81258-6",
+            "system": "http://loinc.org",
+            "display": "Allelic freq NFr"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "system": "http://unitsofmeasure.org",
+        "unit": "decimal",
+        "value": 0.44
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "82121-5",
+            "system": "http://loinc.org",
+            "display": "Allelic read depth"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "code": "{reads}/{base}",
+        "system": "http://unitsofmeasure.org",
+        "unit": "reads per base pair",
+        "value": 120
+      }
+    }
+  ],
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+    ]
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "LA26398-0",
+        "system": "http://loinc.org",
+        "display": "Sequencing"
+      }
+    ]
+  },
+  "specimen": {
+    "identifier": {
+      "system": "http://slk-kliniken.de/fhir/namingSystem/tissueID",
+      "value": "16-123456-23"
+    }
+  },
+  "status": "final",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "LA9633-4",
+        "system": "http://loinc.org",
+        "display": "Present"
+      }
+    ]
+  }
+}

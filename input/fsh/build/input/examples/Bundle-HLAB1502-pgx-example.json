@@ -1,0 +1,370 @@
+{
+  "resourceType": "Bundle",
+  "id": "HLAB1502-pgx-example",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/DiagnosticReport/pgx-report",
+      "request": {
+        "method": "POST",
+        "url": "DiagnosticReport"
+      },
+      "resource": {
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/pgx-request"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "effectiveDateTime": "2016",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction",
+            "valueReference": {
+              "reference": "Task/med-usage-impact-task-pgx-example"
+            }
+          }
+        ],
+        "id": "pgx-report",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "DiagnosticReport",
+        "result": [
+          {
+            "display": "genetics impact for high risk allele",
+            "reference": "Observation/medication-high-risk"
+          },
+          {
+            "reference": "Observation/genotype-pgx-example"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "id": "patient",
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Specimen/specimen",
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      },
+      "resource": {
+        "id": "specimen",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Organization/lab",
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      },
+      "resource": {
+        "id": "lab",
+        "name": "Some lab",
+        "resourceType": "Organization"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/ServiceRequest/pgx-request",
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      },
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "id": "pgx-request",
+        "intent": "original-order",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+          ]
+        },
+        "reasonCode": [
+          {
+            "text": "Worried about family planning"
+          }
+        ],
+        "resourceType": "ServiceRequest",
+        "status": "active",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/medication-high-risk",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "therapeutic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+              "display": "Therapeutic Implication"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "83009-1",
+                  "system": "http://loinc.org",
+                  "display": "Genetic variation's effect on high-risk allele"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA19541-4",
+                  "system": "http://loinc.org",
+                  "display": "High risk"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51963-7",
+                  "system": "http://loinc.org",
+                  "display": "Medication assessed"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2002",
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "display": "Carbamazepine"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "93044-6",
+                  "system": "http://loinc.org",
+                  "display": "Level of evidence"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA30200-2",
+                  "system": "http://loinc.org",
+                  "display": "Very strong evidence pathogenic"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/genotype-pgx-example"
+          }
+        ],
+        "id": "medication-high-risk",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+          ]
+        },
+        "resourceType": "Observation",
+        "status": "final"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/genotype-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      },
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84413-4",
+              "system": "http://loinc.org",
+              "display": "genotype display name"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org",
+                  "display": "Gene studied ID"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "HGNC:4932",
+                  "system": "http://www.genenames.org/geneId",
+                  "display": "HLA-B"
+                }
+              ]
+            }
+          }
+        ],
+        "effectiveDateTime": "2018",
+        "id": "genotype-pgx-example",
+        "issued": "2018-03-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+          ]
+        },
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "14909",
+              "system": "http://www.ncbi.nlm.nih.gov/clinvar",
+              "display": "HLA-B*15:02"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Task/med-usage-impact-task-pgx-example",
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      },
+      "resource": {
+        "code": {
+          "text": "Patients positive for this allele should not be treated with CBZ, unless the benefits clearly outweigh the risk"
+        },
+        "description": "Patients positive for this allele should not be treated with CBZ, unless the benefits clearly outweigh the risk. Therapy should be discontinued immediately if symptoms of SJS or TEN develop. Alternative medication should be used as first line therapy. Consideration in the choice for alternative medications should be given to potential cross-reactivity with structurally similar aromatic antiepileptic drugs such as oxcarbazepine, phenytoin, fosphenytoin and lamotrigine, which can also moderately increase risk for SJS/TEN in association with HLA-B*15:02 positivity.",
+        "focus": {
+          "reference": "MedicationStatement/current-med-example"
+        },
+        "for": {
+          "reference": "Patient/patient"
+        },
+        "id": "med-usage-impact-task-pgx-example",
+        "intent": "proposal",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/task-med-chg"
+          ]
+        },
+        "reasonReference": {
+          "reference": "Observation/medication-high-risk"
+        },
+        "resourceType": "Task",
+        "status": "requested"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/MedicationStatement/current-med-example",
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      },
+      "resource": {
+        "id": "current-med-example",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "2002",
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "display": "Carbamazepine"
+            }
+          ]
+        },
+        "resourceType": "MedicationStatement",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    }
+  ],
+  "type": "transaction"
+}

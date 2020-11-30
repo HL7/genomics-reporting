@@ -1,0 +1,190 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "finding",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/finding",
+  "version": "1.0.1",
+  "name": "GenomicFinding",
+  "title": "Finding",
+  "status": "active",
+  "description": "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.).",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-base",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the component.code pattern"
+        }
+      },
+      {
+        "id": "Observation.component:gene-studied",
+        "path": "Observation.component",
+        "sliceName": "gene-studied",
+        "short": "Gene studied [ID]",
+        "definition": "HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiple gene studied components. The required coding will use the HGNC gene symbol as the display text and HGNC gene ID as the code.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:gene-studied.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48018-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:gene-studied.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used.",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc"
+        }
+      },
+      {
+        "id": "Observation.component:CytogenicLocation",
+        "path": "Observation.component",
+        "sliceName": "CytogenicLocation",
+        "short": "Cytogenetic (chromosome) location",
+        "definition": "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:CytogenicLocation.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48001-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:CytogenicLocation.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:RefSequenceAssembly",
+        "path": "Observation.component",
+        "sliceName": "RefSequenceAssembly",
+        "short": "Human reference sequence assembly version",
+        "definition": "Human reference sequence assembly version",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.component:RefSequenceAssembly.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "62374-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:RefSequenceAssembly.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL378-1"
+        }
+      }
+    ]
+  }
+}

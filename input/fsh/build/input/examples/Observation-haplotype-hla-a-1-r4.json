@@ -1,0 +1,81 @@
+{
+  "resourceType": "Observation",
+  "id": "haplotype-hla-a-1-r4",
+  "basedOn": [
+    {
+      "display": "Sequence-based typing of HLA-A for sample 001-246802468",
+      "type": "ServiceRequest"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "laboratory",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "84414-2",
+        "system": "http://loinc.org",
+        "display": "Haplotype name"
+      },
+      {
+        "code": "57290-9",
+        "system": "http://loinc.org",
+        "display": "HLA-A [Type] by High resolution"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "48018-6",
+            "system": "http://loinc.org",
+            "display": "Gene studied [ID]"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "text": "HLA-A"
+      }
+    }
+  ],
+  "derivedFrom": [
+    {
+      "display": "Sequence for HLA-A*03:01:01:01",
+      "type": "MolecularSequence"
+    }
+  ],
+  "effectiveDateTime": "2018-07-26",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+    ]
+  },
+  "performer": [
+    {
+      "display": "aTypingLab, Inc",
+      "type": "Organization"
+    }
+  ],
+  "specimen": {
+    "display": "buccal swab: 123456789"
+  },
+  "status": "final",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "HLA-A*03:01:01:01",
+        "system": "http://www.ebi.ac.uk/ipd/imgt/hla",
+        "version": "3.31.0"
+      }
+    ]
+  }
+}

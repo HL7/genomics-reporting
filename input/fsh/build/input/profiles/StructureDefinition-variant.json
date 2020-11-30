@@ -1,0 +1,1074 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "variant",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant",
+  "version": "1.0.1",
+  "name": "Variant",
+  "title": "Variant",
+  "status": "active",
+  "description": "Details about a set of changes in the tested sample compared to a reference sequence.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/finding",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.valueCodeableConcept",
+        "path": "Observation.valueCodeableConcept",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://loinc.org/vs/LL1971-2"
+        }
+      },
+      {
+        "id": "Observation.valueQuantity",
+        "path": "Observation.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL4048-6"
+        }
+      },
+      {
+        "id": "Observation.component:dna-chg",
+        "path": "Observation.component",
+        "sliceName": "dna-chg",
+        "short": "DNA Change - Transcript (cHGVS)",
+        "definition": "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:dna-chg.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48004-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dna-chg.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs"
+        }
+      },
+      {
+        "id": "Observation.component:dna-chg-type",
+        "path": "Observation.component",
+        "sliceName": "dna-chg-type",
+        "short": "DNA Change Type",
+        "definition": "Codified type for associated DNA Marker. DNA Marker's use the HGVS notation which implies the DNA Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:dna-chg-type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48019-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dna-chg-type.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "Concepts in sequence ontology under SO:0002072 (see http://www.sequenceontology.org/browser/current_release/term/SO:0002072).",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type"
+        }
+      },
+      {
+        "id": "Observation.component:functional-annotation",
+        "path": "Observation.component",
+        "sliceName": "functional-annotation",
+        "short": "Functional Annotation",
+        "definition": "Annotated changes to sequence features caused by this variant.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:functional-annotation.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "functional-annotation",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:functional-annotation.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "Concepts in sequence ontology under SO:0001537 (see http://www.sequenceontology.org/browser/current_release/term/SO:0001537).",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-annotation"
+        }
+      },
+      {
+        "id": "Observation.component:variation-code",
+        "path": "Observation.component",
+        "sliceName": "variation-code",
+        "short": "Variation Code",
+        "definition": "The name of a structural variant reported using HGVS nomenclature.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:variation-code.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81252-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:variation-code.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:dbSNP-id",
+        "path": "Observation.component",
+        "sliceName": "dbSNP-id",
+        "short": "dbSNP ID",
+        "definition": "The unique identifier for the variant represented as a small nucleotide polymorphism (SNP). The dbSNP ID is used routinely as the base identifier in pharmacogenomics as well as arrCGH studies. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the dbSNP ID is 368949613. [http://www.ncbi.nlm.nih.gov/clinvar/variation/30880/].",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:dbSNP-id.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81255-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:dbSNP-id.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:genomic-dna-chg",
+        "path": "Observation.component",
+        "sliceName": "genomic-dna-chg",
+        "short": "DNA Change - Genomic (gHGVS)",
+        "definition": "The name of a structural variant reported using HGVS nomenclature.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:genomic-dna-chg.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81290-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:genomic-dna-chg.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs"
+        }
+      },
+      {
+        "id": "Observation.component:genomic-source-class",
+        "path": "Observation.component",
+        "sliceName": "genomic-source-class",
+        "short": "Genomic Source Class",
+        "definition": "The genomic class of the specimen being analyzed: Germline for inherited genome, somatic for cancer genome, and prenatal for fetal genome.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:genomic-source-class.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48002-0",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:genomic-source-class.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL378-1"
+        }
+      },
+      {
+        "id": "Observation.component:amino-acid-chg",
+        "path": "Observation.component",
+        "sliceName": "amino-acid-chg",
+        "short": "Amino acid change (pHGVS)",
+        "definition": "Human Genome Variation Society (HGVS) nomenclature for an amino acid sequence. This value is derivable from the DNA Marker value if available. It is provided for convenience. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:amino-acid-chg.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48005-3",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:amino-acid-chg.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgvs"
+        }
+      },
+      {
+        "id": "Observation.component:amino-acid-chg-type",
+        "path": "Observation.component",
+        "sliceName": "amino-acid-chg-type",
+        "short": "Amino acid change type",
+        "definition": "Codified type for associated Amino Acid Marker. Amino Acid Marker's use the HGVS notation which implies the Amino Acid Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:amino-acid-chg-type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48006-1",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:amino-acid-chg-type.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL380-7"
+        }
+      },
+      {
+        "id": "Observation.component:transcript-ref-seq",
+        "path": "Observation.component",
+        "sliceName": "transcript-ref-seq",
+        "short": "Transcript reference sequence ID",
+        "definition": "TThis field carries the ID for the transcribed reference sequence, which is the part of the genomic reference sequence that is converted to messenger RNA (i.e., after the introns are removed).",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:transcript-ref-seq.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "51958-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:transcript-ref-seq.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:genomic-ref-seq",
+        "path": "Observation.component",
+        "sliceName": "genomic-ref-seq",
+        "short": "Genomic reference sequence ID",
+        "definition": "This field carries the ID for the genomic reference sequence. The genomic reference sequence is a contiguous stretch of chromosome DNA that spans all of the exons of the gene and includes transcribed and non transcribed stretches. For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq) or use the LRG identifiers, without transcript (t or p) extensions -- when they become available. (See- Report sponsored by GEN2PHEN at the European Bioinformatics Institute at Hinxton UK April 24-25, 2008). The NCI RefSeq genomic IDs are distinguished by a prefix of 'NG' for genes from the nuclear chromosomes and prefix of 'NC' for genes from mitochondria. The LRG Identifiers have a prefix of 'LRG_' Mitochondrial genes are not in the scope of LRG.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:genomic-ref-seq.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "48013-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:genomic-ref-seq.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:sample-allelic-frequency",
+        "path": "Observation.component",
+        "sliceName": "sample-allelic-frequency",
+        "short": "Sample Allelic Frequency",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:sample-allelic-frequency.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81258-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:sample-allelic-frequency.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:allelic-read-depth",
+        "path": "Observation.component",
+        "sliceName": "allelic-read-depth",
+        "short": "Allelic read depth",
+        "definition": "Specifies the number of reads that identified the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:allelic-read-depth.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "82121-5",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:allelic-read-depth.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:allelic-state",
+        "path": "Observation.component",
+        "sliceName": "allelic-state",
+        "short": "Allelic state",
+        "definition": "The level of occurrence of a single DNA Marker within a set of chromosomes. Heterozygous indicates the DNA Marker is only present in one of the two genes contained in homologous chromosomes. Homozygous indicates the DNA Marker is present in both genes contained in homologous chromosomes. Hemizygous indicates the DNA Marker exists in the only single copy of a gene in a non-homologous chromosome (The male X and Y chromosome are non-homologous). Hemiplasmic indicates that the DNA Marker is present in some but not all of the copies of mitochondrial DNA. Homoplasmic indicates that the DNA Maker is present in all of the copies of mitochondrial DNA.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:allelic-state.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "53034-5",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:allelic-state.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL381-5"
+        }
+      },
+      {
+        "id": "Observation.component:copy-number",
+        "path": "Observation.component",
+        "sliceName": "copy-number",
+        "short": "Genomic structural variant copy number",
+        "definition": "The copy number of the large variant. In HGVS, this is the numeric value following the “X”. It is a unit-less value. Note that a copy number of 1 implies a deletion. The copy number can usually be inferred from the HGVS or ISCN fields.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:copy-number.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "82155-3",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:copy-number.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:copy-number.valueQuantity",
+        "path": "Observation.component.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "cnt-3",
+            "severity": "error",
+            "human": "There SHALL be a code with a value of '1' if there is a value. If system is present, it SHALL be UCUM. If present, the value SHALL be a whole number.",
+            "expression": "(code.exists() or value.empty()) and (system.empty() or system = %ucum) and (code.empty() or code = '1') and (value.empty() or value.hasValue().not() or value.toString().contains('.').not())",
+            "source": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:ref-allele",
+        "path": "Observation.component",
+        "sliceName": "ref-allele",
+        "short": "Genomic ref allele",
+        "definition": "Reference values ('normal') examined within the Reference Sequence.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:ref-allele.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "69547-8",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:ref-allele.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:alt-allele",
+        "path": "Observation.component",
+        "sliceName": "alt-allele",
+        "short": "Genomic alt allele",
+        "definition": "The genomic alternate allele is the contiguous segment of DNA in the test sample that differs from the reference allele at the same location and thus defines a variant.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:alt-allele.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "69551-0",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:alt-allele.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:coordinate-system",
+        "path": "Observation.component",
+        "sliceName": "coordinate-system",
+        "short": "Coordinate System",
+        "definition": "Base number of coordinate system either 0-based, with inclusive start and exclusive end (called interval), or 1-based, with inclusive start and end. However, two versions of 1-based are in common use.These systems are HGVS 1-based (called variant method) and VCF 1-based (called alignment method). In general, HGVS recommends right-justification and VCF recommends left-justification. However, these systems further address questions such as wheather or not to place an insertion before or after the nucleotide, and, if always placed before the nucleotide, how to handle insertion after the end of the sequence. Additionally, the systems deal with handling boundary effects of numbers between features. For more details see the HGVS and VCF guides.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:coordinate-system.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "92822-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:coordinate-system.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL5323-2"
+        }
+      },
+      {
+        "id": "Observation.component:exact-start-end",
+        "path": "Observation.component",
+        "sliceName": "exact-start-end",
+        "short": "Exact start-end",
+        "definition": "This location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the location is Chr3: 128906220 on Assembly GRCh38.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:exact-start-end.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "exact-start-end",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:exact-start-end.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:variant-length",
+        "path": "Observation.component",
+        "sliceName": "variant-length",
+        "short": "Structural variant length",
+        "definition": "Length of the structural variant, which information may be ascertained in some but not all types of structural variants.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:variant-length.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81300-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:variant-length.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:variant-length.valueQuantity",
+        "path": "Observation.component.valueQuantity",
+        "min": 0,
+        "max": "1",
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "cnt-3",
+            "severity": "error",
+            "human": "There SHALL be a code with a value of '1' if there is a value. If system is present, it SHALL be UCUM. If present, the value SHALL be a whole number.",
+            "expression": "(code.exists() or value.empty()) and (system.empty() or system = %ucum) and (code.empty() or code = '1') and (value.empty() or value.hasValue().not() or value.toString().contains('.').not())",
+            "source": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:outer-start-end",
+        "path": "Observation.component",
+        "sliceName": "outer-start-end",
+        "short": "Variant outer start and end",
+        "definition": "The genomic coordinates of the widest genomic range in which the variant might reside.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:outer-start-end.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "outer-start-end",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:outer-start-end.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:inner-start-end",
+        "path": "Observation.component",
+        "sliceName": "inner-start-end",
+        "short": "Variant inner start and end",
+        "definition": "The genomic coordinates of the narrowest genomic range in which the structural variant might reside.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:inner-start-end.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "inner-start-end",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:inner-start-end.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:chromosome-copy-number-change-type",
+        "path": "Observation.component",
+        "sliceName": "chromosome-copy-number-change-type",
+        "short": "Chromosome copy number change type",
+        "definition": "The type of the chromosome copy number change.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:chromosome-copy-number-change-type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "62378-5",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:chromosome-copy-number-change-type.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL1041-4"
+        }
+      },
+      {
+        "id": "Observation.component:arrCGH-ratio",
+        "path": "Observation.component",
+        "sliceName": "arrCGH-ratio",
+        "short": "Structural variant reported arrCGH [Ratio]",
+        "definition": "todo.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:arrCGH-ratio.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81299-0",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:arrCGH-ratio.value[x]",
+        "path": "Observation.component.value[x]",
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:complex-var-type",
+        "path": "Observation.component",
+        "sliceName": "complex-var-type",
+        "short": "Complex variant type",
+        "definition": "The type of complex variant, for example, compound heterozygous or haplotype.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:complex-var-type.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81263-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:complex-var-type.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://loinc.org/vs/LL3999-1"
+        }
+      },
+      {
+        "id": "Observation.component:cytogenomic-nomenclature",
+        "path": "Observation.component",
+        "sliceName": "cytogenomic-nomenclature",
+        "short": "Cytogenomic Nomenclature",
+        "definition": "Fully describes a variant with a single code. Typically a large variant such as a mosaic, abnormal chromosome numbers, etc.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:cytogenomic-nomenclature.code",
+        "path": "Observation.component.code",
+        "short": "Variant ISCN",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81291-7",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:cytogenomic-nomenclature.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "example",
+          "description": "Binding not yet defined"
+        }
+      },
+      {
+        "id": "Observation.component:variant-inheritance",
+        "path": "Observation.component",
+        "sliceName": "variant-inheritance",
+        "short": "Variant Inheritance",
+        "definition": "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations.",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.component:variant-inheritance.code",
+        "path": "Observation.component.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "variant-inheritance",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:variant-inheritance.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/variant-inheritance"
+        }
+      }
+    ]
+  }
+}

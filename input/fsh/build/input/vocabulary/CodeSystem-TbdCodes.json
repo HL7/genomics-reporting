@@ -1,0 +1,99 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "TbdCodes",
+  "id": "TbdCodes",
+  "title": "ToBeDeterminedCodes ('TbdCodes')",
+  "description": "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes.",
+  "version": "1.0.1",
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+  "concept": [
+    {
+      "code": "grouper",
+      "display": "grouper",
+      "definition": "A means to bundle several observations such as one would find in a genetics test panel."
+    },
+    {
+      "code": "mode-of-inheritance",
+      "display": "mode-of-inheritance",
+      "definition": "This is actually LOINC code 79742-3. And the IG will be updated"
+    },
+    {
+      "code": "effect-transporter-function",
+      "display": "effect-transporter-function",
+      "definition": "Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance."
+    },
+    {
+      "code": "effect-medication-efficacy",
+      "display": "Medication Efficacy"
+    },
+    {
+      "code": "effect-medication-metabolism",
+      "display": "Medication Metabolism"
+    },
+    {
+      "code": "effect-medication-transporter",
+      "display": "Medication Transporter Function"
+    },
+    {
+      "code": "effect-high-risk-allele",
+      "display": "High Risk Allele"
+    },
+    {
+      "code": "prognostic-implication",
+      "display": "Prognostic Implication component",
+      "definition": "Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."
+    },
+    {
+      "code": "associated-cancer",
+      "display": "associated-cancer"
+    },
+    {
+      "code": "associated-therapy",
+      "display": "Genomically linked therapy",
+      "definition": "The non-medication therapy (procedure) associated with this implication."
+    },
+    {
+      "code": "region-coverage",
+      "display": "region-coverage",
+      "definition": "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."
+    },
+    {
+      "code": "functional-annotation",
+      "display": "functional-annotation",
+      "definition": "Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."
+    },
+    {
+      "code": "exact-start-end",
+      "display": "Variant exact start and end",
+      "definition": "The genomic coordinates of the exact genomic range in which the variant resides."
+    },
+    {
+      "code": "inner-start-end",
+      "display": "Variant inner start and end",
+      "definition": "The genomic coordinates of the inner genomic range in which the variant might reside."
+    },
+    {
+      "code": "outer-start-end",
+      "display": "Variant outer start and end",
+      "definition": "The genomic coordinates of the outer genomic range in which the variant might reside."
+    },
+    {
+      "code": "variant-inheritance",
+      "display": "Variant inheritance",
+      "definition": "A quality inhering in a variant by virtue of its origin. The terms are in the sequence ontology under SO:0001762."
+    },
+    {
+      "code": "diagnostic-implication",
+      "display": "Diagnostic Implication",
+      "definition": "An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition."
+    },
+    {
+      "code": "therapeutic-implication",
+      "display": "Therapeutic Implication",
+      "definition": "An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy."
+    }
+  ],
+  "count": 18
+}

@@ -1,0 +1,247 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "grouper",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper",
+  "version": "1.0.1",
+  "name": "Grouper",
+  "title": "Grouper",
+  "status": "active",
+  "description": "Organizes information within a genomic report.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "sct-concept",
+      "uri": "http://snomed.info/conceptdomain",
+      "name": "SNOMED CT Concept Domain Binding"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "sct-attr",
+      "uri": "http://snomed.org/attributebinding",
+      "name": "SNOMED CT Attribute Binding"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-base",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation.extension:RecommendedAction",
+        "path": "Observation.extension",
+        "sliceName": "RecommendedAction",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "grouper",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this.resolve()"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the reference profile"
+        }
+      },
+      {
+        "id": "Observation.hasMember:grouper-ref",
+        "path": "Observation.hasMember",
+        "sliceName": "grouper-ref",
+        "short": "Other Grouper",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:overall",
+        "path": "Observation.hasMember",
+        "sliceName": "overall",
+        "short": "Assessment of overall results",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:diagnostic-implication",
+        "path": "Observation.hasMember",
+        "sliceName": "diagnostic-implication",
+        "short": "Inherited Disease Pathology",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:therapeutic-implication",
+        "path": "Observation.hasMember",
+        "sliceName": "therapeutic-implication",
+        "short": "Therapeutic Implication",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:haplotype",
+        "path": "Observation.hasMember",
+        "sliceName": "haplotype",
+        "short": "Haplotype",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:genotype",
+        "path": "Observation.hasMember",
+        "sliceName": "genotype",
+        "short": "Genotype",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:variant",
+        "path": "Observation.hasMember",
+        "sliceName": "variant",
+        "short": "Variant",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:region-studied",
+        "path": "Observation.hasMember",
+        "sliceName": "region-studied",
+        "short": "Region Studied",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:sequence-phase-relation",
+        "path": "Observation.hasMember",
+        "sliceName": "sequence-phase-relation",
+        "short": "Sequence Phase Relationship",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

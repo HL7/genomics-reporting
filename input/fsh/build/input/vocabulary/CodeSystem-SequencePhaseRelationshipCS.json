@@ -1,0 +1,34 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "SequencePhaseRelationshipCS",
+  "id": "SequencePhaseRelationshipCS",
+  "title": "Sequence Phase Relationship",
+  "description": "Code System for specific types of relationships",
+  "version": "1.0.1",
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/SequencePhaseRelationshipCS",
+  "concept": [
+    {
+      "code": "Cis",
+      "display": "Cis",
+      "definition": "Phase is in cis (same chromosome)"
+    },
+    {
+      "code": "Trans",
+      "display": "Trans",
+      "definition": "Phase is in trans (different chromosomes)"
+    },
+    {
+      "code": "Indeterminate",
+      "display": "Indeterminate",
+      "definition": "Phase is unable to be determined"
+    },
+    {
+      "code": "Unknown",
+      "display": "Unknown",
+      "definition": "Phase is unknown"
+    }
+  ],
+  "count": 4
+}

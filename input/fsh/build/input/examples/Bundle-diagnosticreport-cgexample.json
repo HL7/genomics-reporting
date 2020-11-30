@@ -1,0 +1,1705 @@
+{
+  "resourceType": "Bundle",
+  "id": "diagnosticreport-cgexample",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/DiagnosticReport/report",
+      "resource": {
+        "basedOn": [
+          {
+            "reference": "DiagnosticRequest/request"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "effectiveDateTime": "2016",
+        "id": "report",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain",
+            "data": "UHV0IHRoZSByZXBvcnQgdGV4dCBoZXJlIC0gbWltZS1lbmNvZGVk"
+          }
+        ],
+        "resourceType": "DiagnosticReport",
+        "result": [
+          {
+            "reference": "Observation/overall-interp"
+          },
+          {
+            "reference": "Observation/discrete-variant"
+          },
+          {
+            "reference": "Observation/dis-path"
+          },
+          {
+            "reference": "Observation/complex-variant"
+          },
+          {
+            "reference": "Observation/complex-dis-path"
+          },
+          {
+            "reference": "Observation/pharmPanel"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Patient/patient",
+      "resource": {
+        "id": "patient",
+        "resourceType": "Patient"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Specimen/specimen",
+      "resource": {
+        "id": "specimen",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+          ]
+        },
+        "resourceType": "Specimen",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Organization/lab",
+      "resource": {
+        "id": "lab",
+        "name": "Some lab",
+        "resourceType": "Organization"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/DiagnosticRequest/request",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "id": "request",
+        "intent": "original-order",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+          ]
+        },
+        "reasonCode": [
+          {
+            "text": "Worried about family planning"
+          }
+        ],
+        "resourceType": "ServiceRequest",
+        "status": "active",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/overall-interp",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "51968-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "effectiveDateTime": "2016",
+        "id": "overall-interp",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA6576-8",
+              "system": "http://loinc.org",
+              "display": "Positive"
+            },
+            {
+              "code": "10828004",
+              "system": "http://snomed.info/sct",
+              "display": "Positive"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/discrete-variant",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81252-9",
+                  "system": "http://loinc.org",
+                  "display": "Discrete genetic variant"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "30880",
+                  "system": "http://example.org/clinvar",
+                  "display": "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)",
+                  "version": "???"
+                },
+                {
+                  "code": "tbd",
+                  "system": "http://example.org/cigar"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "21497",
+                  "system": "http://example.org/hgnc",
+                  "display": "ACAD9"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51958-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NM_014049.4",
+                  "system": "http://www.ncbi.nlm.nih.gov/refseq"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48013-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NG_017064.1",
+                  "system": "http://www.ncbi.nlm.nih.gov/refseq"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81290-9",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NC_000003.11:g.128625063C>T",
+                  "system": "http://example.org/HGVS.g",
+                  "version": "15.11"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81255-2",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "rs368949613",
+                  "system": "http://example.org/dbsnp",
+                  "version": "137"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48004-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "c.1249C>T",
+                  "system": "http://example.org/HGVS.c",
+                  "version": "15.11"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48005-3",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "p.Arg417Cys",
+                  "system": "http://example.org/HGVS.p",
+                  "version": "15.11"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48019-4",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6690-7",
+                  "system": "http://loinc.org",
+                  "display": "Substitution"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48006-1",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6698-0",
+                  "system": "http://loinc.org",
+                  "display": "Missense"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "69547-8",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueString": "C"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "exact-start-end",
+                  "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+                }
+              ]
+            },
+            "valueRange": {
+              "high": {
+                "value": 31731
+              },
+              "low": {
+                "value": 31731
+              }
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "69551-0",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueString": "T"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48001-2",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "3q21",
+                  "system": "http://example.org/Chrom-Loc"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48002-0",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6683-2",
+                  "system": "http://loinc.org",
+                  "display": "Germline"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "53034-5",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6706-1",
+                  "system": "http://loinc.org",
+                  "display": "Heterozygous"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81258-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "code": "%",
+              "system": "http://unitsofmeasure.org",
+              "value": 47
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "82121-5",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "code": "1",
+              "system": "http://unitsofmeasure.org",
+              "value": 208
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "82155-3",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "code": "1",
+              "system": "http://unitsofmeasure.org",
+              "value": 1
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81299-0",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.48
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81300-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "code": "1",
+              "system": "http://unitsofmeasure.org",
+              "value": 1396929
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81301-4",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueRange": {
+              "high": {
+                "value": 15592000
+              },
+              "low": {
+                "value": 13200589
+              }
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81302-2",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueRange": {
+              "high": {
+                "value": 15581544
+              },
+              "low": {
+                "value": 14184616
+              }
+            }
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "discrete-variant",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/dis-path",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "diagnostic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "53037-8",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6668-3",
+                  "system": "http://loinc.org",
+                  "display": "Pathogenic"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81259-4",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C1970173",
+                  "system": "http://example.org/MedGen-Dis",
+                  "display": "Acyl-CoA dehydrogenase family, member 9, deficiency of"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/discrete-variant"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "dis-path",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/complex-variant",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81263-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA26218-0",
+                  "system": "http://loinc.org",
+                  "display": "Haplotype"
+                }
+              ]
+            }
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "hasMember": [
+          {
+            "reference": "Observation/complex-component-D"
+          },
+          {
+            "reference": "Observation/complex-component-E"
+          }
+        ],
+        "id": "complex-variant",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/complex-dis-path",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "diagnostic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "53037-8",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6668-3",
+                  "system": "http://loinc.org",
+                  "display": "Pathogenic"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81259-4",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "293498008",
+                  "system": "http://snomed.info/sct",
+                  "display": "Debrisoquine adverse reaction (disorder)"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/complex-variant"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "complex-dis-path",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/complex-component-D",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81252-9",
+                  "system": "http://loinc.org",
+                  "display": "Discrete genetic variant"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "31934",
+                  "system": "http://example.org/clinvar",
+                  "display": "NM_000106.5(CYP2D6):c.886C>T (p.Arg296Cys)",
+                  "version": "???"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51958-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NM_000106.5",
+                  "system": "http://example.org/RefSeq-T"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48004-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "c.886C>T",
+                  "system": "http://example.org/HGVS.c",
+                  "version": "15.11"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48005-3",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "p.Arg296Cys",
+                  "system": "http://example.org/HGVS.p",
+                  "version": "15.11"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48019-4",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6690-7",
+                  "system": "http://loinc.org",
+                  "display": "Substitution"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48006-1",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6698-0",
+                  "system": "http://loinc.org",
+                  "display": "Missense"
+                }
+              ]
+            }
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "complex-component-D",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/complex-component-E",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "69548-6",
+              "system": "http://loinc.org",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "81252-9",
+                  "system": "http://loinc.org",
+                  "display": "Discrete genetic variant"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "38486",
+                  "system": "http://example.org/clinvar",
+                  "display": "NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)",
+                  "version": "???"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51958-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "NM_000106.5",
+                  "system": "http://example.org/RefSeq-T"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48004-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "c.1457G>C",
+                  "system": "http://example.org/HGVS.c",
+                  "version": "15.11"
+                }
+              ]
+            }
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "complex-component-E",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "LA9633-4",
+              "system": "http://loinc.org",
+              "display": "Present"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/pharmPanel",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "grouper",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        },
+        "effectiveDateTime": "2016",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction",
+            "valueReference": {
+              "reference": "Task/usage"
+            }
+          }
+        ],
+        "hasMember": [
+          {
+            "reference": "Observation/haplotype"
+          },
+          {
+            "reference": "Observation/genotype"
+          },
+          {
+            "reference": "Observation/metab"
+          },
+          {
+            "reference": "Observation/efficacy"
+          }
+        ],
+        "id": "pharmPanel",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/haplotype",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84414-2",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "derivedFrom": [
+          {
+            "reference": "Observation/discrete-variant"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "haplotype",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "*2",
+              "system": "http://example.org/???"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/genotype",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "84413-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "2623",
+                  "system": "http://example.org/hgnc",
+                  "display": "CYP2C9"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "48018-6",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "23663",
+                  "system": "http://example.org/hgnc",
+                  "display": "VKORC1"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/haplotype"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "genotype",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "CYP2C9*2/*5",
+              "system": "http://www.pharmvar.org",
+              "display": "CYP2C9 *2/*5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/metab",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "therapeutic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51963-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "11289",
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "display": "Warfarin"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "53040-2",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA25390-8",
+                  "system": "http://loinc.org",
+                  "display": "Rapid metabolizer"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/genotype"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "metab",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/efficacy",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "therapeutic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51961-1",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA6676-6",
+                  "system": "http://loinc.org",
+                  "display": "Resistant"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51963-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "11289",
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "display": "Warfarin"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/genotype"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "efficacy",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Observation/highrisk",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "laboratory",
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "therapeutic-implication",
+              "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "83009-1",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "LA19542-2",
+                  "system": "http://loinc.org",
+                  "display": "Low risk"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "51963-7",
+                  "system": "http://loinc.org"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "11289",
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "display": "Warfarin"
+                }
+              ]
+            }
+          }
+        ],
+        "derivedFrom": [
+          {
+            "reference": "Observation/genotype"
+          }
+        ],
+        "effectiveDateTime": "2016",
+        "id": "highrisk",
+        "issued": "2016-09-06T00:00:00-05:00",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/lab"
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Patient/patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Task/usage",
+      "resource": {
+        "code": {
+          "text": "May need higher dosage than usual."
+        },
+        "contained": [
+          {
+            "id": "med",
+            "medicationCodeableConcept": {
+              "coding": [
+                {
+                  "code": "11289",
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "display": "Warfarin"
+                }
+              ]
+            },
+            "resourceType": "MedicationStatement",
+            "status": "unknown",
+            "subject": {
+              "reference": "Patient/patient"
+            }
+          }
+        ],
+        "focus": {
+          "reference": "#med"
+        },
+        "for": {
+          "reference": "Patient/patient"
+        },
+        "id": "usage",
+        "intent": "proposal",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/task-med-chg"
+          ]
+        },
+        "reasonReference": {
+          "reference": "Observation/metab"
+        },
+        "requester": {
+          "reference": "Organization/lab"
+        },
+        "resourceType": "Task",
+        "status": "requested"
+      }
+    }
+  ],
+  "type": "collection"
+}

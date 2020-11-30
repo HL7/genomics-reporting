@@ -1,0 +1,384 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "genomics-report",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report",
+  "version": "1.0.1",
+  "name": "GenomicsReport",
+  "title": "Genomics Report",
+  "status": "active",
+  "description": "Genomics profile of DiagnosticReport.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport.extension",
+        "path": "DiagnosticReport.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
+      },
+      {
+        "id": "DiagnosticReport.extension:RelatedArtifact",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "RelatedArtifact",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.extension:RecommendedAction",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "RecommendedAction",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.extension:RecommendedAction.value[x]",
+        "path": "DiagnosticReport.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Task"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.extension:SupportingInfo",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "SupportingInfo",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/SupportingInfo"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.extension:SupportingInfo.value[x]",
+        "path": "DiagnosticReport.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/FamilyMemberHistory",
+              "http://hl7.org/fhir/StructureDefinition/RiskAssessment",
+              "http://hl7.org/fhir/StructureDefinition/Observation",
+              "http://hl7.org/fhir/StructureDefinition/DocumentReference"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.extension:diagnosticReport-risk",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "diagnosticReport-risk",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnosticReport-risk"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.basedOn",
+        "path": "DiagnosticReport.basedOn",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.category",
+        "path": "DiagnosticReport.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the category code pattern"
+        }
+      },
+      {
+        "id": "DiagnosticReport.category:Genetics",
+        "path": "DiagnosticReport.category",
+        "sliceName": "Genetics",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "DiagnosticReport.category:Genetics.coding.system",
+        "path": "DiagnosticReport.category.coding.system",
+        "patternUri": "http://terminology.hl7.org/CodeSystem/v2-0074"
+      },
+      {
+        "id": "DiagnosticReport.category:Genetics.coding.code",
+        "path": "DiagnosticReport.category.coding.code",
+        "patternCode": "GE"
+      },
+      {
+        "id": "DiagnosticReport.code",
+        "path": "DiagnosticReport.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "81247-9",
+              "system": "http://loinc.org"
+            }
+          ]
+        }
+      },
+      {
+        "id": "DiagnosticReport.subject",
+        "path": "DiagnosticReport.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/Group",
+              "http://hl7.org/fhir/StructureDefinition/Location"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.effective[x]",
+        "path": "DiagnosticReport.effective[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.performer",
+        "path": "DiagnosticReport.performer",
+        "max": "1"
+      },
+      {
+        "id": "DiagnosticReport.specimen",
+        "path": "DiagnosticReport.specimen",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "$this.resolve().code"
+            }
+          ],
+          "rules": "open",
+          "description": "Slice based on the reference profile and code pattern"
+        }
+      },
+      {
+        "id": "DiagnosticReport.result:gen-grouper",
+        "path": "DiagnosticReport.result",
+        "sliceName": "gen-grouper",
+        "short": "Grouper",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:overall",
+        "path": "DiagnosticReport.result",
+        "sliceName": "overall",
+        "short": "Assessment of overall results",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:diagnostic-implication",
+        "path": "DiagnosticReport.result",
+        "sliceName": "diagnostic-implication",
+        "short": "Diagnostic Implication",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:therapeutic-implication",
+        "path": "DiagnosticReport.result",
+        "sliceName": "therapeutic-implication",
+        "short": "Therapeutic Implication",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:variant",
+        "path": "DiagnosticReport.result",
+        "sliceName": "variant",
+        "short": "Variant",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:sequence-phase-relation",
+        "path": "DiagnosticReport.result",
+        "sliceName": "sequence-phase-relation",
+        "short": "Sequence Phase Relationship",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:region-studied",
+        "path": "DiagnosticReport.result",
+        "sliceName": "region-studied",
+        "short": "Region Studied",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/region-studied"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.imagingStudy",
+        "path": "DiagnosticReport.imagingStudy",
+        "max": "0"
+      },
+      {
+        "id": "DiagnosticReport.media",
+        "path": "DiagnosticReport.media",
+        "max": "1"
+      }
+    ]
+  }
+}
