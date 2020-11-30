@@ -14,6 +14,7 @@ Title:          "Genomics service request"
 Description:    "Request that initiated the diagnostic report."
 
 * doNotPerform 0..0
+* code ^binding.description = "For laboratory, LOINC is preferred."
 * subject only Reference(Patient or Group or Location)
 * supportingInfo only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
 * specimen only Reference(specimen)

@@ -33,4 +33,5 @@ Alias:  searchParamType = http://hl7.org/fhir/ValueSet/search-param-type
 Alias:  ConceptMapEquiv = http://hl7.org/fhir/ValueSet/concept-map-equivalence
 Alias:  TaskStatus = http://hl7.org/fhir/task-status
 Alias:  TaskIntent = http://hl7.org/fhir/task-intent
-Alias:  TaskRequestIntent = http://hl7.org/fhir/request-intent
+Alias:  RequestIntent = http://hl7.org/fhir/request-intent
+Alias:  RequestStatus = http://hl7.org/fhir/request-status

@@ -74,7 +74,6 @@ Description:    "Details about a set of changes in the tested sample compared to
     alt-allele 0..1 and
     coordinate-system 0..1 and
     exact-start-end 0..1 and
-    variant-length 0..1 and
     outer-start-end 0..1 and
     inner-start-end 0..1 and
     cytogenomic-nomenclature 0..1 and
@@ -204,7 +203,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[cytogenomic-nomenclature].value[x] 1..1
 * component[variant-inheritance].code = TbdCodes#variant-inheritance
 * component[variant-inheritance] ^short = "Variant Inheritance"
-* component[variant-inheritance] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
+* component[variant-inheritance] ^definition = "By which parent the variant was inherited in the patient, if known."
 * component[variant-inheritance].value[x] only CodeableConcept
 * component[variant-inheritance].value[x] 1..1
 * component[variant-inheritance].value[x] from VariantInheritanceVS (extensible)
