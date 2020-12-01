@@ -41,6 +41,7 @@ Description:    "Definitions for the tmb resource profile. The total number of m
 * valueQuantity = UCUM#1/1000000{Base}
 * valueQuantity.unit = "Mutations/Megabase"
 * interpretation from HighLowCodesVS
+* ^abstract = false
 
 Profile:        Variant
 Parent:         GenomicFinding
@@ -213,6 +214,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[chromosome-identifier].value[x] only CodeableConcept
 * component[chromosome-identifier].value[x] 1..1
 * component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
+* ^abstract = false
 
 Profile:        RegionStudied
 Parent:         GenomicsBase
@@ -273,6 +275,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Binding not yet defined"
 * component[genomic-ref-seq].value[x] 1..1
+* ^abstract = false
 
 Profile:        MSI
 Parent:         GenomicsBase
@@ -282,6 +285,7 @@ Description:    "Microsatellite instability (MSI) is the condition of genetic hy
 
 * code = LNC#81695-9 // Mutations/Megabase [# Ratio] in Tumor
 * valueCodeableConcept from http://loinc.org/vs/LL3994-2 (extensible)
+* ^abstract = false
 
 Profile:        Haplotype
 Parent:         GenomicFinding
@@ -303,6 +307,7 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
 * derivedFrom[Variant] only Reference(Variant)
+* ^abstract = false
 
 Profile:        Genotype
 Parent:         GenomicFinding
@@ -323,3 +328,4 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
 * derivedFrom[Variant] only Reference(Variant)
+* ^abstract = false

@@ -285,6 +285,60 @@
       <groupingId value="extensions"/>
     </resource>
     <!-- Examples -->
+    <resource>
+      <reference>
+        <reference value="Organization/ExampleOrg"/>
+      </reference>
+      <name value="Example Org"/>
+      <description value="Example Org"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Observation/TherapeuticImplicationExample1"/>
+      </reference>
+      <name value="Example - TherapeuticImplication"/>
+      <description value="Test instance of TherapeuticImplication"/>
+      <groupingId value="examples"/>
+    </resource>
+    
+     <resource>
+      <reference>
+        <reference value="Observation/GenotypeExample1"/>
+      </reference>
+      <name value="Example - Genotype"/>
+      <description value="Test instance of Genotype"/>
+      <groupingId value="examples"/>
+    </resource>
+    
+     <resource>
+      <reference>
+        <reference value="Task/TaskMedChgExample1"/>
+      </reference>
+      <name value="Example - TaskMedChg"/>
+      <description value="Test instance of TaskMedChg"/>
+      <groupingId value="examples"/>
+    </resource>
+
+
+     <resource>
+      <reference>
+        <reference value="DiagnosticReport/GenomicsReportExample01"/>
+      </reference>
+      <name value="Example - GenomicsReport"/>
+      <description value="Test instance of GenomicsReport"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Observation/SequencePhaseRelationExample1"/>
+      </reference>
+      <name value="Example - Sequence Phase Relation"/>
+      <description value="Test instance of Sequence Phase Relationship"/>
+      <groupingId value="examples"/>
+    </resource>
     
     <resource>
       <reference>
@@ -298,7 +352,7 @@
       <reference>
         <reference value="Observation/MicrosatelliteInstabilityExample01"/>
       </reference>
-      <name value="Example - TMB"/>
+      <name value="Example - MSI"/>
       <description value="Test instance of MSI"/>
       <groupingId value="examples"/>
     </resource>
@@ -314,8 +368,16 @@
       <reference>
         <reference value="Observation/VariantExample1"/>
       </reference>
-      <name value="Example - Variant"/>
-      <description value="Test instance of Variant given by HGVS"/>
+      <name value="Example - Variant1"/>
+      <description value="Test instance of Variant given by Clinvar ID"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/VariantExample2"/>
+      </reference>
+      <name value="Example - Variant2"/>
+      <description value="Test instance of Variant given by VCF columns"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -431,15 +493,17 @@
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/ -->
       <groupingId value="examples"/>
     </resource>
+    <!--
     <resource>
       <reference>
         <reference value="Bundle/HLAB1502-pgx-example"/>
       </reference>
       <name value="Example - High Risk Allele (HLA-B*15:02)"/>
       <description value="High Risk Allele (HLA-B*15:02)"/>
-      <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
       <groupingId value="examples"/>
     </resource>
+-->
+
     <resource>
       <reference>
         <reference value="DiagnosticReport/diagnosticreport-hla-glstring-r4"/>
