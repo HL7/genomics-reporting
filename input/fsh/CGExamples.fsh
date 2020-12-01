@@ -160,6 +160,7 @@ InstanceOf: GenomicsReport
 Description: "Example of a Report carrying a Genotype, Therapeutic Implication, and Medication Usage Task"
 * id = "GenomicsReportExample01"
 * basedOn = Reference(GenomicsServiceRequestExample01)
+* code = LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
 * extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction"
 * extension.valueReference = Reference(TaskMedChgExample1)
@@ -168,6 +169,7 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * result[0].display = "impact for high risk allele"
 * result[0] = Reference(TherapeuticImplicationExample1)
 * result[1] = Reference(GenotypeExample1)
+* result[2] = Reference(OverallInterpExample1)
 * status = #final
 * subject = Reference(CGPatientExample01)
 
@@ -182,3 +184,13 @@ Description: "Example for sequence phase relation."
 * issued = "2019-03-05T16:04:44+00:00"
 * status = #final
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
+
+Instance: OverallInterpExample1
+InstanceOf: OverallInterpretation
+Description: "Example for Overall Interpretation."
+* id = "OverallInterpExample1"
+* valueCodeableConcept = LNC#LA6576-8 "Positive"
+* subject = Reference(CGPatientExample01)
+* specimen = Reference(GenomicSpecimenExample01)
+* status = #final
+* note.text = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
