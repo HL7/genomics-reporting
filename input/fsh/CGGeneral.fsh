@@ -33,7 +33,6 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
 * category[labCategory] = ObsCat#laboratory
-* category[labCategory].coding = ObsCat#laboratory
 * subject 0..1
 * subject only Reference(Patient or Group or Location)
 * performer 0..1
