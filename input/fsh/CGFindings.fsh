@@ -41,6 +41,7 @@ Description:    "Definitions for the tmb resource profile. The total number of m
 * valueQuantity = UCUM#1/1000000{Base}
 * valueQuantity.unit = "Mutations/Megabase"
 * interpretation from HighLowCodesVS
+* ^abstract = false
 
 Profile:        Variant
 Parent:         GenomicFinding
@@ -58,9 +59,8 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component contains
     dna-chg 0..1 and
     dna-chg-type 0..1 and
-    functional-annotation 0..1 and
+    molecular-consequence 0..1 and
     variation-code 0..1 and
-    dbSNP-id 0..1 and
     genomic-dna-chg 0..1 and
     genomic-source-class 0..1 and
     amino-acid-chg 0..1 and
@@ -75,14 +75,11 @@ Description:    "Details about a set of changes in the tested sample compared to
     alt-allele 0..1 and
     coordinate-system 0..1 and
     exact-start-end 0..1 and
-    variant-length 0..1 and
     outer-start-end 0..1 and
     inner-start-end 0..1 and
-    chromosome-copy-number-change-type 0..1 and
-    arrCGH-ratio 0..1 and
-    complex-var-type 0..1 and
     cytogenomic-nomenclature 0..1 and
-    variant-inheritance 0..1
+    variant-inheritance 0..1 and
+    chromosome-identifier 0..*
 * component[dna-chg].code = LNC#48004-6
 * component[dna-chg] ^short = "DNA Change - Transcript (cHGVS)"
 * component[dna-chg] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker."
@@ -96,15 +93,15 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[dna-chg-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://www.sequenceontology.org/browser/current_release/term/SO:0002072)."
 * component[dna-chg-type].value[x] 1..1
 * component[dna-chg-type].value[x] from DNAChangeTypeVS (extensible)
-// * component[functional-annotation].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
-// * component[functional-annotation].code.coding.code = #functional-annotation
-* component[functional-annotation].code = TbdCodes#functional-annotation
-* component[functional-annotation] ^short = "Functional Annotation"
-* component[functional-annotation] ^definition = "Annotated changes to sequence features caused by this variant."
-* component[functional-annotation].value[x] only CodeableConcept
-* component[functional-annotation].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://www.sequenceontology.org/browser/current_release/term/SO:0001537)."
-* component[functional-annotation].value[x] 1..1
-* component[functional-annotation].value[x] from FunctionalAnnotationVS (extensible)
+// * component[molecular-consequence].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
+// * component[molecular-consequence].code.coding.code = #molecular-consequence
+* component[molecular-consequence].code = TbdCodes#molecular-consequence
+* component[molecular-consequence] ^short = "Molecular Consequence"
+* component[molecular-consequence] ^definition = "Changes in a structural features of a sequence due to the observed variant."
+* component[molecular-consequence].value[x] only CodeableConcept
+* component[molecular-consequence].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://www.sequenceontology.org/browser/current_release/term/SO:0001537)."
+* component[molecular-consequence].value[x] 1..1
+* component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
 * component[variation-code].code = LNC#81252-9
 * component[variation-code] ^short = "Variation Code"
 * component[variation-code] ^definition = "The name of a structural variant reported using HGVS nomenclature."
@@ -112,13 +109,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variation-code].value[x] ^binding.strength = #example
 * component[variation-code].value[x] ^binding.description = "Binding not yet defined"
 * component[variation-code].value[x] 1..1
-* component[dbSNP-id].code = LNC#81255-2
-* component[dbSNP-id] ^short = "dbSNP ID"
-* component[dbSNP-id] ^definition = "The unique identifier for the variant represented as a small nucleotide polymorphism (SNP). The dbSNP ID is used routinely as the base identifier in pharmacogenomics as well as arrCGH studies. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the dbSNP ID is 368949613. [http://www.ncbi.nlm.nih.gov/clinvar/variation/30880/]."
-* component[dbSNP-id].value[x] only CodeableConcept
-* component[dbSNP-id].value[x] ^binding.strength = #example
-* component[dbSNP-id].value[x] ^binding.description = "Binding not yet defined"
-* component[dbSNP-id].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[genomic-dna-chg].code = LNC#81290-9
 * component[genomic-dna-chg] ^short = "DNA Change - Genomic (gHGVS)"
@@ -196,11 +186,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[exact-start-end] ^short = "Exact start-end"
 * component[exact-start-end] ^definition = "This location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the location is Chr3: 128906220 on Assembly GRCh38."
 * component[exact-start-end].value[x] only Range
-* component[variant-length].code = LNC#81300-6
-* component[variant-length] ^short = "Structural variant length"
-* component[variant-length] ^definition = "Length of the structural variant, which information may be ascertained in some but not all types of structural variants."
-* component[variant-length].value[x] only Quantity  // MLT: Count invariant cnt-3
-* component[variant-length].valueQuantity obeys cnt-3
 * component[outer-start-end].code = TbdCodes#outer-start-end
 * component[outer-start-end] ^short = "Variant outer start and end"
 * component[outer-start-end] ^definition = "The genomic coordinates of the widest genomic range in which the variant might reside."
@@ -209,22 +194,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[inner-start-end] ^short = "Variant inner start and end"
 * component[inner-start-end] ^definition = "The genomic coordinates of the narrowest genomic range in which the structural variant might reside."
 * component[inner-start-end].value[x] only Range
-* component[chromosome-copy-number-change-type].code = LNC#62378-5
-* component[chromosome-copy-number-change-type] ^short = "Chromosome copy number change type"
-* component[chromosome-copy-number-change-type] ^definition = "The type of the chromosome copy number change."
-* component[chromosome-copy-number-change-type].value[x] only CodeableConcept
-* component[chromosome-copy-number-change-type].value[x] 1..1
-* component[chromosome-copy-number-change-type].value[x] from http://loinc.org/vs/LL1041-4 (extensible)
-* component[arrCGH-ratio].code = LNC#81299-0
-* component[arrCGH-ratio] ^short = "Structural variant reported arrCGH [Ratio]"
-* component[arrCGH-ratio] ^definition = "todo."
-* component[arrCGH-ratio].value[x] only SimpleQuantity
-* component[complex-var-type].code = LNC#81263-6
-* component[complex-var-type] ^short = "Complex variant type"
-* component[complex-var-type] ^definition = "The type of complex variant, for example, compound heterozygous or haplotype."
-* component[complex-var-type].value[x] only CodeableConcept
-* component[complex-var-type].value[x] 1..1
-* component[complex-var-type].value[x] from http://loinc.org/vs/LL3999-1 (extensible)
 * component[cytogenomic-nomenclature].code = LNC#81291-7
 * component[cytogenomic-nomenclature] ^short = "Cytogenomic Nomenclature"
 * component[cytogenomic-nomenclature] ^definition = "Fully describes a variant with a single code. Typically a large variant such as a mosaic, abnormal chromosome numbers, etc."
@@ -235,10 +204,17 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[cytogenomic-nomenclature].value[x] 1..1
 * component[variant-inheritance].code = TbdCodes#variant-inheritance
 * component[variant-inheritance] ^short = "Variant Inheritance"
-* component[variant-inheritance] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
+* component[variant-inheritance] ^definition = "By which parent the variant was inherited in the patient, if known."
 * component[variant-inheritance].value[x] only CodeableConcept
 * component[variant-inheritance].value[x] 1..1
 * component[variant-inheritance].value[x] from VariantInheritanceVS (extensible)
+* component[chromosome-identifier].code = LNC#48000-4
+* component[chromosome-identifier] ^short = "Chromosome Identifier"
+* component[chromosome-identifier] ^definition = "An identifier for the chromosome on which this variant occurs, for cross referencing."
+* component[chromosome-identifier].value[x] only CodeableConcept
+* component[chromosome-identifier].value[x] 1..1
+* component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
+* ^abstract = false
 
 Profile:        RegionStudied
 Parent:         GenomicsBase
@@ -299,6 +275,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Binding not yet defined"
 * component[genomic-ref-seq].value[x] 1..1
+* ^abstract = false
 
 Profile:        MSI
 Parent:         GenomicsBase
@@ -308,6 +285,7 @@ Description:    "Microsatellite instability (MSI) is the condition of genetic hy
 
 * code = LNC#81695-9 // Mutations/Megabase [# Ratio] in Tumor
 * valueCodeableConcept from http://loinc.org/vs/LL3994-2 (extensible)
+* ^abstract = false
 
 Profile:        Haplotype
 Parent:         GenomicFinding
@@ -329,6 +307,7 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
 * derivedFrom[Variant] only Reference(Variant)
+* ^abstract = false
 
 Profile:        Genotype
 Parent:         GenomicFinding
@@ -349,3 +328,4 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
 * derivedFrom[Variant] only Reference(Variant)
+* ^abstract = false

@@ -31,18 +31,19 @@ Title:          "TBD Value Set"
 Description:    "Value Set for codes yet to be defined in LOINC"
 * include codes from system TbdCodes
 
-ValueSet:       FunctionalAnnotationVS
-Id:             functional-annotation
-Title:          "Functional Annotation"
-Description:    "Functional annotation of a variant."
+ValueSet:       MolecularConsequenceVS
+Id:             molecular-consequence
+Title:          "Molecular Consequence"
+Description:    "Changes in a structural features of a sequence due to the observed variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
 ValueSet:       VariantInheritanceVS
 Id:             variant-inheritance
 Title:          "Variant Inheritance"
-Description:    "A quality inhering in a variant by virtue of its origin."
-* include codes from system SEQONT where concept is-a #SO:0001762
-* DataAbsentReason#asked-unknown
+Description:    "By which parent the variant was inherited in the patient, if known."
+* LNC#LA26320-4 "Maternal"
+* LNC#LA26321-2 "Paternal"
+* LNC#LA4489-6 "Unknown"
 
 ValueSet:       SeqPhaseRelationshipVS
 Id:             seq-phase-relationship

@@ -77,6 +77,7 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
 * component[clinical-significance].value[x] only CodeableConcept
 * component[clinical-significance].value[x] 1..1
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
+* ^abstract = false
 
 Profile:        TherapeuticImplication
 Parent:         GenomicImplication
@@ -146,6 +147,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[effect-medication-efficacy].value[x] only CodeableConcept
 * component[effect-medication-efficacy].value[x] 1..1
 * component[effect-medication-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
+* ^abstract = false
 
 Profile:        TaskMedChg
 Parent:         Task
@@ -156,7 +158,7 @@ Description:    "Task proposing actions based on genetic results."
 * status = TaskStatus#requested
 * intent 1..1
 * intent = TaskIntent#proposal
-* code from http://loinc.org/vs/LL4049-4
+* code from http://loinc.org/vs/LL4049-4 
 // * code = LNC#82116-5    //"Medication usage suggestion [Type]"
 // * input[0].valueCodeableConcept 1..*
 // * input[0].valueCodeableConcept from http://loinc.org/vs/LL4049-4 (preferred)

@@ -14,6 +14,7 @@ Title:          "Genomics service request"
 Description:    "Request that initiated the diagnostic report."
 
 * doNotPerform 0..0
+* code ^binding.description = "For laboratory, LOINC is preferred."
 * subject only Reference(Patient or Group or Location)
 * supportingInfo only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
 * specimen only Reference(specimen)
@@ -25,8 +26,8 @@ Title:          "Genomics base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 
 * category 1..*
-* category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "code"
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.ordered = false   // can be omitted, since false is the default
 * category ^slicing.description = "Slice based on the category.code pattern"
@@ -35,9 +36,9 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * subject 0..1
 * subject only Reference(Patient or Group or Location)
 * performer 0..1
-* performer only Reference(Patient or Organization or Patient or RelatedPerson)
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named bodyStructure 0..1
+* ^abstract = true
 
 Profile:        OverallInterpretation
 Parent:         GenomicsBase
@@ -49,18 +50,7 @@ Description:    "Provides a coarse overall interpretation of the genomic results
 * value[x] only CodeableConcept
 * value[x] 1..1
 * value[x] from http://loinc.org/vs/LL541-4 (preferred)
-
-
-Profile:        GenomicServiceRequest
-Parent:         ServiceRequest
-Id:             service-request
-Title:          "Service Request"
-Description:    "Request that initiated the diagnostic report."
-* doNotPerform 0..0
-* subject only Reference(Patient or Group or Location)
-* supportingInfo only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
-* specimen only Reference(GenomicSpecimen)
-
+* ^abstract = false
 
 Profile:        SequencePhaseRelationship
 Parent:         GenomicFinding
@@ -71,14 +61,15 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * valueCodeableConcept 1..1
 * valueCodeableConcept from SeqPhaseRelationshipVS (required)
 * method from http://loinc.org/vs/LL4050-2 (extensible)
-* derivedFrom ^slicing.discriminator.type = #pattern
-* derivedFrom ^slicing.discriminator.path = "code"
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the component.code pattern"
 * derivedFrom contains variant 0..* and 
     haplotype 0..*
 * derivedFrom[variant] only Reference(Variant)
 * derivedFrom[haplotype] only Reference(Haplotype)
+* ^abstract = false
 
 Profile:        GenomicsReport
 Parent:         DiagnosticReport
@@ -97,7 +88,7 @@ Description:    "Genomics profile of DiagnosticReport."
 * code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)
 * category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "code"
+* category ^slicing.discriminator.path = "coding.code"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category code pattern"
 * category contains Genetics 0..1
@@ -106,8 +97,8 @@ Description:    "Genomics profile of DiagnosticReport."
 * performer 0..1
 * effective[x] only dateTime
 * specimen only Reference(GenomicSpecimen)
-* result ^slicing.discriminator.type = #pattern
-* result ^slicing.discriminator.path = "$this.resolve().code"
+* result ^slicing.discriminator.type = #profile
+* result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
 * result contains gen-grouper 0..* and
@@ -142,8 +133,8 @@ Description:    "Organizes information within a genomic report."
 
 * extension contains RecommendedAction named RecommendedAction 0..*
 * code = TbdCodes#grouper
-* hasMember ^slicing.discriminator.type = #pattern
-* hasMember ^slicing.discriminator.path = "$this.resolve()"
+* hasMember ^slicing.discriminator.type = #profile
+* hasMember ^slicing.discriminator.path = "resolve()"
 * hasMember ^slicing.rules = #open
 * hasMember ^slicing.description = "Slice based on the reference profile"
 * hasMember contains grouper-ref 0..* and 
@@ -173,3 +164,4 @@ Description:    "Organizes information within a genomic report."
 * hasMember[region-studied] ^short = "Region Studied"
 * hasMember[sequence-phase-relation] only Reference(SequencePhaseRelationship)
 * hasMember[sequence-phase-relation] ^short = "Sequence Phase Relationship"
+* ^abstract = false

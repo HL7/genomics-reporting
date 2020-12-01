@@ -20,25 +20,34 @@
 <artifact id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="Example - Full Bundle Oncology Example"/>
 <artifact id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="Example - Genomics Reporting"/>
+<artifact id="DiagnosticReport/GenomicsReportExample01" key="DiagnosticReport-GenomicsReportExample01" name="Example - GenomicsReport"/>
+<artifact id="Observation/GenotypeExample1" key="Observation-GenotypeExample1" name="Example - Genotype"/>
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="Example - HLA genotyping for HLA-A, using GLStrings"/>
-<artifact id="Bundle/HLAB1502-pgx-example" key="Bundle-HLAB1502-pgx-example" name="Example - High Risk Allele (HLA-B*15:02)"/>
 <artifact id="Observation/obs-idh-ex" key="Observation-obs-idh-ex" name="Example - Inherited Disease Pathogenicity"/>
+<artifact id="Observation/MicrosatelliteInstabilityExample01" key="Observation-MicrosatelliteInstabilityExample01" name="Example - MSI"/>
 <artifact id="Bundle/oncology-diagnostic" key="Bundle-oncology-diagnostic" name="Example - Melanoma implication"/>
 <artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="Example - NGS"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="Example - Observation for a single HLA-A allele"/>
 <artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name="Example - Patient"/>
 <artifact id="Bundle/diagnosticreport-pgxexample" key="Bundle-diagnosticreport-pgxexample" name="Example - Pharmacogenomics"/>
+<artifact id="Observation/SequencePhaseRelationExample1" key="Observation-SequencePhaseRelationExample1" name="Example - Sequence Phase Relation"/>
+<artifact id="ServiceRequest/GenomicsServiceRequestExample01" key="ServiceRequest-GenomicsServiceRequestExample01" name="Example - Service Request"/>
 <artifact id="ServiceRequest/servicerequest-hla-a-r4" key="ServiceRequest-servicerequest-hla-a-r4" name="Example - Service request for high-resolution HLA-A genotyping"/>
 <artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Specimen"/>
+<artifact id="Observation/TumorMutationBurdenExample01" key="Observation-TumorMutationBurdenExample01" name="Example - TMB"/>
+<artifact id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
+<artifact id="Observation/TherapeuticImplicationExample1" key="Observation-TherapeuticImplicationExample1" name="Example - TherapeuticImplication"/>
 <artifact id="DiagnosticReport/AnnotationExample" key="DiagnosticReport-AnnotationExample" name="Example - Variant with ACMG Screening"/>
+<artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example - Variant1"/>
+<artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="Example - Variant2"/>
 <artifact id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
 <artifact id="Observation/MicrosatelliteInstabilityExample01" key="Observation-MicrosatelliteInstabilityExample01" name="Example Observation - MicrosatelliteInstabilityExample01"/>
 <artifact id="Observation/TumorMutationBurdenExample01" key="Observation-TumorMutationBurdenExample01" name="Example Observation - TumorMutationBurdenExample01"/>
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example Observation - VariantExample1"/>
 <artifact id="ServiceRequest/GenomicsServiceRequestExample01" key="ServiceRequest-GenomicsServiceRequestExample01" name="Example ServiceRequest - GenomicsServiceRequestExample01"/>
-<artifact id="ValueSet/functional-annotation" key="ValueSet-functional-annotation" name="Functional Annotations"/>
+<artifact id="Organization/ExampleOrg" key="Organization-ExampleOrg" name="Example Org"/>
 <artifact id="StructureDefinition/finding" key="StructureDefinition-finding" name="Genomic Finding"/>
 <artifact id="StructureDefinition/implication" key="StructureDefinition-implication" name="Genomic Implication"/>
 <artifact id="StructureDefinition/genomics-base" key="StructureDefinition-genomics-base" name="Genomics Base"/>
@@ -52,6 +61,7 @@
 <artifact deprecated="true" key="ImplementationGuide" name="ImplementationGuide"/>
 <artifact id="StructureDefinition/task-med-chg" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
 <artifact id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite instability"/>
+<artifact id="ValueSet/molecular-consequence" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
 <artifact deprecated="true" key="Sequence" name="MolecularSequence"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="OperationDefinition/find-subject-variants" key="OperationDefinition-find-subject-variants" name="Operation: $find-subject-variants"/>
