@@ -35,7 +35,7 @@ Description: "Example for Patient. Supports references to subject for multiple g
 * communication.language = urn:ietf:bcp:47#en-US "English (Region=United States)"
 * communication.language.text = "English"
 
-Instance: TumorMutationBurdenExample01 
+Instance: TumorMutationBurdenExample01
 InstanceOf: TMB
 Description: "Example for Tumor Mutation Burden"
 * id = "TumorMutationBurdenExample01"
@@ -45,7 +45,7 @@ Description: "Example for Tumor Mutation Burden"
 * subject = Reference(CGPatientExample01)
 * valueQuantity.value = 250
 
-Instance: MicrosatelliteInstabilityExample01 
+Instance: MicrosatelliteInstabilityExample01
 InstanceOf: MSI
 Description: "Example for MSI"
 * id = "MicrosatelliteInstabilityExample01"
@@ -55,7 +55,7 @@ Description: "Example for MSI"
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = LNC#LA14122-8 "Stable"
 
-Instance: GenomicsServiceRequestExample01 
+Instance: GenomicsServiceRequestExample01
 InstanceOf: servicerequest
 Description: "Example for Service Request"
 * id = "GenomicsServiceRequestExample01"
@@ -78,7 +78,7 @@ Description: "Example for Variant given by ClinVar ID"
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
 * interpretation = SCT#10828004 "Positive (qualifier value)"
-* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11" 
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11"
 * component[variation-code].valueCodeableConcept = CLINVAR#619728 "NC_000019.8:g.1171707G>A"
 //* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0
@@ -109,7 +109,7 @@ Description: "Example for genomic Variant given by VCF columns"
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
 
-Instance: ExampleOrg 
+Instance: ExampleOrg
 InstanceOf: Organization
 Description: "Example Org"
 * id = "ExampleOrg"
