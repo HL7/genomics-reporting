@@ -32,7 +32,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * category ^slicing.ordered = false   // can be omitted, since false is the default
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
-* category[labCategory] = ObsCat#laboratory
+* category[labCategory].coding = ObsCat#laboratory
 * subject 0..1
 * subject only Reference(Patient or Group or Location)
 * performer 0..1
@@ -85,15 +85,15 @@ Description:    "Genomics profile of DiagnosticReport."
 * extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
 * extension[DiagnosticReportRisk].value[x] only Reference(RiskAssessment)
 * basedOn only Reference(GenomicsServiceRequest)
-* code = LNC#81247-9
+//* code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)
 * category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "coding.code"
+* category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category code pattern"
-* category contains Genetics 0..1
-* category[Genetics].coding.system = "http://terminology.hl7.org/CodeSystem/v2-0074"
-* category[Genetics].coding.code = DiagnosticService#GE
+* category contains Genetics 1..1
+//* category[Genetics].coding.system = "http://terminology.hl7.org/CodeSystem/v2-0074"
+* category[Genetics].coding = DiagnosticService#GE
 * performer 0..1
 * effective[x] only dateTime
 * specimen only Reference(GenomicSpecimen)

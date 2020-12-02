@@ -176,7 +176,7 @@ Description:    "Task describing the followup that is recommended"
 * status = TaskStatus#requested
 * intent 1..1
 * intent = TaskIntent#proposal
-* code from http://loinc.org/vs/LL1037-2
+* code from http://loinc.org/vs/LL1037-2 (extensible)
 * description = "Recommendation Document"
 * for only Reference(Patient)
 * requester only Reference(Organization)
