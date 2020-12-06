@@ -152,7 +152,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[sample-allelic-frequency].code = LNC#81258-6
 * component[sample-allelic-frequency] ^short = "Sample Allelic Frequency"
 * component[sample-allelic-frequency].value[x] only Quantity
-* component[sample-allelic-frequency].valueQuantity.value only decimal
+* component[sample-allelic-frequency].value[x].system = UCUM
 * component[allelic-read-depth].code = LNC#82121-5
 * component[allelic-read-depth] ^short = "Allelic read depth"
 * component[allelic-read-depth] ^definition = "Specifies the number of reads that identified the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4."
