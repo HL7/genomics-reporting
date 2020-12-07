@@ -167,7 +167,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[copy-number] ^short = "Genomic structural variant copy number"
 * component[copy-number] ^definition = "The copy number of the large variant. In HGVS, this is the numeric value following the “X”. It is a unit-less value. Note that a copy number of 1 implies a deletion. The copy number can usually be inferred from the HGVS or ISCN fields."
 * component[copy-number].value[x] only Quantity 
-* component[copy-number].valueQuantity obeys cnt-3  // MLT: adjust to conform to cnt-3 which is an invariant for Quantity specialization, Count.
+* component[copy-number].value[x] obeys cnt-3  // MLT: adjust to conform to cnt-3 which is an invariant for Quantity specialization, Count.
 * component[ref-allele].code = LNC#69547-8
 * component[ref-allele] ^short = "Genomic ref allele"
 * component[ref-allele] ^definition = "Reference values ('normal') examined within the Reference Sequence."
