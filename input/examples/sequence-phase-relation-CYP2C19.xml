@@ -280,7 +280,7 @@
       <issued value="2019-03-05T16:04:44+00:00"/>
       <valueCodeableConcept>
         <coding>
-          <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/seq-phase-relationship"/>
+          <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/SequencePhaseRelationshipCS"/>
           <code value="Cis"/>
           <display value="Cis"/>
         </coding>
@@ -294,6 +294,12 @@
     </Observation>
   </contained>
   <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="GE"/>
+    </coding>
+  </category>  
   <code>
     <coding>
       <system value="http://loinc.org"/>
