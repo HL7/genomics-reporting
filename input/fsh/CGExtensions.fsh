@@ -1,5 +1,5 @@
-Extension:   RelatedArtifact
-Id:          RelatedArtifact
+Extension:   GenomicsArtifact
+Id:          genomics-artifact
 Title:       "Related Artifact"
 Description: "Captures citations, evidence and other supporting documentation for the observation or report."
 * ^context[0].type = #element

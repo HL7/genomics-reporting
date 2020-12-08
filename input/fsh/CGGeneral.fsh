@@ -43,7 +43,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 Profile:        OverallInterpretation
 Parent:         GenomicsBase
 Id:             overall-interpretation
-Title:          "Genomics base"
+Title:          "Overall Interpretation"
 Description:    "Provides a coarse overall interpretation of the genomic results reported."
 * code = LNC#51968-6
 * specimen only Reference(GenomicSpecimen)
@@ -107,7 +107,9 @@ Description:    "Genomics profile of DiagnosticReport."
     therapeutic-implication 0..* and
     variant 0..* and
     sequence-phase-relation 0..* and 
-    region-studied 0..*
+    region-studied 0..* and 
+    genotype 0..* and 
+    haplotype 0..*
 * result[gen-grouper] only Reference(Grouper)
 * result[gen-grouper] ^short = "Grouper"
 * result[overall] only Reference(OverallInterpretation)
@@ -122,6 +124,10 @@ Description:    "Genomics profile of DiagnosticReport."
 * result[sequence-phase-relation] ^short = "Sequence Phase Relationship"
 * result[region-studied] only Reference(RegionStudied)
 * result[region-studied] ^short = "Region Studied"
+* result[genotype] only Reference(Genotype)
+* result[genotype] ^short = "Genotype"
+* result[haplotype] only Reference(Haplotype)
+* result[haplotype] ^short = "Haplotype"
 * imagingStudy 0..0
 * media 0..1
 
