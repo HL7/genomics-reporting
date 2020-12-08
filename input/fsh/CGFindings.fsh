@@ -255,8 +255,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[region-description].value[x] only string
 * component[region-coverage] ^short = "Region Coverage"
 * component[region-coverage] ^definition = "When sequencing, what % of the region was covered."
-* component[region-coverage].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
-* component[region-coverage].code.coding.code = #region-coverage
+* component[region-coverage].code = TbdCodes#region-coverage
 * component[region-coverage].value[x] only Quantity
 * component[ranges-examined] ^short = "Range(s) of DNA sequence examined"
 * component[ranges-examined] ^definition = "This term is used to report the region(s) of interest for sequencing studies as one or more numeric ranges that identify the parts of the reference sequence that are sequenced. These can be recorded as one or more HL7 numeric ranges using repeat delimiters to seperate multiple such ranges."
@@ -299,8 +298,8 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
 * value[x] ^binding.description = "Binding not yet defined"
 * value[x] 1..1
 * method from http://loinc.org/vs/LL4050-2 (extensible)
-* derivedFrom ^slicing.discriminator.type = #pattern
-* derivedFrom ^slicing.discriminator.path = "$this.resolve().code"
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
 * derivedFrom contains Haplotype 0..* and 
@@ -312,7 +311,7 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
 Profile:        Genotype
 Parent:         GenomicFinding
 Id:             genotype
-Title:          "genotype"
+Title:          "Genotype"
 Description:    "Assertion of a particular genotype on the basis of one or more variants or haplotypes."
 
 * code = LNC#84413-4 // Genotype name
@@ -320,8 +319,8 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
 * value[x] ^binding.strength = #example
 * value[x] ^binding.description = "Binding not yet defined"
 * value[x] 1..1
-* derivedFrom ^slicing.discriminator.type = #pattern
-* derivedFrom ^slicing.discriminator.path = "$this.resolve().code"
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
 * derivedFrom contains Haplotype 0..* and 
