@@ -29,7 +29,7 @@ Description:    "Properties common to genetic findings whose results are express
 * component[RefSequenceAssembly].code = LNC#62374-4
 * component[RefSequenceAssembly].value[x] only CodeableConcept
 * component[RefSequenceAssembly].value[x] 1..1
-* component[RefSequenceAssembly].value[x] from http://loinc.org/vs/LL378-1 (extensible)
+* component[RefSequenceAssembly].value[x] from http://loinc.org/vs/LL1040-6 (extensible)
 
 Profile:        TMB
 Parent:         GenomicsBase
