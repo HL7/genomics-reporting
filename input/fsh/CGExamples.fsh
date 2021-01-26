@@ -194,3 +194,14 @@ Description: "Example for Overall Interpretation."
 * specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 * note.text = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
+
+Instance: RegionStudiedExample1
+InstanceOf: RegionStudied
+Description: "Example for Genomic Region Studied; based on a sample Whole Exome Sequencing (WES) test from Partners Healthcare"
+* status = #final "final"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* issued = "2019-04-01T11:45:33+11:00"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:7527 "MUTYH"
+* component[ranges-examined].valueRange.low = 45796891 ''
+* component[ranges-examined].valueRange.low = 45796891 ''
