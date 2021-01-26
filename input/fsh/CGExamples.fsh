@@ -203,5 +203,5 @@ Description: "Example for Genomic Region Studied; based on a sample Whole Exome 
 * effectiveDateTime = "2019-04-01"
 * issued = "2019-04-01T11:45:33+11:00"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:7527 "MUTYH"
-* component[ranges-examined].valueRange.low = 45796891 ''
-* component[ranges-examined].valueRange.low = 45796891 ''
+* component[ranges-examined].valueRange.low.value = 45796891
+* component[ranges-examined].valueRange.high.value = 45796891
