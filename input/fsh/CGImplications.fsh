@@ -50,7 +50,8 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
     associated-phenotype 0..* and
     associated-cancer 0..* and
     mode-of-inheritance	0..1 and
-    clinical-significance 0..1
+    clinical-significance 0..1 and
+    functional-effect 0..*
 * component[associated-phenotype] ^short = "Associated phenotype"
 * component[associated-phenotype] ^definition = "The possible phenotype associated with the genetic variant found in this study."
 * component[associated-phenotype].code = LNC#81259-4
@@ -58,13 +59,13 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
 * component[associated-phenotype].value[x] ^binding.strength = #example
 * component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
 * component[associated-phenotype].value[x] 1..1
-* component[associated-cancer] ^short = "Associated cancer"
-// * component[associated-cancer] ^definition = "" // MLT: no definition provided.
-* component[associated-cancer].code = TbdCodes#associated-cancer
-* component[associated-cancer].value[x] only CodeableConcept
-* component[associated-cancer].value[x] ^binding.strength = #example
-* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
-* component[associated-cancer].value[x] 1..1
+//* component[associated-cancer] ^short = "Associated cancer"
+//* component[associated-cancer] ^definition = "" // MLT: no definition provided.
+//* component[associated-cancer].code = TbdCodes#associated-cancer
+//* component[associated-cancer].value[x] only CodeableConcept
+//* component[associated-cancer].value[x] ^binding.strength = #example
+//* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
+//* component[associated-cancer].value[x] 1..1
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 // * component[mode-of-inheritance] ^definition = "" // MLT: no definition provided.
 * component[mode-of-inheritance].code = LNC#79742-3
@@ -77,6 +78,14 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
 * component[clinical-significance].value[x] only CodeableConcept
 * component[clinical-significance].value[x] 1..1
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
+* component[functional-effect].code = TbdCodes#functional-effect
+* component[functional-effect] ^short = "Functional Effect"
+* component[functional-effect] ^definition = "The effect of a variant on downstream biological products or pathways (from Sequence Ontology)."
+* component[functional-effect].value[x] only CodeableConcept
+* component[functional-effect].value[x] 1..1
+* component[functional-effect].value[x] from FunctionalEffectVS (extensible)
+
+
 * ^abstract = false
 
 Profile:        TherapeuticImplication

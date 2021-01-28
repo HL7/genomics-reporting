@@ -37,6 +37,12 @@ Title:          "Molecular Consequence"
 Description:    "Changes in a structural features of a sequence due to the observed variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
+ValueSet:       FunctionalEffectVS
+Id:             functional-effect
+Title:          "Functional Effect"
+Description:    "The effect of a variant on downstream biological products or pathways."
+* include codes from system SEQONT where concept is-a #SO:0001536
+
 ValueSet:       VariantInheritanceVS
 Id:             variant-inheritance
 Title:          "Variant Inheritance"

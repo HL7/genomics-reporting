@@ -235,7 +235,8 @@ Description:    "The Region Studied profile is used to assert actual regions stu
     region-coverage 0..1 and
     ranges-examined 0..1 and
     coordinate-system 0..1 and 
-    genomic-ref-seq 0..1
+    genomic-ref-seq 0..1 and
+    uncallable-region 0..1
 * component[gene-studied] ^short = "Gene studied [ID]"
 * component[gene-studied] ^definition = "HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiple gene studied components. The required coding will use the HGNC gene symbol as the display text and HGNC gene ID as the code."
 * component[gene-studied].code = LNC#48018-6
@@ -274,6 +275,11 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Binding not yet defined"
 * component[genomic-ref-seq].value[x] 1..1
+* component[uncallable-region] ^short = "Uncallable Sub-regions"
+* component[uncallable-region] ^definition = "A contiguous region where a call was not made. Must be inside the range given by 'ranges examined' in the given reference sequence and coordinate system."
+* component[uncallable-region].code = TbdCodes#uncallable-region
+* component[uncallable-region].value[x] only Range
+
 * ^abstract = false
 
 Profile:        MSI
