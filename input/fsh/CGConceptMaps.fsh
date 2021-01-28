@@ -1,11 +1,12 @@
 // Concept Maps
 Instance: dna-change-type-map
 InstanceOf: ConceptMap
-Title: "Find Subject Variants"
+Title: "DNA Change Type Map"
 Usage: #definition
 Description: "Mapping from http://loinc.org to http://www.sequenceontology.org"
 * name = "DNAChangeType"
 * status = PubStat#draft
+* copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * publisher = "HL7 International Clinical Genomics Work Group"
 * description = "LOINC and SequenceOntology mappings for dna change type"
 * sourceCanonical = "http://loinc.org"

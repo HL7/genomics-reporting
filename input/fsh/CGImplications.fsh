@@ -4,6 +4,7 @@ Id:             implication
 Title:          "Genomic Implication"
 Description:    "Properties common to genetic implications expressed as computable discrete elements."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact named relatedArtifact 0..1
 * value[x] 0..0
 * derivedFrom ^slicing.discriminator.type = #profile
@@ -41,6 +42,8 @@ Parent:         GenomicImplication
 Id:             diagnostic-implication
 Title:          "Diagnostic Implication"
 Description:    "Finding of whether a particular genotype/haplotype/variation or combination-thereof provides evidence for or against a particular type of cancer or the effectiveness of different interventions."
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodes#diagnostic-implication
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -84,6 +87,8 @@ Parent:         GenomicImplication
 Id:             therapeutic-implication
 Title:          "Therapeutic Implication"
 Description:    "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
 * code.coding.code = TbdCodes#therapeutic-implication
 * component ^slicing.discriminator.type = #pattern
@@ -154,6 +159,8 @@ Parent:         Task
 Id:             task-med-chg
 Title:          "Medication Usage Task"
 Description:    "Task proposing actions based on genetic results."
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = TaskStatus#requested
 * intent 1..1
@@ -172,6 +179,8 @@ Parent:         Task
 Id:             task-rec-followup
 Title:          "Recommended Followup"
 Description:    "Task describing the followup that is recommended"
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = TaskStatus#requested
 * intent 1..1

@@ -41,6 +41,7 @@ ValueSet:       VariantInheritanceVS
 Id:             variant-inheritance
 Title:          "Variant Inheritance"
 Description:    "By which parent the variant was inherited in the patient, if known."
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * LNC#LA26320-4 "Maternal"
 * LNC#LA26321-2 "Paternal"
 * LNC#LA4489-6 "Unknown"
