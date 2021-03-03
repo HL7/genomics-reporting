@@ -45,6 +45,8 @@ Parent:         GenomicsBase
 Id:             overall-interpretation
 Title:          "Overall Interpretation"
 Description:    "Provides a coarse overall interpretation of the genomic results reported."
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#51968-6
 * specimen only Reference(GenomicSpecimen)
 * value[x] only CodeableConcept
@@ -57,6 +59,8 @@ Parent:         GenomicFinding
 Id:             sequence-phase-relationship
 Title:          "Sequence Phase Relationship"
 Description:    "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other."
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#82120-7
 * valueCodeableConcept 1..1
 * valueCodeableConcept from SeqPhaseRelationshipVS (required)

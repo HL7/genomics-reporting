@@ -4,6 +4,7 @@ Id:             finding
 Title:          "Finding"
 Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * specimen only Reference(GenomicSpecimen)
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -37,6 +38,7 @@ Id:             tmb
 Title:          "Tumor Mutation Burden"
 Description:    "Definitions for the tmb resource profile. The total number of mutations (changes) found in the DNA of cancer cells. [Source: NCI Dictionary](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tumor-mutational-burden)"
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#94076-7
 * valueQuantity = UCUM#1/1000000{Base}
 * valueQuantity.unit = "Mutations/Megabase"
@@ -49,6 +51,7 @@ Id:             variant
 Title:          "Variant"
 Description:    "Details about a set of changes in the tested sample compared to a reference sequence."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#69548-6
 * method from http://loinc.org/vs/LL4048-6 (extensible)
 * valueCodeableConcept from http://loinc.org/vs/LL1971-2 (required)
@@ -222,6 +225,7 @@ Id:             region-studied
 Title:          "Region Studied"
 Description:    "The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance)."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#53041-0
 * value[x] 0..0
 * component ^slicing.discriminator.type = #pattern
@@ -288,6 +292,7 @@ Id:             msi
 Title:          "Microsatellite instability"
 Description:    "Microsatellite instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR)."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#81695-9 // Mutations/Megabase [# Ratio] in Tumor
 * valueCodeableConcept from http://loinc.org/vs/LL3994-2 (extensible)
 * ^abstract = false
@@ -298,6 +303,7 @@ Id:             haplotype
 Title:          "Haplotype"
 Description:    "Assertion of a particular haplotype on the basis of one or more variants."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#84414-2 // Haplotype name
 * value[x] only CodeableConcept
 * value[x] ^binding.strength = #example
@@ -320,6 +326,7 @@ Id:             genotype
 Title:          "Genotype"
 Description:    "Assertion of a particular genotype on the basis of one or more variants or haplotypes."
 
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#84413-4 // Genotype name
 * value[x] only CodeableConcept
 * value[x] ^binding.strength = #example
