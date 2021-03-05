@@ -28,5 +28,5 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #variant-inheritance "Variant inheritance" "A quality inhering in a variant by virtue of its origin. The terms are in the sequence ontology under SO:0001762."
 * #diagnostic-implication "Diagnostic Implication" "An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition."
 * #therapeutic-implication "Therapeutic Implication" "An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy."
-* #uncallable-region "Uncallable Region" "A contiguous region where a call was not made. Must be inside the range given by 'ranges examined' in the given reference sequence and coordinate system."
+* #uncallable-regions "Uncallable Regions" "Contiguous regions where a call was not made. Must be inside the range given by 'ranges examined' in the given reference sequence and coordinate system."
 * #functional-effect "The effect of a variant on downstream biological products or pathways (from Sequence Ontology)."

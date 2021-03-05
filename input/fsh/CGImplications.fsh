@@ -51,7 +51,6 @@ Description:    "Finding of whether a particular genotype/haplotype/variation or
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     associated-phenotype 0..* and
-    associated-cancer 0..* and
     mode-of-inheritance	0..1 and
     clinical-significance 0..1 and
     functional-effect 0..*
