@@ -107,15 +107,15 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
 * component[variation-code].code = LNC#81252-9
 * component[variation-code] ^short = "Variation Code"
-* component[variation-code] ^definition = "The name of a structural variant reported using HGVS nomenclature."
+* component[variation-code] ^definition = "This term is used to report the unique identifier of the simple variant found in this study."
 * component[variation-code].value[x] only CodeableConcept
 * component[variation-code].value[x] ^binding.strength = #example
-* component[variation-code].value[x] ^binding.description = "Binding not yet defined"
+* component[variation-code].value[x] ^binding.description = "Multiple bindings acceptable"
 * component[variation-code].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[genomic-dna-chg].code = LNC#81290-9
 * component[genomic-dna-chg] ^short = "DNA Change - Genomic (gHGVS)"
-* component[genomic-dna-chg] ^definition = "The name of a structural variant reported using HGVS nomenclature."
+* component[genomic-dna-chg] ^definition = "HGVS nomenclature for the single DNA marker"
 * component[genomic-dna-chg].value[x] only CodeableConcept
 * component[genomic-dna-chg].value[x] 1..1
 * component[genomic-dna-chg].value[x] from HGVSVS (required)
@@ -133,7 +133,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[amino-acid-chg].value[x] from HGVSVS (required)
 * component[amino-acid-chg-type].code = LNC#48006-1
 * component[amino-acid-chg-type] ^short = "Amino acid change type"
-* component[amino-acid-chg-type] ^definition = "Codified type for associated Amino Acid Marker. Amino Acid Marker's use the HGVS notation which implies the Amino Acid Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience."
+* component[amino-acid-chg-type] ^definition = "Codified type for associated Amino Acid Marker. Amino Acid Markers use the HGVS notation which implies the Amino Acid Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience."
 * component[amino-acid-chg-type].value[x] only CodeableConcept
 * component[amino-acid-chg-type].value[x] 1..1
 * component[amino-acid-chg-type].value[x] from http://loinc.org/vs/LL380-7 (extensible)
@@ -142,14 +142,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[transcript-ref-seq] ^definition = "TThis field carries the ID for the transcribed reference sequence, which is the part of the genomic reference sequence that is converted to messenger RNA (i.e., after the introns are removed)."
 * component[transcript-ref-seq].value[x] only CodeableConcept
 * component[transcript-ref-seq].value[x] ^binding.strength = #example
-* component[transcript-ref-seq].value[x] ^binding.description = "Binding not yet defined"
+* component[transcript-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable"
 * component[transcript-ref-seq].value[x] 1..1
 * component[genomic-ref-seq].code = LNC#48013-7
 * component[genomic-ref-seq] ^short = "Genomic reference sequence ID"
 * component[genomic-ref-seq] ^definition = "This field carries the ID for the genomic reference sequence. The genomic reference sequence is a contiguous stretch of chromosome DNA that spans all of the exons of the gene and includes transcribed and non transcribed stretches. For this ID use either the NCBI genomic nucleotide RefSeq IDs with their version number (see: NCBI.NLM.NIH.Gov/RefSeq) or use the LRG identifiers, without transcript (t or p) extensions -- when they become available. (See- Report sponsored by GEN2PHEN at the European Bioinformatics Institute at Hinxton UK April 24-25, 2008). The NCI RefSeq genomic IDs are distinguished by a prefix of 'NG' for genes from the nuclear chromosomes and prefix of 'NC' for genes from mitochondria. The LRG Identifiers have a prefix of 'LRG_' Mitochondrial genes are not in the scope of LRG."
 * component[genomic-ref-seq].value[x] only CodeableConcept
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
-* component[genomic-ref-seq].value[x] ^binding.description = "Binding not yet defined"
+* component[genomic-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable"
 * component[genomic-ref-seq].value[x] 1..1
 // MLT: this should be "unbound (example)". Waiting on reply from FSH team on how to represent it.
 * component[sample-allelic-frequency].code = LNC#81258-6

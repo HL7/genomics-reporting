@@ -39,6 +39,15 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named bodyStructure 0..1
 * ^abstract = true
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slice based on the component.code pattern"
+* component contains conclusion-string 0..1
+* component[conclusion-string] ^short = "Clinical conclusion (interpretation) of the observation"
+* component[conclusion-string] ^definition = "Clinical conclusion (interpretation) of the observation"
+* component[conclusion-string].code = TbdCodes#conclusion-string
+* component[conclusion-string].value[x] only string
 
 Profile:        OverallInterpretation
 Parent:         GenomicsBase
