@@ -20,27 +20,40 @@ Description:    "HGVS-nomenclature is used to report and exchange information re
 * include codes from system HGVS
 
 ValueSet:       DNAChangeTypeVS
-Id:             dnachangetype
+Id:             dna-change-type
 Title:          "DNA Change Type"
 Description:    "DNA Change Type of a variant."
 * include codes from system SEQONT where concept is-a #SO:0002072
-// * include codes from system SEQONT  // MLT: follow-up with intensional value sets where the code has special characters. Trying to represent 'Include codes from http://sequenceontology.org where concept descends from SO:0002072'
 
 ValueSet:       TBDVS
 Id:             tbd
 Title:          "TBD Value Set"
 Description:    "Value Set for codes yet to be defined in LOINC"
-* include codes from system TBD
+* include codes from system TbdCodes
 
-ValueSet:       FunctionalAnnotationVS
-Id:             functional-annotations
-Title:          "Functional Annotation"
-Description:    "Functional annotation of a variant."
+ValueSet:       MolecularConsequenceVS
+Id:             molecular-consequence
+Title:          "Molecular Consequence"
+Description:    "Changes in a structural features of a sequence due to the observed variant."
 * include codes from system SEQONT where concept is-a #SO:0001537
+
+ValueSet:       FunctionalEffectVS
+Id:             functional-effect
+Title:          "Functional Effect"
+Description:    "The effect of a variant on downstream biological products or pathways."
+* include codes from system SEQONT where concept is-a #SO:0001536
 
 ValueSet:       VariantInheritanceVS
 Id:             variant-inheritance
-Title:          "Variant Inheritance (FSH)"
-Description:    "A quality inhering in a variant by virtue of its origin."
-* include codes from system SEQONT where concept is-a #SO:0001762
-* DataAbsentReason#asked-unknown
+Title:          "Variant Inheritance"
+Description:    "By which parent the variant was inherited in the patient, if known."
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* LNC#LA26320-4 "Maternal"
+* LNC#LA26321-2 "Paternal"
+* LNC#LA4489-6 "Unknown"
+
+ValueSet:       SeqPhaseRelationshipVS
+Id:             seq-phase-relationship
+Title:          "Sequence Phase Relationship"
+Description:    "Value Set for specific types of relationships"
+* codes from system SequencePhaseRelationshipCS

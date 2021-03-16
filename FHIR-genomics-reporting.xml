@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/2019Jan" ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting" defaultVersion="2.0.0" defaultWorkgroup="cg" gitUrl="https://github.com/HL7/genomics-reporting" xsi:noNamespaceSchemaLocation="../schemas/specification.xsd" url="http://hl7.org/fhir/uv/genomics-reporting"><version code="current" url="http://build.fhir.org/ig/HL7/genomics-reporting"/>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/2019Jan" ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting" defaultVersion="2.0.0" defaultWorkgroup="cg" gitUrl="https://github.com/HL7/genomics-reporting" url="http://hl7.org/fhir/uv/genomics-reporting">
+<version code="current" url="http://build.fhir.org/ig/HL7/genomics-reporting"/>
 <version code="2.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU2"/>
 <version code="1.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU1"/>
 <version code="0.3.0" url="http://hl7.org/fhir/uv/genomics-reporting/2019Jan"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2018May"/>
-<version code="0.1" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="Concept mapping for DNA Change Type"/>
 <artifact id="ValueSet/dna-change-type" key="ValueSet-dna-change-type" name="DNA Change Type"/>
-<artifact id="ValueSet/dnachangetype" key="ValueSet-dnachangetype" name="DNA Change Type"/>
 <artifact id="StructureDefinition/diagnostic-implication" key="StructureDefinition-diagnostic-implication" name="Diagnostic Implication"/>
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>
 <artifact id="Specimen/specimen-hla-r4" key="Specimen-specimen-hla-r4" name="Example - Buccal swab for HLA typing"/>
@@ -21,22 +20,33 @@
 <artifact id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="Example - Full Bundle Oncology Example"/>
 <artifact id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="Example - Genomics Reporting"/>
+<artifact id="DiagnosticReport/GenomicsReportExample01" key="DiagnosticReport-GenomicsReportExample01" name="Example - GenomicsReport"/>
+<artifact id="Observation/GenotypeExample1" key="Observation-GenotypeExample1" name="Example - Genotype"/>
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="Example - HLA genotyping for HLA-A, using GLStrings"/>
-<artifact id="Bundle/HLAB1502-pgx-example" key="Bundle-HLAB1502-pgx-example" name="Example - High Risk Allele (HLA-B*15:02)"/>
 <artifact id="Observation/obs-idh-ex" key="Observation-obs-idh-ex" name="Example - Inherited Disease Pathogenicity"/>
+<artifact id="Observation/MicrosatelliteInstabilityExample01" key="Observation-MicrosatelliteInstabilityExample01" name="Example - MSI"/>
 <artifact id="Bundle/oncology-diagnostic" key="Bundle-oncology-diagnostic" name="Example - Melanoma implication"/>
 <artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="Example - NGS"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="Example - Observation for a single HLA-A allele"/>
+<artifact id="Observation/OverallInterpExample1" key="Observation-OverallInterpExample1" name="Example - Overall Interpretation"/>
 <artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name="Example - Patient"/>
 <artifact id="Bundle/diagnosticreport-pgxexample" key="Bundle-diagnosticreport-pgxexample" name="Example - Pharmacogenomics"/>
+<artifact id="Observation/SequencePhaseRelationExample1" key="Observation-SequencePhaseRelationExample1" name="Example - Sequence Phase Relation"/>
+<artifact id="ServiceRequest/GenomicsServiceRequestExample01" key="ServiceRequest-GenomicsServiceRequestExample01" name="Example - Service Request"/>
 <artifact id="ServiceRequest/servicerequest-hla-a-r4" key="ServiceRequest-servicerequest-hla-a-r4" name="Example - Service request for high-resolution HLA-A genotyping"/>
 <artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Specimen"/>
+<artifact id="Observation/TumorMutationBurdenExample01" key="Observation-TumorMutationBurdenExample01" name="Example - TMB"/>
+<artifact id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
+<artifact id="Observation/TherapeuticImplicationExample1" key="Observation-TherapeuticImplicationExample1" name="Example - TherapeuticImplication"/>
 <artifact id="DiagnosticReport/AnnotationExample" key="DiagnosticReport-AnnotationExample" name="Example - Variant with ACMG Screening"/>
+<artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example - Variant1"/>
+<artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="Example - Variant2"/>
 <artifact id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
-<artifact id="ValueSet/functional-annotations" key="ValueSet-functional-annotations" name="Functional Annotation"/>
-<artifact id="ValueSet/functional-annotation" key="ValueSet-functional-annotation" name="Functional Annotations"/>
+<artifact id="Observation/RegionStudiedExample1" key="Observation-RegionStudiedExample1" name="Example Observation - RegionStudiedExample1"/>
+<artifact id="Organization/ExampleOrg" key="Organization-ExampleOrg" name="Example Org"/>
+<artifact id="ValueSet/functional-effect" key="ValueSet-functional-effect" name="Functional Effect"/>
 <artifact id="StructureDefinition/finding" key="StructureDefinition-finding" name="Genomic Finding"/>
 <artifact id="StructureDefinition/implication" key="StructureDefinition-implication" name="Genomic Implication"/>
 <artifact id="StructureDefinition/genomics-base" key="StructureDefinition-genomics-base" name="Genomics Base"/>
@@ -50,6 +60,7 @@
 <artifact deprecated="true" key="ImplementationGuide" name="ImplementationGuide"/>
 <artifact id="StructureDefinition/task-med-chg" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
 <artifact id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite instability"/>
+<artifact id="ValueSet/molecular-consequence" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
 <artifact deprecated="true" key="Sequence" name="MolecularSequence"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="OperationDefinition/find-subject-variants" key="OperationDefinition-find-subject-variants" name="Operation: $find-subject-variants"/>
@@ -59,12 +70,13 @@
 <artifact id="StructureDefinition/region-studied" key="StructureDefinition-region-studied" name="Region Studied"/>
 <artifact id="StructureDefinition/RelatedArtifact" key="StructureDefinition-RelatedArtifact" name="Related Artifact"/>
 <artifact id="StructureDefinition/servicerequest" key="StructureDefinition-servicerequest" name="Request for Genomics Test"/>
+<artifact id="StructureDefinition/diagnosticReport-risk" key="StructureDefinition-diagnosticReport-risk" name="Risk Assessment Reference"/>
 <artifact id="StructureDefinition/sequence-phase-relationship" key="StructureDefinition-sequence-phase-relationship" name="Sequence Phase Relationship"/>
-<artifact id="CodeSystem/seq-phase-relationship" key="CodeSystem-seq-phase-relationship" name="Sequence Phase Relationship"/>
+<artifact id="CodeSystem/SequencePhaseRelationshipCS" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship"/>
 <artifact id="ValueSet/seq-phase-relationship" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationship"/>
 <artifact id="StructureDefinition/specimen" key="StructureDefinition-specimen" name="Specimen"/>
 <artifact id="StructureDefinition/SupportingInfo" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
-<artifact id="CodeSystem/tbd-codes" key="CodeSystem-tbd-codes" name="TBD Code System"/>
+<artifact id="CodeSystem/TbdCodes" key="CodeSystem-TbdCodes" name="TBD Code System"/>
 <artifact id="ValueSet/tbd" key="ValueSet-tbd" name="TBD Value Set"/>
 <artifact deprecated="true" key="Task" name="Task"/>
 <artifact id="StructureDefinition/therapeutic-implication" key="StructureDefinition-therapeutic-implication" name="Therapeutic Implication"/>

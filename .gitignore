@@ -1,11 +1,11 @@
-output
-/temp
-*.dropbox
-/src/resources/desktop.ini
-src/.DS_Store
-.DS_Store
+# Temporary folders #
+#####################
 /temp/
-/fsh-generated
+/template/
+/output/
+/fsh-generated/
+/input-cache/
+
 ### Windows template
 # Windows thumbnail cache files
 Thumbs.db
@@ -95,6 +95,7 @@ fabric.properties
 .idea/httpRequests
 ### macOS template
 # General
+**/.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -178,3 +179,4 @@ local.properties
 .worksheet
 /.idea/
 *.jar
+/input-cache/txcache/

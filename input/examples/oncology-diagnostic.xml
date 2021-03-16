@@ -275,7 +275,7 @@
             </category>
            <code>
             <coding>
-              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
               <code value="diagnostic-implication"/>
               <display value="Diagnostic Implication"/>
             </coding>
@@ -324,18 +324,17 @@
                   </coding>
                </code>
                <valueCodeableConcept>
-                  <!--coding>
-                     <system value="AMP/ASCO/CAP guidelines"/>
-                     <code value="A"/>
-                     <display value="Level A evidence"/>
-                  </coding-->
-                  <text value="AMP/ASCO/CAP guidelines - Level A"/>
+                  <coding>
+                     <system value="http://loinc.org"/>
+                     <code value="LA30200-2"/>
+                     <display value="Very strong evidence pathogenic"/>
+                  </coding>
                </valueCodeableConcept>
             </component>
             <component>
                <code>
                   <coding>
-                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+                     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
                      <code value="associated-cancer"/>
                   </coding>
                </code>
@@ -361,6 +360,12 @@
                <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
             </meta>
             <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+                  <code value="GE"/>
+               </coding>
+            </category>
             <code>
                <coding>
                   <system value="http://loinc.org"/>

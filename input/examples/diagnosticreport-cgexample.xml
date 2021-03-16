@@ -81,6 +81,12 @@ New:
           <reference value="DiagnosticRequest/request"/>
         </basedOn>
         <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+            <code value="GE"/>
+          </coding>
+        </category>
         <code>
           <coding>
             <!-- Top (same as diagnostic request -->
@@ -605,8 +611,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- B.10 Genomic DNA change -->
-              <system value="http://example.org/HGVS.g"/>
-              <version value="15.11"/>
+              <system value="http://varnomen.hgvs.org"/>
               <!-- A.13 HGVS version -->
               <code value="NC_000003.11:g.128625063C>T"/>
             </coding>
@@ -640,7 +645,7 @@ New:
             <coding>
               <!-- B.5 DNA change cHGVS -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/HGVS.c"/>
+              <system value="http://varnomen.hgvs.org"/>
               <version value="15.11"/>
               <!-- A.13 HGVS version -->
               <code value="c.1249C>T"/>
@@ -660,7 +665,7 @@ New:
             <coding>
               <!-- B.6 Amino acid change pHGVS -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/HGVS.p"/>
+              <system value="http://varnomen.hgvs.org"/>
               <version value="15.11"/>
               <!-- A.13 HGVS version -->
               <code value="p.Arg417Cys"/>
@@ -714,7 +719,7 @@ New:
         <component>
           <code>
             <coding>
-              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
               <code value="exact-start-end"/>
             </coding>
           </code>
@@ -934,7 +939,7 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
             <code value="diagnostic-implication"/>
           </coding>
         </code>
@@ -1049,7 +1054,7 @@ New:
               <display value="NM_000106.5(CYP2D):c.[886C>T;457G>C] – Haplotype"/>
             </coding>
             <coding>
-              <system value="http://example.org/hgvs"/>
+              <system value="http://varnomen.hgvs.org"/>
               <code value="c.[886C>T;457G>C"/>
             </coding>
           </valueCodeableConcept>
@@ -1094,7 +1099,7 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
             <code value="diagnostic-implication"/>
           </coding>
         </code>
@@ -1236,7 +1241,7 @@ New:
             <coding>
               <!-- D.3(B.5) DNA change cHGVS -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/HGVS.c"/>
+              <system value="http://varnomen.hgvs.org"/>
               <version value="15.11"/>
               <!-- A.13 HGVS version -->
               <code value="c.886C>T"/>
@@ -1256,7 +1261,7 @@ New:
             <coding>
               <!-- D.4(B.6) Amino acid change pHGVS -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/HGVS.p"/>
+              <system value="http://varnomen.hgvs.org"/>
               <version value="15.11"/>
               <!-- A.13 HGVS version -->
               <code value="p.Arg296Cys"/>
@@ -1392,7 +1397,7 @@ New:
             <coding>
               <!-- E.3(B.5) DNA change cHGVS -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/HGVS.c"/>
+              <system value="http://varnomen.hgvs.org"/>
               <version value="15.11"/>
               <!-- A.13 HGVS version -->
               <code value="c.1457G>C"/>
@@ -1431,7 +1436,7 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
             <code value="grouper"/>
           </coding>
         </code>
@@ -1619,7 +1624,7 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
             <code value="therapeutic-implication"/>
           </coding>
         </code>
@@ -1691,7 +1696,7 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
             <code value="therapeutic-implication"/>
           </coding>
         </code>
@@ -1762,7 +1767,7 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
             <code value="therapeutic-implication"/>
           </coding>
         </code>

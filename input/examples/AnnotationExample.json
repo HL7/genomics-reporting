@@ -7,6 +7,17 @@
     ]
   },
   "status":"final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code": "GE",
+          "display": "Genetics"
+        }
+      ]
+    }
+  ],
   "code": {
     "coding": [
       {
@@ -40,7 +51,7 @@
       "code": {
         "coding": [
           {
-            "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes",
+            "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
             "code": "diagnostic-implication",
             "display": "Diagnostic Implication"
           }
@@ -49,9 +60,6 @@
       "subject": {
         "reference": "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
       },
-      "derivedFrom":[{
-        "reference": "#2"
-      }],
       "component": [
         {
           "code": {
@@ -261,7 +269,7 @@
           "code": {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes",
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
                 "code": "exact-start-end",
                 "display": "Variant exact start and end"
               }
