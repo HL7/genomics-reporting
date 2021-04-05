@@ -380,8 +380,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-//* extension[relatedArtifact].valueRelatedArtifact.type = #justification
-//* insert RelatedArtifact(https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)
+* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
+* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -394,8 +394,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
-* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
+* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
+* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -408,8 +408,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0008845 "citalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
-* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
+* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -436,8 +436,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
-* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
+* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
+* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -476,8 +476,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0043031 "warfarin"
 * component[effect-medication-metabolism].valueCodeableConcept.text = "Extensive metabolizer"
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
-* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
+* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
+* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
 * derivedFrom[0] = Reference(Pgx-geno-1002)
 * derivedFrom[1] = Reference(Pgx-geno-1003)
 * status = #final
