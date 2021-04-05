@@ -422,8 +422,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
-* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
+* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
