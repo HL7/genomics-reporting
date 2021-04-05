@@ -81,7 +81,7 @@ Description: "Example for Variant given by ClinVar ID"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11"
 * component[variation-code].valueCodeableConcept = CLINVAR#619728 "NC_000019.8:g.1171707G>A"
 //* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
-* component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
 
 Instance: VariantExample2
 InstanceOf: Variant
@@ -205,3 +205,348 @@ Description: "Example for Genomic Region Studied; based on a sample Whole Exome 
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:7527 "MUTYH"
 * component[ranges-examined].valueRange.low.value = 45796891
 * component[ranges-examined].valueRange.high.value = 45796891
+
+Instance: Pgx-var-1011
+InstanceOf: Variant
+Description: "Example variant 1011"
+* id = "Pgx-var-1011"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+
+//* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+//* component[transcript-ref-seq].valueCodeableConcept = NUC#NM_000769.2
+//* component[exact-start-end].valueRange.low.value = 96521657
+//* component[ref-allele].valueString = "C"
+//* component[alt-allele].valueString = "C"
+//* component[RefSequenceAssembly].valueCodeableConcept = LNC#LA14029-5 "hg19"
+//* component[chromosome-identifier].valueCodeableConcept = LNC#LA21263-1 "Chromosome 10"
+
+Instance: Pgx-var-1012
+InstanceOf: Variant
+Description: "Example variant 1012"
+* id = "Pgx-var-1012"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+
+Instance: Pgx-var-1013
+InstanceOf: Variant
+Description: "Example variant 1013"
+* id = "Pgx-var-1013"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+
+Instance: Pgx-var-1014
+InstanceOf: Variant
+Description: "Example variant 1014"
+* id = "Pgx-var-1014"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+
+Instance: Pgx-var-1015
+InstanceOf: Variant
+Description: "Example variant 1015"
+* id = "Pgx-var-1015"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+
+Instance: Pgx-var-1016
+InstanceOf: Variant
+Description: "Example variant 1016"
+* id = "Pgx-var-1016"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+
+Instance: Pgx-var-1017
+InstanceOf: Variant
+Description: "Example variant 1017"
+* id = "Pgx-var-1017"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+
+Instance: Pgx-var-1018
+InstanceOf: Variant
+Description: "Example variant 1018"
+* id = "Pgx-var-1018"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+
+Instance: Pgx-geno-1001
+InstanceOf: Genotype
+Description: "Example of a Genotype from eMERGE"
+* id = "Pgx-geno-1001"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/clinvar#638797 "CYP2C19*2/*2"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* effectiveDateTime = "2020-01-01"
+* specimen = Reference(GenomicSpecimenExample01)
+* subject = Reference(CGPatientExample01)
+* status = #final
+* derivedFrom[0] = Reference(Pgx-var-1011)
+* derivedFrom[1] = Reference(Pgx-var-1012)
+* derivedFrom[2] = Reference(Pgx-var-1013)
+* derivedFrom[3] = Reference(Pgx-var-1014)
+* derivedFrom[4] = Reference(Pgx-var-1015)
+* derivedFrom[5] = Reference(Pgx-var-1016)
+* derivedFrom[6] = Reference(Pgx-var-1017)
+* derivedFrom[7] = Reference(Pgx-var-1018)
+
+
+Instance: TxImp01
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication from eMERGE"
+* id = "TxImp01"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#therapeutic-implication
+* component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
+* component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
+//* extension[relatedArtifact].valueRelatedArtifact.type = #justification
+//* insert RelatedArtifact(https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)
+* derivedFrom = Reference(Pgx-geno-1001)
+* status = #final
+
+Instance: TxImp02
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication from eMERGE"
+* id = "TxImp02"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#therapeutic-implication
+* component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
+* component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
+* derivedFrom = Reference(Pgx-geno-1001)
+* status = #final
+
+Instance: TxImp03
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication from eMERGE"
+* id = "TxImp03"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#therapeutic-implication
+* component[medication-assessed].valueCodeableConcept = MetaT#C0008845 "citalopram"
+* component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* derivedFrom = Reference(Pgx-geno-1001)
+* status = #final
+
+Instance: TxImp04
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication from eMERGE"
+* id = "TxImp04"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#therapeutic-implication
+* component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
+* component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* derivedFrom = Reference(Pgx-geno-1001)
+* status = #final
+
+Instance: TxImp05
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication from eMERGE"
+* id = "TxImp05"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#therapeutic-implication
+* component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
+* component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
+* derivedFrom = Reference(Pgx-geno-1001)
+* status = #final
+
+Instance: Pgx-geno-1002
+InstanceOf: Genotype
+Description: "Example of a Genotype from eMERGE"
+* id = "Pgx-geno-1002"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.text = "CYP2C9*1/*1"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
+* effectiveDateTime = "2020-01-01"
+* specimen = Reference(GenomicSpecimenExample01)
+* subject = Reference(CGPatientExample01)
+* status = #final
+//* derivedFrom[0] = Reference(Pgx-var-1011)
+
+Instance: Pgx-geno-1003
+InstanceOf: Genotype
+Description: "Example of a Genotype from eMERGE"
+* id = "Pgx-geno-1003"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.text = "VKORC1 rs9923231 C/T"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
+* effectiveDateTime = "2020-01-01"
+* specimen = Reference(GenomicSpecimenExample01)
+* subject = Reference(CGPatientExample01)
+* status = #final
+//* derivedFrom[0] = Reference(Pgx-var-1011)
+
+Instance: TxImp06
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication from eMERGE"
+* id = "TxImp06"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#therapeutic-implication
+* component[medication-assessed].valueCodeableConcept = MetaT#C0043031 "warfarin"
+* component[effect-medication-metabolism].valueCodeableConcept.text = "Extensive metabolizer"
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact"
+* extension[0].valueString = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
+* derivedFrom[0] = Reference(Pgx-geno-1002)
+* derivedFrom[1] = Reference(Pgx-geno-1003)
+* status = #final
+
+
+Instance: GrouperEx01
+InstanceOf: Grouper
+Description: "Observations associated with CYP2C19 genotype"
+* id = "GrouperEx01"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* status = #final
+
+* hasMember[genotype] = Reference(Pgx-geno-1001)
+* hasMember[therapeutic-implication][0] = Reference(TxImp01)
+* hasMember[therapeutic-implication][1] = Reference(TxImp02)
+* hasMember[therapeutic-implication][2] = Reference(TxImp03)
+* hasMember[therapeutic-implication][3] = Reference(TxImp04)
+* hasMember[therapeutic-implication][4] = Reference(TxImp05)
+* hasMember[variant][0] = Reference(Pgx-var-1011)
+* hasMember[variant][1] = Reference(Pgx-var-1012)
+* hasMember[variant][2] = Reference(Pgx-var-1013)
+* hasMember[variant][3] = Reference(Pgx-var-1014)
+* hasMember[variant][4] = Reference(Pgx-var-1015)
+* hasMember[variant][5] = Reference(Pgx-var-1016)
+* hasMember[variant][6] = Reference(Pgx-var-1017)
+* hasMember[variant][7] = Reference(Pgx-var-1018)
+
+Instance: GrouperEx02
+InstanceOf: Grouper
+Description: "Observations associated with Warfarin sensitivity (variants not included)"
+* id = "GrouperEx02"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#grouper
+* hasMember[genotype][0] = Reference(Pgx-geno-1002)
+* hasMember[genotype][1] = Reference(Pgx-geno-1003)
+* hasMember[therapeutic-implication] = Reference(TxImp06)
+//* variants if needed
+
+* status = #final
+
+Instance: RegionStudiedPGx1
+InstanceOf: RegionStudied
+Description: "Example PGx panel region studied"
+* id = "RegionStudiedPGx1"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* status = #final
+* component[region-description].valueString = "All genes have 100% of targeted bases sequenced to redundant coverage of 20x or greater with the following exceptions: APOB(99.96%)..."
+
+Instance: PGxGenomicsReportEMERGE
+InstanceOf: GenomicsReport
+Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
+* id = "PGxGenomicsReportEMERGE"
+* basedOn = Reference(GenomicsServiceRequestExample01)
+* code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* effectiveDateTime = "2020-01-01T00:00:00-05:00"
+* issued = "2020-01-01T00:00:00-05:00"
+* performer = Reference(ExampleOrg)
+* subject = Reference(CGPatientExample01)
+* result[0] = Reference(GrouperEx01)
+* result[1] = Reference(GrouperEx02)
+* result[2] = Reference(RegionStudiedPGx1) 
+* status = #final
+
+Instance: PGxRecFollowup01
+InstanceOf: TaskRecFollowup
+Description: "Example of a Medication Usage Task"
+* id = "PGxRecFollowup01"
+* code = LNC#LA14020-4
+* description = "It is recommended that correlation of these findings with the clinical phenotype be performed. Genetic counseling for the patient and at-risk family members is recommended.."
+* for = Reference(CGPatientExample01)
+* intent = #proposal
+* reasonReference = Reference(TxImp06)
