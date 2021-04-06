@@ -242,7 +242,7 @@ Description: "Example variant 1012"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -259,7 +259,7 @@ Description: "Example variant 1013"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -276,7 +276,7 @@ Description: "Example variant 1014"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -293,7 +293,7 @@ Description: "Example variant 1015"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -310,7 +310,7 @@ Description: "Example variant 1016"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -327,7 +327,7 @@ Description: "Example variant 1017"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -344,7 +344,7 @@ Description: "Example variant 1018"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -380,8 +380,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
-* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
+* component[conclusion-string].valueString = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram. For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
+//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
+//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -394,8 +395,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
-* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
+* component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/. "
+//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
+//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -408,8 +410,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0008845 "citalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
-* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* component[conclusion-string].valueString = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
+//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
+//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -422,8 +425,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
-* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations. "
+//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
+//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -436,8 +440,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
-* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
+* component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations. "
+//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
+//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -475,70 +480,113 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0043031 "warfarin"
-* component[effect-medication-metabolism].valueCodeableConcept.text = "Extensive metabolizer"
-* extension[CGRelatedArtifact].valueRelatedArtifact.type = #documentation
-* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
+* component[effect-medication-metabolism].valueCodeableConcept = LNC#LA25391-6 "Normal metabolizer"
+* component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
+//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
+//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
 * derivedFrom[0] = Reference(Pgx-geno-1002)
+* derivedFrom[0].display = "CYP2C9*1/*1"
 * derivedFrom[1] = Reference(Pgx-geno-1003)
+* derivedFrom[1].display = "VKORC1 rs9923231 C/T"
 * status = #final
 
 
 Instance: GrouperEx01
 InstanceOf: Grouper
-Description: "Observations associated with CYP2C19 genotype"
+Description: "Therapeutic Implications"
 * id = "GrouperEx01"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * status = #final
-
-* hasMember[genotype] = Reference(Pgx-geno-1001)
-* hasMember[therapeutic-implication][0] = Reference(TxImp01)
-* hasMember[therapeutic-implication][1] = Reference(TxImp02)
-* hasMember[therapeutic-implication][2] = Reference(TxImp03)
-* hasMember[therapeutic-implication][3] = Reference(TxImp04)
-* hasMember[therapeutic-implication][4] = Reference(TxImp05)
-* hasMember[variant][0] = Reference(Pgx-var-1011)
-* hasMember[variant][1] = Reference(Pgx-var-1012)
-* hasMember[variant][2] = Reference(Pgx-var-1013)
-* hasMember[variant][3] = Reference(Pgx-var-1014)
-* hasMember[variant][4] = Reference(Pgx-var-1015)
-* hasMember[variant][5] = Reference(Pgx-var-1016)
-* hasMember[variant][6] = Reference(Pgx-var-1017)
-* hasMember[variant][7] = Reference(Pgx-var-1018)
+* hasMember[therapeutic-implication][0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
+* hasMember[therapeutic-implication][1] = Reference(TxImp02) "voriconazole, poor metabolizer"
+* hasMember[therapeutic-implication][2] = Reference(TxImp03) "citalopram, poor metabolizer"
+* hasMember[therapeutic-implication][3] = Reference(TxImp04) "escitalopram, poor metabolizer"
+* hasMember[therapeutic-implication][4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
+* hasMember[therapeutic-implication][5] = Reference(TxImp06) "medium sensitivity to warfarin"
 
 Instance: GrouperEx02
 InstanceOf: Grouper
-Description: "Observations associated with Warfarin sensitivity (variants not included)"
+Description: "Genotypes"
 * id = "GrouperEx02"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodes#grouper
-* hasMember[genotype][0] = Reference(Pgx-geno-1002)
-* hasMember[genotype][1] = Reference(Pgx-geno-1003)
-* hasMember[therapeutic-implication] = Reference(TxImp06)
-//* variants if needed
-
 * status = #final
+* hasMember[genotype][0] = Reference(Pgx-geno-1002)
+* hasMember[genotype][0].display = "CYP2C9*1/*1"
+* hasMember[genotype][1] = Reference(Pgx-geno-1003)
+* hasMember[genotype][1].display = "VKORC1 rs9923231 C/T"
+* hasMember[genotype][2] = Reference(Pgx-geno-1001)
+* hasMember[genotype][2].display = "CYP2C19 *1/*1"
+
+Instance: GrouperEx03
+InstanceOf: Grouper
+Description: "Regions Studied and variant info"
+* id = "GrouperEx03"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#grouper
+* status = #final
+* hasMember[variant][0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
+* hasMember[variant][1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
+* hasMember[variant][2] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
+* hasMember[variant][3] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
+* hasMember[variant][4] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
+* hasMember[variant][5] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
+* hasMember[variant][6] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
+* hasMember[variant][7] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
+* hasMember[region-studied][0] = Reference(RegionStudiedPGx1) "CYP2C19"
+* hasMember[region-studied][1] = Reference(RegionStudiedPGx2) "CYP2C9"
+* hasMember[region-studied][2] = Reference(RegionStudiedPGx3) "VKORC1"
+
+//* variants if needed
 
 Instance: RegionStudiedPGx1
 InstanceOf: RegionStudied
-Description: "Example PGx panel region studied"
+Description: "eMERGE PGx CYP2C19"
 * id = "RegionStudiedPGx1"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * status = #final
-* component[region-description].valueString = "All genes have 100% of targeted bases sequenced to redundant coverage of 20x or greater with the following exceptions: APOB(99.96%)..."
+* component[region-description].valueString = "protein-coding and exon-splicing regions."
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[region-coverage].valueQuantity.value = 20
+
+
+Instance: RegionStudiedPGx2
+InstanceOf: RegionStudied
+Description: "eMERGE PGx CYP2C9"
+* id = "RegionStudiedPGx2"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* status = #final
+* component[region-description].valueString = "protein-coding and exon-splicing regions."
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
+* component[region-coverage].valueQuantity.value = 20
+
+Instance: RegionStudiedPGx3
+InstanceOf: RegionStudied
+Description: "eMERGE PGx VKORC1"
+* id = "RegionStudiedPGx3"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* status = #final
+* component[region-description].valueString = "protein-coding and exon-splicing regions."
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
+* component[region-coverage].valueQuantity.value = 20
+
 
 Instance: PGxGenomicsReportEMERGE
 InstanceOf: GenomicsReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
 * id = "PGxGenomicsReportEMERGE"
-* basedOn = Reference(GenomicsServiceRequestExample01)
+* basedOn = Reference(eMERGEServiceRequest)
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* result[0] = Reference(GrouperEx01)
-* result[1] = Reference(GrouperEx02)
-* result[2] = Reference(RegionStudiedPGx1) 
+* result[0] = Reference(GrouperEx01) 
+* result[0].display = "Therapeutic Implications"
+* result[1] = Reference(GrouperEx02) 
+* result[1].display = "Genotypes"
+* result[2] = Reference(GrouperEx03) 
+* result[2].display = "Regions studied and Variants"
 * status = #final
 
 Instance: PGxRecFollowup01
@@ -550,3 +598,30 @@ Description: "Example of a Medication Usage Task"
 * for = Reference(CGPatientExample01)
 * intent = #proposal
 * reasonReference = Reference(TxImp06)
+
+Instance: eMERGEServiceRequest
+InstanceOf: servicerequest
+Description: "Example for Service Request"
+* id = "eMERGEServiceRequest"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
+* status = RequestStatus#completed "completed"
+* code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* subject = Reference(CGPatientExample01)
+* intent = RequestIntent#order "Order"
+* specimen = Reference(GenomicSpecimenExample01)
+//* instantiatesCanonical = Reference(eMERGEPD)
+
+/*
+Instance: eMERGEPD
+InstanceOf: PlanDefinition
+Description: "Example Plan Definition from eMERGE"
+* id = "eMERGEPD"
+* url = "urn:uuid:69aaa45b-5c23-44cf-bfae-fd2d7b74a656"
+* type.coding = http://terminology.hl7.org/CodeSystem/plan-definition-type#protocol
+* status = #active
+* description = "This test interrogates the protein-coding and exon-splicing regions of 109 genes as well as 1551 single-nucleotide polymorphisms that may impact human health and disease. Clinical interpretation and reporting are provided for pathogenic and likely pathogenic variants for genes and single nucleotide polymorphisms as described in the methodology section.",
+//* relatedArtifact[0].type = #citation
+//* relatedArtifact[0].citation = "Illumina, Inc. (2011) Multiplexing Sample Preparation Guide (Part # 1005361 Rev. D). 2011."
+* action[0].prefix = "1"
+* action[0].description = "1. eMERGE-Seq Version 2 NGS Panel: for the paired-end pre-capture library procedure, genome DNA is fragmented by sonicating genome DNA and ligating to the Illumina multiplexing PE adapters (reference 1).  The adapter-ligated DNA is then PCR amplified using primers with sequencing barcodes (indexes). For target enrichment capture procedure, the pre-capture library is enriched by hybridizing to biotin labeled in-solution probes&nbsp;(reference 2) at&nbsp; 56&deg;C for 16 - 19 hours.&nbsp; For massively parallel sequencing, the post-capture library DNA is subjected to sequence analysis on Illumina HiSeq platform for 100 bp paired-end reads. The following quality control metrics of the sequencing data are generally achieved: &gt;70% of reads aligned to target, &gt;99% target base covered at &gt;20X, &gt;98% target base covered at &gt;40X, average coverage of target bases &gt;200X. SNP concordance to SNPTrace genotype array: &gt;99%. This test may not provide detection of certain genes or portions of certain genes due to local sequence characteristics or the presence of closely related pseudogenes. Gross deletions or duplications, changes from repetitive sequences may not be accurately identified by this methodology. Genomic rearrangements cannot be detected by this assay."
+*/
