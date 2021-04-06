@@ -193,7 +193,7 @@ Description: "Example for Overall Interpretation."
 * subject = Reference(CGPatientExample01)
 * specimen = Reference(GenomicSpecimenExample01)
 * status = #final
-* note.text = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
+* component[conclusion-string].valueString = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
 Instance: RegionStudiedExample1
 InstanceOf: RegionStudied
@@ -222,14 +222,6 @@ Description: "Example variant 1011"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
-
-//* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
-//* component[transcript-ref-seq].valueCodeableConcept = NUC#NM_000769.2
-//* component[exact-start-end].valueRange.low.value = 96521657
-//* component[ref-allele].valueString = "C"
-//* component[alt-allele].valueString = "C"
-//* component[RefSequenceAssembly].valueCodeableConcept = LNC#LA14029-5 "hg19"
-//* component[chromosome-identifier].valueCodeableConcept = LNC#LA21263-1 "Chromosome 10"
 
 Instance: Pgx-var-1012
 InstanceOf: Variant
@@ -380,7 +372,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* component[conclusion-string].valueString = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram. For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
+* component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
 //* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
 //* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 * derivedFrom = Reference(Pgx-geno-1001)
@@ -395,7 +387,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/. "
+* component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
 //* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
 //* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
@@ -425,7 +417,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations. "
+* component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 //* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
 //* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
@@ -440,7 +432,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * code = TbdCodes#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
-* component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations. "
+* component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 //* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
 //* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
@@ -512,11 +504,11 @@ Description: "Genotypes"
 * code = TbdCodes#grouper
 * status = #final
 * hasMember[genotype][0] = Reference(Pgx-geno-1002)
-* hasMember[genotype][0].display = "CYP2C9*1/*1"
+* hasMember[genotype][0].display = "CYP2C9*2/*2"
 * hasMember[genotype][1] = Reference(Pgx-geno-1003)
 * hasMember[genotype][1].display = "VKORC1 rs9923231 C/T"
 * hasMember[genotype][2] = Reference(Pgx-geno-1001)
-* hasMember[genotype][2].display = "CYP2C19 *1/*1"
+* hasMember[genotype][2].display = "CYP2C19*1/*1"
 
 Instance: GrouperEx03
 InstanceOf: Grouper
@@ -581,23 +573,72 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* result[0] = Reference(GrouperEx01) 
-* result[0].display = "Therapeutic Implications"
-* result[1] = Reference(GrouperEx02) 
-* result[1].display = "Genotypes"
-* result[2] = Reference(GrouperEx03) 
-* result[2].display = "Regions studied and Variants"
+* result[0] = Reference(OverallInterpExample2) "gene-drug interactions found."
+* result[1] = Reference(GrouperEx01) "Therapeutic Implications"
+* result[2] = Reference(GrouperEx02) "Genotypes"
+* result[3] = Reference(GrouperEx03) "Regions studied and Variants"
+* extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
+* extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
+* extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
+* extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
+* extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
 * status = #final
 
-Instance: PGxRecFollowup01
+Instance: PGxRecEx01
 InstanceOf: TaskRecFollowup
-Description: "Example of a Medication Usage Task"
-* id = "PGxRecFollowup01"
-* code = LNC#LA14020-4
-* description = "It is recommended that correlation of these findings with the clinical phenotype be performed. Genetic counseling for the patient and at-risk family members is recommended.."
+Description: "Example of a Medication Usage Task for alternatives to clopidogrel"
+* id = "PGxRecEx01"
+* code = LNC#LA26421-0 "Consider alternative medication"
+* description = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
 * for = Reference(CGPatientExample01)
-* intent = #proposal
-* reasonReference = Reference(TxImp06)
+* reasonReference = Reference(TxImp01) "Poor metabolizer"
+
+Instance: PGxRecEx02
+InstanceOf: TaskRecFollowup
+Description: "Example of a Medication Usage Task for alternatives to voriconazole"
+* id = "PGxRecEx02"
+* code = LNC#LA26421-0 "Consider alternative medication"
+* description = "voriconazole - An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
+* for = Reference(CGPatientExample01)
+* reasonReference = Reference(TxImp02) "Poor metabolizer"
+
+Instance: PGxRecEx03
+InstanceOf: TaskRecFollowup
+Description: "Example of a Medication Usage Task for decreasing dosage for citalopram"
+* id = "PGxRecEx03"
+* code = LNC#LA26422-8 "Decrease dose"
+* description = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
+* for = Reference(CGPatientExample01)
+* reasonReference = Reference(TxImp03) "Poor metabolizer"
+
+Instance: PGxRecEx04
+InstanceOf: TaskRecFollowup
+Description: "Example of a Medication Usage Task for decreasing dosage for escitalopram"
+* id = "PGxRecEx04"
+* code = LNC#LA26422-8 "Decrease dose"
+* description = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
+* for = Reference(CGPatientExample01)
+* reasonReference = Reference(TxImp04) "Poor metabolizer"
+
+Instance: PGxRecEx05
+InstanceOf: TaskRecFollowup
+Description: "Example of a Medication Usage Task for decreasing dosage for amitriptyline"
+* id = "PGxRecEx05"
+* code = LNC#LA26422-8 "Decrease dose"
+* description = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
+* for = Reference(CGPatientExample01)
+* reasonReference = Reference(TxImp05) "Poor metabolizer"
+
+Instance: OverallInterpExample2
+InstanceOf: OverallInterpretation
+Description: "Example for Overall Interpretation."
+* id = "OverallInterpExample2"
+* valueCodeableConcept = LNC#LA6576-8 "Positive"
+* subject = Reference(CGPatientExample01)
+* specimen = Reference(GenomicSpecimenExample01)
+* status = #final
+* component[conclusion-string].valueString = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram."
+
 
 Instance: eMERGEServiceRequest
 InstanceOf: servicerequest
@@ -625,3 +666,4 @@ Description: "Example Plan Definition from eMERGE"
 * action[0].prefix = "1"
 * action[0].description = "1. eMERGE-Seq Version 2 NGS Panel: for the paired-end pre-capture library procedure, genome DNA is fragmented by sonicating genome DNA and ligating to the Illumina multiplexing PE adapters (reference 1).  The adapter-ligated DNA is then PCR amplified using primers with sequencing barcodes (indexes). For target enrichment capture procedure, the pre-capture library is enriched by hybridizing to biotin labeled in-solution probes&nbsp;(reference 2) at&nbsp; 56&deg;C for 16 - 19 hours.&nbsp; For massively parallel sequencing, the post-capture library DNA is subjected to sequence analysis on Illumina HiSeq platform for 100 bp paired-end reads. The following quality control metrics of the sequencing data are generally achieved: &gt;70% of reads aligned to target, &gt;99% target base covered at &gt;20X, &gt;98% target base covered at &gt;40X, average coverage of target bases &gt;200X. SNP concordance to SNPTrace genotype array: &gt;99%. This test may not provide detection of certain genes or portions of certain genes due to local sequence characteristics or the presence of closely related pseudogenes. Gross deletions or duplications, changes from repetitive sequences may not be accurately identified by this methodology. Genomic rearrangements cannot be detected by this assay."
 */
+
