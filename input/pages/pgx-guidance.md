@@ -1,86 +1,147 @@
-### Overview
-This section provides an example mapping from a Pharmacogenomics genetic report to FHIR using the HL7 clinical genomics Implementation guide. This is useful for developing genomic reporting, based on the impacts of a patient's genetics on the behavior of medications, as well as recommended adjustments to medication based on these impacts. This type of testing and reporting are commonly referred to as Pharmacogenomics (PGx). The intention of this section is to provide a “User Guide”, based on a specific report example, with the goal of providing a clear “how to” guide for developing a PGx report.
+### Building a Pharmacogenomic Report: An Example
+This section provides a walk-through of mapping from an example Pharmacogenomics (PGx) report to FHIR using the structure definitions and guidance defined elsewhere in this IG (the complete FHIR example report can be found at: #DiagnosticReport-PGxGenomicsReportEMERGE.html). A PGx report focuses on the impacts of a patient's genetics to the behavior of medications, and can provide recommended adjustments to medication based on these impacts. The intention of this page is to provide a “User Guide”, based on a specific report example, highlighting how the defined profiles can be used together to encode important relations in PGx reporting. The report and images for this guide are built upon work done by the eMERGE (Electronic Medical Records and Genomics) program, funded by the National Human Genome Research Institute (NHGRI). The Clinical Genomics Working Group has worked closely with eMERGE to integrate community feedback from their initial mapping into this PGx user guide. 
 
-Although this guide attempts to provide all of the information necessary to develop a PGx report, it relies on content in the ALL THE PORTIONS OF THE GUIDE  [General Genomic Reporting] and [Variant Reporting Genomic Implications] portions of the genomics implementation guide.
+### Ordering a Pharmacogenomic Test
+In order to receive a PGx report, you must first order a PGx test. Genomic tests, like all laboratory tests, are ordered using the [Service Request Resource](http://hl7.org/fhir/servicerequest.html). In this case, the [Request for Genomics Test](StructureDefinition-servicerequest.html) should be used for ordering the PGx text. Please see the links for more information about these resources. The example report in this section is based on a pre-coordinated gene panel defined by the sequencing laboratory. As such, the “code” element on the PGx report aligns with a pre-coordinated “code” element on the corresponding ServiceRequest, though the laboratory may provide additional codes as well. Additional structure may be in scope for the report if additional “orderDetail” data are present in the Service Request or if supporting information such as current medications are available during generation. An overview of the general relationships involved in ordering a report and receiving the results can be found [here](general.html#general-relationships).
 
-The User Guide incorporates work done by the eMERGE (Electronic Medical Records and Genomics) program, funded by the National Human Genome Research Institute (NHGRI). The Clinical Genomics Working Group has worked closely with the eMERGE program and we are grateful to them for allowing us to leverage their work in this PGx user guide. This guide is distinct from eMERGE’s implementation in important ways and will continue to evolve as the standard evolves. *see note
+```xml
+<ServiceRequest xmlns="http://hl7.org/fhir">
+ <id value="eMERGEServiceRequest"/>
+ <meta>
+   <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
+ </meta>
+ ...
+ <intent value="order"/>
+ <code>
+   <coding>
+     <system value="https://hgsc.bcm.edu/lab-test-codes/"/>
+     <code value="emerge-seq-ngs-pnl"/>
+   </coding>
+ </code>
+ <subject>
+   <reference value="Patient/CGPatientExample01"/>
+ </subject>
+ <specimen>
+   <reference value="Specimen/GenomicSpecimenExample01"/>
+ </specimen>
+</ServiceRequest>
+```
 
-### HOW TO USE THIS GUIDE
-The guide is composed of three figures. Figure 1 is an overview of the components of a PGx report, figure 2 is a schema the use of the components of the HL7 Clinical Genomics WG Implementation Guide, figure 3 is an example report with each element of the report mapped to the schema in figure 2. Use the numbers in each figure to find where the section/element goes. For example, #7 in figure 1 is information about the performing lab. In figure 2, #7 indicates an instance of the Organization Resource for the performer which would be a link through the performer element in the Genetics Diagnostic report. In figure 3, #7 indicates specific information about the performing lab found in the sample report. Thus, the specific performing lab information in figure 3 maps to an instance profile of Organization Resource linked to the Genetic Diagnostic report (#7 in figure 2).
+### How to use the Report Mapping Images
+The guide is based on three figures. Figure 1 is an overview of the components of a PGx report. Figure 2 is a schema describing the use of the components from the HL7 Clinical Genomics WG Implementation Guide, and figure 3 is an example report with each element of the report mapped to the schema in figure 2. Use the numbers in each figure to find where the section/element goes. For example, #7 in figure 1 is information about the performing lab. In figure 2, #7 indicates an instance of the Organization Resource for the performer which would be a link through the performer element in the Genetics Diagnostic report. In figure 3, #7 indicates specific information about the performing lab found in the sample report. Thus, the specific performing lab information in figure 3 maps to an instance profile of Organization Resource linked to the Genetic Diagnostic report (#7 in figure 2).
 
+In addition to the numbers, the colors in Figure 1 are intended to help guide the grouping of  information in the report.
 
-### Ordering a Pharmacogenomic Report
-In order to receive a PGx report, you must first order a PGx test. Genomic tests, like all laboratory tests, are ordered using the [Service Request Resource](http://hl7.org/fhir/servicerequest.html). In this case, the [Request for Genomics Test](StructureDefinition-servicerequest.html) should be used for ordering the PGx text. Please see the links for more information about these resources. An additional overview of the general relationships involved in ordering a report and receiving the results can be found [here]().
+These images should provide you with a clear understanding of how the various FHIR PGx resources may be used when constructing a PGx report. 
 
-NOTE: INSERT SNIPPET OF CODE SHOWING THE ORDER/SERVICE REQUEST 
+{% include img.html img="pgx-guidance-figure-1.jpg" caption="Figure 1: Color-coded/Numbered “Legend” for PGx Report" %}
 
-Show an XML and JSON snippet for a PGx ServiceRequest to “order” the PGx test in this example
-
-
-### Overview: Return of Results for a PGx Report
-The diagram below provides a color-coded/numbered “legend” for this PGx report example, shown as if it were a PDF. This diagram and the other related images, should provide you with a clear understanding of how the various FHIR PGx resources may be used when constructing a PGx report. 
- To make use 
-
-Figure 1: Color-coded/Numbered “Legend” for PGx Report 
-
-### Example Schema for PGx Reporting
+###   Example Schema for PGx Reporting
 The Schema below depicts a “decomposition” of the PGx FHIR resources used to construct the example report. The color coding and numbers in the schema are mapped via the legend (image above) to the detailed PGx report shown in Figure #3.
 
-Figure 2: Example PGx Report Schema
+{% include img.html img="pgx-guidance-figure-2.jpg" caption="Figure 2: Example PGx Report Schema" %}
 
-This PGx report, like all genomic reporting, is based on our [diagnostic report](StructureDefinition-genomics-report.html) profile. It conveys metadata about the overall report and carries multiple “result”  [Observations](http://hl7.org/fhir/R4/observation.html).
+This PGx report, like all genomic reporting, is packaged with the [diagnostic report](StructureDefinition-genomics-report.html) profile. It conveys metadata about the overall report and carries multiple “result”  [Observations](http://hl7.org/fhir/R4/observation.html).
+All of the observations may “hang” directly off of the [Genomics Report](StructureDefinition-genomics-report.html). However, they can also be part of a [Genomics Grouper](http://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-grouper.html). The Grouper Profile is used in this example PGx report to group all PGx-specific content (Therapeutic Implications and their derived Variants and Genotypes) into one section for viewing purposes. Note that the grouping by this profile does not add additional meaning to its child Observations. It is used just for convenience of presentation. Other configurations of one or more Groupers would also be valid, as no pre-coordinated groupings are recommended in this IG.
 
-All of the observations may “hang” directly off of the [Genomics Report](StructureDefinition-genomics-report.html). However, they can also be part of a [Genomics Grouper](StructureDefinition-grouper.html). The Grouper Profile is used in this example PGx report to group all PGx-specific content (Therapeutic Implications and their derived Variants and Genotypes) into one section for viewing purposes. Note that the grouping by this profile does not add additional meaning to its child Observations. It is used just for convenience of presentation. Other configurations of one or more Groupers would also be valid, as no pre-coordinated groupings are recommended in this IG.
+All pharmacogenomic implications are intended to be communicated using components within the [Therapeutic Implication](StructureDefinition-therapeutic-implication.html) profile. The Medication-assessed component of the Therapeutic Implication profile, is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication. Because this is an international profile, no guidance is provided on the medication coding system to be used. Instead, the appropriate code system for the jurisdiction, can and should be used. 
 
-All pharmacogenomic implications are intended to be communicated using components within the [Therapeutic Implication](StructureDefinition-therapeutic-implication.html) profile. The Medication-assessed component of this profile, is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication. Because this is an international profile, no guidance is provided on the medication coding system to be used. Instead, the appropriate code system for the jurisdiction, can and should be used. 
+To associate a Therapeutic-implication instance with a proposed recommended action (e.g. discontinuing a medication, altering dosage, or "choose alternative medication") one can use the [Medication Usage Task](StructureDefinition-task-med-chg.html), potentially with a [MedicationStatement](http://hl7.org/fhir/R4/medicationstatement.html) instance. Use [related artifact](StructureDefinition-RelatedArtifact.html) in Therapeutic-implication to supply additional or supporting information, such as CPIC guidelines. In this report example, the text which explains the methodology of the test, was modeled using the [PlanDefinition](https://www.hl7.org/fhir/plandefinition.html) resource (#5 in the schema). The clinical genomics work group has not yet determined the value of providing a profile on PlanDefinition, and requests community feedback on encoding testing methodology details.
 
-To associate a Therapeutic-implication instance with a recommended action (e.g. discontinuing a medication, altering dosage, "choose alternative medication") use Medication Usage Implication, Recommended action and Current Medication. Use related artifact in Therapeutic-implication to supply additional or supporting information, such as CPIC guidelines.
-
-In Figure 3 the recommendation is atypical of other reports, there is not a recommended action such as “discontinue use” or “raise dose.’’ Specific recommended actions for each medication would use the Medication Task Resource to accommodate dosing instructions. The use of the task resource for medication is exemplified in (LINK TO EXAMPLE FROM Kevin in the IG with medication task resource). Please refer to the medication guidance in FHIR core for the best format to deliver specific medication guidance. 
-
-In this report example, the text which explains the methodology of the test, was modelled using the [PlanDefinition](https://www.hl7.org/fhir/plandefinition.html) resource (#5 in the schema). The clinical genomics work group has not yet determined the value of providing a profile on PlanDefinition, and requests community feedback on use of PlanDefinition vs Observation.method, relatedArtifact pointing out PDFs hosted on lab websites, etc for describing methodology details.
-
-Figure 3: Detailed PGx Report Example - Mapped to Schema
+{% include img.html img="pgx-guidance-figure-3.jpg" caption="Figure 3: Detailed PGx Report Example - Mapped to Schema" %}
 
 ### Creating the Example FHIR PGx Report
-In the example used in this User Guide, the PGx results are based on diplotypes (star alleles), found in each relevant PGx gene that is covered by the PGx gene panel. These diplotypes are then used as a basis for relating PGx gene-drug knowledge implications. For this example,  these PGx implications or PGx phenotype interpretations fall into three classes which were “hard coded” into the report selection; metabolism, transporter, and efficacy. 
+In the example used in this User Guide, the PGx results are based on diplotypes (star alleles), found in each relevant PGx gene that is covered by the PGx gene panel. These diplotypes are then used as a basis for relating PGx gene-drug knowledge implications. For this example, each PGx implication populates the medication-metabolism component, but other statements about overall efficacy or potential adverse events could be included. Note that there was also the choice in this use case, to derive Implication statements from one or more genotype Observations and not from variants directly.
 
-NOTE: Provide an “easy” to understand version of sample code (in both XML and JSON) by including an editing version which does code for the grouper, but then only the results for a single gene. Show formatted code as in examples below. 
-	Brainstorm:
-1. FSH resource that’s useful - Grouper maybe?
-1. Can we provide link to complete code to create the report?
-  * Link to a full example of the code on a separate page in the IG (format if possible, rather than just showing “raw” code) 
+Below is one of the therapeutic implications in the report:
+```xml
+<Observation xmlns="http://hl7.org/fhir">
+...
+ <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/CGRelatedArtifact">
+   <valueRelatedArtifact>
+     <type value="citation"/>
+     <url value="https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"/>
+   </valueRelatedArtifact>
+ </extension>
+ <code>
+   <coding>
+     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
+     <code value="therapeutic-implication"/>
+   </coding>
+ </code>
+ <derivedFrom>
+   <reference value="Observation/Pgx-geno-1002"/>
+   <display value="CYP2C9*1/*1"/>
+ </derivedFrom>
+ <derivedFrom>
+   <reference value="Observation/Pgx-geno-1003"/>
+   <display value="VKORC1 rs9923231 C/T"/>
+ </derivedFrom>
+ <component>
+   <code>
+     <coding>
+       <system value="http://loinc.org"/>
+       <code value="51963-7"/>
+     </coding>
+   </code>
+   <valueCodeableConcept>
+     <coding>
+       <system value="http://ncimeta.nci.nih.gov"/>
+       <code value="C0043031"/>
+       <display value="warfarin"/>
+     </coding>
+   </valueCodeableConcept>
+ </component>
+ <component>
+   <code>
+     <coding>
+       <system value="http://loinc.org"/>
+       <code value="53040-2"/>
+     </coding>
+   </code>
+   <valueCodeableConcept>
+     <system value="http://loinc.org"/>
+     <code value="LA25391-6"/>
+     <display value="Normal Metabolizer"/>
+   </valueCodeableConcept>
+ </component>
+ <component>
+   <code>
+     <coding>
+       <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
+       <code value="conclusion-string"/>
+     </coding>
+   </code>
+   <valueString value="This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin."/>
+ </component>
+</Observation>
+```
 
+The following table contains additional information regarding the profiles used in mapping this example PGx report to FHIR, as well as individual example instances 
 
-The following table contains the resources most commonly used when constructing PGx reports:
-
-
-| Profile | Description of PGx usage | Example links | Additional Notes (code systems/etc) |
-|:------- |:------------------------ |:------------- |:----------------------------------- |
-| [Genomic Report](StructureDefinition-genomics-report-definitions.html) | Intended to capture a single report and is not suitable for use in displaying summary information that covers multiple reports | Jamie to Provide | |
-| [Overall genomic Interpretation](StructureDefinition-overall-interpretation.html) |High-level observations of the result of the genomic testing | | |
-| [Genotype](StructureDefinition-genotype.html) | | | Diplotype |
-| [Variant](StructureDefinition-variant.html)  | | | Discrete data - for the cyp2c19 there will be derived from links in the top level instance of variant profile |
-| [Grouper](StructureDefinition-grouper.html)  | Grouper can be leveraged to organize in a wide variety of ways | | |
-| [Region Studied](StructureDefinition-region-studied.html) | The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance). This Observation does not carry a value. | | |
-| [Therapeutic Implication](StructureDefinition-therapeutic-implication.html) | All pharmacogenomic implications are intended to be communicated using components within the  Therapeutic Implication profile, which has properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy | <b>Component</b> <br/><b>code</b>: Genetic variation's effect on high-risk allele <br/><b>value</b>: High risk <br/><br/><br><b>Component</b></br><br/><b>code:</b> Medication assessed<br/><b>value</b>: Carbamazepine|1 medication per Observation<br/>Sometimes derives from multiple genotypes |
-| [Medication Usage Implication](StructureDefinition-task-med-chg.html) | Task describing what sort of change (if any) should be made in a patient’s medication based on an identified finding | code: Consider alternative medication <br/>description: Patients positive for this allele should not be treated with CBZ unless the benefits clearly outweigh the risk. Therapy should be discontinued immediately if symptoms of SJS or TEN develop. | |
-| [Recommended Action](StructureDefinition-task-rec-followup.html) |References a proposed action that is recommended based on the results of the diagnostic report | | |
-| [Related Artifact](StructureDefinition-RelatedArtifact.html) | Captures citations, evidence and other supporting documentation for the observation or report | | |
-| [Plan Definition](https://www.hl7.org/fhir/plandefinition.html) | A plan definition is a pre-defined group of actions to be taken in particular circumstances, often including conditional elements, options, and other decision points. The resource is flexible enough to be used to represent a variety of workflows, as well as clinical decision support and quality improvement assets, including order sets, protocols, and decision support rules | | |
+| ***Profile*** | ***Description of PGx usage*** | ***Example links*** | ***Example Notes*** |
+| --- | --- | --- | --- |
+| [Genomic Report](StructureDefinition-genomics-report-definitions.html) | Intended Intended to capture a single report, with a Code element aligning with a Service Request and multiple genomic result Observations. <br/> Not suitable for displaying summary information covering multiple reports. Extensions on DiagnosticReport can point to other reports. | [#DiagnosticReport-PGxGenomicsReportEMERGE.html](DiagnosticReport-PGxGenomicsReportEMERGE.html) | Note that Results may either be on the report directly or referenced through Grouper Observations. This report has one Overall Interpretation and 3 groupers |
+| [Overall genomic Interpretation](StructureDefinition-overall-interpretation.html) | High-level observations of the result of the genomic testing, at the diagnostic report level. This is a flag often found as a statement in a report. For example, a report might begin ‘Positive - pathogenic variant found’ if a single pathogenic variant was found. The ‘positive’ trigger word in this statement is what would be captured. Again this is similar to a flag for an abnormal result found in laboratory messages. There is a new Observation component ‘conclusion-string’ which has been proposed to mirror the conclusion-string attribute on the DiagnosticReport, if additional detail is needed. One also has the option to use Diagnostic Report.text to provide overall information, but the ‘.text’ component would not call-out the conclusion. | [#Observation-OverallInterpExample2.html](Observation-OverallInterpExample2.html) | This example summarizes the potentially actionable results of the report. Codes should align with what is expected from the report’s ServiceRequest. |
+| [Genotype](StructureDefinition-genotype.html) | Connects variant observations for homologous positions in the genome, or sets of homologous positions. In practice, it takes the capability of performing bioinformatic calculations to normalize across variant data to bring genotypes together. Genotype allows the sender to communicate a relationship between variant observations without the recipient needing to calculate the relationship.|[#Observation-Pgx-geno-1001.html](Observation-Pgx-geno-1001.html) <br/> [#Observation-Pgx-geno-1002.html](Observation-Pgx-geno-1002.html) <br/> [#Observation-Pgx-geno-1003.html](Observation-Pgx-geno-1003.html) | Genotype names such as star-alleles can appear in PGx reports either with or without a full description of the underlying observed variants. PGx guidance is often available at the level of these genotypes.
+| [Variant](StructureDefinition-variant.html) | Intended for communication of positional information derived from the patient’s sample. The data should be suitable for calculations involving variant level details, such as clinical decision support or presence of a specific variant in a patient. Variant also carries important observational information about the occurrence of the variant in the patient/sample, and some pre-coordinated annotations such as gene name. More complex annotations such as pathogenicity should use the DiagnosticImplication profile for additional structure.<br/>Not all variants observed in a patient’s sample are required to be included in a report. | [#Observation-Pgx-var-1011.html](Observation-Pgx-var-1011.html)<br/>[#Observation-Pgx-var-1012.html](Observation-Pgx-var-1012.html) <br/>[#Observation-Pgx-var-1013.html](Observation-Pgx-var-1013.html) <br/>[#Observation-Pgx-var-1014.html](Observation-Pgx-var-1014.html) <br/>[#Observation-Pgx-var-1015.html](Observation-Pgx-var-1015.html) <br/>[#Observation-Pgx-var-1016.html](Observation-Pgx-var-1016.html) <br/>[#Observation-Pgx-var-1017.html](Observation-Pgx-var-1017.html) <br/>[#Observation-Pgx-var-1018.html](Observation-Pgx-var-1018.html) | In this example, variants are represented primarily using HGVS, with an Observation value of ‘Present’. This provides a computable observation of change, position in a reference sequence. <br/> Other components could be used to “define” the variant in question, for example clinVar codes or a VCF column-like representation as seen in other examples.|
+| [Grouper](StructureDefinition-grouper.html) | Grouper can be leveraged to organize in a wide variety of ways. Used here to group the interpretations, genotypes, and variants/regions studied info separately. This use is still experimental and other patterns are permitted. | [#Observation-GrouperEx01.html](Observation-GrouperEx01.html) <br/>[#Observation-GrouperEx02.html](Observation-GrouperEx02.html) <br/>[#Observation-GrouperEx03.html](Observation-GrouperEx03.html) | This example groups observations into Implications that may be interesting to clinicians, then genotypes, and then variants and region-studied data. Connections between profiles across grouper elements, e.g. variants to genotypes to implications, are through the inherent links in the profiles. |
+| [Region Studied](StructureDefinition-region-studied.html) | The Region Studied profile is used to assert and describe actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance). This Observation does not carry a value. | [#Observation-RegionStudiedPGx1.html](Observation-RegionStudiedPGx1.html) <br/> [#Observation-RegionStudiedPGx2.html](Observation-RegionStudiedPGx2.html) <br/> [#Observation-RegionStudiedPGx3.html](Observation-RegionStudiedPGx3.html) | These examples populate the gene-studied component and describe the coverage. Another approach would be to provide positional information on particular reference sequences. |
+| [Therapeutic Implication](StructureDefinition-therapeutic-implication.html) | All pharmacogenomic implications are intended to be communicated using components within the Therapeutic Implication profile, which has properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy. The medication-assessed component can be repeated to represent combination therapies. Otherwise, the recommendation is to limit Observations to one drug each to maintain semantic relationships in downstream systems. | [#Observation-TxImp01.html](Observation-TxImp01.html) <br/>[#Observation-TxImp02.html](Observation-TxImp02.html) <br/>[#Observation-TxImp03.html](Observation-TxImp03.html) <br/>[#Observation-TxImp04.html](Observation-TxImp04.html) <br/>[#Observation-TxImp05.html](Observation-TxImp05.html) | In addition to the coded components, the conclusion-string component can provide text that the lab would normally include in a report narrative.<br /><br />Note that one implication can be derived from multiple genotypes and/or variant Observations, and those Observations may derive multiple implications.|
+| [Medication Usage Task](StructureDefinition-task-med-chg.html) | The Medication Usage Task is a recommended action Task describing what sort of change (if any) should be made for a specific medication based on an identified finding. This is a computable specific recommendation for action on a specific medication, such as changing a dose. It is a structured means of reporting recommendations. Here tied to a Therapeutic Implication to provide guidance such as changes to a dose or alternative medications. | [#Task-PGxRecEx01.html](Task-PGxRecEx01.html) <br/>[#Task-PGxRecEx02.html](Task-PGxRecEx02.html)<br/>[#Task-PGxRecEx03.html](Task-PGxRecEx03.html)<br/>[#Task-PGxRecEx04.html](Task-PGxRecEx04.html)<br/>[#Task-PGxRecEx05.html](Task-PGxRecEx05.html) | Not included in this example, ‘Task.focus’ can be used to refer to a MedicationStatement for the patient, if available. <br/>See an alternative example using this pattern at [#Task-TaskMedChgExample1.html](Task-TaskMedChgExample1.html). |
+| [Recommended Action](StructureDefinition-RecommendedAction.html) (extension) | The recommended action (extension) references a proposed action that is recommended based on the results of the diagnostic report. It is not linked to individual variants and medications. Another possible type of recommendation is for additional follow-up testing of the subject or family members. This is an extension and may not be understood by all systems so care must be made that receivers are able to consume Task resources not normally linked with DiagnosticReports. It is intended as a textual recommendation. The information could also appear in the ‘text’ element of the diagnostic report, which may be improved to support coded data in future releases of FHIR. | | Note that extensions may not be included in generated narrative summaries. |
+| [Related Artifact](StructureDefinition-RelatedArtifact.html) (extension) | Captures citations, evidence and other supporting documentation for the observation or report. Included on the DiagnosticReport and Implication Observation structure through an extension.<br /><br />This dataType allows more structure than what would easily be represented in a text narrative.<br /><br />Useful for referring to guidelines, infobutton, lab methodology or any other supporting documentation.| | Note that extensions may not be included in generated narrative summaries. |
+| [Diagnostic Report Risk Assessment Reference](StructureDefinition-diagnosticReport-risk.html) | While not used in the eMERGE example, the Risk Assessment Reference is used in a diagnostic report to refer to a Risk Assessment profile. The Risk Assessment resource captures predicted outcomes for a patient or population on the basis of source information. Examples include: A prognosis statement for a particular condition; Risk of health outcome (heart attack, particular type of cancer) on the basis of lifestyle factors and/or family history; List of potential health risks based on a patient's genetic analysis.<br /><br />This resource can be used to represent the results of formal scoring/decision support tools that evaluate risk. It can also be used to capture a practitioner's subjective assessment of the patient's risk based on existing knowledge and previous experience. | | Not used in this example |
+| [Plan Definition](https://www.hl7.org/fhir/plandefinition.html) | A plan definition is a pre-defined group of actions to be taken in particular circumstances, often including conditional elements, options, and other decision points. The resource is flexible enough to be used to represent a variety of workflows, as well as clinical decision support and quality improvement assets, including order sets, protocols, and decision support rules. | | In the eMERGE report, this is used to provide additional methodology information, as an alternative to using related artifact or Observation.method. This use is still experimental and has not been included in our example. |
 {: .grid}
 
-This Artifact List provides a comprehensive listing of the FHIR artifacts defined as part of the Genomics Implementation Guide and may be helpful when developing the PGx report. 
+This [Artifact List](artifacts.html) provides a comprehensive listing of the FHIR artifacts defined as part of the Genomics Implementation Guide and may be helpful when developing the PGx report. 
 
-*For further information about the eMERGE Program, see: Pre-Print Journal Article: "Genomic Considerations for FHIR; eMERGE Implementation Lessons" and eMERGE Network Website
-* Notable changes from the eMERGE docs include:
-1. Extensions - 
-1. RegionStudied
-1. 
+### Mapping to eMERGE III FHIR Template
+Notable changes from the [eMERGE III FHIR Template](https://emerge-fhir-spec.readthedocs.io/en/latest/) docs include:
+1. Scope - this example focuses on the PGx panel within the eMERGE report and does not include a separate diagnostic panel. 
+1. Extensions - the eMERGE ‘summary interpretation text extension’ is now supported through an Observation component.
+1. RegionStudied Observation - the eMERGE III FHIR Template did not structure data using the region-studied profile. Data on which genes and regions the lab studied were represented in plain text and in the PlanDefinition representing the test.
+1. Medication Usage Task - the original eMERGE spec did not structure medication recommendation proposals, which were left in plain text comments.
 
---------------------------------------------------------
-
-IMPORTANT NOTE:
-
- We had decided that the current page for Pharmacogenomic Reporting (http://build.fhir.org/ig/HL7/genomics-reporting/pharmacogenomics.html) must be moved in front of the current detailed pages for Therapeutic Implication - WHO will ensure this is done? 
-
+For further information about the eMERGE Program, see: [Pre-Print Journal Article: "Genomic Considerations for FHIR; eMERGE Implementation Lessons"](https://www.biorxiv.org/content/10.1101/2021.01.31.429037v1.full) and [eMERGE Network Website](https://emerge-network.org/).
