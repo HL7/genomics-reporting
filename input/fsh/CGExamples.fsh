@@ -131,6 +131,19 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * derivedFrom = Reference(GenotypeExample1)
 * status = #final
 
+Instance: AnnotationExample
+InstanceOf: DiagnosticImplication
+Description: "Example of a Diagnostic Implication for Familial hypercholesterolemia"
+* id = "AnnotationExample"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodes#diagnostic-implication
+* component[clinical-significance].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
+* component[associated-phenotype].valueCodeableConcept = SCT#398036000 "Familial hypercholesterolemia (disorder)"
+* derivedFrom = Reference(VariantExample2)
+* status = #final
+
+
 Instance: GenotypeExample1
 InstanceOf: Genotype
 Description: "Example of a Genotype, Medication Usage Task, and MedicationStatement"
@@ -195,17 +208,6 @@ Description: "Example for Overall Interpretation."
 * status = #final
 * component[conclusion-string].valueString = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
-Instance: RegionStudiedExample1
-InstanceOf: RegionStudied
-Description: "Example for Genomic Region Studied; based on a sample Whole Exome Sequencing (WES) test from Partners Healthcare"
-* status = #final "final"
-* subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2019-04-01"
-* issued = "2019-04-01T11:45:33+11:00"
-* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:7527 "MUTYH"
-* component[ranges-examined].valueRange.low.value = 45796891
-* component[ranges-examined].valueRange.high.value = 45796891
-
 Instance: Pgx-var-1011
 InstanceOf: Variant
 Description: "Example variant 1011"
@@ -222,6 +224,8 @@ Description: "Example variant 1011"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-var-1012
 InstanceOf: Variant
@@ -239,6 +243,8 @@ Description: "Example variant 1012"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-var-1013
 InstanceOf: Variant
@@ -256,6 +262,9 @@ Description: "Example variant 1013"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
+
 
 Instance: Pgx-var-1014
 InstanceOf: Variant
@@ -273,6 +282,8 @@ Description: "Example variant 1014"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-var-1015
 InstanceOf: Variant
@@ -290,6 +301,8 @@ Description: "Example variant 1015"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-var-1016
 InstanceOf: Variant
@@ -307,6 +320,8 @@ Description: "Example variant 1016"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-var-1017
 InstanceOf: Variant
@@ -324,6 +339,8 @@ Description: "Example variant 1017"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-var-1018
 InstanceOf: Variant
@@ -341,6 +358,65 @@ Description: "Example variant 1018"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
+
+Instance: Pgx-var-1019
+InstanceOf: Variant
+Description: "Example variant 1019"
+* id = "Pgx-var-1019"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000016.9:g.31096368C>T
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6706-1 "heterozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
+
+Instance: Pgx-var-1020
+InstanceOf: Variant
+Description: "Example variant 1020"
+* id = "Pgx-var-1020"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
+
+Instance: Pgx-var-1021
+InstanceOf: Variant
+Description: "Example variant 1021"
+* id = "Pgx-var-1021"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2020-01-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
+* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[allelic-read-depth].valueQuantity.value = 20
+* component[allelic-read-depth].valueQuantity.comparator = #>
 
 Instance: Pgx-geno-1001
 InstanceOf: Genotype
@@ -448,6 +524,8 @@ Description: "Example of a Genotype from eMERGE"
 * effectiveDateTime = "2020-01-01"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
+* derivedFrom = Reference(Pgx-var-1020)
+* derivedFrom = Reference(Pgx-var-1021)
 * status = #final
 //* derivedFrom[0] = Reference(Pgx-var-1011)
 
@@ -461,6 +539,7 @@ Description: "Example of a Genotype from eMERGE"
 * effectiveDateTime = "2020-01-01"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
+* derivedFrom = Reference(Pgx-var-1019)
 * status = #final
 //* derivedFrom[0] = Reference(Pgx-var-1011)
 
@@ -476,10 +555,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
 //* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
 //* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
-* derivedFrom[0] = Reference(Pgx-geno-1002)
-* derivedFrom[0].display = "CYP2C9*1/*1"
-* derivedFrom[1] = Reference(Pgx-geno-1003)
-* derivedFrom[1].display = "VKORC1 rs9923231 C/T"
+* derivedFrom[0] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
+* derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
 
 
@@ -503,12 +580,10 @@ Description: "Genotypes"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodes#grouper
 * status = #final
-* hasMember[genotype][0] = Reference(Pgx-geno-1002)
-* hasMember[genotype][0].display = "CYP2C9*2/*2"
+* hasMember[genotype][0] = Reference(Pgx-geno-1001)
 * hasMember[genotype][1] = Reference(Pgx-geno-1003)
-* hasMember[genotype][1].display = "VKORC1 rs9923231 C/T"
-* hasMember[genotype][2] = Reference(Pgx-geno-1001)
-* hasMember[genotype][2].display = "CYP2C19*1/*1"
+* hasMember[genotype][2] = Reference(Pgx-geno-1002)
+
 
 Instance: GrouperEx03
 InstanceOf: Grouper
@@ -525,6 +600,9 @@ Description: "Regions Studied and variant info"
 * hasMember[variant][5] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
 * hasMember[variant][6] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
 * hasMember[variant][7] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
+* hasMember[variant][8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
+* hasMember[variant][9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
+* hasMember[variant][10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
 * hasMember[region-studied][0] = Reference(RegionStudiedPGx1) "CYP2C19"
 * hasMember[region-studied][1] = Reference(RegionStudiedPGx2) "CYP2C9"
 * hasMember[region-studied][2] = Reference(RegionStudiedPGx3) "VKORC1"
@@ -539,7 +617,7 @@ Description: "eMERGE PGx CYP2C19"
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[region-coverage].valueQuantity.value = 20
+* component[region-coverage].valueQuantity.value = 100
 
 
 Instance: RegionStudiedPGx2
@@ -550,7 +628,7 @@ Description: "eMERGE PGx CYP2C9"
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
-* component[region-coverage].valueQuantity.value = 20
+* component[region-coverage].valueQuantity.value = 100
 
 Instance: RegionStudiedPGx3
 InstanceOf: RegionStudied
@@ -560,7 +638,7 @@ Description: "eMERGE PGx VKORC1"
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
-* component[region-coverage].valueQuantity.value = 20
+* component[region-coverage].valueQuantity.value = 100
 
 
 Instance: PGxGenomicsReportEMERGE
@@ -642,7 +720,7 @@ Description: "Example for Overall Interpretation."
 
 Instance: eMERGEServiceRequest
 InstanceOf: servicerequest
-Description: "Example for Service Request"
+Description: "Example PGx Service Request"
 * id = "eMERGEServiceRequest"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
 * status = RequestStatus#completed "completed"
