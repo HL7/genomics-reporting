@@ -1,0 +1,15 @@
+<!-- 
+    Bootstrap html for getting an image to fit nicely in text in markdown
+    from Eric Haas, found on chat.fhi.org
+    see below for liquid example (don't inlcude the comment lines):
+    {% comment %}
+    {% include img.html img="myfigure.jpg" caption="My figure caption" %}
+    {% endcomment %}
+-->
+<div>
+    <figure class="figure">
+      <figcaption class="figure-caption"><strong>{{include.caption | default: ""}}</strong></figcaption>
+      <img width="75%" src="{{include.img}}" class="figure-img img-responsive img-rounded center-block" alt="{{include.img}}">
+    </figure>
+    <p></p>
+</div>
