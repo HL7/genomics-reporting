@@ -219,10 +219,17 @@ Description: "Example variant 1011"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96521657
+* component[exact-start-end].valueRange.high.value = 96521657
+* component[ref-allele].valueString = "C"
+* component[alt-allele].valueString = "C"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
-* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:262 "CYP2C19"
 * component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
@@ -238,7 +245,14 @@ Description: "Example variant 1012"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96522463
+* component[exact-start-end].valueRange.high.value = 96522463
+* component[ref-allele].valueString = "A"
+* component[alt-allele].valueString = "A"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -257,7 +271,14 @@ Description: "Example variant 1013"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96535173
+* component[exact-start-end].valueRange.high.value = 96535173
+* component[ref-allele].valueString = "T"
+* component[alt-allele].valueString = "T"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -277,7 +298,14 @@ Description: "Example variant 1014"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96535210
+* component[exact-start-end].valueRange.high.value = 96535210
+* component[ref-allele].valueString = "G"
+* component[alt-allele].valueString = "G"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -315,7 +343,14 @@ Description: "Example variant 1016"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96541616
+* component[exact-start-end].valueRange.high.value = 96541616
+* component[ref-allele].valueString = "G"
+* component[alt-allele].valueString = "G"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -334,7 +369,14 @@ Description: "Example variant 1017"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96541756
+* component[exact-start-end].valueRange.high.value = 96541756
+* component[ref-allele].valueString = "T"
+* component[alt-allele].valueString = "T"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -353,7 +395,14 @@ Description: "Example variant 1018"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96612495
+* component[exact-start-end].valueRange.high.value = 96612495
+* component[ref-allele].valueString = "C"
+* component[alt-allele].valueString = "C"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
@@ -391,7 +440,14 @@ Description: "Example variant 1020"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96702047
+* component[exact-start-end].valueRange.high.value = 96702047
+* component[ref-allele].valueString = "C"
+* component[alt-allele].valueString = "C"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
@@ -410,7 +466,14 @@ Description: "Example variant 1021"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
+//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[exact-start-end].valueRange.low.value = 96741053
+* component[exact-start-end].valueRange.high.value = 96741053
+* component[ref-allele].valueString = "A"
+* component[alt-allele].valueString = "A"
+
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
