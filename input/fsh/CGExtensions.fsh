@@ -4,7 +4,7 @@ Id:          CGRelatedArtifact
 Title:       "Related Artifact"
 Description: "Captures citations, evidence and other supporting documentation for the observation or report."
 * ^context[0].type = #element
-* value[x] only http://hl7.org/fhir/StructureDefinition/RelatedArtifact
+* value[x] only RelatedArtifact
 
 
 Extension:   RecommendedAction
