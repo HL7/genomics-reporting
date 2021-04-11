@@ -1,0 +1,57 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <blockquote class="stu-note">
+    <p>
+    The content in this section may be significantly revised prior to the next ballot after initial use and feedback.
+    </p>
+  </blockquote>
+  <p>
+    This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide.
+  </p>
+
+  <a name="contextualmodifiers"> </a>
+  <h3>Communicating disease or tumor context</h3>
+  <p>
+  In general, treatments and medications have a set of indications for use which are not explicitly stated. However, if a pharmacogenomics statement has a specific context of a disease (indication) or a tumor indication use the components "associated phenotype" or "associated cancer" respectively. 
+  </p>
+  <p>
+  To explicitly link medication or treatment implication to oncology, for example, populate the associated-cancer component. E.g. If the associated-cancer component is populated, then effect-medication-efficacy pertains to the medication's efficacy on treating the cancer. For oncology related reporting in general see <a href="somatics.html">Somatic Reporting</a>.
+  </p>
+
+  <a name="implications"> </a>
+  <h3>Pharmacogenomic-specific Genetic Implications</h3>
+  <img src="4-pharmacogenomics-fig1-implications.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Usage Implication task"/>
+  <p>
+    <b>Figure 1: Pharmacogenomic Implications</b>
+  </p>
+  <p>
+    (Profile links:
+    <a href="StructureDefinition-implication.html">Genetic Implication</a>,
+    <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>,
+    <a href="StructureDefinition-task-med-chg.html"> Medication Usage Implication</a>
+    )
+  </p>
+  <p>
+    All pharmacogenomic implications are intended to be communicated using components within <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic implication profile</a>. The profile component medication-assessed is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication. The Therapy-assessed component is not intended for medications. Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
+  </p>
+  <p>
+    There are several types of medication implication component defined in the <a href="StructureDefinition-therapeutic-implication.html">profile</a> for use in pharamcogenomics:
+  </p>
+  <ul>
+	<li>The component Effect Medication Efficacy describes how the associated genetic findings affect the ability of the patient's body to respond to the medication (predicted phenotype) - distinct from metabolic impact, this is in regards to molecular function. This can influence the appropriateness of the medication for the patient.</li>
+  <li>The component Effect Medication Metabolism describes the implication of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have implications on appropriate dosage.</li>
+  <li>The component Effect Medication High Risk indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  i.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics. For example, in the case of a known adverse event, such as Stevens-Johnson syndrome (SJS), the high-risk component would be used with the associated-phenotype to communicate the risk of SJS</li>
+	<li>The component Medication-assessed is a place to provide the medication which was assessed. For specific recommended actions, the Medication Usage Implication profile is used and focus indicates the medication that the recommended actions refer too (see 'Including Pharmacogenomic recommended actions'). </li>
+  </ul>
+  
+  <a name="pgxRecommendedAction"> </a>
+  <h3>Including Pharmacogenomic recommended actions</h3>
+  <p>
+	To associate a Therapeutic-implication instance with a recommended action (e.g. discontinuing a medication, altering dosage, "choose alternative medication") use <a href="StructureDefinition-task-med-chg.html">Medication Usage Implication</a>, Recommended action, and Current Medication. Use "related artifact" in Therapeutic-implication for supporting documents such as CPIC guidelines. 
+  </p>
+  <p>
+	Medication Usage Implications (task-med-chg) link to therapeutic implications through "reasonReference"and are included in the report as links for RecommendedAction, DiagnosticReport.extension:RecommendedAction. The  therapeutic implications do not have a link to medication usage implications (task-med-chg): so rev_include is currently necessary to find the therapeutic implication statements relevant to the medication usage implications. 
+  </p>
+  <p>
+	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note 2:  Implementers may also be interested in the <a href="somatics.html">Somatic Reporting</a> and <a href="pharmacogenomics.html">Pharmacogenomics Reporting</a> sections of this implementation guide.
+  </p>
+</div>

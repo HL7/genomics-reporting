@@ -256,7 +256,7 @@
     <!-- Extensions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/RelatedArtifact"/>
+        <reference value="StructureDefinition/CGRelatedArtifact"/>
       </reference>
       <name value="Related Artifact"/>
       <description
@@ -284,6 +284,7 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
+
     <!-- Examples -->
     <resource>
       <reference>
@@ -406,6 +407,243 @@
       <description value="Test instance a specimen"/>
       <groupingId value="examples"/>
     </resource>
+
+    <!-- new examples for PGx-->
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-geno-1001"/>
+      </reference>
+      <name value="Example - Observation PGx Genotype 1"/>
+      <description value="Test instance of PGx Genotype given by star allele"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-geno-1002"/>
+      </reference>
+      <name value="Example - Observation PGx Genotype 2"/>
+      <description value="Test instance of PGx Genotype given by star allele"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-geno-1003"/>
+      </reference>
+      <name value="Example - Observation PGx Genotype 3"/>
+      <description value="Test instance of PGx Genotype given by rs ID and allele"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/OverallInterpExample2"/>
+      </reference>
+      <name value="Example - Observation PGx interpretation"/>
+      <description value="Test instance of PGx overall report interpretation"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/GrouperEx01"/>
+      </reference>
+      <name value="Example - Observation-GrouperEx01"/>
+      <description value="Test instance of PGx Observation grouper consisting of Implications from the lab"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/GrouperEx02"/>
+      </reference>
+      <name value="Example - Observation-GrouperEx02"/>
+      <description value="Test instance of PGx Observation grouper consisting of genotypes from the lab"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/GrouperEx03"/>
+      </reference>
+      <name value="Example - Observation-GrouperEx03 "/>
+      <description value="Test instance of PGx Observation grouper consisting of variants and regions studied from the lab"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="DiagnosticReport/PGxGenomicsReportEMERGE"/>
+      </reference>
+      <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE"/>
+      <description value="Test instance of PGx Diagnostic report based on eMERGE panel"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1011"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1011"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1012"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1012"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1013"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1013"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1014"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1014"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1015"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1015"/>
+      <description value="Test instance of PGx variant defined by HGVS nomenclature"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1016"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1016"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1017"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1017"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1018"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1018"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1019"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1019"/>
+      <description value="Test instance of PGx variant defined by HGVS nomenclature"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1020"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1020"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/Pgx-var-1021"/>
+      </reference>
+      <name value="Example - Observation-Pgx-var-1021"/>
+      <description value="Test instance of PGx variant defined by VCF column data"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/RegionStudiedPGx1"/>
+      </reference>
+      <name value="Example - Observation-RegionStudiedPGx1"/>
+      <description value="Test instance of region studied report for one gene"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/RegionStudiedPGx2"/>
+      </reference>
+      <name value="Example - Observation-RegionStudiedPGx2"/>
+      <description value="Test instance of region studied report for one gene"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/RegionStudiedPGx3"/>
+      </reference>
+      <name value="Example - Observation-RegionStudiedPGx3"/>
+      <description value="Test instance of region studied report for one gene"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/TxImp01"/>
+      </reference>
+      <name value="Example - Observation-TxImp01"/>
+      <description value="Test instance of observation stating therapeutic implication from guideline"/>
+      <groupingId value="examples"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="Observation/TxImp02"/>
+      </reference>
+      <name value="Example - Observation-TxImp02"/>
+      <description value="Test instance of observation stating therapeutic implication from guideline"/>
+      <groupingId value="examples"/>
+    </resource>
+        <resource>
+      <reference>
+        <reference value="Observation/TxImp03"/>
+      </reference>
+      <name value="Example - Observation-TxImp03"/>
+      <description value="Test instance of observation stating therapeutic implication from guideline"/>
+      <groupingId value="examples"/>
+    </resource>
+        <resource>
+      <reference>
+        <reference value="Observation/TxImp04"/>
+      </reference>
+      <name value="Example - Observation-TxImp04"/>
+      <description value="Test instance of observation stating therapeutic implication from guideline"/>
+      <groupingId value="examples"/>
+    </resource>
+        <resource>
+      <reference>
+        <reference value="Observation/TxImp05"/>
+      </reference>
+      <name value="Example - Observation-TxImp05"/>
+      <description value="Test instance of observation stating therapeutic implication from guideline"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Observation/TxImp06"/>
+      </reference>
+      <name value="Example - Observation-TxImp06"/>
+      <description value="Test instance of observation stating therapeutic implication from guideline"/>
+      <groupingId value="examples"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="ServiceRequest/eMERGEServiceRequest"/>
+      </reference>
+      <name value="Example - ServiceRequest-eMERGEServiceRequest"/>
+      <description value="Test instance of service request for PGx test"/>
+      <groupingId value="examples"/>
+    </resource>
+
     <resource>
       <reference>
         <reference value="Bundle/diagnosticreport-cgexample"/>
@@ -447,11 +685,11 @@
     </resource>
     <resource>
       <reference>
-        <reference value="DiagnosticReport/AnnotationExample"/>
+        <reference value="Observation/AnnotationExample"/>
       </reference>
-      <name value="Example - Variant with ACMG Screening"/>
-      <description value="ACMG annotated variant"/>
-      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
+      <name value="Example - ACMG Screening result"/>
+      <description value="ACMG annotation"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -709,18 +947,8 @@
           <generation value="html"/>
         </page>
         <page>
-          <nameUrl value="Glossary.html"/>
-          <title value="Glossary"/>
-          <generation value="html"/>
-        </page>
-        <page>
           <nameUrl value="pharmacogenomics.html"/>
           <title value="Pharmacogenomic Reporting"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="pgx-guidance.html"/>
-          <title value="PGx Guidance"/>
           <generation value="markdown"/>
         </page>
         <page>
@@ -731,11 +959,6 @@
         <page>
           <nameUrl value="histocompatibility.html"/>
           <title value="Histocompatibility and Immunogenetics Reporting"/>
-          <generation value="html"/>
-        </page>
-        <page>
-          <nameUrl value="conversion.html"/>
-          <title value="Conversion from STU3"/>
           <generation value="html"/>
         </page>
         <page>
@@ -756,6 +979,16 @@
         <page>
           <nameUrl value="codings.html"/>
           <title value="Appendix D: External Coding Systems"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="conversion.html"/>
+          <title value="Appendix E: Conversion from STU3 Extensions"/>
+          <generation value="html"/>
+        </page>
+        <page>
+          <nameUrl value="Glossary.html"/>
+          <title value="Appendix F: Glossary"/>
           <generation value="html"/>
         </page>
       </page>

@@ -5,7 +5,7 @@ Title:          "Genomic Implication"
 Description:    "Properties common to genetic implications expressed as computable discrete elements."
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* extension contains http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RelatedArtifact named relatedArtifact 0..1
+* extension contains CGRelatedArtifact named relatedArtifact 0..1
 * value[x] 0..0
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "$this.resolve()"
@@ -194,7 +194,7 @@ Description:    "Task describing the followup that is recommended"
 * intent 1..1
 * intent = TaskIntent#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)
-* description = "Recommendation Document"
+//* description = "Recommendation Document"
 * for only Reference(Patient)
 * requester only Reference(Organization)
 * reasonReference only Reference(TherapeuticImplication)

@@ -1,9 +1,11 @@
-Extension:   RelatedArtifact
-Id:          RelatedArtifact
+
+Extension:   CGRelatedArtifact
+Id:          CGRelatedArtifact
 Title:       "Related Artifact"
 Description: "Captures citations, evidence and other supporting documentation for the observation or report."
 * ^context[0].type = #element
 * value[x] only http://hl7.org/fhir/StructureDefinition/RelatedArtifact
+
 
 Extension:   RecommendedAction
 Id:          RecommendedAction

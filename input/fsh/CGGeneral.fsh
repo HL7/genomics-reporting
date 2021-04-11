@@ -90,12 +90,12 @@ Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
-* extension contains RelatedArtifact named RelatedArtifact 0..* and
+* extension contains CGRelatedArtifact named relatedArtifact 0..* and
     RecommendedAction named RecommendedAction 0..* and
     SupportingInformation named SupportingInfo 0..* and
     DiagnosticReportRisk named diagnosticReport-risk 0..*
 * extension[RecommendedAction].value[x] only Reference(Task)
-* extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
+//* extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
 * extension[DiagnosticReportRisk].value[x] only Reference(RiskAssessment)
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
