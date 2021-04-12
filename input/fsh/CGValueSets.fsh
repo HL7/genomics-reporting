@@ -57,3 +57,9 @@ Id:             seq-phase-relationship
 Title:          "Sequence Phase Relationship"
 Description:    "Value Set for specific types of relationships"
 * codes from system SequencePhaseRelationshipCS
+
+ValueSet:       ConditionInheritanceModeVS
+Id:             condition-inheritance-vs
+Title:          "Condition Inheritance Pattern"
+Description:    "Value Set for specific ttransmission patterns of a condition in a pedigree"
+* codes from system ConditionInheritanceMode

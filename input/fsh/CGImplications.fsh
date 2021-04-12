@@ -50,12 +50,12 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    associated-phenotype 0..* and
+    associated-phenotype 0..1 and
     mode-of-inheritance	0..1 and
     clinical-significance 0..1 and
     functional-effect 0..*
 * component[associated-phenotype] ^short = "Associated phenotype"
-* component[associated-phenotype] ^definition = "The possible phenotype associated with the genetic variant found in this study."
+* component[associated-phenotype] ^definition = "The possible phenotype/condition associated with the genetic variant found in this study."
 * component[associated-phenotype].code = LNC#81259-4
 * component[associated-phenotype].value[x] only CodeableConcept
 * component[associated-phenotype].value[x] ^binding.strength = #example
@@ -70,10 +70,10 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 //* component[associated-cancer].value[x] 1..1
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 // * component[mode-of-inheritance] ^definition = "" // MLT: no definition provided.
-* component[mode-of-inheritance].code = LNC#79742-3
+* component[mode-of-inheritance].code = TbdCodes#condition-inheritance
 * component[mode-of-inheritance].value[x] only CodeableConcept
 * component[mode-of-inheritance].value[x] 1..1
-* component[mode-of-inheritance].value[x] from http://loinc.org/vs/LL3731-8 (preferred)
+* component[mode-of-inheritance].value[x] from ConditionInheritanceModeVS (preferred)
 * component[clinical-significance] ^short = "Clinical significance"
 // * component[clinical-significance] ^definition = "" // MLT: no definition provided.
 * component[clinical-significance].code = LNC#53037-8

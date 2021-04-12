@@ -87,43 +87,15 @@
   <component>
 	<code>
 	  <coding>
-		<system value="http://loinc.org"/>
-		<code value="81259-4"/>
-		<display value="Associated phenotype"/>
+		<system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
+		<code value="condition-inheritance"/>
 	  </coding>
 	</code>
 	<valueCodeableConcept>
 	  <coding>
-		<system value="http://www.ncbi.nlm.nih.gov/medgen"/>
-		<code value="C0403814"/>
-	  </coding>
-	  <coding>
-		<system value="http://www.orpha.net"/>
-		<code value="ORPHA:48"/>
-	  </coding>
-	  <coding>
-		<system value="http://www.omim.org"/>
-		<code value="277180"/>
-	  </coding>
-	  <coding>
-		<system value="http://www.omim.org"/>
-		<code value="300985"/>
-	  </coding>
-	  <text value="Congenital bilateral absence of the vas deferens"/>
-	</valueCodeableConcept>
-  </component>
-  <component>
-	<code>
-	  <coding>
-		<system value="http://loinc.org"/>
-		<code value="79742-3"/> <!-- it is important that this be true for each of the Assoicated Phenotypes. If not, use multiple idh profile instances-->
-	  </coding>
-	</code>
-	<valueCodeableConcept>
-	  <coding>
-		<system value="http://ghr.nlm.nih.gov/primer/inheritance/inheritancepatterns"/>
-		<code value="Autosomal recessive"/>
-		<display value="Autosomal recessive"/>
+		<system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/ConditionInheritanceMode"/>
+		<code value="HP:0000007"/>
+		<display value="Autosomal recessive inheritance"/>
 	  </coding>
 	</valueCodeableConcept>
   </component>
