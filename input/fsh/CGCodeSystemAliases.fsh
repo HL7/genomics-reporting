@@ -35,5 +35,5 @@ Alias:  TaskStatus = http://hl7.org/fhir/task-status
 Alias:  TaskIntent = http://hl7.org/fhir/task-intent
 Alias:  RequestIntent = http://hl7.org/fhir/request-intent
 Alias:  RequestStatus = http://hl7.org/fhir/request-status
-Alias:  NUC = https://www.ncbi.nlm.nih.gov/nuccore
+Alias:  NUC = http://www.ncbi.nlm.nih.gov/nuccore
 Alias:  MetaT = http://ncimeta.nci.nih.gov

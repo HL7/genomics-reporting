@@ -31,7 +31,7 @@ New:
             <valueCodeableConcept>
               <coding>
                 H.1 Gene studied
-                <system value="http://example.org/hgnc-symb"/>
+                <system value="http://www.genenames.org/geneId"/>
                 <code value="2623"/>
                 <display value="CYP2C9"/>
               </coding>
@@ -46,7 +46,7 @@ New:
               <valueCodeableConcept>
                 <coding>
                   I.1 dbSNP ID
-                  <system value="http://example.org/dbsnp"/>
+                  <system value="http://www.ncbi.nlm.nih.gov/projects/SNP"/>
                   <version value="137"/>
                   <code value="1057910"/>
                   <display value="rs1057910"/>
@@ -64,7 +64,7 @@ New:
               <valueCodeableConcept>
                 <coding>
                   J.1 dbSNP ID
-                  <system value="http://example.org/dbsnp"/>
+                  <system value="http://www.ncbi.nlm.nih.gov/projects/SNP"/>
                   <version value="137"/>
                   <code value="72558193"/>
                   <display value="rs72558193"/>
@@ -387,7 +387,7 @@ New:
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://example.org/hgnc-symb"/>
+              <system value="http://www.genenames.org/geneId"/>
               <code value="21497"/>
               <display value="ACAD9"/>
             </coding>
@@ -402,7 +402,7 @@ New:
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://example.org/clinvar"/>
+              <system value="http://www.ncbi.nlm.nih.gov/clinvar"/>
               <version value="???"/>
               <code value="7129"/>
               <display value="NM_000492.3(CFTR):c.3846G>A (p.Trp1282Ter)"/>
@@ -541,16 +541,11 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- B.2 Discrete genetic variant (ClinVar or COSMIC) -->
-              <system value="http://example.org/clinvar"/>
+              <system value="http://www.ncbi.nlm.nih.gov/clinvar"/>
               <version value="???"/>
               <!-- A.16 ClinVar version -->
               <code value="30880"/>
               <display value="NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"/>
-            </coding>
-            <coding>
-              <!-- B.16 CIGAR-simple genetic variant -->
-              <system value="http://example.org/cigar"/>
-              <code value="tbd"/>
             </coding>
           </valueCodeableConcept>
         </component>
@@ -564,7 +559,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- B.3 Gene studied -->
-              <system value="http://example.org/hgnc"/>
+              <system value="http://www.genenames.org/geneId"/>
               <code value="21497"/>
               <display value="ACAD9"/>
             </coding>
@@ -627,7 +622,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- B.15 dbSNP ID -->
-              <system value="http://example.org/dbsnp"/>
+              <system value="http://www.ncbi.nlm.nih.gov/projects/SNP"/>
               <version value="137"/>
               <!-- A.14 dbSNP version -->
               <code value="rs368949613"/>
@@ -980,7 +975,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- B.22 Probable associated phenotype -->
-              <system value="http://example.org/MedGen-Dis"/>
+              <system value="http://www.ncbi.nlm.nih.gov/medgen"/>
               <code value="C1970173"/>
               <display value="Acyl-CoA dehydrogenase family, member 9, deficiency of"/>
             </coding>
@@ -1048,7 +1043,7 @@ New:
           </code>
           <valueCodeableConcept>
             <coding>
-              <system value="http://example.org/clinvar"/>
+              <system value="http://www.ncbi.nlm.nih.gov/clinvar"/>
               <version value="???"/>
               <code value="16895"/>
               <display value="NM_000106.5(CYP2D):c.[886C>T;457G>C] – Haplotype"/>
@@ -1206,7 +1201,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- D.1(B.2) Discrete genetic variant (ClinVar or COSMIC) -->
-              <system value="http://example.org/clinvar"/>
+              <system value="http://www.ncbi.nlm.nih.gov/clinvar"/>
               <version value="???"/>
               <!-- A.16 ClinVar version -->
               <code value="31934"/>
@@ -1225,7 +1220,7 @@ New:
             <coding>
               <!-- D.2(B.4) Transcript Reference MolecularSequence ID -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/RefSeq-T"/>
+              <system value="http://www.ncbi.nlm.nih.gov/refseq"/>
               <code value="NM_000106.5"/>
             </coding>
           </valueCodeableConcept>
@@ -1362,7 +1357,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- E.1(B.2) Discrete genetic variant (ClinVar or COSMIC) -->
-              <system value="http://example.org/clinvar"/>
+              <system value="http://www.ncbi.nlm.nih.gov/clinvar"/>
               <version value="???"/>
               <!-- A.16 ClinVar version -->
               <code value="38486"/>
@@ -1381,7 +1376,7 @@ New:
             <coding>
               <!-- E.2(B.4) Transcript Reference MolecularSequence ID -->
               <!-- Need to define a proper URL for this -->
-              <system value="http://example.org/RefSeq-T"/>
+              <system value="http://www.ncbi.nlm.nih.gov/refseq"/>
               <code value="NM_000106.5"/>
             </coding>
           </valueCodeableConcept>
@@ -1499,7 +1494,7 @@ New:
         <valueCodeableConcept>
           <coding>
             <!-- B.14 Haplotype name -->
-            <system value="http://example.org/???"/>
+            <system value="http://www.ebi.ac.uk/ipd/imgt/hla"/>
             <code value="*2"/>
           </coding>
         </valueCodeableConcept>
@@ -1578,7 +1573,7 @@ New:
             <!-- F.1.a Gene studied -->
             <!-- lloyd: 1 gene per variation -->
             <coding>
-              <system value="http://example.org/hgnc"/>
+              <system value="http://www.genenames.org/geneId"/>
               <code value="2623"/>
               <display value="CYP2C9"/>
             </coding>
@@ -1594,7 +1589,7 @@ New:
           <valueCodeableConcept>
             <coding>
               <!-- B.3 Gene studied -->
-              <system value="http://example.org/hgnc"/>
+              <system value="http://www.genenames.org/geneId"/>
               <code value="23663"/>
               <display value="VKORC1"/>
             </coding>
