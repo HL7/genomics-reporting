@@ -45,7 +45,7 @@ Description:    "The effect of a variant on downstream biological products or pa
 
 ValueSet:       VariantInheritanceVS
 Id:             variant-inheritance
-Title:          "Variant Inheritance"
+Title:          "Variant Inheritances"
 Description:    "By which parent the variant was inherited in the patient, if known."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * LNC#LA26320-4 "Maternal"
@@ -54,12 +54,12 @@ Description:    "By which parent the variant was inherited in the patient, if kn
 
 ValueSet:       SeqPhaseRelationshipVS
 Id:             seq-phase-relationship
-Title:          "Sequence Phase Relationship"
+Title:          "Sequence Phase Relationships"
 Description:    "Value Set for specific types of relationships"
 * codes from system SequencePhaseRelationshipCS
 
 ValueSet:       ConditionInheritanceModeVS
 Id:             condition-inheritance-vs
-Title:          "Condition Inheritance Pattern"
+Title:          "Condition Inheritance Patterns"
 Description:    "Value Set for specific ttransmission patterns of a condition in a pedigree"
-* codes from system ConditionInheritanceMode
+* codes from system ConditionInheritanceModeCS

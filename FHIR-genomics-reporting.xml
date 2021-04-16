@@ -5,13 +5,15 @@
 <version code="1.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU1"/>
 <version code="0.3.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2019Jan"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2018May"/>
+<version code="1.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/STU1"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="Concept mapping for DNA Change Type"/>
-<artifact id="CodeSystem/ConditionInheritanceMode" key="CodeSystem-ConditionInheritanceMode" name="Condition Inheritance Pattern"/>
-<artifact id="ValueSet/condition-inheritance-vs" key="ValueSet-condition-inheritance-vs" name="Condition Inheritance Pattern"/>
+<artifact deprecated="true" id="CodeSystem/ConditionInheritanceMode" key="CodeSystem-ConditionInheritanceMode" name="Condition Inheritance Pattern"/>
+<artifact id="CodeSystem/ConditionInheritanceModeCS" key="CodeSystem-ConditionInheritanceModeCS" name="Condition Inheritance Pattern Codes"/>
+<artifact id="ValueSet/condition-inheritance-vs" key="ValueSet-condition-inheritance-vs" name="Condition Inheritance Patterns"/>
 <artifact id="ValueSet/dna-change-type" key="ValueSet-dna-change-type" name="DNA Change Type"/>
 <artifact id="StructureDefinition/diagnostic-implication" key="StructureDefinition-diagnostic-implication" name="Diagnostic Implication"/>
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>
@@ -107,8 +109,8 @@
 <artifact id="StructureDefinition/servicerequest" key="StructureDefinition-servicerequest" name="Request for Genomics Test"/>
 <artifact id="StructureDefinition/diagnosticReport-risk" key="StructureDefinition-diagnosticReport-risk" name="Risk Assessment Reference"/>
 <artifact id="StructureDefinition/sequence-phase-relationship" key="StructureDefinition-sequence-phase-relationship" name="Sequence Phase Relationship"/>
-<artifact id="CodeSystem/SequencePhaseRelationshipCS" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship"/>
-<artifact id="ValueSet/seq-phase-relationship" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationship"/>
+<artifact id="CodeSystem/SequencePhaseRelationshipCS" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship Codes"/>
+<artifact id="ValueSet/seq-phase-relationship" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationships"/>
 <artifact id="StructureDefinition/specimen" key="StructureDefinition-specimen" name="Specimen"/>
 <artifact id="StructureDefinition/SupportingInfo" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
 <artifact id="CodeSystem/TbdCodes" key="CodeSystem-TbdCodes" name="TBD Code System"/>

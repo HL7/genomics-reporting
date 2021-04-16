@@ -1,5 +1,5 @@
 CodeSystem: SequencePhaseRelationshipCS
-Title: "Sequence Phase Relationship"
+Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
 
 * #Cis "Cis" "Phase is in cis (same chromosome)"
@@ -33,8 +33,8 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #conclusion-string "Conclusion text" "Clinical conclusion (interpretation) of the observation."
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
 
-CodeSystem: ConditionInheritanceMode
-Title: "Condition Inheritance Pattern"
+CodeSystem: ConditionInheritanceModeCS
+Title: "Condition Inheritance Pattern Codes"
 Description: "A set of terms that describe the transmission pattern of a condition in a pedigree."
 
 * #GENO:0000143	"Codominant inheritance"

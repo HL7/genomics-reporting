@@ -837,8 +837,16 @@
       <reference>
         <reference value="CodeSystem/SequencePhaseRelationshipCS"/>
       </reference>
-      <name value="Sequence Phase Relationship"/>
+      <name value="Sequence Phase Relationship Codes"/>
       <description value="Code System for specific types of relationships"/>
+      <groupingId value="codesystems"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ConditionInheritanceModeCS"/>
+      </reference>
+      <name value="Condition Inheritance Pattern Codes"/>
+      <description value="A set of terms that describe the transmission pattern of a condition in a pedigree"/>
       <groupingId value="codesystems"/>
     </resource>
     <resource>
@@ -893,7 +901,7 @@
       <reference>
         <reference value="ValueSet/seq-phase-relationship"/>
       </reference>
-      <name value="Sequence Phase Relationship"/>
+      <name value="Sequence Phase Relationships"/>
       <description value="Value Set for specific types of relationships"/>
       <groupingId value="valuesets"/>
     </resource>
