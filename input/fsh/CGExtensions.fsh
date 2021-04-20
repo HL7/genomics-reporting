@@ -27,3 +27,19 @@ Title:       "Risk Assessment Reference"
 Description: "Extension reference to RiskAssessment resource"
 * ^context[0].type = #element
 * value[x] only Reference(RiskAssessment)
+
+Extension:   AnnotationCC
+Id:          annotation-codeableConcept
+Title:       "Annotation Code"
+Description: "Extension adding a CodeableConcept to the Annotation data-type"
+* ^context[+].type = #element
+* ^context[=].expression = "Annotation"
+* value[x] only CodeableConcept
+
+Extension:   GenomicReportNote
+Id:          genomicReportNote
+Title:       "Genomic Report Note"
+Description: "Extension adding coded Note to a DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
+* value[x] only CodedAnnotation

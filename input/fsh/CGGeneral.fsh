@@ -39,6 +39,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named bodyStructure 0..1
 * ^abstract = true
+* note only CodedAnnotation
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
