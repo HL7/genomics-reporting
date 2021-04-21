@@ -28,8 +28,8 @@ Description: "Extension reference to RiskAssessment resource"
 * ^context[0].type = #element
 * value[x] only Reference(RiskAssessment)
 
-Extension:   AnnotationCC
-Id:          annotation-codeableConcept
+Extension:   AnnotationCode
+Id:          annotation-code
 Title:       "Annotation Code"
 Description: "Extension adding a CodeableConcept to the Annotation data-type"
 * ^context[+].type = #element
