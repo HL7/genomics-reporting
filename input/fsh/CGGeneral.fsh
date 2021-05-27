@@ -36,8 +36,8 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * subject 0..1
 * subject only Reference(Patient or Group or Location)
 * performer 0..1
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
-* extension contains http://hl7.org/fhir/StructureDefinition/bodySite named bodyStructure 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * ^abstract = true
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -90,13 +90,13 @@ Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
-* extension contains CGRelatedArtifact named relatedArtifact 0..* and
-    RecommendedAction named RecommendedAction 0..* and
-    SupportingInformation named SupportingInfo 0..* and
-    DiagnosticReportRisk named diagnosticReport-risk 0..*
+* extension contains GenomicsArtifact named genomics-artifact 0..* and
+    RecommendedAction named recommended-action 0..* and
+    SupportingInformation named supporting-information 0..* and
+    GenomicsReportRisk named report-risk 0..*
 * extension[RecommendedAction].value[x] only Reference(Task)
 //* extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
-* extension[DiagnosticReportRisk].value[x] only Reference(RiskAssessment)
+* extension[GenomicsReportRisk].value[x] only Reference(RiskAssessment)
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)

@@ -256,9 +256,9 @@
     <!-- Extensions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/CGRelatedArtifact"/>
+        <reference value="StructureDefinition/genomics-artifact"/>
       </reference>
-      <name value="Related Artifact"/>
+      <name value="Genomics Artifact"/>
       <description
         value="Captures citations, evidence and other supporting documentation for the observation or report"/>
       <exampleBoolean value="false"/>
@@ -266,7 +266,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/RecommendedAction"/>
+        <reference value="StructureDefinition/recommended-action"/>
       </reference>
       <name value="Recommended Action"/>
       <description
@@ -276,11 +276,21 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/SupportingInfo"/>
+        <reference value="StructureDefinition/supporting-information"/>
       </reference>
       <name value="Supporting Information"/>
       <description
         value="Additional information relevant to interpreting/understanding the report"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/genomics-report-risk"/>
+      </reference>
+      <name value="Genomics Report Risk Assessment"/>
+      <description
+        value="Risk Assessment delivered as part of the Genomics Report"/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>

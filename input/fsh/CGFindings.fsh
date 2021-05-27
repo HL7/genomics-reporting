@@ -11,8 +11,8 @@ Description:    "Properties common to genetic findings whose results are express
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains gene-studied 0..* and 
-    CytogenicLocation 0..* and 
-    RefSequenceAssembly 0..*
+    cytogenetic-location 0..* and 
+    reference-sequence-assembly 0..*
 * component[gene-studied] ^short = "Gene studied [ID]"
 * component[gene-studied] ^definition = "HUGO Gene Nomenclature Committee (HGNC) identifier for a gene. List the gene(s) examined in full or in part by the study. If the study addresses multiple genes, these can be recorded in multiple gene studied components. The required coding will use the HGNC gene symbol as the display text and HGNC gene ID as the code."
 * component[gene-studied].code = LNC#48018-6
@@ -20,17 +20,17 @@ Description:    "Properties common to genetic findings whose results are express
 * component[gene-studied].value[x] ^short = "If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
 * component[gene-studied].value[x] 1..1
 * component[gene-studied].value[x] from HGNCVS (extensible)
-* component[CytogenicLocation] ^short = "Cytogenetic (chromosome) location"
-* component[CytogenicLocation] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
-* component[CytogenicLocation].code = LNC#48001-2
-* component[CytogenicLocation].value[x] only CodeableConcept
-* component[CytogenicLocation].value[x] 1..1
-* component[RefSequenceAssembly] ^short = "Human reference sequence assembly version"
-* component[RefSequenceAssembly] ^definition = "Human reference sequence assembly version"
-* component[RefSequenceAssembly].code = LNC#62374-4
-* component[RefSequenceAssembly].value[x] only CodeableConcept
-* component[RefSequenceAssembly].value[x] 1..1
-* component[RefSequenceAssembly].value[x] from http://loinc.org/vs/LL1040-6 (extensible)
+* component[cytogenetic-location] ^short = "Cytogenetic (chromosome) location"
+* component[cytogenetic-location] ^definition = "Some observations have multiple component observations. These component observations are expressed as separate code value pairs that share the same attributes. Examples include systolic and diastolic component observations for blood pressure measurement and multiple component observations for genetics observations."
+* component[cytogenetic-location].code = LNC#48001-2
+* component[cytogenetic-location].value[x] only CodeableConcept
+* component[cytogenetic-location].value[x] 1..1
+* component[reference-sequence-assembly] ^short = "Human reference sequence assembly version"
+* component[reference-sequence-assembly] ^definition = "Human reference sequence assembly version"
+* component[reference-sequence-assembly].code = LNC#62374-4
+* component[reference-sequence-assembly].value[x] only CodeableConcept
+* component[reference-sequence-assembly].value[x] 1..1
+* component[reference-sequence-assembly].value[x] from http://loinc.org/vs/LL1040-6 (extensible)
 
 Profile:        TMB
 Parent:         GenomicsBase
