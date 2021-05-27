@@ -32,7 +32,7 @@ Description:    "Properties common to genetic implications expressed as computab
 * component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (extensible)
 * component[prognosis] ^short = "Prognosis"
 * component[prognosis] ^definition = "E.g. Better outcome, poorer outcome"
-* component[prognosis].code = TbdCodes#prognostic-implication
+* component[prognosis].code = TbdCodesCS#prognostic-implication
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
 //* component[prognosis].value[x] from (example) (extensible)
@@ -44,7 +44,7 @@ Title:          "Diagnostic Implication"
 Description:    "Observation stating a linkage between one or more genotype/haplotype/variation Observations and evidence for or against a particular disease, condition, or cancer diagnosis."
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* code = TbdCodes#diagnostic-implication
+* code = TbdCodesCS#diagnostic-implication
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -63,14 +63,14 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[associated-phenotype].value[x] 1..1
 //* component[associated-cancer] ^short = "Associated cancer"
 //* component[associated-cancer] ^definition = "" // MLT: no definition provided.
-//* component[associated-cancer].code = TbdCodes#associated-cancer
+//* component[associated-cancer].code = TbdCodesCS#associated-cancer
 //* component[associated-cancer].value[x] only CodeableConcept
 //* component[associated-cancer].value[x] ^binding.strength = #example
 //* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
 //* component[associated-cancer].value[x] 1..1
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 // * component[mode-of-inheritance] ^definition = "" // MLT: no definition provided.
-* component[mode-of-inheritance].code = TbdCodes#condition-inheritance
+* component[mode-of-inheritance].code = TbdCodesCS#condition-inheritance
 * component[mode-of-inheritance].value[x] only CodeableConcept
 * component[mode-of-inheritance].value[x] 1..1
 * component[mode-of-inheritance].value[x] from ConditionInheritanceModeVS (preferred)
@@ -80,7 +80,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[clinical-significance].value[x] only CodeableConcept
 * component[clinical-significance].value[x] 1..1
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
-* component[functional-effect].code = TbdCodes#functional-effect
+* component[functional-effect].code = TbdCodesCS#functional-effect
 * component[functional-effect] ^short = "Functional Effect"
 * component[functional-effect] ^definition = "The effect of a variant on downstream biological products or pathways (from Sequence Ontology)."
 * component[functional-effect].value[x] only CodeableConcept
@@ -97,8 +97,7 @@ Title:          "Therapeutic Implication"
 Description:    "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"
-* code.coding.code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -118,7 +117,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[associated-phenotype].value[x] ^binding.strength = #example
 * component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
 * component[associated-phenotype].value[x] 1..1
-* component[associated-cancer].code = TbdCodes#associated-cancer
+* component[associated-cancer].code = TbdCodesCS#associated-cancer
 * component[associated-cancer] ^short = "Associated cancer"
 // * component[associated-cancer] ^definition = "" // MLT: no definition provided.
 * component[associated-cancer].value[x] only CodeableConcept
@@ -134,7 +133,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[medication-assessed].value[x] 1..1
 * component[therapy-assessed] ^short = "Associated cancer"
 * component[therapy-assessed] ^definition = "The non-medication therapy whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc."
-* component[therapy-assessed].code = TbdCodes#associated-therapy
+* component[therapy-assessed].code = TbdCodesCS#associated-therapy
 * component[therapy-assessed].value[x] only CodeableConcept
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"

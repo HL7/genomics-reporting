@@ -104,7 +104,7 @@ Description: "Example for genomic Variant given by VCF columns"
 * component[3].valueString = "C"
 * component[4].code.coding = http://loinc.org#69551-0 "Alt allele"
 * component[4].valueString = "A"
-* component[5].code.coding = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes#exact-start-end "Variant exact start and end"
+* component[5].code.coding = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#exact-start-end "Variant exact start and end"
 * component[5].valueRange.low.value = 96527334
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
@@ -121,7 +121,7 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * id = "TherapeuticImplicationExample1"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[0].code.coding = LNC#83009-1 "Genetic variation's effect on high-risk allele"
 * component[0].valueCodeableConcept.coding = LNC#LA19541-4 "High risk"
 * component[1].code.coding = LNC#51963-7 "Medication assessed"
@@ -137,7 +137,7 @@ Description: "Example of a Diagnostic Implication for Familial hypercholesterole
 * id = "AnnotationExample"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#diagnostic-implication
+* code = TbdCodesCS#diagnostic-implication
 * component[clinical-significance].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
 * component[associated-phenotype].valueCodeableConcept = SCT#398036000 "Familial hypercholesterolemia (disorder)"
 * derivedFrom = Reference(VariantExample2)
@@ -508,7 +508,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp01"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
@@ -523,7 +523,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp02"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
@@ -538,7 +538,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp03"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0008845 "citalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -553,7 +553,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp04"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -568,7 +568,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp05"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -612,7 +612,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp06"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0043031 "warfarin"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA25391-6 "Normal metabolizer"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
@@ -641,7 +641,7 @@ InstanceOf: Grouper
 Description: "Genotypes"
 * id = "GrouperEx02"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#grouper
+* code = TbdCodesCS#grouper
 * status = #final
 * hasMember[genotype][0] = Reference(Pgx-geno-1001)
 * hasMember[genotype][1] = Reference(Pgx-geno-1003)
@@ -653,7 +653,7 @@ InstanceOf: Grouper
 Description: "Regions Studied and variant info"
 * id = "GrouperEx03"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#grouper
+* code = TbdCodesCS#grouper
 * status = #final
 * hasMember[variant][0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
 * hasMember[variant][1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="

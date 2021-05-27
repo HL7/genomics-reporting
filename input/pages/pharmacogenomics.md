@@ -67,7 +67,7 @@ Below is one of the therapeutic implications in the report:
  </extension>
  <code>
    <coding>
-     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
+     <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
      <code value="therapeutic-implication"/>
    </coding>
  </code>
@@ -110,7 +110,7 @@ Below is one of the therapeutic implications in the report:
  <component>
    <code>
      <coding>
-       <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes"/>
+       <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
        <code value="conclusion-string"/>
      </coding>
    </code>

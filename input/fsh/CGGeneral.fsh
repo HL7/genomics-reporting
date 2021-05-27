@@ -46,7 +46,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * component contains conclusion-string 0..1
 * component[conclusion-string] ^short = "Clinical conclusion (interpretation) of the observation"
 * component[conclusion-string] ^definition = "Clinical conclusion (interpretation) of the observation"
-* component[conclusion-string].code = TbdCodes#conclusion-string
+* component[conclusion-string].code = TbdCodesCS#conclusion-string
 * component[conclusion-string].value[x] only string
 
 Profile:        OverallInterpretation
@@ -72,7 +72,7 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#82120-7
 * valueCodeableConcept 1..1
-* valueCodeableConcept from SeqPhaseRelationshipVS (required)
+* valueCodeableConcept from SequencePhaseRelationshipVS (required)
 * method from http://loinc.org/vs/LL4050-2 (extensible)
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "resolve()"
@@ -151,7 +151,7 @@ Title:          "Grouper"
 Description:    "Organizes information within a genomic report."
 
 * extension contains RecommendedAction named RecommendedAction 0..*
-* code = TbdCodes#grouper
+* code = TbdCodesCS#grouper
 * hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"
 * hasMember ^slicing.rules = #open
