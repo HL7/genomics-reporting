@@ -1,0 +1,39 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+<p>Patient HG00403 has a tumor recurrence. WES of new mass (specimen1) is performed. Clinical trial inclusion criteria includes somatic EGFR exon 19 whole or partial deletions. See if patient HG00403 has a structural variant that intersects with EGFR exon 19 (NC_000007.13:55242414-55242513) in specimen1.
+</p>
+<ul>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-subject-structural-intersecting-variants?subject=HG00403&amp;ranges=NC_000007.13:55242414-55242513&amp;specimenIdentifiers=specimen1&amp;genomicSourceClass=somatic&amp;includeVariants=true">GET .../find-subject-structural-intersecting-variants?subject=HG00403&amp;ranges=NC_000007.13:55242414-55242513&amp;specimenIdentifiers=specimen1&amp;genomicSourceClass=somatic&amp;includeVariants=true</a></li>
+</ul>
+
+</div>
