@@ -1,4 +1,5 @@
 CodeSystem: SequencePhaseRelationshipCS
+Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
 
@@ -7,7 +8,8 @@ Description: "Code System for specific types of relationships"
 * #Indeterminate "Indeterminate" "Phase is unable to be determined"
 * #Unknown "Unknown" "Phase is unknown"
 
-CodeSystem: TbdCodes
+CodeSystem: TbdCodesCS
+Id: tbd-codes-cs
 Title: "ToBeDeterminedCodes ('TbdCodes')"
 Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."
 
@@ -34,6 +36,7 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
 
 CodeSystem: ConditionInheritanceModeCS
+Id: condition-inheritance-mode-cs
 Title: "Condition Inheritance Pattern Codes"
 Description: "A set of terms that describe the transmission pattern of a condition in a pedigree."
 
