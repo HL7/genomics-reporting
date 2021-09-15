@@ -13,7 +13,6 @@
 <p>
     The following table represents most of the codeableConcepts presented in this guide and identifies corresponding profiles and valuesets where possible. View the individual profiles and sections under 'quick links' for more information on suggested usage.
 </p>
-
  <style type="text/css">
 
         #constrainer {
@@ -468,7 +467,7 @@
     <td><a href="StructureDefinition-implication.html">implication</a></td>
     <td>Level of evidence
 (93044-6)</td>
-    <td>Indicates the quality and type of evidence supporting this assertion. E.g. terms from ACMG guidelines for the interpretation of sequence variants or CPIC Clinical Annotation levels of Evidence.</td>
+    <td>In the interpretation of sequence variants, standard terminology is used to describe the level of evidence that supports the association between a particular genetic variant and a particular disorder or disease state. Three example answer lists for levels of evidence are listed on https://loinc.org/93044-6/ but we recognize that a local terminology may also be used based on other factors such as population, type of data studied, etc. The example answer list associated with this term is that given by the American College of Medical Genetics, but depending on the use case, other lists may be just as appropriate.</td>
     <td>Uncertain significance, Very strong evidence pathogenic, Strong evidence pathogenic, Moderate evidence pathogenic, Supporting evidence pathogenic, Supporting evidence benign, Strong evidence benign, Stand-alone evidence pathogenic, Stand-alone evidence benign</td>
     <td><a href="http://loinc.org/vs/LL5356-2">LL5356-2</a></td>
     <td>LA26333-7, LA30200-2, LA30201-0, LA30202-8, LA30203-6, LA30204-4, LA30205-1, LA30206-9, LA30207-7</td>
@@ -516,7 +515,7 @@
 <tr>
     <td><a href="StructureDefinition-therapeutic-implication.html">therapeutic-implication</a></td>
     <td>Genetic variation's effect on drug metabolism (53040-2)</td>
-    <td>Predicted phenotype for drug efficacy. A single marker interpretation value known to allow (responsive) or prevent (resistant) the drug to perform.</td>
+    <td>Predicted phenotype for drug metabolism. A single marker interpretation value of individual's capacity to metabolize substrates of this enzyme.</td>
     <td>Ultrarapid metabolizer, Intermediate metabolizer, Rapid metabolizer, Normal metabolizer, Poor metabolizer</td>
     <td><a href="http://loinc.org/vs/LL3856-3">LL3856-3</a></td>
     <td>LA10315-2, LA10317-8, LA25390-8, LA25391-6, LA9657-3</td>
@@ -528,14 +527,6 @@
     <td>Presumed Benign, Benign, Resistant, Responsive, Unknown Significance, Presumed resistant, Presumed responsive, Presumed non-responsive</td>
     <td><a href="http://loinc.org/vs/LL539-8">LL539-8</a></td>
     <td>LA6674-1, LA6675-8, LA6676-6, LA6677-4, LA6682-4, LA9660-7, LA9661-5, LA9662-3</td>
-</tr>
-<tr>
-    <td><a href="StructureDefinition-therapeutic-implication.html">therapeutic-implication</a></td>
-    <td>Genomic variation's effect on transporter function (tbd)</td>
-    <td>Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance.  Source of list: https://www.nature.com/articles/gim201687/tables/2</td>
-    <td>Increased function, Normal function, Decreased function, Poor function</td>
-    <td></td>
-    <td></td>
 </tr>
 <tr>
     <td><a href="StructureDefinition-therapeutic-implication.html">therapeutic-implication</a></td>
