@@ -27,7 +27,7 @@
     (Profile links:
     <a href="StructureDefinition-implication.html">Genetic Implication</a>,
     <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>,
-    <a href="StructureDefinition-task-med-chg.html"> Medication Usage Implication</a>
+    <a href="StructureDefinition-medication-recommendation.html"> Medication Usage Implication</a>
     )
   </p>
   <p>
@@ -46,10 +46,10 @@
   <a name="pgxRecommendedAction"> </a>
   <h3>Including Pharmacogenomic recommended actions</h3>
   <p>
-	To associate a Therapeutic-implication instance with a recommended action (e.g. discontinuing a medication, altering dosage, "choose alternative medication") use <a href="StructureDefinition-task-med-chg.html">Medication Usage Implication</a>, Recommended action, and Current Medication. Use "related artifact" in Therapeutic-implication for supporting documents such as CPIC guidelines. 
+	To associate a Therapeutic-implication instance with a recommended action (e.g. discontinuing a medication, altering dosage, "choose alternative medication") use <a href="StructureDefinition-medication-recommendation.html">Medication Usage Implication</a>, Recommended action, and Current Medication. Use "related artifact" in Therapeutic-implication for supporting documents such as CPIC guidelines. 
   </p>
   <p>
-	Medication Usage Implications (task-med-chg) link to therapeutic implications through "reasonReference"and are included in the report as links for RecommendedAction, DiagnosticReport.extension:RecommendedAction. The  therapeutic implications do not have a link to medication usage implications (task-med-chg): so rev_include is currently necessary to find the therapeutic implication statements relevant to the medication usage implications. 
+	Medication Usage Implications (medication-recommendation) link to therapeutic implications through "reasonReference"and are included in the report as links for RecommendedAction, DiagnosticReport.extension:RecommendedAction. The  therapeutic implications do not have a link to medication usage implications (medication-recommendation): so rev_include is currently necessary to find the therapeutic implication statements relevant to the medication usage implications. 
   </p>
   <p>
 	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note 2:  Implementers may also be interested in the <a href="somatics.html">Somatic Reporting</a> and <a href="pharmacogenomics.html">Pharmacogenomics Reporting</a> sections of this implementation guide.

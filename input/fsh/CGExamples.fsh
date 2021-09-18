@@ -157,10 +157,10 @@ Description: "Example of a Genotype, Medication Usage Task, and MedicationStatem
 * subject = Reference(CGPatientExample01)
 * status = #final
 
-Instance: TaskMedChgExample1
-InstanceOf: TaskMedChg
+Instance: MedicationRecommendationExample1
+InstanceOf: MedicationRecommendation
 Description: "Example of a Medication Usage Task"
-* id = "TaskMedChgExample1"
+* id = "MedicationRecommendationExample1"
 * code = LNC#LA26421-0
 * description = "Patients positive for this allele should not be treated with CBZ, unless the benefits clearly outweigh the risk. Therapy should be discontinued immediately if symptoms of SJS or TEN develop. Alternative medication should be used as first line therapy. Consideration in the choice for alternative medications should be given to potential cross-reactivity with structurally similar aromatic antiepileptic drugs such as oxcarbazepine, phenytoin, fosphenytoin and lamotrigine, which can also moderately increase risk for SJS/TEN in association with HLA-B*15:02 positivity."
 * for = Reference(CGPatientExample01)
@@ -176,7 +176,7 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * code = LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
 * extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommended-action"
-* extension.valueReference = Reference(TaskMedChgExample1)
+* extension.valueReference = Reference(MedicationRecommendationExample1)
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * result[0].display = "impact for high risk allele"
@@ -726,7 +726,7 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * status = #final
 
 Instance: PGxRecEx01
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for alternatives to clopidogrel"
 * id = "PGxRecEx01"
 * code = LNC#LA26421-0 "Consider alternative medication"
@@ -735,7 +735,7 @@ Description: "Example of a Medication Usage Task for alternatives to clopidogrel
 * reasonReference = Reference(TxImp01) "Poor metabolizer"
 
 Instance: PGxRecEx02
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for alternatives to voriconazole"
 * id = "PGxRecEx02"
 * code = LNC#LA26421-0 "Consider alternative medication"
@@ -744,7 +744,7 @@ Description: "Example of a Medication Usage Task for alternatives to voriconazol
 * reasonReference = Reference(TxImp02) "Poor metabolizer"
 
 Instance: PGxRecEx03
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for decreasing dosage for citalopram"
 * id = "PGxRecEx03"
 * code = LNC#LA26422-8 "Decrease dose"
@@ -753,7 +753,7 @@ Description: "Example of a Medication Usage Task for decreasing dosage for cital
 * reasonReference = Reference(TxImp03) "Poor metabolizer"
 
 Instance: PGxRecEx04
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for decreasing dosage for escitalopram"
 * id = "PGxRecEx04"
 * code = LNC#LA26422-8 "Decrease dose"
@@ -762,7 +762,7 @@ Description: "Example of a Medication Usage Task for decreasing dosage for escit
 * reasonReference = Reference(TxImp04) "Poor metabolizer"
 
 Instance: PGxRecEx05
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for decreasing dosage for amitriptyline"
 * id = "PGxRecEx05"
 * code = LNC#LA26422-8 "Decrease dose"

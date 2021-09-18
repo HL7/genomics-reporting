@@ -161,11 +161,11 @@ Description:    "Profile with properties for observations that convey the potent
 * component[effect-medication-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
 * ^abstract = false
 
-Profile:        TaskMedChg
+Profile:        MedicationRecommendation
 Parent:         Task
-Id:             task-med-chg
-Title:          "Medication Usage Task"
-Description:    "Task proposing actions based on genetic results."
+Id:             medication-recommendation
+Title:          "Medication Recommendation"
+Description:    "Task proposing medication recommendations based on genetic results."
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
@@ -181,10 +181,10 @@ Description:    "Task proposing actions based on genetic results."
 * requester only Reference(Organization)
 * reasonReference only Reference(TherapeuticImplication)
 
-Profile:        TaskRecFollowup
+Profile:        FollowupRecommendation
 Parent:         Task
-Id:             task-rec-followup
-Title:          "Recommended Followup"
+Id:             followup-recommendation
+Title:          "Followup Recommendation"
 Description:    "Task describing the followup that is recommended"
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
@@ -196,4 +196,3 @@ Description:    "Task describing the followup that is recommended"
 //* description = "Recommendation Document"
 * for only Reference(Patient)
 * requester only Reference(Organization)
-* reasonReference only Reference(TherapeuticImplication)

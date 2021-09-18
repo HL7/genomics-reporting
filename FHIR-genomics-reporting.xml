@@ -32,6 +32,7 @@
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <artifact id="Observation/obs-idh-ex" key="Observation-obs-idh-ex" name="Example - Inherited Disease Pathogenicity"/>
 <artifact id="Observation/MicrosatelliteInstabilityExample01" key="Observation-MicrosatelliteInstabilityExample01" name="Example - MSI"/>
+<artifact id="Task/MedicationRecommendationExample1" key="Task-MedicationRecommendationExample1" name="Example - MedicationRecommendation"/>
 <artifact id="Bundle/oncology-diagnostic" key="Bundle-oncology-diagnostic" name="Example - Melanoma implication"/>
 <artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="Example - NGS"/>
@@ -72,7 +73,7 @@
 <artifact id="ServiceRequest/eMERGEServiceRequest" key="ServiceRequest-eMERGEServiceRequest" name="Example - ServiceRequest-eMERGEServiceRequest"/>
 <artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Specimen"/>
 <artifact id="Observation/TumorMutationBurdenExample01" key="Observation-TumorMutationBurdenExample01" name="Example - TMB"/>
-<artifact id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
+<artifact deprecated="true" id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
 <artifact id="Observation/TherapeuticImplicationExample1" key="Observation-TherapeuticImplicationExample1" name="Example - TherapeuticImplication"/>
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example - Variant1"/>
 <artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="Example - Variant2"/>
@@ -97,7 +98,7 @@
 <artifact id="StructureDefinition/haplotype" key="StructureDefinition-haplotype" name="Haplotype"/>
 <artifact id="ValueSet/high-low-codes-vs" key="ValueSet-high-low-codes" name="High/Low codes"/>
 <artifact deprecated="true" key="ImplementationGuide" name="ImplementationGuide"/>
-<artifact id="StructureDefinition/task-med-chg" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
+<artifact id="StructureDefinition/medication-recommendation" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
 <artifact id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite instability"/>
 <artifact id="ValueSet/molecular-consequence-vs" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
 <artifact deprecated="true" key="Sequence" name="MolecularSequence"/>
@@ -105,7 +106,7 @@
 <artifact id="OperationDefinition/find-subject-variants" key="OperationDefinition-find-subject-variants" name="Operation: $find-subject-variants"/>
 <artifact id="StructureDefinition/overall-interpretation" key="StructureDefinition-overall-interpretation" name="Overall Interpretation"/>
 <artifact id="StructureDefinition/recommended-action" key="StructureDefinition-RecommendedAction" name="Recommended Action"/>
-<artifact id="StructureDefinition/task-rec-followup" key="StructureDefinition-task-rec-followup" name="Recommended Followup"/>
+<artifact id="StructureDefinition/followup-recommendation" key="StructureDefinition-task-rec-followup" name="Recommended Followup"/>
 <artifact id="StructureDefinition/region-studied" key="StructureDefinition-region-studied" name="Region Studied"/>
 <artifact deprecated="true" id="StructureDefinition/CGRelatedArtifact" key="StructureDefinition-CGRelatedArtifact" name="Related Artifact"/>
 <artifact id="StructureDefinition/servicerequest" key="StructureDefinition-servicerequest" name="Request for Genomics Test"/>
