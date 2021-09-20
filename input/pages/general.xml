@@ -22,7 +22,7 @@
         <td>Groups together all the structured data being reported for a genomic testing.</td>
       </tr>
       <tr>
-        <th>Overall Genomic Interpretations</th>
+        <th>Overall Interpretations</th>
         <td>These are high-level observations of the result of the genomic testing.</td>
       </tr>
       <tr>
@@ -68,8 +68,8 @@
     <a href="StructureDefinition-genomics-report.html">Genomics Report</a>,
     <a href="StructureDefinition-grouper.html">Grouper</a>,
     <a href="StructureDefinition-overall-interpretation.html">Overall Interpretation</a>,
-    Genomic Implications (see <a href="#fig7">Figure 7</a>,
-    Genomic Findings (see <a href="#fig6">Figure 6</a>,
+    Genomic Implications (see <a href="#fig7">Figure 7</a>),
+    Genomic Findings (see <a href="#fig6">Figure 6</a>),
     <a href="StructureDefinition-region-studied.html">Region Studied</a>,
     <a href="StructureDefinition-followup-recommendation.html">Followup Recommendation</a>,
     <a href="StructureDefinition-medication-recommendation.html">Medication Recommendation</a>)
@@ -115,7 +115,7 @@
   </p>
 
   <a name="interpretations"> </a>
-  <h4>Overall Genomic Interpretations</h4>
+  <h4>Overall Interpretations</h4>
 
   <p>
     Overall interpretations are high-level summary observations that apply to the whole report.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?":
@@ -286,7 +286,7 @@
     The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile.  Note that there is no expectation that all relationships will point to the same instances.  In special cases, a genomic report may involve multiple patients or multiple specimens.
   </p>
   <a name="fig4"> </a>
-  <b>THIS DIAGRAM NEEDS TO ADD FINDINGS, IMPLICATIONS (maybe?), AND GENERALIZE TASKS</b>
+  <b>THIS DIAGRAM NEEDS TO CHANGE GENOMIC BASE TO GENOMIC OBSERVATIONS? AND GENERALIZE TASKS. VALIDATE RELATIONSHIPS/CARDINALITIES.</b>
   <img src="1-general-fig4-other-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
   <p>
     <b>Figure 4: Genomic Report Other Relationships</b>
@@ -298,8 +298,8 @@
     <a href="StructureDefinition-genomics-base.html">Genomics Base</a>,
     <a href="StructureDefinition-specimen.html">Specimen</a>,
     Genomic Finding (see <a href="#fig6">Figure 6</a>),
-    Genomic Implications (see <a href="#fig7">Figure 7</a>,
-    <a href="StructureDefinition-overall-interpretation.html">Overall Genomic Interpretation</a>,
+    Genomic Implications (see <a href="#fig7">Figure 7</a>),
+    <a href="StructureDefinition-overall-interpretation.html">Overall Interpretation</a>,
     <a href="StructureDefinition-grouper.html">Grouper</a>,
     <a href="StructureDefinition-followup-recommendation.html">Followup Recommendation</a>,
     <a href="StructureDefinition-medication-recommendation.html">Medication Recommendation</a>)
@@ -317,7 +317,7 @@
     <li>Genomic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request.  All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
     <li>The <a href="StructureDefinition-servicerequest.html">Request for Genomic Test</a> typically represents a clinician order.  However, it can also represent a lab-side filler order, a reflex order or even a plan or recommendation.  These uses are distinguished via the <code>intent</code> element.</li>
     <li>The primary test to perform is captured in ServiceRequest.code.  However, Qualifications on what variants, medications, diseases and other aspects to search on can be conveyed using the <code>orderDetail</code> element</li>
-    <li><i>Overall Genomic Interpretations</i> should be "derived from" <i>Genomic Findings</i>. For example, the report might want to be flagged as a 'Positive' report, and can reference the specific findings that lead to that interpretation.</li>
+    <li><i>Overall Interpretations</i> should be "derived from" <i>Genomic Findings</i>. For example, the report might want to be flagged as a 'Positive' report, and can reference the specific findings that lead to that interpretation.</li>
     <li><i>Genomic Implications</i> should be "derived from" <i>Genomic Findings</i>. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
     <li><i>Recommended Actions</i> will have relationships. <i>Medication Recommendation</i> will have a reason relationship to a <i>Genomic Implication</i>.  For example: a recommendation to increase the dosage of a medication might be tied to a genomic implication indicating that the patient is an increased metabolizer of that medication; <i>Followup Recommendation</i> might include suggestions for confirmatory testing, additional testing, and/or genomic counseling and can be tied to any of the observations in the report that support the recommendation.</li>
   </ul>
