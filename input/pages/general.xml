@@ -22,7 +22,7 @@
         <td>Groups together all the structured data being reported for a genomic testing.</td>
       </tr>
       <tr>
-        <th>Genomic Interpretations</th>
+        <th>Overall Genomic Interpretations</th>
         <td>These are high-level observations of the result of the genomic testing.</td>
       </tr>
       <tr>
@@ -115,7 +115,7 @@
   </p>
 
   <a name="interpretations"> </a>
-  <h4>Genomic Interpretations</h4>
+  <h4>Overall Genomic Interpretations</h4>
 
   <p>
     Overall interpretations are high-level summary observations that apply to the whole report.  Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?":
@@ -317,7 +317,7 @@
     <li>Genomic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request.  All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
     <li>The <a href="StructureDefinition-servicerequest.html">Request for Genomic Test</a> typically represents a clinician order.  However, it can also represent a lab-side filler order, a reflex order or even a plan or recommendation.  These uses are distinguished via the <code>intent</code> element.</li>
     <li>The primary test to perform is captured in ServiceRequest.code.  However, Qualifications on what variants, medications, diseases and other aspects to search on can be conveyed using the <code>orderDetail</code> element</li>
-    <li><i>Genomic Interpretations</i> should be "derived from" <i>Genomic Findings</i>. For example, the report might want to be flagged as a 'Positive' report, and can reference the specific findings that lead to that interpretation.</li>
+    <li><i>Overall Genomic Interpretations</i> should be "derived from" <i>Genomic Findings</i>. For example, the report might want to be flagged as a 'Positive' report, and can reference the specific findings that lead to that interpretation.</li>
     <li><i>Genomic Implications</i> should be "derived from" <i>Genomic Findings</i>. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
     <li><i>Recommended Actions</i> will have relationships. <i>Medication Recommendation</i> will have a reason relationship to a <i>Genomic Implication</i>.  For example: a recommendation to increase the dosage of a medication might be tied to a genomic implication indicating that the patient is an increased metabolizer of that medication; <i>Followup Recommendation</i> might include suggestions for confirmatory testing, additional testing, and/or genomic counseling and can be tied to any of the observations in the report that support the recommendation.</li>
   </ul>
