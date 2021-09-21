@@ -268,8 +268,12 @@
   <a name="grouper"> </a>
   <h4>Grouper</h4>
   <p>
-    All the observations profiles defined are referenced directly off by the <a href="StructureDefinition-genomics-report.html">genomics report</a>  However, they can also be part of a <a href="StructureDefinition-grouper.html">Grouper</a>. In this version of the specification, no guidance is provided on where or if grouper should be used. This is left up to the discretion of the reporting lab. Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
+    All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>  However, they can also be part of a <a href="StructureDefinition-grouper.html">Grouper</a>. In this version of the specification, no guidance is provided on where or if grouper should be used. This is left up to the discretion of the reporting lab. Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
   </p>
+  <p>
+    Here is an example of how data could be structured with a Grouper observation:
+  </p>
+  <img src="general-grouper-example.png" alt="Example of how to use a Grouper"/>
   <p>
     Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes. It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
   </p>
