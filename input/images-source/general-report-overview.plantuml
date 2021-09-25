@@ -1,0 +1,28 @@
+@@startuml
+
+object GenomicsReport << DiagnosticReport >> #Aqua
+together {
+    object Grouper << Observation >> #LawnGreen
+    object OverallInterpretation << Observation >> #LawnGreen
+    object RegionStudied << Observation >> #LawnGreen
+    object GenomicFindings << Observation >> #LawnGreen
+    object GenomicImplications << Observation >> #LawnGreen
+}
+object RecommendActions << Task >> #RoyalBlue
+object others << Observation >>
+
+Grouper "0..*" <-- GenomicsReport : "results"
+OverallInterpretation "0..1" <-- GenomicsReport : "results"
+GenomicFindings "0..*" <-- GenomicsReport : "results"
+GenomicImplications "0..*" <-- GenomicsReport : "results"
+RegionStudied "0..*" <-- GenomicsReport : "results"
+RecommendActions "0..*" <-- GenomicsReport : "extension(RecommendedActions)"
+others "0..*" <-- GenomicsReport : "results"
+
+Grouper "0..*" <-- Grouper : "hasMember"
+GenomicFindings "0..*" <-- Grouper : "hasMember"
+GenomicImplications "0..*" <-- Grouper : "hasMember"
+RegionStudied "0..*" <-- Grouper : "hasMember"
+others "0..*" <-- Grouper : "hasMember"
+
+@@enduml
