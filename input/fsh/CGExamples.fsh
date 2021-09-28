@@ -175,8 +175,7 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * basedOn = Reference(GenomicsServiceRequestExample01)
 * code = LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
-* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommended-action"
-* extension.valueReference = Reference(MedicationRecommendationExample1)
+* extension[RecommendedAction][0].valueReference = Reference(MedicationRecommendationExample1)
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * result[0].display = "impact for high risk allele"
@@ -185,6 +184,8 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * result[2] = Reference(OverallInterpExample1)
 * status = #final
 * subject = Reference(CGPatientExample01)
+* extension[GenomicsArtifact][0].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 
 Instance: SequencePhaseRelationExample1
 InstanceOf: SequencePhaseRelationship
