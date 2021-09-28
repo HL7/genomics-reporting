@@ -62,10 +62,11 @@
     The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>.
   </p>
   <a name="fig2"> </a>
-  <figure>
-    {% include general-report-overview.svg %}
-    <figcaption>Genomic Report Overview</figcaption>
-  </figure>
+  <b>THIS DIAGRAM NEEDS TO BETTER SHOW THE TASKS/RECOMMENDATIONS</b>
+  <img src="1-general-fig2-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
+  <p>
+    <b>Figure 2: Genomic Report Overview</b>
+  </p>
   <p>
     <a href="StructureDefinition-genomics-report.html">Genomics Report</a>,
     <a href="#interpretations">Overall Interpretation</a>,
@@ -272,7 +273,7 @@
   <p>
     Here is an example of how data could be structured with a Grouper observation:
   </p>
-  <img src="general-grouper.png" alt="Example of how to use a Grouper"/>
+  <img src="general-grouper-example.png" alt="Example of how to use a Grouper"/>
   <p>
     Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes. It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
   </p>
