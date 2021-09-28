@@ -508,13 +508,15 @@ InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp01"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Clopidogrel</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
-//* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
-//* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -522,14 +524,15 @@ Instance: TxImp02
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp02"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Voriconazole</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
-//* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
-//* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -537,14 +540,15 @@ Instance: TxImp03
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp03"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Citalopram</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0008845 "citalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
-//* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
-//* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -552,14 +556,15 @@ Instance: TxImp04
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp04"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Escitalopram</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
-//* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
-//* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -567,14 +572,15 @@ Instance: TxImp05
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp05"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Amitriptyline</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
-//* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
-//* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -611,14 +617,15 @@ Instance: TxImp06
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp06"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Normal metabolizer of Warfarin</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0043031 "warfarin"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA25391-6 "Normal metabolizer"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
-//* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
-//* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
 * derivedFrom[0] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
 * derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
