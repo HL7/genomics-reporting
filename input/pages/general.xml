@@ -121,8 +121,8 @@
   <h4>Genomic Findings</h4>
   <p>The primary focus of genomic testing is making Genomic Findings. These are the fine and/or coarse-grained descriptions of a specimen's genomic characteristics. It is this information that leads to the <i>Overall Interpretations</i> for the report, as well as <a href="#implications">Genomic Implications</a> that are used to convey the potential impact of the genomic findings for the subject of the test.
   </p>
-  <img src="general-genomic-findings.png" alt="Class diagram showing relationship of genomic findings as well as genotypes, haplotypes, variants and sequences."/>
   <p>
+    <img src="general-genomic-findings.png" alt="Class diagram showing relationship of genomic findings as well as genotypes, haplotypes, variants and sequences."/>
     <b>Genomic Findings</b>
   </p>
   <p>
@@ -198,6 +198,10 @@
       At present, implications are noted as explicit observations about the patient/subject. However, it's not clear this is the correct approach. The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way. This would allow saying "this variant is associated with an increase risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert. Feedback is welcome.
     </p>
   </blockquote>
+  <p>
+    <img src="general-genomic-implications.png" alt="Class diagram showing relationship of genomic implications."/>
+    <b>Genomic Implications</b>
+  </p>
   <p>
     <a href="StructureDefinition-implication.html">Genomic Implication</a>,
     <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>,
