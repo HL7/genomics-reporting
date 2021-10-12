@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <th><a href="#implications">Genomic Implications</a></th>
-        <td>These represent observations about the patient based on the genomic test results. For example, "Patient may have increased susceptibility to heart attacks"</td>
+        <td>These represent observations where the <code>Observation.subject</code> is typically the Patient and the <code>Observation.derivedFrom</code> should refer to Genomic Findings. For example, "Patient may have increased susceptibility to heart attacks"</td>
       </tr>
       <tr>
         <th><a href="#grouper">Grouper</a></th>
@@ -130,7 +130,7 @@
     <a href="StructureDefinition-finding.html">Genomic Finding</a>,
     <a href="StructureDefinition-genotype.html">Genotype</a>,
     <a href="StructureDefinition-haplotype.html">Haplotype</a>,
-    Variant (see <a href="sequencing.html">Variant Reporting</a>),
+    <a href="StructureDefinition-variant.html"> Variant</a> (or see <a href="sequencing.html">Variant Reporting</a>),
     <a href="StructureDefinition-sequence-phase-relationship.html">Sequence Phase Relationship</a>
   </p>
   <p>
@@ -264,7 +264,7 @@
   <a name="grouper"> </a>
   <h4>Grouper</h4>
   <p>
-    All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>  However, they can also be part of a <a href="StructureDefinition-grouper.html">Grouper</a>. In this version of the specification, no guidance is provided on where or if grouper should be used. This is left up to the discretion of the reporting lab. Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive "hasMember" relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
+    All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>  However, they can also be part of a <a href="StructureDefinition-grouper.html">Grouper</a>. In this version of the specification, no guidance is provided on where or if grouper should be used. This is left up to the discretion of the reporting lab. Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive <code>hasMember</code> relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
   </p>
   <p>
     Here is an example of how data could be structured with a Grouper observation:
@@ -322,8 +322,8 @@
   <ul>
     <li>Of the different types of observations, Genomic Findings all have exactly one specimen. The remainder might be associated with a specimen, but might not. Observations may also be associated with a particular BodyStructure, such as a fetus, tumor or lesion.</li>
     <li>Genomic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request. All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
-    <li><i>Overall Interpretations</i> should be "derived from" <i>Genomic Findings</i>. For example, the report might want to be flagged as a 'Positive' report, and can reference the specific findings that lead to that interpretation.</li>
-    <li><i>Genomic Implications</i> should be "derived from" <i>Genomic Findings</i>. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
+    <li><i>Overall Interpretations</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, an interpretation that "deletions or duplication were found" might be supported by observations of variants that contain deletions and/or duplication.</li>
+    <li><i>Genomic Implications</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
     <li><i>Recommended Actions</i> are referenced from the <a href="StructureDefinition-recommended-action.html">Recommended Action</a> extension. These Task resources will also have relationships to Genomic Implications or other observations.</li>
   </ul>
 </div>
