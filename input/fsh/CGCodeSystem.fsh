@@ -10,7 +10,7 @@ Description: "Code System for specific types of relationships"
 
 CodeSystem: TbdCodesCS
 Id: tbd-codes-cs
-Title: "ToBeDeterminedCodes ('TbdCodes')"
+Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."
 
 * #grouper "grouper" "A means to bundle several observations such as one would find in a genetics test panel."

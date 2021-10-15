@@ -1,19 +1,58 @@
-id: hl7.fhir.uv.genomics-reporting
+id: genomics-reporting
 canonical: http://hl7.org/fhir/uv/genomics-reporting
+packageId: hl7.fhir.uv.genomics-reporting
 version: 1.1.0
-name: HL7FHIRImplementationGuideClinicalGenomicsReportingSTU1
-title: "HL7 FHIR Implementation Guide: Clinical Genomics Reporting
-  Release 1 | STU1"
+name: GenomicsReporting
+title: Genomics Reporting Implementation Guide
 status: active
 publisher:
   name: HL7 Clinical Genomics Working Group
   url: http://www.hl7.org/Special/committees/cg
   email: cg@lists.HL7.org
-jurisdiction: urn:iso:std:iso:3166#US "United States of America"
-description: The Clinical Genomics Reporting FHIR IG is intended to standardize representation of genomics reporting to FHIR.
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
+description: Guidelines for reporting of clinical genomics results using HL7 FHIR.
 license: CC0-1.0
 fhirVersion: 4.0.1
 parameters:
   show-inherited-invariants: true
 copyrightYear: 2019+
-releaseLabel: STU1
+releaseLabel: trial-use
+
+pages:
+  index.html:
+    title: Home Page
+    background.html:
+      title: Genomics Background
+    general.html:
+      title: General Genomic Reporting
+    sequencing.html:
+      title: Variant Reporting
+    pharmacogenomics.html:
+      title: Pharmacogenomic Reporting
+      generation: markdown
+    somatics.html:
+      title: Somatic Reporting
+    histocompatibility.html:
+      title: Histocompatibility and Immunogenetics Reporting
+    v2.html:
+      title: "Appendix A: Relation to v2 reporting"
+    cgapps.html:
+      title: "Appendix B: Clinical Genomic Apps"
+    domain.html:
+      title: "Appendix C: HL7 Domain Analysis Model"
+    usecases.html:
+      title: "Appendix D: Query Guidance"
+    codings.html:
+      title: "Appendix E: External Coding Systems"
+    conversion.html:
+      title: "Appendix F: Conversion from STU3 Extensions"
+    molecularSequence.html:
+      title: "Appendix G: Molecular Sequence"
+    Glossary.html:
+      title: "Appendix H: Glossary"
+  artifacts.html:
+    title: Artifact List
+  operations.html:
+    title: Operations
+  downloads.html:
+    title: Useful Downloads

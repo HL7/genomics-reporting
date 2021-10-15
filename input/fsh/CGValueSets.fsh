@@ -27,7 +27,7 @@ Description:    "DNA Change Type of a variant."
 
 ValueSet:       TBDCodesVS
 Id:             tbd-codes-vs
-Title:          "TBD Value Set"
+Title:          "To Be Determined Value Set"
 Description:    "Value Set for codes yet to be defined in LOINC"
 * include codes from system TbdCodesCS
 

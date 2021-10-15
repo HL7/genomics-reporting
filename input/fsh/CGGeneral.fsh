@@ -1,7 +1,7 @@
 Profile:        GenomicSpecimen
 Parent:         Specimen
 Id:             specimen
-Title:          "Genomics specimen"
+Title:          "Genomics Specimen"
 Description:    "A sample to be used for analysis."
 
 * subject 1..1
@@ -10,7 +10,7 @@ Description:    "A sample to be used for analysis."
 Profile:        GenomicsServiceRequest
 Parent:         ServiceRequest
 Id:             servicerequest
-Title:          "Genomics service request"
+Title:          "Genomics Service Request"
 Description:    "Request that initiated the diagnostic report."
 
 * doNotPerform 0..0
@@ -22,7 +22,7 @@ Description:    "Request that initiated the diagnostic report."
 Profile:        GenomicsBase
 Parent:         Observation
 Id:             genomics-base
-Title:          "Genomics base"
+Title:          "Genomics Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 
 * category 1..*

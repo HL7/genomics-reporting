@@ -1,7 +1,7 @@
 
 Extension:   GenomicsArtifact
 Id:          genomics-artifact
-Title:       "Related Artifact for Genomics"
+Title:       "Genomics Artifact"
 Description: "Captures citations, evidence and other supporting documentation for the observation or report."
 * ^context[0].type = #element
 * value[x] only RelatedArtifact

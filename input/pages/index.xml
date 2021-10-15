@@ -27,19 +27,39 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
   <a name="how to use this guide"> </a>
   <h3>How to Use this Guide</h3> 
   <p>
-  This implementation guide is organized into a set of sections. All implementers intending to do clinical genomic reporting should read the <a href="general.html">Overall Guidance for General Genomic Reporting</a> and the <a href="sequencing.html">Variant Reporting</a> sections. Those who wish to understand the key profiles in this IG, as well as their relationship to one another, should read the Overall Guidance section first. Those new to FHIR should review the Understanding FHIR section below.
+  This implementation guide is organized into a set of sections. All implementers intending to do clinical genomic reporting should read the <a href="general.html">General Genomic Reporting</a> and the <a href="sequencing.html">Variant Reporting</a> sections. To understand the key profiles in this IG, as well as their relationship to one another, start with the General Genomics Reporting section. Those new to FHIR should review the Understanding FHIR section below.
   </p>
   <p>
   The remaining sections provide support for more specialized types of reporting. If your system is involved with genomic reports in a particular area, then read through that section of the implementation guide for further guidance.
   </p>
-  <ul>
-    <li><a href="background.html">Background</a>: Introduces some of the key genomics terms and relationships that should be understood by those implementing this specification.</li>
-    <li><a href="general.html">Overall Guidance for General Genomic Reporting</a>: Overall guidance in using the profiles and transactions defined in this guide. Guidance and examples for the general structure of genomic reports, how to report overall interpretations and how to report genotypes, haplotypes and different types of variants.</li>
-    <li><a href="sequencing.html">Variant Reporting</a>: Guidance on expressing information about variants gleaned from various sequencing approaches including direct sequencing, shotgun sequencing, array-based testing, etc.</li>
-    <li><a href="pharmacogenomics.html">Pharmacogenomic Reporting</a>: Guidance and examples related to genomic testing done for the purpose of assessing genomic variations' implication on the use of medications - both for oncology and for general patient treatment.</li>
-    <li><a href="somatics.html">Somatic Reporting</a>: Guidance related to genomic testing done on somatic (non-germline) tissues, including assessments of tumors.</li>
-    <li><a href="histocompatibility.html">Histocompatibility Reporting</a>: Guidance related to genomic testing done for histocompatibility and immunogenomics assessments, including HLA typing.</li>
-  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th><a href="background.html">Background</a></th>
+        <td>Introduces some of the key genomics terms and relationships that should be understood by those implementing this specification.</td>
+      </tr>
+      <tr>
+        <th><a href="general.html">General Genomic Reporting</a></th>
+        <td>Overall guidance in using the profiles and transactions defined in this guide. Guidance and examples for the general structure of genomic reports, how to report overall interpretations and how to report genotypes, haplotypes and different types of variants.</td>
+      </tr>
+      <tr>
+        <th><a href="sequencing.html">Variant Reporting</a></th>
+        <td>Guidance on expressing information about variants gleaned from various sequencing approaches including direct sequencing, shotgun sequencing, array-based testing, etc.</td>
+      </tr>
+      <tr>
+        <th><a href="pharmacogenomics.html">Pharmacogenomic Reporting</a></th>
+        <td>Guidance and examples related to genomic testing done for the purpose of assessing genomic variations' implication on the use of medications - both for oncology and for general patient treatment.</td>
+      </tr>
+      <tr>
+        <th><a href="somatics.html">Somatic Reporting</a></th>
+        <td>Guidance related to genomic testing done on somatic (non-germline) tissues, including assessments of tumors.</td>
+      </tr>
+      <tr>
+        <th><a href="histocompatibility.html">Histocompatibility Reporting</a></th>
+        <td>Guidance related to genomic testing done for histocompatibility and immunogenomics assessments, including HLA typing.</td>
+      </tr>
+    </tbody>
+  </table>
 
   <a name="principles"> </a>
   <h3>Guiding principles</h3>

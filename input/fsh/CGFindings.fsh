@@ -289,8 +289,8 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 Profile:        MSI
 Parent:         GenomicsBase
 Id:             msi
-Title:          "Microsatellite instability"
-Description:    "Microsatellite instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR)."
+Title:          "Microsatellite Instability"
+Description:    "Microsatellite Instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR)."
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#81695-9 // Mutations/Megabase [# Ratio] in Tumor
