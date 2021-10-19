@@ -2,7 +2,7 @@ Profile:        GenomicImplication
 Parent:         GenomicsBase
 Id:             implication
 Title:          "Genomic Implication"
-Description:    "Properties common to genetic implications expressed as computable discrete elements."
+Description:    "Properties common to genmoic implications expressed as computable discrete elements."
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains GenomicsArtifact named related-artifact 0..1
@@ -61,13 +61,6 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[associated-phenotype].value[x] ^binding.strength = #example
 * component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
 * component[associated-phenotype].value[x] 1..1
-//* component[associated-cancer] ^short = "Associated cancer"
-//* component[associated-cancer] ^definition = "" // MLT: no definition provided.
-//* component[associated-cancer].code = TbdCodesCS#associated-cancer
-//* component[associated-cancer].value[x] only CodeableConcept
-//* component[associated-cancer].value[x] ^binding.strength = #example
-//* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
-//* component[associated-cancer].value[x] 1..1
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 // * component[mode-of-inheritance] ^definition = "" // MLT: no definition provided.
 * component[mode-of-inheritance].code = TbdCodesCS#condition-inheritance
@@ -104,7 +97,6 @@ Description:    "Profile with properties for observations that convey the potent
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     phenotypic-treatment-context 0..* and
-    associated-cancer 0..* and
     medication-assessed 0..* and
     therapy-assessed 0..* and
     effect-medication-metabolism 0..1 and
@@ -117,13 +109,6 @@ Description:    "Profile with properties for observations that convey the potent
 * component[phenotypic-treatment-context].value[x] ^binding.strength = #example
 * component[phenotypic-treatment-context].value[x] ^binding.description = "Binding not yet defined"
 * component[phenotypic-treatment-context].value[x] 1..1
-* component[associated-cancer].code = TbdCodesCS#associated-cancer
-* component[associated-cancer] ^short = "Associated cancer"
-// * component[associated-cancer] ^definition = "" // MLT: no definition provided.
-* component[associated-cancer].value[x] only CodeableConcept
-* component[associated-cancer].value[x] ^binding.strength = #example
-* component[associated-cancer].value[x] ^binding.description = "Binding not yet defined"
-* component[associated-cancer].value[x] 1..1
 * component[medication-assessed].code = LNC#51963-7
 * component[medication-assessed] ^short = "Medication Assessed"
 * component[medication-assessed] ^definition = "The medication whose implication is being described."

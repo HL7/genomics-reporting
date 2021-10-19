@@ -20,7 +20,6 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #effect-medication-transporter "Medication Transporter Function"
 * #effect-high-risk-allele "High Risk Allele"
 * #prognostic-implication "Prognostic Implication component" "Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."
-* #associated-cancer "associated-cancer"
 * #associated-therapy "Genomically linked therapy" "The non-medication therapy (procedure) associated with this implication."
 * #region-coverage "region-coverage" "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."
 * #molecular-consequence "Molecular Consequence" "Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."
