@@ -44,7 +44,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains conclusion-string 0..1
-* component[conclusion-string] ^short = "Clinical conclusion (interpretation) of the observation"
+* component[conclusion-string] ^short = "Clinical Conclusion"
 * component[conclusion-string] ^definition = "Clinical conclusion (interpretation) of the observation"
 * component[conclusion-string].code = TbdCodesCS#conclusion-string
 * component[conclusion-string].value[x] only string

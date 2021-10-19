@@ -14,7 +14,7 @@
   <a name="Variant Change"> </a>
   <h4>Variant Change Components</h4>
   <p>
-    The components <code>dna-chg:48004-6</code> and <code>dna-chg-type:48019-4</code> are used to deliver the Human Genome Variation Society (HGVS) nomenclature for the observed DNA marker and codify the type of change observed. If the described variant is structural, <code>genomic-dna-chg:81290-9</code> is used instead of <code>dna-chg:48004-6</code>. If a simple variant is observed, the component <code>variation-code:81252-9</code> is used to report the variant's unique identifier. Alternatively, <code>dbSNP-id:81255-2</code> can be used to represent the change, and/or the components <code>ref-allele:69547-8</code> and <code>alt-allele:69551-0</code> can directly relay the variation from the observed sequence.
+    The components <code>coding-hgvs:48004-6</code> and <code>coding-change-type:48019-4</code> are used to deliver the Human Genome Variation Society (HGVS) nomenclature for the observed DNA marker and codify the type of change observed. If the described variant is structural, <code>genomic-hgvs:81290-9</code> is used instead of <code>coding-hgvs:48004-6</code>. If a simple variant is observed, the component <code>variation-code:81252-9</code> is used to report the variant's unique identifier. Alternatively, <code>dbSNP-id:81255-2</code> can be used to represent the change, and/or the components <code>ref-allele:69547-8</code> and <code>alt-allele:69551-0</code> can directly relay the variation from the observed sequence.
   </p>
   <p>
     Lastly, <code>genomic-source-class:48002-0</code> can describe the genomic class of the specimen being analyzed, whether it is from inherited genome, cancer genome, or fetal genome.
@@ -27,7 +27,7 @@
   <a name="Amino Acid Change"> </a>
   <h4>Amino Acid Change Components</h4>
   <p>
-    The components <code>amino-acid-chg:48005-3</code> and <code>amino-acid-chg-type:48006-1</code> are used when communicating a variant in an amino acid sequence. Human Genome Variation Society (HGVS) nomenclature is used.
+    The components <code>protein-hgvs:48005-3</code> and <code>amino-acid-change-type:48006-1</code> are used when communicating a variant in an amino acid sequence. Human Genome Variation Society (HGVS) nomenclature is used.
   </p>
 
   <a name="Genomic Location"> </a>

@@ -55,7 +55,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
     clinical-significance 0..1 and
     functional-effect 0..*
 * component[associated-phenotype] ^short = "Associated phenotype"
-* component[associated-phenotype] ^definition = "The possible phenotype/condition associated with the genetic variant found in this study."
+* component[associated-phenotype] ^definition = " An observable characteristic (e.g., condition; disease) of an individual, as associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings.  Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
 * component[associated-phenotype].code = LNC#81259-4
 * component[associated-phenotype].value[x] only CodeableConcept
 * component[associated-phenotype].value[x] ^binding.strength = #example
@@ -103,20 +103,20 @@ Description:    "Profile with properties for observations that convey the potent
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    associated-phenotype 0..* and
+    phenotypic-treatment-context 0..* and
     associated-cancer 0..* and
     medication-assessed 0..* and
     therapy-assessed 0..* and
     effect-medication-metabolism 0..1 and
-    effect-medication-high-risk 0..1 and
-    effect-medication-efficacy 0..*
-* component[associated-phenotype].code = LNC#81259-4
-* component[associated-phenotype] ^short = "Associated phenotype"
-* component[associated-phenotype] ^definition = "The possible phenotype associated with the genetic variant found in this study."
-* component[associated-phenotype].value[x] only CodeableConcept
-* component[associated-phenotype].value[x] ^binding.strength = #example
-* component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
-* component[associated-phenotype].value[x] 1..1
+    effect-medication-risk 0..1 and
+    effect-treatment-efficacy 0..*
+* component[phenotypic-treatment-context].code = LNC#81259-4
+* component[phenotypic-treatment-context] ^short = "Phenotypic treatment context"
+* component[phenotypic-treatment-context] ^definition = "A condition whose treatment in medication-assessed or therapy-assessed is contextually impacted by the variant.  A code set is not specified, but it is ideal to use terms related to medical findings.  Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and all of Human Phenotype Ontology (HPO).  For example, if an individual's variant affects the efficacy of imatinib in non-small cell lung cancer, a valid response from SNOMED CT would be 'Non-small cell lung cancer (code 254637007)'."
+* component[phenotypic-treatment-context].value[x] only CodeableConcept
+* component[phenotypic-treatment-context].value[x] ^binding.strength = #example
+* component[phenotypic-treatment-context].value[x] ^binding.description = "Binding not yet defined"
+* component[phenotypic-treatment-context].value[x] 1..1
 * component[associated-cancer].code = TbdCodesCS#associated-cancer
 * component[associated-cancer] ^short = "Associated cancer"
 // * component[associated-cancer] ^definition = "" // MLT: no definition provided.
@@ -131,7 +131,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[medication-assessed].value[x] ^binding.strength = #example
 * component[medication-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[medication-assessed].value[x] 1..1
-* component[therapy-assessed] ^short = "Associated cancer"
+* component[therapy-assessed] ^short = "Non-medication therapy assessed"
 * component[therapy-assessed] ^definition = "The non-medication therapy whose implication on the cancer outcome is being predicted. E.g. altered diet, radiation therapy, surgery, etc."
 * component[therapy-assessed].code = TbdCodesCS#associated-therapy
 * component[therapy-assessed].value[x] only CodeableConcept
@@ -139,26 +139,26 @@ Description:    "Profile with properties for observations that convey the potent
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[therapy-assessed].value[x] 1..1
 * component[effect-medication-metabolism] ^short = "Effect medication metabolism"
-* component[effect-medication-metabolism] ^definition = "Genomic variation's effect on drug metabolism"
+* component[effect-medication-metabolism] ^definition = "A variant's effect on the metabolism of the medication referenced in medication-assessed. The metabolism (or pharmacokinetics) of a drug determines the concentration of the drug, prodrug, and/or break-down products over time. Therefore, variants that affect a drug's metabolism will alter the concentration of drug/prodrug/metabolites over time.  Example: Due to this variant, the patient is a 'slow metabolizer' (i.e. the drug's metabolism is slowed)"
 * component[effect-medication-metabolism].code = LNC#53040-2
 * component[effect-medication-metabolism].value[x] only CodeableConcept
 * component[effect-medication-metabolism].value[x] 1..1
 * component[effect-medication-metabolism].value[x] from http://loinc.org/vs/LL3856-3 (preferred)
-* component[effect-medication-high-risk] ^short = "Effect medication high risk"
-// * component[effect-medication-high-risk] ^definition = "" // MLT: no definition provided.
-* component[effect-medication-high-risk].code = LNC#83009-1
-* component[effect-medication-high-risk].value[x] only CodeableConcept
-* component[effect-medication-high-risk].value[x] 1..1
-* component[effect-medication-high-risk].value[x] from http://loinc.org/vs/LL2353-2 (extensible)
+* component[effect-medication-risk] ^short = "Effect medication risk"
+* component[effect-medication-risk] ^definition = "A variant's effect on the risk of the medication specified by the medication-assessed component.   Bindings are currently limited to 'high risk' and 'low risk' (LOINC Answers for LL2353-2).  Example: Due to this variant, the drug is at high risk of causing an adverse reaction."
+* component[effect-medication-risk].code = LNC#83009-1
+* component[effect-medication-risk].value[x] only CodeableConcept
+* component[effect-medication-risk].value[x] 1..1
+* component[effect-medication-risk].value[x] from http://loinc.org/vs/LL2353-2 (extensible)
 // ******
 // ****** MLT: TODO: Add effect-medication-transport ******
 // ******
-* component[effect-medication-efficacy] ^short = "Effect medication high risk"
-* component[effect-medication-efficacy] ^definition = "Variation's effect on drug efficacy"
-* component[effect-medication-efficacy].code = LNC#51961-1
-* component[effect-medication-efficacy].value[x] only CodeableConcept
-* component[effect-medication-efficacy].value[x] 1..1
-* component[effect-medication-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
+* component[effect-treatment-efficacy] ^short = "Effect treatment efficacy"
+* component[effect-treatment-efficacy] ^definition = "A variant's effect on the efficacy of the treatment referenced in medication-assessed or therapy-assessed. The efficacy (or pharmacodynamics) of a drug determines how effective a drug is at a given concentration. Therefore variants that affect a drug's efficacy will alter the potency of a drug. Example: Due to this variant, the drug will be less efficacious against this target. Caveat: Different value sets are in common use for germline vs. somatic use cases. Germline use cases generally use some flavor of CPIC/PharmGKB drug efficacy Value Set (e.g. here), and align with our definition. Somatic use cases generally use some flavor of LOINC LL539-8 answer list, which is similar to https://www.oncokb.org/levels (e.g. here). Codes used for somatic use cases are often stated from the perspective of the tumor (e.g. 'given this mutation, the tumor is resistant to the drug') whereas codes for germline use cases are stated from the perspective of the drug (e.g. 'given this mutation, the drug will be less effective')."
+* component[effect-treatment-efficacy].code = LNC#51961-1
+* component[effect-treatment-efficacy].value[x] only CodeableConcept
+* component[effect-treatment-efficacy].value[x] 1..1
+* component[effect-treatment-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
 * ^abstract = false
 
 Profile:        MedicationRecommendation

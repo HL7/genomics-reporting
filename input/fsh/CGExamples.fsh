@@ -80,7 +80,7 @@ Description: "Example for Variant given by ClinVar ID"
 * interpretation = SCT#10828004 "Positive (qualifier value)"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11"
 * component[variation-code].valueCodeableConcept = CLINVAR#619728 "NC_000019.8:g.1171707G>A"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
 
 Instance: VariantExample2
@@ -94,11 +94,11 @@ Description: "Example for genomic Variant given by VCF columns"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[0].code.coding = http://loinc.org#62374-4 "Human reference sequence assembly version"
+* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 * component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[1].code.coding = http://loinc.org#48013-7 "Genomic reference sequence ID"
+* component[1].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
 * component[1].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
-* component[2].code.coding = http://loinc.org#53034-5 "Allelic state"
+* component[2].code.coding = http://loinc.org#53034-5 "Allelic State"
 * component[2].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
 * component[3].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
 * component[3].valueString = "C"
@@ -150,7 +150,7 @@ Description: "Example of a Genotype, Medication Usage Task, and MedicationStatem
 * id = "GenotypeExample1"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/clinvar#14909 "HLA-B*15:02"
-* component.code.coding = LNC#48018-6 "Gene studied ID"
+* component.code.coding = LNC#48018-6 "Gene studied [ID]"
 * component.valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:4932 "HLA-B"
 * effectiveDateTime = "2018"
 * specimen = Reference(GenomicSpecimenExample01)
@@ -220,7 +220,7 @@ Description: "Example variant 1011"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96521657
@@ -231,7 +231,7 @@ Description: "Example variant 1011"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:262 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -246,7 +246,7 @@ Description: "Example variant 1012"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96522463
@@ -257,7 +257,7 @@ Description: "Example variant 1012"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -272,7 +272,7 @@ Description: "Example variant 1013"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535173
@@ -283,7 +283,7 @@ Description: "Example variant 1013"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -299,7 +299,7 @@ Description: "Example variant 1014"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535210
@@ -310,7 +310,7 @@ Description: "Example variant 1014"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -325,11 +325,11 @@ Description: "Example variant 1015"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
+* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -344,7 +344,7 @@ Description: "Example variant 1016"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541616
@@ -355,7 +355,7 @@ Description: "Example variant 1016"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -370,7 +370,7 @@ Description: "Example variant 1017"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541756
@@ -381,7 +381,7 @@ Description: "Example variant 1017"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -396,7 +396,7 @@ Description: "Example variant 1018"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96612495
@@ -407,7 +407,7 @@ Description: "Example variant 1018"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -422,11 +422,11 @@ Description: "Example variant 1019"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000016.9:g.31096368C>T
+* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000016.9:g.31096368C>T
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6706-1 "heterozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -441,7 +441,7 @@ Description: "Example variant 1020"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96702047
@@ -452,7 +452,7 @@ Description: "Example variant 1020"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -467,7 +467,7 @@ Description: "Example variant 1021"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96741053
@@ -478,7 +478,7 @@ Description: "Example variant 1021"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
