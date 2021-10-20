@@ -91,6 +91,7 @@ Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
 * extension contains GenomicsArtifact named genomics-artifact 0..* and
+    GenomicsFile named genomics-file 0..* and
     RecommendedAction named recommended-action 0..* and
     SupportingInformation named supporting-information 0..* and
     GenomicsReportRisk named report-risk 0..*

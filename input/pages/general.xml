@@ -80,6 +80,29 @@
   <p>
     In some cases, the lab or other reporting organization may generate risk assessments as part of their reports. These are referenced from a report from the <a href="StructureDefinition-genomics-report-risk.html">Genomics Report Risk</a> extension.
   </p>
+  <a name="fileattachments"> </a>
+  <h4>File Attachments</h4>
+  <blockquote class="stu-note">
+    <p>
+      This approach to file attachments needs to be carefully reviewed and considered. There are many potential issues and the Work Group welcomes feedback.
+    </p>
+  </blockquote>
+  <p>
+    The <a href="StructureDefinition-genomics-file.html">Genomics File</a> extension can be used to transmit the contents of or links to files that were produced as part of the testing process. Common examples are VCF, BAM, CRAM, and other similar files.  This is different than the <a href="StructureDefinition-genomics-artifact.html">Genomics Artifact</a> extension, which is used to reference materials which support conclusions, interpretations, and findings included in the report. The referenced artifacts will often be published guidance. Another potential option that was considered for attaching files is the <code>DiagnosticReport.media</code> attribute. However, its current definition focuses on "Key images associated with this report" which does not align well with this use case.
+  </p> 
+  <p>
+    Using the <code>DocumentReference</code> resource provides the advantage of allowing a file to have its own existance. The other approaches considered above all imply that the file <i>only</i> exists as part of the <code>DiagnosticReport</code> resource, which means consumers interested in the files would be forced to use the <code>DiagnosticReport</code> resource to find genomic reports, then find the ones that have files they are interested in. Using <code>DocumentReference</code> as indicated here makes queries like "find all VCF files for this patient" possible by directly querying the <code>DocumentReference</code> resource. For those that are already processing the report, there is still a reference to the file via the extension.
+  </p>
+  <p>
+    There are many considerations for these kinds of files, but one of the most recognized is file size. Many can be quite large, so size must be carefully considered. The <a href="{{site.data.fhir.path}}documentreference.html">DocumentReference</a> resource has different options to evaluate for your use case. The document content can be embedded directly in the resource via the <code>DocumentReference.content.attachment.data</code>. In this case, the servers receiving the files may have size constraints per resource or per transaction which may limit your options. Alternatively, the file can be referenced by a URL via <code>DocumentReference.content.attachment.url</code>. The URL will likely point to an online resource that is not the FHIR server, perhaps referring directly to a cloud resource that hosts the file. In this case, servers may have constraints that limits access to resources outside the organization, which would prevent the receiving system from accessing the data. This approach also introduces authorization concerns, where the FHIR server would need to understand the authorization mechanism used to protect the file.
+  </p> 
+  <p>
+    Beyond file size and access concerns, implementors should also consider how the files were generated - what pipelines were used, what tools and applications were used in those pipelines, specific settings, and more. All of these must be carefully evaluated to ensure appropriate use of those files in downstream processes. The <code>DocumentReference.description</code> (as markdown) might be helpful for sending systems to provide some guidance on how the file was generated. However, a fully computable approach has yet to be described. 
+  </p>
+  <p>
+    While a full, detailed discussion of an implementation is outside the scope of this IG, these and other factors affect how these files should be handled. In a future release, this IG may include a profile of <code>DocumentReference</code> or other artifacts to provide more specific guidance.
+  </p>
+
   <a name="observations"> </a>
   <h3>Genomic Observations</h3>
   <p>
