@@ -1,5 +1,5 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<a name="Description"/>
 	<h3>Description</h3>
-	<p>Determine if specified simple variants are present, absent, or unknown. If any specified variant instance that passes the filters is present, then presence=present. If region was studied and no variant was found, then presence=absent. If region was not studied, or was studied but deemed uncallable, then presence=unknown. (The <a href="OperationDefinition-find-subject-specific-variants-simple.html">find-subject-specific-variants-simple</a> operation simply reports if a variant is present or not, whereas this operation reports present/absent/unknown).</p>
+	<p>Determine if specified simple variants are present or not. If any specified variant instance that passes the filters is present, then presence=true, else presence=false. </p>
 </div>

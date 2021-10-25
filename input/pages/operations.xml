@@ -42,7 +42,7 @@
   </tr>
   <tr>
     <td>simple variants</td>
-    <td><a href="OperationDefinition-find-subject-specific-variants-simple.html">find-subject-specific-variants-simple</a>; <a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a>; <a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a></td>
+    <td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a>; <a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a></td>
     <td>find-population-specific-variants</td>
   </tr>
   <tr>
@@ -56,11 +56,6 @@
     <td>find-population-specific-haplotypes</td>
   </tr>
   <tr>
-    <td>region studied</td>
-    <td><a href="OperationDefinition-find-region-studied.html">find-region-studied</a></td>
-    <td></td>
-  </tr>
-  <tr>
     <td colspan="3"><b>Phenotype Operations</b></td>
   </tr>
   <tr>
@@ -72,6 +67,14 @@
     <td>diagnostic implications</td>
     <td>find-subject-dx-implications</td>
     <td>find-population-dx-implications</td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Metadata Operations</b></td>
+  </tr>
+  <tr>
+    <td>region studied</td>
+    <td><a href="OperationDefinition-find-region-studied.html">find-region-studied</a></td>
+    <td></td>
   </tr>
 </tbody>
 </table>
@@ -87,16 +90,12 @@
 </thead>
 <tbody>
   <tr>
-    <td><a href="OperationDefinition-find-subject-specific-variants-simple.html">find-subject-specific-variants-simple</a></td>
-    <td>Determine if specified simple variants are present or not.</td>
+    <td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a></td>
+    <td>Determine if simple variants are present that overlap range(s).</td>
   </tr>
   <tr>
     <td><a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a></td>
-    <td>Leverages studied and uncallable regions to determine if specified simple variants are present/absent/unknown.</td>
-  </tr>
-  <tr>
-    <td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a></td>
-    <td>Determine if simple variants are present that overlap range(s).</td>
+    <td>Determine if specified simple variants are present or not.</td>
   </tr>
   <tr>
     <td>find-population-specific-variants</td>

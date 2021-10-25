@@ -30,11 +30,10 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-<p>Patient HG00403 had WES. Introns and intergenic regions were not studied as part of test1. See if patient had any of these [NM_001354609.2:c.1799T>A, NM_007294.4:c.5559C>A, NC_000001.10:g.12225351T>A, NM_000038.6:c.55G>T, NM_001354609.2:c.1802=] germline variants detected by test1. 
-</p>
+<p>See if patient HG00403 had any of these [NM_001354609.2:c.1799T>A, NM_007294.4:c.5559C>A, NC_000001.10:g.12225351T>A, NM_000038.6:c.55G>T, NM_001354609.2:c.1802=] germline variants detected by test1 or test2. </p>
 <ul>
-<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-subject-specific-variants?subject=HG00403&amp;variants=NM_001354609.2:c.1799T>A,NM_007294.4:c.5559C>A,NC_000001.10:g.12225351T>A,NM_000038.6:c.55G>T,NM_001354609.2:c.1802=&amp;testIdentifiers=test1&amp;genomicSourceClass=germline">GET .../find-subject-specific-variants?subject=HG00403&amp;variants=NM_001354609.2:c.1799T>A,NM_007294.4:c.5559C>A,NC_000001.10:g.12225351T>A,NM_000038.6:c.55G>T,NM_001354609.2:c.1802=&amp;testIdentifiers=test1&amp;genomicSourceClass=germline</a></li>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-subject-specific-variants?subject=HG00403&amp;variants=NM_001354609.2:c.1799T>A,NM_007294.4:c.5559C>A,NC_000001.10:g.12225351T>A,NM_000038.6:c.55G>T,NM_001354609.2:c.1802=&amp;testIdentifiers=test1,test2&amp;genomicSourceClass=germline">GET .../find-subject-specific-variants?subject=HG00403&amp;variants=NM_001354609.2:c.1799T>A,NM_007294.4:c.5559C>A,NC_000001.10:g.12225351T>A,NM_000038.6:c.55G>T,NM_001354609.2:c.1802=&amp;testIdentifiers=test1,test2&amp;genomicSourceClass=germline</a></li>
 </ul>
-<p>Note how variant 'NC_000001.10:g.12225351T>A' is found to be 'unknown' in this operation.</p>
+
 
 </div>
