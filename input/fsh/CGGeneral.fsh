@@ -185,3 +185,13 @@ Description:    "Organizes information within a genomic report."
 * hasMember[sequence-phase-relation] only Reference(SequencePhaseRelationship)
 * hasMember[sequence-phase-relation] ^short = "Sequence Phase Relationship"
 * ^abstract = false
+
+
+Profile:        GenomicsDocumentReference
+Parent:         DocumentReference
+Id:             genomics-document-reference
+Title:          "Genomics DocumentReference"
+Description:    "A profile of DocumentReference used to represent a genomics file."
+
+* subject only Reference(Patient or Group)
+* context.related only Reference(GenomicsReport)
