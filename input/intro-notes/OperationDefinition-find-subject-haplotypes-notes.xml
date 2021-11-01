@@ -1,0 +1,42 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+	<p>CYP2D6 haplotypes?</p><pre>https://.../find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:2625</pre>
+	<p>Haplotypes that include both HLA-A AND HLA-B?</p><pre>https://.../find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:4931&amp;genes=http://www.genenames.org/geneId|HGNC:4932</pre>
+	
+<p>Patient HG00403 underwent preemptive pharmacogenomic testing. Clinician now wants to prescribe amitriptyline, but first wants to see CYP2D6 and CYP2C19 star alleles.
+</p>
+<ul>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:2625, http://www.genenames.org/geneId|HGNC:2621">GET .../find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:2625, http://www.genenames.org/geneId|HGNC:2621</a></li>
+</ul>
+
+</div>

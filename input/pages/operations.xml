@@ -52,7 +52,7 @@
   </tr>
   <tr>
     <td>haplotype/genotypes</td>
-    <td>find-subject-haplotypes; find-subject-specific-haplotypes</td>
+    <td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a>; <a href="OperationDefinition-find-subject-specific-haplotypes.html">find-subject-specific-haplotypes</a></td>
     <td>find-population-specific-haplotypes</td>
   </tr>
   <tr>
@@ -118,11 +118,11 @@
     <td>Retrieve count or list of patients having structural subsuming variants in specified regions.</td>
   </tr>
   <tr>
-    <td>find-subject-haplotypes</td>
+    <td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a></td>
     <td>Retrieve haplotypes/genotypes for specified genes.</td>
   </tr>
   <tr>
-    <td>find-subject-specific-haplotypes</td>
+    <td><a href="OperationDefinition-find-subject-specific-haplotypes.html">find-subject-specific-haplotypes</a></td>
     <td>See if specified haplotypes/genotypes are present.</td>
   </tr>
   <tr>
@@ -156,10 +156,15 @@
   <h3>General Guidance for the use of these Operations</h3>
   <p>Genomics is a complex and highly dynamic field. We provide general guidance applicable to all FHIR Genomics operations here.</p>
   
+    <a name="QueryByCode"/>
+  <h4>Querying by code</h4>
+  <p>Many operations have coded elements as input parameters. In such cases, the description of the parameter will include 'must be in token or codesystem|code format'. A token is a string that should be used by the server to perform case-insensitive search through text, display, code, and/or codeSystem. Servers may optionally broaden the use of a token to also perform close to exact searching. If supplied parameter is in codeSystem|code format, server should only perform case-sensitive code- and codeSystem-specific retrieval.</p>
+  
   <a name="GenesRegions"/>
   <h4>Genes vs. Regions</h4>
-  <p>As our understanding of genomics grows, we continue to recognize the clinical significance of variations not only within protein-coding gene exons, but also in introns and intergenic regions. To enable a consistent approach to query, whether for variants within or outside a gene, these operations are based on regions as parameters, and not gene names or identifiers. As a result, to query for variants within a specific gene, an application must determine the position of that gene, and supply the position as a parameter. For instance, assume an App wants to use the <b>'find-subject-variants'</b> operation to see if a subject has any variants in the APC gene. On human genome reference assembly GRCh38, the APC gene is located on chromosome 5 (reference sequence NC_000005.10), at position 112707497-112846239. Thus, the query would be for variants that overlap NC_000005.10:112707497-112846239. The definitive location of genes based on human genome resources at the NCBI can be found <a href="https://www.ncbi.nlm.nih.gov/genome/guide/human/">here</a>.</p>
-  <p>For all operations, positional coordinates are <a href="https://www.biostars.org/p/84686/">zero-based</a>. Some operations return variants that overlap a 0-based interval range of integers, whereas some operations return variants that subsume a range. In the following figure, variants 1-5 overlap or intersect with the X..Y range, whereas only variant 2 subsumes the X..Y range.</p>
+  <p>As our understanding of genomics grows, we continue to recognize the clinical significance of variations not only within protein-coding gene exons, but also in introns and intergenic regions. To enable a consistent approach to query, whether for variants within or outside a gene, these operations are generally based on regions as parameters, and not gene names or identifiers. As a result, to query for variants within a specific gene, an application must determine the position of that gene, and supply the position as a parameter. For instance, assume an App wants to use the <b>'find-subject-variants'</b> operation to see if a subject has any variants in the APC gene. On human genome reference assembly GRCh38, the APC gene is located on chromosome 5 (reference sequence NC_000005.10), at position 112707497-112846239. Thus, the query would be for variants that overlap NC_000005.10:112707497-112846239. The definitive location of genes based on human genome resources at the NCBI can be found <a href="https://www.ncbi.nlm.nih.gov/genome/guide/human/">here</a>.</p>
+  <p>For all operations, positional coordinates are <a href="https://www.biostars.org/p/84686/">zero-based</a>. Some operations return variants that overlap a 0-based interval range of integers, whereas some operations return variants that subsume a range. In the following figure, variants 1-5 overlap or intersect with the X..Y range, whereas only variant 2 subsumes the X..Y range. A variant at position X is considered to intersect the X..Y range, whereas a variant at position Y does not. (Note that an insertion that starts before X, regardless of length, would not overlap X..Y, and would therefore not be returned). Imprecise implementations are allowed, where results contain some records outside a requested range.  
+  </p>
 	<img src="find-variants-fig1.png" alt="Genes vs. Regions"/>
   
    <a name="RegionStudied"/>
@@ -168,7 +173,7 @@
 </p>
   <p>Whereas labs report variants found to be present, labs cannot enumerate every variant found to be absent - when you consider that a person has 4 billion base pairs, 99% of which are the same as a reference sequence, you can imagine how big a report would need to be to enumerate every variant found to be absent! Rather, absence of a variant at a particular position can be inferred by knowing the region studied, and whether or not there were uncallable subregions within the studied region. 
 </p>
-  <p>FHIR Genomics operations are generally designed to return variants found to be present. The operation <b>'find-region-studied'</b> can be used to determine, for a given test, what regions were studied, and of the studied regions, which subregions were deemed by the lab to be uncallable. Imagine for instance, that a targeted sequencing test was performed on a patient's tumor, and we want to know if the results show evidence of an EGFR exon 19 deletion. In this case, imagine that the operation <b>'find-subject-variants'</b> returns no variants. We might then use the <b>'find-region-studied'</b> to confirm that in fact EGFR exon 19 was part of the studied region.
+  <p>FHIR Genomics operations are generally designed to return variants found to be present. For example, the <b>'find-region-studied'</b> operation can be used to determine what variants are present in specified regions. Where it is important to know whether or not particular regions were studied, and of the studied regions, which subregions were deemed by the lab to be uncallable, one can use the <b>find-region-studied</b> operation. An example of where such an operation can be useful - imagine for instance, that a targeted sequencing test was performed on a patient's tumor, and we want to know if the results show evidence of an EGFR exon 19 deletion. In this case, imagine that the operation <b>'find-subject-variants'</b> returns no variants. We might then use the <b>'find-region-studied'</b> to confirm that in fact EGFR exon 19 was part of the studied region.
 </p>  
 
   <a name="QueryFilters"/>

@@ -76,7 +76,7 @@ Description: "Use this operation to retrieve variants with precise endpoints fro
           valueBoolean: boolean (True if as least one variant is identified in the range)
         part (0..*) (if includeVariants=true then include variants in the range)
           name: variant
-          resource: observation (variant profile) - return as much of variant profile as is known
+          resource: observation (variant profile)
 "
 * parameter[7].type = #canonical
 * parameter[7].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectVariantsParameters"
@@ -147,13 +147,13 @@ Description: ""
         name: variants
         part (1..1)
           name: variantItem
-          valueString: range from variantList
+          valueString: variant from variantList
         part (1..1)
           name: presence
           valueBoolean: boolean
-        part (0..1) (if includeVariants=true then include variants in the range)
+        part (0..1)
           name: variant
-          resource: observation (variant profile) - return as much of variant profile as is known
+          resource: observation (variant profile)
 "
 * parameter[6].type = #canonical
 * parameter[6].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectSpecificVariantsParameters"
@@ -324,6 +324,163 @@ Description: ""
 * parameter[7].type = #canonical
 * parameter[7].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectStructuralSubsumingVariantsParameters"
 
+Instance: find-subject-haplotypes
+InstanceOf: OperationDefinition
+Title: "Find Subject Haplotypes"
+Usage: #definition
+Description: ""
+* name = "FindSubjectHaplotypes"
+* title = "Find Subject Haplotypes"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 1
+* parameter[0].max = "1"
+* parameter[0].documentation = "The subject of interest."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #genes
+* parameter[1].use = #in
+* parameter[1].min = 1
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of genes to be searched. Must be in token or codesystem|code format."
+* parameter[1].type = #string
+* parameter[1].searchType = #token
+* parameter[2].name = #testIdentifiers
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "*"
+* parameter[2].documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #testDateRanges
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "*"
+* parameter[3].documentation = "Supply a list of date ranges. Only results generated during one of these ranges will be returned."
+* parameter[3].type = #Period
+* parameter[4].name = #specimenIdentifiers
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "*"
+* parameter[4].documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
+* parameter[4].type = #string
+* parameter[4].searchType = #token
+* parameter[5].name = #genomicSourceClass
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #response
+* parameter[6].use = #out
+* parameter[6].min = 1
+* parameter[6].max = "1"
+* parameter[6].documentation = "Operation returns a FHIR Parameters resource, containing each range requested, a boolean indicating if variants are present in a range, and optionally, the variants present in a range.
+
+    parameters
+      parameter (1..*) (one for each gene in geneList)
+        name: haplotypes
+        part (1..1)
+          name: geneItem
+          valueString: gene from geneList
+        part (0..*)
+          name: haplotype
+          resource: observation (haplotype profile)
+        part (0..*)
+          name: genotype
+          resource: observation (genotype profile)
+"
+* parameter[6].type = #canonical
+* parameter[6].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectHaplotypesParameters"
+
+Instance: find-subject-specific-haplotypes
+InstanceOf: OperationDefinition
+Title: "Find Subject Specific Haplotypes"
+Usage: #definition
+Description: ""
+* name = "FindSubjectSpecificHaplotypes"
+* title = "Find Subject Specific Haplotypes"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 1
+* parameter[0].max = "1"
+* parameter[0].documentation = "The subject of interest."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #haplotypes
+* parameter[1].use = #in
+* parameter[1].min = 1
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of haplotypes and/or genotypes being sought. Must be in token or codesystem|code format."
+* parameter[1].type = #string
+* parameter[1].searchType = #token
+* parameter[2].name = #testIdentifiers
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "*"
+* parameter[2].documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #testDateRanges
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "*"
+* parameter[3].documentation = "Supply a list of date ranges. Only results generated during one of these ranges will be returned."
+* parameter[3].type = #Period
+* parameter[4].name = #specimenIdentifiers
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "*"
+* parameter[4].documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
+* parameter[4].type = #string
+* parameter[4].searchType = #token
+* parameter[5].name = #genomicSourceClass
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #response
+* parameter[6].use = #out
+* parameter[6].min = 1
+* parameter[6].max = "1"
+* parameter[6].documentation = "Operation returns a FHIR Parameters resource, containing each variant requested, a boolean indicating if variant is present or not, and the variant instance itself if present.
+
+    parameters
+      parameter (1..*) (one for each haplotype in haplotypeList)
+        name: haplotypes
+        part (1..1)
+          name: haplotypeItem
+          valueString: haplotype/genotype from haplotypeList
+        part (1..1)
+          name: presence
+          valueBoolean: boolean
+        part (0..*)
+          name: haplotype
+          resource: observation (haplotype profile)
+        part (0..*)
+          name: genotype
+          resource: observation (genotype profile)
+"
+* parameter[6].type = #canonical
+* parameter[6].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectSpecificVariantsParameters"
+
 Instance: find-subject-tx-implications
 InstanceOf: OperationDefinition
 Title: "Find Subject Treatment Implications"
@@ -357,28 +514,28 @@ Description: ""
 * parameter[2].use = #in
 * parameter[2].min = 0
 * parameter[2].max = "*"
-* parameter[2].documentation = "List of haplotypes from which implications are derived. Must be in code or codesystem|code format."
+* parameter[2].documentation = "List of haplotypes from which implications are derived. Must be in token or codesystem|code format."
 * parameter[2].type = #string
 * parameter[2].searchType = #token
 * parameter[3].name = #genotypes
 * parameter[3].use = #in
 * parameter[3].min = 0
 * parameter[3].max = "*"
-* parameter[3].documentation = "List of genotypes from which implications are derived. Must be in code or codesystem|code format."
+* parameter[3].documentation = "List of genotypes from which implications are derived. Must be in token or codesystem|code format."
 * parameter[3].type = #string
 * parameter[3].searchType = #token
 * parameter[4].name = #treatments
 * parameter[4].use = #in
 * parameter[4].min = 0
 * parameter[4].max = "*"
-* parameter[4].documentation = "List of medications and/or other therapeutic interventions for which implications are sought. Must be in code or codesystem|code format."
+* parameter[4].documentation = "List of medications and/or other therapeutic interventions for which implications are sought. Must be in token or codesystem|code format."
 * parameter[4].type = #string
 * parameter[4].searchType = #token
 * parameter[5].name = #conditions
 * parameter[5].use = #in
 * parameter[5].min = 0
 * parameter[5].max = "*"
-* parameter[5].documentation = "List of conditions for which implications are sought. Must be in code or codesystem|code format."
+* parameter[5].documentation = "List of conditions for which implications are sought. Must be in token or codesystem|code format."
 * parameter[5].type = #string
 * parameter[5].searchType = #token
 * parameter[6].name = #testIdentifiers
@@ -466,21 +623,21 @@ Description: ""
 * parameter[2].use = #in
 * parameter[2].min = 0
 * parameter[2].max = "*"
-* parameter[2].documentation = "List of haplotypes from which implications are derived. Must be in code or codesystem|code format."
+* parameter[2].documentation = "List of haplotypes from which implications are derived. Must be in token or codesystem|code format."
 * parameter[2].type = #string
 * parameter[2].searchType = #token
 * parameter[3].name = #genotypes
 * parameter[3].use = #in
 * parameter[3].min = 0
 * parameter[3].max = "*"
-* parameter[3].documentation = "List of genotypes from which implications are derived. Must be in code or codesystem|code format."
+* parameter[3].documentation = "List of genotypes from which implications are derived. Must be in token or codesystem|code format."
 * parameter[3].type = #string
 * parameter[3].searchType = #token
 * parameter[4].name = #conditions
 * parameter[4].use = #in
 * parameter[4].min = 0
 * parameter[4].max = "*"
-* parameter[4].documentation = "List of conditions for which implications are sought. Must be in code or codesystem|code format."
+* parameter[4].documentation = "List of conditions for which implications are sought. Must be in token or codesystem|code format."
 * parameter[4].type = #string
 * parameter[4].searchType = #token
 * parameter[5].name = #testIdentifiers
