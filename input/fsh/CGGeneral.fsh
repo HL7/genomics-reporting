@@ -114,8 +114,7 @@ Description:    "Genomics profile of DiagnosticReport."
 * result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
-* result contains gen-grouper 0..* and
-    overall 0..1 and
+* result contains overall 0..1 and
     diagnostic-implication 0..* and
     therapeutic-implication 0..* and
     variant 0..* and
@@ -123,8 +122,6 @@ Description:    "Genomics profile of DiagnosticReport."
     region-studied 0..* and 
     genotype 0..* and 
     haplotype 0..*
-* result[gen-grouper] only Reference(Grouper)
-* result[gen-grouper] ^short = "Grouper"
 * result[overall] only Reference(OverallInterpretation)
 * result[overall] ^short = "Assessment of overall results"
 * result[diagnostic-implication] only Reference(DiagnosticImplication)

@@ -33,10 +33,12 @@
         <th><a href="#implications">Genomic Implications</a></th>
         <td>These represent observations where the <code>Observation.subject</code> is typically the Patient and the <code>Observation.derivedFrom</code> should refer to Genomic Findings. For example, "Patient may have increased susceptibility to heart attacks"</td>
       </tr>
+		<!--
       <tr>
         <th><a href="#grouper">Grouper</a></th>
         <td>The genomic observations can be organized and grouped together in a wide variety of ways.</td>
       </tr>
+	  -->
       <tr>
         <th><a href="#regionstudied">Region Studied</a></th>
         <td>These are observations describing the region or regions that were studied as part of this Genomics Report.</td>
@@ -70,7 +72,7 @@
     <a href="#interpretations">Overall Interpretation</a>,
     <a href="#findings">Genomic Findings</a>,
     <a href="#implications">Genomic Implications</a>,
-    <a href="#grouper">Grouper</a>,
+    <!--<a href="#grouper">Grouper</a>,-->
     <a href="#regionstudied">Region Studied</a>,
     <a href="#recommendations">Recommended Actions</a>
   </p>
@@ -100,7 +102,7 @@
     <a href="StructureDefinition-haplotype.html"> Haplotype</a>,
     <a href="StructureDefinition-genotype.html"> Genotype</a>,
     <a href="StructureDefinition-region-studied.html"> Region Studied</a>,
-    <a href="StructureDefinition-grouper.html"> Grouper</a>,
+    <!--<a href="StructureDefinition-grouper.html"> Grouper</a>,-->
     <a href="StructureDefinition-sequence-phase-relationship.html"> Sequence Phase Relationship</a>,
     <a href="StructureDefinition-implication.html"> Genomic Implication (abstract)</a>,
     <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>,
@@ -261,7 +263,7 @@
     </ul>
   </p>
 
-  <a name="grouper"> </a>
+  <!--<a name="grouper"> </a>
   <h4>Grouper</h4>
   <p>
     All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>  However, they can also be part of a <a href="StructureDefinition-grouper.html">Grouper</a>. In this version of the specification, no guidance is provided on where or if grouper should be used. This is left up to the discretion of the reporting lab. Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive <code>hasMember</code> relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
@@ -272,7 +274,7 @@
   <img src="general-grouper.png" alt="Example of how to use a Grouper"/>
   <p>
     Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes. It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
-  </p>
+  </p>-->
 
   <a name="regionstudied"> </a>
   <h4>Region Studied</h4>

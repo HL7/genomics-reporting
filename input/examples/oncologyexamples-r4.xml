@@ -926,7 +926,7 @@
          <url value="Observation"/>
       </request>
    </entry>
-
+<!--
    <entry>
       <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12f"/>
       <resource>
@@ -977,7 +977,8 @@
          <url value="Observation"/>
       </request>
    </entry>
-
+-->
+<!--
    <entry>
       <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
       <resource>
@@ -1022,7 +1023,7 @@
          <url value="Observation"/>
       </request>
    </entry>
-
+-->
 
    <entry>
       <fullUrl value="urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5"/>
@@ -1056,15 +1057,55 @@
                <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
 
+			 <!--
             <result>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12f"/>
                <display value="Variants and other biomarker tests"/>
             </result>
+			 -->
+			 <result>
+				 <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
+				 <display value="SNV analysis for JAK2 variant"/>
+			 </result>
+			 <result>
+				 <reference value="urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd"/>
+				 <display value="SNV analysis for KDR variant"/>
+			 </result>
+			 <result>
+				 <reference value="urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01"/>
+				 <display value="SNV analysis for ERBB4 variant"/>
+			 </result>
 
+			 <result>
+				 <reference value="urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f"/>
+				 <display value="TMB value analysis"/>
+			 </result>
+			 <result>
+				 <reference value="urn:uuid:64b91716-6431-41bd-8fd4-7ac99bebdee9"/>
+				 <display value="MSI status analysis"/>
+			 </result>
+			 <!--
             <result>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
                <display value="Therapy Match Results"/>
             </result>
+			-->
+			 <result>
+				 <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
+				 <display value="Therapy match result 1"/>
+			 </result>
+			 <result>
+				 <reference value="urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b"/>
+				 <display value="Therapy match result 2"/>
+			 </result>
+			 <result>
+				 <reference value="urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20"/>
+				 <display value="Therapy match result 3"/>
+			 </result>
+			 <result>
+				 <reference value="urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4"/>
+				 <display value="Therapy match result 4"/>
+			 </result>
 
          </DiagnosticReport>
       </resource>

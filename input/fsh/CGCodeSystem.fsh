@@ -13,7 +13,6 @@ Id: tbd-codes-cs
 Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."
 
-* #grouper "grouper" "A means to bundle several observations such as one would find in a genetics test panel."
 * #effect-transporter-function "effect-transporter-function" "Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance."
 * #effect-treatment-efficacy "Treatment Efficacy"
 * #effect-medication-metabolism "Medication Metabolism"

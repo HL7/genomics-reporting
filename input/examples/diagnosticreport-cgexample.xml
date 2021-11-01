@@ -123,9 +123,29 @@ New:
         <result>
           <reference value="Observation/complex-dis-path"/>
         </result>
+		<!--
         <result>
           <reference value="Observation/pharmPanel"/>
         </result>
+		the following are from the panel, if result.display is used/added it can server the same visual 
+		organization as grouper. But one could not send the panel to a specific place. It is one less observation 
+		to track. The genotype, haplotype, metabolic and efficacy implications are connected with referneces inside
+		the observations. IF we wanted to tie it together even more then the seperate observations haplotype, metab and efficacy could become components
+		
+		-->
+		  <result>
+			  <reference value="Observation/haplotype"/>
+		  </result>
+		  <result>
+			  <reference value="Observation/genotype"/>
+		  </result>
+		  <result>
+			  <reference value="Observation/metab"/>
+		  </result>
+		  <result>
+			  <reference value="Observation/efficacy"/>
+		  </result>  
+		  
         <presentedForm>
           <!-- A.10 Genetic analysis report -->
           <!-- Can be included directly or referenced by URL -->
@@ -1404,11 +1424,12 @@ New:
       </Observation>
     </resource>
   </entry>
+  <!--
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/pharmPanel"/>
     <resource>
       <Observation>
-        <!-- D Pharmacogenomics results grouper -->
+        comment D Pharmacogenomics results grouper 
         <id value="pharmPanel"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
@@ -1458,6 +1479,7 @@ New:
       </Observation>
     </resource>
   </entry>
+  -->
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/haplotype"/>
     <resource>

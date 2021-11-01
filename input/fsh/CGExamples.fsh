@@ -630,54 +630,6 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
 
-
-Instance: GrouperEx01
-InstanceOf: Grouper
-Description: "Therapeutic Implications"
-* id = "GrouperEx01"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* status = #final
-* hasMember[therapeutic-implication][0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
-* hasMember[therapeutic-implication][1] = Reference(TxImp02) "voriconazole, poor metabolizer"
-* hasMember[therapeutic-implication][2] = Reference(TxImp03) "citalopram, poor metabolizer"
-* hasMember[therapeutic-implication][3] = Reference(TxImp04) "escitalopram, poor metabolizer"
-* hasMember[therapeutic-implication][4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
-* hasMember[therapeutic-implication][5] = Reference(TxImp06) "medium sensitivity to warfarin"
-
-Instance: GrouperEx02
-InstanceOf: Grouper
-Description: "Genotypes"
-* id = "GrouperEx02"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodesCS#grouper
-* status = #final
-* hasMember[genotype][0] = Reference(Pgx-geno-1001)
-* hasMember[genotype][1] = Reference(Pgx-geno-1003)
-* hasMember[genotype][2] = Reference(Pgx-geno-1002)
-
-
-Instance: GrouperEx03
-InstanceOf: Grouper
-Description: "Regions Studied and variant info"
-* id = "GrouperEx03"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodesCS#grouper
-* status = #final
-* hasMember[variant][0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
-* hasMember[variant][1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
-* hasMember[variant][2] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
-* hasMember[variant][3] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
-* hasMember[variant][4] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
-* hasMember[variant][5] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
-* hasMember[variant][6] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
-* hasMember[variant][7] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
-* hasMember[variant][8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
-* hasMember[variant][9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
-* hasMember[variant][10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
-* hasMember[region-studied][0] = Reference(RegionStudiedPGx1) "CYP2C19"
-* hasMember[region-studied][1] = Reference(RegionStudiedPGx2) "CYP2C9"
-* hasMember[region-studied][2] = Reference(RegionStudiedPGx3) "VKORC1"
-
 //* variants if needed
 
 Instance: RegionStudiedPGx1
@@ -722,10 +674,30 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* result[0] = Reference(OverallInterpExample2) "gene-drug interactions found."
-* result[1] = Reference(GrouperEx01) "Therapeutic Implications"
-* result[2] = Reference(GrouperEx02) "Genotypes"
-* result[3] = Reference(GrouperEx03) "Regions studied and Variants"
+* result[23] = Reference(OverallInterpExample2) "gene-drug interactions found."
+* result[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
+* result[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
+* result[2] = Reference(TxImp03) "citalopram, poor metabolizer"
+* result[3] = Reference(TxImp04) "escitalopram, poor metabolizer"
+* result[4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
+* result[5] = Reference(TxImp06) "medium sensitivity to warfarin"
+* result[6] = Reference(Pgx-geno-1001) "CYP2C19*2/*2"
+* result[7] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
+* result[8] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
+* result[9] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
+* result[10] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
+* result[11] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
+* result[12] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
+* result[13] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
+* result[14] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
+* result[15] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
+* result[16] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
+* result[17] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
+* result[18] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
+* result[19] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
+* result[20] = Reference(RegionStudiedPGx1) "CYP2C19"
+* result[21] = Reference(RegionStudiedPGx2) "CYP2C9"
+* result[22] = Reference(RegionStudiedPGx3) "VKORC1"
 * extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
 * extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
