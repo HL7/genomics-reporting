@@ -55,13 +55,19 @@
         <th><a href="#contextual">Contextual Resources</a></th>
         <td>Other resources that provide contextual details.</td>
       </tr>
+		<!--tr>
+		<th>
+			<a href="#grouper">Using Observations to group or represent a sub-panel</a>
+		</th>
+		<td>Genomic observations can be organized and grouped together in a wide variety of ways. Generally the grouping provides a visual  to this grouping, with exception of using an appropriate code for a panel (e.g. a specific Panel LOINC code in an observation used to tie all the variants of the panel together) </td>
+	  </tr-->
     </tbody>
   </table>
 
   <a name="diagnosticreport"> </a>
   <h3>Genomics Report</h3>
   <p>
-    The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>.
+    The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organzied into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. Which is especially useful for later analysis steps. Additionally, an observation can be used to group content for viewing purposes or to indicate a higher level panel (with a specific LOINC panel code in the observaiton.code for example).
   </p>
   <img src="general-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
@@ -77,7 +83,7 @@
     <a href="#recommendations">Recommended Actions</a>
   </p>
   <p>
-    If needed, large or complex genomic reports may be broken down into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. This is particularly useful when different labs or services are performing later steps in the analysis, for example.
+    Again, if needed, large or complex genomic reports may be broken down into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. This is particularly useful when different labs or services are performing later steps in the analysis, for example. Or a panel observation.code can be used.
   </p>
   <p>
     In some cases, the lab or other reporting organization may generate risk assessments as part of their reports. These are referenced from a report from the <a href="StructureDefinition-genomics-report-risk.html">Genomics Report Risk</a> extension.
@@ -263,18 +269,18 @@
     </ul>
   </p>
 
-  <!--<a name="grouper"> </a>
-  <h4>Grouper</h4>
+  <a name="grouper"> </a>
+  <h4>Grouping observations</h4>
   <p>
-    All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>  However, they can also be part of a <a href="StructureDefinition-grouper.html">Grouper</a>. In this version of the specification, no guidance is provided on where or if grouper should be used. This is left up to the discretion of the reporting lab. Observations might be organized on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive <code>hasMember</code> relationship on grouper supports a nested tree-structure of groupers if appropriate, though more than two levels of groupers is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouper to separately reference variants and other Observations on the report.
+    All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>. And, the findings, implications and region studied profiles contains links to computably define which go together (e.g. the variant observation is referenced within the implication profile using <code>hasMember</code>). However, sometimes it is desired to connect observations for visualization. This might be done with a grouping observation. In this version of the specification, no guidance is provided on where or if a grouping observation should be used. This is left up to the discretion of the reporting lab. Observations might be organized for visualization purposes on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive <code>hasMember</code> relationship on observation supports a nested tree-structure of observations if appropriate, though more than two levels of observations is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouping to separately reference variants and other Observations on the report. For a version of the same report without grouping see <a href="Bundle-oncologyexamples-r4-noGrouping.html"> without grouping</a>. 
   </p>
   <p>
-    Here is an example of how data could be structured with a Grouper observation:
+    Here is an example of how data could be structured with a grouping observation, similar to EXAMPLE:
   </p>
   <img src="general-grouper.png" alt="Example of how to use a Grouper"/>
   <p>
     Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes. It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
-  </p>-->
+  </p>
 
   <a name="regionstudied"> </a>
   <h4>Region Studied</h4>
@@ -315,7 +321,7 @@
     To allow searching and appropriate navigation, the diagnostic report, observations and tasks must be able to stand on their own. They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc. FHIR design principles dictate that these associations be present on <i>every</i> resource instance. That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc. However, this is still relatively lightweight because the information is included by reference only.
   </p>
   <p>
-    The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile. Note that there is no expectation that all relationships will point to the same instances. In special cases, a genomic report may involve multiple patients or multiple specimens.
+    The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile. Note that there is no expectation that all relationships will point to the same instances. In special cases, a genomic report may involve multiple patients or multiple specimens. As mentioned the 'extends,' 'summaryOf' and grouping observations can be used well to provide additional organization.
   </p>
   <img src="general-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
   <p>
@@ -328,4 +334,13 @@
     <li><i>Genomic Implications</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
     <li><i>Recommended Actions</i> are referenced from the <a href="StructureDefinition-recommended-action.html">Recommended Action</a> extension. These Task resources will also have relationships to Genomic Implications or other observations.</li>
   </ul>
+    <a name="querynote"> </a>
+  <h3>Querying</h3>
+  <p>
+	As a note on querying, the relationship indicated by hasMember, and the computable meaning conveyed by observation.code, component.code are critical for specificity. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meaning of the values are predicated on by the component.code or oberservation.code to which they associate. There is a page in this IG with <a href="{{site.data.fhir.path}}usecases.html">query guidance</a> that show how to use components, realtionships (references) and the iterative hasMemeber to find results. The use of a grouping observation does not influence the ability to query. For example the profile of a variant contains a value for the gene name component. The query ::: would find all variant profiles for the specific patient and return the gene names for all variant profiles that are associated with the patient, whether a grouping observation is used or not. This is because the query looks first for all observations associated with the patient, then it filters by the observation.code to keep only those profiles which are variant profile instances. Next,the query retrieves the gene name from those profiles. More queries and explanations can be found on the <a href="{{site.data.fhir.path}}usecases.html"> query guidance page</a>.
+	<b>Important:</b> If using grouping observations as results of a DiagnosticReport, be sure to also reference the genomic observations. It is up to receiving systems to arrange/use the genomic observations appropriately. But some systems may only process just the first layer of a Diagnostic Report results. Thus, be sure to include result links to all the genomic observation results being returned. Consider using summaryOf for creating meaningful subsets of observations. 
+
+	Similarly, at this time be sure to follow all references, and layers, when processing Diagnostic Report results to ensure that all genomic observations have been processed. For example, just looking at the result references in the Diagnostic Report does not ensure that grouped genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for Diagnostic Report, then one would need to follow the references in those grouping observations to see the genomic observations. 
+
+  </p>
 </div>
