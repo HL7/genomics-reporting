@@ -692,13 +692,13 @@ Description: ""
 * parameter[9].type = #canonical
 * parameter[9].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectStructuralSubsumingVariantsParameters"
 
-Instance: find-region-studied
+Instance: find-study-metadata
 InstanceOf: OperationDefinition
-Title: "Find Region Studied"
+Title: "Find Study Metadata"
 Usage: #definition
 Description: ""
-* name = "FindRegionStudied"
-* title = "Find Region Studied"
+* name = "FindStudyMetadata"
+* title = "Find Study Metadata"
 * status = #active
 * kind = #operation
 * publisher = "HL7 International Clinical Genomics Work Group"
@@ -713,48 +713,63 @@ Description: ""
 * parameter[0].documentation = "The subject of interest."
 * parameter[0].type = #string
 * parameter[0].searchType = #reference
-* parameter[1].name = #ranges
+* parameter[1].name = #testIdentifiers
 * parameter[1].use = #in
-* parameter[1].min = 1
+* parameter[1].min = 0
 * parameter[1].max = "*"
-* parameter[1].documentation = "List of regions to be assessed. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+* parameter[1].documentation = "List of test identifiers. Metadata for each test is returned."
 * parameter[1].type = #string
-* parameter[1].searchType = #special
-* parameter[2].name = #testIdentifiers
+* parameter[1].searchType = #token
+* parameter[2].name = #testDateRange
 * parameter[2].use = #in
 * parameter[2].min = 0
-* parameter[2].max = "*"
-* parameter[2].documentation = "Supply a list of test identifiers. Studied regions for each of these tests will be returned."
-* parameter[2].type = #string
-* parameter[2].searchType = #token
-* parameter[3].name = #response
-* parameter[3].use = #out
-* parameter[3].min = 1
-* parameter[3].max = "1"
-* parameter[3].documentation = "Operation returns a FHIR Parameters resource, showing regions studied and uncallable subregions for each range-test combination.
+* parameter[2].max = "1"
+* parameter[2].documentation = "Metadata for each test performed during the range is returned."
+* parameter[2].type = #Period
+* parameter[3].name = #specimenIdentifiers
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "*"
+* parameter[3].documentation = "List of specimen identifiers. Metadata for each test based on a supplied specimen identifier is returned."
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #ranges
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "*"
+* parameter[4].documentation = "List of regions for which additional study information is sought. If ranges are supplied, then each returned test will include studied and uncallable regions. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+* parameter[4].type = #string
+* parameter[4].searchType = #special
+* parameter[5].name = #response
+* parameter[5].use = #out
+* parameter[5].min = 1
+* parameter[5].max = "1"
+* parameter[5].documentation = "Operation returns a list of identified sequencing studies with associated study metadata.
 
     parameters
-	  name: regions
-      parameter (1..*) (one for each range in rangeList in each test in filter list)
+      parameter (0..*) (one for each test identified)
+	    name: tests
         part (1..1)
-          name: rangeItem
-          valueString: range from rangeList
-        part (0..1)
-          name: testIdentifier
+          name: testId
           valueString: test identifier
+        part (1..1)
+          name: testDate
+          valueDateTime: test date
         part (0..1)
-          name: studied
-          valueBoolean: boolean (True if any portion of range was studied)
+          name: specimenId
+          valueString: specimen identifier
         part (0..1)
-          name: studiedRegion
-          resource: observation (studiedRegion profile) 
-		    - uncallable-regions.dataAbsentReason='not-performed' if uncallable regions are unknown.
+          name: genomicBuild
+          valueCodeableConcept: preferred codes: https://loinc.org/LL1040-6/
+        part (0..1)
+          name: dnaChangeType
+          valueCodeableConcept: preferred codes: http://www.sequenceontology.org/browser/current_release/term/SO:0002072
+        part (0..1)
+          name: regionStudied
+          valueString: pyranges dataframe format or 'unknown'
+        part (0..1)
+          name: uncallableRegions
+          valueString: pyranges dataframe format or 'unknown'
 "
-* parameter[3].type = #canonical
-* parameter[3].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindRegionStudiedParameters"
-
-
-
-
-
-
+* parameter[5].type = #canonical
+* parameter[5].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindStudyMetadataParameters"

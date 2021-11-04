@@ -1,0 +1,9 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Description"/>
+	<h3>Description</h3>
+	<p>Retrieve metadata about sequencing studies performed on a subject.</p>
+	<p><b>Test Id</b> and <b>test date</b> are always returned. Additional metadata is server dependent, and specific implementations can indicate their capabilities using a <a href="https://www.hl7.org/fhir/capabilitystatement.html">FHIR Capability Statement</a>. </p>
+	<p>Frequently useful metadata includes <b>Specimen Id</b> and <b>Genomic build</b> (reference sequence assembly upon which variants were called, e.g. 'GRCh37', 'GRCh38'). Additionally, it can be useful to indicate the <b>DNA change types</b> or types of variants detectable by the test (e.g. 'SNV', 'InDel', 'CNV').</p>
+	<p>In some scenarios, users need to know whether or not a particular genomic region was studied by a given test (<b>studied region</b>), and whether or not there are uncallable subregions within regions studied (<b>uncallable regions</b>). Users can request this level of detail by including the <b>ranges</b> parameter, in which case each returned test will include studied and uncallable regions. Studied and uncallable regions can be voluminous - data can be curtailed by specifying appropriately narrow ranges. Range data is returned as a <a href="https://pyranges.readthedocs.io/en/latest/">pyranges dataframe</a> (e.g. "({'Chromosome': ['chr1', 'chr2'], 'Start': [100, 200],'End': [150, 201]})"), which is a compact JSON-like structure used by many bioinformatics tools. </p>
+	<p>Servers can choose to return additional metadata. </p>
+</div>

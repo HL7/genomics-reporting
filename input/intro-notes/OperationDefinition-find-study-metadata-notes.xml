@@ -1,0 +1,43 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+<p>March 2019, patient HG00403 is found to have lung mass on CXR, and undergoes lung biopsy. WES of a 300 gene panel is performed on the  biopsy specimen, and analyzed for simple variants (SNV, MNV, InDel). For technical reasons, PIK3CB was deemed uncallable. 
+</p>
+<p>July 2020, patient HG00403 presents with headache, and mass is found on head CT. Biopsy is consistent with metastatic lung cancer. WES of a 420 gene panel is performed on the biopsy specimen, and analyzed for simple variants (SNV, MNV, InDel) and for Copy Number Variants. For technical reasons, PIK3CB, APC, MEN1, and portions of EGFR were deemed uncallable.
+</p>
+<p>To be eligible for a particular clinical trial, patients must have an EGFR exon 19 (NC_000007.14:55174721-55174820) deletion. Patient's oncologist finds no simple or structural variants in the region of EGFR exon 19, and asks staff bioinformaticist to confirm whether EGFR, including exon 19, was studied as part of the July 2020 test. (Results indicate that EGFR was studied, but exon 19 was deemed uncallable).
+</p>
+<ul>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-study-metadata?subject=HG00403&amp;testDateRange=ge2020-06&amp;testDateRange=le2020-08&amp;ranges=NC_000007.14:55019016-55211628">GET .../find-study-metadata?subject=HG00403&amp;testDateRange=ge2020-06&amp;testDateRange=le2020-08&amp;ranges=NC_000007.14:55019016-55211628</a></li>
+</ul>
+
+</div>
