@@ -11,7 +11,7 @@ New:
 6. Do we need the "panel" notion for the pharmacogenomics panel bit?
 -->
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <id value="diagnosticreport-cgexample"/>
+  <id value="diagnosticreport-cgexample-noGroup"/>
   <type value="collection"/>
   <entry>
     <fullUrl value="http://example.org/fhir/DiagnosticReport/report"/>
@@ -123,16 +123,16 @@ New:
         <result>
           <reference value="Observation/complex-dis-path"/>
         </result>
-
+		<!--
         <result>
           <reference value="Observation/pharmPanel"/>
         </result>
-<!--		the following are from the panel, if result.display is used/added it can server the same visual 
+		the following are from the panel, if result.display is used/added it can server the same visual 
 		organization as grouper. But one could not send the panel to a specific place. It is one less observation 
 		to track. The genotype, haplotype, metabolic and efficacy implications are connected with referneces inside
 		the observations. IF we wanted to tie it together even more then the seperate observations haplotype, metab and efficacy could become components
-	-->
-
+		
+		-->
 		  <result>
 			  <reference value="Observation/haplotype"/>
 		  </result>
@@ -1424,17 +1424,16 @@ New:
       </Observation>
     </resource>
   </entry>
-  
+  <!--
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/pharmPanel"/>
     <resource>
       <Observation>
-        comment D Pharmacogenomics results Panel 
+        comment D Pharmacogenomics results grouper 
         <id value="pharmPanel"/>
-        <!--<meta>
+        <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
         </meta>
-		-->
         <text>
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
@@ -1453,12 +1452,8 @@ New:
         </category>
         <code>
           <coding>
-			  <!--system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
-                  <code value="grouper"/>
-                  <display value="grouper"/-->
-			  <system value="http://ncimeta.nci.nih.gov"/>
-			  <code value="C43359"/>
-			  <display value="Panel"/>
+            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+            <code value="grouper"/>
           </coding>
         </code>
         <subject>
@@ -1484,7 +1479,7 @@ New:
       </Observation>
     </resource>
   </entry>
-  
+  -->
   <entry>
     <fullUrl value="http://example.org/fhir/Observation/haplotype"/>
     <resource>

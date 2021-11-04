@@ -9,6 +9,9 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="Observation/GrouperEx01" key="Observation-GrouperEx01" name=""/>
+<artifact id="Observation/GrouperEx02" key="Observation-GrouperEx02" name=""/>
+<artifact id="Observation/GrouperEx03" key="Observation-GrouperEx03" name=""/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="Concept mapping for DNA Change Type"/>
 <artifact deprecated="true" id="CodeSystem/ConditionInheritanceMode" key="CodeSystem-ConditionInheritanceMode" name="Condition Inheritance Pattern"/>
@@ -41,9 +44,6 @@
 <artifact id="Observation/Pgx-geno-1003" key="Observation-Pgx-geno-1003" name="Example - Observation PGx Genotype 3"/>
 <artifact id="Observation/OverallInterpExample2" key="Observation-OverallInterpExample2" name="Example - Observation PGx interpretation"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="Example - Observation for a single HLA-A allele"/>
-<artifact deprecated="true" id="Observation/GrouperEx01" key="Observation-GrouperEx01" name="Example - Observation-GrouperEx01"/>
-<artifact deprecated="true" id="Observation/GrouperEx02" key="Observation-GrouperEx02" name="Example - Observation-GrouperEx02"/>
-<artifact deprecated="true" id="Observation/GrouperEx03" key="Observation-GrouperEx03" name="Example - Observation-GrouperEx03"/>
 <artifact id="Observation/Pgx-var-1011" key="Observation-Pgx-var-1011" name="Example - Observation-Pgx-var-1011"/>
 <artifact id="Observation/Pgx-var-1012" key="Observation-Pgx-var-1012" name="Example - Observation-Pgx-var-1012"/>
 <artifact id="Observation/Pgx-var-1013" key="Observation-Pgx-var-1013" name="Example - Observation-Pgx-var-1013"/>
@@ -78,6 +78,9 @@
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example - Variant1"/>
 <artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="Example - Variant2"/>
 <artifact id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
+<artifact id="Bundle/diagnosticreport-cgexample-noGroup" key="Bundle-diagnosticreport-cgexample-noGroup" name="Example Bundle - diagnosticreport-cgexample-noGroup"/>
+<artifact id="Bundle/oncologyexamples-r4-noGrouping" key="Bundle-oncologyexamples-r4-noGrouping" name="Example Bundle - oncologyexamples-r4-noGrouping"/>
+<artifact id="DiagnosticReport/PGxGenomicsReportEMERGE2" key="DiagnosticReport-PGxGenomicsReportEMERGE2" name="Example DiagnosticReport - PGxGenomicsReportEMERGE2"/>
 <artifact id="Organization/ExampleOrg" key="Organization-ExampleOrg" name="Example Org"/>
 <artifact id="Task/PGxRecEx01" key="Task-PGxRecEx01" name="Example Task - PGxRecEx01"/>
 <artifact id="Task/PGxRecEx02" key="Task-PGxRecEx02" name="Example Task - PGxRecEx02"/>
@@ -92,7 +95,7 @@
 <artifact id="StructureDefinition/genomics-report" key="StructureDefinition-genomics-report" name="Genomics Report"/>
 <artifact id="StructureDefinition/genomics-report-risk" key="StructureDefinition-genomics-report-risk" name="Genomics Report Risk Assessment"/>
 <artifact id="StructureDefinition/genotype" key="StructureDefinition-genotype" name="Genotype"/>
-<artifact id="StructureDefinition/grouper" key="StructureDefinition-grouper" name="Grouper"/>
+<artifact deprecated="true" id="StructureDefinition/grouper" key="StructureDefinition-grouper" name="Grouper"/>
 <artifact id="ValueSet/hgnc-vs" key="ValueSet-hgnc" name="HGNC Value Set"/>
 <artifact id="ValueSet/hgvs-vs" key="ValueSet-hgvs" name="HGVS Value Set"/>
 <artifact id="StructureDefinition/haplotype" key="StructureDefinition-haplotype" name="Haplotype"/>
