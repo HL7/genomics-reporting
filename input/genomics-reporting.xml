@@ -452,13 +452,13 @@
       <description value="Test instance of PGx overall report interpretation"/>
       <groupingId value="examples"/>
     </resource>
-	<!--
+	
     <resource>
       <reference>
         <reference value="Observation/GrouperEx01"/>
       </reference>
       <name value="Example - Observation-GrouperEx01"/>
-      <description value="Test instance of PGx Observation grouper consisting of Implications from the lab"/>
+      <description value="Test instance of PGx grouping Observation consisting of Implications from the lab"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -466,7 +466,7 @@
         <reference value="Observation/GrouperEx02"/>
       </reference>
       <name value="Example - Observation-GrouperEx02"/>
-      <description value="Test instance of PGx Observation grouper consisting of genotypes from the lab"/>
+      <description value="Test instance of PGx grouping Observation consisting of genotypes from the lab"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -474,16 +474,24 @@
         <reference value="Observation/GrouperEx03"/>
       </reference>
       <name value="Example - Observation-GrouperEx03"/>
-      <description value="Test instance of PGx Observation grouper consisting of variants and regions studied from the lab"/>
+      <description value="Test instance of PGx grouping Observation consisting of variants and regions studied from the lab"/>
       <groupingId value="examples"/>
     </resource>
-	-->
+	
     <resource>
       <reference>
         <reference value="DiagnosticReport/PGxGenomicsReportEMERGE"/>
       </reference>
       <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE"/>
       <description value="Test instance of PGx Diagnostic report based on eMERGE panel"/>
+      <groupingId value="examples"/>
+    </resource>
+	<resource>
+      <reference>
+        <reference value="DiagnosticReport/PGxGenomicsReportEMERGE2"/>
+      </reference>
+      <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE without grouping"/>
+      <description value="Test instance of PGx Diagnostic report based on eMERGE panel not including grouping"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -669,6 +677,18 @@
 -->
       <groupingId value="examples"/>
     </resource>
+	<resource>
+      <reference>
+        <reference value="Bundle/diagnosticreport-cgexample-noGroup"/>
+      </reference>
+      <name value="Example - Genomics Reporting (no grouping)"/>
+      <description value="Test instance showing data from the CG v2 spec without grouping"/>
+<!--
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
+-->
+      <groupingId value="examples"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/compound-heterozygote"/>
@@ -833,6 +853,15 @@
         <reference value="Bundle/oncologyexamples-r4"/>
       </reference>
       <name value="Example - Full Bundle Oncology Example"/>
+      <description value="Full Bundle Oncology Example"/>
+      <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
+      <groupingId value="examples"/>
+    </resource>
+	<resource>
+      <reference>
+        <reference value="Bundle/oncologyexamples-r4-noGrouping"/>
+      </reference>
+      <name value="Example - Full Bundle Oncology Example without grouping"/>
       <description value="Full Bundle Oncology Example"/>
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
       <groupingId value="examples"/>

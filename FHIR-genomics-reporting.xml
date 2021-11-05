@@ -9,9 +9,6 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="Observation/GrouperEx01" key="Observation-GrouperEx01" name=""/>
-<artifact id="Observation/GrouperEx02" key="Observation-GrouperEx02" name=""/>
-<artifact id="Observation/GrouperEx03" key="Observation-GrouperEx03" name=""/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="Concept mapping for DNA Change Type"/>
 <artifact deprecated="true" id="CodeSystem/ConditionInheritanceMode" key="CodeSystem-ConditionInheritanceMode" name="Condition Inheritance Pattern"/>
@@ -26,9 +23,12 @@
 <artifact id="Bundle/compound-heterozygote" key="Bundle-compound-heterozygote" name="Example - Complex Variant (HGVS)"/>
 <artifact id="Bundle/complexVariant-nonHGVS" key="Bundle-complexVariant-nonHGVS" name="Example - Complex Variant (unpacked)"/>
 <artifact id="DiagnosticReport/PGxGenomicsReportEMERGE" key="DiagnosticReport-PGxGenomicsReportEMERGE" name="Example - DiagnosticReport-PGxGenomicsReportEMERGE"/>
+<artifact id="DiagnosticReport/PGxGenomicsReportEMERGE2" key="DiagnosticReport-PGxGenomicsReportEMERGE2" name="Example - DiagnosticReport-PGxGenomicsReportEMERGE without grouping"/>
 <artifact id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="Example - Full Bundle Oncology Example"/>
+<artifact id="Bundle/oncologyexamples-r4-noGrouping" key="Bundle-oncologyexamples-r4-noGrouping" name="Example - Full Bundle Oncology Example without grouping"/>
 <artifact id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="Example - Genomics Reporting"/>
+<artifact id="Bundle/diagnosticreport-cgexample-noGroup" key="Bundle-diagnosticreport-cgexample-noGroup" name="Example - Genomics Reporting (no grouping)"/>
 <artifact id="DiagnosticReport/GenomicsReportExample01" key="DiagnosticReport-GenomicsReportExample01" name="Example - GenomicsReport"/>
 <artifact id="Observation/GenotypeExample1" key="Observation-GenotypeExample1" name="Example - Genotype"/>
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="Example - HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
@@ -44,6 +44,9 @@
 <artifact id="Observation/Pgx-geno-1003" key="Observation-Pgx-geno-1003" name="Example - Observation PGx Genotype 3"/>
 <artifact id="Observation/OverallInterpExample2" key="Observation-OverallInterpExample2" name="Example - Observation PGx interpretation"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="Example - Observation for a single HLA-A allele"/>
+<artifact id="Observation/GrouperEx01" key="Observation-GrouperEx01" name="Example - Observation-GrouperEx01"/>
+<artifact id="Observation/GrouperEx02" key="Observation-GrouperEx02" name="Example - Observation-GrouperEx02"/>
+<artifact id="Observation/GrouperEx03" key="Observation-GrouperEx03" name="Example - Observation-GrouperEx03"/>
 <artifact id="Observation/Pgx-var-1011" key="Observation-Pgx-var-1011" name="Example - Observation-Pgx-var-1011"/>
 <artifact id="Observation/Pgx-var-1012" key="Observation-Pgx-var-1012" name="Example - Observation-Pgx-var-1012"/>
 <artifact id="Observation/Pgx-var-1013" key="Observation-Pgx-var-1013" name="Example - Observation-Pgx-var-1013"/>
@@ -78,9 +81,6 @@
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example - Variant1"/>
 <artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="Example - Variant2"/>
 <artifact id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
-<artifact id="Bundle/diagnosticreport-cgexample-noGroup" key="Bundle-diagnosticreport-cgexample-noGroup" name="Example Bundle - diagnosticreport-cgexample-noGroup"/>
-<artifact id="Bundle/oncologyexamples-r4-noGrouping" key="Bundle-oncologyexamples-r4-noGrouping" name="Example Bundle - oncologyexamples-r4-noGrouping"/>
-<artifact id="DiagnosticReport/PGxGenomicsReportEMERGE2" key="DiagnosticReport-PGxGenomicsReportEMERGE2" name="Example DiagnosticReport - PGxGenomicsReportEMERGE2"/>
 <artifact id="Organization/ExampleOrg" key="Organization-ExampleOrg" name="Example Org"/>
 <artifact id="Task/PGxRecEx01" key="Task-PGxRecEx01" name="Example Task - PGxRecEx01"/>
 <artifact id="Task/PGxRecEx02" key="Task-PGxRecEx02" name="Example Task - PGxRecEx02"/>
