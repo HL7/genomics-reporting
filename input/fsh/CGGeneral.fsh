@@ -195,3 +195,4 @@ Description:    "A profile of DocumentReference used to represent a genomics fil
 
 * subject only Reference(Patient or Group)
 * context.related only Reference(GenomicsReport)
+* description ^short = "Human-readable description to provide guidance on how the file was generated"
