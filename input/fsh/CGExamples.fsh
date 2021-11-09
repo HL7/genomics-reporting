@@ -94,9 +94,9 @@ Description: "Example for genomic Variant given by VCF columns"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[0].code.coding = http://loinc.org#62374-4 "Human reference sequence assembly version"
+* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 * component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[1].code.coding = http://loinc.org#48013-7 "Genomic reference sequence ID"
+* component[1].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
 * component[1].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
 * component[2].code.coding = http://loinc.org#53034-5 "Allelic State"
 * component[2].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
