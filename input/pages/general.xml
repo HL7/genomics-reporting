@@ -84,29 +84,26 @@
   <h4>Attaching Genomic Files</h4>
   <blockquote class="stu-note">
     <p>
-      In a future release, this guidance will change to utilize upcoming FHIR R5 updates to the <code>DiagnosticReport.media</code> backbone element. The attribute will refer to <code>DocumentReference</code> instead of <code>Media</code>, and the guidance will be updated to better support the use case here. The guidance below to file attachments needs to be carefully reviewed and considered. There are potential issues and the Work Group welcomes feedback.
+      In a future release, th genomic file guidance below will be changed to utilize updates coming to the <code>DiagnosticReport.media</code> backbone element. In the FHIR R5 release, The attribute will refer to <code>DocumentReference</code> instead of <code>Media</code>, and the corresponding guidance will be updated to better support the use case here. The guidance below to file attachments needs to be carefully reviewed and considered. There are potential issues and the Work Group welcomes feedback.
     </p>
   </blockquote>
   <p>
-    For use cases in genomics where a deeper level of data than provided by the variant profile is warranted there are specifications such as VCF, BAM, CRAM, and MAF. Best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
+    There are use cases in genomics where a deeper level of data than that provided by the <a href="StructureDefinition-variant.html"> Variant</a> profile is warranted. Today, there are file based specifications such as VCF, BAM, CRAM, and MAF. Best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
   </p>
   <p>
-    While in future versions of FHIR other resources or options might be preferred, <code>DocumentReference</code> is a good candidate as a vehicle to provide access to genomic data formats such as VCF, BAM, CRAM and MAF. Attachments that are individually useful (such as clinical notes) are often sent in FHIR using the <code>DocumentReference</code> resource, which allows the file and its captured metadata (e.g. within the <code>DocumentReference.context</code> element) to be discovered via search queries. 
-  </p>
-  <p>
-    The <a href="StructureDefinition-genomics-file.html">Genomics File</a> extension can be used to reference files from the <code>GenomicsReport</code>. Also provided is the <a href="StructureDefinition-genomics-document-reference.html">Genomics Document Reference</a> profile which provides guidance for the genomic file itself. 
+    When sending these genomic files, implementers should utilize the <a href="StructureDefinition-genomics-document-reference.html">Genomics Document Reference</a> profile which is used for sending meaningful metadata about the file. This approach allows the files to have their own existence and enables queries to find them possible via the <code>DocumentReference</code> resource. To enabling linking the report to those files, the <a href="StructureDefinition-genomics-file.html">Genomics File</a> extension can be used to reference files from the <code>GenomicsReport</code>. This can be helpful for those processing the report to easily identify the files that were sent along with the report.
   </p>
   <p>
     When sending genomic files there are many considerations. For example, it is not unusual for files to be gigabytes in size. The <code>DocumentReference</code> resource has different options to evaluate for your use case. If embedded directly using using <code>DocumentReference.content.attachment.data</code>, servers receiving the files may have size constraints per resource or per transaction which may limit your options. Instead of sending a large data file, the file can be referenced by a URL and title using the using <code>DocumentReference.content.attachment.url</code> element. This can point to an online resource that hosts the file or from where the file can be accessed. For genomic files, the host is likely not the FHIR server providing the <code>DocumentReference</code> data instance. Be aware that use of <code>DocumentReference</code> to provide access to files through URLs introduces authorization requirements that are out of scope of this Implementation Guide.
   </p>
   <p>
-    Many facets of how the genomic files were generated will be needed for receivers to make use of these files, such as what pipelines, tools, and settings were used. The intended downstream use case must be carefully evaluated to ensure appropriate file preparation. The <code>DocumentReference.description</code> might be helpful for sending systems to provide some guidance on how the file was generated. However, a fully computable approach has yet to be described.
+    For receivers to make use of these files, many facets of the generation of the genomic files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use case must be carefully evaluated to ensure appropriate file preparation. The <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
   </p>
   <p>
     It should be noted that the Genomic File extension is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>. Also note the Genomic File extension is different than the <a href="StructureDefinition-genomics-artifact.html">Genomics Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. In this release, another approach to avoid for attaching files is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case. However, as noted in the STU note above, this will be changing in a future release.
   </p>
   <p>
-    A full, detailed discussion of an implementation is outside the scope of this IG, but these and other factors affect how these files should be handled. In a future release, this IG may include other profiles or artifacts to provide more specific guidance.
+    A full, detailed implementation discussion is outside the scope of this IG. In a future release, this IG may include other profiles or artifacts along with more specific guidance.
   </p>
 
   <a name="observations"> </a>
