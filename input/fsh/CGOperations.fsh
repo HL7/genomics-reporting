@@ -2,7 +2,7 @@ Instance: find-subject-variants
 InstanceOf: OperationDefinition
 Title: "Find Subject Variants"
 Usage: #definition
-Description: "Use this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a FHIR Parameters resource containing variants overlapping the region. If the patient or the specified region has not been studied, the operation returns a 404 error."
+Description: ""
 * name = "FindSubjectVariants"
 * title = "Find Subject Variants"
 * status = #active
@@ -479,7 +479,7 @@ Description: ""
           resource: observation (genotype profile)
 "
 * parameter[6].type = #canonical
-* parameter[6].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectSpecificVariantsParameters"
+* parameter[6].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectSpecificHaplotypesParameters"
 
 Instance: find-subject-tx-implications
 InstanceOf: OperationDefinition
@@ -495,7 +495,6 @@ Description: ""
 * type = true
 * instance = false
 * code = #match
-
 * parameter[0].name = #subject
 * parameter[0].use = #in
 * parameter[0].min = 1
@@ -588,7 +587,7 @@ Description: ""
           resource: observation genotype profile)
 "
 * parameter[10].type = #canonical
-* parameter[10].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectStructuralSubsumingVariantsParameters"
+* parameter[10].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectTxImplicationsParameters"
 
 Instance: find-subject-dx-implications
 InstanceOf: OperationDefinition
@@ -690,7 +689,438 @@ Description: ""
           resource: observation genotype profile)
 "
 * parameter[9].type = #canonical
-* parameter[9].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectStructuralSubsumingVariantsParameters"
+* parameter[9].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectDxImplicationsParameters"
+
+Instance: find-population-specific-variants
+InstanceOf: OperationDefinition
+Title: "Find Population Specific Variants"
+Usage: #definition
+Description: ""
+* name = "FindPopulationSpecificVariants"
+* title = "Find Population Specific Variants"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1*"
+* parameter[0].documentation = "The subject(s) of interest (i.e the cohort to be searched)."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #variants
+* parameter[1].use = #in
+* parameter[1].min = 1
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of variants being sought. Must be in HGVS or SPDI format."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #genomicSourceClass
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #responseType
+* parameter[3].use = #in
+* parameter[3].min = 1
+* parameter[3].max = "1"
+* parameter[3].documentation = "'count' or 'list'"
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #response
+* parameter[4].use = #out
+* parameter[4].min = 1
+* parameter[4].max = "1"
+* parameter[4].documentation = "Operation returns a FHIR Parameters resource containing variants sought along with a count +/- list of matching patients.
+
+    parameters
+      parameter (1..*)
+        name: variants
+        part (1..1)
+          name: variantItem
+          valueString: variant from variantList
+        part (1..1)
+          name: numerator
+          valueQuantity: count of patients having this variant
+        part (0..1)
+          name: denominator
+          valueQuantity: count of patients in the cohort searched
+        part (0..*) (if responseType='list')
+          name: subject
+          valueString: patient ID
+"
+* parameter[4].type = #canonical
+* parameter[4].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindPopulationSpecificVariantsParameters"
+
+Instance: find-population-structural-intersecting-variants
+InstanceOf: OperationDefinition
+Title: "Find Population Structural Intersecting Variants"
+Usage: #definition
+Description: ""
+* name = "FindPopulationStructuralIntersectingVariants"
+* title = "Find Population Structural Intersecting Variants"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1*"
+* parameter[0].documentation = "The subject(s) of interest (i.e the cohort to be searched)."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #ranges
+* parameter[1].use = #in
+* parameter[1].min = 1
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+* parameter[1].type = #string
+* parameter[1].searchType = #special
+* parameter[2].name = #genomicSourceClass
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #responseType
+* parameter[3].use = #in
+* parameter[3].min = 1
+* parameter[3].max = "1"
+* parameter[3].documentation = "'count' or 'list'"
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #response
+* parameter[4].use = #out
+* parameter[4].min = 1
+* parameter[4].max = "1"
+* parameter[4].documentation = "Operation returns a FHIR Parameters resource containing ranges sought along with a count +/- list of patients having at least one structural variant intersecting that range.
+
+    parameters
+      parameter (1..*) (one for each range in rangeList)
+        name: variants
+        part (1..1)
+          name: rangeItem
+          valueString: range from rangeList
+        part (1..1)
+          name: numerator
+          valueQuantity: count of patients having this variant
+        part (0..1)
+          name: denominator
+          valueQuantity: count of patients in the cohort searched
+        part (0..*) (if responseType='list')
+          name: subject
+          valueString: patient ID
+"
+* parameter[4].type = #canonical
+* parameter[4].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindPopulationStructuralIntersectingVariantsParameters"
+
+Instance: find-population-structural-subsuming-variants
+InstanceOf: OperationDefinition
+Title: "Find Population Structural Subsuming Variants"
+Usage: #definition
+Description: ""
+* name = "FindPopulationStructuralSubsumingVariants"
+* title = "Find Population Structural Subsuming Variants"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1*"
+* parameter[0].documentation = "The subject(s) of interest (i.e the cohort to be searched)."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #ranges
+* parameter[1].use = #in
+* parameter[1].min = 1
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+* parameter[1].type = #string
+* parameter[1].searchType = #special
+* parameter[2].name = #genomicSourceClass
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #responseType
+* parameter[3].use = #in
+* parameter[3].min = 1
+* parameter[3].max = "1"
+* parameter[3].documentation = "'count' or 'list'"
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #response
+* parameter[4].use = #out
+* parameter[4].min = 1
+* parameter[4].max = "1"
+* parameter[4].documentation = "Operation returns a FHIR Parameters resource containing ranges sought along with a count +/- list of patients having at least one structural variant subsuming that range.
+
+    parameters
+      parameter (1..*) (one for each range in rangeList)
+        name: variants
+        part (1..1)
+          name: rangeItem
+          valueString: range from rangeList
+        part (1..1)
+          name: numerator
+          valueQuantity: count of patients having this variant
+        part (0..1)
+          name: denominator
+          valueQuantity: count of patients in the cohort searched
+        part (0..*) (if responseType='list')
+          name: subject
+          valueString: patient ID
+"
+* parameter[4].type = #canonical
+* parameter[4].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindPopulationStructuralSubsumingVariantsParameters"
+
+Instance: find-population-specific-haplotypes
+InstanceOf: OperationDefinition
+Title: "Find Population Specific Haplotypes"
+Usage: #definition
+Description: ""
+* name = "FindPopulationSpecificHaplotypes"
+* title = "Find Population Specific Haplotypes"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1*"
+* parameter[0].documentation = "The subject(s) of interest (i.e the cohort to be searched)."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #haplotypes
+* parameter[1].use = #in
+* parameter[1].min = 1
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of haplotypes and/or genotypes being sought. Must be in token or codesystem|code format."
+* parameter[1].type = #string
+* parameter[1].searchType = #token
+* parameter[2].name = #genomicSourceClass
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "1"
+* parameter[2].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #responseType
+* parameter[3].use = #in
+* parameter[3].min = 1
+* parameter[3].max = "1"
+* parameter[3].documentation = "'count' or 'list'"
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #response
+* parameter[4].use = #out
+* parameter[4].min = 1
+* parameter[4].max = "1"
+* parameter[4].documentation = "Operation returns a FHIR Parameters resource containing haplotypes/genotypes sought along with a count +/- list of matching patients.
+
+    parameters
+      parameter (1..*) (one for each haplotype in haplotypeList)
+        name: haplotypes
+        part (1..1)
+          name: haplotypeItem
+          valueString: haplotype/genotype from haplotypeList
+        part (1..1)
+          name: numerator
+          valueQuantity: count of patients having this variant
+        part (0..1)
+          name: denominator
+          valueQuantity: count of patients in the cohort searched
+        part (0..*) (if responseType='list')
+          name: subject
+          valueString: patient ID
+"
+* parameter[4].type = #canonical
+* parameter[4].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindPopulationSpecificHaplotypesParameters"
+
+Instance: find-population-tx-implications
+InstanceOf: OperationDefinition
+Title: "Find Population Treatment Implications"
+Usage: #definition
+Description: ""
+* name = "FindPopulationTxImplications"
+* title = "Find Population Treatment Implications"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1*"
+* parameter[0].documentation = "The subject(s) of interest (i.e the cohort to be searched)."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #variants
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of variants from which implications are derived. Must be in HGVS or SPDI format."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #haplotypes
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "*"
+* parameter[2].documentation = "List of haplotypes from which implications are derived. Must be in token or codesystem|code format."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #treatments
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "*"
+* parameter[3].documentation = "List of medications and/or other therapeutic interventions for which implications are sought. Must be in token or codesystem|code format."
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #conditions
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "*"
+* parameter[4].documentation = "List of conditions for which implications are sought. Must be in token or codesystem|code format."
+* parameter[4].type = #string
+* parameter[4].searchType = #token
+* parameter[5].name = #genomicSourceClass
+* parameter[5].use = #in
+* parameter[5].min = 0
+* parameter[5].max = "1"
+* parameter[5].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #responseType
+* parameter[6].use = #in
+* parameter[6].min = 1
+* parameter[6].max = "1"
+* parameter[6].documentation = "'count' or 'list'"
+* parameter[6].type = #string
+* parameter[6].searchType = #token
+* parameter[7].name = #response
+* parameter[7].use = #out
+* parameter[7].min = 1
+* parameter[7].max = "1"
+* parameter[7].documentation = "Operation returns a FHIR Parameters resource containing a count +/- list of patients having at least one matching therapeutic implication.
+
+    parameters
+      parameter (1..1)
+        name: implications
+        part (1..1)
+          name: numerator
+          valueQuantity: count of patients having this variant
+        part (0..1)
+          name: denominator
+          valueQuantity: count of patients in the cohort searched
+        part (0..*) (if responseType='list')
+          name: subject
+          valueString: patient ID
+"
+* parameter[7].type = #canonical
+* parameter[7].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindPopulationTxImplicationsParameters"
+
+Instance: find-population-dx-implications
+InstanceOf: OperationDefinition
+Title: "Find Population Diagnostic Implications"
+Usage: #definition
+Description: ""
+* name = "FindPopulationDxImplications"
+* title = "Find Population Diagnostic Implications"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[0].name = #subject
+* parameter[0].use = #in
+* parameter[0].min = 0
+* parameter[0].max = "1*"
+* parameter[0].documentation = "The subject(s) of interest (i.e the cohort to be searched)."
+* parameter[0].type = #string
+* parameter[0].searchType = #reference
+* parameter[1].name = #variants
+* parameter[1].use = #in
+* parameter[1].min = 0
+* parameter[1].max = "*"
+* parameter[1].documentation = "List of variants from which implications are derived. Must be in HGVS or SPDI format."
+* parameter[1].type = #string
+* parameter[1].searchType = #string
+* parameter[2].name = #haplotypes
+* parameter[2].use = #in
+* parameter[2].min = 0
+* parameter[2].max = "*"
+* parameter[2].documentation = "List of haplotypes from which implications are derived. Must be in token or codesystem|code format."
+* parameter[2].type = #string
+* parameter[2].searchType = #token
+* parameter[3].name = #conditions
+* parameter[3].use = #in
+* parameter[3].min = 0
+* parameter[3].max = "*"
+* parameter[3].documentation = "List of conditions for which implications are sought. Must be in token or codesystem|code format."
+* parameter[3].type = #string
+* parameter[3].searchType = #token
+* parameter[4].name = #genomicSourceClass
+* parameter[4].use = #in
+* parameter[4].min = 0
+* parameter[4].max = "1"
+* parameter[4].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+* parameter[4].type = #string
+* parameter[4].searchType = #token
+* parameter[5].name = #responseType
+* parameter[5].use = #in
+* parameter[5].min = 1
+* parameter[5].max = "1"
+* parameter[5].documentation = "'count' or 'list'"
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #response
+* parameter[6].use = #out
+* parameter[6].min = 1
+* parameter[6].max = "1"
+* parameter[6].documentation = "Operation returns a FHIR Parameters resource containing a count +/- list of patients having at least one matching diagnostic implication.
+
+    parameters
+      parameter (1..1)
+        name: implications
+        part (1..1)
+          name: numerator
+          valueQuantity: count of patients having this variant
+        part (0..1)
+          name: denominator
+          valueQuantity: count of patients in the cohort searched
+        part (0..*) (if responseType='list')
+          name: subject
+          valueString: patient ID
+"
+* parameter[6].type = #canonical
+* parameter[6].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindPopulationTxImplicationsParameters"
 
 Instance: find-study-metadata
 InstanceOf: OperationDefinition

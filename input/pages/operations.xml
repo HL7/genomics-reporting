@@ -43,17 +43,17 @@
   <tr>
     <td>simple variants</td>
     <td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a>; <a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a></td>
-    <td>find-population-specific-variants</td>
+    <td><a href="OperationDefinition-find-population-specific-variants.html">find-population-specific-variants</a></td>
   </tr>
   <tr>
     <td>structural variants</td>
     <td><a href="OperationDefinition-find-subject-structural-intersecting-variants.html">find-subject-structural-intersecting-variants</a>; <a href="OperationDefinition-find-subject-structural-subsuming-variants.html">find-subject-structural-subsuming-variants</a></td>
-    <td>find-population-structural-intersecting-variants; find-population-structural-subsuming-variants</td>
+    <td><a href="OperationDefinition-find-population-structural-intersecting-variants.html">find-population-structural-intersecting-variants</a>; <a href="OperationDefinition-find-population-structural-subsuming-variants.html">find-population-structural-subsuming-variants</a></td>
   </tr>
   <tr>
     <td>haplotype/genotypes</td>
     <td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a>; <a href="OperationDefinition-find-subject-specific-haplotypes.html">find-subject-specific-haplotypes</a></td>
-    <td>find-population-specific-haplotypes</td>
+    <td><a href="OperationDefinition-find-population-specific-haplotypes.html">find-population-specific-haplotypes</a></td>
   </tr>
   <tr>
     <td colspan="3"><b>Phenotype Operations</b></td>
@@ -61,12 +61,12 @@
   <tr>
     <td>therapeutic implications</td>
     <td><a href="OperationDefinition-find-subject-tx-implications.html">find-subject-tx-implications</a></td>
-    <td>find-population-tx-implications</td>
+    <td><a href="OperationDefinition-find-population-tx-implications.html">find-population-tx-implications</a></td>
   </tr>
   <tr>
     <td>diagnostic implications</td>
     <td><a href="OperationDefinition-find-subject-dx-implications.html">find-subject-dx-implications</a></td>
-    <td>find-population-dx-implications</td>
+    <td><a href="OperationDefinition-find-population-dx-implications.html">find-population-dx-implications</a></td>
   </tr>
   <tr>
     <td colspan="3"><b>Metadata Operations</b></td>
@@ -98,24 +98,12 @@
     <td>Determine if specified simple variants are present.</td>
   </tr>
   <tr>
-    <td>find-population-specific-variants</td>
-    <td>Retrieve count or list of patients having specified variants.</td>
-  </tr>
-  <tr>
     <td><a href="OperationDefinition-find-subject-structural-intersecting-variants.html">find-subject-structural-intersecting-variants</a></td>
     <td>Determine if structural variants are present that overlap range(s).</td>
   </tr>
   <tr>
     <td><a href="OperationDefinition-find-subject-structural-subsuming-variants.html">find-subject-structural-subsuming-variants</a></td>
     <td>Determine if structural variants are present that fully subsume a range.</td>
-  </tr>
-  <tr>
-    <td>find-population-structural-intersecting-variants</td>
-    <td>Retrieve count or list of patients having structural intersecting variants in specified regions.</td>
-  </tr>
-  <tr>
-    <td>find-population-structural-subsuming-variants</td>
-    <td>Retrieve count or list of patients having structural subsuming variants in specified regions.</td>
   </tr>
   <tr>
     <td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a></td>
@@ -126,29 +114,41 @@
     <td>See if specified haplotypes/genotypes are present.</td>
   </tr>
   <tr>
-    <td>find-population-specific-haplotypes</td>
-    <td>Retrieve count or list of patients having specified genotypes/haplotypes.</td>
-  </tr>
-  <tr>
     <td><a href="OperationDefinition-find-subject-tx-implications.html">find-subject-tx-implications</a></td>
     <td>Retrieves genetic therapeutic implications for variants/haplotypes/genotypes.</td>
-  </tr>
-  <tr>
-    <td>find-population-tx-implications</td>
-    <td>Retrieve count or list of patients having therapeutic implications.</td>
   </tr>
   <tr>
     <td><a href="OperationDefinition-find-subject-dx-implications.html">find-subject-dx-implications</a></td>
     <td>Retrieves genetic diagnostic implications for variants/haplotypes/genotypes.</td>
   </tr>
   <tr>
-    <td>find-population-dx-implications</td>
+    <td><a href="OperationDefinition-find-population-specific-variants.html">find-population-specific-variants</a></td>
+    <td>Retrieve count or list of patients having specified variants.</td>
+  </tr>  
+  <tr>
+    <td><a href="OperationDefinition-find-population-structural-intersecting-variants.html">find-population-structural-intersecting-variants</a></td>
+    <td>Retrieve count or list of patients having structural intersecting variants in specified regions.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-structural-subsuming-variants.html">find-population-structural-subsuming-variants</a></td>
+    <td>Retrieve count or list of patients having structural subsuming variants in specified regions.</td>
+  </tr>  
+  <tr>
+    <td><a href="OperationDefinition-find-population-specific-haplotypes.html">find-population-specific-haplotypes</a></td>
+    <td>Retrieve count or list of patients having specified genotypes/haplotypes.</td>
+  </tr>  
+   <tr>
+    <td><a href="OperationDefinition-find-population-tx-implications.html">find-population-tx-implications</a></td>
+    <td>Retrieve count or list of patients having therapeutic implications.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-dx-implications.html">find-population-dx-implications</a></td>
     <td>Retrieve count or list of patients having diagnostic implications.</td>
   </tr>
   <tr>
     <td><a href="OperationDefinition-find-study-metadata.html">find-study-metadata</a></td>
     <td>Retrieve metadata about sequencing studies performed on a subject.</td>
-  </tr>
+  </tr>  
 </tbody>
 </table>
   

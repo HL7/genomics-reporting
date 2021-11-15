@@ -1,0 +1,40 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+	
+<p>A researcher has developed a new drug, designed for cancer patients with large deletions involving all or part of BRCA1 (NC_000017.11:43044294-43125364) or BRCA2 (NC_000013.11:32315507-32400268), and wants a list of potential clinical trial participants.
+</p>
+<ul>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-population-structural-intersecting-variants?ranges=NC_000017.11:43044294-43125364,NC_000013.11:32315507-32400268&amp;responseType=list">GET .../find-population-structural-intersecting-variants?ranges=NC_000017.11:43044294-43125364,NC_000013.11:32315507-32400268&amp;responseType=list</a></li>
+</ul>
+
+</div>
