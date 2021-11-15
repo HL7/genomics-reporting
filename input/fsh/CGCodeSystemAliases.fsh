@@ -2,7 +2,8 @@
 Alias:   LNC = http://loinc.org
 Alias:   SCT = http://snomed.info/sct
 Alias:   UCUM = http://unitsofmeasure.org
-Alias:   MTH = http://ncimeta.nci.nih.gov
+// Alias:   MTH = http://ncimeta.nci.nih.gov
+Alias:   NCIT = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 Alias:   ICD10CM = http://hl7.org/fhir/sid/icd-10-cm 
 Alias:   RXN = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias:   CPT = http://www.ama-assn.org/go/cpt
@@ -32,3 +33,4 @@ Alias:  RequestIntent = http://hl7.org/fhir/request-intent
 Alias:  RequestStatus = http://hl7.org/fhir/request-status
 Alias:  NUC = http://www.ncbi.nlm.nih.gov/nuccore
 Alias:  MetaT = http://ncimeta.nci.nih.gov
+// Alias:  MetaT = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl

@@ -635,7 +635,7 @@ InstanceOf: Observation
 Description: "Therapeutic Implications"
 * id = "GrouperEx01"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = MTH#C43359 "Group"
+* code = NCIT#C43359 "Group"
 * status = #final
 * hasMember[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
 * hasMember[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
@@ -649,7 +649,7 @@ InstanceOf: Observation
 Description: "Genotypes"
 * id = "GrouperEx02"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = MTH#C43359 "Group"
+* code = NCIT#C43359 "Group"
 * status = #final
 * hasMember[0] = Reference(Pgx-geno-1001)
 * hasMember[1] = Reference(Pgx-geno-1003)
@@ -661,7 +661,7 @@ InstanceOf: Observation
 Description: "Regions Studied and variant info"
 * id = "GrouperEx03"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = MTH#C43359 "Group"
+* code = NCIT#C43359 "Group"
 * status = #final
 * hasMember[0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
 * hasMember[1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="

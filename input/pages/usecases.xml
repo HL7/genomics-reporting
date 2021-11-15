@@ -284,6 +284,18 @@ code=69548-6&_include=Observation:
 
 
   -->
+    <p>
+    The query:<br></br>
+    <b>GET /Observation?subject:Patient=123&amp;code=http://loinc.org|69548-6&amp;component-code-value-concept=http://loinc.org|48018-6$https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:644</b> <br></br>
+    will return all the variants associated with the specific patient where the Androgen Receptor (HGNC:644) is the gene name, whether a grouping observation is used or not. This is because the query looks first for all observations associated with the patient, then it filters by the observation.code to keep only those profiles which are variant profile instances. Next,the query retrieves the gene name from those profiles using the component.code and compares the coded-value to "HGNC:644." More queries and explanations can be found on the <a href="usecases.html"> query guidance page</a>.
+  </p>
+  <p>
+    <b>Important:</b> If using grouping observations as results of a report, be sure to also reference the genomic observations. It is up to receiving systems to arrange/use the genomic observations appropriately. But some systems may only process just the first layer of a Diagnostic Report results. Thus, be sure to include result links to all the genomic observation results being returned. Consider using summaryOf for creating meaningful subsets of observations. Additionally, observations may not always be encapsulated in a DiagnosticReport. The use of basing queries on Observation resource, as done here, ensures that genomic observations will be found.<br></br>
+  </p>
+  
+  <p>
+    Similarly, at this time be sure to follow all references, and layers, when processing <code>DiagnosticReport.results</code> to ensure that all genomic observations have been processed. For example, just looking at the result references in the report does not ensure that grouped genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for report, then one would need to follow the references in those grouping observations to see the genomic observations. 
+  </p>
   <a name="getCompoundHetVariantAndmemberVariants"></a>
   <h4>Compound heterozygotic variant retrieval</h4>
   <p>
