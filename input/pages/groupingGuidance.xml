@@ -14,7 +14,7 @@
   </p>
 
   <a name="grouper"> </a>
-  <h4>Grouping observations</h4>
+  <h3>Overview</h3>
   <p>
     All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>. The genetic findings, implications and region studied profiles all contain links to computably define which go together (e.g. the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, sometimes it is desired to connect observations for visualization. This might be done with a grouping observation. In this version of the specification, no guidance is provided on where or if a grouping observation should be used. This is left up to the discretion of the reporting lab. Observations might be organized for visualization purposes on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive <code>hasMember</code> relationship on observation supports a nested tree-structure of observations if appropriate, though more than two levels of grouping observations is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouping to separately reference variants and other Observations on the report. For a version of the same report without grouping see <a href="Bundle-oncologyexamples-r4-noGrouping.html"> without grouping</a>. In the examples, the NCI metathesaurus code C43359 (for 'Group' or 'Panel') is used for the grouping <code>Observation.code</code> field. Genomic panels that have specific codes, such as a specific LOINC code, could also be used if the grouping observation contains all the elements typically reported by the specific panel.
   </p>
@@ -39,12 +39,12 @@
 
 
   <a name="note"> </a>
-  <h3>Note</h3>
+  <h3>Referencing Observations from GenomicsReport</h3>
   <p>
-    <b>Important:</b> If using grouping observations as results of a report, be sure to also reference the genomic observations. It is up to receiving systems to arrange/use the genomic observations appropriately. But some systems may only process just the first layer of a Diagnostic Report results. Thus, be sure to include result links to all the genomic observation results being returned. Consider using summaryOf for creating meaningful subsets of observations. Additionally, observations may not always be encapsulated in a DiagnosticReport. The use of basing queries on Observation resource, as done here, ensures that genomic observations will be found.<br></br>
+    It is up to receiving systems to arrange/use the genomic observations appropriately. But some systems may only process just the first layer of a <code>DiagnosticReport.results</code>. Thus, when sending the report and results, we recommend including result links to all the genomic observation results being returned. For more complex reporting use cases, consider using the <code>summaryOf</code> extension on <code>DiagnosticReport</code> for creating meaningful subsets of observations.
   </p>
   <p>
-    Similarly, at this time be sure to follow all references, and layers, when processing <code>DiagnosticReport.results</code> to ensure that all genomic observations have been processed. For example, just looking at the result references in the report does not ensure that grouped genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for report, then one would need to follow the references in those grouping observations to see the genomic observations. 
+    For receivers of the data, we recommend to follow all references when processing <code>DiagnosticReport.results</code> to ensure that all genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for report, then one would need to follow the references in those grouping observations to see the genomic observations. 
   </p>
   
 </div>
