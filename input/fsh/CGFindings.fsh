@@ -61,28 +61,37 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     coding-hgvs 0..1 and
-    coding-change-type 0..1 and
-    molecular-consequence 0..1 and
-    variation-code 0..1 and
     genomic-hgvs 0..1 and
-    genomic-source-class 0..1 and
-    protein-hgvs 0..1 and
-    amino-acid-change-type 0..1 and
-    transcript-ref-seq 0..1 and
+    cytogenomic-nomenclature 0..1 and
+    
     genomic-ref-seq 0..1 and
+    transcript-ref-seq 0..1 and
+    exact-start-end 0..1 and
+    inner-start-end 0..1 and
+    outer-start-end 0..1 and
+    coordinate-system 0..1 and
+    ref-allele 0..1 and
+    alt-allele 0..1 and
+    
+    genomic-source-class 0..1 and
     sample-allelic-frequency 0..1 and
     allelic-read-depth 0..1 and
     allelic-state 0..1 and
-    copy-number 0..1 and
-    ref-allele 0..1 and
-    alt-allele 0..1 and
-    coordinate-system 0..1 and
-    exact-start-end 0..1 and
-    outer-start-end 0..1 and
-    inner-start-end 0..1 and
-    cytogenomic-nomenclature 0..1 and
     variant-inheritance 0..1 and
-    chromosome-identifier 0..*
+
+    variation-code 0..* and
+    chromosome-identifier 0..* and
+
+    protein-hgvs 0..1 and
+    coding-change-type 0..1 and
+    amino-acid-change-type 0..1 and
+    molecular-consequence 0..1 and
+    copy-number 0..1
+
+    
+
+    
+
 * component[coding-hgvs].code = LNC#48004-6
 * component[coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
 * component[coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string. A coding DNA reference sequence accession is followed by the description of the variant, which starts with 'c.'. Example: NM_005228.5:c.2369C>T."
