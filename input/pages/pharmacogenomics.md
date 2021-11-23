@@ -58,7 +58,7 @@ To associate a Therapeutic-implication instance with a proposed recommended acti
 
 ### Creating the Example FHIR PGx Report
 
-In the example used in this User Guide, the PGx results are based on diplotypes (star alleles), and the underlying variant observations, found in each relevant PGx gene that is covered by the PGx gene panel. These diplotypes are then used as a basis for relating PGx gene-drug knowledge implications. For this example, each PGx implication populates the medication-metabolism component, but other statements about overall efficacy or potential adverse events could be included. Note that there was also the choice in this use case, to derive Implication statements from one or more genotype Observations and not from variants directly.
+In the example used in this User Guide, the PGx results are based on diplotypes (star alleles), and the underlying variant observations, found in each relevant PGx gene that is covered by the PGx gene panel. These diplotypes are then used as a basis for relating PGx gene-drug knowledge implications. Note that there was also the choice in this use case, to derive Implication statements from one or more genotype Observations and not from variants directly.
 
 Below is one of the therapeutic implications in the report:
 
@@ -103,8 +103,8 @@ Below is one of the therapeutic implications in the report:
  <component>
    <code>
      <coding>
-       <system value="http://loinc.org"/>
-       <code value="53040-2"/>
+       <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+       <code value="predicted-therapeutic-implication"/>
      </coding>
    </code>
    <valueCodeableConcept>

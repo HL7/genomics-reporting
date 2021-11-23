@@ -23,7 +23,7 @@ Description:    "Properties common to genmoic implications expressed as computab
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    evidence-level 0..1 and
+    evidence-level 0..* and
     prognosis 0..1
 * component[evidence-level].code = LNC#93044-6
 * component[evidence-level] ^short = "Level of Evidence"
@@ -50,17 +50,17 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    associated-phenotype 0..1 and
+    predicted-phenotype 0..* and
     mode-of-inheritance	0..1 and
     clinical-significance 0..1 and
     functional-effect 0..*
-* component[associated-phenotype] ^short = "Associated phenotype"
-* component[associated-phenotype] ^definition = " An observable characteristic (e.g., condition; disease) of an individual, as associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings.  Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
-* component[associated-phenotype].code = LNC#81259-4
-* component[associated-phenotype].value[x] only CodeableConcept
-* component[associated-phenotype].value[x] ^binding.strength = #example
-* component[associated-phenotype].value[x] ^binding.description = "Binding not yet defined"
-* component[associated-phenotype].value[x] 1..1
+* component[predicted-phenotype] ^short = "Predicted phenotype"
+* component[predicted-phenotype] ^definition = "An observable characteristic (e.g., condition; disease) of an individual, as predicted by the presence of associated molecular finding(s)associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings.  Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
+* component[predicted-phenotype].code = LNC#81259-4
+* component[predicted-phenotype].value[x] only CodeableConcept
+* component[predicted-phenotype].value[x] ^binding.strength = #example
+* component[predicted-phenotype].value[x] ^binding.description = "Binding not yet defined"
+* component[predicted-phenotype].value[x] 1..1
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 // * component[mode-of-inheritance] ^definition = "" // MLT: no definition provided.
 * component[mode-of-inheritance].code = TbdCodesCS#condition-inheritance
@@ -99,9 +99,7 @@ Description:    "Profile with properties for observations that convey the potent
     phenotypic-treatment-context 0..* and
     medication-assessed 0..* and
     therapy-assessed 0..* and
-    effect-medication-metabolism 0..1 and
-    effect-medication-risk 0..1 and
-    effect-treatment-efficacy 0..*
+    predicted-therapeutic-implication 0..*
 * component[phenotypic-treatment-context].code = LNC#81259-4
 * component[phenotypic-treatment-context] ^short = "Phenotypic treatment context"
 * component[phenotypic-treatment-context] ^definition = "A condition whose treatment in medication-assessed or therapy-assessed is contextually impacted by the variant.  A code set is not specified, but it is ideal to use terms related to medical findings.  Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and all of Human Phenotype Ontology (HPO).  For example, if an individual's variant affects the efficacy of imatinib in non-small cell lung cancer, a valid response from SNOMED CT would be 'Non-small cell lung cancer (code 254637007)'."
@@ -123,27 +121,12 @@ Description:    "Profile with properties for observations that convey the potent
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[therapy-assessed].value[x] 1..1
-* component[effect-medication-metabolism] ^short = "Effect medication metabolism"
-* component[effect-medication-metabolism] ^definition = "A variant's effect on the metabolism of the medication referenced in medication-assessed. The metabolism (or pharmacokinetics) of a drug determines the concentration of the drug, prodrug, and/or break-down products over time. Therefore, variants that affect a drug's metabolism will alter the concentration of drug/prodrug/metabolites over time.  Example: Due to this variant, the patient is a 'slow metabolizer' (i.e. the drug's metabolism is slowed)"
-* component[effect-medication-metabolism].code = LNC#53040-2
-* component[effect-medication-metabolism].value[x] only CodeableConcept
-* component[effect-medication-metabolism].value[x] 1..1
-* component[effect-medication-metabolism].value[x] from http://loinc.org/vs/LL3856-3 (preferred)
-* component[effect-medication-risk] ^short = "Effect medication risk"
-* component[effect-medication-risk] ^definition = "A variant's effect on the risk of the medication specified by the medication-assessed component.   Bindings are currently limited to 'high risk' and 'low risk' (LOINC Answers for LL2353-2).  Example: Due to this variant, the drug is at high risk of causing an adverse reaction."
-* component[effect-medication-risk].code = LNC#83009-1
-* component[effect-medication-risk].value[x] only CodeableConcept
-* component[effect-medication-risk].value[x] 1..1
-* component[effect-medication-risk].value[x] from http://loinc.org/vs/LL2353-2 (extensible)
-// ******
-// ****** MLT: TODO: Add effect-medication-transport ******
-// ******
-* component[effect-treatment-efficacy] ^short = "Effect treatment efficacy"
-* component[effect-treatment-efficacy] ^definition = "A variant's effect on the efficacy of the treatment referenced in medication-assessed or therapy-assessed. The efficacy (or pharmacodynamics) of a drug determines how effective a drug is at a given concentration. Therefore variants that affect a drug's efficacy will alter the potency of a drug. Example: Due to this variant, the drug will be less efficacious against this target. Caveat: Different value sets are in common use for germline vs. somatic use cases. Germline use cases generally use some flavor of CPIC/PharmGKB drug efficacy Value Set (e.g. here), and align with our definition. Somatic use cases generally use some flavor of LOINC LL539-8 answer list, which is similar to https://www.oncokb.org/levels (e.g. here). Codes used for somatic use cases are often stated from the perspective of the tumor (e.g. 'given this mutation, the tumor is resistant to the drug') whereas codes for germline use cases are stated from the perspective of the drug (e.g. 'given this mutation, the drug will be less effective')."
-* component[effect-treatment-efficacy].code = LNC#51961-1
-* component[effect-treatment-efficacy].value[x] only CodeableConcept
-* component[effect-treatment-efficacy].value[x] 1..1
-* component[effect-treatment-efficacy].value[x] from http://loinc.org/vs/LL539-8 (preferred)
+* component[predicted-therapeutic-implication] ^short = "Predicted Therapeutic Implication"
+* component[predicted-therapeutic-implication] ^definition = "A predicted ramification based on the presence of associated molecular finding(s). Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
+* component[predicted-therapeutic-implication].code = TbdCodesCS#predicted-therapeutic-implication
+* component[predicted-therapeutic-implication].value[x] only CodeableConcept
+* component[predicted-therapeutic-implication].value[x] 1..1
+* component[predicted-therapeutic-implication].value[x] from GeneticTherapeuticImplicationsVS (extensible)
 * ^abstract = false
 
 Profile:        MedicationRecommendation
