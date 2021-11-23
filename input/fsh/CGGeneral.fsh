@@ -91,6 +91,7 @@ Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
 * extension contains GenomicsArtifact named genomics-artifact 0..* and
+    GenomicsFile named genomics-file 0..* and
     RecommendedAction named recommended-action 0..* and
     SupportingInformation named supporting-information 0..* and
     GenomicsReportRisk named report-risk 0..*
@@ -184,3 +185,14 @@ Description:    "Organizes information within a genomic report."
 * hasMember[sequence-phase-relation] only Reference(SequencePhaseRelationship)
 * hasMember[sequence-phase-relation] ^short = "Sequence Phase Relationship"
 * ^abstract = false
+
+
+Profile:        GenomicsDocumentReference
+Parent:         DocumentReference
+Id:             genomics-document-reference
+Title:          "Genomics DocumentReference"
+Description:    "A profile of DocumentReference used to represent a genomics file."
+
+* subject only Reference(Patient or Group)
+* context.related only Reference(GenomicsReport)
+* description ^short = "Human-readable description to provide guidance on how the file was generated"
