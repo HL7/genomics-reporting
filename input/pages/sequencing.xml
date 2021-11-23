@@ -88,13 +88,13 @@ This pattern describes the observed nucleotide sequence or configuration using H
   </thead>
   <tbody>
     <tr>
-      <td>g.HGVS or c.HGVS</td>
+      <td>genomic-hgvs or coding-hgvs</td>
       <td>81290-9 or 48004-6</td>
       <td>"system" : "http://varnomen.hgvs.org", "code" : "NM_022787.3:c.769G>A"</td>
       <td>Proper usage of HGVS contains the reference sequence identifier followed by ‘:g.’ for genomic or ‘:c.’ for a coding sequence. In HGVS notation, the “=” (equals) is used to indicate a sequence was tested but found unchanged <a href="https://varnomen.hgvs.org/recommendations/general/">[ref]</a>.</td>
     </tr>
    <tr>
-      <td>ISCN</td>
+      <td>cyogenomic-nomenclature</td>
       <td>81291-7</td>
       <td>"t(9;22)(q34;q4)"</td>
       <td>more information on formatting structural variations below.</td>
@@ -103,7 +103,7 @@ This pattern describes the observed nucleotide sequence or configuration using H
 </table>
 
 <a name="ComponentwiseVariants"></a>
-<h4>Manually Defined (VCF-life) Variants</h4>
+<h4>Manually Defined (VCF-like) Variants</h4>
 <p>
 This representation leverages multiple component slices to communicate an allele within the context of a specific location on a reference sequence. It is the most accurate definitional representation in FHIR, but is limited to variations with known breakpoints, and alleles should be normalized per VCF specifications. Note that VCF representations often specify genome build and chromosome identifiers rather than explicit reference sequences. Build and chromosome identifier may optionally be included for cross reference.
 </p>
@@ -116,14 +116,14 @@ This representation leverages multiple component slices to communicate an allele
   </thead>
   <tbody>
     <tr>
-      <td>genomic-refseq</td>
+      <td>genomic-ref-seq</td>
       <td>48013-7</td>
       <td>"system" : "http://www.ncbi.nlm.nih.gov/nuccore",
             "code" : "NC_000010.10"</td>
       <td>must send at least this or transcript refseq</td>
     </tr>
     <tr>
-      <td>transcript-refseq</td>
+      <td>transcript-ref-seq</td>
       <td>51958-7</td>
       <td>"system" : "http://www.ncbi.nlm.nih.gov/refseq",
             "code" : "NM_000044.3"
@@ -139,24 +139,24 @@ This representation leverages multiple component slices to communicate an allele
       <td>Common coordinate systems are described by LOINC.</td>
     </tr>
     <tr>
-      <td>allele start-end</td>
+      <td>exact-start-end</td>
       <td>81254-5</td>
       <td>"valueRange" : {
         "low" : {
           "value" : 96527334
         }
       }
-</td>
+      </td>
       <td>Interpretation of this number requires the reference sequence and coordinate system.</td>
     </tr>
     <tr>
-      <td>ref allele</td>
+      <td>ref-allele</td>
       <td>69547-8</td>
       <td>"valueString" : "C"</td>
       <td>This string should be normalized per the VCF standard.</td>
     </tr>
     <tr>
-      <td>alt allele</td>
+      <td>alt-allele</td>
       <td>69551-0</td>
       <td>"valueString" : "A"</td>
       <td>If the reference allele is tested and found unchanged, this string should be equal to the REF allele string.</td>
@@ -174,7 +174,7 @@ This representation leverages multiple component slices to communicate an allele
 
 <table>
   <thead>
-    <th>Contextual Component</th>
+    <th>Contextual Attribute or Component</th>
     <th>Code</th>
     <th>Example Value</th>
     <th>Note</th>
@@ -189,7 +189,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>If not searching for specific variations and merely reporting what's found, the Observation’s value should be set to "Present". Details about the specific variant in consideration must be populated using one of the above patterns of components.</td>
     </tr>
     <tr>
-      <td>method</td>
+      <td>Observation.method</td>
       <td>(Coding, with Code from LL4048-6)</td>
       <td>"system" : "http://loinc.org",
         "code" : "LA26398-0",
@@ -197,7 +197,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>Indicates the method of variant analysis. The bound list is currently extensible, allowing for codification of other method types here at varying degrees of granularity. The work group is considering additional approaches to modeling testing methods and is requesting implementer feedback at this time.</td>
     </tr>
     <tr>
-      <td>allelic read-depth</td>
+      <td>component[allelic-read-depth]</td>
       <td>82121-5</td>
       <td>"valueQuantity" : {
         "value" : 120,
@@ -205,11 +205,11 @@ This representation leverages multiple component slices to communicate an allele
         "system" : "http://unitsofmeasure.org",
         "code" : "{reads}/{base}"
       }
-</td>
-      <td>Specifies the number of reads that identified the allele in question, whether it consists of one or more contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
+     </td>
+      <td>Specifies the number of reads that identifies the allele in question, whether it consists of one or more contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
     </tr>
     <tr>
-      <td>allelic state</td>
+      <td>component[allelic-state]</td>
       <td>53034-5</td>
       <td>"system" : "http://loinc.org",
             "code" : "LA6705-3",
@@ -217,30 +217,30 @@ This representation leverages multiple component slices to communicate an allele
       <td></td>
     </tr>
     <tr>
-      <td>sample allelic frequency</td>
+      <td>component[sample-allelic-frequency]</td>
       <td>81258-6</td>
       <td>0.44</td>
       <td></td>
     </tr>
     <tr>
-      <td>Genomic source class</td>
+      <td>component[genomic-source-class]</td>
       <td>48002-0</td>
-      <td>system" : "http://loinc.org",
+      <td>"system" : "http://loinc.org",
             "code" : "LA6684-0",
             "display" : "Somatic"</td>
       <td></td>
     </tr>
     <tr>
-      <td>variant inheritance</td>
+      <td>component[variant-inheritance]</td>
       <td>TBD-variant-inheritance</td>
       <td>maternal | patternal | unknown</td>
       <td></td>
     </tr>
     <tr>
-      <td>confidence</td>
+      <td>component[confidence]</td>
       <td>TBD</td>
-      <td></td>
       <td>high | intermediate | low</td>
+      <td></td>
     </tr>
   </tbody>
 </table>  
@@ -259,7 +259,7 @@ This implementation guide defines several components on Variant that can be used
   </thead>
   <tbody>
     <tr>
-      <td>cytogenetic location</td>
+      <td>cytogenetic-location</td>
       <td>48001-2</td>
       <td></td>
       <td>derivable from refseq</td>
@@ -271,13 +271,13 @@ This implementation guide defines several components on Variant that can be used
       <td>Optional to include. Multiple database code systems are used across specialties and carry different levels of information.</td>
     </tr>
     <tr>
-      <td>Chromosome, build</td>
+      <td>chromosome-identifier, reference-sequence-assembly</td>
       <td>48000-4, 62374-4</td>
       <td></td>
       <td>Optional to include. Commonly used in VCF as shorthand but can introduce ambiguity without a fully versioned reference sequence. </td>
     </tr>
     <tr>
-      <td>gene-studied id</td>
+      <td>gene-studied</td>
       <td>48018-6</td>
       <td>"http://www.genenames.org/geneId",
             "code" : "HGNC:644",
@@ -293,7 +293,7 @@ This implementation guide defines several components on Variant that can be used
       <td>available from NCBI, tied to representative transcript</td>
     </tr>
     <tr>
-      <td>change type</td>
+      <td>coding-change-type</td>
       <td>48019-4</td>
       <td>"system" : "http://www.sequenceontology.org",
                   "code" : "SO:1000002",
@@ -301,7 +301,7 @@ This implementation guide defines several components on Variant that can be used
       <td>may be required for certain types of structural variants. See below.</td>
     </tr>
     <tr>
-      <td>p.HGVS</td>
+      <td>protein-hgvs</td>
       <td>48005-3</td>
       <td>"http://varnomen.hgvs.org",
                   "code" : "p.H1047R"</td>
@@ -335,9 +335,7 @@ Suggested minimal representations of common structural variants are shown in the
   </thead>
   <tbody>
     <tr>    
-      <td>[1..1] component:
-dna-chg-type 
-(LOINC 48019-4)</td>
+      <td>[1..1] component: coding-change-type (LOINC 48019-4)</td>
       <td>SO:0001019 | copy_number_variation | http://sequenceontology.org</td>
       <td>SO:1000035 | duplication | http://sequenceontology.org</td>
       <td>SO:0000159 | deletion | http://sequenceontology.org</td>
@@ -345,9 +343,7 @@ dna-chg-type
       <td>SO:0000667 | insertion | http://sequenceontology.org</td>
     </tr>
     <tr>    
-      <td>[1..1] component:
-genomic-ref-seq 
-(LOINC 48013-7)</td>
+      <td>[1..1] component: genomic-ref-seq (LOINC 48013-7)</td>
       <td colspan="5">Should be populated with chromosome-level reference sequence (e.g. NCBI RefSeq “NC_000001.10”)</td>
     </tr>
     <tr>
@@ -355,9 +351,7 @@ genomic-ref-seq
       <td colspan="5">should be populated</td>
     </tr>
     <tr>    
-      <td>[0..1] component:
-allelic-state 
-(LOINC 53034-5)</td>
+      <td>[0..1] component: allelic-state (LOINC 53034-5)</td>
       <td>X</td>
       <td>should be populated where genomic-source-class is germline</td>
       <td>should be populated where genomic-source-class is germline</td>
@@ -365,8 +359,7 @@ allelic-state
       <td>should be populated where genomic-source-class is germline</td>
     </tr>
     <tr>    
-      <td>[0..1] component: sample-allelic-frequency
-(LOINC 81258-6)</td>
+      <td>[0..1] component: sample-allelic-frequency (LOINC 81258-6)</td>
       <td>X</td>
       <td>X, optional if genomic-source-class is somatic</td>
       <td>X, optional if genomic-source-class is somatic</td>
@@ -374,9 +367,7 @@ allelic-state
       <td>X</td>
     </tr>
     <tr>    
-      <td>[0..1] component:
-copy-number
-(LOINC 82155-3)</td>
+      <td>[0..1] component: copy-number (LOINC 82155-3)</td>
       <td>should be populated</td>
       <td>optional</td>
       <td>optional</td>
@@ -384,29 +375,19 @@ copy-number
       <td>X</td>
     </tr>
     <tr>
-      <td>[1..1] component:
-ref-allele
-(LOINC 69547-8)</td>
+      <td>[1..1] component: ref-allele (LOINC 69547-8)</td>
       <td colspan="5">should be populated</td>
     </tr>
     <tr>
-      <td>[0..1] component:
-alt-allele 
-(LOINC 69551-0)</td>
+      <td>[0..1] component: alt-allele (LOINC 69551-0)</td>
       <td colspan="5">Generally, structural variants will not report Alt Alleles. In some cases, an Alt Allele may be reported for an Insertion.</td>
     </tr>
     <tr>
-      <td>[1..1] component:
-coordinate-system
-(LOINC 92822-6)</td>
+      <td>[1..1] component: coordinate-system (LOINC 92822-6)</td>
       <td colspan="5">Should be populated</td>
     </tr>
     <tr>
-      <td>[0..1] component:
-outer-start-end
-(TbdCode outer-start-end) and [0..1] component:
-inner-start-end
-(TbdCode inner-start-end)</td>
+      <td>[0..1] component: outer-start-end (TbdCode outer-start-end) and [0..1] component: inner-start-end (TbdCode inner-start-end)</td>
       <td colspan="5">Outer and/or inner start should be populated.</td>
     </tr>
   </tbody>
