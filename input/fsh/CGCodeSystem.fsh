@@ -1,4 +1,5 @@
 CodeSystem: SequencePhaseRelationshipCS
+Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
 
@@ -7,24 +8,24 @@ Description: "Code System for specific types of relationships"
 * #Indeterminate "Indeterminate" "Phase is unable to be determined"
 * #Unknown "Unknown" "Phase is unknown"
 
-CodeSystem: TbdCodes
-Title: "ToBeDeterminedCodes ('TbdCodes')"
+CodeSystem: TbdCodesCS
+Id: tbd-codes-cs
+Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."
 
 * #grouper "grouper" "A means to bundle several observations such as one would find in a genetics test panel."
 * #effect-transporter-function "effect-transporter-function" "Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance."
-* #effect-medication-efficacy "Medication Efficacy"
+* #effect-treatment-efficacy "Treatment Efficacy"
 * #effect-medication-metabolism "Medication Metabolism"
 * #effect-medication-transporter "Medication Transporter Function"
 * #effect-high-risk-allele "High Risk Allele"
 * #prognostic-implication "Prognostic Implication component" "Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."
-* #associated-cancer "associated-cancer"
 * #associated-therapy "Genomically linked therapy" "The non-medication therapy (procedure) associated with this implication."
 * #region-coverage "region-coverage" "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."
 * #molecular-consequence "Molecular Consequence" "Annotated changes to sequence features caused by this variant. Terms are from the sequence ontology under SO:0001537."
 * #exact-start-end "Variant exact start and end" "The genomic coordinates of the exact genomic range in which the variant resides."
-* #inner-start-end "Variant inner start and end" "The genomic coordinates of the inner genomic range in which the variant might reside."
-* #outer-start-end "Variant outer start and end" "The genomic coordinates of the outer genomic range in which the variant might reside."
+* #inner-start-end "Inner Start-End" "The genomic coordinates of the inner genomic range in which the variant might reside."
+* #outer-start-end "Outer Start-End" "The genomic coordinates of the outer genomic range in which the variant might reside."
 * #variant-inheritance "Variant inheritance" "A quality inhering in a variant by virtue of its origin. The terms are in the sequence ontology under SO:0001762."
 * #diagnostic-implication "Diagnostic Implication" "An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition."
 * #therapeutic-implication "Therapeutic Implication" "An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy."
@@ -34,6 +35,7 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
 
 CodeSystem: ConditionInheritanceModeCS
+Id: condition-inheritance-mode-cs
 Title: "Condition Inheritance Pattern Codes"
 Description: "A set of terms that describe the transmission pattern of a condition in a pedigree."
 

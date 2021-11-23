@@ -1,7 +1,7 @@
 Profile:        GenomicSpecimen
 Parent:         Specimen
 Id:             specimen
-Title:          "Genomics specimen"
+Title:          "Genomics Specimen"
 Description:    "A sample to be used for analysis."
 
 * subject 1..1
@@ -10,7 +10,7 @@ Description:    "A sample to be used for analysis."
 Profile:        GenomicsServiceRequest
 Parent:         ServiceRequest
 Id:             servicerequest
-Title:          "Genomics service request"
+Title:          "Genomics Service Request"
 Description:    "Request that initiated the diagnostic report."
 
 * doNotPerform 0..0
@@ -22,7 +22,7 @@ Description:    "Request that initiated the diagnostic report."
 Profile:        GenomicsBase
 Parent:         Observation
 Id:             genomics-base
-Title:          "Genomics base"
+Title:          "Genomics Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 
 * category 1..*
@@ -36,8 +36,8 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * subject 0..1
 * subject only Reference(Patient or Group or Location)
 * performer 0..1
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondaryfinding 0..1
-* extension contains http://hl7.org/fhir/StructureDefinition/bodySite named bodyStructure 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * ^abstract = true
 * note only CodedAnnotation
 * component ^slicing.discriminator.type = #pattern
@@ -45,9 +45,9 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains conclusion-string 0..1
-* component[conclusion-string] ^short = "Clinical conclusion (interpretation) of the observation"
+* component[conclusion-string] ^short = "Clinical Conclusion"
 * component[conclusion-string] ^definition = "Clinical conclusion (interpretation) of the observation"
-* component[conclusion-string].code = TbdCodes#conclusion-string
+* component[conclusion-string].code = TbdCodesCS#conclusion-string
 * component[conclusion-string].value[x] only string
 
 Profile:        OverallInterpretation
@@ -73,7 +73,7 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#82120-7
 * valueCodeableConcept 1..1
-* valueCodeableConcept from SeqPhaseRelationshipVS (required)
+* valueCodeableConcept from SequencePhaseRelationshipVS (required)
 * method from http://loinc.org/vs/LL4050-2 (extensible)
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "resolve()"
@@ -91,13 +91,13 @@ Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
-* extension contains CGRelatedArtifact named relatedArtifact 0..* and
-    RecommendedAction named RecommendedAction 0..* and
-    SupportingInformation named SupportingInfo 0..* and
-    DiagnosticReportRisk named diagnosticReport-risk 0..*
+* extension contains GenomicsArtifact named genomics-artifact 0..* and
+    RecommendedAction named recommended-action 0..* and
+    SupportingInformation named supporting-information 0..* and
+    GenomicsReportRisk named report-risk 0..*
 * extension[RecommendedAction].value[x] only Reference(Task)
 //* extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
-* extension[DiagnosticReportRisk].value[x] only Reference(RiskAssessment)
+* extension[GenomicsReportRisk].value[x] only Reference(RiskAssessment)
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)
@@ -152,7 +152,7 @@ Title:          "Grouper"
 Description:    "Organizes information within a genomic report."
 
 * extension contains RecommendedAction named RecommendedAction 0..*
-* code = TbdCodes#grouper
+* code = TbdCodesCS#grouper
 * hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"
 * hasMember ^slicing.rules = #open

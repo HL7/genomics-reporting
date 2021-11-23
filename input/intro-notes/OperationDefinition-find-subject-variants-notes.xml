@@ -4,9 +4,9 @@
 <p>Optionality in the Variant profile allows for different implementations to represent variants in different ways. For instance, the following variant representations are synonymous:</p>
 <ul>
   <li>component:variation-code: ClinVar ID = 237860</li>
-  <li>component:dna-chg: HGVS = NM_001195798.2:c.12G>A</li>
-  <li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A</li>
-  <li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A</li>
+  <li>component:coding-hgvs: HGVS = NM_001195798.2:c.12G>A</li>
+  <li>component:genomic-hgvs: HGVS = NC_000019.9:g.11200236G>A</li>
+  <li>component:genomic-hgvs: HGVS = NC_000019.10:g.11089560G>A</li>
   <li>Multiple components:
     <ul>
 	  <li>component:genomic-ref-seq: NC_000019.10</li>
@@ -25,8 +25,8 @@
 	<h3>Variant liftover</h3>
 <p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:</p>
  <ul>
-  <li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A (build 37 representation)</li>
-  <li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A (build 38 representation)</li>
+  <li>component:genomic-hgvs: HGVS = NC_000019.9:g.11200236G>A (build 37 representation)</li>
+  <li>component:genomic-hgvs: HGVS = NC_000019.10:g.11089560G>A (build 38 representation)</li>
 </ul>
 <p>Several groups have identified edge cases that pose genome assembly conversion challenges (e.g. see <a href="https://github.com/PharmGKB/PharmCAT/wiki/Preparing-VCF-Files">PharmGKB's PharmCAT posting</a>; <a href="https://www.biostars.org/p/14187/">Biostars posting</a>). For example, <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/212026/">NC_000001.11:145923295:C:C</a> (build 38 representation) does not convert to a corresponding build 37 representation using <a href="https://api.ncbi.nlm.nih.gov/variation/v0/spdi/NC_000001.11%3A145923295%3AC%3AC/all_equivalent_contextual">NCBI Variation Services</a>. As a result, there is no requirement that servers normalize all variants against a single build.</p>
 <p>Rather, where a server is storing variants aligned to multiple builds (and hasn't normalized all variants against a single build), it will be necessary for the server to lift over the query region into corresponding regions in other builds. For example, a query for variants in NC_000001.11:145507556-145513536 (build 38 range) will also need to query for variants in NC_000001.10:145921556-145927537 (build 37 range) in order to gather variants expressed against build 38 and build 37, respectively.</p>
@@ -176,7 +176,7 @@
                 {
                   "system": "http://loinc.org",
                   "code": "48013-7",
-                  "display": "Genomic reference sequence ID"
+                  "display": "Genomic Reference Sequence"
                 }
               ]
             },
@@ -260,7 +260,7 @@
               {
                 "system": "http://loinc.org",
                 "code": "62374-4",
-                "display": "Human reference sequence assembly version"
+                "display": "Human Reference Sequence Assembly"
               }
             ]
           },
@@ -280,7 +280,7 @@
               {
                 "system": "http://loinc.org",
                 "code": "48013-7",
-                "display": "Genomic reference sequence ID"
+                "display": "Genomic Reference Sequence"
               }
             ]
           },
@@ -299,7 +299,7 @@
               {
                 "system": "http://loinc.org",
                 "code": "53034-5",
-                "display": "Allelic state"
+                "display": "Allelic State"
               }
             ]
           },
@@ -319,7 +319,7 @@
               {
                 "system": "http://loinc.org",
                 "code": "69547-8",
-                "display": "Genomic Ref allele [ID]"
+                "display": "Genomic Ref Allele [ID]"
               }
             ]
           },
@@ -331,7 +331,7 @@
               {
                 "system": "http://loinc.org",
                 "code": "69551-0",
-                "display": "Genomic Alt allele [ID]"
+                "display": "Genomic Alt Allele [ID]"
               }
             ]
           },
@@ -361,7 +361,7 @@
           "code": {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes",
+                "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs",
                 "code": "exact-start-end",
                 "display": "Variant exact start and end"
               }

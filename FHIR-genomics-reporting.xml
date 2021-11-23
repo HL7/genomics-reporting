@@ -14,9 +14,9 @@
 <artifact id="StructureDefinition/coded-annotation" key="StructureDefinition-coded-annotation" name="Coded Annotation"/>
 <artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="Concept mapping for DNA Change Type"/>
 <artifact deprecated="true" id="CodeSystem/ConditionInheritanceMode" key="CodeSystem-ConditionInheritanceMode" name="Condition Inheritance Pattern"/>
-<artifact id="CodeSystem/ConditionInheritanceModeCS" key="CodeSystem-ConditionInheritanceModeCS" name="Condition Inheritance Pattern Codes"/>
-<artifact id="ValueSet/condition-inheritance-vs" key="ValueSet-condition-inheritance-vs" name="Condition Inheritance Patterns"/>
-<artifact id="ValueSet/dna-change-type" key="ValueSet-dna-change-type" name="DNA Change Type"/>
+<artifact id="CodeSystem/condition-inheritance-mode-cs" key="CodeSystem-ConditionInheritanceModeCS" name="Condition Inheritance Pattern Codes"/>
+<artifact id="ValueSet/condition-inheritance-mode-vs" key="ValueSet-condition-inheritance-vs" name="Condition Inheritance Patterns"/>
+<artifact id="ValueSet/dna-change-type-vs" key="ValueSet-dna-change-type" name="DNA Change Type"/>
 <artifact id="StructureDefinition/diagnostic-implication" key="StructureDefinition-diagnostic-implication" name="Diagnostic Implication"/>
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>
 <artifact id="Observation/AnnotationExample" key="Observation-AnnotationExample" name="Example - ACMG Screening result"/>
@@ -34,6 +34,7 @@
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="Example - HLA genotyping for HLA-A, using GLStrings"/>
 <artifact id="Observation/obs-idh-ex" key="Observation-obs-idh-ex" name="Example - Inherited Disease Pathogenicity"/>
 <artifact id="Observation/MicrosatelliteInstabilityExample01" key="Observation-MicrosatelliteInstabilityExample01" name="Example - MSI"/>
+<artifact id="Task/MedicationRecommendationExample1" key="Task-MedicationRecommendationExample1" name="Example - MedicationRecommendation"/>
 <artifact id="Bundle/oncology-diagnostic" key="Bundle-oncology-diagnostic" name="Example - Melanoma implication"/>
 <artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="Example - NGS"/>
@@ -74,7 +75,7 @@
 <artifact id="ServiceRequest/eMERGEServiceRequest" key="ServiceRequest-eMERGEServiceRequest" name="Example - ServiceRequest-eMERGEServiceRequest"/>
 <artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="Example - Specimen"/>
 <artifact id="Observation/TumorMutationBurdenExample01" key="Observation-TumorMutationBurdenExample01" name="Example - TMB"/>
-<artifact id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
+<artifact deprecated="true" id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
 <artifact id="Observation/TherapeuticImplicationExample1" key="Observation-TherapeuticImplicationExample1" name="Example - TherapeuticImplication"/>
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="Example - Variant1"/>
 <artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="Example - Variant2"/>
@@ -85,44 +86,46 @@
 <artifact id="Task/PGxRecEx03" key="Task-PGxRecEx03" name="Example Task - PGxRecEx03"/>
 <artifact id="Task/PGxRecEx04" key="Task-PGxRecEx04" name="Example Task - PGxRecEx04"/>
 <artifact id="Task/PGxRecEx05" key="Task-PGxRecEx05" name="Example Task - PGxRecEx05"/>
-<artifact id="ValueSet/functional-effect" key="ValueSet-functional-effect" name="Functional Effect"/>
+<artifact id="ValueSet/functional-effect-vs" key="ValueSet-functional-effect" name="Functional Effect"/>
 <artifact id="StructureDefinition/finding" key="StructureDefinition-finding" name="Genomic Finding"/>
 <artifact id="StructureDefinition/implication" key="StructureDefinition-implication" name="Genomic Implication"/>
+<artifact id="StructureDefinition/genomics-artifact" key="StructureDefinition-genomics-artifact" name="Genomics Artifact"/>
 <artifact id="StructureDefinition/genomicReportNote" key="StructureDefinition-genomicReportNote" name="Genomic Report Note"/>
 <artifact id="StructureDefinition/genomics-base" key="StructureDefinition-genomics-base" name="Genomics Base"/>
 <artifact id="StructureDefinition/genomics-report" key="StructureDefinition-genomics-report" name="Genomics Report"/>
+<artifact id="StructureDefinition/genomics-report-risk" key="StructureDefinition-genomics-report-risk" name="Genomics Report Risk Assessment"/>
 <artifact id="StructureDefinition/genotype" key="StructureDefinition-genotype" name="Genotype"/>
 <artifact id="StructureDefinition/grouper" key="StructureDefinition-grouper" name="Grouper"/>
-<artifact id="ValueSet/hgnc" key="ValueSet-hgnc" name="HGNC Value Set"/>
-<artifact id="ValueSet/hgvs" key="ValueSet-hgvs" name="HGVS Value Set"/>
+<artifact id="ValueSet/hgnc-vs" key="ValueSet-hgnc" name="HGNC Value Set"/>
+<artifact id="ValueSet/hgvs-vs" key="ValueSet-hgvs" name="HGVS Value Set"/>
 <artifact id="StructureDefinition/haplotype" key="StructureDefinition-haplotype" name="Haplotype"/>
-<artifact id="ValueSet/high-low-codes" key="ValueSet-high-low-codes" name="High/Low codes"/>
+<artifact id="ValueSet/high-low-codes-vs" key="ValueSet-high-low-codes" name="High/Low codes"/>
 <artifact deprecated="true" key="ImplementationGuide" name="ImplementationGuide"/>
-<artifact id="StructureDefinition/task-med-chg" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
+<artifact id="StructureDefinition/medication-recommendation" key="StructureDefinition-task-med-chg" name="Medication Usage Task"/>
 <artifact id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite instability"/>
-<artifact id="ValueSet/molecular-consequence" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
+<artifact id="ValueSet/molecular-consequence-vs" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
 <artifact deprecated="true" key="Sequence" name="MolecularSequence"/>
 <artifact deprecated="true" key="Observation" name="Observation"/>
 <artifact id="OperationDefinition/find-subject-variants" key="OperationDefinition-find-subject-variants" name="Operation: $find-subject-variants"/>
 <artifact id="StructureDefinition/overall-interpretation" key="StructureDefinition-overall-interpretation" name="Overall Interpretation"/>
-<artifact id="StructureDefinition/RecommendedAction" key="StructureDefinition-RecommendedAction" name="Recommended Action"/>
-<artifact id="StructureDefinition/task-rec-followup" key="StructureDefinition-task-rec-followup" name="Recommended Followup"/>
+<artifact id="StructureDefinition/recommended-action" key="StructureDefinition-RecommendedAction" name="Recommended Action"/>
+<artifact id="StructureDefinition/followup-recommendation" key="StructureDefinition-task-rec-followup" name="Recommended Followup"/>
 <artifact id="StructureDefinition/region-studied" key="StructureDefinition-region-studied" name="Region Studied"/>
-<artifact id="StructureDefinition/CGRelatedArtifact" key="StructureDefinition-CGRelatedArtifact" name="Related Artifact"/>
+<artifact deprecated="true" id="StructureDefinition/CGRelatedArtifact" key="StructureDefinition-CGRelatedArtifact" name="Related Artifact"/>
 <artifact id="StructureDefinition/servicerequest" key="StructureDefinition-servicerequest" name="Request for Genomics Test"/>
-<artifact id="StructureDefinition/diagnosticReport-risk" key="StructureDefinition-diagnosticReport-risk" name="Risk Assessment Reference"/>
+<artifact deprecated="true" id="StructureDefinition/diagnosticReport-risk" key="StructureDefinition-diagnosticReport-risk" name="Risk Assessment Reference"/>
 <artifact id="StructureDefinition/sequence-phase-relationship" key="StructureDefinition-sequence-phase-relationship" name="Sequence Phase Relationship"/>
-<artifact id="CodeSystem/SequencePhaseRelationshipCS" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship Codes"/>
-<artifact id="ValueSet/seq-phase-relationship" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationships"/>
+<artifact id="CodeSystem/sequence-phase-relationship-cs" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship Codes"/>
+<artifact id="ValueSet/sequence-phase-relationship-vs" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationships"/>
 <artifact id="StructureDefinition/specimen" key="StructureDefinition-specimen" name="Specimen"/>
-<artifact id="StructureDefinition/SupportingInfo" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
-<artifact id="CodeSystem/TbdCodes" key="CodeSystem-TbdCodes" name="TBD Code System"/>
-<artifact id="ValueSet/tbd" key="ValueSet-tbd" name="TBD Value Set"/>
+<artifact id="StructureDefinition/supporting-information" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
+<artifact id="CodeSystem/tbd-codes-cs" key="CodeSystem-TbdCodes" name="TBD Code System"/>
+<artifact id="ValueSet/tbd-codes-vs" key="ValueSet-tbd" name="TBD Value Set"/>
 <artifact deprecated="true" key="Task" name="Task"/>
 <artifact id="StructureDefinition/therapeutic-implication" key="StructureDefinition-therapeutic-implication" name="Therapeutic Implication"/>
 <artifact id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor mutation burden"/>
 <artifact id="StructureDefinition/variant" key="StructureDefinition-variant" name="Variant"/>
-<artifact id="ValueSet/variant-inheritance" key="ValueSet-variant-inheritance" name="Variant Inheritance"/>
+<artifact id="ValueSet/variant-inheritance-vs" key="ValueSet-variant-inheritance" name="Variant Inheritance"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="profiles" name="(profiles)"/>
@@ -138,7 +141,7 @@
 <page key="general" name="General Genomic Reporting"/>
 <page key="background" name="Genomics Background"/>
 <page key="histocompatibility" name="Histocompatibility and Immunogenetics Reporting"/>
-<page key="index" name="IG Home Page"/>
+<page key="index" name="Home"/>
 <page key="operations" name="Operations"/>
 <page key="pharmacogenomics" name="Pharmacogenomic Reporting"/>
 <page key="somatics" name="Somatic Reporting"/>

@@ -37,14 +37,14 @@
     <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a>)
   </p>
   <p>
-    This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in `Observation.note` as the issuing lab desires.
+    This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in <code>Observation.note</code> as the issuing lab desires.
   </p>
   <p>
-    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via Observation.derivedFrom) and a particular type of cancer in the associated-phenotype component. The evidence-level and clinical-significance components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines. The prognosis component can also be populated to convey a general indication on the overall outcome for the cancer patient, as described in a linked relatedArtifact.
+    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and a particular type of cancer in the <code>associated-phenotype</code> component. The <code>evidence-level</code> and <code>clinical-significance</code> components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines. The prognosis component can also be populated to convey a general indication on the overall outcome for the cancer patient, as described in a linked relatedArtifact.
 
   </p>
   <p>
-    <b>Therapeutic Implication</b> indicates an association between the identified variant (linked via Observation.derivedFrom) and the efficacy of a particular medication or therapy for the specified cancer. Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications, therapies, or cancer descriptions. Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
+    <b>Therapeutic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and the efficacy of a particular medication or therapy for the specified cancer. Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications, therapies, or cancer descriptions. Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
 
   </p>
   <p>

@@ -204,7 +204,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/task-med-chg"/>
+        <reference value="StructureDefinition/medication-recommendation"/>
       </reference>
       <name value="Medication Usage Task"/>
       <description
@@ -214,7 +214,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/task-rec-followup"/>
+        <reference value="StructureDefinition/followup-recommendation"/>
       </reference>
       <name value="Recommended Followup"/>
       <description value="Task describing the followup that is recommended"/>
@@ -256,9 +256,9 @@
     <!-- Extensions -->
     <resource>
       <reference>
-        <reference value="StructureDefinition/CGRelatedArtifact"/>
+        <reference value="StructureDefinition/genomics-artifact"/>
       </reference>
-      <name value="Related Artifact"/>
+      <name value="Genomics Artifact"/>
       <description
         value="Captures citations, evidence and other supporting documentation for the observation or report"/>
       <exampleBoolean value="false"/>
@@ -266,7 +266,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/RecommendedAction"/>
+        <reference value="StructureDefinition/recommended-action"/>
       </reference>
       <name value="Recommended Action"/>
       <description
@@ -276,11 +276,21 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/SupportingInfo"/>
+        <reference value="StructureDefinition/supporting-information"/>
       </reference>
       <name value="Supporting Information"/>
       <description
         value="Additional information relevant to interpreting/understanding the report"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="extensions"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/genomics-report-risk"/>
+      </reference>
+      <name value="Genomics Report Risk Assessment"/>
+      <description
+        value="Risk Assessment delivered as part of the Genomics Report"/>
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
@@ -325,10 +335,10 @@
     
      <resource>
       <reference>
-        <reference value="Task/TaskMedChgExample1"/>
+        <reference value="Task/MedicationRecommendationExample1"/>
       </reference>
-      <name value="Example - TaskMedChg"/>
-      <description value="Test instance of TaskMedChg"/>
+      <name value="Example - MedicationRecommendation"/>
+      <description value="Test instance of MedicationRecommendation"/>
       <groupingId value="examples"/>
     </resource>
 
@@ -837,7 +847,7 @@
     <!-- Code Systems -->
     <resource>
       <reference>
-        <reference value="CodeSystem/TbdCodes"/>
+        <reference value="CodeSystem/tbd-codes-cs"/>
       </reference>
       <name value="TBD Code System"/>
       <description value="Code System for codes yet to be defined in LOINC"/>
@@ -845,7 +855,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/SequencePhaseRelationshipCS"/>
+        <reference value="CodeSystem/sequence-phase-relationship-cs"/>
       </reference>
       <name value="Sequence Phase Relationship Codes"/>
       <description value="Code System for specific types of relationships"/>
@@ -853,7 +863,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ConditionInheritanceModeCS"/>
+        <reference value="CodeSystem/condition-inheritance-mode-cs"/>
       </reference>
       <name value="Condition Inheritance Pattern Codes"/>
       <description value="A set of terms that describe the transmission pattern of a condition in a pedigree"/>
@@ -861,7 +871,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/high-low-codes"/>
+        <reference value="ValueSet/high-low-codes-vs"/>
       </reference>
       <name value="High/Low codes"/>
       <description value="High/Low codes for Observation.interpretation"/>
@@ -869,7 +879,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/hgvs"/>
+        <reference value="ValueSet/hgvs-vs"/>
       </reference>
       <name value="HGVS Value Set"/>
       <description value="Value Set for HGVS"/>
@@ -877,7 +887,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/hgnc"/>
+        <reference value="ValueSet/hgnc-vs"/>
       </reference>
       <name value="HGNC Value Set"/>
       <description value="Value Set for HGNC (genes and gene groups)"/>
@@ -885,7 +895,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/tbd"/>
+        <reference value="ValueSet/tbd-codes-vs"/>
       </reference>
       <name value="TBD Value Set"/>
       <description value="Value Set for codes yet to be defined in LOINC"/>
@@ -893,7 +903,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/dna-change-type"/>
+        <reference value="ValueSet/dna-change-type-vs"/>
       </reference>
       <name value="DNA Change Type"/>
       <description value="DNA change type for variants"/>
@@ -901,7 +911,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/molecular-consequence"/>
+        <reference value="ValueSet/molecular-consequence-vs"/>
       </reference>
       <name value="Molecular Consequence"/>
       <description value="Changes in structural features of a sequence due to the observed variant."/>
@@ -909,7 +919,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/seq-phase-relationship"/>
+        <reference value="ValueSet/sequence-phase-relationship-vs"/>
       </reference>
       <name value="Sequence Phase Relationships"/>
       <description value="Value Set for specific types of relationships"/>
@@ -917,10 +927,18 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/variant-inheritance"/>
+        <reference value="ValueSet/variant-inheritance-vs"/>
       </reference>
       <name value="Variant Inheritance"/>
-      <description value="origins of variants"/>
+      <description value="Parental origins of variants"/>
+      <groupingId value="valuesets"/>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/condition-inheritance-mode-vs"/>
+      </reference>
+      <name value="Condition Inheritance Patterns"/>
+      <description value="Value Set for specific transmission patterns of a condition in a pedigree"/>
       <groupingId value="valuesets"/>
     </resource>
     <resource>
@@ -947,7 +965,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="IG Home Page"/>
+        <title value="Home"/>
         <generation value="html"/>
         <page>
           <nameUrl value="background.html"/>

@@ -80,7 +80,7 @@ Description: "Example for Variant given by ClinVar ID"
 * interpretation = SCT#10828004 "Positive (qualifier value)"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11"
 * component[variation-code].valueCodeableConcept = CLINVAR#619728 "NC_000019.8:g.1171707G>A"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
 
 Instance: VariantExample2
@@ -94,17 +94,17 @@ Description: "Example for genomic Variant given by VCF columns"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[0].code.coding = http://loinc.org#62374-4 "Human reference sequence assembly version"
+* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 * component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[1].code.coding = http://loinc.org#48013-7 "Genomic reference sequence ID"
+* component[1].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
 * component[1].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
-* component[2].code.coding = http://loinc.org#53034-5 "Allelic state"
+* component[2].code.coding = http://loinc.org#53034-5 "Allelic State"
 * component[2].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
 * component[3].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
 * component[3].valueString = "C"
 * component[4].code.coding = http://loinc.org#69551-0 "Alt allele"
 * component[4].valueString = "A"
-* component[5].code.coding = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/TbdCodes#exact-start-end "Variant exact start and end"
+* component[5].code.coding = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#exact-start-end "Variant exact start and end"
 * component[5].valueRange.low.value = 96527334
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
@@ -121,7 +121,7 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * id = "TherapeuticImplicationExample1"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[0].code.coding = LNC#83009-1 "Genetic variation's effect on high-risk allele"
 * component[0].valueCodeableConcept.coding = LNC#LA19541-4 "High risk"
 * component[1].code.coding = LNC#51963-7 "Medication assessed"
@@ -137,7 +137,7 @@ Description: "Example of a Diagnostic Implication for Familial hypercholesterole
 * id = "AnnotationExample"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#diagnostic-implication
+* code = TbdCodesCS#diagnostic-implication
 * component[clinical-significance].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
 * component[associated-phenotype].valueCodeableConcept = SCT#398036000 "Familial hypercholesterolemia (disorder)"
 * derivedFrom = Reference(VariantExample2)
@@ -150,17 +150,17 @@ Description: "Example of a Genotype, Medication Usage Task, and MedicationStatem
 * id = "GenotypeExample1"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/clinvar#14909 "HLA-B*15:02"
-* component.code.coding = LNC#48018-6 "Gene studied ID"
+* component.code.coding = LNC#48018-6 "Gene studied [ID]"
 * component.valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:4932 "HLA-B"
 * effectiveDateTime = "2018"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
 * status = #final
 
-Instance: TaskMedChgExample1
-InstanceOf: TaskMedChg
+Instance: MedicationRecommendationExample1
+InstanceOf: MedicationRecommendation
 Description: "Example of a Medication Usage Task"
-* id = "TaskMedChgExample1"
+* id = "MedicationRecommendationExample1"
 * code = LNC#LA26421-0
 * description = "Patients positive for this allele should not be treated with CBZ, unless the benefits clearly outweigh the risk. Therapy should be discontinued immediately if symptoms of SJS or TEN develop. Alternative medication should be used as first line therapy. Consideration in the choice for alternative medications should be given to potential cross-reactivity with structurally similar aromatic antiepileptic drugs such as oxcarbazepine, phenytoin, fosphenytoin and lamotrigine, which can also moderately increase risk for SJS/TEN in association with HLA-B*15:02 positivity."
 * for = Reference(CGPatientExample01)
@@ -175,8 +175,7 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * basedOn = Reference(GenomicsServiceRequestExample01)
 * code = LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
-* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/RecommendedAction"
-* extension.valueReference = Reference(TaskMedChgExample1)
+* extension[RecommendedAction][0].valueReference = Reference(MedicationRecommendationExample1)
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * result[0].display = "impact for high risk allele"
@@ -185,6 +184,8 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * result[2] = Reference(OverallInterpExample1)
 * status = #final
 * subject = Reference(CGPatientExample01)
+* extension[GenomicsArtifact][0].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 
 Instance: SequencePhaseRelationExample1
 InstanceOf: SequencePhaseRelationship
@@ -219,7 +220,7 @@ Description: "Example variant 1011"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96521657C=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96521657
@@ -230,7 +231,7 @@ Description: "Example variant 1011"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:262 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -245,7 +246,7 @@ Description: "Example variant 1012"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96522463A=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96522463
@@ -256,7 +257,7 @@ Description: "Example variant 1012"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -271,7 +272,7 @@ Description: "Example variant 1013"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96535173T=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535173
@@ -282,7 +283,7 @@ Description: "Example variant 1013"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -298,7 +299,7 @@ Description: "Example variant 1014"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96535210G=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535210
@@ -309,7 +310,7 @@ Description: "Example variant 1014"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -324,11 +325,11 @@ Description: "Example variant 1015"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
+* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96540410G>A
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -343,7 +344,7 @@ Description: "Example variant 1016"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96541616G=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541616
@@ -354,7 +355,7 @@ Description: "Example variant 1016"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -369,7 +370,7 @@ Description: "Example variant 1017"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96541756T=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541756
@@ -380,7 +381,7 @@ Description: "Example variant 1017"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -395,7 +396,7 @@ Description: "Example variant 1018"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96612495C=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96612495
@@ -406,7 +407,7 @@ Description: "Example variant 1018"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -421,11 +422,11 @@ Description: "Example variant 1019"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000016.9:g.31096368C>T
+* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000016.9:g.31096368C>T
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6706-1 "heterozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -440,7 +441,7 @@ Description: "Example variant 1020"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96702047C=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96702047
@@ -451,7 +452,7 @@ Description: "Example variant 1020"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -466,7 +467,7 @@ Description: "Example variant 1021"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-//* component[genomic-dna-chg].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
+//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.10:g.96741053A=
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96741053
@@ -477,7 +478,7 @@ Description: "Example variant 1021"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
-* component[dna-chg-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 
@@ -507,13 +508,15 @@ InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp01"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Clopidogrel</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0070166 "clopidogrel"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
-//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
-//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -521,14 +524,15 @@ Instance: TxImp02
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp02"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Voriconazole</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0393080 "voriconazole"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
-//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
-//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -536,14 +540,15 @@ Instance: TxImp03
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp03"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Citalopram</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0008845 "citalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
-//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
-//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -551,14 +556,15 @@ Instance: TxImp04
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp04"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Escitalopram</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C1099456 "escitalopram"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
-//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
-//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -566,14 +572,15 @@ Instance: TxImp05
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp05"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Amitriptyline</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0002600 "amitriptyline"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
-//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
-//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -610,14 +617,15 @@ Instance: TxImp06
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp06"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* text.status = #generated
+* text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Normal metabolizer of Warfarin</div>"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#therapeutic-implication
+* code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = MetaT#C0043031 "warfarin"
 * component[effect-medication-metabolism].valueCodeableConcept = LNC#LA25391-6 "Normal metabolizer"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
-//* extension[CGRelatedArtifact].valueRelatedArtifact.type = #citation
-//* extension[CGRelatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
+* extension[GenomicsArtifact].valueRelatedArtifact.type = #citation
+* extension[GenomicsArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
 * derivedFrom[0] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
 * derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
@@ -641,7 +649,7 @@ InstanceOf: Grouper
 Description: "Genotypes"
 * id = "GrouperEx02"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#grouper
+* code = TbdCodesCS#grouper
 * status = #final
 * hasMember[genotype][0] = Reference(Pgx-geno-1001)
 * hasMember[genotype][1] = Reference(Pgx-geno-1003)
@@ -653,7 +661,7 @@ InstanceOf: Grouper
 Description: "Regions Studied and variant info"
 * id = "GrouperEx03"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodes#grouper
+* code = TbdCodesCS#grouper
 * status = #final
 * hasMember[variant][0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
 * hasMember[variant][1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
@@ -726,7 +734,7 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * status = #final
 
 Instance: PGxRecEx01
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for alternatives to clopidogrel"
 * id = "PGxRecEx01"
 * code = LNC#LA26421-0 "Consider alternative medication"
@@ -735,7 +743,7 @@ Description: "Example of a Medication Usage Task for alternatives to clopidogrel
 * reasonReference = Reference(TxImp01) "Poor metabolizer"
 
 Instance: PGxRecEx02
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for alternatives to voriconazole"
 * id = "PGxRecEx02"
 * code = LNC#LA26421-0 "Consider alternative medication"
@@ -744,7 +752,7 @@ Description: "Example of a Medication Usage Task for alternatives to voriconazol
 * reasonReference = Reference(TxImp02) "Poor metabolizer"
 
 Instance: PGxRecEx03
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for decreasing dosage for citalopram"
 * id = "PGxRecEx03"
 * code = LNC#LA26422-8 "Decrease dose"
@@ -753,7 +761,7 @@ Description: "Example of a Medication Usage Task for decreasing dosage for cital
 * reasonReference = Reference(TxImp03) "Poor metabolizer"
 
 Instance: PGxRecEx04
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for decreasing dosage for escitalopram"
 * id = "PGxRecEx04"
 * code = LNC#LA26422-8 "Decrease dose"
@@ -762,7 +770,7 @@ Description: "Example of a Medication Usage Task for decreasing dosage for escit
 * reasonReference = Reference(TxImp04) "Poor metabolizer"
 
 Instance: PGxRecEx05
-InstanceOf: TaskRecFollowup
+InstanceOf: FollowupRecommendation
 Description: "Example of a Medication Usage Task for decreasing dosage for amitriptyline"
 * id = "PGxRecEx05"
 * code = LNC#LA26422-8 "Decrease dose"
