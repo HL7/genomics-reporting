@@ -90,7 +90,12 @@ This pattern describes the observed nucleotide sequence or configuration using H
     <tr>
       <td>genomic-hgvs or coding-hgvs</td>
       <td>81290-9 or 48004-6</td>
-      <td>"system" : "http://varnomen.hgvs.org", "code" : "NM_022787.3:c.769G>A"</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://varnomen.hgvs.org", 
+"code" : "NM_022787.3:c.769G>A"
+}          </pre></div>
+     </td>
       <td>Proper usage of HGVS contains the reference sequence identifier followed by ‘:g.’ for genomic or ‘:c.’ for a coding sequence. In HGVS notation, the “=” (equals) is used to indicate a sequence was tested but found unchanged <a href="https://varnomen.hgvs.org/recommendations/general/">[ref]</a>.</td>
     </tr>
    <tr>
@@ -118,35 +123,49 @@ This representation leverages multiple component slices to communicate an allele
     <tr>
       <td>genomic-ref-seq</td>
       <td>48013-7</td>
-      <td>"system" : "http://www.ncbi.nlm.nih.gov/nuccore",
-            "code" : "NC_000010.10"</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://www.ncbi.nlm.nih.gov/nuccore",
+"code" : "NC_000010.10"
+}          </pre></div>
+     </td>
       <td>must send at least this or transcript refseq</td>
     </tr>
     <tr>
       <td>transcript-ref-seq</td>
       <td>51958-7</td>
-      <td>"system" : "http://www.ncbi.nlm.nih.gov/refseq",
-            "code" : "NM_000044.3"
-</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://www.ncbi.nlm.nih.gov/refseq",
+"code" : "NM_000044.3"
+}          </pre></div>
+     </td>
       <td>must send at least this or genomic refseq</td>
     </tr>
     <tr>
       <td>coordinate-system</td>
       <td>92822-6</td>
-      <td>system" : "http://loinc.org",
-            "code" : "LA30102-0",
-            "display" : "1-based character counting"</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://loinc.org",
+"code" : "LA30102-0",
+"display" : "1-based character counting"
+}          </pre></div>
+     </td>
       <td>Common coordinate systems are described by LOINC.</td>
     </tr>
     <tr>
       <td>exact-start-end</td>
       <td>81254-5</td>
-      <td>"valueRange" : {
-        "low" : {
-          "value" : 96527334
-        }
-      }
-      </td>
+      <td><div class="example"><pre class="json">
+{
+  "valueRange" : {
+    "low" : {
+      "value" : 96527334
+    }
+  }
+}          </pre></div>
+     </td>
       <td>Interpretation of this number requires the reference sequence and coordinate system.</td>
     </tr>
     <tr>
@@ -183,37 +202,56 @@ This representation leverages multiple component slices to communicate an allele
     <tr>
       <td>Observation.value</td>
       <td>69548-6</td>
-      <td>"system" : "http://loinc.org",
-              "code" : "LA9633-4",
-              "display" : "Present"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA9633-4",
+"display" : "Present"
+}
+          </pre></div>
+     </td>
       <td>If not searching for specific variations and merely reporting what's found, the Observation’s value should be set to "Present". Details about the specific variant in consideration must be populated using one of the above patterns of components.</td>
     </tr>
     <tr>
       <td>Observation.method</td>
       <td>(Coding, with Code from LL4048-6)</td>
-      <td>"system" : "http://loinc.org",
-        "code" : "LA26398-0",
-        "display" : "Sequencing"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA26398-0",
+"display" : "Sequencing"
+}
+          </pre></div>
+     </td>
       <td>Indicates the method of variant analysis. The bound list is currently extensible, allowing for codification of other method types here at varying degrees of granularity. The work group is considering additional approaches to modeling testing methods and is requesting implementer feedback at this time.</td>
     </tr>
     <tr>
       <td>component[allelic-read-depth]</td>
       <td>82121-5</td>
-      <td>"valueQuantity" : {
-        "value" : 120,
-        "unit" : "reads per base pair",
-        "system" : "http://unitsofmeasure.org",
-        "code" : "{reads}/{base}"
-      }
+      <td><div class="example"><pre class="json">
+{ 
+"valueQuantity" : {
+   "value" : 120,
+   "unit" : "reads per base pair",
+   "system" : "http://unitsofmeasure.org",
+   "code" : "{reads}/{base}"
+ }
+}
+          </pre></div>
      </td>
       <td>Specifies the number of reads that identifies the allele in question, whether it consists of one or more contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
     </tr>
     <tr>
       <td>component[allelic-state]</td>
       <td>53034-5</td>
-      <td>"system" : "http://loinc.org",
-            "code" : "LA6705-3",
-            "display" : "homozygous"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA6705-3",
+"display" : "homozygous"
+}
+          </pre></div>
+      </td>
       <td></td>
     </tr>
     <tr>
@@ -225,9 +263,14 @@ This representation leverages multiple component slices to communicate an allele
     <tr>
       <td>component[genomic-source-class]</td>
       <td>48002-0</td>
-      <td>"system" : "http://loinc.org",
-            "code" : "LA6684-0",
-            "display" : "Somatic"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA6684-0",
+"display" : "Somatic"
+}
+          </pre></div>
+      </td>
       <td></td>
     </tr>
     <tr>
@@ -267,7 +310,14 @@ This implementation guide defines several components on Variant that can be used
     <tr>
       <td>variation-code</td>
       <td>81252-9</td>
-      <td>"system":"http://www.ncbi.nlm.nih.gov/clinvar", "code":"619728", "display" : "NC_000019.8:g.1171707G>A"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system": "http://www.ncbi.nlm.nih.gov/clinvar", 
+"code":"619728", 
+"display" : "NC_000019.8:g.1171707G>A"
+}
+          </pre></div>
+      </td>
       <td>Optional to include. Multiple database code systems are used across specialties and carry different levels of information.</td>
     </tr>
     <tr>
@@ -279,32 +329,50 @@ This implementation guide defines several components on Variant that can be used
     <tr>
       <td>gene-studied</td>
       <td>48018-6</td>
-      <td>"http://www.genenames.org/geneId",
-            "code" : "HGNC:644",
-            "display" : "AR"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system": "http://www.genenames.org/geneId",
+"code" : "HGNC:644",
+"display" : "AR"
+}
+          </pre></div>
+      </td>
       <td>derivable from reference sequence</td>
     </tr>
     <tr>
       <td>molecular-consequence</td>
       <td></td>
-      <td>"system" : "http://www.sequenceontology.org",
-                  "code" : "SO:0001583",
-                  "display" : "missense_variant"</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://www.sequenceontology.org",
+"code" : "SO:0001583",
+"display" : "missense_variant" 
+}
+          </pre></div>
+      </td>
       <td>available from NCBI, tied to representative transcript</td>
     </tr>
     <tr>
       <td>coding-change-type</td>
       <td>48019-4</td>
-      <td>"system" : "http://www.sequenceontology.org",
-                  "code" : "SO:1000002",
-                  "display" : "substitution"</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://www.sequenceontology.org",
+"code" : "SO:1000002",
+"display" : "substitution"
+}          </pre></div>
+     </td>
       <td>may be required for certain types of structural variants. See below.</td>
     </tr>
     <tr>
       <td>protein-hgvs</td>
       <td>48005-3</td>
-      <td>"http://varnomen.hgvs.org",
-                  "code" : "p.H1047R"</td>
+      <td><div class="example"><pre class="json">
+{
+"system": "http://varnomen.hgvs.org",
+"code" : "p.H1047R"
+}          </pre></div>
+     </td>
       <td>Proper usage of HGVS contains the reference sequence and usage of parenthesis to denote the amino acid change is calculated rather than directly observed.</td>
     </tr>
   </tbody>
