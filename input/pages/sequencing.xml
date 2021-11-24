@@ -45,16 +45,16 @@
 The purpose of the Variant Observation profile is to capture genomic data elements fulfilling the following three purposes:
 </p>
 <ol>
-  <li>to <b>define</b> a variant of interest, which could be a simple, well understood change from a reference sequence, or one of several types of structural variations with uncertain endpoints. </li>
-  <li>to <b>contextualize</b> the observation of the defined variant (e.g., presence or absence in the sample and determinations of state or inheritance). </li>
-  <li>to terminologically <b>classify</b> the variant according to the type or location of the change (generally optional, but needed to define certain types of structural variations). </li>
+  <li>To <b>define</b> a variant of interest, which could be a simple, well understood change from a reference sequence, or one of several types of structural variations with uncertain endpoints. </li>
+  <li>To <b>contextualize</b> the observation of the defined variant (e.g., presence or absence in the sample and determinations of state or inheritance). </li>
+  <li>To terminologically <b>classify</b> the variant according to the type or location of the change (generally optional, but needed to define certain types of structural variations). </li>
 </ol>
 <p>
 It is NOT intended to support other Observations that are clinically relevant on their own and have separate profiles defined in this guide, including:
 </p>
 <ol>
   <li>
-  statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, and <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>. Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
+  Statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, and <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>. Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
   </li>
   <li>
   Presence statements of whole haplotypes, genotypes, or phasing data (see <a href="StructureDefinition-haplotype.html">Haplotype</a>, <a href="StructureDefinition-genotype.html">Genotype</a>, and <a href="StructureDefinition-sequence-phase-relationship.html">Sequence Phase Relationship</a>);
@@ -67,8 +67,8 @@ It is NOT intended to support other Observations that are clinically relevant on
 <p>This Implementation Guide supports two reporting patterns for defining variants:
 </p>	
 <ol>
-  <li>by describing the change using HGVS or ISCN nomenclature</li>
-  <li>by providing multiple component details similar to VCF columns</li>
+  <li>By describing the change using HGVS or ISCN nomenclature</li>
+  <li>By providing multiple component details similar to VCF columns</li>
 </ol>
 <p>
 For each variant reporting pattern, different components MUST be used to properly define the variant where possible. Other components MAY be used to provide additional information for cross referencing external sources or increasing human readability of the instance.
@@ -82,14 +82,12 @@ This pattern describes the observed nucleotide sequence or configuration using H
 <table>
   <thead>
     <th>Defining Component</th>
-    <th>Code</th>
     <th>Example Value</th>
     <th>Note</th>
   </thead>
   <tbody>
     <tr>
-      <td>genomic-hgvs or coding-hgvs</td>
-      <td>81290-9 or 48004-6</td>
+      <td>genomic-hgvs (LOINC 81290-9) OR coding-hgvs (LOINC 48004-6)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://varnomen.hgvs.org", 
@@ -99,8 +97,7 @@ This pattern describes the observed nucleotide sequence or configuration using H
       <td>Proper usage of HGVS contains the reference sequence identifier followed by ‘:g.’ for genomic or ‘:c.’ for a coding sequence. In HGVS notation, the “=” (equals) is used to indicate a sequence was tested but found unchanged <a href="https://varnomen.hgvs.org/recommendations/general/">[ref]</a>.</td>
     </tr>
    <tr>
-      <td>cyogenomic-nomenclature</td>
-      <td>81291-7</td>
+      <td>cyogenomic-nomenclature (LOINC 81291-7)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "urn:oid:2.16.840.1.113883.6.299", 
@@ -120,14 +117,12 @@ This representation leverages multiple component slices to communicate an allele
 <table>
   <thead>
     <th>Defining Component</th>
-    <th>Code</th>
     <th>Example Value</th>
     <th>Note</th>
   </thead>
   <tbody>
     <tr>
-      <td>genomic-ref-seq</td>
-      <td>48013-7</td>
+      <td>genomic-ref-seq (LOINC 48013-7)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://www.ncbi.nlm.nih.gov/nuccore",
@@ -137,8 +132,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>must send at least this or transcript refseq</td>
     </tr>
     <tr>
-      <td>transcript-ref-seq</td>
-      <td>51958-7</td>
+      <td>transcript-ref-seq (LOINC 51958-7)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://www.ncbi.nlm.nih.gov/refseq",
@@ -148,8 +142,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>must send at least this or genomic refseq</td>
     </tr>
     <tr>
-      <td>coordinate-system</td>
-      <td>92822-6</td>
+      <td>coordinate-system (LOINC 92822-6)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://loinc.org",
@@ -160,8 +153,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>Common coordinate systems are described by LOINC.</td>
     </tr>
     <tr>
-      <td>exact-start-end</td>
-      <td>81254-5</td>
+      <td>exact-start-end (LOINC 81254-5)</td>
       <td><div class="example"><pre class="json">
 {
   "valueRange" : {
@@ -174,14 +166,12 @@ This representation leverages multiple component slices to communicate an allele
       <td>Interpretation of this number requires the reference sequence and coordinate system.</td>
     </tr>
     <tr>
-      <td>ref-allele</td>
-      <td>69547-8</td>
+      <td>ref-allele (LOINC 69547-8)</td>
       <td>"valueString" : "C"</td>
       <td>This string should be normalized per the VCF standard.</td>
     </tr>
     <tr>
-      <td>alt-allele</td>
-      <td>69551-0</td>
+      <td>alt-allele (LOINC 69551-0)</td>
       <td>"valueString" : "A"</td>
       <td>If the reference allele is tested and found unchanged, this string should be equal to the REF allele string.</td>
     </tr>
@@ -199,14 +189,12 @@ This representation leverages multiple component slices to communicate an allele
 <table>
   <thead>
     <th>Contextual Attribute or Component</th>
-    <th>Code</th>
     <th>Example Value</th>
     <th>Note</th>
   </thead>
   <tbody>
     <tr>
       <td>Observation.value</td>
-      <td>69548-6</td>
       <td><div class="example"><pre class="json">
 { 
 "system" : "http://loinc.org",
@@ -219,7 +207,6 @@ This representation leverages multiple component slices to communicate an allele
     </tr>
     <tr>
       <td>Observation.method</td>
-      <td>(Coding, with Code from LL4048-6)</td>
       <td><div class="example"><pre class="json">
 { 
 "system" : "http://loinc.org",
@@ -231,8 +218,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>Indicates the method of variant analysis. The bound list is currently extensible, allowing for codification of other method types here at varying degrees of granularity. The work group is considering additional approaches to modeling testing methods and is requesting implementer feedback at this time.</td>
     </tr>
     <tr>
-      <td>component[allelic-read-depth]</td>
-      <td>82121-5</td>
+      <td>component[allelic-read-depth] (LOINC 82121-5)</td>
       <td><div class="example"><pre class="json">
 { 
 "valueQuantity" : {
@@ -247,8 +233,7 @@ This representation leverages multiple component slices to communicate an allele
       <td>Specifies the number of reads that identifies the allele in question, whether it consists of one or more contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
     </tr>
     <tr>
-      <td>component[allelic-state]</td>
-      <td>53034-5</td>
+      <td>component[allelic-state] (LOINC 53034-5)</td>
       <td><div class="example"><pre class="json">
 { 
 "system" : "http://loinc.org",
@@ -260,14 +245,12 @@ This representation leverages multiple component slices to communicate an allele
       <td></td>
     </tr>
     <tr>
-      <td>component[sample-allelic-frequency]</td>
-      <td>81258-6</td>
+      <td>component[sample-allelic-frequency] (LOINC 81258-6)</td>
       <td>0.44</td>
       <td></td>
     </tr>
     <tr>
-      <td>component[genomic-source-class]</td>
-      <td>48002-0</td>
+      <td>component[genomic-source-class] (LOINC 48002-0)</td>
       <td><div class="example"><pre class="json">
 { 
 "system" : "http://loinc.org",
@@ -279,14 +262,12 @@ This representation leverages multiple component slices to communicate an allele
       <td></td>
     </tr>
     <tr>
-      <td>component[variant-inheritance]</td>
-      <td>TBD-variant-inheritance</td>
+      <td>component[variant-inheritance] (TBD-variant-inheritance)</td>
       <td>maternal | patternal | unknown</td>
       <td></td>
     </tr>
     <tr>
       <td>component[confidence]</td>
-      <td>TBD</td>
       <td>high | intermediate | low</td>
       <td></td>
     </tr>
@@ -301,20 +282,17 @@ This implementation guide defines several components on Variant that can be used
 <table>
   <thead>
     <th>Annotational Component</th>
-    <th>Code</th>
     <th>Example Value</th>
     <th>Note</th>
   </thead>
   <tbody>
     <tr>
-      <td>cytogenetic-location</td>
-      <td>48001-2</td>
+      <td>cytogenetic-location (LOINC 48001-2)</td>
       <td></td>
       <td>derivable from refseq</td>
     </tr>
     <tr>
-      <td>variation-code</td>
-      <td>81252-9</td>
+      <td>variation-code (LOINC 81252-9)</td>
       <td><div class="example"><pre class="json">
 { 
 "system": "http://www.ncbi.nlm.nih.gov/clinvar", 
@@ -326,14 +304,12 @@ This implementation guide defines several components on Variant that can be used
       <td>Optional to include. Multiple database code systems are used across specialties and carry different levels of information.</td>
     </tr>
     <tr>
-      <td>chromosome-identifier, reference-sequence-assembly</td>
-      <td>48000-4, 62374-4</td>
-      <td></td>
+      <td>chromosome-identifier (LOINC 48000-4), reference-sequence-assembly (LOINC 62374-4)</td>
+      <td>(eg Chr2, b38)</td>
       <td>Optional to include. Commonly used in VCF as shorthand but can introduce ambiguity without a fully versioned reference sequence. </td>
     </tr>
     <tr>
-      <td>gene-studied</td>
-      <td>48018-6</td>
+      <td>gene-studied (LOINC 48018-6)</td>
       <td><div class="example"><pre class="json">
 { 
 "system": "http://www.genenames.org/geneId",
@@ -346,7 +322,6 @@ This implementation guide defines several components on Variant that can be used
     </tr>
     <tr>
       <td>molecular-consequence</td>
-      <td></td>
       <td><div class="example"><pre class="json">
 { 
 "system" : "http://www.sequenceontology.org",
@@ -358,8 +333,7 @@ This implementation guide defines several components on Variant that can be used
       <td>available from NCBI, tied to representative transcript</td>
     </tr>
     <tr>
-      <td>coding-change-type</td>
-      <td>48019-4</td>
+      <td>coding-change-type (LOINC 48019-4)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://www.sequenceontology.org",
@@ -370,8 +344,7 @@ This implementation guide defines several components on Variant that can be used
       <td>may be required for certain types of structural variants. See below.</td>
     </tr>
     <tr>
-      <td>protein-hgvs</td>
-      <td>48005-3</td>
+      <td>protein-hgvs (LOINC 48005-3)</td>
       <td><div class="example"><pre class="json">
 {
 "system": "http://varnomen.hgvs.org",
@@ -460,7 +433,7 @@ Suggested minimal representations of common structural variants are shown in the
       <td colspan="5">Should be populated</td>
     </tr>
     <tr>
-      <td>[0..1] component: outer-start-end (TbdCode outer-start-end) and [0..1] component: inner-start-end (TbdCode inner-start-end)</td>
+      <td>[0..1] component: outer-start-end (LOINC 81301-4) and [0..1] component: inner-start-end (LOINC 81302-2)</td>
       <td colspan="5">Outer and/or inner start should be populated.</td>
     </tr>
   </tbody>

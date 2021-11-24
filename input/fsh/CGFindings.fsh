@@ -88,10 +88,6 @@ Description:    "Details about a set of changes in the tested sample compared to
     molecular-consequence 0..1 and
     copy-number 0..1
 
-    
-
-    
-
 * component[coding-hgvs].code = LNC#48004-6
 * component[coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
 * component[coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string. A coding DNA reference sequence accession is followed by the description of the variant, which starts with 'c.'. Example: NM_005228.5:c.2369C>T."
@@ -105,8 +101,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coding-change-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://www.sequenceontology.org/browser/current_release/term/SO:0002072)."
 * component[coding-change-type].value[x] 1..1
 * component[coding-change-type].value[x] from DNAChangeTypeVS (extensible)
-// * component[molecular-consequence].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
-// * component[molecular-consequence].code.coding.code = #molecular-consequence
 * component[molecular-consequence].code = TbdCodesCS#molecular-consequence
 * component[molecular-consequence] ^short = "Molecular Consequence"
 * component[molecular-consequence] ^definition = "Changes in a structural features of a sequence due to the observed variant."
@@ -194,15 +188,15 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coordinate-system].value[x] only CodeableConcept
 * component[coordinate-system].value[x] 1..1
 * component[coordinate-system].value[x] from http://loinc.org/vs/LL5323-2 (extensible)
-* component[exact-start-end].code = TbdCodesCS#exact-start-end
+* component[exact-start-end].code = LNC#81254-5
 * component[exact-start-end] ^short = "Exact Start-End"
 * component[exact-start-end] ^definition = "This location is the first genomic position in the reference allele that contains a change from the reference allele. For example, for the simple variant NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys), the location is Chr3: 128906220 on Assembly GRCh38."
 * component[exact-start-end].value[x] only Range
-* component[outer-start-end].code = TbdCodesCS#outer-start-end
+* component[outer-start-end].code = LNC#81301-4
 * component[outer-start-end] ^short = "Outer Start-End"
 * component[outer-start-end] ^definition = "The genomic coordinates of the widest genomic range in which the variant might reside."
 * component[outer-start-end].value[x] only Range
-* component[inner-start-end].code = TbdCodesCS#inner-start-end
+* component[inner-start-end].code = LNC#81302-2
 * component[inner-start-end] ^short = "Inner Start-End"
 * component[inner-start-end] ^definition = "The genomic coordinates of the narrowest genomic range in which the structural variant might reside."
 * component[inner-start-end].value[x] only Range

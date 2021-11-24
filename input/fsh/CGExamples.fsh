@@ -104,7 +104,7 @@ Description: "Example for genomic Variant given by VCF columns"
 * component[3].valueString = "C"
 * component[4].code.coding = http://loinc.org#69551-0 "Alt allele"
 * component[4].valueString = "A"
-* component[5].code.coding = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#exact-start-end "Variant exact start and end"
+* component[5].code.coding = http://loinc.org#81254-5 "Variant exact start and end"
 * component[5].valueRange.low.value = 96527334
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
