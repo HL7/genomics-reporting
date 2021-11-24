@@ -348,6 +348,22 @@
     <li><i>Genomic Implications</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
     <li><i>Recommended Actions</i> are referenced from the <a href="StructureDefinition-recommended-action.html">Recommended Action</a> extension. These Task resources will also have relationships to Genomic Implications or other observations.</li>
   </ul>
+
+	<a name="Grouping observations"> </a>
+	<h3>Referencing Observations from GenomicsReport</h3>
+	<p>
+		The following is derived from the CORE FHIR guidance on <a href="http://hl7.org/fhir/R4/diagnosticreport.html#10.3.5.3">Diagnostic Report Resource</a>.
+	</p>
+	<p>
+		In order to ensure all clinically relevant information is seen consumers of Genomic Diagnostic reports MUST navigate through all hasMember relations, and <strike>MAY</strike> navigate through derivedFrom when processing Genomic Diagnostic reports.
+	</p>
+	<p>
+		For senders of Genomic Diagnostic reprots, it is up to receiving systems to arrange/use the genomic observations appropriately. However, some systems may only process just the first layer of a <code>DiagnosticReport.results</code>. Thus, when sending the report and results, we recommend including result links to all the genomic observation results being returned. For more complex reporting use cases, consider using the <code>summaryOf</code> extension on <code>DiagnosticReport</code> for creating meaningful subsets of observations.
+	</p>
+	<p>
+		For receivers of the data, we recommend to follow all references when processing <code>DiagnosticReport.results</code> to ensure that all genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for report, then one would need to follow the references in those grouping observations to see the genomic observations.
+	</p>	
+	
     <a name="querynote"> </a>
   <h3>Querying</h3>
   <p>

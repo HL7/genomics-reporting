@@ -122,12 +122,16 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
       <a href="{{site.data.fhir.path}}validation.html">FHIR Validation</a>
     </li>
   </ul>
+
   <p>
-    It's a good idea to also look at the <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a> and review the resources that are used as part of this implementation guide, especially
+    It is highly recommended that readers review <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a> and review the resources that are used as part of this implementation guide, especially
     <a href="{{site.data.fhir.path}}observation.html">Observation</a>,
     <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a> and
     <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
   </p>
+	<p>
+		Importantly, this guide heavily uses Observation and DiagnosticReport as described in the Diagnostics Module. Implementers should pay close attention to the considerations in http://hl7.org/fhir/R4/diagnosticreport.html#10.3.5.3  and http://hl7.org/fhir/R4/observation.html#obsgrouping describing proper usage of the relationships “diagnosticReport.result”, “Observation.hasMember”, and “Observation.derivedFrom”. Consumers of Genomic Diagnostic reports MUST navigate through all hasMember relations, and navigate through derivedFrom relationships in order to ensure all clinically relevant information is seen.
+	</p>
   <p>
     Many Observation profiles and components in this guide require sending codes from http://loinc.org. If necessary for implementation (e.g., to map to a local system), equivalent codes from other code systems may *also* be sent, following the <a href="{{site.data.fhir.path}}observation.html#usingcodes">guidance</a> on observation.
   </p>
