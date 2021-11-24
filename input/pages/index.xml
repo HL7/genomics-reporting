@@ -58,10 +58,10 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
         <th><a href="histocompatibility.html">Histocompatibility Reporting</a></th>
         <td>Guidance related to genomic testing done for histocompatibility and immunogenomics assessments, including HLA typing.</td>
       </tr>
-	  <tr>
+		<!--tr>
         <th><a href="groupingGuidance.html">Awareness of grouping observations</a></th>
         <td>Guidance and awareness on the types of grouping that might be encountered</td>
-      </tr>
+      </tr-->
     </tbody>
   </table>
 
@@ -130,8 +130,8 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
     <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
   </p>
 	<p>
-		Importantly, this guide heavily uses Observation and DiagnosticReport as described in the Diagnostics Module. Implementers should pay close attention to the considerations in http://hl7.org/fhir/R4/diagnosticreport.html#10.3.5.3  and http://hl7.org/fhir/R4/observation.html#obsgrouping describing proper usage of the relationships “diagnosticReport.result”, “Observation.hasMember”, and “Observation.derivedFrom”. Consumers of Genomic Diagnostic reports MUST navigate through all hasMember relations, and navigate through derivedFrom relationships in order to ensure all clinically relevant information is seen.
-	</p>
+		Importantly, this guide heavily uses Observation and DiagnosticReport as described in the Diagnostics Module. Implementers should pay close attention to the considerations in <a ref="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3.html">Associated Observations</a> and <a ref="{{site.data.fhir.path}}observation.html#obsgrouping.html">Observation Grouping</a> describing proper usage of the relationships “diagnosticReport.result”, “Observation.hasMember”, and “Observation.derivedFrom”. Consumers of <b>Genomic diagnostic reports</b> MUST navigate through all hasMember relations, and navigate through derivedFrom relationships in order to ensure all clinically relevant information is seen.
+</p>
   <p>
     Many Observation profiles and components in this guide require sending codes from http://loinc.org. If necessary for implementation (e.g., to map to a local system), equivalent codes from other code systems may *also* be sent, following the <a href="{{site.data.fhir.path}}observation.html#usingcodes">guidance</a> on observation.
   </p>
@@ -171,8 +171,12 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
         <th><a href="molecularSequence.html">Appendix G: Molecular Sequence</a></th>
         <td>Notes on the FHIR Resource for representing a Molecular Sequence</td>
       </tr>
+	  <tr>
+        <th><a href="groupingGuidance.html">Appendix H: Grouping observations</a></th>
+        <td>Guidance on the types of grouping that might be encountered</td>
+      </tr>
       <tr>
-        <th><a href="Glossary.html">Appendix H: Glossary</a></th>
+        <th><a href="Glossary.html">Appendix I: Glossary</a></th>
         <td>Table of concepts referenced on Observation profiles</td>
       </tr>
     </tbody>
