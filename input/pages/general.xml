@@ -352,7 +352,7 @@
 	<a name="Grouping observations"> </a>
 	<h3>Referencing Observations from GenomicsReport</h3>
 	<p>
-		The following is derived from the CORE FHIR guidance on <a href="http://hl7.org/fhir/R4/diagnosticreport.html#10.3.5.3">Diagnostic Report Resource</a>.
+		The following is derived from the CORE FHIR guidance on <a href="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3">Diagnostic Report Resource</a> and <a href="{{site.data.fhir.path}}observation.html#obsgrouping">Observation Resource</a>
 	</p>
 	<p>
 		For receivers of genetic reports, to ensure all clinically relevant information is processed consumers of Genomic Diagnostic reports MUST navigate through all hasMember relations, and navigate through derivedFrom when processing Genomic Diagnostic reports.
@@ -364,7 +364,7 @@
     <a name="querynote"> </a>
   <h3>Querying</h3>
   <p>
-	As a note on querying, the relationships indicated by <code>hasMember</code>, <code>derivedFrom</code> and the computable meaning conveyed by observation.code and component.code are critical for specificity in querying and getting comprehensive search results. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meaning of the values are predicated on by the component.code or observation.code to which they associate. There is a page in this IG with <a href="usecases.html">query guidance</a> that show how to use components, relationships (references) and the iterative <code>hasMember</code> to find results. The use of a grouping observation does not influence the ability to query. For example the profile of a variant contains a value for the gene name component. 
+	As a note on querying, the relationships indicated by <code>hasMember</code>, <code>derivedFrom</code> and the computable meaning conveyed by observation.code and component.code are critical for specificity in querying and getting comprehensive search results. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meaning of the values are predicated on by the component.code or observation.code to which they associate. There is a page in this IG with <a href="usecases.html">query guidance</a> that show how to use components, relationships (references) and the iterative <code>hasMember</code> to find results. The use of a grouping observation does not influence the ability to query. For example, the profile of a variant contains a value for the gene name component. Querying for all variants for the patient in a given gene can be done through the gene name component.
   </p>
   <!--p>
     The query:<br></br>

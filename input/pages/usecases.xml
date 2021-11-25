@@ -22,6 +22,8 @@
       _include
     </a> search parameter.
     </li>
+	<li>The derived-from and has-member parmeters are needed as the relationships are used heavily in the IG to link between different types of genomic observations. For example, Haplotypes use <code>derivedFrom</code> to link to unerlying Variant findings.
+	</li>
   </ol>
 
   <a name="specimenIdentification"></a>
@@ -262,7 +264,7 @@ code=69548-6&_include=Observation:
   </p>
   <p>
     "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the
-    annotation of "Unknown Significance" is derived from. The iterate modifier is needed as the
+    annotated phenotype of "Breast Cancer" is derived from. The iterate modifier is needed as the
     direct target of a derived-from relationship can be a hapolotype which has a derived-from
     relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes
     the number of observations returned larger).
@@ -284,18 +286,23 @@ code=69548-6&_include=Observation:
 
 
   -->
-    <p>
+    <!--p>
     The query:<br></br>
     <b>GET /Observation?subject:Patient=123&amp;code=http://loinc.org|69548-6&amp;component-code-value-concept=http://loinc.org|48018-6$https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:644</b> <br></br>
     will return all the variants associated with the specific patient where the Androgen Receptor (HGNC:644) is the gene name, whether a grouping observation is used or not. This is because the query looks first for all observations associated with the patient, then it filters by the observation.code to keep only those profiles which are variant profile instances. Next,the query retrieves the gene name from those profiles using the component.code and compares the coded-value to "HGNC:644." More queries and explanations can be found on the <a href="usecases.html"> query guidance page</a>.
-  </p>
+  </p-->
+
+  
+    <a name="gettingThruGroupers"></a>
+  <h4>Iterating through has-member and derived-from</h4>
   <p>
-    <b>Important:</b> If using grouping observations as results of a report, be sure to also reference the genomic observations. It is up to receiving systems to arrange/use the genomic observations appropriately. But some systems may only process just the first layer of a Diagnostic Report results. Thus, be sure to include result links to all the genomic observation results being returned. Consider using summaryOf for creating meaningful subsets of observations. Additionally, observations may not always be encapsulated in a DiagnosticReport. The use of basing queries on Observation resource, as done here, ensures that genomic observations will be found.<br></br>
+  This example is using a Genomics Diagnostic Resource as a base to demonstrate iteration through has-member and dervied-from in the same query. Here a specific instance of diagnostic report is being queried for all the connected genomic observation profiles. If the DiagnosticReport.results are only grouping observations or panels, this query would ensure finding the leaf node observations</p>
+  
+  <pre class="http">GET /DiagnosticReport?_id=16931&amp;_include=DiagnosticReport:result&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
+  </pre>
+  <p>The ampersands with include tell the server to 'include' everything through the result reference, and to include everything that can be found through <code>Observation.hasMember</code> or <code>Observation.derivedFrom</code> links (the iterate operator tells the server to iterate through the links).
   </p>
   
-  <p>
-    Similarly, at this time be sure to follow all references, and layers, when processing <code>DiagnosticReport.results</code> to ensure that all genomic observations have been processed. For example, just looking at the result references in the report does not ensure that grouped genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for report, then one would need to follow the references in those grouping observations to see the genomic observations. 
-  </p>
   <a name="getCompoundHetVariantAndmemberVariants"></a>
   <h4>Compound heterozygotic variant retrieval</h4>
   <p>
@@ -382,6 +389,8 @@ code=69548-6&_include=Observation:
     family history of patient "123."
   </p>
   <pre class="http">GET /FamilyMemberHistory?patient=123</pre>
+  
+ 
   <a name="other"></a>
   <h3>Other Genomics Use Case</h3>
   <p>
