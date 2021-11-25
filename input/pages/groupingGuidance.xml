@@ -11,7 +11,7 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<p>
 		Genomic observations can be organized and grouped together in a wide variety of ways. This page is a brief guidance on how observations might be grouped. Generally, grouping is used to provide a visualization which may be helpful to a developer. An exception is grouping a panel, where the appropriate panel code is used (e.g. a specific Panel LOINC code in an observation used to tie all the variants of the panel together) <!--to semantically tie the panel together-->. Implementers should pay close attention to the considerations in <a ref="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3.html">Associated Observations</a> and <a ref="{{site.data.fhir.path}}observation.html#obsgrouping.html">Observation Grouping</a> describing proper usage of the relationships “diagnosticReport.result”, “Observation.hasMember”, and “Observation.derivedFrom”. With any form of grouping or Panels, a system consuming a Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships, to ensure that all clinically relevant information is seen.
-	</p>
+	</p> 
 
 	<a name="grouper"> </a>
 	<h3>Overview with examples</h3>
