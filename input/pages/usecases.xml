@@ -401,7 +401,7 @@ code=69548-6&_include=Observation:
   <a name="panel"></a>
   <h4>Panel</h4>
   <p>
-    Search for results from a <!--nephrotic syndrome-->panel
+    <!-- Search for results from a nephrotic syndrome panel -->
   <!--pre class="http">GET /DiagnosticReport?code=N0336&amp;patient=123</pre-->
   This is an example using Observation to find a panel and iterate through to find all the clinical results. The query would ensure finding the leaf node observations. At the moment we're not providing an example of searching for a DiagnosticReport containing the panel, this is more complex. One option would be to use "_revinclude" to go from the Panel Observation backwards to the DiagnosticReport. In the case below we are using a GTR encoded panel, but it should be noted that a LOINC code would most likely also be assoicted with the <code>Observation.code</code> value. Recall, if two codings are equivlant in meaning then they can be used simultanously. The specific test here is a Panel of several genes. The assumption here is that a Panel was used to group the individual variants and thier interpretations together. 
   </p>
