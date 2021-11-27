@@ -40,7 +40,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * ^abstract = true
 * note only CodedAnnotation
-* note ^short = "Notes are not allowed to capture information which can be captured in a structured way"
+* note ^short = "Notes SHALL not contain information which can be captured in a structured way"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -99,7 +99,7 @@ Description:    "Genomics profile of DiagnosticReport."
 * extension[RecommendedAction].value[x] only Reference(Task)
 //* extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
 * extension[GenomicsReportRisk].value[x] only Reference(RiskAssessment)
-* extension[GenomicReportNote] ^short = "Notes are not allowed to capture information which can be captured in a structured way"
+* extension[GenomicReportNote] ^short = "Notes SHALL not contain information which can be captured in a structured way"
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)

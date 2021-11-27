@@ -42,3 +42,4 @@ Description: "Extension adding coded Note to a DiagnosticReport"
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only CodedAnnotation
+* value[x] from  (example)
