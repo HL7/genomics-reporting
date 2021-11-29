@@ -30,15 +30,15 @@ Description: "Risk Assessment delivered as part of the Genomics Report"
 Extension:   AnnotationCode
 Id:          annotation-code
 Title:       "Annotation Code"
-Description: "Extension adding a CodeableConcept to the Annotation data-type"
+Description: "Codifies the content of an Annotation"
 * ^context[+].type = #element
 * ^context[=].expression = "Annotation"
 * value[x] only CodeableConcept
 
 Extension:   GenomicReportNote
-Id:          genomicReportNote
+Id:          genomic-report-note
 Title:       "Genomic Report Note"
-Description: "Extension adding coded Note to a DiagnosticReport"
+Description: "Adds codified notes to a report to capture additional content"
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only CodedAnnotation
