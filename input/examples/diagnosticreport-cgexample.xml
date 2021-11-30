@@ -1431,10 +1431,6 @@ New:
       <Observation>
 		  <!--comment D Pharmacogenomics results Panel -->
         <id value="pharmPanel"/>
-        <!--<meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
-        </meta>
-		-->
         <text>
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
@@ -1453,12 +1449,9 @@ New:
         </category>
         <code>
           <coding>
-			  <!--system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
-                  <code value="grouper"/>
-                  <display value="grouper"/-->
-			  <system value="http://ncimeta.nci.nih.gov"/>
-			  <code value="C43359"/>
-			  <display value="Panel"/>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C43359"/>
+            <display value="Panel"/>
           </coding>
         </code>
         <subject>
