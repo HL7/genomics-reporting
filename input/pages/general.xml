@@ -299,30 +299,6 @@
     </ul>
   </p>
 
-  <!--a name="grouper"> </a>
-  <h4>Grouping observations</h4>
-  <p>
-    All the observations profiles defined are typically referenced directly by the <a href="StructureDefinition-genomics-report.html">genomics report</a>. The genetic findings, implications and region studied profiles all contain links to computably define which go together (e.g. the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, sometimes it is desired to connect observations for visualization. This might be done with a grouping observation. In this version of the specification, no guidance is provided on where or if a grouping observation should be used. This is left up to the discretion of the reporting lab. Observations might be organized for visualization purposes on the basis of subject, specimen, chromosome, gene, condition/disease, medication or other appropriate measure. The recursive <code>hasMember</code> relationship on observation supports a nested tree-structure of observations if appropriate, though more than two levels of grouping observations is likely excessive. See <a href="Bundle-oncologyexamples-r4.html"> an example</a> using grouping to separately reference variants and other Observations on the report. For a version of the same report without grouping see <a href="Bundle-oncologyexamples-r4-noGrouping.html"> without grouping</a>. In the examples, the NCI metathesaurus code C43359 (for 'Group' or 'Panel') is used for the grouping <code>Observation.code</code> field. Genomic panels that have specific codes, such as a specific LOINC code, could also be used if the grouping observation contains all the elements typically reported by the specific panel.
-  </p>
-  <p>
-	Here is a figure showing diagnostic report directly referencing the result genomic observations without grouping (similar to <a href="Bundle-oncologyexamples-r4-noGrouping.html"> the example above without grouping</a> and <a href="DiagnosticReport-PGxGenomicsReportEMERGE.html">the pharmacogenomics example based on EMERGE but without grouping</a>): 
-  </p>
-  <img src="diagnostic-report-no-grouping.png" alt="Example not using a grouping observation"/>
-  <p>
-    Here is an example of grouping on the basis of type of genomic observation, similar to <a href="Bundle-oncologyexamples-r4.html">the oncology example above</a> and <a href="DiagnosticReport-PGxGenomicsReportEMERGE2.html">the pharmacogenomics example based on EMERGE</a> :
-  </p>
-  <img src="diagnostic-report-groupingObservations.png" alt="Example of use of a grouping observation"/>
-  <p>
-	Here is an example layout of how a mixed use of group could appear. This is an exaggeration but is meant to give an impression of the mixture grouping observations could allow. Note, there are some genomics observation profiles directly referenced as results and some that are not. 
-  </p>
-  <img src="diagnostic-report-MixedUseOfGrouper.png" alt="Mixture of "/>
-  <p>
-    There is an important note later about expectations of the visibility of the grouped observations. Due to the possibility that a lab may only reference grouping observations as results, one will need to follow <code>hasMember</code> relationships iteratively, and <code>derivedFrom</code> recursively to ensure that all observations are processed. This will ensure complete processing of the <code>DiagnosticReport</code> results.
-  </p>
-  <p>
-    Any organization of observations into groups or sub-groups is purely for navigation and presentation purposes. It carries no additional "meaning." Each observation can be interpreted on its own without knowing the associated group or sub-group and must be able to stand alone as a resource and be independently valuable. The organization of observations in groups does not assert any relationship between observations.
-  </p-->
-
   <a name="regionstudied"> </a>
   <h4>Region Studied</h4>
   <p>
@@ -362,7 +338,7 @@
     To allow searching and appropriate navigation, the diagnostic report, observations and tasks must be able to stand on their own. They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc. FHIR design principles dictate that these associations be present on <i>every</i> resource instance. That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc. However, this is still relatively lightweight because the information is included by reference only.
   </p>
   <p>
-    The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile. Note that there is no expectation that all relationships will point to the same instances. In special cases, a genomic report may involve multiple patients or multiple specimens. As mentioned the <code>extends</code>, <code>summaryOf</code> <!--and <a href="#grouper">grouping observations</a>--> can be used well to provide additional organization.
+    The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile. Note that there is no expectation that all relationships will point to the same instances. In special cases, a genomic report may involve multiple patients or multiple specimens. As mentioned the <code>extends</code>, <code>summaryOf</code> can be used well to provide additional organization.
   </p>
   <img src="general-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
   <p>
@@ -393,16 +369,6 @@
   <p>
 	As a note on querying, the relationships indicated by <code>hasMember</code>, <code>derivedFrom</code> and the computable meaning conveyed by observation.code and component.code are critical for specificity in querying and getting comprehensive search results. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meaning of the values are predicated on by the component.code or observation.code to which they associate. There is a page in this IG with <a href="usecases.html">query guidance</a> that show how to use components, relationships (references) and the iterative <code>hasMember</code> to find results. The use of a grouping observation does not influence the ability to query. For example, the profile of a variant contains a value for the gene name component. Querying for all variants for the patient in a given gene can be done through the gene name component.
   </p>
-  <!--p>
-    The query:<br></br>
-    <b>GET /Observation?subject:Patient=123&amp;code=http://loinc.org|69548-6&amp;component-code-value-concept=http://loinc.org|48018-6$https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id|HGNC:644</b> <br></br>
-    will return all the variants associated with the specific patient where the Androgen Receptor (HGNC:644) is the gene name, whether a grouping observation is used or not. This is because the query looks first for all observations associated with the patient, then it filters by the observation.code to keep only those profiles which are variant profile instances. Next,the query retrieves the gene name from those profiles using the component.code and compares the coded-value to "HGNC:644." More queries and explanations can be found on the <a href="usecases.html"> query guidance page</a>.
-  </p>
-  <p>
-    <b>Important:</b> If using grouping observations as results of a report, be sure to also reference the genomic observations. It is up to receiving systems to arrange/use the genomic observations appropriately. But some systems may only process just the first layer of a Diagnostic Report results. Thus, be sure to include result links to all the genomic observation results being returned. Consider using summaryOf for creating meaningful subsets of observations. Additionally, observations may not always be encapsulated in a DiagnosticReport. The use of basing queries on Observation resource, as done here, ensures that genomic observations will be found.<br></br>
-  </p>
-  <p>
-    Similarly, at this time be sure to follow all references, and layers, when processing <code>DiagnosticReport.results</code> to ensure that all genomic observations have been processed. For example, just looking at the result references in the report does not ensure that grouped genomic observations have been processed. For example, if a lab were to not follow good practice and send only grouping observations as results for report, then one would need to follow the references in those grouping observations to see the genomic observations. 
-  </p-->
+  
   
 </div>
