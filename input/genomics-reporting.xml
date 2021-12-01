@@ -488,10 +488,10 @@
     </resource>
 	<resource>
       <reference>
-        <reference value="DiagnosticReport/PGxGenomicsReportEMERGE2"/>
+        <reference value="DiagnosticReport/PGxGenomicsReportEMERGE-withGrouping"/>
       </reference>
-      <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE without grouping"/>
-      <description value="Test instance of PGx Diagnostic report based on eMERGE panel not including grouping"/>
+      <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE with grouping"/>
+      <description value="Test instance of PGx Diagnostic report based on eMERGE panel with grouping"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -679,10 +679,10 @@
     </resource>
 	<resource>
       <reference>
-        <reference value="Bundle/diagnosticreport-cgexample-noGroup"/>
+        <reference value="Bundle/diagnosticreport-cgexample-withGrouping"/>
       </reference>
-      <name value="Example - Genomics Reporting (no grouping)"/>
-      <description value="Test instance showing data from the CG v2 spec without grouping"/>
+      <name value="Example - Genomics Reporting (with a grouping observation)"/>
+      <description value="Test instance showing data from the CG v2 spec with grouping"/>
 <!--
       <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
       <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
@@ -859,10 +859,10 @@
     </resource>
 	<resource>
       <reference>
-        <reference value="Bundle/oncologyexamples-r4-noGrouping"/>
+        <reference value="Bundle/oncologyexamples-r4-withGrouping"/>
       </reference>
-      <name value="Example - Full Bundle Oncology Example without grouping"/>
-      <description value="Full Bundle Oncology Example"/>
+      <name value="Example - Full Bundle Oncology Example with grouping"/>
+      <description value="Full Bundle Oncology Example with grouping observations"/>
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
       <groupingId value="examples"/>
     </resource>

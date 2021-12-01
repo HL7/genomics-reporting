@@ -721,28 +721,6 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* result[0] = Reference(OverallInterpExample2) "gene-drug interactions found."
-* result[1] = Reference(GrouperEx01) "Therapeutic Implications"
-* result[2] = Reference(GrouperEx02) "Genotypes"
-* result[3] = Reference(GrouperEx03) "Regions studied and Variants"
-* extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
-* extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
-* extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
-* extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
-* extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
-* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
-* status = #final
-
-Instance: PGxGenomicsReportEMERGE2
-InstanceOf: GenomicsReport
-Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
-* id = "PGxGenomicsReportEMERGE2"
-* basedOn = Reference(eMERGEServiceRequest)
-* code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
-* effectiveDateTime = "2020-01-01T00:00:00-05:00"
-* issued = "2020-01-01T00:00:00-05:00"
-* performer = Reference(ExampleOrg)
-* subject = Reference(CGPatientExample01)
 * result[23] = Reference(OverallInterpExample2) "gene-drug interactions found."
 * result[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
 * result[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
@@ -773,6 +751,29 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
 * status = #final
+
+Instance: PGxGenomicsReportEMERGE-withGrouping
+InstanceOf: GenomicsReport
+Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
+* id = "PGxGenomicsReportEMERGE-withGrouping"
+* basedOn = Reference(eMERGEServiceRequest)
+* code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* effectiveDateTime = "2020-01-01T00:00:00-05:00"
+* issued = "2020-01-01T00:00:00-05:00"
+* performer = Reference(ExampleOrg)
+* subject = Reference(CGPatientExample01)
+* result[0] = Reference(OverallInterpExample2) "gene-drug interactions found."
+* result[1] = Reference(GrouperEx01) "Therapeutic Implications"
+* result[2] = Reference(GrouperEx02) "Genotypes"
+* result[3] = Reference(GrouperEx03) "Regions studied and Variants"
+* extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
+* extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
+* extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
+* extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
+* extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
+* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
+* status = #final
+
 
 Instance: PGxRecEx01
 InstanceOf: FollowupRecommendation

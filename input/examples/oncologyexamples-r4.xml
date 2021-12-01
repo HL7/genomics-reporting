@@ -926,11 +926,14 @@
          <url value="Observation"/>
       </request>
    </entry>
-
+<!--
    <entry>
       <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12f"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="grouper"/>
+            </meta>
             <status value="final"/>
             <category>
                <coding>
@@ -940,10 +943,10 @@
             </category>
             <code>
                <coding>
-  				      <system value="http://ncimeta.nci.nih.gov"/>
-                  <code value="C43359"/>
-                  <display value="Group"/>
-			   </coding>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+                  <code value="grouper"/>
+                  <display value="grouper"/>
+               </coding>
             </code>
             <hasMember>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
@@ -974,12 +977,15 @@
          <url value="Observation"/>
       </request>
    </entry>
-
-
+-->
+<!--
    <entry>
       <fullUrl value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
       <resource>
          <Observation xmlns="http://hl7.org/fhir">
+            <meta>
+               <profile value="grouper"/>
+            </meta>
             <status value="final"/>
             <category>
                <coding>
@@ -989,9 +995,9 @@
             </category>
             <code>
                <coding>
-                  <system value="http://ncimeta.nci.nih.gov"/>
-                  <code value="C43359"/>
-                  <display value="Group"/>
+                  <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+                  <code value="grouper"/>
+                  <display value="grouper"/>
                </coding>
             </code>
             <hasMember>
@@ -1017,7 +1023,7 @@
          <url value="Observation"/>
       </request>
    </entry>
-
+-->
 
    <entry>
       <fullUrl value="urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5"/>
@@ -1051,12 +1057,12 @@
                <reference value="urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d"/>
             </specimen>
 
-			 
+			 <!--
             <result>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12f"/>
                <display value="Variants and other biomarker tests"/>
             </result>
-
+			 -->
 			 <result>
 				 <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"/>
 				 <display value="SNV analysis for JAK2 variant"/>
@@ -1078,11 +1084,12 @@
 				 <reference value="urn:uuid:64b91716-6431-41bd-8fd4-7ac99bebdee9"/>
 				 <display value="MSI status analysis"/>
 			 </result>
-			 
+			 <!--
             <result>
                <reference value="urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e"/>
                <display value="Therapy Match Results"/>
             </result>
+			-->
 			 <result>
 				 <reference value="urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524"/>
 				 <display value="Therapy match result 1"/>
