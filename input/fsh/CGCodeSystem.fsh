@@ -2,6 +2,7 @@ CodeSystem: SequencePhaseRelationshipCS
 Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
+* ^caseSensitive = true
 
 * #Cis "Cis" "Phase is in cis (same chromosome)"
 * #Trans "Trans" "Phase is in trans (different chromosomes)"
@@ -12,8 +13,8 @@ CodeSystem: TbdCodesCS
 Id: tbd-codes-cs
 Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."
+* ^caseSensitive = true
 
-* #grouper "grouper" "A means to bundle several observations such as one would find in a genetics test panel."
 * #effect-transporter-function "effect-transporter-function" "Predicted phenotype for drug efficacy through transport mechanism. A single marker interpretation value known to increase or decrease the drug's performance."
 * #effect-treatment-efficacy "Treatment Efficacy"
 * #effect-medication-metabolism "Medication Metabolism"
@@ -38,6 +39,7 @@ CodeSystem: ConditionInheritanceModeCS
 Id: condition-inheritance-mode-cs
 Title: "Condition Inheritance Pattern Codes"
 Description: "A set of terms that describe the transmission pattern of a condition in a pedigree."
+* ^caseSensitive = true
 
 * #GENO:0000143	"Codominant inheritance"
 * #GENO:0000889	"Unknown inheritance"

@@ -103,15 +103,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/grouper"/>
-      </reference>
-      <name value="Grouper"/>
-      <description value="Organizes information within a genomic report"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="general"/>
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/overall-interpretation"/>
       </reference>
       <name value="Overall Interpretation"/>
@@ -461,12 +452,13 @@
       <description value="Test instance of PGx overall report interpretation"/>
       <groupingId value="examples"/>
     </resource>
+	
     <resource>
       <reference>
         <reference value="Observation/GrouperEx01"/>
       </reference>
       <name value="Example - Observation-GrouperEx01"/>
-      <description value="Test instance of PGx Observation grouper consisting of Implications from the lab"/>
+      <description value="Test instance of PGx grouping Observation consisting of Implications from the lab"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -474,7 +466,7 @@
         <reference value="Observation/GrouperEx02"/>
       </reference>
       <name value="Example - Observation-GrouperEx02"/>
-      <description value="Test instance of PGx Observation grouper consisting of genotypes from the lab"/>
+      <description value="Test instance of PGx grouping Observation consisting of genotypes from the lab"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -482,15 +474,24 @@
         <reference value="Observation/GrouperEx03"/>
       </reference>
       <name value="Example - Observation-GrouperEx03"/>
-      <description value="Test instance of PGx Observation grouper consisting of variants and regions studied from the lab"/>
+      <description value="Test instance of PGx grouping Observation consisting of variants and regions studied from the lab"/>
       <groupingId value="examples"/>
     </resource>
+	
     <resource>
       <reference>
         <reference value="DiagnosticReport/PGxGenomicsReportEMERGE"/>
       </reference>
       <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE"/>
       <description value="Test instance of PGx Diagnostic report based on eMERGE panel"/>
+      <groupingId value="examples"/>
+    </resource>
+	<resource>
+      <reference>
+        <reference value="DiagnosticReport/PGxGenomicsReportEMERGE-withGrouping"/>
+      </reference>
+      <name value="Example - DiagnosticReport-PGxGenomicsReportEMERGE with grouping"/>
+      <description value="Test instance of PGx Diagnostic report based on eMERGE panel with grouping"/>
       <groupingId value="examples"/>
     </resource>
     <resource>
@@ -676,6 +677,18 @@
 -->
       <groupingId value="examples"/>
     </resource>
+	<resource>
+      <reference>
+        <reference value="Bundle/diagnosticreport-cgexample-withGrouping"/>
+      </reference>
+      <name value="Example - Genomics Reporting (with a grouping observation)"/>
+      <description value="Test instance showing data from the CG v2 spec with grouping"/>
+<!--
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
+      <exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
+-->
+      <groupingId value="examples"/>
+    </resource>
     <resource>
       <reference>
         <reference value="Bundle/compound-heterozygote"/>
@@ -844,6 +857,15 @@
       <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
       <groupingId value="examples"/>
     </resource>
+	<resource>
+      <reference>
+        <reference value="Bundle/oncologyexamples-r4-withGrouping"/>
+      </reference>
+      <name value="Example - Full Bundle Oncology Example with grouping"/>
+      <description value="Full Bundle Oncology Example with grouping observations"/>
+      <!-- exampleCanonical value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/ -->
+      <groupingId value="examples"/>
+    </resource>
     <!-- Code Systems -->
     <resource>
       <reference>
@@ -997,6 +1019,11 @@
           <title value="Histocompatibility and Immunogenetics Reporting"/>
           <generation value="html"/>
         </page>
+		  <!--page>
+          <nameUrl value="groupingGuidance.html"/>
+          <title value="Grouping of Observations"/>
+          <generation value="html"/>
+        </page-->
         <page>
           <nameUrl value="v2.html"/>
           <title value="Appendix A: Relation to v2 reporting"/>
@@ -1032,9 +1059,14 @@
           <title value="Appendix G: Molecular Sequence"/>
           <generation value="html"/>
         </page>
+		<page>
+          <nameUrl value="groupingGuidance.html"/>
+          <title value="Appendix H: Grouping Guidance"/>
+          <generation value="html"/>
+        </page>
         <page>
           <nameUrl value="Glossary.html"/>
-          <title value="Appendix H: Glossary"/>
+          <title value="Appendix I: Glossary"/>
           <generation value="html"/>
         </page>
       </page>
