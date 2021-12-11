@@ -53,7 +53,9 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains conclusion-string 0..1
 * component[conclusion-string] ^short = "Clinical Conclusion"
-* component[conclusion-string] ^definition = "Clinical conclusion (interpretation) of the observation"
+* component[conclusion-string] ^definition = "Concise and clinically contextualized summary conclusion (interpretation/impression) of the observation"
+* component[conclusion-string] ^requirements = "Need to be able to provide a conclusion that is not lost among the basic result data."
+* component[conclusion-string] ^comment = "An example would be the interpretative information, typically canned, about a variant identified in the patient."
 * component[conclusion-string].code = TbdCodesCS#conclusion-string
 * component[conclusion-string].value[x] only string
 
