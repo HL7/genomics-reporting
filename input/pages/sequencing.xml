@@ -67,8 +67,8 @@ It is NOT intended to support other Observations that are clinically relevant on
 <p>This Implementation Guide supports two reporting patterns for defining variants:
 </p>	
 <ol>
-  <li>By describing the change using HGVS or ISCN nomenclature</li>
-  <li>By providing multiple component details similar to VCF columns</li>
+  <li>By describing the change using HGVS or ISCN nomenclature.<a href="Observation-VariantExample1.html"> Example HGVS-styled variant</a>.</li>
+  <li>By providing multiple component details similar to VCF columns.<a href="Observation-VariantExample2.html"> Example VCF-styled variant</a>.</li>
 </ol>
 <p>
 For each variant reporting pattern, different components MUST be used to properly define the variant where possible. Other components MAY be used to provide additional information for cross referencing external sources or increasing human readability of the instance.
@@ -359,11 +359,11 @@ This implementation guide defines several components on Variant that can be used
 <a name="StructuralVariants"></a>
 <h3>Representing Structural Variants</h3>
 <p>
-The Variant profile is capable of representing a subset of structural variants (e.g. copy number variants), whereas more complex structural variants such as translocations will require additional model development. We provide guidance here on how the Variant profile can be used to communicate common structural variants.
+The Variant profile is capable of representing a subset of structural variants (e.g. copy number variants), whereas more complex structural variants such as translocations will require additional model development. We provide guidance here on how the Variant profile can be used to communicate common structural variants. (The cytogenomic-nomenclature component can also be used to communicate more complex structural variants, in ISCN notation).
 </p>
 
 <p>
-While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on end point precision and by variant length. <b>All variants with imprecise end points are treated as structural variants.</b> Variant length is more arbitrary - consider for example, a precisely located deletion of one base pair, of one thousand base pairs, of one hundred thousand base pairs. As variant length increases, it can become onerous to include REF and ALT alleles. Therefore, where end points of a variant are precisely known, users can decide whether to represent the variant as a simple or a structural variant. 
+While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on end point precision and by variant length. <b>All variants with imprecise end points are treated as structural variants.</b> Variant length is more arbitrary - consider for example, a precisely located deletion of one base pair, of one thousand base pairs, of one hundred thousand base pairs. As variant length increases, it can become onerous to include REF and ALT alleles. Therefore, where end points of a variant are precisely known, users can decide whether to represent the variant as a simple or a structural variant, although a variant length of 50 bases is often used as a cutoff.
 </p>
 
 <p>
@@ -448,5 +448,41 @@ Suggested minimal representations of common structural variants are shown in the
 </li>
 </ul>
 
+<a name="Example Structural Variants"></a>
+<h4>Examples</h4>
+<ul>
+<li><a href="Observation-ExampleGermlineCNV.html">Germline CNV</a></li>
+<li><a href="Observation-ExampleGermlineDEL.html">Germline DEL</a></li>
+<li><a href="Observation-ExampleGermlineINV.html">Germline INV</a></li>
+<li><a href="Observation-ExampleSomaticCNV.html">Somatic CNV</a></li>
+<li><a href="Observation-ExampleSomaticDEL.html">Somatic DEL</a></li>
+<li><a href="Observation-ExampleSomaticINV.html">Somatic INV</a></li>
+</ul>
+
+
+<a name="Compound Heterozygote"></a>
+<h3>Representing compound heterozygotes</h3>
+<p>Compound heterozygosity is the presence of two different heterozygous mutations in a gene, one on each chromosome of a pair.</p>
+<p>While a single HGVS expression within a single Variant observation can be used to represent a compound heterozygous state (e.g. ‘LRG_199t1:c.[2376G>C];[3103del]’), we recommend that compound heterozygotes be represented using two Variant observations, each showing one of the heterozygous variants.</p>
+<p>The special case where the two different variants are at the same base pair location can also be represented by two Variant observations. For example:</p>
+<ul>
+<li>Variant Observation 1</li>
+  <ul>
+  <li>allelic-state: heterozygous</li>
+  <li>ref-allele: G</li>
+  <li>alt-allele: A</li>
+  <li>exact-start-end: 1234567</li>
+  </ul>
+<li>Variant Observation 2</li>
+  <ul>
+  <li>allelic-state: heterozygous</li>
+  <li>ref-allele: G</li>
+  <li>alt-allele: C</li>
+  <li>exact-start-end: 1234567</li>
+  </ul>
+</ul>
+
+<p>It is important to note in this example that the Variant observation indicates the presence or absence of a variant with the given ALT allele, and does not indicate presence of the REF allele on the other chromosome of the pair. Even though it is almost always the case for heterozygous variants that one chromosome has the variant and the other chromosome has the reference allele, one should not assume this is the case from a single heterozygous Variant without separate knowledge that no other variants were detected at that position.</p>
+<p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. <a href="Observation-Pgx-geno-1003.html">Example genotype</a>.</p>
 
 </div>

@@ -68,7 +68,7 @@ Description: "Example for Service Request"
 
 Instance: VariantExample1
 InstanceOf: Variant
-Description: "Example for Variant given by ClinVar ID"
+Description: "Example for Variant given by HGVS"
 * id = "VariantExample1"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
@@ -77,10 +77,10 @@ Description: "Example for Variant given by ClinVar ID"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* interpretation = SCT#10828004 "Positive (qualifier value)"
-* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11"
-* component[variation-code].valueCodeableConcept = CLINVAR#619728 "NC_000019.8:g.1171707G>A"
-//* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
+//* interpretation = SCT#10828004 "Positive (qualifier value)"
+//* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:11389 "STK11"
+//* component[variation-code].valueCodeableConcept = CLINVAR#619728 "NC_000019.8:g.1171707G>A"
+* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000019.8:g.1171707G>A "NC_000019.8:g.1171707G>A"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
 
 Instance: VariantExample2
@@ -94,8 +94,8 @@ Description: "Example for genomic Variant given by VCF columns"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
-* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
+//* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
+//* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
 * component[1].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
 * component[1].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
 * component[2].code.coding = http://loinc.org#53034-5 "Allelic State"
@@ -815,4 +815,128 @@ Description: "Example Plan Definition from eMERGE"
 * action[0].prefix = "1"
 * action[0].description = "1. eMERGE-Seq Version 2 NGS Panel: for the paired-end pre-capture library procedure, genome DNA is fragmented by sonicating genome DNA and ligating to the Illumina multiplexing PE adapters (reference 1).  The adapter-ligated DNA is then PCR amplified using primers with sequencing barcodes (indexes). For target enrichment capture procedure, the pre-capture library is enriched by hybridizing to biotin labeled in-solution probes&nbsp;(reference 2) at&nbsp; 56&deg;C for 16 - 19 hours.&nbsp; For massively parallel sequencing, the post-capture library DNA is subjected to sequence analysis on Illumina HiSeq platform for 100 bp paired-end reads. The following quality control metrics of the sequencing data are generally achieved: &gt;70% of reads aligned to target, &gt;99% target base covered at &gt;20X, &gt;98% target base covered at &gt;40X, average coverage of target bases &gt;200X. SNP concordance to SNPTrace genotype array: &gt;99%. This test may not provide detection of certain genes or portions of certain genes due to local sequence characteristics or the presence of closely related pseudogenes. Gross deletions or duplications, changes from repetitive sequences may not be accurately identified by this methodology. Genomic rearrangements cannot be detected by this assay."
 */
+
+
+Instance: ExampleGermlineCNV
+InstanceOf: Variant
+Description: "Example for germline CNV"
+* id = "ExampleGermlineCNV"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0001019 "copy_number_variation"
+* component[ref-allele].valueString = "T"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000022.10
+* component[copy-number].valueQuantity.value = 3
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[inner-start-end].valueRange.low.value = 42523949
+* component[inner-start-end].valueRange.high.value = 42533891
+
+Instance: ExampleSomaticCNV
+InstanceOf: Variant
+Description: "Example for somatic CNV"
+* id = "ExampleSomaticCNV"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0001019 "copy_number_variation"
+* component[ref-allele].valueString = "T"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000022.10
+* component[copy-number].valueQuantity.value = 3
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[inner-start-end].valueRange.low.value = 42523949
+* component[inner-start-end].valueRange.high.value = 42533891
+
+Instance: ExampleGermlineDEL
+InstanceOf: Variant
+Description: "Example for germline DEL"
+* id = "ExampleGermlineDEL"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0000159 "deletion"
+* component[allelic-state].valueCodeableConcept = LNC#LA6706-1 "heterozygous"
+* component[ref-allele].valueString = "C"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000001.10
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[inner-start-end].valueRange.low.value = 756295
+* component[inner-start-end].valueRange.high.value = 756329
+
+Instance: ExampleSomaticDEL
+InstanceOf: Variant
+Description: "Example for somatic DEL"
+* id = "ExampleSomaticDEL"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:0000159 "deletion"
+* component[ref-allele].valueString = "C"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000001.10
+* component[copy-number].valueQuantity.value = 1
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[inner-start-end].valueRange.low.value = 16360078
+* component[inner-start-end].valueRange.high.value = 16383337
+
+Instance: ExampleGermlineINV
+InstanceOf: Variant
+Description: "Example for germline INV"
+* id = "ExampleGermlineINV"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000036 "inversion"
+* component[allelic-state].valueCodeableConcept = LNC#LA6706-1 "heterozygous"
+* component[ref-allele].valueString = "C"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000001.10
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[inner-start-end].valueRange.low.value = 12855952
+* component[inner-start-end].valueRange.high.value = 13448205
+
+
+Instance: ExampleSomaticINV
+InstanceOf: Variant
+Description: "Example for somatic INV"
+* id = "ExampleSomaticINV"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000036 "inversion"
+* component[ref-allele].valueString = "T"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
+* component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000001.10
+* component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
+* component[inner-start-end].valueRange.low.value = 70391323
+* component[inner-start-end].valueRange.high.value = 70391466
+
+
+
 
