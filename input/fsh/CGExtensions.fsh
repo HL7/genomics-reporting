@@ -44,3 +44,11 @@ Description: "Used to transmit the contents of or links to files that were produ
 * ^context[0].type = #element
 * ^context[0].expression = "DiagnosticReport"
 * value[x] only Reference(GenomicsDocumentReference)
+
+Extension:   TherapyAssessedLink
+Id:          therapy-assessed-link
+Title:       "Therapy Assessed Link"
+Description: "Used to reference a specific therapy (e.g. a FHIR ResearchStudy, a FHIR CarePlan)."
+* ^context[0].type = #element
+* ^context[0].expression = "TherapeuticImplication"
+* value[x] only Reference(TherapeuticImplication)
