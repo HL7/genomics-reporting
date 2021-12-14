@@ -66,3 +66,13 @@ Description: "A set of terms that describe the transmission pattern of a conditi
 * #SEPIO-CG:97021	"X-linked inheritance (primarily recessive with milder female expression)"
 * #SEPIO-CG:97022	"Autosomal dominant inheritance (with genetic anticipation)"
 * #SEPIO-CG:97023	"Autosomal recessive inheritance (with genetic anticipation)"
+
+CodeSystem: CodedAnnotationTypesCS
+Id: coded-annotation-types-cs
+Title: "Coded Annotation Type Codes"
+Description: "Code System for specific types of coded annotations"
+* ^caseSensitive = true
+
+* #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
+* #test-methodology "Test Methodology" "Additional details regarding the test methdology"
+* #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"

@@ -63,3 +63,9 @@ Id:             condition-inheritance-mode-vs
 Title:          "Condition Inheritance Patterns"
 Description:    "Value Set for specific transmission patterns of a condition in a pedigree"
 * codes from system ConditionInheritanceModeCS
+
+ValueSet:       CodedAnnotationTypesVS
+Id:             coded-annotation-types-vs
+Title:          "Coded Annotation Types"
+Description:    "Value Set for specific types of coded annotations"
+* codes from system CodedAnnotationTypesCS
