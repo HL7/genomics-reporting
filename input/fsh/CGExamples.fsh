@@ -94,9 +94,9 @@ Description: "Example for genomic Variant given by VCF columns"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
-* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
+* component[0].code.coding = http://loinc.org#62374-4 "Human reference sequence assembly version"
 * component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[1].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
+* component[1].code.coding = http://loinc.org#48013-7 "Genomic reference sequence ID"
 * component[1].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
 * component[2].code.coding = http://loinc.org#53034-5 "Allelic State"
 * component[2].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
@@ -630,53 +630,53 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
 
-
 Instance: GrouperEx01
-InstanceOf: Grouper
+InstanceOf: Observation
 Description: "Therapeutic Implications"
 * id = "GrouperEx01"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = NCIT#C43359 "Group"
 * status = #final
-* hasMember[therapeutic-implication][0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
-* hasMember[therapeutic-implication][1] = Reference(TxImp02) "voriconazole, poor metabolizer"
-* hasMember[therapeutic-implication][2] = Reference(TxImp03) "citalopram, poor metabolizer"
-* hasMember[therapeutic-implication][3] = Reference(TxImp04) "escitalopram, poor metabolizer"
-* hasMember[therapeutic-implication][4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
-* hasMember[therapeutic-implication][5] = Reference(TxImp06) "medium sensitivity to warfarin"
+* hasMember[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
+* hasMember[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
+* hasMember[2] = Reference(TxImp03) "citalopram, poor metabolizer"
+* hasMember[3] = Reference(TxImp04) "escitalopram, poor metabolizer"
+* hasMember[4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
+* hasMember[5] = Reference(TxImp06) "medium sensitivity to warfarin"
 
 Instance: GrouperEx02
-InstanceOf: Grouper
+InstanceOf: Observation
 Description: "Genotypes"
 * id = "GrouperEx02"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodesCS#grouper
+* code = NCIT#C43359 "Group"
 * status = #final
-* hasMember[genotype][0] = Reference(Pgx-geno-1001)
-* hasMember[genotype][1] = Reference(Pgx-geno-1003)
-* hasMember[genotype][2] = Reference(Pgx-geno-1002)
+* hasMember[0] = Reference(Pgx-geno-1001)
+* hasMember[1] = Reference(Pgx-geno-1003)
+* hasMember[2] = Reference(Pgx-geno-1002)
 
 
 Instance: GrouperEx03
-InstanceOf: Grouper
+InstanceOf: Observation
 Description: "Regions Studied and variant info"
 * id = "GrouperEx03"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* code = TbdCodesCS#grouper
+* code = NCIT#C43359 "Group"
 * status = #final
-* hasMember[variant][0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
-* hasMember[variant][1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
-* hasMember[variant][2] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
-* hasMember[variant][3] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
-* hasMember[variant][4] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
-* hasMember[variant][5] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
-* hasMember[variant][6] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
-* hasMember[variant][7] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
-* hasMember[variant][8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
-* hasMember[variant][9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
-* hasMember[variant][10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
-* hasMember[region-studied][0] = Reference(RegionStudiedPGx1) "CYP2C19"
-* hasMember[region-studied][1] = Reference(RegionStudiedPGx2) "CYP2C9"
-* hasMember[region-studied][2] = Reference(RegionStudiedPGx3) "VKORC1"
+* hasMember[0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
+* hasMember[1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
+* hasMember[2] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
+* hasMember[3] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
+* hasMember[4] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
+* hasMember[5] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
+* hasMember[6] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
+* hasMember[7] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
+* hasMember[8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
+* hasMember[9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
+* hasMember[10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
+* hasMember[0] = Reference(RegionStudiedPGx1) "CYP2C19"
+* hasMember[1] = Reference(RegionStudiedPGx2) "CYP2C9"
+* hasMember[2] = Reference(RegionStudiedPGx3) "VKORC1"
 
 //* variants if needed
 
@@ -711,11 +711,51 @@ Description: "eMERGE PGx VKORC1"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:23663 "VKORC1"
 * component[region-coverage].valueQuantity.value = 100
 
-
 Instance: PGxGenomicsReportEMERGE
 InstanceOf: GenomicsReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
 * id = "PGxGenomicsReportEMERGE"
+* basedOn = Reference(eMERGEServiceRequest)
+* code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* effectiveDateTime = "2020-01-01T00:00:00-05:00"
+* issued = "2020-01-01T00:00:00-05:00"
+* performer = Reference(ExampleOrg)
+* subject = Reference(CGPatientExample01)
+* result[23] = Reference(OverallInterpExample2) "gene-drug interactions found."
+* result[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
+* result[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
+* result[2] = Reference(TxImp03) "citalopram, poor metabolizer"
+* result[3] = Reference(TxImp04) "escitalopram, poor metabolizer"
+* result[4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
+* result[5] = Reference(TxImp06) "medium sensitivity to warfarin"
+* result[6] = Reference(Pgx-geno-1001) "CYP2C19*2/*2"
+* result[7] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
+* result[8] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
+* result[9] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
+* result[10] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
+* result[11] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
+* result[12] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
+* result[13] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
+* result[14] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
+* result[15] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
+* result[16] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
+* result[17] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
+* result[18] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
+* result[19] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
+* result[20] = Reference(RegionStudiedPGx1) "CYP2C19"
+* result[21] = Reference(RegionStudiedPGx2) "CYP2C9"
+* result[22] = Reference(RegionStudiedPGx3) "VKORC1"
+* extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
+* extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
+* extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
+* extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
+* extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
+* status = #final
+
+Instance: PGxGenomicsReportEMERGE-withGrouping
+InstanceOf: GenomicsReport
+Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
+* id = "PGxGenomicsReportEMERGE-withGrouping"
 * basedOn = Reference(eMERGEServiceRequest)
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
@@ -731,7 +771,9 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
+* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
 * status = #final
+
 
 Instance: PGxRecEx01
 InstanceOf: FollowupRecommendation
@@ -816,3 +858,13 @@ Description: "Example Plan Definition from eMERGE"
 * action[0].description = "1. eMERGE-Seq Version 2 NGS Panel: for the paired-end pre-capture library procedure, genome DNA is fragmented by sonicating genome DNA and ligating to the Illumina multiplexing PE adapters (reference 1).  The adapter-ligated DNA is then PCR amplified using primers with sequencing barcodes (indexes). For target enrichment capture procedure, the pre-capture library is enriched by hybridizing to biotin labeled in-solution probes&nbsp;(reference 2) at&nbsp; 56&deg;C for 16 - 19 hours.&nbsp; For massively parallel sequencing, the post-capture library DNA is subjected to sequence analysis on Illumina HiSeq platform for 100 bp paired-end reads. The following quality control metrics of the sequencing data are generally achieved: &gt;70% of reads aligned to target, &gt;99% target base covered at &gt;20X, &gt;98% target base covered at &gt;40X, average coverage of target bases &gt;200X. SNP concordance to SNPTrace genotype array: &gt;99%. This test may not provide detection of certain genes or portions of certain genes due to local sequence characteristics or the presence of closely related pseudogenes. Gross deletions or duplications, changes from repetitive sequences may not be accurately identified by this methodology. Genomic rearrangements cannot be detected by this assay."
 */
 
+Instance: VCFFile
+InstanceOf: GenomicsDocumentReference
+Description: "Example of what a VCF as a DocumentRefence would look like."
+
+* id = "VCFFile"
+* status = #current
+* subject = Reference(CGPatientExample01)
+* description = "... details about how this VCF was generated ..."
+* content.attachment.url = "http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz"
+* context.related = Reference(PGxGenomicsReportEMERGE)
