@@ -43,6 +43,7 @@ Description: "Codifies the content of an Annotation"
 * ^context[+].type = #element
 * ^context[=].expression = "Annotation"
 * value[x] only CodeableConcept
+* value[x] from CodedAnnotationTypesVS (example)
 
 Extension:   GenomicReportNote
 Id:          genomic-report-note
@@ -51,7 +52,6 @@ Description: "Adds codified notes to a report to capture additional content"
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only CodedAnnotation
-* value[x] from CodedAnnotationTypesVS (example)
 
 Extension:   GenomicsFile
 Id:          genomics-file
