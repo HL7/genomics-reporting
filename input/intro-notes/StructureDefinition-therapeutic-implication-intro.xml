@@ -3,6 +3,7 @@
     <p>
     The content in this section may be significantly revised prior to the next ballot after initial use and feedback.
     </p>
+	  
   </blockquote>
   <p>
     This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide.
@@ -11,7 +12,7 @@
   <a name="contextualmodifiers"> </a>
   <h3>Communicating disease or tumor context</h3>
   <p>
-  In general, treatments and medications have a set of indications for use which are not explicitly stated. However, if a pharmacogenomics statement has a specific context of a disease or a tumor use the component <code>phenotypic-treatment-context</code> to indicate the disease. 
+   In general, treatments and medications have a set of indications for use which are not explicitly stated. However, if a pharmacogenomics statement has a specific context of a disease or a tumor use the component <code>phenotypic-treatment-context</code> to indicate the disease. 
   </p>
 
   <a name="implications"> </a>
@@ -51,4 +52,21 @@
   <p>
 	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note 2:  Implementers may also be interested in the <a href="somatics.html">Somatic Reporting</a> and <a href="pharmacogenomics.html">Pharmacogenomics Reporting</a> sections of this implementation guide.
   </p>
+
+	<a name="AND vs OR"> </a>
+	<h3>Differentiating AND vs OR </h3>
+	<p>
+		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. both drug X AND drug Y, in combination, are indicated in the presence of a variant) vs. 'OR' conditions (e.g. either drug X OR drug Y are indicated in the presence of a variant). 
+		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. [FHIR Search|https://www.hl7.org/fhir/search.html#combining]) and outside of FHIR (e.g. [Clinvar submission API|https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/], condition set). To be consistent with other precedents:
+
+		Where Diagnostic and Therapeutic implications have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances*.
+
+
+		Implication fields affected by this guidance include:
+
+		Therapeutic implications: derivedFrom, evidence-level, phenotypic-treatment-context, medication-assessed, therapy-assessed, predicted-therapeutic-implication.
+		Diagnostic implications: derivedFrom, evidence-level, predicted-phenotype, functional-effect, genomics-report-risk.
+
+		For example, assume Variant X is pathogenic for Disease Y AND Disease Z in combination. This would be a single diagnostic implication, where predicted-phenotype is a list containing both Disease Y and Disease Z. If on the other hand, Variant X might be pathogenic for Disease Y alone, or Disease Z alone, this would be two diagnostic implications, one containing a predicted-phenotype of Disease Y, and the other containing a predicted-phenotype of Disease Z.
+	</p>
 </div>

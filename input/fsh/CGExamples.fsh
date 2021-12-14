@@ -827,3 +827,92 @@ Description: "Example of what a VCF as a DocumentRefence would look like."
 * description = "... details about how this VCF was generated ..."
 * content.attachment.url = "http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz"
 * context.related = Reference(PGxGenomicsReportEMERGE)
+
+
+ //* Implication of polygenic risk score X - at risk for Type 2 Diabetes
+Instance: PolyGenicDiagnosticImpExample
+InstanceOf: DiagnosticImplication
+Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a polygenic risk score."
+* id = "PolyGenicDiagnosticImpExample"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodesCS#diagnostic-implication
+* status = #final
+* performer = Reference(ExampleOrg)
+* subject = Reference(CGPatientExample01)
+* extension[GenomicsReportRisk][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
+//Reference(GenomicRiskAssesmPolyGenicScoreRef)
+* component[clinical-significance].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
+* component[predicted-phenotype].valueCodeableConcept = SCT#44054006 "Diabetes mellitus type 2 (disorder)"
+* derivedFrom[0].display = "Variant 1"
+* derivedFrom[0].identifier.system = "http://hospital.example.org"
+* derivedFrom[0].identifier.value = "11"
+* derivedFrom[1].display = "Variant 2"
+* derivedFrom[1].identifier.system = "http://hospital.example.org"
+* derivedFrom[1].identifier.value = "12"
+* derivedFrom[2].display = "Variant 3"
+* derivedFrom[2].identifier.system = "http://hospital.example.org"
+* derivedFrom[2].identifier.value = "13"
+* derivedFrom[3].display = "Variant 4"
+* derivedFrom[3].identifier.system = "http://hospital.example.org"
+* derivedFrom[3].identifier.value = "14"
+* derivedFrom[4].display = "Variant 5"
+* derivedFrom[4].identifier.system = "http://hospital.example.org"
+* derivedFrom[4].identifier.value = "15"
+* derivedFrom[5].display = "Variant 6"
+* derivedFrom[5].identifier.system = "http://hospital.example.org"
+* derivedFrom[5].identifier.value = "16"
+* derivedFrom[6].display = "Variant 7"
+* derivedFrom[6].identifier.system = "http://hospital.example.org"
+* derivedFrom[6].identifier.value = "17"
+
+
+//Risk assesment for polygenic Diaters2 GenRiskDiabetesT2
+
+Instance: GenRiskDiabetesT2
+InstanceOf: RiskAssessment
+Description: "Polygenic Risk Score example"
+//* id = GenRiskDiabetesT2
+* parent = Reference (PolyGenicDiagnosticImpExample)
+* status = #final
+* subject = Reference(CGPatientExample01)
+* basis[0].display = "Variant 1"
+* basis[0].identifier.system = "http://hospital.example.org"
+* basis[0].identifier.value = "11"
+* basis[1].display = "Variant 2"
+* basis[1].identifier.system = "http://hospital.example.org"
+* basis[1].identifier.value = "12"
+* basis[2].display = "Variant 3"
+* basis[2].identifier.system = "http://hospital.example.org"
+* basis[2].identifier.value = "13"
+* basis[3].display = "Variant 4"
+* basis[3].identifier.system = "http://hospital.example.org"
+* basis[3].identifier.value = "14"
+* basis[4].display = "Variant 5"
+* basis[4].identifier.system = "http://hospital.example.org"
+* basis[4].identifier.value = "15"
+* basis[5].display = "Variant 6"
+* basis[5].identifier.system = "http://hospital.example.org"
+* basis[5].identifier.value = "16"
+* basis[6].display = "Variant 7"
+* basis[6].identifier.system = "http://hospital.example.org"
+* basis[6].identifier.value = "17"
+
+* prediction[0].outcome = SCT#44054006 "Diabetes mellitus type 2 (disorder)" 
+* prediction[0].probabilityDecimal = 0.26 
+* prediction[0].qualitativeRisk = RiskQual#low "Low likelihood"
+* prediction[0].relativeRisk = 1.05
+* prediction[0].whenRange.high = 53 'a'
+//.value = 53.0 'a'
+//* prediction[0].whenRange.high.unit = "years"
+//* prediction[0].whenRange.high.system = "http://unitsofmeasure.org"
+//* prediction[0].whenRange.high.code = a
+* prediction[1].outcome = SCT#44054006 "Diabetes mellitus type 2 (disorder)" 
+* prediction[1].probabilityDecimal = 0.7
+* prediction[1].qualitativeRisk = RiskQual#high "High likelihood"
+* prediction[1].relativeRisk = 2.69
+* prediction[1].whenRange.high = 65 'a'
+//.value = 65.0 'a'
+//* prediction[1].whenRange.high.unit = "years"
+//* prediction[1].whenRange.high.system = "http://unitsofmeasure.org"
+//* prediction[1].whenRange.high.code = a

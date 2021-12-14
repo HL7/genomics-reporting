@@ -32,3 +32,4 @@ Alias:  RequestIntent = http://hl7.org/fhir/request-intent
 Alias:  RequestStatus = http://hl7.org/fhir/request-status
 Alias:  NUC = http://www.ncbi.nlm.nih.gov/nuccore
 Alias:  MetaT = http://ncimeta.nci.nih.gov
+Alias:  RiskQual = 	http://terminology.hl7.org/CodeSystem/risk-probability

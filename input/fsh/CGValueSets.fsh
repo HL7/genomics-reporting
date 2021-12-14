@@ -64,8 +64,15 @@ Title:          "Condition Inheritance Patterns"
 Description:    "Value Set for specific transmission patterns of a condition in a pedigree"
 * codes from system ConditionInheritanceModeCS
 
+
 ValueSet:       GeneticTherapeuticImplicationsVS
 Id:             genetic-therapeutic-implications-vs
 Title:          "Genetic Therapeutic Implications"
 Description:    "Value Set for terms that describe a predicted ramification based on the presence of associated molecular finding(s)."
 * codes from system GeneticTherapeuticImplicationsCS
+
+ValueSet:       EvidenceLevelExampleVS
+Id:             evidence-level-example-vs
+Title:          "Evidence Level Examples"
+Description:    "Example sources of values for Evidence Level"
+* codes from system EvidenceLevelExampleCS

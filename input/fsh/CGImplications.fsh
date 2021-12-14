@@ -29,12 +29,14 @@ Description:    "Properties common to genmoic implications expressed as computab
 * component[evidence-level] ^short = "Level of Evidence"
 * component[evidence-level].value[x] only CodeableConcept
 * component[evidence-level].value[x] 1..1
-* component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (extensible)
+* component[evidence-level].value[x] from EvidenceLevelExampleVS (example)
+//* component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (example)
 * component[prognosis] ^short = "Prognosis"
 * component[prognosis] ^definition = "E.g. Better outcome, poorer outcome"
 * component[prognosis].code = TbdCodesCS#prognostic-implication
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
+
 //* component[prognosis].value[x] from (example) (extensible)
 
 Profile:        DiagnosticImplication
@@ -42,7 +44,7 @@ Parent:         GenomicImplication
 Id:             diagnostic-implication
 Title:          "Diagnostic Implication"
 Description:    "Observation stating a linkage between one or more genotype/haplotype/variation Observations and evidence for or against a particular disease, condition, or cancer diagnosis."
-
+* extension contains GenomicsReportRisk named report-risk 0..*
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#diagnostic-implication
 * component ^slicing.discriminator.type = #pattern
@@ -91,6 +93,7 @@ Description:    "Profile with properties for observations that convey the potent
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
+* extension contains TherapyAssessedLink named therapy-assessed-link 0..*
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open

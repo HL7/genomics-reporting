@@ -8,6 +8,7 @@ Description: "Code System for specific types of relationships"
 * #Indeterminate "Indeterminate" "Phase is unable to be determined"
 * #Unknown "Unknown" "Phase is unknown"
 
+
 CodeSystem: TbdCodesCS
 Id: tbd-codes-cs
 Title: "To Be Determined Codes"
@@ -88,3 +89,18 @@ Description: "A set of terms that describe a predicted ramification based on the
 * #SCT:444734003 	"Does not meet eligibility criteria for clinical trial (finding)"
 * #SCT:399223003	"Patient eligible for clinical trial (finding)"
 
+CodeSystem: EvidenceLevelExampleCS
+Id: evidence-level-example-cs
+Title: "Evidence Level Example codes"
+Description: "ClinVar and PharmGKB contain examples of evidence level concepts that are not conflated with clinical significance. These can be found on  ClinVar https://www.ncbi.nlm.nih.gov/clinvar/docs/review_status/ or PharmGKB https://www.pharmgkb.org/page/clinAnnLevels. These examples are informational only, for copyright information contact the relevant source."
+* #ClinVarEvidence:4-star	"4 star"	"Supported by practice guideline"
+* #ClinVarEvidence:3-star	"3 star"	"Supported by expert panel review"
+* #ClinVarEvidence:2-star	"2 star"	"Supported by submission by multiple-submitters with documentation of criteria for assertion"
+* #ClinVarEvidence:1-star	"1 star"	"Single submitter providing interpretation and documentation of criteria for assertion"
+* #ClinvarEvidence:no-star	"no star"	"submitted, no evidence"
+* #PharmGKBevidence:1A	"PGKB 1A"	"High level of evidence. Supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
+* #PharmGKBevidence:1B	"PGKB 1B"	"High level of evidence. But, NOT supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
+* #PharmGKBevidence:2A	"PGKB 2A"	"Moderate level of evidence. Supported by being a KNOWN pharmacogene on https://www.pharmgkb.org/vips. Also, found in multiple studies but may have a minority of studies that did not support the majority opinion. Supported by at least two indpendent publications."
+* #PharmGKBevidence:2B	"PGKB 2B"	"Moderate level of evidence. NOT in the list of very important, KNOWN pharmacogenes. Found in multiple studies but may have a minority of studies that did not support the majority opinion. Supported by at least two indpendent publications."
+* #PharmGKBevidence:3	"PGKB 3"	"Low-level of evidence. Where either the assocation is based on a single study, failed to be reproduced, or preliminary evidence."
+* #PharmGKBevidence:4	"PGKB 4"	"The evidence does not support an association between the variant and the drug phenotype. (negative)"

@@ -304,6 +304,16 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
+	<resource>
+	    <reference>
+		    <reference value="StructureDefinition/therapy-assessed-link"/>
+	    </reference>
+	    <name value="Therapy Assessed Link"/>
+	    <description
+	    value="Used to reference a specific therapy (e.g. a FHIR ResearchStudy, a FHIR CarePlan)"/>
+	    <exampleBoolean value="false"/>
+	    <groupingId value="extensions"/>
+	</resource>
 
     <!-- Examples -->
     <resource>
@@ -369,8 +379,26 @@
       <description value="Test instance of Overall Interpretation"/>
       <groupingId value="examples"/>
     </resource>
-    
-    <resource>
+
+	  <resource>
+		  <reference>
+			  <reference value="Observation/PolyGenicDiagnosticImpExample"/>
+		  </reference>
+		  <name value="Example - Polygenic Risk Score"/>
+		  <description value="Polygeneic Risk Score example with Diagnostic Implication"/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  <resource>
+		  <reference>
+			  <reference value="RiskAssessment/GenRiskDiabetesT2"/>
+			  
+		  </reference>
+		  <name value="Example - Polygenic Risk Score Assesment"/>
+		  <description value="Polygeneic Risk Score Simple Assesment"/>
+		  <groupingId value="examples"/>
+	  </resource>
+
+	  <resource>
       <reference>
         <reference value="Observation/TumorMutationBurdenExample01"/>
       </reference>
@@ -957,6 +985,14 @@
       <description value="Value Set for terms that describe a predicted ramification based on the presence of associated molecular finding(s)."/>
       <groupingId value="valuesets"/>
     </resource>
+	<resource>
+		<reference>
+			<reference value="ValueSet/evidence-level-example-vs"/>
+		</reference>
+		<name value="Evidence Level Example codes"/>
+		<description value="Value set for example codes from example sources of values for Evidence Level"/>
+		<groupingId value="valuesets"/>
+	</resource>  
     <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type-map"/>
