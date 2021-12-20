@@ -25,10 +25,13 @@
 <artifact id="Bundle/compound-heterozygote" key="Bundle-compound-heterozygote" name="Example - Complex Variant (HGVS)"/>
 <artifact id="Bundle/complexVariant-nonHGVS" key="Bundle-complexVariant-nonHGVS" name="Example - Complex Variant (unpacked)"/>
 <artifact id="DiagnosticReport/PGxGenomicsReportEMERGE" key="DiagnosticReport-PGxGenomicsReportEMERGE" name="Example - DiagnosticReport-PGxGenomicsReportEMERGE"/>
+<artifact id="DiagnosticReport/PGxGenomicsReportEMERGE-withGrouping" key="DiagnosticReport-PGxGenomicsReportEMERGE-withGrouping" name="Example - DiagnosticReport-PGxGenomicsReportEMERGE with grouping"/>
 <artifact id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
 <artifact id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="Example - Full Bundle Oncology Example"/>
+<artifact id="Bundle/oncologyexamples-r4-withGrouping" key="Bundle-oncologyexamples-r4-withGrouping" name="Example - Full Bundle Oncology Example with grouping"/>
 <artifact id="Specimen/GenomicSpecimenExample02" key="Specimen-GenomicSpecimenExample02" name="Example - Genetic specimen sample buccal swab."/>
 <artifact id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="Example - Genomics Reporting"/>
+<artifact id="Bundle/diagnosticreport-cgexample-withGrouping" key="Bundle-diagnosticreport-cgexample-withGrouping" name="Example - Genomics Reporting (with a grouping observation)"/>
 <artifact id="DiagnosticReport/GenomicsReportExample01" key="DiagnosticReport-GenomicsReportExample01" name="Example - GenomicsReport"/>
 <artifact id="Observation/GenotypeExample1" key="Observation-GenotypeExample1" name="Example - Genotype"/>
 <artifact id="Observation/Genotype-Clinical-Trial-Example-using-haplotypes" key="Observation-Genotype-Clinical-Trial-Example-using-haplotypes" name="Example - Genotype for APOE e1/e1. Dervied from two observed Haplotypes."/>
@@ -108,7 +111,7 @@
 <artifact id="StructureDefinition/genomics-report" key="StructureDefinition-genomics-report" name="Genomics Report"/>
 <artifact id="StructureDefinition/genomics-report-risk" key="StructureDefinition-genomics-report-risk" name="Genomics Report Risk Assessment"/>
 <artifact id="StructureDefinition/genotype" key="StructureDefinition-genotype" name="Genotype"/>
-<artifact id="StructureDefinition/grouper" key="StructureDefinition-grouper" name="Grouper"/>
+<artifact deprecated="true" id="StructureDefinition/grouper" key="StructureDefinition-grouper" name="Grouper"/>
 <artifact id="ValueSet/hgnc-vs" key="ValueSet-hgnc" name="HGNC Value Set"/>
 <artifact id="ValueSet/hgvs-vs" key="ValueSet-hgvs" name="HGVS Value Set"/>
 <artifact id="StructureDefinition/haplotype" key="StructureDefinition-haplotype" name="Haplotype"/>
@@ -150,7 +153,8 @@
 <page key="codings" name="Appendix E: External Coding Systems"/>
 <page key="conversion" name="Appendix F: Conversion from STU3 Extensions"/>
 <page key="molecularSequence" name="Appendix G: Molecular Sequence"/>
-<page key="Glossary" name="Appendix H: Glossary"/>
+<page key="groupingGuidance" name="Appendix H: Grouping Guidance"/>
+<page key="Glossary" name="Appendix I: Glossary"/>
 <page key="artifacts" name="Artifact List"/>
 <page key="general" name="General Genomic Reporting"/>
 <page key="background" name="Genomics Background"/>

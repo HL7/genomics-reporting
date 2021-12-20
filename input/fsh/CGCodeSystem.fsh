@@ -2,6 +2,7 @@ CodeSystem: SequencePhaseRelationshipCS
 Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
+* ^caseSensitive = true
 
 * #Cis "Cis" "Phase is in cis (same chromosome)"
 * #Trans "Trans" "Phase is in trans (different chromosomes)"
@@ -13,8 +14,7 @@ CodeSystem: TbdCodesCS
 Id: tbd-codes-cs
 Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesting formal LOINC codes."
-
-* #grouper "grouper" "A means to bundle several observations such as one would find in a genetics test panel."
+* ^caseSensitive = true
 * #predicted-therapeutic-implication "Predicted Therapeutic Implication" "A predicted ramification based on the presence of associated molecular finding(s). Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
 * #prognostic-implication "Prognostic Implication component" "Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."
 * #associated-therapy "Genomically linked therapy" "The non-medication therapy (procedure) associated with this implication."
@@ -35,6 +35,7 @@ CodeSystem: ConditionInheritanceModeCS
 Id: condition-inheritance-mode-cs
 Title: "Condition Inheritance Pattern Codes"
 Description: "A set of terms that describe the transmission pattern of a condition in a pedigree."
+* ^caseSensitive = true
 
 * #GENO:0000143	"Codominant inheritance"
 * #GENO:0000889	"Unknown inheritance"
