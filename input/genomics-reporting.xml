@@ -333,6 +333,51 @@
       <description value="Test instance of TherapeuticImplication"/>
       <groupingId value="examples"/>
     </resource>
+
+	  <resource>
+		  <reference>
+			  <reference value="Observation/Therapeutic-Implication-Clinical-Trial-Somatic"/>
+		  </reference>
+		  <name value="Example - TherapeuticImplication with an eligible clincal trial"/>
+		  <description value="TherapeuticImplication where the patient is eligible for a clinical trial, with genetic data from a somatic sample."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  
+	  	  <resource>
+		  <reference>
+			  <reference value="Observation/Therapeutic-Implication-Clinical-Trial-2"/>
+		  </reference>
+		  <name value="Example - TherapeuticImplication where the patient is not eligible for a clincal trial, based on genetic analysis"/>
+		  <description value="TherapeuticImplication where the patient is  not eligible for a clinical trial."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  	  	  <resource>
+		  <reference>
+			  <reference value="Observation/Genotype-Clinical-Trial-Example-using-haplotypes"/>
+		  </reference>
+		  <name value="Example - Genotype for APOE e1/e1. Dervied from two observed Haplotypes."/>
+		  <description value="Genotype used in TheraputicImplication where a patient is  not eligible for a clinical trial. Derived from two haplotype observations."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  	  	  	  <resource>
+		  <reference>
+			  <reference value="Observation/HaplotypeSet-Clinical-Trial-Example-1of2"/>
+		  </reference>
+		  <name value="Example - Haplotype example for APOE1. Part oen of set of Haplotypes defining a genotype."/>
+		  <description value="Haplotype used in TheraputicImplication where a patient is  not eligible for a clinical trial. Part of a set of Haplotype observations (1 of 2)."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  	  	  	  <resource>
+		  <reference>
+			  <reference value="Observation/HaplotypeSet-Clinical-Trial-Example-2of2"/>
+		  </reference>
+		  <name value="Example - Haplotype example for APOE1. Part two of set of Haplotypes defining a genotype."/>
+		  <description value="Haplotype used in TheraputicImplication where a patient is  not eligible for a clinical trial. Part of a set of Haplotype observations (2 of 2)."/>
+		  <groupingId value="examples"/>
+	  </resource>	  
+	  
+	  
+	  
     
      <resource>
       <reference>

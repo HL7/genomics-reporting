@@ -6,21 +6,9 @@
 	  
   </blockquote>
   <p>
-    This section provides guidance for genomic reporting of patient genetic implications regarding specific conditions (sometimes referred to as phenotypes). This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide. 
+		The Genomic Implication profile is an abstract for the Theraputic and Diagnostic implications. Implications are relevant information which is derieved from the presence of a haplotype, genotype, variant or other observed genetic change.
+	This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  
   </p>
-
-  <a name="Non-conflated semantics"> </a>
-  <h3>Non-conflated semantics</h3>
-	<p>
-		At times, external terminology development organizations develop codes that don't fit neatly into a particular field in an HL7 specification. For implications, we have identified two codes lists that conflate clinical significance and level of evidence, which we recommend not being used. These include:
-
-		<ul>
-			<li>LOINC list LL5356 https://loinc.org/LL5356-2/</li>
-			<li>
-				Oncokb levels https://www.oncokb.org/levels#version=V2
-			</li>
-		</ul>
-	</p>
 
 	<a name="Differentiating AND vs OR"> </a>
 	<h3>Differentiating AND vs OR</h3>
@@ -33,12 +21,22 @@
 
 	</p>
 	<p>
-		see <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information.
-		<p>
-			Implication fields affected by this guidance include:
-		</p>
-		<p>
-			derivedFrom, evidence-level, predicted-phenotype, functional-effect, genomics-report-risk.
-		</p>
+		Implication fields affected by this guidance include:
+	</p>
+	<p>
+		Therapeutic implications:
+	</p>
+	<p>
+		derivedFrom, evidence-level, phenotypic-treatment-context, medication-assessed, therapy-assessed, predicted-therapeutic-implication.
+	</p>
+	<p>
+		Diagnostic implications:
+	</p>
+	<p>
+		derivedFrom, evidence-level, predicted-phenotype, functional-effect, genomics-report-risk.
+	</p>
+	<p>
+		As an example, assume Variant X is pathogenic for Disease Y AND Disease Z in combination. This would be a single diagnostic implication, where predicted-phenotype is a list containing both Disease Y and Disease Z. If on the other hand, Variant X might be pathogenic for Disease Y alone, or Disease Z alone, this would be two diagnostic implications, one containing a predicted-phenotype of Disease Y, and the other containing a predicted-phenotype of Disease Z.
+
 	</p>
 </div>

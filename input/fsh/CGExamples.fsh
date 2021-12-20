@@ -902,7 +902,7 @@ Description: "Polygenic Risk Score example"
 * prediction[0].probabilityDecimal = 0.26 
 * prediction[0].qualitativeRisk = RiskQual#low "Low likelihood"
 * prediction[0].relativeRisk = 1.05
-* prediction[0].whenRange.high = 53 'a'
+* prediction[0].whenRange.high = 53 'a' "years"
 //.value = 53.0 'a'
 //* prediction[0].whenRange.high.unit = "years"
 //* prediction[0].whenRange.high.system = "http://unitsofmeasure.org"
@@ -911,8 +911,117 @@ Description: "Polygenic Risk Score example"
 * prediction[1].probabilityDecimal = 0.7
 * prediction[1].qualitativeRisk = RiskQual#high "High likelihood"
 * prediction[1].relativeRisk = 2.69
-* prediction[1].whenRange.high = 65 'a'
+* prediction[1].whenRange.high = 65 'a' "years"
 //.value = 65.0 'a'
 //* prediction[1].whenRange.high.unit = "years"
 //* prediction[1].whenRange.high.system = "http://unitsofmeasure.org"
 //* prediction[1].whenRange.high.code = a
+
+Instance: Variant-Somatic-Clinical-Trial
+InstanceOf: Variant
+Description: "Example for Somatic Variant and Clinical Trial"
+* id = "Variant-Somatic-Clinical-Trial"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = ObsCat#laboratory
+* method = LNC#LA26398-0 "Sequencing"
+* subject = Reference(CGPatientExample01)
+* specimen = Reference(GenomicSpecimenExample01)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* interpretation = SCT#10828004 "Positive (qualifier value)"
+* component[gene-studied].valueCodeableConcept = HGNCID#HGNC:3689 "FGFR2"
+* component[genomic-hgvs].valueCodeableConcept = HGVS#NC_000010.11:g.121498525T>G "NC_000010.11:g.121498525T>G"
+* component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
+
+Instance: Therapeutic-Implication-Clinical-Trial-Somatic
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication for Clinical Trial"
+* id = "Therapeutic-Implication-Clinical-Trial-Somatic"
+//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodesCS#therapeutic-implication
+* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
+* component[0].valueCodeableConcept.coding = SCT#399223003 "Patient eligible for clinical trial"
+* component[1].code.coding = LNC#81259-4 "Phenotypic treatment context"
+//#HP:0003002
+* component[1].valueCodeableConcept.coding = 	SCT#254837009 "Breast Cancer"
+* component[2].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
+* component[2].valueCodeableConcept.coding = NCTtrial#NCT01234567 "NCT01234567"
+* derivedFrom = Reference(Variant-Somatic-Clinical-Trial)
+* status = #final
+
+
+Instance: HaplotypeSet-Clinical-Trial-Example-1of2
+InstanceOf: Haplotype
+Description: "Example of a Haplotype as part of a Haplotype Set (1 of 2). A complete haplotype set defines a genotype."
+* id = "HaplotypeSet-Clinical-Trial-Example-1of2"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/clinvar#441262 "APOE1"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
+* effectiveDateTime = "2018"
+* specimen = Reference(GenomicSpecimenExample02)
+* subject = Reference(CGPatientExample01)
+//* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
+//* derivedFrom =NM_000041.4(APOE):c.434G>A (p.Gly145Asp) - Variation ID 478904
+* status = #final
+
+Instance: HaplotypeSet-Clinical-Trial-Example-2of2
+InstanceOf: Haplotype
+Description: "Example of a Haplotype as part of a Haplotype Set (2 of 2). A complete haplotype set defines a genotype."
+* id = "HaplotypeSet-Clinical-Trial-Example-2of2"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/clinvar#441262 "APOE1"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
+* effectiveDateTime = "2018"
+* specimen = Reference(GenomicSpecimenExample02)
+* subject = Reference(CGPatientExample01)
+//* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
+//* derivedFrom =NM_000041.4(APOE):c.434G>A (p.Gly145Asp) - Variation ID 478904
+* status = #final
+
+Instance: Genotype-Clinical-Trial-Example-using-haplotypes
+InstanceOf: Genotype
+Description: "Example of a Genotype. A complete haplotype set defines a genotype. In this example the gneotype is dervied from  observations of the underlying haplotypes."
+* id = "Genotype-Clinical-Trial-Example-using-haplotypes"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.text = "APOE e1/e1"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
+* effectiveDateTime = "2018"
+* specimen = Reference(GenomicSpecimenExample02)
+* subject = Reference(CGPatientExample01)
+* derivedFrom[0] = Reference(HaplotypeSet-Clinical-Trial-Example-1of2)
+* derivedFrom[1] = Reference(HaplotypeSet-Clinical-Trial-Example-2of2)
+* status = #final
+
+Instance: Therapeutic-Implication-Clinical-Trial-2
+InstanceOf: TherapeuticImplication
+Description: "Example of a Therapeutic Implication for Carbamazepine"
+* id = "Therapeutic-Implication-Clinical-Trial-2"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code = TbdCodesCS#therapeutic-implication
+* specimen = Reference(GenomicSpecimenExample02)
+* subject = Reference(CGPatientExample01)
+* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
+* component[0].valueCodeableConcept.coding = SCT#444734003 "Does not meet eligibility criteria for clinical trial"
+* component[1].code.coding = TbdCodesCS#associated-therapy "Genomically linked therapy"
+* component[1].valueCodeableConcept.coding = NCTtrial#NCT03131453 "NCT03131453"
+* derivedFrom = Reference(Genotype-Clinical-Trial-Example-using-haplotypes)
+* status = #final
+
+Instance: GenomicSpecimenExample02
+InstanceOf: GenomicSpecimen
+Description: "Example for Genomic Specimen from Buccal Swab"
+* id = "GenomicSpecimenExample02"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
+* subject = Reference(CGPatientExample01)
+//* text.status = #"generated"
+//* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <pre>Buccal smear sample </pre>\n </div>"
+* status = #available "Available"
+* processing.timeDateTime = "2020-10-05"
+* type = SCT#258564008 "Buccal smear sample"
+* identifier.system  = "http://myorgsurl.com"
+* identifier.value = "123"
+* accessionIdentifier.system = "http://mylabsurl.com"
+* accessionIdentifier.value = "456"
+
