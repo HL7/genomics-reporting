@@ -73,6 +73,8 @@ It is NOT intended to support other Observations that are clinically relevant on
 <p>
 For each variant reporting pattern, different components MUST be used to properly define the variant where possible. Other components MAY be used to provide additional information for cross referencing external sources or increasing human readability of the instance.
 </p>
+<p>Additional resources that implementers may want to leverage when reporting variant information include NCBI’s <a href="https://www.ncbi.nlm.nih.gov/clinvar/">ClinVar</a>, a freely accessible public archive of reports of the relationships among human variations and phenotypes, and <a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI’s Variation Services</a> that relies on a common data model described as Sequence Position Deletion Insertion (<a href="https://www.ncbi.nlm.nih.gov/variation/notation/">SPDI</a>).
+</p>
 
 <a name="NomenclatureVariants"></a>
 <h4>Variants Defined by a Nomenclature Statement</h4>
@@ -422,7 +424,7 @@ Suggested minimal representations of common structural variants are shown in the
     </tr>
     <tr>
       <td>[1..1] component: ref-allele (LOINC 69547-8)</td>
-      <td colspan="5">should be populated</td>
+      <td colspan="5">Generally not used or useful due to the length of the change. In some cases, a ref allele may be reported for a deletion.</td>
     </tr>
     <tr>
       <td>[0..1] component: alt-allele (LOINC 69551-0)</td>
@@ -434,7 +436,7 @@ Suggested minimal representations of common structural variants are shown in the
     </tr>
     <tr>
       <td>[0..1] component: outer-start-end (LOINC 81301-4) and [0..1] component: inner-start-end (LOINC 81302-2)</td>
-      <td colspan="5">Outer and/or inner start should be populated.</td>
+      <td colspan="5">Outer and/or inner start should be populated, as well as outer and/or inner end.</td>
     </tr>
   </tbody>
 </table>
