@@ -96,7 +96,7 @@ Description: "Example for genomic Variant given by VCF columns"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
 //* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 //* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[0].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
+* component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
 * component[0].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
 * component[1].code.coding = http://loinc.org#53034-5 "Allelic State"
 * component[1].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
@@ -104,7 +104,7 @@ Description: "Example for genomic Variant given by VCF columns"
 * component[2].valueString = "C"
 * component[3].code.coding = http://loinc.org#69551-0 "Alt allele"
 * component[3].valueString = "A"
-* component[4].code.coding = http://loinc.org#81254-5 "Variant exact start and end"
+* component[4].code.coding = http://loinc.org#81254-5 "Genomic allele start-end"
 * component[4].valueRange.low.value = 96527334
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
