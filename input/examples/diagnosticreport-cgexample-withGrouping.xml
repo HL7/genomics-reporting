@@ -11,13 +11,13 @@ New:
 6. Do we need the "panel" notion for the pharmacogenomics panel bit?
 -->
 <Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <id value="diagnosticreport-cgexample"/>
+  <id value="diagnosticreport-cgexample-withGrouping"/>
   <type value="collection"/>
   <entry>
-    <fullUrl value="http://example.org/fhir/DiagnosticReport/report"/>
+    <fullUrl value="http://example.org/fhir/DiagnosticReport/report-withGrouping"/>
     <resource>
       <DiagnosticReport>
-        <id value="report"/>
+        <id value="report-withGrouping"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report"/>
         </meta>
@@ -78,7 +78,7 @@ New:
           </extension>
         </extension>-->
         <basedOn>
-          <reference value="DiagnosticRequest/request"/>
+          <reference value="DiagnosticRequest/request-1a"/>
         </basedOn>
         <status value="final"/>
         <category>
@@ -95,15 +95,15 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <result>
-          <reference value="Observation/overall-interp"/>
+          <reference value="Observation/overall-interp-1a"/>
         </result>
         <!--        <result>
           <reference value="Observation/negatives"/>
@@ -112,38 +112,38 @@ New:
           <reference value="Observation/iscn"/>
         </result>-->
         <result>
-          <reference value="Observation/discrete-variant"/>
+          <reference value="Observation/discrete-variant-1a"/>
         </result>
         <result>
-          <reference value="Observation/dis-path"/>
+          <reference value="Observation/dis-path-1a"/>
         </result>
         <result>
-          <reference value="Observation/complex-variant"/>
+          <reference value="Observation/complex-variant-1a"/>
         </result>
         <result>
-          <reference value="Observation/complex-dis-path"/>
+          <reference value="Observation/complex-dis-path-1a"/>
         </result>
-		<!--
+
         <result>
-          <reference value="Observation/pharmPanel"/>
+          <reference value="Observation/pharmPanel-1a"/>
         </result>
-		the following are from the panel, if result.display is used/added it can server the same visual 
+<!--		the following are from the panel, if result.display is used/added it can server the same visual 
 		organization as grouper. But one could not send the panel to a specific place. It is one less observation 
 		to track. The genotype, haplotype, metabolic and efficacy implications are connected with referneces inside
 		the observations.
-		
-		-->
+	-->
+
 		  <result>
-			  <reference value="Observation/haplotype"/>
+			  <reference value="Observation/haplotype-1a"/>
 		  </result>
 		  <result>
-			  <reference value="Observation/genotype"/>
+			  <reference value="Observation/genotype-1a"/>
 		  </result>
 		  <result>
-			  <reference value="Observation/metab"/>
+			  <reference value="Observation/metab-1a"/>
 		  </result>
 		  <result>
-			  <reference value="Observation/efficacy"/>
+			  <reference value="Observation/efficacy-1a"/>
 		  </result>  
 		  
         <presentedForm>
@@ -156,10 +156,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Patient/patient"/>
+    <fullUrl value="http://example.org/fhir/Patient/patient-1a"/>
     <resource>
       <Patient>
-        <id value="patient"/>
+        <id value="patient-1a"/>
         <text>
           <status value="additional"/>
           <div xmlns="http://www.w3.org/1999/xhtml">This would contain patient identifiers, demographics, etc.</div>
@@ -168,11 +168,11 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Specimen/specimen"/>
+    <fullUrl value="http://example.org/fhir/Specimen/specimen-1a"/>
     <resource>
       <Specimen>
         <!-- This would contain details about the type of specimen, processing, etc. -->
-        <id value="specimen"/>
+        <id value="specimen-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"/>
         </meta>
@@ -181,16 +181,16 @@ New:
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
       </Specimen>
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Organization/lab"/>
+    <fullUrl value="http://example.org/fhir/Organization/lab-1a"/>
     <resource>
       <Organization>
-        <id value="lab"/>
+        <id value="lab-1a"/>
         <text>
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
@@ -200,10 +200,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/DiagnosticRequest/request"/>
+    <fullUrl value="http://example.org/fhir/DiagnosticRequest/request-1a"/>
     <resource>
       <ServiceRequest>
-        <id value="request"/>
+        <id value="request-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"/>
         </meta>
@@ -221,7 +221,7 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <reasonCode>
           <!-- A.1 Reason for Study -->
@@ -231,10 +231,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/overall-interp"/>
+    <fullUrl value="http://example.org/fhir/Observation/overall-interp-1a"/>
     <resource>
       <Observation>
-        <id value="overall-interp"/>
+        <id value="overall-interp-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/overall-interpretation"/>
         </meta>
@@ -256,12 +256,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <valueCodeableConcept>
           <!-- A.8 Overall Interpretation -->
@@ -277,7 +277,7 @@ New:
           </coding>
         </valueCodeableConcept>
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
       </Observation>
     </resource>
@@ -504,12 +504,12 @@ New:
   </entry>
 -->
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/discrete-variant"/>
+    <fullUrl value="http://example.org/fhir/Observation/discrete-variant-1a"/>
     <resource>
       <!-- This observation represents the sequence that was found (or not) -->
       <!-- Panel B -->
       <Observation>
-        <id value="discrete-variant"/>
+        <id value="discrete-variant-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
@@ -532,12 +532,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <valueCodeableConcept>
           <coding>
@@ -548,7 +548,7 @@ New:
           </coding>
         </valueCodeableConcept>
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
         <component>
           <code>
@@ -734,8 +734,8 @@ New:
         <component>
           <code>
             <coding>
-              <system value="http://loinc.org"/>
-              <code value="81254-5"/>
+              <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
+              <code value="exact-start-end"/>
             </coding>
           </code>
           <valueRange>
@@ -934,10 +934,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/dis-path"/>
+    <fullUrl value="http://example.org/fhir/Observation/dis-path-1a"/>
     <resource>
       <Observation>
-        <id value="dis-path"/>
+        <id value="dis-path-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
         </meta>
@@ -959,15 +959,15 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <derivedFrom>
-          <reference value="Observation/discrete-variant"/>
+          <reference value="Observation/discrete-variant-1a"/>
         </derivedFrom>
         <component>
           <code>
@@ -1005,10 +1005,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/complex-variant"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-variant-1a"/>
     <resource>
       <Observation>
-        <id value="complex-variant"/>
+        <id value="complex-variant-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
@@ -1030,12 +1030,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <valueCodeableConcept>
           <coding>
@@ -1045,13 +1045,13 @@ New:
           </coding>
         </valueCodeableConcept>
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
         <hasMember>
-          <reference value="Observation/complex-component-D"/>
+          <reference value="Observation/complex-component-D-1a"/>
         </hasMember>
         <hasMember>
-          <reference value="Observation/complex-component-E"/>
+          <reference value="Observation/complex-component-E-1a"/>
         </hasMember>
         <!-- obs-complex-variant
         <component>
@@ -1094,10 +1094,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/complex-dis-path"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-dis-path-1a"/>
     <resource>
       <Observation>
-        <id value="complex-dis-path"/>
+        <id value="complex-dis-path-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"/>
         </meta>
@@ -1119,15 +1119,15 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <derivedFrom>
-          <reference value="Observation/complex-variant"/>
+          <reference value="Observation/complex-variant-1a"/>
         </derivedFrom>
         <component>
           <code>
@@ -1165,11 +1165,11 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/complex-component-D"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-component-D-1a"/>
     <resource>
       <!-- Panel D -->
       <Observation>
-        <id value="complex-component-D"/>
+        <id value="complex-component-D-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
@@ -1192,12 +1192,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <valueCodeableConcept>
           <coding>
@@ -1208,7 +1208,7 @@ New:
           </coding>
         </valueCodeableConcept>
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
         <component>
           <code>
@@ -1321,11 +1321,11 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/complex-component-E"/>
+    <fullUrl value="http://example.org/fhir/Observation/complex-component-E-1a"/>
     <resource>
       <!-- Panel E -->
       <Observation>
-        <id value="complex-component-E"/>
+        <id value="complex-component-E-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/>
         </meta>
@@ -1348,12 +1348,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <valueCodeableConcept>
           <coding>
@@ -1364,7 +1364,7 @@ New:
           </coding>
         </valueCodeableConcept>
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
         <component>
           <code>
@@ -1424,23 +1424,20 @@ New:
       </Observation>
     </resource>
   </entry>
-  <!--
+  
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/pharmPanel"/>
+    <fullUrl value="http://example.org/fhir/Observation/pharmPanel-1a"/>
     <resource>
       <Observation>
-        comment D Pharmacogenomics results grouper 
-        <id value="pharmPanel"/>
-        <meta>
-          <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/grouper"/>
-        </meta>
+		  <!--comment D Pharmacogenomics results Panel -->
+        <id value="pharmPanel-1a"/>
         <text>
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">TODO</div>
         </text>
         <extension url="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommended-action">
           <valueReference>
-            <reference value="Task/usage"/>
+            <reference value="Task/usage-1a"/>
           </valueReference>
         </extension>
         <status value="final"/>
@@ -1452,39 +1449,40 @@ New:
         </category>
         <code>
           <coding>
-            <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
-            <code value="grouper"/>
+            <system value="http://ncimeta.nci.nih.gov"/>
+            <code value="C43359"/>
+            <display value="Panel"/>
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <hasMember>
-          <reference value="Observation/haplotype"/>
+          <reference value="Observation/haplotype-1a"/>
         </hasMember>
         <hasMember>
-          <reference value="Observation/genotype"/>
+          <reference value="Observation/genotype-1a"/>
         </hasMember>
         <hasMember>
-          <reference value="Observation/metab"/>
+          <reference value="Observation/metab-1a"/>
         </hasMember>
         <hasMember>
-          <reference value="Observation/efficacy"/>
+          <reference value="Observation/efficacy-1a"/>
         </hasMember>
       </Observation>
     </resource>
   </entry>
-  -->
+  
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/haplotype"/>
+    <fullUrl value="http://example.org/fhir/Observation/haplotype-1a"/>
     <resource>
       <Observation>
-        <id value="haplotype"/>
+        <id value="haplotype-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype"/>
         </meta>
@@ -1506,12 +1504,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <valueCodeableConcept>
           <coding>
@@ -1521,20 +1519,20 @@ New:
           </coding>
         </valueCodeableConcept>
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
         <derivedFrom>
           <!-- D1.3 -->
-          <reference value="Observation/discrete-variant"/>
+          <reference value="Observation/discrete-variant-1a"/>
         </derivedFrom>
       </Observation>
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/genotype"/>
+    <fullUrl value="http://example.org/fhir/Observation/genotype-1a"/>
     <resource>
       <Observation>
-        <id value="genotype"/>
+        <id value="genotype-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"/>
         </meta>
@@ -1556,12 +1554,12 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <!-- F.2.a, F.2.b Genotype display name -->
         <!-- TODO: Figure out how to separate these -->
@@ -1576,11 +1574,11 @@ New:
         </valueCodeableConcept>
 
         <specimen>
-          <reference value="Specimen/specimen"/>
+          <reference value="Specimen/specimen-1a"/>
         </specimen>
         <derivedFrom>
           <!-- D1.3 -->
-          <reference value="Observation/haplotype"/>
+          <reference value="Observation/haplotype-1a"/>
         </derivedFrom>
         <component>
           <!-- This isn't "what did we observe?", but rather a qualification on "what did we look at?" -->
@@ -1621,10 +1619,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/metab"/>
+    <fullUrl value="http://example.org/fhir/Observation/metab-1a"/>
     <resource>
       <Observation>
-        <id value="metab"/>
+        <id value="metab-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
@@ -1646,15 +1644,15 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <derivedFrom>
-          <reference value="Observation/genotype"/>
+          <reference value="Observation/genotype-1a"/>
         </derivedFrom>
         <component>
           <code>
@@ -1693,10 +1691,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/efficacy"/>
+    <fullUrl value="http://example.org/fhir/Observation/efficacy-1a"/>
     <resource>
       <Observation>
-        <id value="efficacy"/>
+        <id value="efficacy-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
@@ -1718,15 +1716,15 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <derivedFrom>
-          <reference value="Observation/genotype"/>
+          <reference value="Observation/genotype-1a"/>
         </derivedFrom>
         <component>
           <code>
@@ -1764,10 +1762,10 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Observation/highrisk"/>
+    <fullUrl value="http://example.org/fhir/Observation/highrisk-1a"/>
     <resource>
       <Observation>
-        <id value="highrisk"/>
+        <id value="highrisk-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"/>
         </meta>
@@ -1789,15 +1787,15 @@ New:
           </coding>
         </code>
         <subject>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </subject>
         <effectiveDateTime value="2016"/>
         <issued value="2016-09-06T00:00:00-05:00"/>
         <performer>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </performer>
         <derivedFrom>
-          <reference value="Observation/genotype"/>
+          <reference value="Observation/genotype-1a"/>
         </derivedFrom>
         <component>
           <code>
@@ -1835,11 +1833,11 @@ New:
     </resource>
   </entry>
   <entry>
-    <fullUrl value="http://example.org/fhir/Task/usage"/>
+    <fullUrl value="http://example.org/fhir/Task/usage-1a"/>
     <resource>
       <Task>
         <!-- G1 -->
-        <id value="usage"/>
+        <id value="usage-1a"/>
         <meta>
           <profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation"/>
         </meta>
@@ -1849,7 +1847,7 @@ New:
         </text>
         <contained>
           <MedicationStatement>
-            <id value="med"/>
+            <id value="med-1a"/>
             <status value="unknown"/>
             <medicationCodeableConcept>
               <coding>
@@ -1860,7 +1858,7 @@ New:
               </coding>
             </medicationCodeableConcept>
             <subject>
-              <reference value="Patient/patient"/>
+              <reference value="Patient/patient-1a"/>
             </subject>
           </MedicationStatement>
         </contained>
@@ -1877,16 +1875,16 @@ New:
           <text value="May need higher dosage than usual."/>
         </code>
         <focus>
-          <reference value="#med"/>
+          <reference value="#med-1a"/>
         </focus>
         <for>
-          <reference value="Patient/patient"/>
+          <reference value="Patient/patient-1a"/>
         </for>
         <requester>
-          <reference value="Organization/lab"/>
+          <reference value="Organization/lab-1a"/>
         </requester>
         <reasonReference>
-          <reference value="Observation/metab"/>
+          <reference value="Observation/metab-1a"/>
         </reasonReference>
       </Task>
     </resource>

@@ -91,6 +91,7 @@ Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
 * extension contains GenomicsArtifact named genomics-artifact 0..* and
+    GenomicsFile named genomics-file 0..* and
     RecommendedAction named recommended-action 0..* and
     SupportingInformation named supporting-information 0..* and
     GenomicsReportRisk named report-risk 0..*
@@ -114,8 +115,7 @@ Description:    "Genomics profile of DiagnosticReport."
 * result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
-* result contains gen-grouper 0..* and
-    overall 0..1 and
+* result contains overall 0..1 and
     diagnostic-implication 0..* and
     therapeutic-implication 0..* and
     variant 0..* and
@@ -123,8 +123,6 @@ Description:    "Genomics profile of DiagnosticReport."
     region-studied 0..* and 
     genotype 0..* and 
     haplotype 0..*
-* result[gen-grouper] only Reference(Grouper)
-* result[gen-grouper] ^short = "Grouper"
 * result[overall] only Reference(OverallInterpretation)
 * result[overall] ^short = "Assessment of overall results"
 * result[diagnostic-implication] only Reference(DiagnosticImplication)
@@ -144,43 +142,13 @@ Description:    "Genomics profile of DiagnosticReport."
 * imagingStudy 0..0
 * media 0..1
 
-Profile:        Grouper
-Parent:         GenomicsBase
-Id:             grouper
-Title:          "Grouper"
-Description:    "Organizes information within a genomic report."
+Profile:        GenomicsDocumentReference
+Parent:         DocumentReference
+Id:             genomics-document-reference
+Title:          "Genomics DocumentReference"
+Description:    "A profile of DocumentReference used to represent a genomics file."
 
-* extension contains RecommendedAction named RecommendedAction 0..*
-* code = TbdCodesCS#grouper
-* hasMember ^slicing.discriminator.type = #profile
-* hasMember ^slicing.discriminator.path = "resolve()"
-* hasMember ^slicing.rules = #open
-* hasMember ^slicing.description = "Slice based on the reference profile"
-* hasMember contains grouper-ref 0..* and 
-    overall 0..1 and
-    diagnostic-implication 0..* and
-    therapeutic-implication 0..* and
-    haplotype 0..* and
-    genotype 0..* and
-    variant 0..* and
-    region-studied 0..* and
-    sequence-phase-relation 0..* 
-* hasMember[grouper-ref] only Reference(Grouper)
-* hasMember[grouper-ref] ^short = "Other Grouper"
-* hasMember[overall] only Reference(OverallInterpretation)
-* hasMember[overall] ^short = "Assessment of overall results"
-* hasMember[diagnostic-implication] only Reference(DiagnosticImplication)
-* hasMember[diagnostic-implication] ^short = "Inherited Disease Pathology"
-* hasMember[therapeutic-implication] only Reference(TherapeuticImplication)
-* hasMember[therapeutic-implication] ^short = "Therapeutic Implication"
-* hasMember[haplotype] only Reference(Haplotype)
-* hasMember[haplotype] ^short = "Haplotype"
-* hasMember[genotype] only Reference(Genotype)
-* hasMember[genotype] ^short = "Genotype"
-* hasMember[variant] only Reference(Variant)
-* hasMember[variant] ^short = "Variant"
-* hasMember[region-studied] only Reference(RegionStudied)
-* hasMember[region-studied] ^short = "Region Studied"
-* hasMember[sequence-phase-relation] only Reference(SequencePhaseRelationship)
-* hasMember[sequence-phase-relation] ^short = "Sequence Phase Relationship"
-* ^abstract = false
+* subject only Reference(Patient or Group)
+* context.related only Reference(GenomicsReport)
+* description ^short = "Human-readable description to provide guidance on how the file was generated"
+
