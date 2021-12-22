@@ -96,16 +96,16 @@ Description: "Example for genomic Variant given by VCF columns"
 * valueCodeableConcept = LNC#LA9633-4 "Present"
 //* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 //* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[1].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
-* component[1].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
-* component[2].code.coding = http://loinc.org#53034-5 "Allelic State"
-* component[2].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
-* component[3].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
-* component[3].valueString = "C"
-* component[4].code.coding = http://loinc.org#69551-0 "Alt allele"
-* component[4].valueString = "A"
-* component[5].code.coding = http://loinc.org#81254-5 "Variant exact start and end"
-* component[5].valueRange.low.value = 96527334
+* component[0].code.coding = http://loinc.org#48013-7 "Genomic Reference Sequence"
+* component[0].valueCodeableConcept.coding = http://www.ncbi.nlm.nih.gov/nuccore#NC_000010.10
+* component[1].code.coding = http://loinc.org#53034-5 "Allelic State"
+* component[1].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
+* component[2].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
+* component[2].valueString = "C"
+* component[3].code.coding = http://loinc.org#69551-0 "Alt allele"
+* component[3].valueString = "A"
+* component[4].code.coding = http://loinc.org#81254-5 "Variant exact start and end"
+* component[4].valueRange.low.value = 96527334
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
 
@@ -833,6 +833,8 @@ Description: "Example for germline CNV"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000022.10
 * component[copy-number].valueQuantity.value = 3
+* component[copy-number].valueQuantity.code = #1
+* component[copy-number].valueQuantity.system = UCUM
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 42523949
 * component[inner-start-end].valueRange.high.value = 42533891
@@ -853,6 +855,8 @@ Description: "Example for somatic CNV"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000022.10
 * component[copy-number].valueQuantity.value = 3
+* component[copy-number].valueQuantity.code = #1
+* component[copy-number].valueQuantity.system = UCUM
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 42523949
 * component[inner-start-end].valueRange.high.value = 42533891
@@ -893,6 +897,8 @@ Description: "Example for somatic DEL"
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6684-0 "Somatic"
 * component[genomic-ref-seq].valueCodeableConcept = NUC#NC_000001.10
 * component[copy-number].valueQuantity.value = 1
+* component[copy-number].valueQuantity.code = #1
+* component[copy-number].valueQuantity.system = UCUM
 * component[coordinate-system].valueCodeableConcept = LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 16360078
 * component[inner-start-end].valueRange.high.value = 16383337
