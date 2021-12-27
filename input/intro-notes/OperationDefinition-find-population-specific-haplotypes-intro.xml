@@ -4,5 +4,31 @@
 	<p>Retrieve count or list of patients having specified genotypes/haplotypes.</p>
 
 	<p>Population queries are designed to return a <b>count</b> of patients (from a specified cohort) that match each item sought, with or without a <b>list</b> of patients matching the item(s) sought.</p>
-	<p>Determining the cohort to be searched (also known as the 'denominator') in a given situation can be complex - criteria might be based on demographic data (e.g. age >= 65), clinical data (e.g. lung cancer), etc. Rather than enumerating possible filters that might be used to define a denominator population, these operations allow for the inclusion of a subject list as an input parameter. If a list of subjects is not supplied, then the denominator is the entire population managed by the server. Servers unable to provide patient lists can indicate this using a <a href="https://www.hl7.org/fhir/capabilitystatement.html">FHIR Capability Statement</a>.</p>
+	<p>Determining the cohort to be searched (also known as the 'denominator') in a given situation can be complex - criteria might be based on demographic data (e.g. age >= 65), clinical data (e.g. lung cancer), etc. Rather than enumerating possible filters that might be used to define a denominator population, these operations allow for the inclusion of a subject list as an input parameter. If a list of subjects is not supplied, then the denominator is the entire population managed by the server. </p>
+	
+		<p>As described in <a href="operations.html#and-or-logic-in-queries">general guidance</a>, FHIR Genomics Operations do not support 'AND' logic unless stated otherwise. This particular operation supports a logical 'AND' of the 'haplotypes' parameter, specified by repeating the parameter. 'AND' logic is useful when searching for other subjects sharing a specific constellation of haplotypes. However, 'AND' logic, particularly when coupled with 'OR' logic, adds complexity to search and response. For instance, a potential search might be for subjects having:</p>
+
+	<pre>...&amp;haplotypes=a,b,c&amp;haplotypes=d,e,f&amp;haplotypes=i,j,k</pre>
+	
+	<p>i.e. matching patients will have haplotype 'a' or 'b' or 'c', and will have haplotype 'd' or 'e' or 'f', and will have haplotype 'i' or 'j' or 'k'. Where 'AND' logic is used, the response will include only one numerator/denominator, applied to the entire expression. </p>
+	
+<pre>
+"parameter": [
+  {
+    "name": "haplotypes",
+    "part": [
+      {
+        "name": "haplotypeItem",
+        "valueString": "a|b|c AND d|e|f AND i|j|k"
+      },
+      {
+        "name": "numerator",
+        "valueQuantity": {"value": 17}
+      }
+  ]
+</pre>
+
+	
+	
 </div>
+

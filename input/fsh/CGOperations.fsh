@@ -151,7 +151,7 @@ Description: ""
         part (1..1)
           name: presence
           valueBoolean: boolean
-        part (0..1)
+        part (0..*)
           name: variant
           resource: observation (variant profile)
 "

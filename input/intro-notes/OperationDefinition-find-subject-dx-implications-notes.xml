@@ -30,8 +30,14 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-	<p>Diagnostic implications for familial hypercholesterolemia?</p><pre>https://.../find-subject-dx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|398036000</pre>
-	<p>Diagnostic implications for variant X in conjunction with variant Y?</p><pre>https://.../find-subject-dx-implications?subject=HG00403&amp;variants=X&amp;variants=Y</pre>
+	<p>Diagnostic implications for familial hypercholesterolemia? (This query seeks to determine if the subject has any diagnostic implications of familial hypercholesterolemia that are derived from any variant present in the subject).</p>
+	
+	<pre>https://.../find-subject-dx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|398036000</pre>
+	
+	
+	<p>Diagnostic implications for variant X or variant Y? (This query seeks to determine if the subject has any diagnostic implications whatsoever that are derived from variant X or variant Y).</p>
+	
+	<pre>https://.../find-subject-dx-implications?subject=HG00403&amp;variants=X,Y</pre>
 	
 <p>Patient HG00403 has a germline variant in the RYR1 gene (NC_000019.10:38499669:C:T). What are the diagnostic implications of this variant? (Results indicate that the variant is pathogenic for Malignant Hyperthermia).</p>
 <ul>
