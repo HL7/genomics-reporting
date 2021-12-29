@@ -30,11 +30,20 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-	<p>Treatment implications for CYP2C19 *1/*2?</p><pre>https://.../find-subject-tx-implications?subject=HG00403&amp;haplotypes=CYP2C19 *1/*2</pre>
-	<p>Treatment implications related to clopidogrel?</p><pre>https://.../find-subject-tx-implications?subject=HG00403&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
-	<p>Treatment implications for CYP2C19 *1/*2 specifically for clopidogrel?</p><pre>https://.../find-subject-tx-implications?subject=HG00403&amp;haplotypes=CYP2C19 *1/*2&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
-	<p>Treatment implications for breast cancer based on analysis of somatic variants found in recent specimen?</p><pre>https://.../find-subject-tx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|372137005&amp;genomicSourceClass=somatic&amp;specimenIdentfiers=1</pre>
-	<p>Treatment implications for clinical trial NCT01234567?</p><pre>https://.../find-subject-tx-implications?subject=HG00403&amp;treatments=https://clinicaltrials.gov/|NCT01234567</pre>
+	<p>Treatment implications for CYP2C19 *1/*2? (This query seeks to determine if the subject has any therapeutic implications (such as drug-gene interactions) based on the presence of the CYP2C19 genotype).</p>
+	<pre>https://.../find-subject-tx-implications?subject=HG00403&amp;haplotypes=CYP2C19 *1/*2</pre>
+	
+	<p>Treatment implications related to clopidogrel? (This query seeks to determine if the subject has any genetic findings that have implications for the use of clopidogrel).</p>
+	<pre>https://.../find-subject-tx-implications?subject=HG00403&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
+	
+	<p>Treatment implications for CYP2C19 *1/*2 specifically for clopidogrel? (This query seeks to determine if the subject has any therapeutic implications (such as drug-gene interactions) based on the presence of the CYP2C19 genotype, specifically for the use of clopidogrel).</p>
+	<pre>https://.../find-subject-tx-implications?subject=HG00403&amp;haplotypes=CYP2C19 *1/*2&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
+	
+	<p>Treatment implications for breast cancer based on analysis of somatic variants found in recent specimen? (This query seeks to determine if the subject has any breast cancer-specific therapeutic implications (e.g. medications, clinical trials) based on identified somatic variants).</p>
+	<pre>https://.../find-subject-tx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|372137005&amp;genomicSourceClass=somatic&amp;specimenIdentfiers=1</pre>
+	
+	<p>Treatment implications for clinical trial NCT01234567? (This query seeks to determine if the subject has any genetic findings that have implications for inclusion in clinical trial NCT01234567).</p>
+	<pre>https://.../find-subject-tx-implications?subject=HG00403&amp;treatments=https://clinicaltrials.gov/|NCT01234567</pre>
 	
 <p>Patient HG00403 has metastatic breast cancer. Targeted sequencing of a tumor biopsy specimen shows ERBB2 (HER2) variant NM_004448.4:c.2264_2278del. What are the treatment implications for this patient? (Results indicate responsiveness to lapatinib).</p>
 <ul>

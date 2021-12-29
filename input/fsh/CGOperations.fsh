@@ -596,7 +596,6 @@ Description: ""
 * type = true
 * instance = false
 * code = #match
-
 * parameter[0].name = #subject
 * parameter[0].use = #in
 * parameter[0].min = 1
@@ -611,52 +610,45 @@ Description: ""
 * parameter[1].documentation = "List of variants from which implications are derived. Must be in HGVS or SPDI format."
 * parameter[1].type = #string
 * parameter[1].searchType = #string
-* parameter[2].name = #haplotypes
+* parameter[2].name = #conditions
 * parameter[2].use = #in
 * parameter[2].min = 0
 * parameter[2].max = "*"
-* parameter[2].documentation = "List of haplotypes and/or genotypes from which implications are derived. Must be in token or codesystem|code format."
+* parameter[2].documentation = "List of conditions for which implications are sought. Must be in token or codesystem|code format."
 * parameter[2].type = #string
 * parameter[2].searchType = #token
-* parameter[3].name = #conditions
+* parameter[3].name = #testIdentifiers
 * parameter[3].use = #in
 * parameter[3].min = 0
 * parameter[3].max = "*"
-* parameter[3].documentation = "List of conditions for which implications are sought. Must be in token or codesystem|code format."
+* parameter[3].documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
 * parameter[3].type = #string
 * parameter[3].searchType = #token
-* parameter[4].name = #testIdentifiers
+* parameter[4].name = #testDateRange
 * parameter[4].use = #in
 * parameter[4].min = 0
-* parameter[4].max = "*"
-* parameter[4].documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
-* parameter[4].type = #string
-* parameter[4].searchType = #token
-* parameter[5].name = #testDateRange
+* parameter[4].max = "1"
+* parameter[4].documentation = "Supply a date range. Only results generated during this range will be returned."
+* parameter[4].type = #Period
+* parameter[5].name = #specimenIdentifiers
 * parameter[5].use = #in
 * parameter[5].min = 0
-* parameter[5].max = "1"
-* parameter[5].documentation = "Supply a date range. Only results generated during this range will be returned."
-* parameter[5].type = #Period
-* parameter[6].name = #specimenIdentifiers
+* parameter[5].max = "*"
+* parameter[5].documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
+* parameter[5].type = #string
+* parameter[5].searchType = #token
+* parameter[6].name = #genomicSourceClass
 * parameter[6].use = #in
 * parameter[6].min = 0
-* parameter[6].max = "*"
-* parameter[6].documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
+* parameter[6].max = "1"
+* parameter[6].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
 * parameter[6].type = #string
 * parameter[6].searchType = #token
-* parameter[7].name = #genomicSourceClass
-* parameter[7].use = #in
-* parameter[7].min = 0
+* parameter[7].name = #response
+* parameter[7].use = #out
+* parameter[7].min = 1
 * parameter[7].max = "1"
-* parameter[7].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
-* parameter[7].type = #string
-* parameter[7].searchType = #token
-* parameter[8].name = #response
-* parameter[8].use = #out
-* parameter[8].min = 1
-* parameter[8].max = "1"
-* parameter[8].documentation = "Operation returns a FHIR Parameters resource, containing each diagnostic implication identified, along with those variants/haplotypes/genotypes from which the implication is derived.
+* parameter[7].documentation = "Operation returns a FHIR Parameters resource, containing each diagnostic implication identified, along with those variants from which the implication is derived.
 
     parameters
       parameter (0..*)
@@ -664,18 +656,12 @@ Description: ""
         part (1..1)
           name: implication
           resource: observation (diagnosticImplication profile)
-        part (0..*)
+        part (1..*)
           name: variant
           resource: observation variant profile)
-        part (0..*)
-          name: haplotype
-          resource: observation haplotype profile)
-        part (0..*)
-          name: genotype
-          resource: observation genotype profile)
 "
-* parameter[8].type = #canonical
-* parameter[8].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectDxImplicationsParameters"
+* parameter[7].type = #canonical
+* parameter[7].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectDxImplicationsParameters"
 
 Instance: find-population-specific-variants
 InstanceOf: OperationDefinition
