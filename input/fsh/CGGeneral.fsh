@@ -95,9 +95,6 @@ Description:    "Genomics profile of DiagnosticReport."
     RecommendedAction named recommended-action 0..* and
     SupportingInformation named supporting-information 0..* and
     GenomicsReportRisk named report-risk 0..*
-* extension[RecommendedAction].value[x] only Reference(Task)
-//* extension[SupportingInformation].value[x] only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
-* extension[GenomicsReportRisk].value[x] only Reference(RiskAssessment)
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)

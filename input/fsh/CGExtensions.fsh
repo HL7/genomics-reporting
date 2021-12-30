@@ -17,7 +17,7 @@ Description: "References a proposed action that is recommended based on the resu
 * ^context[0].expression = "DiagnosticReport"
 * ^context[1].type = #element
 * ^context[1].expression = "Observation"
-* value[x] only Reference(Task or ServiceRequest or MedicationRequest or RequestGroup or CarePlan or DeviceRequest or NutritionOrder or SupplyRequest)
+* value[x] only Reference(MedicationRecommendation or FollowupRecommendation)
 
 Extension:   SupportingInformation
 Id:          supporting-information
@@ -27,7 +27,7 @@ Description: "Additional information relevant to interpreting/understanding the 
 * ^context[0].expression = "DiagnosticReport"
 * ^context[1].type = #element
 * ^context[1].expression = "Observation"
-* value[x] only Reference(Resource)  // Reference to any resource.
+* value[x] only Reference(Observation or RiskAssessment or FamilyMemberHistory or DocumentReference)
 
 Extension:   GenomicsReportRisk
 Id:          genomics-report-risk
