@@ -119,4 +119,6 @@ ValueSet:       EvidenceLevelExampleVS
 Id:             evidence-level-example-vs
 Title:          "Evidence Level Examples"
 Description:    "Example sources of values for Evidence Level"
-* codes from system EvidenceLevelExampleCS
+//* codes from system EvidenceLevelExampleCS
+* codes from system ClinVarEvidenceLevelCustomCS
+* codes from system PharmGKBEvidenceLevelCustomCS
