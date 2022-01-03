@@ -35,3 +35,5 @@ Alias:  NUC = http://www.ncbi.nlm.nih.gov/nuccore
 Alias:  MetaT = http://ncimeta.nci.nih.gov
 Alias:  RiskQual = 	http://terminology.hl7.org/CodeSystem/risk-probability
 Alias:	NCTtrial = https://clinicaltrials.gov/
+Alias: GENO = https://www.ebi.ac.uk/ols/ontologies/geno
+Alias: HP = https://www.ebi.ac.uk/ols/ontologies/hp
