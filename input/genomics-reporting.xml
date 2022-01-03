@@ -295,6 +295,16 @@
       <exampleBoolean value="false"/>
       <groupingId value="extensions"/>
     </resource>
+	<resource>
+	    <reference>
+		    <reference value="StructureDefinition/therapy-assessed-link"/>
+	    </reference>
+	    <name value="Therapy Assessed Link"/>
+	    <description
+	    value="Used to reference a specific therapy (e.g. a FHIR ResearchStudy, a FHIR CarePlan)"/>
+	    <exampleBoolean value="false"/>
+	    <groupingId value="extensions"/>
+	</resource>
 
     <!-- Examples -->
     <resource>
@@ -314,8 +324,68 @@
       <description value="Test instance of TherapeuticImplication"/>
       <groupingId value="examples"/>
     </resource>
-    
-     <resource>
+
+	  <resource>
+		  <reference>
+			  <reference value="Observation/Therapeutic-Implication-Clinical-Trial-Somatic"/>
+		  </reference>
+		  <name value="Example - TherapeuticImplication with an eligible clincal trial"/>
+		  <description value="TherapeuticImplication where the patient is eligible for a clinical trial, with genetic data from a somatic sample."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  
+	  	  <resource>
+		  <reference>
+			  <reference value="Observation/Therapeutic-Implication-Clinical-Trial-2"/>
+		  </reference>
+		  <name value="Example - TherapeuticImplication where the patient is not eligible for a clincal trial, based on genetic analysis"/>
+		  <description value="TherapeuticImplication where the patient is  not eligible for a clinical trial."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  	  	  <resource>
+		  <reference>
+			  <reference value="Observation/Genotype-Clinical-Trial-Example-using-haplotypes"/>
+		  </reference>
+		  <name value="Example - Genotype for APOE e1/e1. Dervied from two observed Haplotypes."/>
+		  <description value="Genotype used in TheraputicImplication where a patient is  not eligible for a clinical trial. Derived from two haplotype observations."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  	  	  	  <resource>
+		  <reference>
+			  <reference value="Observation/HaplotypeSet-Clinical-Trial-Example-1of2"/>
+		  </reference>
+		  <name value="Example - Haplotype example for APOE1. Part one of set of Haplotypes defining a genotype."/>
+		  <description value="Haplotype used in TheraputicImplication where a patient is  not eligible for a clinical trial. Part of a set of Haplotype observations (1 of 2)."/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  	  	  	  <resource>
+		  <reference>
+			  <reference value="Observation/HaplotypeSet-Clinical-Trial-Example-2of2"/>
+		  </reference>
+		  <name value="Example - Haplotype example for APOE1. Part two of set of Haplotypes defining a genotype."/>
+		  <description value="Haplotype used in TheraputicImplication where a patient is  not eligible for a clinical trial. Part of a set of Haplotype observations (2 of 2)."/>
+		  <groupingId value="examples"/>
+	  </resource>
+
+	  
+	  <resource>
+		  <reference>
+			  <reference value="Specimen/GenomicSpecimenExample02"/>
+		  </reference>
+		  <name value="Example - Genetic specimen sample buccal swab."/>
+		  <description value="Genetic specimen sample buccal swab."/>
+		  <groupingId value="examples"/>
+	  </resource>
+<resource>
+	  <reference>
+		  <reference value="Observation/Variant-Somatic-Clinical-Trial"/>
+	  </reference>
+	  <name value="Example - Variant example for Somatic Variant and Clinical Trial"/>
+	  <description value="Variant example used in Somatic Variant and Clinical Trial"/>
+	  <groupingId value="examples"/>
+  </resource>
+
+	  <resource>
       <reference>
         <reference value="Observation/GenotypeExample1"/>
       </reference>
@@ -360,8 +430,26 @@
       <description value="Test instance of Overall Interpretation"/>
       <groupingId value="examples"/>
     </resource>
-    
-    <resource>
+
+	  <resource>
+		  <reference>
+			  <reference value="Observation/PolyGenicDiagnosticImpExample"/>
+		  </reference>
+		  <name value="Example - Polygenic Risk Score"/>
+		  <description value="Polygeneic Risk Score example with Diagnostic Implication"/>
+		  <groupingId value="examples"/>
+	  </resource>
+	  <resource>
+		  <reference>
+			  <reference value="RiskAssessment/GenRiskDiabetesT2"/>
+			  
+		  </reference>
+		  <name value="Example - Polygenic Risk Score Assesment"/>
+		  <description value="Polygeneic Risk Score Simple Assesment"/>
+		  <groupingId value="examples"/>
+	  </resource>
+
+	  <resource>
       <reference>
         <reference value="Observation/TumorMutationBurdenExample01"/>
       </reference>
@@ -893,6 +981,14 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/genetic-therapeutic-implications-cs"/>
+      </reference>
+      <name value="Genetic Therapeutic Implication Codes"/>
+      <description value="A set of terms that describe a predicted ramification based on the presence of associated molecular finding(s)."/>
+      <groupingId value="codesystems"/>
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/high-low-codes-vs"/>
       </reference>
       <name value="High/Low codes"/>
@@ -963,6 +1059,22 @@
       <description value="Value Set for specific transmission patterns of a condition in a pedigree"/>
       <groupingId value="valuesets"/>
     </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/genetic-therapeutic-implications-vs"/>
+      </reference>
+      <name value="Genetic Therapeutic Implications"/>
+      <description value="Value Set for terms that describe a predicted ramification based on the presence of associated molecular finding(s)."/>
+      <groupingId value="valuesets"/>
+    </resource>
+	<resource>
+		<reference>
+			<reference value="ValueSet/evidence-level-example-vs"/>
+		</reference>
+		<name value="Evidence Level Example codes"/>
+		<description value="Value set for example codes from example sources of values for Evidence Level"/>
+		<groupingId value="valuesets"/>
+	</resource>  
     <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type-map"/>

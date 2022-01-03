@@ -243,7 +243,7 @@ code=69548-6&_include=Observation:
     "C9335."
 
     "code-value-concept" is a construct to use the code of an Observation instance and the code of a
-    value for the Observation. The Observation.code = 81259-4, "Associated Phenotype," is used for
+    value for the Observation. The Observation.code = 81259-4, "predicted phenotype," is used for
     the iG's "Inherited Disease Pathogenicity" profile. The value in this case is NCI metathesaurus
     code for Breast Cancer, "C9335." Additionally, the "_include:iterate=Observation:derived-from"
     iteratively follows the Observation.derived-from link.
@@ -257,7 +257,7 @@ code=69548-6&_include=Observation:
   <pre class="http">GET /Observation?subject:Patient=123&amp;code-value-concept=http://loinc.org|81259-4$http://ncimeta.nci.nih.gov|C9335&amp;_include:iterate=Observation:derived-from</pre>
 
   <p>
-    81259-4: LOINC code for "Associated Phenotype"
+    81259-4: LOINC code for "predicted phenotype"
   </p>
   <p>
     http://ncimeta.nci.nih.gov|C9335 : NCI metathesaurus code for "Breast Cancer"

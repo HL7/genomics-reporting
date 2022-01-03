@@ -14,6 +14,7 @@
   </p>
    <p>
     This table describes the categories of data contained in this implementation guide.
+	
   </p>
   <table>
     <tbody>
@@ -249,6 +250,16 @@
   <p>
     Genomic Implications are assertions of likely effects genomic results on the patient, tumor or other subject. Implications are relevant for areas of genomic testing including inherited disease, <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatic</a>. For inherited diseases, a <a href="StructureDefinition-diagnostic-implication.html"> diagnostic implication</a> indicates the likelihood of inheritance of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance). For other more specific guidance, see the <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> pages.
   </p>
+	<p>
+		<p>Indicating AND and OR:</p>
+
+		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. both drug X AND drug Y, in combination, are indicated in the presence of a variant) vs. 'OR' conditions (e.g. either drug X OR drug Y are indicated in the presence of a variant).
+
+		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents:
+
+		Where Diagnostic and Therapeutic implications have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances. See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">note</a>.
+
+	</p>
   <p>
     Implications inherit a common set of elements:
   </p>
