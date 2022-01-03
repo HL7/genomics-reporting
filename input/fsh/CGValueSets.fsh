@@ -83,10 +83,10 @@ Description:    "Value Set for specific transmission patterns of a condition in 
 * HP#0012275	"Autosomal dominant inheritance (with maternal imprinting)"
 * HP#0025352	"Autosomal dominant inheritance (primarily or exclusively de novo)"
 * HP#0031362	"Autosomal recessive inheritance (sex-limited)"
-* #SEPIO-CG:97020	"Semidominant inheritance"
-* #SEPIO-CG:97021	"X-linked inheritance (primarily recessive with milder female expression)"
-* #SEPIO-CG:97022	"Autosomal dominant inheritance (with genetic anticipation)"
-* #SEPIO-CG:97023	"Autosomal recessive inheritance (with genetic anticipation)"
+* SEPIO-CG#97020	"Semidominant inheritance"
+* SEPIO-CG#97021	"X-linked inheritance (primarily recessive with milder female expression)"
+* SEPIO-CG#97022	"Autosomal dominant inheritance (with genetic anticipation)"
+* SEPIO-CG#97023	"Autosomal recessive inheritance (with genetic anticipation)"
 
 
 ValueSet:       GeneticTherapeuticImplicationsVS

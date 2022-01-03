@@ -37,3 +37,5 @@ Alias:  RiskQual = 	http://terminology.hl7.org/CodeSystem/risk-probability
 Alias:	NCTtrial = https://clinicaltrials.gov/
 Alias: GENO = https://www.ebi.ac.uk/ols/ontologies/geno
 Alias: HP = https://www.ebi.ac.uk/ols/ontologies/hp
+// The SEPIO-CG link is according to https://dataexchange.clinicalgenome.org/interpretation/terminologies/ but not working
+Alias: SEPIO-CG = http://purl.obolibrary.org/obo/sepio-clingen 
