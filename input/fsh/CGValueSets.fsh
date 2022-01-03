@@ -69,7 +69,27 @@ ValueSet:       GeneticTherapeuticImplicationsVS
 Id:             genetic-therapeutic-implications-vs
 Title:          "Genetic Therapeutic Implications"
 Description:    "Value Set for terms that describe a predicted ramification based on the presence of associated molecular finding(s)."
-* codes from system GeneticTherapeuticImplicationsCS
+* LNC#LA10315-2	"Ultrarapid metabolizer"
+* LNC#LA25391-6	"Normal metabolizer"
+* LNC#LA25390-8	"Rapid metabolizer"
+* LNC#LA10317-8	"Intermediate metabolizer"
+* LNC#LA9657-3	"Poor metabolizer"
+* LNC#LA19542-2	"Low Risk"
+* LNC#LA19541-4	"High Risk"
+* LNC#LA6676-6 	"Resistant"
+* LNC#LA6677-4 	"Responsive"
+* LNC#LA9660-7 	"Presumed resistant"
+* LNC#LA9661-5 	"Presumed responsive"
+* LNC#LA6682-4 	"Unknown Significance"
+* LNC#LA6675-8 	"Benign"
+* LNC#LA6674-1 	"Presumed Benign"
+* LNC#LA9662-3 	"Presumed non-responsive"
+* LNC#LA25392-4	"Increased function"
+* LNC#LA25393-2	"Normal function"
+* LNC#LA25395-7	"Decreased function"
+* LNC#LA25394-0	"Poor function"
+* SCT#444734003 "Does not meet eligibility criteria for clinical trial (finding)"
+* SCT#399223003	"Patient eligible for clinical trial (finding)"
 
 ValueSet:       EvidenceLevelExampleVS
 Id:             evidence-level-example-vs
