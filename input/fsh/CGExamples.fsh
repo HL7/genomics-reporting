@@ -750,6 +750,13 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
+* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
+* extension[GenomicReportNote][0].valueAnnotation.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#test-disclaimer
+* extension[GenomicReportNote][0].valueAnnotation.text = """
+This test was developed and its performance determined by this laboratory. It has not been cleared or approved by U.S. Food and Drug Administration. 
+Since FDA Approval is not required for clinical use of this test, this laboratory has established and validated the test's accuracy and precision, 
+pursuant to the requirement of CLIA '88. This laboratory is licensed and/or accredited under CLIA and CAP (CAP# xxxxxxx / CLIA# xxxxxxxxxx).
+"""
 * status = #final
 
 Instance: PGxGenomicsReportEMERGE-withGrouping
@@ -771,7 +778,6 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
-* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
 * status = #final
 
 
