@@ -34,8 +34,8 @@ Alias:  RequestStatus = http://hl7.org/fhir/request-status
 Alias:  NUC = http://www.ncbi.nlm.nih.gov/nuccore
 Alias:  MetaT = http://ncimeta.nci.nih.gov
 Alias:  RiskQual = 	http://terminology.hl7.org/CodeSystem/risk-probability
-Alias:	NCTtrial = https://clinicaltrials.gov/
-Alias: GENO = https://www.ebi.ac.uk/ols/ontologies/geno
-Alias: HPO = https://hpo.jax.org/app/
+Alias:	NCTtrial = http://clinicaltrials.gov/
+Alias: GENO = http://www.ebi.ac.uk/ols/ontologies/geno
+Alias: HPO = http://hpo.jax.org/app/
 // The SEPIO-CG link is according to https://dataexchange.clinicalgenome.org/interpretation/terminologies/ but not working
 Alias: SEPIO-CG = http://purl.obolibrary.org/obo/sepio-clingen 
