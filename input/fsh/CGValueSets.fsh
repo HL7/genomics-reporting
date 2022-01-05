@@ -62,17 +62,67 @@ ValueSet:       ConditionInheritanceModeVS
 Id:             condition-inheritance-mode-vs
 Title:          "Condition Inheritance Patterns"
 Description:    "Value Set for specific transmission patterns of a condition in a pedigree"
-* codes from system ConditionInheritanceModeCS
+* GENO#0000143	"Codominant inheritance"
+* GENO#0000889	"Unknown inheritance"
+* GENO#0000892	"Mitochondrial inheritance (primarily or exclusively heteroplasmic)"
+* GENO#0000893	"Mitochondrial inheritance (primarily or exclusively homoplasmic)"
+* HPO#0000006	"Autosomal dominant inheritance"
+* HPO#0000007	"Autosomal recessive inheritance"
+* HPO#0001417	"X-linked inheritance"
+* HPO#0001419	"X-linked inheritance (recessive)"
+* HPO#0001423	"X-linked inheritance (dominant)"
+* HPO#0001426	"Multifactorial inheritance"
+* HPO#0001427	"Mitochondrial inheritance"
+* HPO#0001428	"Somatic mutation"
+* HPO#0001450	"Y-linked inheritance"
+* HPO#0001470	"Autosomal dominant inheritance (sex-limited)"
+* HPO#0003743	"Genetic anticipation"
+* HPO#0003745	"Sporadic"
+* HPO#0010983	"Oligogenic"
+* HPO#0012274	"Autosomal dominant inheritance (with paternal imprinting)"
+* HPO#0012275	"Autosomal dominant inheritance (with maternal imprinting)"
+* HPO#0025352	"Autosomal dominant inheritance (primarily or exclusively de novo)"
+* HPO#0031362	"Autosomal recessive inheritance (sex-limited)"
+* SEPIO-CG#97020	"Semidominant inheritance"
+* SEPIO-CG#97021	"X-linked inheritance (primarily recessive with milder female expression)"
+* SEPIO-CG#97022	"Autosomal dominant inheritance (with genetic anticipation)"
+* SEPIO-CG#97023	"Autosomal recessive inheritance (with genetic anticipation)"
 
 
 ValueSet:       GeneticTherapeuticImplicationsVS
 Id:             genetic-therapeutic-implications-vs
 Title:          "Genetic Therapeutic Implications"
 Description:    "Value Set for terms that describe a predicted ramification based on the presence of associated molecular finding(s)."
-* codes from system GeneticTherapeuticImplicationsCS
+* ^copyright = """
+This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.
+This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.
+"""
+* LNC#LA10315-2	"Ultrarapid metabolizer"
+* LNC#LA25391-6	"Normal metabolizer"
+* LNC#LA25390-8	"Rapid metabolizer"
+* LNC#LA10317-8	"Intermediate metabolizer"
+* LNC#LA9657-3	"Poor metabolizer"
+* LNC#LA19542-2	"Low Risk"
+* LNC#LA19541-4	"High Risk"
+* LNC#LA6676-6 	"Resistant"
+* LNC#LA6677-4 	"Responsive"
+* LNC#LA9660-7 	"Presumed resistant"
+* LNC#LA9661-5 	"Presumed responsive"
+* LNC#LA6682-4 	"Unknown Significance"
+* LNC#LA6675-8 	"Benign"
+* LNC#LA6674-1 	"Presumed Benign"
+* LNC#LA9662-3 	"Presumed non-responsive"
+* LNC#LA25392-4	"Increased function"
+* LNC#LA25393-2	"Normal function"
+* LNC#LA25395-7	"Decreased function"
+* LNC#LA25394-0	"Poor function"
+* SCT#444734003 "Does not meet eligibility criteria for clinical trial (finding)"
+* SCT#399223003	"Patient eligible for clinical trial (finding)"
 
 ValueSet:       EvidenceLevelExampleVS
 Id:             evidence-level-example-vs
 Title:          "Evidence Level Examples"
 Description:    "Example sources of values for Evidence Level"
-* codes from system EvidenceLevelExampleCS
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* codes from system ClinVarEvidenceLevelCustomCS
+* codes from system PharmGKBEvidenceLevelCustomCS

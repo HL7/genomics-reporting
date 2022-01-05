@@ -984,10 +984,10 @@ Description: "Example of a Therapeutic Implication for Clinical Trial"
 * code = TbdCodesCS#therapeutic-implication
 * component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].valueCodeableConcept.coding = SCT#399223003 "Patient eligible for clinical trial"
-* component[1].code.coding = LNC#81259-4 "Phenotypic treatment context"
+* component[1].code.coding = LNC#81259-4 // "Phenotypic treatment context"
 //#HP:0003002
 * component[1].valueCodeableConcept.coding = 	SCT#254837009 "Breast Cancer"
-* component[2].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
+* component[2].code.coding = TbdCodesCS#associated-therapy "Genomically linked therapy"
 * component[2].valueCodeableConcept.coding = NCTtrial#NCT01234567 "NCT01234567"
 * derivedFrom = Reference(Variant-Somatic-Clinical-Trial)
 * status = #final
