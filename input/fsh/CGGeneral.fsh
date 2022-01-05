@@ -94,18 +94,22 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * derivedFrom[haplotype] only Reference(Haplotype)
 * ^abstract = false
 
+// needed when we define GenomicsReport with a new attribute (note) in R5
+Alias: R5DiagnosticReportNote = http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note
+
 Profile:        GenomicsReport
 Parent:         DiagnosticReport
 Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
-* extension contains GenomicsArtifact named genomics-artifact 0..* and
-    GenomicsFile named genomics-file 0..* and
-    RecommendedAction named recommended-action 0..* and
-    SupportingInformation named supporting-information 0..* and
-    GenomicsReportRisk named report-risk 0..* and 
-    GenomicReportNote named coded-note 0..*
+* extension contains GenomicsArtifact named genomics-artifact 0..* 
+    and GenomicsFile named genomics-file 0..* 
+    and RecommendedAction named recommended-action 0..* 
+    and SupportingInformation named supporting-information 0..* 
+    and GenomicsReportRisk named report-risk 0..* 
+    and GenomicReportNote named coded-note 0..* 
+//KP - causing a build failure now    and R5DiagnosticReportNote named note 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * extension[GenomicReportNote] ^comment = """
