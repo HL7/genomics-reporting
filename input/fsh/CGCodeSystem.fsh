@@ -44,7 +44,7 @@ Description: "ClinVar contains examples of evidence level concepts that are not 
 
 CodeSystem: PharmGKBEvidenceLevelCustomCS
 Id: pharmgkb-evidence-level-custom-cs
-Title: "Evidence Level Example codes"
+Title: "PharmGKB Evidence Level Example codes"
 Description: "PharmGKB contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on PharmGKB https://www.pharmgkb.org/page/clinAnnLevels. These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
 * #1A	"PGKB 1A"	"High level of evidence. Supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
