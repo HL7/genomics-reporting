@@ -47,7 +47,7 @@ The purpose of the Variant Observation profile is to capture genomic data elemen
 <ol>
   <li>To <b>define</b> a variant of interest, which could be a simple, well understood change from a reference sequence, or one of several types of structural variations with uncertain endpoints. </li>
   <li>To <b>contextualize</b> the observation of the defined variant (e.g., presence or absence in the sample and determinations of state or inheritance). </li>
-  <li>To terminologically <b>classify</b> the variant according to the type or location of the change (generally optional, but needed to define certain types of structural variations). </li>
+  <li>To terminologically <b>annotate</b> the variant according to the type or location of the change (generally optional, but needed to define certain types of structural variations). </li>
 </ol>
 <p>
 It is NOT intended to support other Observations that are clinically relevant on their own and have separate profiles defined in this guide, including:
@@ -112,7 +112,7 @@ This pattern describes the observed nucleotide sequence or configuration using H
 </table>
 
 <a name="ComponentwiseVariants"></a>
-<h4>Manually Defined (VCF-like) Variants</h4>
+<h4>Variants defined by multiple components (VCF-like)</h4>
 <p>
 This representation leverages multiple component slices to communicate an allele within the context of a specific location on a reference sequence. It is the most accurate definitional representation in FHIR, but is limited to variations with known breakpoints, and alleles should be normalized per VCF specifications. Note that VCF representations often specify genome build and chromosome identifiers rather than explicit reference sequences. Build and chromosome identifier may optionally be included for cross reference.
 </p>
