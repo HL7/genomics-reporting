@@ -429,6 +429,10 @@ Description: "Example variant 1019"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* note.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#result-confirmation
+* note.text = """
+This variant was confirmed with SANGER sequencing
+"""
 
 Instance: Pgx-var-1020
 InstanceOf: Variant
@@ -448,13 +452,16 @@ Description: "Example variant 1020"
 * component[exact-start-end].valueRange.high.value = 96702047
 * component[ref-allele].valueString = "C"
 * component[alt-allele].valueString = "C"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* note.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#result-confirmation
+* note.text = """
+This variant was confirmed with SANGER sequencing
+"""
 
 Instance: Pgx-var-1021
 InstanceOf: Variant
@@ -481,6 +488,10 @@ Description: "Example variant 1021"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* note.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#result-confirmation
+* note.text = """
+This variant was confirmed with SANGER sequencing
+"""
 
 Instance: Pgx-geno-1001
 InstanceOf: Genotype
