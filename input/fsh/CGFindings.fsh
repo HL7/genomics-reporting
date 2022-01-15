@@ -36,7 +36,10 @@ Profile:        TMB
 Parent:         GenomicsBase
 Id:             tmb
 Title:          "Tumor Mutation Burden"
-Description:    "Definitions for the tmb resource profile. The total number of mutations (changes) found in the DNA of cancer cells. [Source: NCI Dictionary](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tumor-mutational-burden)"
+Description:    """
+The total number of mutations (changes) found in the DNA of cancer cells. Knowing the tumor mutational burden may help plan the best treatment. For example, tumors that have a high number of mutations appear to be more likely to respond to certain types of immunotherapy. Tumor mutational burden is being used as a type of biomarker.
+"""
+
 
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#94076-7
