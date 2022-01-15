@@ -992,7 +992,6 @@ Description: "Example for somatic INV"
 Instance: VCFFile
 InstanceOf: GenomicsDocumentReference
 Description: "Example of what a VCF as a DocumentRefence would look like."
-
 * id = "VCFFile"
 * status = #current
 * subject = Reference(CGPatientExample01)
@@ -1197,3 +1196,43 @@ Description: "Example for Genomic Specimen from Buccal Swab"
 * accessionIdentifier.system = "http://mylabsurl.com"
 * accessionIdentifier.value = "456"
 
+Instance: HaplotypeExamplePharmVar01
+InstanceOf: Haplotype
+Title: "HaplotypeExamplePharmVar01"
+Description: "Example of a Haplotype using PharmVar"
+* id = "HaplotypeExamplePharmVar01"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.coding = http://www.pharmvar.org#PV00155 "CYP2D6*7.001" //https://www.pharmvar.org/api-service/alleles/pv00155
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
+* effectiveDateTime = "2021"
+* specimen = Reference(GenomicSpecimenExample01)
+* subject = Reference(CGPatientExample01)
+* status = #final
+
+Instance: HaplotypeExamplePharmVar02
+InstanceOf: Haplotype
+Title: "HaplotypeExamplePharmVar02"
+Description: "Example of a Haplotype using PharmVar"
+* id = "HaplotypeExamplePharmVar02"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.coding = http://www.pharmvar.org#PV00126 "CYP2D6*1.001" //https://www.pharmvar.org/api-service/alleles/pv00126
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
+* effectiveDateTime = "2021"
+* specimen = Reference(GenomicSpecimenExample01)
+* subject = Reference(CGPatientExample01)
+* status = #final
+
+Instance: GenotypeExamplePharmVar
+InstanceOf: Genotype
+Title: "GenotypeExamplePharmVar"
+Description: "Example of a Genotype using Pharmvar Haplotypes"
+* id = "GenotypeExamplePharmVar"
+* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* valueCodeableConcept.text = "CYP2D6*7.001 / CYP2D6*1.001"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
+* effectiveDateTime = "2021"
+* specimen = Reference(GenomicSpecimenExample01)
+* subject = Reference(CGPatientExample01)
+* status = #final
+* derivedFrom[+] = Reference(HaplotypeExamplePharmVar01)
+* derivedFrom[+] = Reference(HaplotypeExamplePharmVar02)
