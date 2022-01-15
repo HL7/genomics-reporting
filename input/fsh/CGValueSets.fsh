@@ -126,3 +126,9 @@ Description:    "Example sources of values for Evidence Level"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * codes from system ClinVarEvidenceLevelCustomCS
 * codes from system PharmGKBEvidenceLevelCustomCS
+
+ValueSet:       VariantConfidenceStatusVS
+Id:             variant-confidence-status-vs
+Title:          "Variant Confidence Status"
+Description:    "A code that classifies the confidence for calling this variant."
+* codes from system VariantConfidenceStatusCS

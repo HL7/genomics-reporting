@@ -488,4 +488,19 @@ Suggested minimal representations of common structural variants are shown in the
 <p>It is important to note in this example that the Variant observation indicates the presence or absence of a variant with the given ALT allele, and does not indicate presence of the REF allele on the other chromosome of the pair. Even though it is almost always the case for heterozygous variants that one chromosome has the variant and the other chromosome has the reference allele, one should not assume this is the case from a single heterozygous Variant without separate knowledge that no other variants were detected at that position.</p>
 <p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. <a href="Observation-Pgx-geno-1003.html">Example genotype</a>.</p>
 
+<a name="variant-confidence"></a>
+<h3>Variant Confidence Status</h3>
+<p>This guide provides a way to indicate the confidence that a variant is a true positive. This confidence can be important as it might affect the interpretation of the variant or any implications that derive from the variant. To express a high confidence call, one would do this:</p>
+<p>
+<div class="example"><pre class="json">
+{
+"system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs",
+"code" : "high",
+"display" : "High"
+}
+</pre></div>
+</p>
+<p>
+It is important to note that this is not a required component to send about a variant. If the confidence is not structured, implementers need to work together in other ways so that the confidence is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that it is a true positive call.
+</p>
 </div>

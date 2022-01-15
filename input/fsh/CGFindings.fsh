@@ -86,7 +86,9 @@ Description:    "Details about a set of changes in the tested sample compared to
     coding-change-type 0..1 and
     amino-acid-change-type 0..1 and
     molecular-consequence 0..1 and
-    copy-number 0..1
+    copy-number 0..1 and
+
+    variant-confidence-status 0..1
 
 * component[coding-hgvs].code = LNC#48004-6
 * component[coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
@@ -220,6 +222,12 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[chromosome-identifier].value[x] only CodeableConcept
 * component[chromosome-identifier].value[x] 1..1
 * component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
+* component[variant-confidence-status].code = TbdCodesCS#variant-confidence-status
+* component[variant-confidence-status] ^short = "Variant Confidence Status"
+* component[variant-confidence-status] ^definition = "A code that represents the confidence of a true positive variant call."
+* component[variant-confidence-status].value[x] only CodeableConcept
+* component[variant-confidence-status].value[x] 1..1
+* component[variant-confidence-status].value[x] from VariantConfidenceStatusVS (required)
 * ^abstract = false
 
 Profile:        RegionStudied

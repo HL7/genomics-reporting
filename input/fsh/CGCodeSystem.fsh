@@ -3,7 +3,6 @@ Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
 * ^caseSensitive = true
-
 * #Cis "Cis" "Phase is in cis (same chromosome)"
 * #Trans "Trans" "Phase is in trans (different chromosomes)"
 * #Indeterminate "Indeterminate" "Phase is unable to be determined"
@@ -27,6 +26,7 @@ Description: "These codes are currently 'TBD-LOINC' codes. The CG WG is requesti
 * #functional-effect "Functional Effect" "The effect of a variant on downstream biological products or pathways (from Sequence Ontology)."
 * #conclusion-string "Conclusion text" "Clinical conclusion (interpretation) of the observation."
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
+* #variant-confidence-status "Variant Confidence Status" "The confidence of a true positive variant call."
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
@@ -41,7 +41,7 @@ Description: "ClinVar contains examples of evidence level concepts that are not 
 
 CodeSystem: PharmGKBEvidenceLevelCustomCS
 Id: pharmgkb-evidence-level-custom-cs
-Title: "Evidence Level Example codes"
+Title: "PharmGKB Evidence Level Example codes"
 Description: "PharmGKB contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on PharmGKB https://www.pharmgkb.org/page/clinAnnLevels. These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
 * #1A	"PGKB 1A"	"High level of evidence. Supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
@@ -50,3 +50,12 @@ Description: "PharmGKB contains examples of evidence level concepts that are not
 * #2B	"PGKB 2B"	"Moderate level of evidence. NOT in the list of very important, KNOWN pharmacogenes. Found in multiple studies but may have a minority of studies that did not support the majority opinion. Supported by at least two indpendent publications."
 * #3	"PGKB 3"	"Low-level of evidence. Where either the assocation is based on a single study, failed to be reproduced, or preliminary evidence."
 * #4	"PGKB 4"	"The evidence does not support an association between the variant and the drug phenotype. (negative)"
+
+CodeSystem: VariantConfidenceStatusCS
+Id: variant-confidence-status-cs
+Title: "Variant Confidence Status codes"
+Description: "A code that represents the confidence of a true positive variant call."
+* ^caseSensitive = true
+* #high	        "High"	        "High confidence true positive variant call. Suitable for clinical reporting."
+* #intermediate	"Intermediate"	"Candidate true positive variant call. Unable to confirm without additional testing."
+* #low	        "Low"	        "High confidence false positive variant call."

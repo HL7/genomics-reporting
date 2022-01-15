@@ -227,13 +227,13 @@ Description: "Example variant 1011"
 * component[exact-start-end].valueRange.high.value = 96521657
 * component[ref-allele].valueString = "C"
 * component[alt-allele].valueString = "C"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:262 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1012
 InstanceOf: Variant
@@ -253,13 +253,13 @@ Description: "Example variant 1012"
 * component[exact-start-end].valueRange.high.value = 96522463
 * component[ref-allele].valueString = "A"
 * component[alt-allele].valueString = "A"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1013
 InstanceOf: Variant
@@ -279,13 +279,13 @@ Description: "Example variant 1013"
 * component[exact-start-end].valueRange.high.value = 96535173
 * component[ref-allele].valueString = "T"
 * component[alt-allele].valueString = "T"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 
 Instance: Pgx-var-1014
@@ -306,13 +306,13 @@ Description: "Example variant 1014"
 * component[exact-start-end].valueRange.high.value = 96535210
 * component[ref-allele].valueString = "G"
 * component[alt-allele].valueString = "G"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:0002073 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1015
 InstanceOf: Variant
@@ -332,6 +332,7 @@ Description: "Example variant 1015"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1016
 InstanceOf: Variant
@@ -351,13 +352,13 @@ Description: "Example variant 1016"
 * component[exact-start-end].valueRange.high.value = 96541616
 * component[ref-allele].valueString = "G"
 * component[alt-allele].valueString = "G"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1017
 InstanceOf: Variant
@@ -377,13 +378,13 @@ Description: "Example variant 1017"
 * component[exact-start-end].valueRange.high.value = 96541756
 * component[ref-allele].valueString = "T"
 * component[alt-allele].valueString = "T"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1018
 InstanceOf: Variant
@@ -403,13 +404,13 @@ Description: "Example variant 1018"
 * component[exact-start-end].valueRange.high.value = 96612495
 * component[ref-allele].valueString = "C"
 * component[alt-allele].valueString = "C"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2621 "CYP2C19"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1019
 InstanceOf: Variant
@@ -429,6 +430,7 @@ Description: "Example variant 1019"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1020
 InstanceOf: Variant
@@ -448,13 +450,13 @@ Description: "Example variant 1020"
 * component[exact-start-end].valueRange.high.value = 96702047
 * component[ref-allele].valueString = "C"
 * component[alt-allele].valueString = "C"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
 
 Instance: Pgx-var-1021
 InstanceOf: Variant
@@ -474,13 +476,13 @@ Description: "Example variant 1021"
 * component[exact-start-end].valueRange.high.value = 96741053
 * component[ref-allele].valueString = "A"
 * component[alt-allele].valueString = "A"
-
 * component[genomic-source-class].valueCodeableConcept = LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = HGNCID#HGNC:2623 "CYP2C9"
 * component[coding-change-type].valueCodeableConcept = SEQONT#SO:1000002 "wild type"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
+* component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#intermediate
 
 Instance: Pgx-geno-1001
 InstanceOf: Genotype
@@ -501,7 +503,6 @@ Description: "Example of a Genotype from eMERGE"
 * derivedFrom[5] = Reference(Pgx-var-1016)
 * derivedFrom[6] = Reference(Pgx-var-1017)
 * derivedFrom[7] = Reference(Pgx-var-1018)
-
 
 Instance: TxImp01
 InstanceOf: TherapeuticImplication
