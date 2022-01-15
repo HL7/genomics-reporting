@@ -2,9 +2,9 @@ ValueSet:       HighLowCodesVS
 Id:             high-low-codes-vs
 Title:          "High Low codes"
 Description:    "This value set includes high/low codes for Observation Interpretations"
-
 * ObsInt#H "High"
 * ObsInt#L "Low"
+* ObsInt#I "Intermediate"
 
 ValueSet:       HGNCVS
 Id:             hgnc-vs
