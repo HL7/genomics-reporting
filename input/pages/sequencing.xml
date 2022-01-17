@@ -490,7 +490,7 @@ Suggested minimal representations of common structural variants are shown in the
 
 <a name="variant-confidence"></a>
 <h3>Variant Confidence Status</h3>
-<p>This guide provides a way to indicate the confidence that a variant is a true positive. This confidence can be important as it might affect the interpretation of the variant or any implications that derive from the variant. To express a high confidence call, one would do this:</p>
+<p>Variant confidence status provides a way to indicate the reporting organization’s confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence:</p>
 <p>
 <div class="example"><pre class="json">
 {
@@ -501,6 +501,6 @@ Suggested minimal representations of common structural variants are shown in the
 </pre></div>
 </p>
 <p>
-It is important to note that this is not a required component to send about a variant. If the confidence is not structured, implementers need to work together in other ways so that the confidence is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that it is a true positive call.
+It is important to note that variant confidence status is not a required component. If the reporting organization’s confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive.
 </p>
 </div>
