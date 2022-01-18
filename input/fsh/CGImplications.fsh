@@ -1,9 +1,9 @@
 Profile:        GenomicImplication
 Parent:         GenomicsBase
 Id:             implication
-Title:          "Genomic Implication"
+Title:          "Genomics Implication"
 Description:    "Properties common to genmoic implications expressed as computable discrete elements."
-
+* ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains GenomicsArtifact named related-artifact 0..1
 * value[x] 0..0
@@ -36,7 +36,6 @@ Description:    "Properties common to genmoic implications expressed as computab
 * component[prognosis].code = TbdCodesCS#prognostic-implication
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
-
 //* component[prognosis].value[x] from (example) (extensible)
 
 Profile:        DiagnosticImplication
@@ -82,15 +81,11 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[functional-effect].value[x] 1..1
 * component[functional-effect].value[x] from FunctionalEffectVS (extensible)
 
-
-* ^abstract = false
-
 Profile:        TherapeuticImplication
 Parent:         GenomicImplication
 Id:             therapeutic-implication
 Title:          "Therapeutic Implication"
 Description:    "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
 * extension contains TherapyAssessedLink named therapy-assessed-link 0..*
@@ -130,14 +125,12 @@ Description:    "Profile with properties for observations that convey the potent
 * component[predicted-therapeutic-implication].value[x] only CodeableConcept
 * component[predicted-therapeutic-implication].value[x] 1..1
 * component[predicted-therapeutic-implication].value[x] from GeneticTherapeuticImplicationsVS (extensible)
-* ^abstract = false
 
 Profile:        MedicationRecommendation
 Parent:         Task
 Id:             medication-recommendation
 Title:          "Medication Recommendation"
 Description:    "Task proposing medication recommendations based on genetic results."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = TaskStatus#requested
@@ -157,7 +150,6 @@ Parent:         Task
 Id:             followup-recommendation
 Title:          "Followup Recommendation"
 Description:    "Task describing the followup that is recommended"
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = TaskStatus#requested
