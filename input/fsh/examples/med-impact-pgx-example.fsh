@@ -4,7 +4,7 @@ Usage: #inline
 * status = #final
 * category = $observation-category#laboratory
 * code = $tbd-codes-cs#therapeutic-implication "Therapeutic Implication"
-* subject = Reference(patient)
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(lab)

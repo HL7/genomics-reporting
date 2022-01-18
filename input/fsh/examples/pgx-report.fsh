@@ -7,7 +7,7 @@ Usage: #inline
 * status = #final
 * category = $v2-0074#GE "Genetics"
 * code = $loinc#81247-9
-* subject = Reference(patient)
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(lab)

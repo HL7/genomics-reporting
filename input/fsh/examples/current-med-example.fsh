@@ -3,4 +3,4 @@ InstanceOf: MedicationStatement
 Usage: #inline
 * status = #unknown
 * medicationCodeableConcept = $rxnorm#103 "mercaptopurine"
-* subject = Reference(patient)
+* subject = Reference(ExamplePatient)

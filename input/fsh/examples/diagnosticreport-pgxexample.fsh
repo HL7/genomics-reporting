@@ -6,7 +6,7 @@ Usage: #example
 * entry[=].resource = pgx-report
 * entry[=].request.method = #POST
 * entry[=].request.url = "DiagnosticReport"
-* entry[+].fullUrl = "http://example.org/fhir/Patient/patient"
+* entry[+].fullUrl = "http://example.org/fhir/Patient/ExamplePatient"
 * entry[=].resource = patient
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"

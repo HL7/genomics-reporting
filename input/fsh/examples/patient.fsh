@@ -1,4 +1,4 @@
-Instance: patient
+Instance: ExamplePatient
 InstanceOf: Patient
 Usage: #inline
 * text.status = #additional

@@ -6,6 +6,6 @@ Usage: #inline
 * code.coding = $loinc#LA26423-6 "Increase dose"
 * code.text = "May need higher dosage than usual."
 * focus = Reference(MedicationStatementWarfarin)
-* for = Reference(patient)
+* for = Reference(ExamplePatient)
 * requester = Reference(lab)
 * reasonReference = Reference(metab)

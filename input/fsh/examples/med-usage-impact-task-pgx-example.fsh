@@ -7,5 +7,5 @@ Usage: #inline
   * text = "Any Increase does Recommendation Text from the provider"
 * description = "Any Increase does Recommendation Text from the provider"
 * focus = Reference(current-med-example)
-* for = Reference(patient)
+* for = Reference(ExamplePatient)
 * reasonReference = Reference(med-impact-pgx-example)

@@ -4,5 +4,5 @@ Usage: #inline
 * status = #active
 * intent = #original-order
 * code = $loinc#81247-9
-* subject = Reference(patient)
+* subject = Reference(ExamplePatient)
 * reasonCode.text = "Worried about family planning"

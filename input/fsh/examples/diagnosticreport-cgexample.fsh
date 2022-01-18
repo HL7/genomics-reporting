@@ -4,7 +4,7 @@ Usage: #example
 * type = #collection
 * entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/report"
 * entry[=].resource = report
-* entry[+].fullUrl = "http://example.org/fhir/Patient/patient"
+* entry[+].fullUrl = "http://example.org/fhir/Patient/ExamplePatient"
 * entry[=].resource = patient
 * entry[+].fullUrl = "http://example.org/fhir/Specimen/specimen"
 * entry[=].resource = specimen
