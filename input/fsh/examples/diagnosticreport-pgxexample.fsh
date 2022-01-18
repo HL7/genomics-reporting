@@ -7,7 +7,7 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "DiagnosticReport"
 * entry[+].fullUrl = "http://example.org/fhir/Patient/ExamplePatient"
-* entry[=].resource = patient
+* entry[=].resource = ExamplePatient
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
 * entry[+].fullUrl = "http://example.org/fhir/Specimen/specimen"

@@ -5,7 +5,7 @@ Usage: #example
 * entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/report"
 * entry[=].resource = report
 * entry[+].fullUrl = "http://example.org/fhir/Patient/ExamplePatient"
-* entry[=].resource = patient
+* entry[=].resource = ExamplePatient
 * entry[+].fullUrl = "http://example.org/fhir/Specimen/specimen"
 * entry[=].resource = specimen
 * entry[+].fullUrl = "http://example.org/fhir/Organization/lab"
