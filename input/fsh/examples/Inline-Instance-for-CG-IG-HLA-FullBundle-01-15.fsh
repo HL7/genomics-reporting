@@ -1,0 +1,11 @@
+Instance: Inline-Instance-for-CG-IG-HLA-FullBundle-01-15
+InstanceOf: MolecularSequence
+Usage: #inline
+* type = #dna
+* coordinateSystem = 0
+* referenceSeq.referenceSeqId.coding.version = "3.23"
+* referenceSeq.referenceSeqId.coding = $hla#HLA00381
+* referenceSeq.referenceSeqId.text = "HLA-B*57:01:01"
+* referenceSeq.windowStart = 485
+* referenceSeq.windowEnd = 755
+* observedSeq = "GCTCCCACTCCATGAGGTATTTCTACACCGCCATGTCCCGGCCCGGCCGCGGGGAGCCCCGCTTCATCGCAGTGGGCTACGTGGACGACACCCAGTTCGTGAGGTTCGACAGCGACGCCGCGAGTCCGAGGATGGCGCCCCGGGCGCCATGGATAGAGCAGGAGGGGCCGGAGTATTGGGACGGGGAGACACGGAACATGAAGGCCTCCGCGCAGACTTACCGAGAGAACCTGCGGATCGCGCTCCGCTACTACAACCAGAGCGAGGCCG"
