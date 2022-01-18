@@ -26,3 +26,4 @@ Alias: $omim = http://www.omim.org
 Alias: $ = https://hpo.jax.org/app/
 Alias: $clinvar = http://www.ncbi.nlm.nih.gov/clinvar
 Alias: $sequence-phase-relationship-cs = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/sequence-phase-relationship-cs
+Alias: $Chrom-Loc = http://example.org/Chrom-Loc
