@@ -10,7 +10,7 @@ Usage: #inline
 * performer = Reference(lab-1a)
 * valueCodeableConcept = $loinc#LA9633-4 "Present"
 * specimen = Reference(specimen-1a)
-* hasMember[0] = Reference(Observation/complex-component-D-1a)
-* hasMember[+] = Reference(Observation/complex-component-E-1a)
+* hasMember[0] = Reference(Observation/complex-component-D)
+* hasMember[+] = Reference(Observation/complex-component-E)
 * component.code = $loinc#81263-6
 * component.valueCodeableConcept = $loinc#LA26218-0 "Haplotype"

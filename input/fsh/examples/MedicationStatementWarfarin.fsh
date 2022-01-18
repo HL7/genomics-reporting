@@ -1,4 +1,4 @@
-Instance: med-1a
+Instance: MedicationStatementWarfarin
 InstanceOf: MedicationStatement
 Usage: #example
 * status = #unknown

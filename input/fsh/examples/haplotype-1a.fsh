@@ -10,4 +10,4 @@ Usage: #inline
 * performer = Reference(lab-1a)
 * valueCodeableConcept.coding = $hla#*2
 * specimen = Reference(specimen-1a)
-* derivedFrom = Reference(Observation/discrete-variant-1a)
+* derivedFrom = Reference(Observation/discrete-variant)

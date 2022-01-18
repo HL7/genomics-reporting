@@ -1,4 +1,4 @@
-Instance: complex-component-E-1a
+Instance: complex-component-E
 InstanceOf: Variant
 Usage: #example
 * status = #final

@@ -1,4 +1,4 @@
-Instance: discrete-variant-1a
+Instance: discrete-variant
 InstanceOf: Variant
 Usage: #example
 * status = #final
