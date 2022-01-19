@@ -11,7 +11,6 @@
 <artifactPageExtension value="-mappings"/>
 <artifact id="Observation/AnnotationExample" key="Observation-AnnotationExample" name="AnnotationExample"/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
-<artifact id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="CG-IG-HLA-FullBundle-01"/>
 <artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name="CGPatientExample01"/>
 <artifact id="CodeSystem/clinvar-evidence-level-custom-cs" key="CodeSystem-clinvar-evidence-level-custom-cs" name="ClinVar Evidence Level Example codes"/>
 <artifact deprecated="true" id="CodeSystem/ConditionInheritanceMode" key="CodeSystem-ConditionInheritanceMode" name="Condition Inheritance Pattern"/>
@@ -23,12 +22,21 @@
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>
 <artifact id="ValueSet/evidence-level-example-vs" key="ValueSet-evidence-level-example-vs" name="Evidence Level Examples"/>
 <artifact deprecated="true" id="DiagnosticReport/report-CYP2C19" key="DiagnosticReport-report-CYP2C19" name="Example - CYP2C19 report from 1000 Genomes"/>
+<artifact deprecated="true" id="Bundle/compound-heterozygote" key="Bundle-compound-heterozygote" name="Example - Complex Variant (HGVS)"/>
+<artifact deprecated="true" id="Bundle/complexVariant-nonHGVS" key="Bundle-complexVariant-nonHGVS" name="Example - Complex Variant (unpacked)"/>
+<artifact deprecated="true" id="Bundle/CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="Example - Full Bundle HLA genotyping for HLA-A, HLA-B, and HLA-C, using GLStrings"/>
+<artifact deprecated="true" id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="Example - Full Bundle Oncology Example"/>
+<artifact deprecated="true" id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="Example - Genomics Reporting"/>
+<artifact deprecated="true" id="Bundle/oncology-diagnostic" key="Bundle-oncology-diagnostic" name="Example - Melanoma implication"/>
+<artifact deprecated="true" id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="Example - Multiple Oncology Variant Report Example"/>
+<artifact deprecated="true" id="Bundle/diagnosticreport-pgxexample" key="Bundle-diagnosticreport-pgxexample" name="Example - Pharmacogenomics"/>
 <artifact deprecated="true" id="Task/TaskMedChgExample1" key="Task-TaskMedChgExample1" name="Example - TaskMedChg"/>
 <artifact deprecated="true" id="DiagnosticReport/sequence-phase-relation-CYP2C19" key="DiagnosticReport-sequence-phase-relation-CYP2C19" name="Example - subset of CYP2C19 report from 1000 Genomes showing phase"/>
 <artifact id="Observation/ExampleGermlineCNV" key="Observation-ExampleGermlineCNV" name="ExampleGermlineCNV"/>
 <artifact id="Observation/ExampleGermlineDEL" key="Observation-ExampleGermlineDEL" name="ExampleGermlineDEL"/>
 <artifact id="Observation/ExampleGermlineINV" key="Observation-ExampleGermlineINV" name="ExampleGermlineINV"/>
 <artifact id="Organization/ExampleOrg" key="Organization-ExampleOrg" name="ExampleOrg"/>
+<artifact id="Patient/ExamplePatient" key="Patient-ExamplePatient" name="ExamplePatient"/>
 <artifact id="Observation/ExampleSomaticCNV" key="Observation-ExampleSomaticCNV" name="ExampleSomaticCNV"/>
 <artifact id="Observation/ExampleSomaticDEL" key="Observation-ExampleSomaticDEL" name="ExampleSomaticDEL"/>
 <artifact id="Observation/ExampleSomaticINV" key="Observation-ExampleSomaticINV" name="ExampleSomaticINV"/>
@@ -147,25 +155,23 @@
 <artifact id="Observation/Variant-Somatic-Clinical-Trial" key="Observation-Variant-Somatic-Clinical-Trial" name="Variant-Somatic-Clinical-Trial"/>
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="VariantExample1"/>
 <artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="VariantExample2"/>
-<artifact id="Observation/complex-component-D" key="Observation-complex-component-D" name="complex-component-D"/>
-<artifact id="Observation/complex-component-E" key="Observation-complex-component-E" name="complex-component-E"/>
-<artifact id="Bundle/complexVariant-nonHGVS" key="Bundle-complexVariant-nonHGVS" name="complexVariant-nonHGVS"/>
-<artifact id="Bundle/compound-heterozygote" key="Bundle-compound-heterozygote" name="compound-heterozygote"/>
-<artifact id="Bundle/diagnosticreport-cgexample" key="Bundle-diagnosticreport-cgexample" name="diagnosticreport-cgexample"/>
-<artifact id="Bundle/diagnosticreport-cgexample-withGrouping" key="Bundle-diagnosticreport-cgexample-withGrouping" name="diagnosticreport-cgexample-withGrouping"/>
+<artifact id="Bundle/bundle-CG-IG-HLA-FullBundle-01" key="Bundle-bundle-CG-IG-HLA-FullBundle-01" name="bundle-CG-IG-HLA-FullBundle-01"/>
+<artifact id="Bundle/bundle-CYP2C19" key="Bundle-bundle-CYP2C19" name="bundle-CYP2C19"/>
+<artifact id="Bundle/bundle-cgexample" key="Bundle-bundle-cgexample" name="bundle-cgexample"/>
+<artifact id="Bundle/bundle-cgexample-withGrouping" key="Bundle-bundle-cgexample-withGrouping" name="bundle-cgexample-withGrouping"/>
+<artifact id="Bundle/bundle-complexVariant-nonHGVS" key="Bundle-bundle-complexVariant-nonHGVS" name="bundle-complexVariant-nonHGVS"/>
+<artifact id="Bundle/bundle-compound-heterozygote" key="Bundle-bundle-compound-heterozygote" name="bundle-compound-heterozygote"/>
+<artifact id="Bundle/bundle-oncology-diagnostic" key="Bundle-bundle-oncology-diagnostic" name="bundle-oncology-diagnostic"/>
+<artifact id="Bundle/bundle-oncology-report-example" key="Bundle-bundle-oncology-report-example" name="bundle-oncology-report-example"/>
+<artifact id="Bundle/bundle-oncologyexamples-r4" key="Bundle-bundle-oncologyexamples-r4" name="bundle-oncologyexamples-r4"/>
+<artifact id="Bundle/bundle-oncologyexamples-r4-withGrouping" key="Bundle-bundle-oncologyexamples-r4-withGrouping" name="bundle-oncologyexamples-r4-withGrouping"/>
+<artifact id="Bundle/bundle-pgxexample" key="Bundle-bundle-pgxexample" name="bundle-pgxexample"/>
+<artifact id="Bundle/bundle-sequence-phase-relation-CYP2C19" key="Bundle-bundle-sequence-phase-relation-CYP2C19" name="bundle-sequence-phase-relation-CYP2C19"/>
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="diagnosticreport-hla-glstring-r4"/>
-<artifact id="Bundle/diagnosticreport-pgxexample" key="Bundle-diagnosticreport-pgxexample" name="diagnosticreport-pgxexample"/>
-<artifact id="Observation/discrete-variant" key="Observation-discrete-variant" name="discrete-variant"/>
 <artifact id="ServiceRequest/eMERGEServiceRequest" key="ServiceRequest-eMERGEServiceRequest" name="eMERGEServiceRequest"/>
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="genotype-hla-a-glstring-r4"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="haplotype-hla-a-1-r4"/>
 <artifact id="Observation/obs-idh-ex" key="Observation-obs-idh-ex" name="obs-idh-ex"/>
-<artifact id="Bundle/oncology-diagnostic" key="Bundle-oncology-diagnostic" name="oncology-diagnostic"/>
-<artifact id="Bundle/oncology-report-example" key="Bundle-oncology-report-example" name="oncology-report-example"/>
-<artifact id="Bundle/oncologyexamples-r4" key="Bundle-oncologyexamples-r4" name="oncologyexamples-r4"/>
-<artifact id="Bundle/oncologyexamples-r4-withGrouping" key="Bundle-oncologyexamples-r4-withGrouping" name="oncologyexamples-r4-withGrouping"/>
-<artifact id="Bundle/report-CYP2C19-bundle" key="Bundle-report-CYP2C19-bundle" name="report-CYP2C19-bundle"/>
-<artifact id="Bundle/sequence-phase-relation-CYP2C19-bundle" key="Bundle-sequence-phase-relation-CYP2C19-bundle" name="sequence-phase-relation-CYP2C19-bundle"/>
 <artifact id="ServiceRequest/servicerequest-hla-a-r4" key="ServiceRequest-servicerequest-hla-a-r4" name="servicerequest-hla-a-r4"/>
 <artifact id="Specimen/specimen-hla-r4" key="Specimen-specimen-hla-r4" name="specimen-hla-r4"/>
 <page key="NA" name="(NA)"/>
