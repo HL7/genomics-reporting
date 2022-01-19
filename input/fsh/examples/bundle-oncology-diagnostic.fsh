@@ -75,25 +75,25 @@ Instance: Inline-Instance-for-oncology-diagnostic-5
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $observation-category#laboratory
-* code = $loinc#69548-6 "Genetic variant assessment"
+* category = ObsCat#laboratory
+* code = LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* valueCodeableConcept = $loinc#LA9633-4 "Present"
-* method = $loinc#LA26398-0 "Sequencing"
+* valueCodeableConcept = LNC#LA9633-4 "Present"
+* method = LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = $loinc#62374-4 "Human reference sequence assembly version"
-* component[=].valueCodeableConcept = $loinc#LA14029-5 "GRCh37"
-* component[+].code = $loinc#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = $varnomen#NC_000007.13:g.140453136A>T "NC_000007.13:g.140453136A>T"
-* component[+].code = $loinc#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept = $clinvar#13961 "Clinvar ID 13961"
-* component[+].code = $loinc#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = $varnomen#p.Val600Glu "p.Val600Glu"
-* component[+].code = $loinc#48006-1 "Amino acid change type"
-* component[=].valueCodeableConcept = $loinc#LA6698-0 "Missense"
-* component[+].code = $loinc#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept = $geneId#HGNC:1097 "BRAF"
+* component[0].code = LNC#62374-4 "Human reference sequence assembly version"
+* component[=].valueCodeableConcept = LNC#LA14029-5 "GRCh37"
+* component[+].code = LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[=].valueCodeableConcept = HGVS#NC_000007.13:g.140453136A>T "NC_000007.13:g.140453136A>T"
+* component[+].code = LNC#81252-9 "Discrete genetic variant"
+* component[=].valueCodeableConcept = CLINVAR#13961 "Clinvar ID 13961"
+* component[+].code = LNC#48005-3 "Amino acid change (pHGVS)"
+* component[=].valueCodeableConcept = HGVS#p.Val600Glu "p.Val600Glu"
+* component[+].code = LNC#48006-1 "Amino acid change type"
+* component[=].valueCodeableConcept = LNC#LA6698-0 "Missense"
+* component[+].code = LNC#48018-6 "Gene studied ID"
+* component[=].valueCodeableConcept = HGNCID#HGNC:1097 "BRAF"
 
 Instance: Inline-Instance-for-oncology-diagnostic-6
 InstanceOf: DiagnosticImplication
@@ -102,26 +102,26 @@ Usage: #inline
 * extension.valueRelatedArtifact.type = #justification
 * extension.valueRelatedArtifact.display = "https://pmkb.weill.cornell.edu/therapies/103"
 * status = #final
-* category = $observation-category#laboratory
-* code = $tbd-codes-cs#diagnostic-implication "Diagnostic Implication"
+* category = ObsCat#laboratory
+* code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* method = $loinc#LA26811-2 "Computational analysis"
+* method = LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = $loinc#53037-8 "Genetic variation clinical significance [Imp]"
-* component[=].valueCodeableConcept = $loinc#LA6668-3 "Pathogenic"
-* component[+].code = $loinc#93044-6 "Level of Evidence"
-* component[=].valueCodeableConcept = $loinc#LA30200-2 "Very strong evidence pathogenic"
-* component[+].code = $loinc#81259-4
+* component[0].code = LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[=].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
+* component[+].code = LNC#93044-6 "Level of Evidence"
+* component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
+* component[+].code = LNC#81259-4
 * component[=].valueCodeableConcept.text = "melanoma"
 
 Instance: Inline-Instance-for-oncology-diagnostic-7
 InstanceOf: GenomicsReport
 Usage: #inline
 * status = #final
-* category = $v2-0074#GE
-* code = $loinc#81247-9 "Master HL7 genetic variant reporting panel"
+* category = DiagnosticService#GE
+* code = LNC#81247-9 "Master HL7 genetic variant reporting panel"
   * text = "Genetic analysis report"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)

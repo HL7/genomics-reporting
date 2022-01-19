@@ -99,14 +99,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coding-change-type] ^short = "Coding DNA Change Type"
 * component[coding-change-type] ^definition = "Codified type for associated DNA Marker. DNA Marker's use the HGVS notation which implies the DNA Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience."
 * component[coding-change-type].value[x] only CodeableConcept
-* component[coding-change-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://www.sequenceontology.org/browser/current_release/term/SO:0002072)."
+* component[coding-change-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://sequenceontology.org/browser/current_release/term/SO:0002072)."
 * component[coding-change-type].value[x] 1..1
 * component[coding-change-type].value[x] from DNAChangeTypeVS (extensible)
 * component[molecular-consequence].code = TbdCodesCS#molecular-consequence
 * component[molecular-consequence] ^short = "Molecular Consequence"
 * component[molecular-consequence] ^definition = "Changes in a structural features of a sequence due to the observed variant."
 * component[molecular-consequence].value[x] only CodeableConcept
-* component[molecular-consequence].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://www.sequenceontology.org/browser/current_release/term/SO:0001537)."
+* component[molecular-consequence].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://sequenceontology.org/browser/current_release/term/SO:0001537)."
 * component[molecular-consequence].value[x] 1..1
 * component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
 * component[variation-code].code = LNC#81252-9

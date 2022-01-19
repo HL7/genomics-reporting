@@ -5,9 +5,9 @@ Usage: #example
 * identifier.value = "1234.5678"
 * status = #completed
 * intent = #order
-* category = $sct#108252007 "Laboratory procedure"
+* category = SCT#108252007 "Laboratory procedure"
 * priority = #routine
-* code = $loinc#13298-5 "HLA-A [Type]"
+* code = LNC#13298-5 "HLA-A [Type]"
 * subject.identifier.value = "001^24680"
 * requester.type = "Organization"
 * requester.display = "aDonorRegistry"

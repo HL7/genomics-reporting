@@ -1,6 +1,5 @@
 Instance: ExamplePatient
 InstanceOf: Patient
-//Usage: #inline
 * text.status = #additional
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">This would contain patient identifiers, demographics, etc.</div>"
 
@@ -20,6 +19,6 @@ InstanceOf: GenomicsServiceRequest
 Usage: #inline
 * status = #active
 * intent = #original-order
-* code.coding = $loinc#81247-9
+* code.coding = LNC#81247-9
 * subject = Reference(ExamplePatient)
 * reasonCode.text = "Worried about family planning"
