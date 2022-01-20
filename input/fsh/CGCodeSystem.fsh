@@ -59,3 +59,13 @@ Description: "A code that represents the confidence of a true positive variant c
 * #high	        "High"	        "High confidence true positive variant call. Suitable for clinical reporting."
 * #intermediate	"Intermediate"	"Candidate true positive variant call. Unable to confirm without additional testing."
 * #low	        "Low"	        "High confidence false positive variant call."
+
+CodeSystem: CodedAnnotationTypesCS
+Id: coded-annotation-types-cs
+Title: "Coded Annotation Type Codes"
+Description: "Code System for specific types of coded annotations"
+* ^caseSensitive = true
+
+* #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
+* #test-methodology "Test Methodology" "Additional details regarding the test methdology"
+* #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"

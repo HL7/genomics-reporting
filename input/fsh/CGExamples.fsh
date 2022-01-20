@@ -431,6 +431,10 @@ Description: "Example variant 1019"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
+* note.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#result-confirmation
+* note.text = """
+This variant was confirmed with SANGER sequencing
+"""
 
 Instance: Pgx-var-1020
 InstanceOf: Variant
@@ -457,6 +461,10 @@ Description: "Example variant 1020"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
+* note.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#result-confirmation
+* note.text = """
+This variant was confirmed with SANGER sequencing
+"""
 
 Instance: Pgx-var-1021
 InstanceOf: Variant
@@ -483,6 +491,10 @@ Description: "Example variant 1021"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#intermediate
+* note.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#result-confirmation
+* note.text = """
+This variant was confirmed with SANGER sequencing
+"""
 
 Instance: Pgx-geno-1001
 InstanceOf: Genotype
@@ -751,6 +763,13 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
+* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
+* extension[GenomicReportNote][0].valueAnnotation.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#test-disclaimer
+* extension[GenomicReportNote][0].valueAnnotation.text = """
+This test was developed and its performance determined by this laboratory. It has not been cleared or approved by U.S. Food and Drug Administration.
+Since FDA Approval is not required for clinical use of this test, this laboratory has established and validated the test's accuracy and precision,
+pursuant to the requirement of CLIA '88. This laboratory is licensed and/or accredited under CLIA and CAP (CAP# xxxxxxx / CLIA# xxxxxxxxxx).
+"""
 * status = #final
 
 Instance: PGxGenomicsReportEMERGE-withGrouping
@@ -1069,8 +1088,8 @@ Description: "Polygenic Risk Score example"
 * basis[6].identifier.system = "http://hospital.example.org"
 * basis[6].identifier.value = "17"
 
-* prediction[0].outcome = SCT#44054006 "Diabetes mellitus type 2 (disorder)" 
-* prediction[0].probabilityDecimal = 0.26 
+* prediction[0].outcome = SCT#44054006 "Diabetes mellitus type 2 (disorder)"
+* prediction[0].probabilityDecimal = 0.26
 * prediction[0].qualitativeRisk = RiskQual#low "Low likelihood"
 * prediction[0].relativeRisk = 1.05
 * prediction[0].whenRange.high = 53 'a' "years"
@@ -1078,7 +1097,7 @@ Description: "Polygenic Risk Score example"
 //* prediction[0].whenRange.high.unit = "years"
 //* prediction[0].whenRange.high.system = "http://unitsofmeasure.org"
 //* prediction[0].whenRange.high.code = a
-* prediction[1].outcome = SCT#44054006 "Diabetes mellitus type 2 (disorder)" 
+* prediction[1].outcome = SCT#44054006 "Diabetes mellitus type 2 (disorder)"
 * prediction[1].probabilityDecimal = 0.7
 * prediction[1].qualitativeRisk = RiskQual#high "High likelihood"
 * prediction[1].relativeRisk = 2.69

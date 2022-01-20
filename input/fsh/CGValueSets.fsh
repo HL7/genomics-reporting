@@ -132,3 +132,9 @@ Id:             variant-confidence-status-vs
 Title:          "Variant Confidence Status"
 Description:    "A code that classifies the confidence for calling this variant."
 * codes from system VariantConfidenceStatusCS
+
+ValueSet:       CodedAnnotationTypesVS
+Id:             coded-annotation-types-vs
+Title:          "Coded Annotation Types"
+Description:    "Value Set for specific types of coded annotations"
+* codes from system CodedAnnotationTypesCS

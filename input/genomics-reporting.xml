@@ -305,6 +305,14 @@
 	    <exampleBoolean value="false"/>
 	    <groupingId value="extensions"/>
 	</resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/annotation-code"/>
+      </reference>
+      <name value="Annotation Code"/>
+      <description
+        value="Codifies the content of an Annotation"/>
+    </resource>
 
     <!-- Examples -->
     <resource>
@@ -333,7 +341,7 @@
 		  <description value="TherapeuticImplication where the patient is eligible for a clinical trial, with genetic data from a somatic sample."/>
 		  <groupingId value="examples"/>
 	  </resource>
-	  
+
 	  	  <resource>
 		  <reference>
 			  <reference value="Observation/Therapeutic-Implication-Clinical-Trial-2"/>
@@ -367,7 +375,7 @@
 		  <groupingId value="examples"/>
 	  </resource>
 
-	  
+
 	  <resource>
 		  <reference>
 			  <reference value="Specimen/GenomicSpecimenExample02"/>
@@ -442,7 +450,7 @@
 	  <resource>
 		  <reference>
 			  <reference value="RiskAssessment/GenRiskDiabetesT2"/>
-			  
+
 		  </reference>
 		  <name value="Example - Polygenic Risk Score Assesment"/>
 		  <description value="Polygeneic Risk Score Simple Assesment"/>
@@ -1104,7 +1112,7 @@
 		<name value="Evidence Level Example codes"/>
 		<description value="Value set for example codes from example sources of values for Evidence Level"/>
 		<groupingId value="valuesets"/>
-	</resource>  
+	</resource>
     <resource>
       <reference>
         <reference value="ConceptMap/dna-change-type-map"/>
