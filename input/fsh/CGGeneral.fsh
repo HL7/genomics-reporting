@@ -36,13 +36,23 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * performer 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
+* note only CodedAnnotation
+* note ^short = "Comments about the Observation that also contain a coded type"
+* note ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
+* note ^comment = """
+May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.
+The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of interpretation, value, or component values.
+One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
+"""
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains conclusion-string 0..1
 * component[conclusion-string] ^short = "Clinical Conclusion"
-* component[conclusion-string] ^definition = "Clinical conclusion (interpretation) of the observation"
+* component[conclusion-string] ^definition = "Concise and clinically contextualized summary conclusion (interpretation/impression) of the observation"
+* component[conclusion-string] ^requirements = "Need to be able to provide a conclusion that is not lost among the basic result data."
+* component[conclusion-string] ^comment = "An example would be the interpretative information, typically canned, about a variant identified in the patient."
 * component[conclusion-string].code = TbdCodesCS#conclusion-string
 * component[conclusion-string].value[x] only string
 
@@ -82,11 +92,20 @@ Parent:         DiagnosticReport
 Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
-* extension contains GenomicsArtifact named genomics-artifact 0..* and
-    GenomicsFile named genomics-file 0..* and
-    RecommendedAction named recommended-action 0..* and
-    SupportingInformation named supporting-information 0..* and
-    GenomicsReportRisk named report-risk 0..*
+
+* extension contains GenomicsArtifact named genomics-artifact 0..*
+    and GenomicsFile named genomics-file 0..*
+    and RecommendedAction named recommended-action 0..*
+    and SupportingInformation named supporting-information 0..*
+    and GenomicsReportRisk named report-risk 0..*
+    and GenomicReportNote named coded-note 0..*
+* extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
+* extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
+* extension[GenomicReportNote] ^comment = """
+May include general statements about the report, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.
+The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
+One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
+"""
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
 * subject only Reference(Patient or Group or Location)
