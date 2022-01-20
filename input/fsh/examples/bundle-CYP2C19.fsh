@@ -1,5 +1,6 @@
 Instance: bundle-CYP2C19
 InstanceOf: Bundle
+Description: "Example bundle containing CYP2C19 report and variants"
 Usage: #example
 * type = #transaction
 * entry[0].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe00"

@@ -1,5 +1,6 @@
 Instance: bundle-compound-heterozygote
 InstanceOf: Bundle
+Description: "Example bundle with compound heterozygous variant, where the specific changes are represented with HGVS."
 Usage: #example
 * type = #transaction
 * entry[0].fullUrl = "urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"

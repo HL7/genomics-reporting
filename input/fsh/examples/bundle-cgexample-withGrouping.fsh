@@ -1,5 +1,6 @@
 Instance: bundle-cgexample-withGrouping
 InstanceOf: Bundle
+Description: "Example bundle showing a variety of profiles, including how groupings of Observations might be delivered."
 Usage: #example
 * type = #collection
 * entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/report-withGrouping"

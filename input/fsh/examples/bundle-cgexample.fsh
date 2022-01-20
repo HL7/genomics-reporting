@@ -1,5 +1,6 @@
 Instance: bundle-cgexample
 InstanceOf: Bundle
+Description: "Example bundle showing a variety of profiles."
 Usage: #example
 * type = #collection
 * entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/report"

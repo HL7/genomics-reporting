@@ -1,5 +1,6 @@
 Instance: genotype-hla-a-glstring-r4
 InstanceOf: Genotype
+Description: "Genotype example: Sequence-based typing of HLA-A"
 Usage: #example
 * basedOn.display = "Sequence-based typing of HLA-A for sample-id=123456789"
 * status = #final

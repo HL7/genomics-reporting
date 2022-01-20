@@ -1,5 +1,6 @@
 Instance: bundle-oncology-diagnostic
 InstanceOf: Bundle
+Description: "Example of an oncology report, TMB, variants, and implications."
 Usage: #example
 * type = #transaction
 * entry[0].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"

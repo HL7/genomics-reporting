@@ -1,5 +1,6 @@
 Instance: SNVexample
 InstanceOf: Variant
+Description: "Example Variant"
 Usage: #example
 * status = #final
 * category = ObsCat#laboratory

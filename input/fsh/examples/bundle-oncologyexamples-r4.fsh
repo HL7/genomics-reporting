@@ -1,5 +1,6 @@
 Instance: bundle-oncologyexamples-r4
 InstanceOf: Bundle
+Description: "Example bundle with an oncology report with SNVs, TMB, MSI, and therapy matches."
 Usage: #example
 * type = #transaction
 * entry[0].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"

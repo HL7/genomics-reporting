@@ -1,5 +1,6 @@
 Instance: bundle-pgxexample
 InstanceOf: Bundle
+Description: "Example bundle with a PGx report and a variety of observations."
 Usage: #example
 * type = #transaction
 * entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/pgx-report"

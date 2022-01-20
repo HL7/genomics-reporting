@@ -1,5 +1,6 @@
 Instance: diagnosticreport-hla-glstring-r4
 InstanceOf: GenomicsReport
+Description: "Example GenomicsReport including an HLA glstring"
 Usage: #example
 * basedOn[0].display = "Sequence-based typing of HLA-A for sample-id=123456789"
 * basedOn[+].display = "Sequence-based typing of HLA-B for sample-id=123456789"

@@ -1,5 +1,6 @@
 Instance: obs-idh-ex
 InstanceOf: DiagnosticImplication
+Description: "Example DiagnosticImplication - Pathogenic for CF"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-artifact"
 * extension.valueRelatedArtifact.type = #citation

@@ -1,5 +1,6 @@
 Instance: med-usage-impact-task-pgx-example
 InstanceOf: MedicationRecommendation
+Description: "Example MedicationRecommendation"
 Usage: #inline
 * status = #requested
 * intent = #proposal

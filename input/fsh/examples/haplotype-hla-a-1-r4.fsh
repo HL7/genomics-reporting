@@ -1,5 +1,6 @@
 Instance: haplotype-hla-a-1-r4
 InstanceOf: Haplotype
+Description: "Example Haplotype Sequence-based typing of HLA-A"
 Usage: #example
 * basedOn.type = "ServiceRequest"
 * basedOn.display = "Sequence-based typing of HLA-A for sample 001-246802468"

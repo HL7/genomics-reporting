@@ -1,5 +1,6 @@
 Instance: bundle-sequence-phase-relation-CYP2C19
 InstanceOf: Bundle
+Description: "Example Sequence Phase Relation showing a report with two variants in cis"
 Usage: #example
 * type = #transaction
 * entry[0].fullUrl = "urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe00"
