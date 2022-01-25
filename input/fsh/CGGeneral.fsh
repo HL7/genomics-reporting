@@ -3,7 +3,6 @@ Parent:         Specimen
 Id:             specimen
 Title:          "Genomics Specimen"
 Description:    "A sample to be used for analysis."
-
 * subject 1..1
 * subject only Reference(Patient or Group or Location)
 
@@ -12,7 +11,6 @@ Parent:         ServiceRequest
 Id:             servicerequest
 Title:          "Genomics Service Request"
 Description:    "Request that initiated the diagnostic report."
-
 * doNotPerform 0..0
 * code ^binding.description = "For laboratory, LOINC is preferred."
 * subject only Reference(Patient or Group or Location)
@@ -24,7 +22,7 @@ Parent:         Observation
 Id:             genomics-base
 Title:          "Genomics Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
-
+* ^abstract = true
 * category 1..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
@@ -38,14 +36,13 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * performer 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
-* ^abstract = true
 * note only CodedAnnotation
 * note ^short = "Comments about the Observation that also contain a coded type"
 * note ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * note ^comment = """
-May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation. 
+May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of interpretation, value, or component values.
-One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context. 
+One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -64,21 +61,18 @@ Parent:         GenomicsBase
 Id:             overall-interpretation
 Title:          "Overall Interpretation"
 Description:    "Provides a coarse overall interpretation of the genomic results reported."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#51968-6
 * specimen only Reference(GenomicSpecimen)
 * value[x] only CodeableConcept
 * value[x] 1..1
 * value[x] from http://loinc.org/vs/LL541-4 (preferred)
-* ^abstract = false
 
 Profile:        SequencePhaseRelationship
 Parent:         GenomicFinding
 Id:             sequence-phase-relationship
 Title:          "Sequence Phase Relationship"
 Description:    "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#82120-7
 * valueCodeableConcept 1..1
@@ -92,7 +86,6 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
     haplotype 0..*
 * derivedFrom[variant] only Reference(Variant)
 * derivedFrom[haplotype] only Reference(Haplotype)
-* ^abstract = false
 
 Profile:        GenomicsReport
 Parent:         DiagnosticReport
@@ -100,18 +93,18 @@ Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
-* extension contains GenomicsArtifact named genomics-artifact 0..* 
-    and GenomicsFile named genomics-file 0..* 
-    and RecommendedAction named recommended-action 0..* 
-    and SupportingInformation named supporting-information 0..* 
-    and GenomicsReportRisk named report-risk 0..* 
+* extension contains GenomicsArtifact named genomics-artifact 0..*
+    and GenomicsFile named genomics-file 0..*
+    and RecommendedAction named recommended-action 0..*
+    and SupportingInformation named supporting-information 0..*
+    and GenomicsReportRisk named report-risk 0..*
     and GenomicReportNote named coded-note 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * extension[GenomicReportNote] ^comment = """
-May include general statements about the report, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation. 
+May include general statements about the report, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
-One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context. 
+One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
 * basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
@@ -162,8 +155,6 @@ Parent:         DocumentReference
 Id:             genomics-document-reference
 Title:          "Genomics DocumentReference"
 Description:    "A profile of DocumentReference used to represent a genomics file."
-
 * subject only Reference(Patient or Group)
 * context.related only Reference(GenomicsReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"
-

@@ -1,10 +1,10 @@
 Profile:        GenomicFinding
 Parent:         GenomicsBase
 Id:             finding
-Title:          "Finding"
+Title:          "Genomics Finding"
 Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* ^abstract = true
 * specimen only Reference(GenomicSpecimen)
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -39,21 +39,17 @@ Title:          "Tumor Mutation Burden"
 Description:    """
 The total number of mutations (changes) found in the DNA of cancer cells. Knowing the tumor mutational burden may help plan the best treatment. For example, tumors that have a high number of mutations appear to be more likely to respond to certain types of immunotherapy. Tumor mutational burden is being used as a type of biomarker.
 """
-
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#94076-7
 * valueQuantity = UCUM#1/1000000{Base}
 * valueQuantity.unit = "Mutations/Megabase"
 * interpretation from HighLowCodesVS
-* ^abstract = false
 
 Profile:        Variant
 Parent:         GenomicFinding
 Id:             variant
 Title:          "Variant"
 Description:    "Details about a set of changes in the tested sample compared to a reference sequence."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#69548-6
 * method from http://loinc.org/vs/LL4048-6 (extensible)
@@ -103,14 +99,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coding-change-type] ^short = "Coding DNA Change Type"
 * component[coding-change-type] ^definition = "Codified type for associated DNA Marker. DNA Marker's use the HGVS notation which implies the DNA Marker Type, but the concurrent use of this code will allow a standard and explicit type for technical and display convenience."
 * component[coding-change-type].value[x] only CodeableConcept
-* component[coding-change-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://www.sequenceontology.org/browser/current_release/term/SO:0002072)."
+* component[coding-change-type].value[x] ^short = "Concepts in sequence ontology under SO:0002072 (see http://sequenceontology.org/browser/current_release/term/SO:0002072)."
 * component[coding-change-type].value[x] 1..1
 * component[coding-change-type].value[x] from DNAChangeTypeVS (extensible)
 * component[molecular-consequence].code = TbdCodesCS#molecular-consequence
 * component[molecular-consequence] ^short = "Molecular Consequence"
 * component[molecular-consequence] ^definition = "Changes in a structural features of a sequence due to the observed variant."
 * component[molecular-consequence].value[x] only CodeableConcept
-* component[molecular-consequence].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://www.sequenceontology.org/browser/current_release/term/SO:0001537)."
+* component[molecular-consequence].value[x] ^short = "Concepts in sequence ontology under SO:0001537 (see http://sequenceontology.org/browser/current_release/term/SO:0001537)."
 * component[molecular-consequence].value[x] 1..1
 * component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
 * component[variation-code].code = LNC#81252-9
@@ -231,14 +227,12 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variant-confidence-status].value[x] only CodeableConcept
 * component[variant-confidence-status].value[x] 1..1
 * component[variant-confidence-status].value[x] from VariantConfidenceStatusVS (required)
-* ^abstract = false
 
 Profile:        RegionStudied
 Parent:         GenomicsBase
 Id:             region-studied
 Title:          "Region Studied"
 Description:    "The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance)."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#53041-0
 * value[x] 0..0
@@ -298,25 +292,20 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[uncallable-regions].code = TbdCodesCS#uncallable-regions
 * component[uncallable-regions].value[x] only Range
 
-* ^abstract = false
-
 Profile:        MSI
 Parent:         GenomicsBase
 Id:             msi
 Title:          "Microsatellite Instability"
 Description:    "Microsatellite Instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR)."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#81695-9 // Mutations/Megabase [# Ratio] in Tumor
 * valueCodeableConcept from http://loinc.org/vs/LL3994-2 (extensible)
-* ^abstract = false
 
 Profile:        Haplotype
 Parent:         GenomicFinding
 Id:             haplotype
 Title:          "Haplotype"
 Description:    "Assertion of a particular haplotype on the basis of one or more variants."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#84414-2 // Haplotype name
 * value[x] only CodeableConcept
@@ -332,14 +321,12 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
 * derivedFrom[Variant] only Reference(Variant)
-* ^abstract = false
 
 Profile:        Genotype
 Parent:         GenomicFinding
 Id:             genotype
 Title:          "Genotype"
 Description:    "Assertion of a particular genotype on the basis of one or more variants or haplotypes."
-
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#84413-4 // Genotype name
 * value[x] only CodeableConcept
@@ -354,4 +341,3 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
 * derivedFrom[Variant] only Reference(Variant)
-* ^abstract = false
