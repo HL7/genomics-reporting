@@ -37,12 +37,12 @@
     This guide introduces Observation profiles to report results of tests that involve sequencing the DNA, RNA or amino acid chains of specimens. This includes direct sequencing, shotgun sequencing, array-based variant testing, and other mechanisms. See the <a href="index.html">scope</a> and <a href="background.html">overview</a> sections for more details.
   </p>
   <p>
-    Currently, there is one profile used to model most variant information. In future versions of this implementation guide, HL7 may subdivide Variant into multiple sub-profiles with more specific purpose.
+    Currently, there is one profile used to model most variant information: <a href="StructureDefinition-variant.html">Variant</a>. In future versions of this implementation guide, HL7 may subdivide Variant into multiple sub-profiles with more specific purpose.
   </p>
 <a name="VariantOverview"></a>
 <h3>Variant Profile Scope</h3>
 <p>
-The purpose of the Variant Observation profile is to capture genomic data elements fulfilling the following three purposes:
+The purpose of the <a href="StructureDefinition-variant.html">Variant</a> Observation profile is to capture genomic data elements fulfilling the following three purposes:
 </p>
 <ol>
   <li>To <b>define</b> a variant of interest, which could be a simple, well understood change from a reference sequence, or one of several types of structural variations with uncertain endpoints. </li>
@@ -279,7 +279,7 @@ This representation leverages multiple component slices to communicate an allele
 <a name="AnnotationComponents"></a>
 <h3>Annotating Variants</h3>
 <p>
-This implementation guide defines several components on Variant that can be used to provide helpful cross references and low-level annotations--annotations completely determined by the molecular change and calculable by NCBI.
+This implementation guide defines several components on <a href="StructureDefinition-variant.html">Variant</a> that can be used to provide helpful cross references and low-level annotations--annotations completely determined by the molecular change and calculable for example by NCBI.
 </p>
 <table>
   <thead>
@@ -362,7 +362,7 @@ This implementation guide defines several components on Variant that can be used
 <a name="StructuralVariants"></a>
 <h3>Representing Structural Variants</h3>
 <p>
-The Variant profile is capable of representing a subset of structural variants (e.g. copy number variants), whereas more complex structural variants such as translocations will require additional model development. We provide guidance here on how the Variant profile can be used to communicate common structural variants. (The cytogenomic-nomenclature component can also be used to communicate more complex structural variants, in ISCN notation).
+The <a href="StructureDefinition-variant.html">Variant</a> profile is capable of representing a subset of structural variants (e.g. copy number variants), whereas more complex structural variants such as translocations will require additional model development. We provide guidance here on how the Variant profile can be used to communicate common structural variants. (The cytogenomic-nomenclature component can also be used to communicate more complex structural variants, in ISCN notation).
 </p>
 
 <p>
