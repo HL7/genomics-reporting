@@ -34,12 +34,6 @@
         <th><a href="#implications">Genomic Implications</a></th>
         <td>These represent observations where the <code>Observation.subject</code> is typically the Patient and the <code>Observation.derivedFrom</code> should refer to Genomic Findings. For example, "Patient may have increased susceptibility to heart attacks"</td>
       </tr>
-		<!--
-      <tr>
-        <th><a href="#grouper">Grouper</a></th>
-        <td>The genomic observations can be organized and grouped together in a wide variety of ways.</td>
-      </tr>
-	  -->
       <tr>
         <th><a href="#regionstudied">Region Studied</a></th>
         <td>These are observations describing the region or regions that were studied as part of this Genomics Report.</td>
@@ -56,12 +50,6 @@
         <th><a href="#contextual">Contextual Resources</a></th>
         <td>Other resources that provide contextual details.</td>
       </tr>
-		<!--tr>
-		<th>
-			<a href="#grouper">Using Observations to group or represent a sub-panel</a>
-		</th>
-		<td>Genomic observations can be organized and grouped together in a wide variety of ways. Generally the grouping provides a visual  to this grouping, with exception of using an appropriate code for a panel (e.g. a specific Panel LOINC code in an observation used to tie all the variants of the panel together) </td>
-	  </tr-->
     </tbody>
   </table>
 
@@ -391,11 +379,33 @@
 		For senders of Genomic Diagnostic reports, it is up to receiving systems to arrange/use the genomic observations appropriately. However, some systems may only process just the first layer of a <code>DiagnosticReport.results</code>. Thus, when sending the report and results, we recommend including result links to all the genomic observation results being returned. For more complex reporting use cases, consider using the <code>summaryOf</code> extension on <code>DiagnosticReport</code> for creating meaningful subsets of observations.
 	</p>
 	
-    <a name="querynote"> </a>
+  <a name="querynote"> </a>
   <h3>Querying</h3>
   <p>
 	As a note on querying, the relationships indicated by <code>hasMember</code>, <code>derivedFrom</code> and the computable meaning conveyed by observation.code and component.code are critical for specificity in querying and getting comprehensive search results. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meaning of the values are predicated on by the component.code or observation.code to which they associate. There is a page in this IG with <a href="usecases.html">query guidance</a> that show how to use components, relationships (references) and the iterative <code>hasMember</code> to find results. The use of a grouping observation does not influence the ability to query. For example, the profile of a variant contains a value for the gene name component. Querying for all variants for the patient in a given gene can be done through the gene name component.
   </p>
   
+  <a name="flexibility"> </a>
+  <h3>Additional Attributes</h3>
+  <p>
+    This Implementation Guide uses <a hef="{{site.data.fhir.path}}profiling.html">FHIR profiling</a> to define constraints on base resources to provide an interoperable structure for genomic concepts. For example, the <a href="StructureDefinition-variant.html">Variant profile</a> defines the structure for delivering variant attributes. While these profiles seek to fully describe each concept, there might be other attributes that need to be delivered. While we suggest some caution in doing this, as it makes implementations less consistent and therefore less interoperable, there are at least two ways this can be accomplished:
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Custom extensions</th>
+        <td>Implementers can use the <a href="{{site.data.fhir.path}}extensibility.html">extensibility</a> features built into FHIR. This guide introduces a number of extensions, but other use case specific extensions can be introduced when needed.</td>
+      </tr>
+      <tr>
+        <th>Open slicing</th>
+        <td>When constraining attributes that can contain multiple values, the FHIR concept of <a href="{{site.data.fhir.path}}profiling.html#slicing">slicing</a> is used. The slices we define are all 'open' which means that while the specific rules should be used when possible, implementors are free to send additional data. For example, in <code>Observation.code</code>, our profiles require a specific code be sent, but still allow other codes to be delivered. Another example is in <code>Observation.component</code> where additional attributes can be described in <code>Observation.component.code</code> and their value delivered in <code>Observation.component.value[x]</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote class="stu-note">
+    <p>
+      Please note - When implementers find it necessary to extend beyond what is defined in this guide, the Clinical Genomics working group would like to understand the use case and requirements. The work group wants that feedback so that we can evaluate if a change to the guide would benefit the community so that others can consistently implement the same use case and requirements.
+    </p>
+  </blockquote>
   
 </div>
