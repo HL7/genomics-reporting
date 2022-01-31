@@ -104,7 +104,7 @@ Usage: #inline
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype-pgx-example)
-* component[0].code = LNC#53040-2 "Genetic variation's effect on drug metabolism"
+* component[0].code = TbdCodesCS#predicted-therapeutic-implication
 * component[=].valueCodeableConcept = LNC#LA25390-8 "Rapid metabolizer"
 * component[+].code = LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept = RXN#103 "mercaptopurine"

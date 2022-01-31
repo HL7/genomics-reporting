@@ -78,7 +78,7 @@ Usage: #inline
 * method = LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = LNC#51961-1
+* component[0].code = TbdCodesCS#predicted-therapeutic-implication
 * component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
 * component[+].code = LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -98,7 +98,7 @@ Usage: #inline
 * method = LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = LNC#51961-1
+* component[0].code = TbdCodesCS#predicted-therapeutic-implication
 * component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
 * component[+].code = LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -118,7 +118,7 @@ Usage: #inline
 * method = LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = LNC#51961-1
+* component[0].code = TbdCodesCS#predicted-therapeutic-implication
 * component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
 * component[+].code = LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -264,7 +264,7 @@ Usage: #inline
 * method = LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = LNC#51961-1
+* component[0].code = TbdCodesCS#predicted-therapeutic-implication
 * component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
 * component[+].code = LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
