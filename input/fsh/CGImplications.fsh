@@ -89,6 +89,8 @@ Description:    "Profile with properties for observations that convey the potent
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
 * extension contains TherapyAssessed named therapy-assessed 0..*
+                 and MedicationAssessed named medication-assessed 0..*
+* extension[MedicationAssessed] ^requirements = "NOTE - If this extension is used, it should not conflict with the component also named 'medication-assessed' which allows for a simple medication code to be shared."
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -106,8 +108,9 @@ Description:    "Profile with properties for observations that convey the potent
 * component[phenotypic-treatment-context].value[x] ^binding.description = "Binding not yet defined"
 * component[phenotypic-treatment-context].value[x] 1..1
 * component[medication-assessed].code = LNC#51963-7
-* component[medication-assessed] ^short = "Medication Assessed"
-* component[medication-assessed] ^definition = "The medication whose implication is being described."
+* component[medication-assessed] ^short = "Medication Assessed (by code only)"
+* component[medication-assessed] ^definition = "The medication (by code only) whose implication is being described."
+* component[medication-assessed] ^requirements = "If this component is used, it should not conflict with the extension also named 'medication-assessed' which allows for more detailed medication data to be shared."
 * component[medication-assessed].value[x] only CodeableConcept
 * component[medication-assessed].value[x] ^binding.strength = #example
 * component[medication-assessed].value[x] ^binding.description = "Binding not yet defined"

@@ -67,7 +67,15 @@ Description: "Used to transmit the contents of or links to files that were produ
 Extension:   TherapyAssessed
 Id:          therapy-assessed
 Title:       "Therapy Assessed"
-Description: "Used to reference a specific therapy (e.g. a FHIR ResearchStudy, a FHIR CarePlan)."
+Description: "Used to reference a specific therapy that was assessed (e.g. a FHIR ResearchStudy, a FHIR CarePlan, or a FHIR PlanDefinition)."
 * ^context[0].type = #element
 * ^context[0].expression = "TherapeuticImplication"
 * value[x] only Reference(CarePlan or ResearchStudy or PlanDefinition)
+
+Extension:   MedicationAssessed
+Id:          medication-assessed
+Title:       "Medication Assessed"
+Description: "Used to reference a specific medication that was assessed (e.g. a FHIR Medication or a FHIR MedicationKnowledge)."
+* ^context[0].type = #element
+* ^context[0].expression = "TherapeuticImplication"
+* value[x] only Reference(Medication or MedicationKnowledge)
