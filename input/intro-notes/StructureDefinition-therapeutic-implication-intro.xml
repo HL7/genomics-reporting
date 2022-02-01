@@ -29,7 +29,10 @@
     )
   </p>
   <p>
-    The profile component medication-assessed is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication. The <code>therapy-assessed</code> component is not intended for medications. Because this is an international profile, no guidance is provided on drug coding systems.
+    There are two ways to communicate details about a medication whose implication is being described. The profile component <code>medication-assessed</code> is the place to communicate a simple code for the medication. If more detail about the medication is to be shared, use the extension also named <code>medication-assessed</code>. The extension can refer to a <a hef="{{site.data.fhir.path}}medication.html">Medication</a> or <a hef="{{site.data.fhir.path}}medicationknowledge.html">MedicationKnowledge</a> resource. This might be used to share specifics <a hef="{{site.data.fhir.path}}medicationknowledge-definitions.html#MedicationKnowledge.medicineClassification">classification details</a> if they are important as part of the implication being described. It is important to note that since there two ways to do this, implementers SHALL ensure consistent usage. If both the extension and component are used at the same time, they SHALL deliver the same medication code.  Because this is an international profile, no guidance is provided on drug coding systems.
+  </p>
+  <p>
+    It is important to note that the <code>therapy-assessed</code> component is not intended for medications. This component should be used to deliver non-medication therapy whose implication on the outcome is being predicted (e.g. altered diet, radiation therapy, surgery, etc.)
   </p>
   <p>
     The component <code>Predicted Therapeutic Implication</code> lists one or more ramifications based on the presence of associated molecular finding(s), which may include:
