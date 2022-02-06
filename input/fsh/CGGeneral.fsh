@@ -54,7 +54,9 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component[conclusion-string] ^requirements = "Need to be able to provide a conclusion that is not lost among the basic result data."
 * component[conclusion-string] ^comment = "An example would be the interpretative information, typically canned, about a variant identified in the patient."
 * component[conclusion-string].code = TbdCodesCS#conclusion-string
+* component[conclusion-string].code ^short = "LOINC pending"
 * component[conclusion-string].value[x] only string
+* component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"
 
 Profile:        OverallInterpretation
 Parent:         GenomicsBase
@@ -63,10 +65,12 @@ Title:          "Overall Interpretation"
 Description:    "Provides a coarse overall interpretation of the genomic results reported."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#51968-6
+* code ^short = "51968-6"
 * specimen only Reference(GenomicSpecimen)
 * value[x] only CodeableConcept
 * value[x] 1..1
 * value[x] from http://loinc.org/vs/LL541-4 (preferred)
+* value[x] ^short = "Positive | Negative | Inconclusive | Failure"
 
 Profile:        SequencePhaseRelationship
 Parent:         GenomicFinding
@@ -75,17 +79,23 @@ Title:          "Sequence Phase Relationship"
 Description:    "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#82120-7
-* valueCodeableConcept 1..1
-* valueCodeableConcept from SequencePhaseRelationshipVS (required)
+* code ^short = "82120-7"
+* value[x] only CodeableConcept
+* value[x] 1..1
+* value[x] from SequencePhaseRelationshipVS (required)
+* value[x] ^short = "Cis | Trans | Indeterminate | Unknown"
 * method from http://loinc.org/vs/LL4050-2 (extensible)
+* method ^short "Directly measured | Family DNA | Family history | Inferred from population data"
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Slice based on the component.code pattern"
+* derivedFrom ^slicing.description = "Slice based on the profile"
 * derivedFrom contains variant 0..* and 
     haplotype 0..*
 * derivedFrom[variant] only Reference(Variant)
+* derivedFrom[variant] ^short = "Variant in the relationship"
 * derivedFrom[haplotype] only Reference(Haplotype)
+* derivedFrom[haplotype] ^short = "Haplotype in the relationship"
 
 Profile:        GenomicsReport
 Parent:         DiagnosticReport

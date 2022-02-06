@@ -127,7 +127,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[molecular-consequence] ^short = "Molecular Consequence"
 * component[molecular-consequence] ^definition = "A calculated classification of the effect of the gene's sequence change on the resulting amino acid (protein) sequence change."
 * component[molecular-consequence].value[x] only CodeableConcept
-* component[molecular-consequence].value[x] ^short = " stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
+* component[molecular-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
 * component[molecular-consequence].value[x] 1..1
 * component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
 * component[molecular-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
@@ -317,6 +317,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * . ^short = "Region Studied"
 * code = LNC#53041-0
+* code ^short = "53041-0"
 * value[x] 0..0
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -343,6 +344,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[gene-mutations] ^short = "Gene Mutations ID"
 * component[gene-mutations] ^definition = "Gene mutations that were tested for."
 * component[gene-mutations].code = LNC#36908-2
+* component[gene-mutations].code ^short = "36908-2"
 * component[gene-mutations].value[x] only CodeableConcept
 * component[gene-mutations].value[x] 1..1
 * component[gene-mutations].value[x] from HGVSVS (required)
@@ -350,16 +352,19 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[region-description] ^short = "Region Description"
 * component[region-description] ^definition = "Description of region examined."
 * component[region-description].code = LNC#81293-3
+* component[region-description].code ^short = "81293-3"
 * component[region-description].value[x] only string
 
 * component[region-coverage] ^short = "Region Coverage"
 * component[region-coverage] ^definition = "When sequencing, what % of the region was covered."
 * component[region-coverage].code = TbdCodesCS#region-coverage
+* component[region-coverage].code ^short = "LOINC pending"
 * component[region-coverage].value[x] only Quantity
 
 * component[ranges-examined] ^short = "Range(s) of DNA sequence examined"
 * component[ranges-examined] ^definition = "This term is used to report the region(s) of interest for sequencing studies as one or more numeric ranges that identify the parts of the reference sequence that are sequenced. These can be recorded as one or more HL7 numeric ranges using repeat delimiters to seperate multiple such ranges."
 * component[ranges-examined].code = LNC#51959-5
+* component[ranges-examined].code ^short = "51959-5"
 * component[ranges-examined].value[x] only Range
 
 * component[coordinate-system].code = LNC#92822-6
@@ -384,6 +389,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[uncallable-regions] ^short = "Uncallable Sub-regions"
 * component[uncallable-regions] ^definition = "Contiguous region(s) where a call was not made."
 * component[uncallable-regions].code = TbdCodesCS#uncallable-regions
+* component[uncallable-regions].code ^short = "LOINC pending"
 * component[uncallable-regions].value[x] only Range
 * component[uncallable-regions].value[x] ^short = "Must be inside the range given by 'ranges examined' in the given reference sequence and coordinate system."
 
@@ -422,7 +428,9 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
 * derivedFrom contains Haplotype 0..* and 
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
+* derivedFrom[Haplotype] ^short = "Haplotype this haplotype is derived from"
 * derivedFrom[Variant] only Reference(Variant)
+* derivedFrom[Variant] ^short = "Variant this haplotype is derived from"
 
 Profile:        Genotype
 Parent:         GenomicFinding
@@ -445,4 +453,6 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
 * derivedFrom contains Haplotype 0..* and 
     Variant 0..*
 * derivedFrom[Haplotype] only Reference(Haplotype)
+* derivedFrom[Haplotype] ^short = "Haplotype this genotype is derived from"
 * derivedFrom[Variant] only Reference(Variant)
+* derivedFrom[Variant] ^short = "Variant this genotype is derived from"

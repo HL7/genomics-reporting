@@ -17,8 +17,11 @@ Description:    "Properties common to genomoic implications expressed as computa
     genotype 0..* and
     haplotype 0..*
 * derivedFrom[variant] only Reference(Variant)
+* derivedFrom[variant] ^short = "Variant the implication is derived from"
 * derivedFrom[genotype] only Reference(Genotype)
+* derivedFrom[genotype] ^short = "Genotype the implication is derived from"
 * derivedFrom[haplotype] only Reference(Haplotype)
+* derivedFrom[haplotype] ^short = "Haplotype the implication is derived from"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -43,7 +46,7 @@ Description:    "Properties common to genomoic implications expressed as computa
 * component[prognosis].code ^short = "LOINC pending"
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
-* component[prognosis].value[x] ^short = "E.g. Better outcome, poorer outcome"
+* component[prognosis].value[x] ^short = "Better outcome | poorer outcome"
 //* component[prognosis].value[x] from (example) (extensible)
 
 Profile:        DiagnosticImplication
@@ -185,7 +188,7 @@ Description:    "Task proposing medication recommendations based on genetic resu
 Profile:        FollowupRecommendation
 Parent:         Task
 Id:             followup-recommendation
-Title:          "Follow-up Recommendation"
+Title:          "Followup Recommendation"
 Description:    "Task describing the follow-up that is recommended"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
