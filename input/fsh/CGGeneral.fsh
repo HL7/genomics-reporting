@@ -85,7 +85,7 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * value[x] from SequencePhaseRelationshipVS (required)
 * value[x] ^short = "Cis | Trans | Indeterminate | Unknown"
 * method from http://loinc.org/vs/LL4050-2 (extensible)
-* method ^short "Directly measured | Family DNA | Family history | Inferred from population data"
+* method ^short = "Directly measured | Family DNA | Family history | Inferred from population data"
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
