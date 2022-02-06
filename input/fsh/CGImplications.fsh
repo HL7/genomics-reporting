@@ -2,7 +2,7 @@ Profile:        GenomicImplication
 Parent:         GenomicsBase
 Id:             implication
 Title:          "Genomics Implication"
-Description:    "Properties common to genmoic implications expressed as computable discrete elements."
+Description:    "Properties common to genomoic implications expressed as computable discrete elements."
 * ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains GenomicsArtifact named related-artifact 0..1
@@ -185,8 +185,8 @@ Description:    "Task proposing medication recommendations based on genetic resu
 Profile:        FollowupRecommendation
 Parent:         Task
 Id:             followup-recommendation
-Title:          "Followup Recommendation"
-Description:    "Task describing the followup that is recommended"
+Title:          "Follow-up Recommendation"
+Description:    "Task describing the follow-up that is recommended"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = TaskStatus#requested
