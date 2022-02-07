@@ -123,7 +123,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coding-change-type].value[x] ^binding.description = "Concepts in sequence ontology under SO:0002072"
 
 * component[molecular-consequence].code = TbdCodesCS#molecular-consequence
-* component[molecular-consequence].code ^short = "LOINC pending"
+* component[molecular-consequence].code ^short = "molecular-consequence"
 * component[molecular-consequence] ^short = "Molecular Consequence"
 * component[molecular-consequence] ^definition = "A calculated classification of the effect of the gene's sequence change on the resulting amino acid (protein) sequence change."
 * component[molecular-consequence].value[x] only CodeableConcept
@@ -283,7 +283,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[cytogenomic-nomenclature].value[x] 1..1
 
 * component[variant-inheritance].code = TbdCodesCS#variant-inheritance
-* component[variant-inheritance].code ^short = "LOINC pending"
+* component[variant-inheritance].code ^short = "variant-inheritance"
 * component[variant-inheritance] ^short = "Variant Inheritance"
 * component[variant-inheritance] ^definition = "By which parent the variant was inherited in the patient, if known."
 * component[variant-inheritance].value[x] only CodeableConcept
@@ -301,7 +301,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
 
 * component[variant-confidence-status].code = TbdCodesCS#variant-confidence-status
-* component[variant-confidence-status].code ^short = "LOINC pending"
+* component[variant-confidence-status].code ^short = "variant-confidence-status"
 * component[variant-confidence-status] ^short = "Variant Confidence Status"
 * component[variant-confidence-status] ^definition = "A code that represents the confidence of a true positive variant call."
 * component[variant-confidence-status].value[x] only CodeableConcept
@@ -358,7 +358,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[region-coverage] ^short = "Region Coverage"
 * component[region-coverage] ^definition = "When sequencing, what % of the region was covered."
 * component[region-coverage].code = TbdCodesCS#region-coverage
-* component[region-coverage].code ^short = "LOINC pending"
+* component[region-coverage].code ^short = "region-coverage"
 * component[region-coverage].value[x] only Quantity
 
 * component[ranges-examined] ^short = "Range(s) of DNA sequence examined"
@@ -389,7 +389,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[uncallable-regions] ^short = "Uncallable Sub-regions"
 * component[uncallable-regions] ^definition = "Contiguous region(s) where a call was not made."
 * component[uncallable-regions].code = TbdCodesCS#uncallable-regions
-* component[uncallable-regions].code ^short = "LOINC pending"
+* component[uncallable-regions].code ^short = "uncallable-regions"
 * component[uncallable-regions].value[x] only Range
 * component[uncallable-regions].value[x] ^short = "Must be inside the range given by 'ranges examined' in the given reference sequence and coordinate system."
 

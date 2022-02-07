@@ -43,7 +43,7 @@ Description:    "Properties common to genomoic implications expressed as computa
 * component[prognosis] ^short = "Prognosis"
 * component[prognosis] ^definition = "Codified information on likely patient health outcome (e.g. disease recurrence) of the related clinical or biological characteristics, irrespective of the treatment"
 * component[prognosis].code = TbdCodesCS#prognostic-implication
-* component[prognosis].code ^short = "LOINC pending"
+* component[prognosis].code ^short = "prognostic-implication"
 * component[prognosis].value[x] only CodeableConcept
 * component[prognosis].value[x] 1..1
 * component[prognosis].value[x] ^short = "Better outcome | poorer outcome"
@@ -58,7 +58,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * extension contains GenomicsReportRisk named report-risk 0..*
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#diagnostic-implication
-* code ^short = "LOINC pending"
+* code ^short = "diagnostic-implication"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -81,7 +81,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 * component[mode-of-inheritance] ^definition = "The transmission pattern of the condition/phenotype in a pedigree. Values originally curated by GA4GH." 
 * component[mode-of-inheritance].code = TbdCodesCS#condition-inheritance
-* component[mode-of-inheritance].code ^short = "LOINC pending"
+* component[mode-of-inheritance].code ^short = "condition-inheritance"
 * component[mode-of-inheritance].value[x] only CodeableConcept
 * component[mode-of-inheritance].value[x] 1..1
 * component[mode-of-inheritance].value[x] from ConditionInheritanceModeVS (preferred)
@@ -97,7 +97,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
 
 * component[functional-effect].code = TbdCodesCS#functional-effect
-* component[functional-effect].code ^short = "LOINC pending"
+* component[functional-effect].code ^short = "functional-effect"
 * component[functional-effect] ^short = "Functional Effect"
 * component[functional-effect] ^definition = "A predicted or observed effect of a variant on the ability of its gene(s) or protein product(s) to function."
 * component[functional-effect].value[x] only CodeableConcept
@@ -114,7 +114,7 @@ Description:    "Profile with properties for observations that convey the potent
 * . ^short = "Therapeutic Implication"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
-* code ^short = "LOINC pending"
+* code ^short = "therapeutic-implication"
 * extension contains TherapyAssessed named therapy-assessed 0..*
                  and MedicationAssessed named medication-assessed 0..*
 * extension[MedicationAssessed] ^requirements = "NOTE - If this extension is used, it should not conflict with the component also named 'medication-assessed' which allows for a simple medication code to be shared."
@@ -151,7 +151,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[therapy-assessed] ^short = "Non-medication therapy assessed"
 * component[therapy-assessed] ^definition = "The non-medication therapy (e.g., altered diet, radiation therapy, surgery) implicated with respect to the related finding(s) and cancer/phenotypic treatment context"
 * component[therapy-assessed].code = TbdCodesCS#associated-therapy
-* component[therapy-assessed].code ^short = "LOINC pending"
+* component[therapy-assessed].code ^short = "associated-therapy"
 * component[therapy-assessed].value[x] only CodeableConcept
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
@@ -160,7 +160,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[predicted-therapeutic-implication] ^short = "Predicted Therapeutic Implication"
 * component[predicted-therapeutic-implication] ^definition = "A predicted ramification based on the presence of associated molecular finding(s). Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
 * component[predicted-therapeutic-implication].code = TbdCodesCS#predicted-therapeutic-implication
-* component[predicted-therapeutic-implication].code ^short = "LOINC pending"
+* component[predicted-therapeutic-implication].code ^short = "predicted-therapeutic-implication"
 * component[predicted-therapeutic-implication].value[x] only CodeableConcept
 * component[predicted-therapeutic-implication].value[x] 1..1
 * component[predicted-therapeutic-implication].value[x] from GeneticTherapeuticImplicationsVS (extensible)
