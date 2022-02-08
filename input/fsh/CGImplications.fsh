@@ -118,6 +118,7 @@ Description:    "Profile with properties for observations that convey the potent
 * extension contains TherapyAssessed named therapy-assessed 0..*
                  and MedicationAssessed named medication-assessed 0..*
 * extension[MedicationAssessed] ^requirements = "NOTE - If this extension is used, it should not conflict with the component also named 'medication-assessed' which allows for a simple medication code to be shared."
+* extension[TherapyAssessed] ^requirements = "NOTE - If this extension is used, it should not conflict with the component also named 'therapy-assessed' which allows for a simple therapy code to be shared."
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
