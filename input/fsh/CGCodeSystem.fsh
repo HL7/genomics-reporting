@@ -30,7 +30,7 @@ Description: "These codes are currently 'TBD' codes. The CG WG plans to request 
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
-Title: "ClinVar Evidence Level Example codes"
+Title: "ClinVar Evidence Level Example Codes"
 Description: "ClinVar contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on  ClinVar https://www.ncbi.nlm.nih.gov/clinvar/docs/review_status/ . These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
 * #4-star	"4 star"	"Supported by practice guideline"
@@ -41,7 +41,7 @@ Description: "ClinVar contains examples of evidence level concepts that are not 
 
 CodeSystem: PharmGKBEvidenceLevelCustomCS
 Id: pharmgkb-evidence-level-custom-cs
-Title: "PharmGKB Evidence Level Example codes"
+Title: "PharmGKB Evidence Level Example Codes"
 Description: "PharmGKB contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on PharmGKB https://www.pharmgkb.org/page/clinAnnLevels. These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
 * #1A	"PGKB 1A"	"High level of evidence. Supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
@@ -53,7 +53,7 @@ Description: "PharmGKB contains examples of evidence level concepts that are not
 
 CodeSystem: VariantConfidenceStatusCS
 Id: variant-confidence-status-cs
-Title: "Variant Confidence Status codes"
+Title: "Variant Confidence Status Codes"
 Description: "A code that represents the confidence of a true positive variant call."
 * ^caseSensitive = true
 * #high	        "High"	        "High confidence true positive variant call. Suitable for clinical reporting."
@@ -65,7 +65,6 @@ Id: coded-annotation-types-cs
 Title: "Coded Annotation Type Codes"
 Description: "Code System for specific types of coded annotations"
 * ^caseSensitive = true
-
 * #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
 * #test-methodology "Test Methodology" "Additional details regarding the test methdology"
 * #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"
