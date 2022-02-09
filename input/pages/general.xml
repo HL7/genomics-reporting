@@ -357,7 +357,7 @@
     Key points to take from this diagram:
   </p>
   <ul>
-    <li>Of the different types of observations, Genomic Findings all have exactly one specimen. The remainder might be associated with a specimen, but might not. Observations may also be associated with a particular BodyStructure, such as a fetus, tumor or lesion.</li>
+    <li>Of the different types of observations, Genomic Findings are expected to have one specimen. The remainder might be associated with a specimen, but might not. Observations may also be associated with a particular BodyStructure, such as a fetus, tumor or lesion.</li>
     <li>Genomic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request. All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
     <li><i>Overall Interpretations</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, an interpretation that "deletions or duplication were found" might be supported by observations of variants that contain deletions and/or duplication.</li>
     <li><i>Genomic Implications</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
