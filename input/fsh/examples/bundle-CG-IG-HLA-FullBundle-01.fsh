@@ -137,7 +137,6 @@ Usage: #inline
 Instance: CG-IG-HLA-FullBundle-01-2
 InstanceOf: Specimen
 Usage: #inline
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
 * identifier.system = "http://myorgsurl.com"
 * identifier.value = "123"
 * accessionIdentifier.system = "http://mylabsurl.com"
@@ -183,7 +182,7 @@ Usage: #inline
 * address.country = "USA"
 
 Instance: CG-IG-HLA-FullBundle-01-5
-InstanceOf: GenomicsServiceRequest
+InstanceOf: ServiceRequest
 Usage: #inline
 * status = #completed
 * intent = #order

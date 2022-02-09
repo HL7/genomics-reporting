@@ -85,7 +85,7 @@ Usage: #inline
 * result[+] = Reference(variant-2-pgx-example)
 
 Instance: pgx-request
-InstanceOf: GenomicsServiceRequest
+InstanceOf: ServiceRequest
 Usage: #inline
 * status = #active
 * intent = #original-order

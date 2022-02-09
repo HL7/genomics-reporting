@@ -1,6 +1,6 @@
 Instance: servicerequest-hla-a-r4
-InstanceOf: GenomicsServiceRequest
-Description: "Example GenomicsServiceRequest"
+InstanceOf: ServiceRequest
+Description: "Example ServiceRequest for genomics"
 Usage: #example
 * identifier.system = "http:/aDonorRegistry.com"
 * identifier.value = "1234.5678"
