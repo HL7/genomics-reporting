@@ -6,5 +6,5 @@ Alias: $pharmvar = http://www.pharmvar.org
 Alias: $SNP = http://www.ncbi.nlm.nih.gov/projects/SNP
 Alias: $orpha = http://www.orpha.net
 Alias: $omim = http://www.omim.org
-Alias: $HPO = http://hpo.jax.org/app/
+Alias: $HPO = https://hpo.jax.org/app/
 Alias: $Chrom-Loc = http://example.org/Chrom-Loc

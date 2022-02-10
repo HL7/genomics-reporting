@@ -56,7 +56,7 @@
   <a name="diagnosticreport"> </a>
   <h3>Genomics Report</h3>
   <p>
-    The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organized into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. Which is especially useful for later analysis steps. Additionally, an observation can be used to <a href="groupingGuidance.html">group</a> content for viewing purposes or to indicate a higher level panel (with a specific LOINC panel code in the <code>Observation.code</code> for example).
+    The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organzied into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. Which is especially useful for later analysis steps. Additionally, an observation can be used to <a href="groupingGuidance.html">group</a> content for viewing purposes or to indicate a higher level panel (with a specific LOINC panel code in the <code>Observation.code</code> for example).
   </p>
   <img src="general-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
@@ -89,7 +89,7 @@
     </p>
   </blockquote>
   <p>
-    While this implementation guide strives to provide structured genomic data via a variety of <a href="#observations">observations</a>, there are use cases that warrant a deeper level of data than this guide allows. These use cases might be best served by sending commonly used files (VCF, BAM, CRAM, MAF, BED to name a few) with the report. To promote a consistent approach to sharing these files, we provide the guidance in this section. Even with this guidance, note that best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API, remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
+    While this implementation guide strives to provide structured genomic data via a variety of <a href="#observations">observations</a>, there are use cases that warrant a deeper level of data than this guide allows. These use cases might be best served by sending commonly used files (VCF, BAM, CRAM, MAF, BED to name a few) with the report. To promote a consistant approach to sharing these files, we provide the guidance in this section. Even with this guidance, note that best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API, remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
   </p>
   <p>
     When sending these genomic files, implementers should utilize the <a href="StructureDefinition-genomics-document-reference.html">GenomicsDocumentReference</a> profile to send the file content along with meaningful metadata. This approach allows the files to have their own existence and enables queries to find them via the <code>DocumentReference</code> resource. To enable linking from the report to files, the <a href="StructureDefinition-genomics-file.html">Genomics File</a> extension can be used to reference files from the <code>GenomicsReport</code> profile. This can be helpful for those processing the report to easily identify the files that were sent along with the report.
@@ -110,7 +110,7 @@
   <a name="observations"> </a>
   <h3>Genomic Observations</h3>
   <p>
-    Observations are the core representation of structured genomic information. This guide defines a number of Observation profiles, with common underlying components and constraints being inherited from abstract profiles as shown in the following diagram. The profiles and their specific usage will be defined in more detail below and on the other pages of this guide.
+    Observations are the core represention of structured genomic information. This guide defines a number of Observation profiles, with common underlying components and constraints being inherited from abstract profiles as shown in the following diagram. The profiles and their specific usage will be defined in more detail below and on the other pages of this guide.
   </p>
   <p>
     All genomic observations are derived from a <a href="StructureDefinition-genomics-base.html">common abstract profile</a> that asserts they should have a category, effective date, issued date and status.
@@ -323,13 +323,13 @@
   <a name="otherobservations"> </a>
   <h4>Other Observations</h4>
   <p>
-    The results of tests other than genomic findings may also be included the report. One example is the <a href="StructureDefinition-tmb.html">Tumor Mutation Burden</a> profile, which captures the total number of mutations (changes) found in the DNA of cancer cells. Another example is <a href="StructureDefinition-msi.html">Microsatellite Instability</a>, a condition of genetic hypermutability that results from impaired DNA mismatch repair.
+    The results of tests other than genomic findings may also be included the report. One example is the <a href="StructureDefinition-tmb.html">Tumor Mutation Burden</a> profile, which captures the total number of mutations (changes) found in the DNA of cancer cells. Another example is <a href="StructureDefinition-msi.html">Microsatellite Instability</a>, a condition of genetic hypermutability that results from imparied DNA mismatch repair.
   </p>
 
   <a name="recommendations"> </a>
   <h3>Recommended Actions</h3>
   <p>
-    These actions can be specific recommendations be taken and are driven by the results found. These can be a <a href="StructureDefinition-followup-recommendation.html">Follow-up Recommendation</a> which can be used to indicate when some sort of follow-up (additional testing, genetic counseling) is required, or a <a href="StructureDefinition-medication-recommendation.html">Medication Recommendation</a> which can be used to propose medication recommendations based on the results of the test.
+    These actions can be specific recommendations be taken and are driven by the results found. These can be a <a href="StructureDefinition-followup-recommendation.html">Followup Recommendation</a> which can be used to indicate when some sort of follow-up (additional testing, genetic counseling) is required, or a <a href="StructureDefinition-medication-recommendation.html">Medication Recommendation</a> which can be used to propose medication recommendations based on the results of the test.
   </p>
 
   <a name="contextual"> </a>
@@ -398,7 +398,7 @@
       </tr>
       <tr>
         <th>Open slicing</th>
-        <td>When constraining attributes that can contain multiple values, the FHIR concept of <a href="{{site.data.fhir.path}}profiling.html#slicing">slicing</a> is used. The slices we define are all 'open' which means that while the specific rules should be used when possible, implementers are free to send additional data. For example, in <code>Observation.code</code>, our profiles require a specific code be sent, but still allow other codes to be delivered. Another example is in <code>Observation.component</code> where additional attributes can be described in <code>Observation.component.code</code> and their value delivered in <code>Observation.component.value[x]</code>.</td>
+        <td>When constraining attributes that can contain multiple values, the FHIR concept of <a href="{{site.data.fhir.path}}profiling.html#slicing">slicing</a> is used. The slices we define are all 'open' which means that while the specific rules should be used when possible, implementors are free to send additional data. For example, in <code>Observation.code</code>, our profiles require a specific code be sent, but still allow other codes to be delivered. Another example is in <code>Observation.component</code> where additional attributes can be described in <code>Observation.component.code</code> and their value delivered in <code>Observation.component.value[x]</code>.</td>
       </tr>
     </tbody>
   </table>
