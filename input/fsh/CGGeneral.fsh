@@ -132,7 +132,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[genotype] ^short = "Genotype"
 * result[haplotype] only Reference(Haplotype)
 * result[haplotype] ^short = "Haplotype"
-* media 0..1
 
 Profile:        GenomicsDocumentReference
 Parent:         DocumentReference
