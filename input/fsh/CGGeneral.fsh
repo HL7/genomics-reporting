@@ -12,9 +12,6 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
 * category[labCategory].coding = ObsCat#laboratory
-* subject 0..1
-* subject only Reference(Patient or Group or Location)
-* performer 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * note only CodedAnnotation
