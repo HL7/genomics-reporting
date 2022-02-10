@@ -178,11 +178,7 @@ Description:    "Task proposing medication recommendations based on genetic resu
 * intent 1..1
 * intent = TaskIntent#proposal
 * code from http://loinc.org/vs/LL4049-4 
-// * code = LNC#82116-5    //"Medication usage suggestion [Type]"
-// * input[0].valueCodeableConcept 1..*
-// * input[0].valueCodeableConcept from http://loinc.org/vs/LL4049-4 (preferred)
 * focus only Reference(MedicationStatement)
-* for only Reference(Patient or Group or Device or Location)
 * reasonReference only Reference(TherapeuticImplication)
 
 Profile:        FollowupRecommendation
@@ -196,6 +192,3 @@ Description:    "Task describing the follow-up that is recommended"
 * intent 1..1
 * intent = TaskIntent#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)
-//* description = "Recommendation Document"
-* for only Reference(Patient or Group or Device or Location)
-
