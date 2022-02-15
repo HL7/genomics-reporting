@@ -1,8 +1,7 @@
 Instance: GenomicSpecimenExample01 
-InstanceOf: GenomicSpecimen
+InstanceOf: Specimen
 Description: "Example for Genomic Specimen"
 * id = "GenomicSpecimenExample01"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
 // * text = "Genomic specimen example"
 * status = #available "Available"
 * subject = Reference(CGPatientExample01)
@@ -56,10 +55,9 @@ Description: "Example for MSI"
 * valueCodeableConcept = LNC#LA14122-8 "Stable"
 
 Instance: GenomicsServiceRequestExample01
-InstanceOf: servicerequest
+InstanceOf: ServiceRequest
 Description: "Example for Service Request"
 * id = "GenomicsServiceRequestExample01"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
 * status = RequestStatus#completed "completed"
 * code = LNC#94231-8 "G6PD gene full mutation analysis in Blood or Tissue by Sequencing"
 * subject = Reference(CGPatientExample01)
@@ -852,10 +850,9 @@ Description: "Example for Overall Interpretation."
 
 
 Instance: eMERGEServiceRequest
-InstanceOf: servicerequest
+InstanceOf: ServiceRequest
 Description: "Example PGx Service Request"
 * id = "eMERGEServiceRequest"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/servicerequest"
 * status = RequestStatus#completed "completed"
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * subject = Reference(CGPatientExample01)
@@ -1200,10 +1197,9 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * status = #final
 
 Instance: GenomicSpecimenExample02
-InstanceOf: GenomicSpecimen
+InstanceOf: Specimen
 Description: "Example for Genomic Specimen from Buccal Swab"
 * id = "GenomicSpecimenExample02"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
 * subject = Reference(CGPatientExample01)
 //* text.status = #"generated"
 //* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n <pre>Buccal smear sample </pre>\n </div>"

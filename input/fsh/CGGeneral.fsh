@@ -1,22 +1,3 @@
-Profile:        GenomicSpecimen
-Parent:         Specimen
-Id:             specimen
-Title:          "Genomics Specimen"
-Description:    "A sample to be used for analysis."
-* subject 1..1
-* subject only Reference(Patient or Group or Location)
-
-Profile:        GenomicsServiceRequest
-Parent:         ServiceRequest
-Id:             servicerequest
-Title:          "Genomics Service Request"
-Description:    "Request that initiated the diagnostic report."
-* doNotPerform 0..0
-* code ^binding.description = "For laboratory, LOINC is preferred."
-* subject only Reference(Patient or Group or Location)
-* supportingInfo only Reference(FamilyMemberHistory or RiskAssessment or Observation or DocumentReference)
-* specimen only Reference(specimen)
-
 Profile:        GenomicsBase
 Parent:         Observation
 Id:             genomics-base
@@ -31,9 +12,6 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
 * category[labCategory].coding = ObsCat#laboratory
-* subject 0..1
-* subject only Reference(Patient or Group or Location)
-* performer 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * note only CodedAnnotation
@@ -66,7 +44,6 @@ Description:    "Provides a coarse overall interpretation of the genomic results
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = LNC#51968-6
 * code ^short = "51968-6"
-* specimen only Reference(GenomicSpecimen)
 * value[x] only CodeableConcept
 * value[x] 1..1
 * value[x] from http://loinc.org/vs/LL541-4 (preferred)
@@ -97,6 +74,8 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype in the relationship"
 
+Alias: $SupportingInfo = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
+
 Profile:        GenomicsReport
 Parent:         DiagnosticReport
 Id:             genomics-report
@@ -106,9 +85,9 @@ Description:    "Genomics profile of DiagnosticReport."
 * extension contains GenomicsArtifact named genomics-artifact 0..*
     and GenomicsFile named genomics-file 0..*
     and RecommendedAction named recommended-action 0..*
-    and SupportingInformation named supporting-information 0..*
     and GenomicsReportRisk named report-risk 0..*
     and GenomicReportNote named coded-note 0..*
+    and $SupportingInfo named supporting-info 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * extension[GenomicReportNote] ^comment = """
@@ -116,9 +95,7 @@ May include general statements about the report, or statements about significant
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
-* basedOn only Reference(GenomicsServiceRequest)
 //* code = LNC#81247-9
-* subject only Reference(Patient or Group or Location)
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
@@ -126,9 +103,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * category contains Genetics 1..1
 //* category[Genetics].coding.system = "http://terminology.hl7.org/CodeSystem/v2-0074"
 * category[Genetics].coding = DiagnosticService#GE
-* performer 0..1
 * effective[x] only dateTime
-* specimen only Reference(GenomicSpecimen)
 * result ^slicing.discriminator.type = #profile
 * result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
@@ -157,14 +132,11 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[genotype] ^short = "Genotype"
 * result[haplotype] only Reference(Haplotype)
 * result[haplotype] ^short = "Haplotype"
-* imagingStudy 0..0
-* media 0..1
 
 Profile:        GenomicsDocumentReference
 Parent:         DocumentReference
 Id:             genomics-document-reference
 Title:          "Genomics DocumentReference"
 Description:    "A profile of DocumentReference used to represent a genomics file."
-* subject only Reference(Patient or Group)
 * context.related only Reference(GenomicsReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"

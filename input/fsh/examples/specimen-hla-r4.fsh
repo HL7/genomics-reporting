@@ -2,7 +2,6 @@ Instance: specimen-hla-r4
 InstanceOf: Specimen
 Description: "Example HLA specimen"
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
 * identifier.system = "http://specimensrus.com"
 * identifier.value = "001^123456789"
 * type = SCT#258564008 "Buccal smear sample"

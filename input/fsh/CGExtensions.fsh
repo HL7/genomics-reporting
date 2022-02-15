@@ -19,16 +19,6 @@ Description: "References a proposed action that is recommended based on the resu
 * ^context[=].expression = "Observation"
 * value[x] only Reference(MedicationRecommendation or FollowupRecommendation)
 
-Extension:   SupportingInformation
-Id:          supporting-information
-Title:       "Supporting Information"
-Description: "Additional information relevant to interpreting/understanding the report."
-* ^context[+].type = #element
-* ^context[=].expression = "DiagnosticReport"
-* ^context[+].type = #element
-* ^context[=].expression = "Observation"
-* value[x] only Reference(Observation or RiskAssessment or FamilyMemberHistory or DocumentReference)
-
 Extension:   GenomicsReportRisk
 Id:          genomics-report-risk
 Title:       "Genomics Report Risk Assessment"

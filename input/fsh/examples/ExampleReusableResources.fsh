@@ -7,7 +7,6 @@ Description: "Patient example"
 Instance: ExampleSpecimen
 InstanceOf: Specimen
 Description: "Specimen example"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/specimen"
 * subject = Reference(ExamplePatient)
 
 Instance: ExampleLab
@@ -16,7 +15,7 @@ Description: "Organization (lab) example"
 * name = "Some lab"
 
 Instance: ExampleServiceRequest
-InstanceOf: GenomicsServiceRequest
+InstanceOf: ServiceRequest
 Description: "ServiceRequest (order) example"
 * status = #active
 * intent = #original-order
