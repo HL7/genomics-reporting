@@ -85,7 +85,7 @@ Description:    "Genomics profile of DiagnosticReport."
 * extension contains GenomicsArtifact named genomics-artifact 0..*
     and GenomicsFile named genomics-file 0..*
     and RecommendedAction named recommended-action 0..*
-    and GenomicsReportRisk named report-risk 0..*
+    and GenomicsRiskAssessment named genomics-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
     and $SupportingInfo named supporting-info 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"

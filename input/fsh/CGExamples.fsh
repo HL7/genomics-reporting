@@ -1027,7 +1027,7 @@ Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a pol
 * status = #final
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* extension[GenomicsReportRisk][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
+* extension[GenomicsRiskAssessment][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
 //Reference(GenomicRiskAssesmPolyGenicScoreRef)
 * component[clinical-significance].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
 * component[predicted-phenotype].valueCodeableConcept = SCT#44054006 "Diabetes mellitus type 2 (disorder)"
