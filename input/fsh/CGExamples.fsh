@@ -144,7 +144,7 @@ Description: "Example of a Diagnostic Implication for Familial hypercholesterole
 
 Instance: GenotypeExample1
 InstanceOf: Genotype
-Description: "Example of a Genotype, Medication Usage Task, and MedicationStatement"
+Description: "Example of a Genotype, Medication Recommendation, and MedicationStatement"
 * id = "GenotypeExample1"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * valueCodeableConcept.coding = CLINVAR#14909 "HLA-B*15:02"
@@ -157,7 +157,7 @@ Description: "Example of a Genotype, Medication Usage Task, and MedicationStatem
 
 Instance: MedicationRecommendationExample1
 InstanceOf: MedicationRecommendation
-Description: "Example of a Medication Usage Task"
+Description: "Example of a Medication Recommendation"
 * id = "MedicationRecommendationExample1"
 * code = LNC#LA26421-0
 * description = "Patients positive for this allele should not be treated with CBZ, unless the benefits clearly outweigh the risk. Therapy should be discontinued immediately if symptoms of SJS or TEN develop. Alternative medication should be used as first line therapy. Consideration in the choice for alternative medications should be given to potential cross-reactivity with structurally similar aromatic antiepileptic drugs such as oxcarbazepine, phenytoin, fosphenytoin and lamotrigine, which can also moderately increase risk for SJS/TEN in association with HLA-B*15:02 positivity."
@@ -168,7 +168,7 @@ Description: "Example of a Medication Usage Task"
 
 Instance: GenomicsReportExample01
 InstanceOf: GenomicsReport
-Description: "Example of a Report carrying a Genotype, Therapeutic Implication, and Medication Usage Task"
+Description: "Example of a Report carrying a Genotype, Therapeutic Implication, and Medication Recommendation"
 * id = "GenomicsReportExample01"
 * basedOn = Reference(GenomicsServiceRequestExample01)
 * code = LNC#57979-7 "HLA-B*15:02 [Presence]"
@@ -795,7 +795,7 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 
 Instance: PGxRecEx01
 InstanceOf: FollowupRecommendation
-Description: "Example of a Medication Usage Task for alternatives to clopidogrel"
+Description: "Example of a Medication Recommendation for alternatives to clopidogrel"
 * id = "PGxRecEx01"
 * code = LNC#LA26421-0 "Consider alternative medication"
 * description = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
@@ -804,7 +804,7 @@ Description: "Example of a Medication Usage Task for alternatives to clopidogrel
 
 Instance: PGxRecEx02
 InstanceOf: FollowupRecommendation
-Description: "Example of a Medication Usage Task for alternatives to voriconazole"
+Description: "Example of a Medication Recommendation for alternatives to voriconazole"
 * id = "PGxRecEx02"
 * code = LNC#LA26421-0 "Consider alternative medication"
 * description = "voriconazole - An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
@@ -813,7 +813,7 @@ Description: "Example of a Medication Usage Task for alternatives to voriconazol
 
 Instance: PGxRecEx03
 InstanceOf: FollowupRecommendation
-Description: "Example of a Medication Usage Task for decreasing dosage for citalopram"
+Description: "Example of a Medication Recommendation for decreasing dosage for citalopram"
 * id = "PGxRecEx03"
 * code = LNC#LA26422-8 "Decrease dose"
 * description = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -822,7 +822,7 @@ Description: "Example of a Medication Usage Task for decreasing dosage for cital
 
 Instance: PGxRecEx04
 InstanceOf: FollowupRecommendation
-Description: "Example of a Medication Usage Task for decreasing dosage for escitalopram"
+Description: "Example of a Medication Recommendation for decreasing dosage for escitalopram"
 * id = "PGxRecEx04"
 * code = LNC#LA26422-8 "Decrease dose"
 * description = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -831,7 +831,7 @@ Description: "Example of a Medication Usage Task for decreasing dosage for escit
 
 Instance: PGxRecEx05
 InstanceOf: FollowupRecommendation
-Description: "Example of a Medication Usage Task for decreasing dosage for amitriptyline"
+Description: "Example of a Medication Recommendation for decreasing dosage for amitriptyline"
 * id = "PGxRecEx05"
 * code = LNC#LA26422-8 "Decrease dose"
 * description = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."

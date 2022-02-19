@@ -17,7 +17,7 @@
 
   <a name="implications"> </a>
   <h3>Pharmacogenomic-specific Genomic Implications</h3>
-  <img src="4-pharmacogenomics-fig1-implications.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Usage Implication task"/>
+  <img src="4-pharmacogenomics-fig1-implications.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Recommendation task"/>
   <p>
     <b>Figure 1: Pharmacogenomic Implications</b>
   </p>
@@ -25,7 +25,7 @@
     (Profile links:
     <a href="StructureDefinition-implication.html">Genomic Implication</a>,
     <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>,
-    <a href="StructureDefinition-medication-recommendation.html"> Medication Usage Implication</a>)
+    <a href="StructureDefinition-medication-recommendation.html"> Medication Recommendadtion</a>)
   </p>
   <p>
     There are two ways to communicate details about a medication whose implication is being described. The profile component <code>medication-assessed</code> is the place to communicate a simple code for the medication. If more detail about the medication is to be shared, use the extension also named <code>medication-assessed</code>. The extension can refer to a <a href="{{site.data.fhir.path}}medication.html">Medication</a> or <a href="{{site.data.fhir.path}}medicationknowledge.html">MedicationKnowledge</a> resource. This might be used to share specific <a href="{{site.data.fhir.path}}medicationknowledge-definitions.html#MedicationKnowledge.medicineClassification">classification details</a> if they are important as part of the implication being described. It is important to note that since there two ways to do this, implementers SHALL ensure consistent usage. If both the extension and component are used at the same time, they SHALL deliver the same medication code. Because this is an international profile, no guidance is provided on drug coding systems.
