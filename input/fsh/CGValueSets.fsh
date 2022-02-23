@@ -34,7 +34,7 @@ Description:    "Value Set for codes yet to be defined in LOINC"
 ValueSet:       MolecularConsequenceVS
 Id:             molecular-consequence-vs
 Title:          "Molecular Consequence"
-Description:    "Changes in a structural features of a sequence due to the observed variant."
+Description:    "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
 ValueSet:       FunctionalEffectVS

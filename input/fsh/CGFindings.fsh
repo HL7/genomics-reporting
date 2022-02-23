@@ -84,18 +84,18 @@ Description:    "Details about a set of changes in the tested sample compared to
     coordinate-system 0..1 and
     ref-allele 0..1 and
     alt-allele 0..1 and
-    
+    coding-change-type 0..1 and
     genomic-source-class 0..1 and
     sample-allelic-frequency 0..1 and
     allelic-read-depth 0..1 and
     allelic-state 0..1 and
     variant-inheritance 0..1 and
-
+    
     variation-code 0..* and
     chromosome-identifier 0..* and
 
     protein-hgvs 0..1 and
-    coding-change-type 0..1 and
+
     amino-acid-change-type 0..1 and
     molecular-consequence 0..1 and
     copy-number 0..1 and
@@ -124,7 +124,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[molecular-consequence].code = TbdCodesCS#molecular-consequence
 * component[molecular-consequence].code ^short = "molecular-consequence"
 * component[molecular-consequence] ^short = "Molecular Consequence"
-* component[molecular-consequence] ^definition = "A calculated classification of the effect of the gene's sequence change on the resulting amino acid (protein) sequence change."
+* component[molecular-consequence] ^definition = "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence"
 * component[molecular-consequence].value[x] only CodeableConcept
 * component[molecular-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
 * component[molecular-consequence].value[x] 1..1
