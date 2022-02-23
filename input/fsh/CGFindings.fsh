@@ -124,7 +124,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[molecular-consequence].code = TbdCodesCS#molecular-consequence
 * component[molecular-consequence].code ^short = "molecular-consequence"
 * component[molecular-consequence] ^short = "Molecular Consequence"
-* component[molecular-consequence] ^definition = "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence"
+* component[molecular-consequence] ^definition = "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
 * component[molecular-consequence].value[x] only CodeableConcept
 * component[molecular-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
 * component[molecular-consequence].value[x] 1..1
