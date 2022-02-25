@@ -32,16 +32,16 @@
 	<h3>Examples</h3>
 	<p>Diagnostic implications for familial hypercholesterolemia? (This query seeks to determine if the subject has any diagnostic implications of familial hypercholesterolemia that are derived from any variant present in the subject).</p>
 	
-	<pre>https://.../find-subject-dx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|398036000</pre>
+	<pre>$find-subject-dx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|398036000</pre>
 	
 	
 	<p>Diagnostic implications for variant X or variant Y? (This query seeks to determine if the subject has any diagnostic implications whatsoever that are derived from variant X or variant Y).</p>
 	
-	<pre>https://.../find-subject-dx-implications?subject=HG00403&amp;variants=X,Y</pre>
+	<pre>$find-subject-dx-implications?subject=HG00403&amp;variants=X,Y</pre>
 	
 <p>Patient HG00403 has a germline variant in the RYR1 gene (NC_000019.10:38499669:C:T). What are the diagnostic implications of this variant? (Results indicate that the variant is pathogenic for Malignant Hyperthermia).</p>
 <ul>
-<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-subject-dx-implications?subject=HG00403&amp;variants=NC_000019.10:38499669:C:T">GET .../find-subject-dx-implications?subject=HG00403&amp;variants=NC_000019.10:38499669:C:T</a></li>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/$find-subject-dx-implications?subject=HG00403&amp;variants=NC_000019.10:38499669:C:T">GET .../$find-subject-dx-implications?subject=HG00403&amp;variants=NC_000019.10:38499669:C:T</a></li>
 </ul>
 
 </div>

@@ -174,7 +174,11 @@
   
         <a name="AND_OR_logic"/>
   <h4>AND/OR logic in queries</h4>
-  <p><a href="http://hl7.org/fhir/r4/search.html">FHIR Search</a> defines general AND/OR logic in FHIR queries: A logical 'AND' is achieved by repeating a query parameter (e.g. '/Patient?language=FR&amp;language=NL') , whereas a logical 'OR' is achieved via a comma-separated list of values for a single query parameter (e.g. '/Patient?language=FR,NL'). Unless stated otherwise, FHIR Genomics Operations support 'OR' logic and do not support 'AND' logic. Parameters that have a cardinality greater than one can be populated with a comma-separated list of values that represent a logical 'OR'.  </p>
+  <p><a href="http://hl7.org/fhir/r4/search.html">FHIR Search</a> defines general AND/OR logic in FHIR queries: A logical 'AND' is achieved by repeating a query parameter (e.g. '/Patient?language=FR&amp;language=NL') , whereas a logical 'OR' is achieved via a comma-separated list of values for a single query parameter (e.g. '/Patient?language=FR,NL'). Unless stated otherwise, all FHIR Genomics Operations support 'OR' logic, and only support 'AND' logic for date fields (e.g. '...&amp;testDateRange=ge2020-06-01&amp;testDateRange=le2020-08-01'). Parameters that have a cardinality greater than one can be populated with a comma-separated list of values that represent a logical 'OR'.  </p>
+
+        <a name="Simple_Structural"/>
+  <h4>Simple vs. Structural variant operations</h4>
+  <p>While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on endpoint precision. Simple variant operations (find-subject-variants, find-subject-specific-variants) assume precise endpoints and return variants in a '<a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#variants-defined-by-multiple-components-vcf-like">VCF-like</a>' format, with 'exact-start-end' coordinates. Structural variant operations (find-subject-structural-intersecting-variants, find-subject-structural-subsuming-variants) assume imprecise endpoints and return variants per <a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#representing-structural-variants">structural variant reporting guidelines</a> with 'outer-start-end' and 'inner-start-end' coordinates. </p>
 
     <a name="GenesRegions"/>
   <h4>Use of genomic regions</h4>

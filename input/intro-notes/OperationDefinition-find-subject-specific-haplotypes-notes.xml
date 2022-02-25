@@ -30,13 +30,13 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-	<p>Are any of these haplotypes present [CYP2D6 *1/*5; CYP2D6 *1/*15; CYP2C19 *1/*2]?</p><pre>https://.../find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=CYP2D6 *1/*5,CYP2D6 *1/*15,CYP2C19 *1/*2</pre>
-	<p>Is haplotype [HLA-A*02:302+HLA-A*23:26/HLA-A*23:39^HLA-B*44:02:13+HLA-B*49:08] present?</p><pre>https://.../find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=http://glstring.org|HLA-A*02:302+HLA-A*23:26/HLA-A*23:39^HLA-B*44:02:13+HLA-B*49:08</pre>
+	<p>Are any of these haplotypes present [CYP2D6 *1/*5; CYP2D6 *1/*15; CYP2C19 *1/*2]?</p><pre>$find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=CYP2D6 *1/*5,CYP2D6 *1/*15,CYP2C19 *1/*2</pre>
+	<p>Is haplotype [HLA-A*02:302+HLA-A*23:26/HLA-A*23:39^HLA-B*44:02:13+HLA-B*49:08] present?</p><pre>$find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=http://glstring.org|hla#3.33.0#HLA-A*02:302+HLA-A*23:26/HLA-A*23:39^HLA-B*44:02:13+HLA-B*49:08</pre>
 	
 <p>Patient HG00403 underwent HLA typing, and clinician wants to know if there is any haplotype or genotype indication that HLA-A*23 is present.
 </p>
 <ul>
-<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=HLA-A*23">GET .../find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=HLA-A*23</a></li>
+<li><a href="https://967bc67c-70bf-416b-b5c7-5841c7e6bfce.mock.pstmn.io/$find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=HLA-A*23">GET .../$find-subject-specific-haplotypes?subject=HG00403&amp;haplotypes=HLA-A*23</a></li>
 </ul>
 
 </div>

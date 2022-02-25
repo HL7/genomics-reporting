@@ -3,8 +3,8 @@
 	<h3>Description</h3>
 	<p>Retrieve count or list of patients having specified genotypes/haplotypes.</p>
 
-	<p>Population queries are designed to return a <b>count</b> of patients (from a specified cohort) that match each item sought, with or without a <b>list</b> of patients matching the item(s) sought.</p>
-	<p>Determining the cohort to be searched (also known as the 'denominator') in a given situation can be complex - criteria might be based on demographic data (e.g. age >= 65), clinical data (e.g. lung cancer), etc. Rather than enumerating possible filters that might be used to define a denominator population, these operations allow for the inclusion of a subject list as an input parameter. If a list of subjects is not supplied, then the denominator is the entire population managed by the server. </p>
+	<p>Population queries are designed to return a <b>count</b> of patients that match each item sought, with or without a <b>list</b> of patients matching the item(s) sought.</p>
+
 	
 		<p>As described in <a href="operations.html#and-or-logic-in-queries">general guidance</a>, FHIR Genomics Operations do not support 'AND' logic unless stated otherwise. This particular operation supports a logical 'AND' of the 'haplotypes' parameter, specified by repeating the parameter. 'AND' logic is useful when searching for other subjects sharing a specific constellation of haplotypes. However, 'AND' logic, particularly when coupled with 'OR' logic, adds complexity to search and response. For instance, a potential search might be for subjects having:</p>
 
