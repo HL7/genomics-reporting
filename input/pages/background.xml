@@ -38,7 +38,7 @@
   	Clinical laboratories worldwide offer genomic testing as part of their test menus to providers for the diagnosis, prognosis, and treatment of patients.  In order to perform testing, both an order from a healthcare provider and a specimen collected from a patient are needed.  Genomic testing is unique in that as the body of knowledge expands, genomic testing performed earlier on a patient specimen may be reanalyzed at a later point with this newer knowledge.  In these cases, the data to be reanalyzed is often treated as a patient specimen, potentially with an order for the reanalysis.
   </p>
   <p>
-  	When a laboratory decides to add a new test to their test menu for physician’s to order, much is required even before the test order goes live and patient testing commences.  The laboratory validates the test system, including its analytical sensitivity, specificity, and reporting.
+  	When a laboratory decides to add a new test to their test menu for physicians to order, much is required even before the test order goes live and patient testing commences.  The laboratory validates the test system, including its analytical sensitivity, specificity, and reporting.
   </p>
   <p>
     The payload for a genomic report is carried by the <strong>DiagnosticReport</strong> resource. The report summarizes and packages all of the information produced by the genomic analysis and other related items such as the orders, the specimen, and others. It organizes it for consumption and provide a summary as well as a rendered view of the findings. It is the primary response to the <strong>ServiceRequest</strong> which is the "order" for genomic testing to occur. 
@@ -47,10 +47,10 @@
   	In practice, there can be multiple ServiceRequests grouped together as part of a single requisition. This allows multiple tests to be ordered at one time and the results to be gathered as a group. A genomic report may also contain information gathered from multiple testing approaches. For example, a more general test might be followed up with more specific tests providing additional details.
   </p>
   <p>
-  	As part of a report, key components to enumerate are: findings, interpretations, implications and recommendations.
+  	As part of a report, key components to enumerate are: findings, interpretations, implications, and recommendations.
   </p>
   <p>
-  	<strong>Genomic Findings</strong> are <strong>observations</strong> about the specimen's genomic characteristics. For example, a chromosomal abnormality (such as duplication of a chromosome), genotype, haplotype, or variant that was detected. <strong>Genomic Implications</strong> provide an elaboration of the effect of one or more genomic findings (i.e. an observed variant or genotype), such as ‘poor response to medication X.' For the reported implications, <strong>recommended</strong> actions such as 'reduce dosage' may be included. 
+  	<strong>Genomic Findings</strong> are <strong>observations</strong> about the specimen's genomic characteristics. For example, a chromosomal abnormality (such as duplication of a chromosome), genotype, haplotype, or variant that was detected. <strong>Genomic Implications</strong> provide an elaboration of the effect of one or more genomic findings (i.e., an observed variant or genotype), such as ‘poor response to medication X.' For the reported implications, <strong>recommended</strong> actions such as 'reduce dosage' may be included. 
   </p>
   <p>
     A Genomic <strong>Interpretation</strong> is an overall assessment of the result of the genomic testing in the context one or more service requests, such as a statement that there is a positive or negative finding. Overall Interpretation is reported when variant analysis (sequencing or targeted variants) is done. It provides a coarse overall interpretation of the results reported. More detailed interpretations are also associated with each distinct reported variant. 
@@ -66,16 +66,16 @@
   <a name="variant"> </a>
   <h3>Variant Detection and Reporting</h3>
   <p>
-    DNA, RNA and amino acid sequences can all be examined through a variety of mechanisms, ranging from direct sequencing, inference from microarrays, and mass spectrometry.
+    DNA, RNA, and amino acid sequences can all be examined through a variety of mechanisms, ranging from direct sequencing, inference from microarrays, and mass spectrometry.
   </p>
   <p>
-    Variations are detected by comparing a patients genomic sequence with a reference using a variety of techniques. Each of these techniques come with their own trade-offs in terms of applicability, cost, speed, availability, and precision. For example, some techniques can only be used for DNA but not RNA or amino acid sequences. Others can only detect certain types of changes.
+    Variations are detected by comparing a patient's genomic sequence with a reference using a variety of techniques. Each of these techniques come with their own trade-offs in terms of applicability, cost, speed, availability, and precision. For example, some techniques can only be used for DNA but not RNA or amino acid sequences. Others can only detect certain types of changes.
   </p>
   <p>
     While reporting variations from a reference covers many use cases, there are also genomic regions with so many variations found in a population there is no single 'normal' reference sequence. In those cases, often the full sequence is reported. A known version of that sequence can also be designated as a reference for comparison.
   </p>
   <p>
-    Variations can be described at different levels of granularity, ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g. as seen in microsatellite instability) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms/Variations, abbreviated SNP or SNV depending on the context).
+    Variations can be described at different levels of granularity, ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g., as seen in microsatellite instability) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms/Variations, abbreviated SNP or SNV depending on the context).
   </p>
   <p>
     "Known" variations are often assigned codes and catalogued into code systems. This allows easy linking of knowledge to information found in a particular specimen. Reports can simply specify the <strong>code</strong> and know that clinicians can look up relevant information associated with the code. However, sometimes variations are detected that do not (yet) have a standardized code. In these cases, a description of the variation and where it was located must be communicated. Often, even when a code is known, the details about the location and type of change are communicated.
