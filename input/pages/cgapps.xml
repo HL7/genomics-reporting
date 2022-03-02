@@ -10,7 +10,7 @@
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    This part introduces some app examples that use SMART(Substitutable Medical Applications and Reusable Technologies) to explore creating clinical genomic apps to integrated traditional EMR clinical data and genomic data to show data visualization and analysis, including CDS that depended upon both types of data.
+    This part introduces some app examples that use SMART (Substitutable Medical Applications and Reusable Technologies) to explore creating clinical genomic apps to integrated traditional EMR clinical data and genomic data to show data visualization and analysis, including CDS that depended upon both types of data.
   </p>
   <p>
     SMART on FHIR emerged from the combination of the SMART Platform project and the HL7® FHIR® effort. It combines FHIR-compliant clinical data access from EHR systems with web standards to launch web and mobile apps from a user’s EHR session, including FHIR’s REST-based API for clinical data, OAuth 2.0 authentication, and HTML5 to support web and native mobile apps. 
@@ -60,11 +60,8 @@
   <a name="precisionMedicine"></a>
   <h3>Example 2: Precision Medicine</h3>
   <p>
-    (more info..)
-  </p>
-  <p>
     SMART Precision Cancer Medicine (PCM) displays population-level information about somatic cancer mutations relative to a single patient.
-    The PCM prototype can rapidly present a visualization that compares a patient’s somatic genomic alterations against a distribution built from more than 3000 patients, along with context-specific links to external knowledge bases.It is open-source software for clinicians to present the individual patient within the population-level spectrum of cancer somatic mutations. The app can be implemented on any SMART on FHIR-enabled EHRs, and future versions of PCM should be able to evolve in parallel with external knowledge bases.
+    The PCM prototype can rapidly present a visualization that compares a patient’s somatic genomic alterations against a distribution built from more than 3000 patients, along with context-specific links to external knowledge bases. It is open-source software for clinicians to present the individual patient within the population-level spectrum of cancer somatic mutations. The app can be implemented on any SMART on FHIR-enabled EHRs, and future versions of PCM should be able to evolve in parallel with external knowledge bases.
   </p>
   <p>
     This app was developed as a native iOS app optimized for the iPad and iPad Mini tablet devices (Apple Inc., Cupertino, CA, USA). The user authenticates by using their standard VUMC username and password. As required by the OAuth 2.0 process, the user must authorize the app for initial data access. A splash-screen is presented and followed by a simple query interface, which allows a practitioner to look up a patient by name or medical record number.
