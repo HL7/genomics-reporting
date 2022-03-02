@@ -2,9 +2,9 @@ ValueSet:       HighLowCodesVS
 Id:             high-low-codes-vs
 Title:          "High Low codes"
 Description:    "This value set includes high/low codes for Observation Interpretations"
-
 * ObsInt#H "High"
 * ObsInt#L "Low"
+* ObsInt#I "Intermediate"
 
 ValueSet:       HGNCVS
 Id:             hgnc-vs
@@ -34,7 +34,7 @@ Description:    "Value Set for codes yet to be defined in LOINC"
 ValueSet:       MolecularConsequenceVS
 Id:             molecular-consequence-vs
 Title:          "Molecular Consequence"
-Description:    "Changes in a structural features of a sequence due to the observed variant."
+Description:    "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
 * include codes from system SEQONT where concept is-a #SO:0001537
 
 ValueSet:       FunctionalEffectVS
@@ -126,3 +126,15 @@ Description:    "Example sources of values for Evidence Level"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * codes from system ClinVarEvidenceLevelCustomCS
 * codes from system PharmGKBEvidenceLevelCustomCS
+
+ValueSet:       VariantConfidenceStatusVS
+Id:             variant-confidence-status-vs
+Title:          "Variant Confidence Status"
+Description:    "A code that classifies the confidence for calling this variant."
+* codes from system VariantConfidenceStatusCS
+
+ValueSet:       CodedAnnotationTypesVS
+Id:             coded-annotation-types-vs
+Title:          "Coded Annotation Types"
+Description:    "Value Set for specific types of coded annotations"
+* codes from system CodedAnnotationTypesCS

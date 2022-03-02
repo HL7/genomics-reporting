@@ -8,141 +8,499 @@
 * genomics-reporting/input/pages/sequencing.xml                                         *
 *****************************************************************************************
 {% endcomment %} -->
+
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <p>
-    This section provides guidance on reporting genetic tests that involve sequencing the DNA, RNA or amino acid chains of the specimen. This includes direct sequencing, shotgun sequencing, array-based variant testing and other mechanisms.
-  </p>
-  <p>
-    Currently, there is one profile used to model most variant information. In future versions of this implementation guide, HL7 may subdivide Variant into multiple sub-profiles with more specific purpose.
-  </p>
-  <ul>
-    <li><a href="StructureDefinition-variant.html">Variant</a></li>
-  </ul>
-  <img src="2-sequencing-fig1.png" alt="Diagram showing the sequencing profiles"/>
-  <p>
-    <b>Figure 1: Sequencing Profiles</b>
-  </p>
-  <p>
-    (Profile links:
-    <!--<a href="obs-complex-variant.html">Complex Variant</a>,-->
-    <a href="StructureDefinition-variant.html">Variant</a>
-    <!--<a href="obs-copy-num-chg.html">Copy Number Change</a>-->
-    )
-  </p>
-  <p>
-    The core of the typical report is a list of identified variants – each with many possible attributes. The variant profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms. An individual variant may be defined and described by multiple attributes delivered as component values. Most of these components are optional, but labs are encouraged to populate what properties they know. The underlying clinical concept behind each component is mapped to a specific LOINC code. Clinicians are accustomed to receiving descriptive information such as the HGVS genomic and amino acid expression, the type of variant (e.g. deletion) and the reference sequence. The identifiers to online databases can be easily consumed by CDS systems.
-  </p>
-  <p>
-    Note that there are three coordinate systems one can use when referencing positions within a molecular sequence. For a detailed description of the three options, see <a href="https://s.details.loinc.org/LOINC/92822-6.html?sections=Comprehensive">here</a>.  For clarity and consistency, one must take care not to mix coordinate systems within the same resource instance.
-  </p>
-  <p>
-    The <i>Variant</i> profile can reference other Variant observations via <code>hasMember</code> when there is a need to represent a named grouping of variants that has a specified clinical effect or phenotype but is not a recognized <a href="StructureDefinition-haplotype.html">Haplotype</a> or <a href="StructureDefinition-genotype.html">Genotype</a>. An example would be a <a href="Bundle-compound-heterozygote.html">compound heterozygote</a> as described <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/438483/">here</a>, or other types of findings as in the Complex Variant Type component which uses <a href="https://r.details.loinc.org/AnswerList/LL3999-1.html">this LOINC code</a>.
-  </p>
+  <style type="text/css">
+        table {
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: lightgrey;
+            border: 1px solid gray;
+            vertical-align:middle;
+        }
+        td {
+            border: 1px solid gray;
+            text-align:left;
+            vertical-align:top;
+        }
+        td:first-child {
+          background-color: lightgrey;
+        }
+        tr:first-child td {
+            border-top-width: 0;
+        }
+  </style>
 
-<!--
   <p>
-    The <i>Complex Variant</i> profile is used when there is a need to represent a named grouping of variants that often has a specified clinical effect or phenotype.  An example would be a <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/438483HLAB1502-pgx-example.xml/">Compound heterozygote</a>, but could be other types as found in the Complex Variant Type component that use <a href="https://r.details.loinc.org/AnswerList/LL3999-1.html">this LOINC code</a>.  Many of the details of what was found are left to the member <i>Described Variants</i> the <i>Complex Variant</i> points to.
+    This guide introduces Observation profiles to report results of tests that involve sequencing the DNA, RNA or amino acid chains of specimens. This includes direct sequencing, shotgun sequencing, array-based variant testing, and other mechanisms. See the <a href="index.html">scope</a> and <a href="background.html">overview</a> sections for more details.
   </p>
   <p>
-    The <i>Copy Number Change</i> profile is used to document when a copy number variation has been detected.  Using this profile, the type of copy number change can be represented, as well as additional information about the region impacted by the change.
+    Currently, there is one profile used to model most variant information: <a href="StructureDefinition-variant.html">Variant</a>. In future versions of this implementation guide, HL7 may subdivide Variant into multiple sub-profiles with more specific purpose.
   </p>
+<a name="VariantOverview"></a>
+<h3>Variant Profile Scope</h3>
+<p>
+The purpose of the <a href="StructureDefinition-variant.html">Variant</a> Observation profile is to capture genomic data elements fulfilling the following three purposes:
+</p>
+<ol>
+  <li>To <b>define</b> a variant of interest, which could be a simple, well understood change from a reference sequence, or one of several types of structural variations with uncertain endpoints. </li>
+  <li>To <b>contextualize</b> the observation of the defined variant (e.g., presence or absence in the sample and determinations of state or inheritance). </li>
+  <li>To terminologically <b>annotate</b> the variant according to the type or location of the change (generally optional, but needed to define certain types of structural variations). </li>
+</ol>
+<p>
+It is NOT intended to support other Observations that are clinically relevant on their own and have separate profiles defined in this guide, including:
+</p>
+<ol>
+  <li>
+  Statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, and <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>. Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
+  </li>
+  <li>
+  Presence statements of whole haplotypes, genotypes, or phasing data (see <a href="StructureDefinition-haplotype.html">Haplotype</a>, <a href="StructureDefinition-genotype.html">Genotype</a>, and <a href="StructureDefinition-sequence-phase-relationship.html">Sequence Phase Relationship</a>);
+  </li>
+</ol>
 
-  I've commented this out for now because a lot of it no longer applies.  Most elements of sequence aren't being used in the genetic reporting process because the group agreed to treat MolecularSequence as a "definitional" resource and
-<a name="sequence"> </a>
-  <h3>MolecularSequence Resource Usage Guide</h3>
-  <p>
-    The MolecularSequence resource is designed for next-generation sequencing data. Patients' observed sequences should be represented by recording reference sequence id/string and detected variants. To specify how it proceed, here is a picture below:
-  </p>
-  <img src="sequence-outline.png" alt="image sequence layout"/>
-  <a name="sequence-element"></a>
-  <h4>Main Elements Definition</h4>
-  <p>
-    MolecularSequence.coordinateSystem: This element shall be constrained into only two possible values: 0 for 0-based system and 1 for 1-based system. Below is the picture that could explain what's the difference between these two systems:
-  </p>
-  <img src="sequence-coordinate-sys.png" alt="image coordinate system description"/>
-  <p>
-    MolecularSequence.referenceSeq: Four optional ways are provided to represent reference sequence in MolecularSequence resource:
-  </p>
-  <ul>
-    <li>MolecularSequence.referenceSeq.referenceSeqId: Reference sequence id in public database.</li>
-    <li>MolecularSequence.referenceSeq.referenceSeqString: Reference sequence string.</li>
-    <li>MolecularSequence.referenceSeq.referenceSeqPointer: Reference to observed sequence stored in another sequence entity.</li>
-    <li>MolecularSequence.referenceSeq.genomeBuild, MolecularSequence.reference.chromosome: The combination of genome build and chromosome.</li>
-  </ul>
-  <p>
-    The diagram below describes 4 optional ways provided in the MolecularSequence resource to encode sequencing data.
-  </p>
-  <img src="sequence-data-present.jpeg" alt="image to show the four optional ways to encode sequencing data"/>
-  <p>
-    MolecularSequence.referenceSeq.stand: Record the 'watson' or 'crick' value.
-  </p>
-  <p>
-    MolecularSequence.referenceSeq.orientation: Record the 'sense' or 'antisense' value.
-  </p>
-  <p>
-    MolecularSequence.referenceSeq.windowStart/windowEnd: Selects a range from the reference sequence (or genome) that is used to define building block of a current sequence (e.g. MolecularSequence resource instance 1).
-  </p>
-  <p>
-    MolecularSequence.quality: Quality scores for bases in the sequence. It is intended to be compliant with emerging regulatory needs needs (eg: those found at <a href="https://precision.fda.gov/">PrecisionFDA</a> ).
-  </p>
-  <p>
-    MolecularSequence.variant: This complex element is used for encoding sequence. When the information of reference sequence and variants are provided, the observed sequence will be derived.
-  </p>
-  <p>
-    MolecularSequence.patient: This element points to a Patient identifier to show that this sequence is related to the same patient.
-  </p>
-  <p>
-    MolecularSequence.specimen: A pointer to specimen identifier, if needed.
-  </p>
-  <p>
-    MolecularSequence.device: A pointer to Device identifier which is used for describing sequencing method (such as chip id, chip manufacturer etc.)
-  </p>
-  <p>
-    MolecularSequence.pointer: A pointer to a MolecularSequence instance for the next sequence block to build a sequence graph.
-  </p>
-  <p>
-    MolecularSequence.repository: This complex element is used to provide a clarifying structure, a base URL, and/or relevant IDs when referring to an external repository.
-  </p>
-  <p>
-    (GA4GH Repository Example): If the MolecularSequence resource refers to a GA4GH repository for read info, references to a GA4GH full sequence dataset should conform to GA4GH data models and accessed via the GA4GH API. The URL of a GA4GH repository, ids of a GA4GH variant and read group are contained in the MolecularSequence resource. The URL of a GA4GH repository is an api_base of a GA4GH server that could be called for sequence data. The GA4GH variant set is a collection of call sets and the GA4GH call set is a collection of variant calls, typically for one sample. A variant call represents a determination of genotype with respect to that variant.
-  </p>
-  <ul>
-    <li>VariantSet definition: A VariantSet is a collection of variants and variant calls intended to be analyzed together.</li>
-    <li>CallSet definition: A CallSet is a collection of calls that were generated by the same analysis of the same sample.</li>
-    <li> A read group is a collection of reads produced by a sequencer. A read group set typically models reads corresponding to one sample, sequenced one way, and aligned one way. The API reference of <a href="https://cloud.google.com/genomics/">Google Genomics</a> is a GA4GH repository built by Google and provides details of the data models, such as the resource representations.</li>
-  </ul>
 
-  <a name="relationship-sequence"></a>
-  <h3>Relationship among MolecularSequence resource and genetics profiles</h3>
-  <img src="general-relationship.png" alt="General relationship between sequence and other resource"/>
-  <p><b>Pointers to MolecularSequence resource</b></p>
-  <p>
-    MolecularSequence resource is used to transmit and represent sequencing data. In FHIR Genomics, there are several genetics profiles containing internal pointers to MolecularSequence resource for genetic data reporting. Here is the summary:
-  </p>
-  <p>
-    MolecularSequence.pointer: A bundle of MolecularSequence instances can be connected by MolecularSequence.pointer to build sequence graph described in Section 3. MolecularSequence.pointer will point to the next sequence block.
-  </p>
-  <p>
-    MolecularSequence.variant.variantPointer: A pointer to link the Observation(Variant) profile which store the associated interpretative variant information
-  </p>
-  <p><b>Pointer to Observation resource (based on genetics profile)</b></p>
-  <p>
-    Observation.hasMember: point to the related MolecularSequence resource that belongs to the Observation group
-  </p>
-  <p>
-    Observation.derivedFrom: point to the related MolecularSequence data the observation is made from
-  </p>
-  <p>
-    DiagnosticReport.result: A pointer to Observation instance. This element is used for reporting genetic result.
-  </p>
-  <p>
-    Item extension in ServiceRequest-genetics profile: It is used to describe the genetic test order.
-  </p>
-  <p>
-    FamilyMemberHistory: A pointer to genetics Observation instance to report genetic test results of family member
-  </p>
-  <p><b>Observation vs. MolecularSequence</b></p>
-  <p>
-    MolecularSequence is used for raw sequencing data while genetic-profile-based Observation resource is used for reporting interpretative genetic information (eg. DNA/amino acid variant detected in the patient). Although both MolecularSequence and Observation-genetics profiles contain variant info, they are used differently: MolecularSequence.variant is used for encoding the sequence block; the Observation-genetics profile is mainly used for a variants test result or interpretations of raw data in MolecularSequence resource.
-  </p>-->
+<a name="DefiningVariants"></a>
+<h3>Defining Variants</h3>
+<p>This Implementation Guide supports two reporting patterns for defining variants:
+</p>	
+<ol>
+  <li>By describing the change using HGVS or ISCN nomenclature.<a href="Observation-VariantExample1.html"> Example HGVS-styled variant</a>.</li>
+  <li>By providing multiple component details similar to VCF columns.<a href="Observation-VariantExample2.html"> Example VCF-styled variant</a>.</li>
+</ol>
+<p>
+For each variant reporting pattern, different components MUST be used to properly define the variant where possible. Other components MAY be used to provide additional information for cross referencing external sources or increasing human readability of the instance.
+</p>
+<p>Additional resources that implementers may want to leverage when reporting variant information include NCBI’s <a href="https://www.ncbi.nlm.nih.gov/clinvar/">ClinVar</a>, a freely accessible public archive of reports of the relationships among human variations and phenotypes, and <a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI’s Variation Services</a> that relies on a common data model described as Sequence Position Deletion Insertion (<a href="https://www.ncbi.nlm.nih.gov/variation/notation/">SPDI</a>).
+</p>
+
+<a name="NomenclatureVariants"></a>
+<h4>Variants Defined by a Nomenclature Statement</h4>
+<p>
+This pattern describes the observed nucleotide sequence or configuration using HGVS or ISCN statement strings. Care should be taken to follow nomenclature guidelines and properly distinguish variants with the degree of precision needed for clinical use. Note that synonyms may arise within these nomenclatures so downstream validation and normalization may be required.
+</p>
+<table>
+  <thead>
+    <th>Defining Component</th>
+    <th>Example Value</th>
+    <th>Note</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>genomic-hgvs (LOINC 81290-9) OR coding-hgvs (LOINC 48004-6)</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://varnomen.hgvs.org", 
+"code" : "NM_022787.3:c.769G>A"
+}          </pre></div>
+     </td>
+      <td>Proper usage of HGVS contains the reference sequence identifier followed by ‘:g.’ for genomic or ‘:c.’ for a coding sequence. In HGVS notation, the “=” (equals) is used to indicate a sequence was tested but found unchanged <a href="https://varnomen.hgvs.org/recommendations/general/">[ref]</a>.</td>
+    </tr>
+   <tr>
+      <td>cyogenomic-nomenclature (LOINC 81291-7)</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "urn:oid:2.16.840.1.113883.6.299", 
+"code" : "46,XX,t(9;22)(q34;q4)"
+}          </pre></div>
+     </td>
+      <td>more information on formatting structural variations below.</td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="ComponentwiseVariants"></a>
+<h4>Variants defined by multiple components (VCF-like)</h4>
+<p>
+This representation leverages multiple component slices to communicate an allele within the context of a specific location on a reference sequence. It is the most accurate definitional representation in FHIR, but is limited to variations with known breakpoints, and alleles should be normalized per VCF specifications. Note that VCF representations often specify genome build and chromosome identifiers rather than explicit reference sequences. Build and chromosome identifier may optionally be included for cross reference.
+</p>
+<table>
+  <thead>
+    <th>Defining Component</th>
+    <th>Example Value</th>
+    <th>Note</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>genomic-ref-seq (LOINC 48013-7)</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://www.ncbi.nlm.nih.gov/nuccore",
+"code" : "NC_000010.10"
+}          </pre></div>
+     </td>
+      <td>must send at least this or transcript refseq</td>
+    </tr>
+    <tr>
+      <td>transcript-ref-seq (LOINC 51958-7)</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://www.ncbi.nlm.nih.gov/refseq",
+"code" : "NM_000044.3"
+}          </pre></div>
+     </td>
+      <td>must send at least this or genomic refseq</td>
+    </tr>
+    <tr>
+      <td>coordinate-system (LOINC 92822-6)</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://loinc.org",
+"code" : "LA30102-0",
+"display" : "1-based character counting"
+}          </pre></div>
+     </td>
+      <td>Common coordinate systems are described by LOINC.</td>
+    </tr>
+    <tr>
+      <td>exact-start-end (LOINC 81254-5)</td>
+      <td><div class="example"><pre class="json">
+{
+  "valueRange" : {
+    "low" : {
+      "value" : 96527334
+    }
+  }
+}          </pre></div>
+     </td>
+      <td>Interpretation of this number requires the reference sequence and coordinate system.</td>
+    </tr>
+    <tr>
+      <td>ref-allele (LOINC 69547-8)</td>
+      <td>"valueString" : "C"</td>
+      <td>This string should be normalized per the VCF standard.</td>
+    </tr>
+    <tr>
+      <td>alt-allele (LOINC 69551-0)</td>
+      <td>"valueString" : "A"</td>
+      <td>If the reference allele is tested and found unchanged, this string should be equal to the REF allele string.</td>
+    </tr>
+  </tbody>
+</table> 
+
+<a name="ContextualComponents"></a>
+<h3>Contextualizing Variants</h3>
+<p>Clinical context for observing the variant are often important in understanding the variant. Often, multiple tests are done to determine the values for these elements.
+</p>
+
+<p>Note that many other properties associated with contextualizing the observed variant are stored in other FHIR resources. For example, ethnicity/race/biological sex are on the Patient resource (referenced by Observation.subject) and the tissue/tumor type are on Observation.specimen.
+</p>
+
+<table>
+  <thead>
+    <th>Contextual Attribute or Component</th>
+    <th>Example Value</th>
+    <th>Note</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Observation.value</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA9633-4",
+"display" : "Present"
+}
+          </pre></div>
+     </td>
+      <td>If not searching for specific variations and merely reporting what's found, the Observation’s value should be set to "Present". Details about the specific variant in consideration must be populated using one of the above patterns of components.</td>
+    </tr>
+    <tr>
+      <td>Observation.method</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA26398-0",
+"display" : "Sequencing"
+}
+          </pre></div>
+     </td>
+      <td>Indicates the method of variant analysis. The bound list is currently extensible, allowing for codification of other method types here at varying degrees of granularity. The work group is considering additional approaches to modeling testing methods and is requesting implementer feedback at this time.</td>
+    </tr>
+    <tr>
+      <td>component[allelic-read-depth] (LOINC 82121-5)</td>
+      <td><div class="example"><pre class="json">
+{ 
+"valueQuantity" : {
+   "value" : 120,
+   "unit" : "reads per base pair",
+   "system" : "http://unitsofmeasure.org",
+   "code" : "{reads}/{base}"
+ }
+}
+          </pre></div>
+     </td>
+      <td>Specifies the number of reads that identifies the allele in question, whether it consists of one or more contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.</td>
+    </tr>
+    <tr>
+      <td>component[allelic-state] (LOINC 53034-5)</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA6705-3",
+"display" : "homozygous"
+}
+          </pre></div>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>component[sample-allelic-frequency] (LOINC 81258-6)</td>
+      <td>0.44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>component[genomic-source-class] (LOINC 48002-0)</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://loinc.org",
+"code" : "LA6684-0",
+"display" : "Somatic"
+}
+          </pre></div>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>component[variant-inheritance] (TBD-variant-inheritance)</td>
+      <td>maternal | paternal | unknown</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>component[confidence]</td>
+      <td>high | intermediate | low</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>  
+
+<a name="AnnotationComponents"></a>
+<h3>Annotating Variants</h3>
+<p>
+This implementation guide defines several components on <a href="StructureDefinition-variant.html">Variant</a> that can be used to provide helpful cross references and low-level annotations - annotations completely determined by the molecular change and calculable for example by NCBI.
+</p>
+<table>
+  <thead>
+    <th>Annotational Component</th>
+    <th>Example Value</th>
+    <th>Note</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cytogenetic-location (LOINC 48001-2)</td>
+      <td></td>
+      <td>derivable from refseq</td>
+    </tr>
+    <tr>
+      <td>variation-code (LOINC 81252-9)</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system": "http://www.ncbi.nlm.nih.gov/clinvar", 
+"code":"619728", 
+"display" : "NC_000019.8:g.1171707G>A"
+}
+          </pre></div>
+      </td>
+      <td>Optional to include. Multiple database code systems are used across specialties and carry different levels of information.</td>
+    </tr>
+    <tr>
+      <td>chromosome-identifier (LOINC 48000-4), reference-sequence-assembly (LOINC 62374-4)</td>
+      <td>(eg Chr2, b38)</td>
+      <td>Optional to include. Commonly used in VCF as shorthand but can introduce ambiguity without a fully versioned reference sequence. </td>
+    </tr>
+    <tr>
+      <td>gene-studied (LOINC 48018-6)</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system": "http://www.genenames.org/geneId",
+"code" : "HGNC:644",
+"display" : "AR"
+}
+          </pre></div>
+      </td>
+      <td>derivable from reference sequence</td>
+    </tr>
+    <tr>
+      <td>molecular-consequence</td>
+      <td><div class="example"><pre class="json">
+{ 
+"system" : "http://www.sequenceontology.org",
+"code" : "SO:0001583",
+"display" : "missense_variant" 
+}
+          </pre></div>
+      </td>
+      <td>available from NCBI, tied to representative transcript</td>
+    </tr>
+    <tr>
+      <td>coding-change-type (LOINC 48019-4)</td>
+      <td><div class="example"><pre class="json">
+{
+"system" : "http://www.sequenceontology.org",
+"code" : "SO:1000002",
+"display" : "substitution"
+}          </pre></div>
+     </td>
+      <td>may be required for certain types of structural variants. See below.</td>
+    </tr>
+    <tr>
+      <td>protein-hgvs (LOINC 48005-3)</td>
+      <td><div class="example"><pre class="json">
+{
+"system": "http://varnomen.hgvs.org",
+"code" : "NP_006209.2:p.(His1047Arg)",
+"display" : "p.H1047R"
+}          </pre></div>
+     </td>
+      <td>Proper usage of HGVS contains the reference sequence and usage of parenthesis to denote the amino acid change is calculated rather than directly observed.</td>
+    </tr>
+  </tbody>
+</table>     
+
+<a name="StructuralVariants"></a>
+<h3>Representing Structural Variants</h3>
+<p>
+The <a href="StructureDefinition-variant.html">Variant</a> profile is capable of representing a subset of structural variants (e.g. copy number variants), whereas more complex structural variants such as translocations will require additional model development. We provide guidance here on how the Variant profile can be used to communicate common structural variants. (The cytogenomic-nomenclature component can also be used to communicate more complex structural variants, in ISCN notation).
+</p>
+
+<p>
+While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on end point precision and by variant length. <b>All variants with imprecise end points are treated as structural variants.</b> Variant length is more arbitrary - consider for example, a precisely located deletion of one base pair, of one thousand base pairs, of one hundred thousand base pairs. As variant length increases, it can become onerous to include REF and ALT alleles. Therefore, where end points of a variant are precisely known, users can decide whether to represent the variant as a simple or a structural variant, although a variant length of 50 bases is often used as a cutoff.
+</p>
+
+<p>
+Suggested minimal representations of common structural variants are shown in the table. Data originating from NGS or DNA Chip testing will (and data originating from FISH testing will not) generally be amenable to these recommendations. HGVS representations, and any other components in the Variant profile not mentioned, can also be communicated where appropriate. 
+</p>
+
+<table>
+  <thead>
+    <th>Structural Variant Component</th>
+    <th>CNV</th>
+    <th>DUP</th>
+    <th>DEL</th>
+    <th>INV</th>
+    <th>INS</th>
+  </thead>
+  <tbody>
+    <tr>    
+      <td>[1..1] component: coding-change-type (LOINC 48019-4)</td>
+      <td>SO:0001019 | copy_number_variation | http://sequenceontology.org</td>
+      <td>SO:1000035 | duplication | http://sequenceontology.org</td>
+      <td>SO:0000159 | deletion | http://sequenceontology.org</td>
+      <td>SO:1000036 | inversion | http://sequenceontology.org</td>
+      <td>SO:0000667 | insertion | http://sequenceontology.org</td>
+    </tr>
+    <tr>    
+      <td>[1..1] component: genomic-ref-seq (LOINC 48013-7)</td>
+      <td colspan="5">Should be populated with chromosome-level reference sequence (e.g. NCBI RefSeq “NC_000001.10”)</td>
+    </tr>
+    <tr>
+      <td>genomic-source-class (LOINC 48002-0)</td>
+      <td colspan="5">should be populated</td>
+    </tr>
+    <tr>    
+      <td>[0..1] component: allelic-state (LOINC 53034-5)</td>
+      <td>not used</td>
+      <td>should be populated where genomic-source-class is germline</td>
+      <td>should be populated where genomic-source-class is germline</td>
+      <td>should be populated where genomic-source-class is germline</td>
+      <td>should be populated where genomic-source-class is germline</td>
+    </tr>
+    <tr>    
+      <td>[0..1] component: sample-allelic-frequency (LOINC 81258-6)</td>
+      <td>not used</td>
+      <td>often not used, optional if genomic-source-class is somatic</td>
+      <td>often not used, optional if genomic-source-class is somatic</td>
+      <td>not used</td>
+      <td>not used</td>
+    </tr>
+    <tr>    
+      <td>[0..1] component: copy-number (LOINC 82155-3)</td>
+      <td>should be populated</td>
+      <td>optional</td>
+      <td>optional</td>
+      <td>not used</td>
+      <td>not used</td>
+    </tr>
+    <tr>
+      <td>[1..1] component: ref-allele (LOINC 69547-8)</td>
+      <td colspan="5">Generally not used or useful due to the length of the change. In some cases, a ref allele may be reported for a deletion.</td>
+    </tr>
+    <tr>
+      <td>[0..1] component: alt-allele (LOINC 69551-0)</td>
+      <td colspan="5">Generally, structural variants will not report Alt Alleles. In some cases, an Alt Allele may be reported for an Insertion.</td>
+    </tr>
+    <tr>
+      <td>[1..1] component: coordinate-system (LOINC 92822-6)</td>
+      <td colspan="5">Should be populated</td>
+    </tr>
+    <tr>
+      <td>[0..1] component: outer-start-end (LOINC 81301-4) and [0..1] component: inner-start-end (LOINC 81302-2)</td>
+      <td colspan="5">Outer and/or inner start should be populated, as well as outer and/or inner end.</td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="SNVnotes"></a>
+<h4>Notes</h4>
+<ul>
+<li>While a DEL is conceptually the same as a CNV with decreased copy number, and a DUP is conceptually the same as a CNV with increased copy number, in practice, different variant callers will call different structural variant types. For instance, DEL and DUP claims are generally made by breakpoint-based callers (e.g. Delly) whereas CNV claims are generally made by abundance-based callers (e.g. CNVnator). Furthermore, breakpoint-based callers generally report allelic state and/or allelic frequency whereas abundance-based callers generally report copy number.
+</li>
+<li>All structural variant positions are represented with outer-start-end and inner-start-end components, and not exact-start-end.
+</li>
+</ul>
+
+<a name="Example Structural Variants"></a>
+<h4>Examples</h4>
+<ul>
+<li><a href="Observation-ExampleGermlineCNV.html">Germline CNV</a></li>
+<li><a href="Observation-ExampleGermlineDEL.html">Germline DEL</a></li>
+<li><a href="Observation-ExampleGermlineINV.html">Germline INV</a></li>
+<li><a href="Observation-ExampleSomaticCNV.html">Somatic CNV</a></li>
+<li><a href="Observation-ExampleSomaticDEL.html">Somatic DEL</a></li>
+<li><a href="Observation-ExampleSomaticINV.html">Somatic INV</a></li>
+</ul>
+
+
+<a name="Compound Heterozygote"></a>
+<h3>Representing compound heterozygotes</h3>
+<p>Compound heterozygosity is the presence of two different heterozygous mutations in a gene, one on each chromosome of a pair.</p>
+<p>While a single HGVS expression within a single Variant observation can be used to represent a compound heterozygous state (e.g. ‘LRG_199t1:c.[2376G>C];[3103del]’), we recommend that compound heterozygotes be represented using two Variant observations, each showing one of the heterozygous variants.</p>
+<p>The special case where the two different variants are at the same base pair location can also be represented by two Variant observations. For example:</p>
+<ul>
+<li>Variant Observation 1</li>
+  <ul>
+  <li>allelic-state: heterozygous</li>
+  <li>ref-allele: G</li>
+  <li>alt-allele: A</li>
+  <li>exact-start-end: 1234567</li>
+  </ul>
+<li>Variant Observation 2</li>
+  <ul>
+  <li>allelic-state: heterozygous</li>
+  <li>ref-allele: G</li>
+  <li>alt-allele: C</li>
+  <li>exact-start-end: 1234567</li>
+  </ul>
+</ul>
+
+<p>It is important to note in this example that the Variant observation indicates the presence or absence of a variant with the given ALT allele, and does not indicate presence of the REF allele on the other chromosome of the pair. Even though it is almost always the case for heterozygous variants that one chromosome has the variant and the other chromosome has the reference allele, one should not assume this is the case from a single heterozygous Variant without separate knowledge that no other variants were detected at that position.</p>
+<p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. <a href="Observation-Pgx-geno-1003.html">Example genotype</a>.</p>
+
+<a name="variant-confidence"></a>
+<h3>Variant Confidence Status</h3>
+<p>Variant confidence status provides a way to indicate the reporting organization’s confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence:</p>
+<p>
+<div class="example"><pre class="json">
+{
+"system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs",
+"code" : "high",
+"display" : "High"
+}
+</pre></div>
+</p>
+<p>
+It is important to note that variant confidence status is not a required component. If the reporting organization’s confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive.
+</p>
 </div>

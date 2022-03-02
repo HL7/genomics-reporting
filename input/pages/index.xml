@@ -15,7 +15,7 @@
   <p>
 Genomics is a rapidly evolving area of healthcare that involves complex data structures. There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice. At present, this implementation guide focuses solely on data structures - what data should be/might be present and how it should be organized. It does not address workflows around how reports are requested, created, approved, routed, delivered, amended, etc.</p>
   <p>
-    This guide covers all aspects of human genomic genomics-reporting, including:
+    This guide covers many aspects of genomic data reporting, including:
   </p>
   <ul>
     <li>Representation of simple discrete variants, structural variants including copy number variants, complex variants as well as gross variations such as extra or missing chromosomes</li>
@@ -71,7 +71,7 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
     <li>It avoids pre-coordinating the type of variant, medication or other information into the Observation.code as this makes it easier to leverage industry standard terminologies for genomic information (e.g. HGVS) and avoids needing to duplicate this information into observation coding systems such as LOINC.</li>
     <li>It maximizes the use of resources that are in common use by laboratory reporting systems for other clinical areas - specifically <a href="{{site.data.fhir.path}}observation.html">Observation</a> and <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a>.  This eases implementation and also reduces the chance of data being lost by systems that might not have been designed to specifically accommodate genomic-related information.</li>
     <li>It minimizes the use of FHIR extensions, also with an objective of reducing the risk of data loss when information is passed to systems that might not explicitly support this implementation guide.</li>
-    <li>It uses separate observations for each independently useful assertion.  This maximizes the discoverability and queriability of the data.</li>
+    <li>It uses separate observations for each independently useful assertion. This makes the data discoverable and queryable as seen in the <a href="usecases.html">query guidance</a>. Also review the guidance on the proper usage of <a href="{{site.data.fhir.path}}references.html#contained">contained</a> resources.</li>
     <li>It tries to ensure that data is captured in a manner that's consistent regardless of the type of testing that was done to ensure data can be consistently queried even if captured differently (e.g. variations identified in assay tests are reported in the same manner as those identified through direct sequencing).</li>
     <li>The guide allows for variability in the amount of discrete information captured.  Systems are encouraged to populate what discrete elements they can and allows for the possibility of systems populating additional elements as their technical capability and/or time and other resources allow.</li>
   </ul>
@@ -81,15 +81,12 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
   <a name="previous"> </a>
   <h3>Previous Specifications</h3>
   <p>
-    FHIR STU3 included a set of profiles that provided guidance on how to convey genomic orders, results and observations. Those profiles are superceded by this implementation guide. Guidance for converting from these older profiles is found <a href="conversion.html">here</a>.
+    FHIR STU3 included a set of profiles that provided guidance on how to convey genomic orders, results and observations. Those profiles are superseded by this implementation guide. Guidance for converting from these older profiles is found <a href="conversion.html">here</a>.
   </p>
   <a name="fhir"> </a>
   <h3>Understanding FHIR</h3>
   <p>
-    This implementation guide is based on the HL7 <a href="{{site.data.fhir.path}}index.html">FHIR</a> standard.  It uses terminology, notations and design principles that are
-    specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well
-    as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following
-    prior to reading the rest of this implementation guide.
+    This implementation guide is based on the HL7 <a href="{{site.data.fhir.path}}index.html">FHIR</a> standard. It uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
   </p>
   <ul>
     <li>
@@ -120,19 +117,21 @@ Genomics is a rapidly evolving area of healthcare that involves complex data str
   </ul>
 
   <p>
-    It is highly recommended that readers review <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a> and review the resources that are used as part of this implementation guide, especially
-    <a href="{{site.data.fhir.path}}observation.html">Observation</a>,
-    <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a> and
-    <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
+    It is highly recommended that readers review <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a> and review the resources that are used as part of this implementation guide, especially <a href="{{site.data.fhir.path}}observation.html">Observation</a>, <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a> and <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
   </p>
 	<p>
-		Importantly, this guide heavily uses Observation and DiagnosticReport as described in the <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a>. Implementers should pay close attention to the considerations in <a href="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3">Associated Observations</a> and <a href="{{site.data.fhir.path}}observation.html#obsgrouping">Observation Grouping</a> describing proper usage of the relationships “diagnosticReport.result”, “Observation.hasMember”, and “Observation.derivedFrom”. Consumers of <b>Genomic diagnostic reports</b> MUST navigate through all <code>hasMember</code> relations, and navigate through <code>derivedFrom</code> relationships in order to ensure all clinically relevant information is seen.
+		Importantly, implementers should pay close attention to the considerations in <a href="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3">Associated Observations</a> and <a href="{{site.data.fhir.path}}observation.html#obsgrouping">Observation Grouping</a> describing proper usage of the relationships <code>DiagnosticReport.result</code>, <code>Observation.hasMember</code>>, and <code>Observation.derivedFrom</code>. Consumers of <b>Genomic diagnostic reports</b> MUST navigate through all <code>hasMember</code> relations, and navigate through <code>derivedFrom</code> relationships in order to ensure all clinically relevant information is seen.
 </p>
   <p>
     Many Observation profiles and components in this guide require sending codes from http://loinc.org. If necessary for implementation (e.g., to map to a local system), equivalent codes from other code systems may *also* be sent, following the <a href="{{site.data.fhir.path}}observation.html#usingcodes">guidance</a> on observation.
   </p>
   <p>
-    Since this Implementation Guide is not targeting a specific country or region, other requirements may be needed for local reporting. Observation instances adhering to other profiles should be built to validate against one of this Implementation Guide’s  profiles wherever possible. Where incompatibilities may arise, it is most important to align with the codes and values for Observations and their components.
+    Since this Implementation Guide is not targeting a specific country or region, other requirements may be needed for local reporting. Observation instances adhering to other profiles should be built to validate against one of this Implementation Guide’s profiles wherever possible. Where incompatibilities may arise, it is most important to align with the codes and values for Observations and their components.
+  </p>
+  <a name="flexibility"> </a>
+  <h3>Extending beyond this Guide</h3>
+  <p>
+    Implementers should use this guide to structure genomics data in an interoperable way. The Clinical Genomics Working Group understands that this guide is not complete, and implementers might identify additional concepts and data elements. Please review this <a href="general.html#flexibility">guidance</a> for ways to handle those use cases.
   </p>
 
   <a name="appendices"> </a>
