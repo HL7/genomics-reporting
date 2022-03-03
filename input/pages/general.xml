@@ -28,7 +28,7 @@
       </tr>
       <tr>
         <th><a href="#findings">Genomic Findings</a></th>
-        <td>These are observations about the specimen's genomic characteristics. For example, a chromosomal abnormality, genotype, haplotype or variant that was detected.</td>
+        <td>These are observations about the specimen's genomic characteristics. For example, a chromosomal abnormality, genotype, haplotype, or variant that was detected.</td>
       </tr>
       <tr>
         <th><a href="#implications">Genomic Implications</a></th>
@@ -56,7 +56,7 @@
   <a name="diagnosticreport"> </a>
   <h3>Genomics Report</h3>
   <p>
-    The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organized into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. Which is especially useful for later analysis steps. Additionally, an observation can be used to <a href="groupingGuidance.html">group</a> content for viewing purposes or to indicate a higher level panel (with a specific LOINC panel code in the <code>Observation.code</code> for example).
+    The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organized into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>, which is especially useful for later analysis steps. Additionally, an observation can be used to <a href="groupingGuidance.html">group</a> content for viewing purposes or to indicate a higher-level panel (with a specific LOINC panel code in the <code>Observation.code</code> for example).
   </p>
   <img src="general-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
   <p>
@@ -72,20 +72,20 @@
     <a href="#recommendations">Recommended Actions</a>
   </p>
   <p>
-    Again, if needed, large or complex genomic reports may be broken down into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. This is particularly useful when different labs or services are performing later steps in the analysis, for example. Or a panel <code>Observation.code</code> can be used.
+    Again, if needed, large or complex genomic reports may be broken down into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. This approach is particularly useful when different labs or services are performing later steps in the analysis, for example. Or a panel <code>Observation.code</code> can be used.
   </p>
   <p>
     In some cases, the lab or other reporting organization may generate risk assessments as part of their reports. These are referenced from a report or an observation from the <a href="StructureDefinition-genomics-risk-assessment.html">Genomics Risk</a> extension.
   </p>
    <p>
-    Results observation profiles, like genomic observations, are typically referenced directly by a Diagnostic Report. For genomics this would be in the <a href="StructureDefinition-genomics-report.html">genomics report</a>. The genetic findings, implications and region studied profiles all contain links to computably define their composite relationships (e.g. the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, observations could be organized into groups by other observations. See this <a href="groupingGuidance.html">grouping guidance</a> for an overview with examples and considerations for processing reports. Be aware that consumers of Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships to ensure processing of all clinically relevant information.
+    Results observation profiles, like genomic observations, are typically referenced directly by a Diagnostic Report. For genomics this would be in the <a href="StructureDefinition-genomics-report.html">genomics report</a>. The genetic findings, implications and region studied profiles all contain links to computably define their composite relationships (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, observations could be organized into groups by other observations. See this <a href="groupingGuidance.html">grouping guidance</a> for an overview with examples and considerations for processing reports. Be aware that consumers of Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships to ensure processing of all clinically relevant information.
    </p>
 
   <a name="fileattachments"> </a>
   <h4>Attaching Genomic Files</h4>
   <blockquote class="stu-note">
     <p>
-      In a future release, the genomic file guidance below will be changed to utilize updates coming to the <code>DiagnosticReport.media</code> backbone element. In the FHIR R5 release, the attribute will refer to <code>DocumentReference</code> resource instead of a <code>Media</code> resource, and the corresponding guidance will be updated to better support the use case here. The guidance below for file attachments needs to be carefully reviewed and considered. There are potential issues and the Work Group welcomes feedback.
+      In a future release, the genomic file guidance below will be changed to utilize updates coming to the <code>DiagnosticReport.media</code> backbone element. In the FHIR R5 release, the attribute will refer to <code>DocumentReference</code> resource instead of a <code>Media</code> resource, and the corresponding guidance will be updated to better support the use case here. The guidance below for file attachments needs to be carefully reviewed and considered. There are potential issues, and the Work Group welcomes feedback.
     </p>
   </blockquote>
   <p>
@@ -95,7 +95,7 @@
     When sending these genomic files, implementers should utilize the <a href="StructureDefinition-genomics-document-reference.html">GenomicsDocumentReference</a> profile to send the file content along with meaningful metadata. This approach allows the files to have their own existence and enables queries to find them via the <code>DocumentReference</code> resource. To enable linking from the report to files, the <a href="StructureDefinition-genomics-file.html">Genomics File</a> extension can be used to reference files from the <code>GenomicsReport</code> profile. This can be helpful for those processing the report to easily identify the files that were sent along with the report.
   </p>
   <p>
-    When sending genomic files there are many considerations. For example, it is not unusual for files to be gigabytes in size. The <code>DocumentReference</code> resource has different options to evaluate for your use case. If embedded directly using using <code>DocumentReference.content.attachment.data</code>, servers receiving the files may have size constraints per resource or per transaction which may limit your options. Instead of sending a large data file, the file can be referenced by a URL and title using the using <code>DocumentReference.content.attachment.url</code> element. This can point to an online resource that hosts the file or from where the file can be accessed. For genomic files, the host is likely not the FHIR server providing the <code>DocumentReference</code> data instance. Be aware that use of <code>DocumentReference</code> to provide access to files through URLs introduces authorization requirements that are out of scope of this Implementation Guide. With either of these approaches, it is important to note the files might be compressed. Also, the mime types for these genomic files will vary, or possibly be missing. The senders of the data should include as much metadata as possible to enable the receiver to appropriately handle the files.
+    When sending genomic files there are many considerations. For example, it is not unusual for files to be gigabytes in size. The <code>DocumentReference</code> resource has different options to evaluate for your use case. If embedded directly using <code>DocumentReference.content.attachment.data</code>, servers receiving the files may have size constraints per resource or per transaction which may limit your options. Instead of sending a large data file, the file can be referenced by a URL and title using the using <code>DocumentReference.content.attachment.url</code> element. This can point to an online resource that hosts the file or from where the file can be accessed. For genomic files, the host is likely not the FHIR server providing the <code>DocumentReference</code> data instance. Be aware that use of <code>DocumentReference</code> to provide access to files through URLs introduces authorization requirements that are out of scope of this Implementation Guide. With either of these approaches, it is important to note the files might be compressed. Also, the mime types for these genomic files will vary, or possibly be missing. The senders of the data should include as much metadata as possible to enable the receiver to appropriately handle the files.
   </p>
   <p>
     For receivers to make use of these files, many facets of the generation of the files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use cases must be carefully evaluated to ensure appropriate file preparation. The <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
@@ -141,7 +141,7 @@
     Overall interpretation is a high-level summary observation that applies to the whole report. Their purpose is to answer the question "Did you find anything when you did the test I asked you to do?"
   </p>
   <p>
-    <a href="StructureDefinition-overall-interpretation.html">Overall Interpretation</a> is what the laboratory declares as the summary result of the test (e.g. Positive, Negative, Unknown) and is typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease was found or not.
+    <a href="StructureDefinition-overall-interpretation.html">Overall Interpretation</a> is what the laboratory declares as the summary result of the test (e.g., Positive, Negative, Unknown) and is typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease was found or not.
   </p>
 
   <a name="findings"> </a>
@@ -164,9 +164,9 @@
     Genomic Findings can be subdivided into types of findings:
   </p>
   <ul>
-    <li><a href="StructureDefinition-genotype.html">Genotypes</a> describe combinations of genomic variations that together are associated with a particular phenotype - i.e. a specific physical, behavioral or risk-associated difference associated with the organism whose specimen was tested.</li>
+    <li><a href="StructureDefinition-genotype.html">Genotypes</a> describe combinations of genomic variations that together are associated with a particular phenotype - i.e., a specific physical, behavioral, or risk-associated difference associated with the organism whose specimen was tested.</li>
     <li><a href="StructureDefinition-haplotype.html">Haplotypes</a> describe a set of genomic variations that appear on a single strand of DNA - and which are therefore typically inherited together</li>
-    <li>Variants are specific differences or combinations of differences between parts of one or more specimen sequences and the equivalent portions of the reference sequence(s) for that organism. The <a href="sequencing.html">Variant Reporting</a> section deals with all types of variants detected by formal sequencing, including simple/discrete variants, structural variants and complex variants detected by direct sequencing, shotgun-based sequencing and array-based testing for specific variants.</li>
+    <li>Variants are specific differences or combinations of differences between parts of one or more specimen sequences and the equivalent portions of the reference sequence(s) for that organism. The <a href="sequencing.html">Variant Reporting</a> section deals with all types of variants detected by formal sequencing, including simple/discrete variants, structural variants and complex variants detected by direct sequencing, shotgun-based sequencing, and array-based testing for specific variants.</li>
     <li><a href="StructureDefinition-sequence-phase-relationship.html">Sequence Phase Relationships</a> describe the CIS or TRANS relationship of findings.</li>
   </ul>
   <p>
@@ -183,7 +183,7 @@
     For HLA, KIR, and other genes in the immunogenomics domain, the National Marrow Donor Program (NMDP) led a community effort to define the Genotype List String (GL String) grammar, described <a href="https://glstring.org">here</a>. Notably, the GL String uses '+' as a delimiter between alleles in a genotype. It also has delimiters for ambiguous genotypes, allele lists, and haplotypes.
   </p>
   <p>
-    For Pharmacogenomics, we define here a simple grammar of [HGNC gene symbol followed by white space followed by a slash ('/') delimited list of haplotype codes], where the codeSystem is set to the codeSystem of the haplotypes (e.g. Pharmvar).
+    For Pharmacogenomics, we define here a simple grammar of [HGNC gene symbol followed by white space followed by a slash ('/') delimited list of haplotype codes], where the codeSystem is set to the codeSystem of the haplotypes (e.g., PharmVar).
   </p>
   <p>
     Here are some examples that are standardized, note that there are some other examples which still lack standardization today.
@@ -230,7 +230,7 @@
   <h4>Genomic Implications</h4>
   <blockquote class="stu-note">
     <p>
-      At present, implications are noted as explicit observations about the patient/subject. However, it's not clear this is the correct approach. The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way. This would allow saying "this variant is associated with an increase risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert. Feedback is welcome.
+      At present, implications are noted as explicit observations about the patient/subject. However, it's not clear this is the correct approach. The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way. This would allow saying "this variant is associated with an increased risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert. Feedback is welcome.
     </p>
   </blockquote>
   <img src="general-genomic-implications.png" alt="Class diagram showing relationship of genomic implications."/>
@@ -243,14 +243,14 @@
     <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>
   </p>
   <p>
-    Genomic Implications are assertions of likely effects genomic results on the patient, tumor or other subject. Implications are relevant for areas of genomic testing including inherited disease, <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatic</a>. For inherited diseases, a <a href="StructureDefinition-diagnostic-implication.html"> diagnostic implication</a> indicates the likelihood of inheritance of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance). For other more specific guidance, see the <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> pages.
+    Genomic Implications are assertions of likely effects genomic results on the patient, tumor, or other subject. Implications are relevant for areas of genomic testing including inherited disease, <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatic</a>. For inherited diseases, a <a href="StructureDefinition-diagnostic-implication.html"> diagnostic implication</a> indicates the likelihood of inheritance of a particular disease (the associated-phenotype) as well as how inheritance is likely to occur (mode-of-inheritance). For other more specific guidance, see the <a href="pharmacogenomics.html">pharmacogenomics</a> and <a href="somatics.html">somatics</a> pages.
   </p>
 	<p>
 		<p>Indicating AND and OR:</p>
 
-		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. both drug X AND drug Y, in combination, are indicated in the presence of a variant) vs. 'OR' conditions (e.g. either drug X OR drug Y are indicated in the presence of a variant).
+		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. both drug X AND drug Y, in combination, are indicated in the presence of a variant) vs. 'OR' conditions (e.g., either drug X OR drug Y are indicated in the presence of a variant).
 
-		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents:
+		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g., <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">ClinVar submission API</a> condition set). To be consistent with other precedents:
 
 		Where Diagnostic and Therapeutic implications have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances. See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">note</a>.
 
@@ -317,7 +317,7 @@
   <a name="regionstudied"> </a>
   <h4>Region Studied</h4>
   <p>
-    The <a href="StructureDefinition-region-studied.html">Region Studied</a> profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance). It can assert and describe actual regions studied for the performed test(s). It can provide this description at the known level of detail using components.
+    The <a href="StructureDefinition-region-studied.html">Region Studied</a> profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g., due to technical limitations during test performance). It can assert and describe actual regions studied for the performed test(s). It can provide this description at the known level of detail using components.
   </p>
 
   <a name="otherobservations"> </a>
@@ -338,7 +338,7 @@
     There are a number of resources that are used within this guide to provide additional data as both input and output of the test.
   </p>
   <p>
-    The <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a> resource typically represents a clinician order. It can also represent a lab-side filler order, a reflex order or even a plan or recommendation. These uses are distinguished via the <code>intent</code> element. The primary test to perform is captured in <code>ServiceRequest.code</code>. However, qualifications on what variants, medications, diseases and other aspects to search on can be conveyed using the <code>orderDetail</code> element. The service requests and the <a href="StructureDefinition-genomics-report.html">reports</a> resulting from them can be associated to patients, to specimens or both.
+    The <a href="{{site.data.fhir.path}}servicerequest.html">ServiceRequest</a> resource typically represents a clinician order. It can also represent a lab-side filler order, a reflex order or even a plan or recommendation. These uses are distinguished via the <code>intent</code> element. The primary test to perform is captured in <code>ServiceRequest.code</code>. However, qualifications on what variants, medications, diseases, and other aspects to search on can be conveyed using the <code>orderDetail</code> element. The service requests and the <a href="StructureDefinition-genomics-report.html">reports</a> resulting from them can be associated to patients, to specimens or both.
   </p>
   <p>
     Orders can point to other sources of information used to support the analysis performed as part of genomic testing. Genomic reports can refer to this the information that was considered as part of the report - whether provided as part of the order or made available subsequently by the patient or clinicians or otherwise retrieved. The figure above shows these relationships through the extension <a href="{{site.data.fhir.path}}extension-workflow-supportinginfo.html">SupportingInformation</a>, which can be to any resource but would typically reference  Observations, FamilyMemberHistory records (including records that comply with <a href="{{site.data.fhir.path}}family-member-history-genetics.html">Family member history for genomics analysis</a> and <a href="{{site.data.fhir.path}}riskassessment.html">RiskAssessments</a>. 
@@ -347,17 +347,17 @@
   <a name="relationships"> </a>
   <h3>Relationships Between Resources</h3>
   <p>
-    To allow searching and appropriate navigation, the diagnostic report, observations and tasks must be able to stand on their own. They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc. FHIR design principles dictate that these associations be present on <i>every</i> resource instance. That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc. However, this is still relatively lightweight because the information is included by reference only.
+    To allow searching and appropriate navigation, the diagnostic report, observations, and tasks must be able to stand on their own. They need to be related to the associated patient and/or specimen, the order that initiated the testing, the lab that performed the testing, etc. FHIR design principles dictate that these associations be present on <i>every</i> resource instance. That's because each resource could be accessed on its own as part of a query response, embedded in a document or message, passed to a decision support engine, etc. However, this is still relatively lightweight because the information is included by reference only.
   </p>
   <p>
-    The following diagram shows the relationships between the diagnostic report, observations and other elements used in the profile. Note that there is no expectation that all relationships will point to the same instances. In special cases, a genomic report may involve multiple patients or multiple specimens. As mentioned the <code>extends</code>, <code>summaryOf</code> can be used well to provide additional organization.
+    The following diagram shows the relationships between the diagnostic report, observations, and other elements used in the profile. Note that there is no expectation that all relationships will point to the same instances. In special cases, a genomic report may involve multiple patients or multiple specimens. As mentioned, the <code>extends</code>, <code>summaryOf</code> can be used well to provide additional organization.
   </p>
   <img src="general-relationships.png" alt="Class diagram showing the interrelationships between DiagnosticReport, Observation, Task, Patient, Specimen, etc."/>
   <p>
     Key points to take from this diagram:
   </p>
   <ul>
-    <li>Of the different types of observations, Genomic Findings are expected to have one specimen. The remainder might be associated with a specimen, but might not. Observations may also be associated with a particular BodyStructure, such as a fetus, tumor or lesion.</li>
+    <li>Of the different types of observations, Genomic Findings are expected to have one specimen. The remainder might be associated with a specimen, but might not. Observations may also be associated with a particular BodyStructure, such as a fetus, tumor, or lesion.</li>
     <li>Genomic reports and observations can be tied to multiple "orders" - this is because each test requested is handled as a separate request. All tests ordered as part of a single requisition are linked by the <code>requisition</code> identifier.</li>
     <li><i>Overall Interpretations</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, an interpretation that "deletions or duplication were found" might be supported by observations of variants that contain deletions and/or duplication.</li>
     <li><i>Genomic Implications</i> observations should be linked to <i>Genomic Findings</i> observations using the <code>Observation.derivedFrom</code> attribute. For example, in a genomic report, it's not acceptable to imply "patient is an increased metabolizer of drug X" without also indicating the variant, haplotype or genotype found that supports that implication.</li>
@@ -379,7 +379,7 @@
   <a name="querynote"> </a>
   <h3>Querying</h3>
   <p>
-	As a note on querying, the relationships indicated by <code>hasMember</code>, <code>derivedFrom</code> and the computable meaning conveyed by observation.code and component.code are critical for specificity in querying and getting comprehensive search results. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meaning of the values are predicated on by the component.code or observation.code to which they associate. There is a page in this IG with <a href="usecases.html">query guidance</a> that show how to use components, relationships (references) and the iterative <code>hasMember</code> to find results. The use of a grouping observation does not influence the ability to query. For example, the profile of a variant contains a value for the gene name component. Querying for all variants for the patient in a given gene can be done through the gene name component.
+	As a note on querying, the relationships indicated by <code>hasMember</code>, <code>derivedFrom</code> and the computable meaning conveyed by observation.code and component.code are critical for specificity in querying and getting comprehensive search results. Additionally, values found in elements like component.value and observation.value are useful as well. However, the meanings of the values are predicated on by the component.code or observation.code to which they associate. There is a page in this IG with <a href="usecases.html">query guidance</a> that show how to use components, relationships (references) and the iterative <code>hasMember</code> to find results. The use of a grouping observation does not influence the ability to query. For example, the profile of a variant contains a value for the gene name component. Querying for all variants for the patient in a given gene can be done through the gene name component.
   </p>
   
   <a name="flexibility"> </a>

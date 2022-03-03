@@ -22,7 +22,7 @@
       _include
     </a> search parameter.
     </li>
-	<li>The derived-from and has-member parmeters are needed as the relationships are used heavily in the IG to link between different types of genomic observations. For example, Haplotypes use <code>derivedFrom</code> to link to underlying Variant findings.
+	<li>The derived-from and has-member parameters are needed as the relationships are used heavily in the IG to link between different types of genomic observations. For example, Haplotypes use <code>derivedFrom</code> to link to underlying Variant findings.
 	</li>
   </ol>
 
@@ -86,7 +86,7 @@
     as therapy. For instance, targeted chemotherapy may kill a specific population of cancer cells
     with specific mutations and other cancer cell populations may survive and continue to divide.
     Therefore, clearly annotating these specimens as somatic variants and capturing annotations
-    related to a time relevant to a treatment time-line may be critical for analysis.
+    related to a time relevant to a treatment timeline may be critical for analysis.
 
     The following query retrieves all variants annotated as somatic which arrived on July 4, 2015.
     This query uses LOINC code 48002-0 for “Genomic Source Class," part of the variant profile of
@@ -117,9 +117,9 @@
     Observation.code. In this case the query is constrained by a Patient with id "123.
 
     Note to the implementer: It is currently beyond this spec to follow specimen links to Patient
-    ids. Some variants maybe reported only with a link to a specimen. In this case a query must
+    ids. Some variants may be reported only with a link to a specimen. In this case a query must
     first be performed to find all specimens related to the patient and then the query for all
-    variants related to the specimen can be run. Or, one could devise a more complicated query which
+    variants related to the specimen can be run. Otherwise, one could devise a more complicated query which
     finds all variants for all specimens of a patient. This is currently left as an exercise, also
     there are questions about performance which are determinant on the data store layer underneath
     the server.
@@ -149,19 +149,19 @@
     LA6682-4. Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the
     Observation.derived-from link. "_include:iterate=Observation:derived-from" tells the FHIR API to
     look for variants that the annotation of "Unknown Significance" is derived from. The iterate
-    modifier is needed as the direct target of a derived-from relationship can be a hapolotype which
+    modifier is needed as the direct target of a derived-from relationship can be a haplotype which
     has a derived-from relationship to a variant (note: haplotypes can have derived-from other
     haplotypes which makes the number of observations returned larger).
 
     Note to the implementer: It is currently beyond this spec to follow specimen links to Patient
-    ids. Some variants maybe reported only with a link to a specimen. In this case a query must
+    ids. Some variants may be reported only with a link to a specimen. In this case a query must
     first be performed to find all specimens related to the patient and then a query for all
     variants related to each patient specimen can be run. Or, one could devise a more complicated
     query which finds all variants for all specimens of a patient. This is currently left as an
     exercise, also there are questions about performance which are determinant on the data store
     layer underneath the server.
 
-    It maybe safer to perform both a subject and specimen query to ensure all reported variants for
+    It may be safer to perform both a subject and specimen query to ensure all reported variants for
     a patient are found.
 
   </p>
@@ -177,7 +177,7 @@
   <p>
     "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the
     annotation of "Unknown Significance" is derived from. The iterate modifier is needed as the
-    direct target of a derived-from relationship can be a hapolotype which has a derived-from
+    direct target of a derived-from relationship can be a haplotype which has a derived-from
     relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes
     the number of observations returned larger).
   </p>
@@ -196,9 +196,9 @@ code=69548-6&_include=Observation:
   <a name="decisionMaking"></a>
   <h4>Decision Making Tools - Family History and Drug Dosage Calculators</h4>
   <p>
-    Today clinicians translate (i.e. manually re-enter) genetic data into tools for decision making.
+    Today clinicians translate (i.e., manually re-enter) genetic data into tools for decision making.
     This includes family history tools and drug dosage calculators. In the future, this data will
-    automatically be incorporated into clinical decision making tools.
+    automatically be incorporated into clinical decision-making tools.
 
     This query returns all the reported variants with referenced medication implications and those
     implications.
@@ -209,7 +209,7 @@ code=69548-6&_include=Observation:
     Additionally, the "_include:iterate=Observation:derived-from" iteratively follows the
     Observation.derived-from link. "_include:iterate=Observation:derived-from" tells the FHIR API to
     look for variants that the medication assessment is derived from. The iterate modifier is needed
-    as the direct target of a derived-from relationship can be a hapolotype which has a derived-from
+    as the direct target of a derived-from relationship can be a haplotype which has a derived-from
     relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes
     the number of observations returned larger).
 
@@ -217,12 +217,12 @@ code=69548-6&_include=Observation:
   <a name="getPharmacogenomic"></a>
   <pre class="http">GET /Observation?subject=123&amp;Observation?component-code=http://loinc.org|51963-7&amp;_include:iterate=Observation:derived-from</pre>
   <p>
-    51963-7 : LOINC code for “Medication Assessed”
+    51963-7: LOINC code for “Medication Assessed”
   </p>
   <p>
     "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the
     medication assessment is derived from. The iterate modifier is needed as the direct target of a
-    derived-from relationship can be a hapolotype which has a derived-from relationship to a variant
+    derived-from relationship can be a haplotype which has a derived-from relationship to a variant
     (note: haplotypes can have derived-from other haplotypes which makes the number of observations
     returned larger).
   </p>
@@ -230,26 +230,26 @@ code=69548-6&_include=Observation:
   <h4>Public Health</h4>
   <p>
     Today Registrars manually translate clinical data into public health reporting systems. This
-    data is used to monitor and improve public health (e.g. surveillance and clinical research). In
+    data is used to monitor and improve public health (e.g., surveillance and clinical research). In
     the future, this data will be extracted from the EHR in an automated (or semi-automated)
     fashion.
   </p>
   <p>
     For a breast cancer clinical genomic study, get all genetic observations of patients where the
-    variant is associated with breast cancer as a genetic risk. There is some heterogenity in the
-    codes which maybe used to indicate phenotypes. Here we have used the NCI metathesaurus code for
+    variant is associated with breast cancer as a genetic risk. There is some heterogeneity in the
+    codes which may be used to indicate phenotypes. Here we have used the NCI Metathesaurus code for
     Breast Cancer, "C9335," as a likely code to be used. The following query returns all variants
-    that have an annotation of "Breast Cancer" using the NCI metathesaurus code for Breast Cancer,
+    that have an annotation of "Breast Cancer" using the NCI Metathesaurus code for Breast Cancer,
     "C9335."
 
     "code-value-concept" is a construct to use the code of an Observation instance and the code of a
     value for the Observation. The Observation.code = 81259-4, "predicted phenotype," is used for
-    the iG's "Inherited Disease Pathogenicity" profile. The value in this case is NCI metathesaurus
+    the iG's "Inherited Disease Pathogenicity" profile. The value in this case is NCI Metathesaurus
     code for Breast Cancer, "C9335." Additionally, the "_include:iterate=Observation:derived-from"
     iteratively follows the Observation.derived-from link.
     "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the
     annotation is derived from. The iterate modifier is needed as the direct target of a
-    derived-from relationship can be a hapolotype which has a derived-from relationship to a variant
+    derived-from relationship can be a haplotype which has a derived-from relationship to a variant
     (note: haplotypes can have derived-from other haplotypes which makes the number of observations
     returned larger).
 
@@ -260,12 +260,12 @@ code=69548-6&_include=Observation:
     81259-4: LOINC code for "predicted phenotype"
   </p>
   <p>
-    http://ncimeta.nci.nih.gov|C9335 : NCI metathesaurus code for "Breast Cancer"
+    http://ncimeta.nci.nih.gov|C9335: NCI Metathesaurus code for "Breast Cancer"
   </p>
   <p>
     "_include:iterate=Observation:derived-from" tells the FHIR API to look for variants that the
     annotated phenotype of "Breast Cancer" is derived from. The iterate modifier is needed as the
-    direct target of a derived-from relationship can be a hapolotype which has a derived-from
+    direct target of a derived-from relationship can be a haplotype which has a derived-from
     relationship to a variant (note: haplotypes can have derived-from other haplotypes which makes
     the number of observations returned larger).
   </p>
@@ -296,7 +296,7 @@ code=69548-6&_include=Observation:
     <a name="gettingThruGroupers"></a>
   <h4>Iterating through has-member and derived-from</h4>
   <p>
-  This example is using a Genomics Diagnostic Resource as a base to demonstrate iteration through has-member and dervied-from in the same query. Here a specific instance of diagnostic report is being queried for all the connected genomic observation profiles. If the DiagnosticReport.results are only grouping observations or panels, this query would ensure finding the leaf node observations</p>
+  This example is using a Genomics Diagnostic Resource as a base to demonstrate iteration through has-member and derived-from in the same query. Here a specific instance of diagnostic report is being queried for all the connected genomic observation profiles. If the DiagnosticReport.results are only grouping observations or panels, this query would ensure finding the leaf node observations</p>
   
   <pre class="http">GET /DiagnosticReport?_id=16931&amp;_include=DiagnosticReport:result&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
   </pre>
@@ -306,7 +306,7 @@ code=69548-6&_include=Observation:
   <a name="getCompoundHetVariantAndmemberVariants"></a>
   <h4>Compound heterozygotic variant retrieval</h4>
   <p>
-    This query returns compound herterozygotic variant observations and the variant observations
+    This query returns compound heterozygous variant observations and the variant observations
     they are composed from. Adding a patient or specimen identifier would filter the result to a
     specific patient or specimen.
 
@@ -403,7 +403,7 @@ code=69548-6&_include=Observation:
   <p>
     <!-- Search for results from a nephrotic syndrome panel -->
   <!--pre class="http">GET /DiagnosticReport?code=N0336&amp;patient=123</pre-->
-  This is an example using Observation to find a panel and iterate through to find all the clinical results. The query would ensure finding the leaf node observations. At the moment we're not providing an example of searching for a DiagnosticReport containing the panel, this is more complex. One option would be to use "_revinclude" to go from the Panel Observation backwards to the DiagnosticReport. In the case below we are using a GTR encoded panel, but it should be noted that a LOINC code would most likely also be assoicted with the <code>Observation.code</code> value. Recall, if two codings are equivlant in meaning then they can be used simultanously. The specific test here is a Panel of several genes. The assumption here is that a Panel was used to group the individual variants and thier interpretations together. 
+  This is an example using Observation to find a panel and iterate through to find all the clinical results. The query would ensure finding the leaf node observations. At the moment, we're not providing an example of searching for a DiagnosticReport containing the panel, this is more complex. One option would be to use "_revinclude" to go from the Panel Observation backwards to the DiagnosticReport. In the case below we are using a GTR encoded panel, but it should be noted that a LOINC code would most likely also be associated with the <code>Observation.code</code> value. Recall, if two codings are equivalent in meaning then they can be used simultaneously. The specific test here is a Panel of several genes. The assumption here is that a Panel was used to group the individual variants and their interpretations together. 
   </p>
   <pre class="http">GET /Observation?code=http://www.ncbi.nlm.nih.gov/gtr|GTR000593044.2&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
   </pre>
