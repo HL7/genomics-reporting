@@ -1133,7 +1133,7 @@ Description: "Example of a Therapeutic Implication for Clinical Trial"
 * component[1].code.coding = LNC#81259-4 // "Phenotypic treatment context"
 //#HP:0003002
 * component[1].valueCodeableConcept.coding = 	SCT#254837009 "Breast Cancer"
-* component[2].code.coding = TbdCodesCS#associated-therapy "Genomically linked therapy"
+* component[2].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
 * component[2].valueCodeableConcept.coding = NCTtrial#NCT01234567 "NCT01234567"
 * derivedFrom = Reference(Variant-Somatic-Clinical-Trial)
 * status = #final
