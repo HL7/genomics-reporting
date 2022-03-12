@@ -3,6 +3,12 @@
 	<h3>Description</h3>
 	<p>Retrieve metadata about sequencing studies performed on a subject.</p>
 	
+	 <blockquote class="stu-note">
+    <p>
+      The Clinical Genomics committee is reviewing <a href="https://jira.hl7.org/browse/FHIR-35864">Jira 35864: Add study-level metadata capabilities into the FHIR Genomics IG</a>. It is expected that the response of this operation will be revised in the future, to align with the Jira resolution.
+    </p>
+  </blockquote>
+	
 	<p><b>Test Id</b> and <b>test date</b> are always returned. Additional metadata is server dependent, and specific implementations can indicate their capabilities using a <a href="https://www.hl7.org/fhir/capabilitystatement.html">FHIR Capability Statement</a>. Frequently useful metadata includes <b>Specimen Id</b> and <b>Genomic build</b> (reference sequence assembly upon which variants were called, e.g. 'GRCh37', 'GRCh38'). Additionally, it can be useful to indicate the <b>DNA change types</b> or types of variants detectable by the test (e.g. 'SNV', 'InDel', 'CNV'). Servers can choose to return additional metadata.</p>
 	
 	<p>As described in <a href="operations.html#query-filters">general guidance</a>, metadata can be used to filter the results of other operations.</p> 
