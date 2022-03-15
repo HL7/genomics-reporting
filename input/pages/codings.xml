@@ -10,10 +10,10 @@
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 
-  <p>
-    The following is an alphabetical table of external coding systems often used in the genomics space, with FHIR CodeSystem URIs and OIDs where available. See <a href="{{site.data.fhir.path}}terminologies-systems.html">the core specification guidance</a> for more details.
-  </p>
-
+    <p>Genomics covers a broad landscape involving many organizations outside of HL7 that have established codes and name systems for different use cases. The <a href="https://confluence.hl7.org/display/TA">HL7 Terminology Authority</a> governs the use of terminologies that are external to HL7 and they have begun to document these. As a part of the <a href="https://confluence.hl7.org/display/TSMG">Terminology Services Management Group</a>, the HTA is working with these organizations to establish canonical URIs that can be used as HL7 code and name systems. HL7 has established <a href="https://terminology.hl7.org">terminology.hl7.org (THO)</a> as the authoritative source for code system information, including <a href="https://terminology.hl7.org/external_terminologies.html">external terminologies</a> Many of these are are also listed in the <a href="{{site.data.fhir.path}}terminologies-systems.html">the core specification guidance</a>.</p>
+    <p>We have listed many, but not all, of genomics-related systems below. In this table, we provide links for more information -- to the THO or HTA entries when available, or to organization home page if not. We also list a URI that has been approved by the THO/HTA or by <a href="https://confluence.hl7.org/display/VOC/Vocabulary+Work+Group">Vocabulary Work Group</a>, and a coding system label defined in the <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=279">HL7 Version 2.5.1 Implementation Guide: Laboratory Results Interface</a> (LRI).</p>
+    <p>For those organizations that list the URI as "not assigned yet," check the <a href="https://terminology.hl7.org/external_terminologies.html">THO</a> or <a href="https://confluence.hl7.org/display/TA/External+Terminologies+-+Information">HTA sites</a> to see if it has been added since the publication of this IG. If not, we recommend following the <a href="https://confluence.hl7.org/display/TA/External+Code+System+Owner+Engagement+Process">External Code System Owner Engagement Processing</a>. As a last resort, we suggest using the organization site URL, change any "https" to "http", and remove trailing slashes.</p>
+  <p>Please contact the <a href="https://confluence.hl7.org/display/CGW">Clinical Genomics Workgroup</a> co-chairs if you have any questions about using these genomics code systems.</p>
     <style type="text/css">
         #constrainer {
             overflow-x: hidden;
@@ -62,26 +62,26 @@
             background-color: #eee;
         }
         th:nth-child(1), td:nth-child(1) {
-          width: 168px;
+          width: 170px;
           }
         th:nth-child(2), td:nth-child(2) {
-          width: 580px;
+          width: 490px;
         }
         th:nth-child(3), td:nth-child(3) {
-          width: 165px;
+          width: 175px;
          }
         th:nth-child(4), td:nth-child(4) {
-          width: 100px;
+          width: 175px;
          }
         th:nth-child(5), td:nth-child(5) {
-          width: 87px;
+          width: 90px;
          }
     </style>
 
 <div id="constrainer">
 <table style="margin-bottom:0">
     <thead>
-    <th>Coding System Name <br/>(Source)</th><th>Description</th><th>Homepage<br/>(FHIR CodeSystem URI)</th><th>OID</th><th>LRI Code</th>
+    <th>Coding System Name <br/>(Source)</th><th>Description</th><th>Additional information</th><th>URI</th><th>LRI Code</th>
     </thead>
 </table>
   <table>
@@ -89,185 +89,186 @@
     <tbody>
     <tr>
     <td>ClinicalTrials.gov<br/>(ClinicalTrials.gov/NLM)</td>
-    <td></td>
-    <td>http://clinicaltrials.gov<br/>(http://clinicaltrials.gov)</td>
-    <td>2.16.840.1.113883.3.1077</td>
+    <td>Database of privately and publicly funded clinical studies conducted around the world.</td>
+    <td><a href="https://clinicaltrials.gov/">https://clinicaltrials.gov/</a></td>
+    <td>http://clinicaltrials.gov</td>
     <td></td>
   </tr>
   <tr>
     <td>ClinVar Variant ID<br/>(NCBI/NLM)</td>
     <td>ClinVar processes submissions reporting variants found in patient samples, assertions made regarding their clinical significance, information about the submitter, and other supporting data. The alleles described in submissions are mapped to reference sequences, and reported according to the HGVS standard. ClinVar includes simple and complex variants composed of multiple small variants. However, it now also includes large structural variants, which have a known clinical implication. So now simple, complex and many structural variants can all be found in ClinVar. The ClinVar records have a field for Allele ID and for Variant ID. We focus on the variant ID in this guide. This coding system uses the variant ID as the code and the variant name from NCBI’s "variant_summary.txt.gz" file as the code’s print string. The "variant_summary.txt.gz" file caries more than 20 useful fields, including the separate components of the variant name, the cytogenetic location, the genomic reference, etc. So based on the Variant ID, you can use ClinVar to find most you would ever want to know about the variant. In the LHC Clinical Table Search Service and LHC-Forms, we have indexed many of these attributes to assist users and applications that need to find the ID for a particular variant.</td>
-    <td>https://www.ncbi.nlm.nih.gov/clinvar<br/>(http://www.ncbi.nlm.nih.gov/clinvar)</td>
-    <td>not assigned yet</td>
+    <td><a href="https://confluence.hl7.org/display/TA/ClinVar+Variation+ID">https://confluence.hl7.org/display/TA/ClinVar+Variation+ID</a></td>
+    <td>http://www.ncbi.nlm.nih.gov/clinvar</td>
     <td>CLINVAR-V</td>
   </tr>
   <tr>
     <td>ClinVar Accession ID (RCV)<br/>(NCBI/NLM)</td>
-    <td>RCV' refers to the first 3 letters of the accession calculated by ClinVar to aggregate information from all submissions interpreting the same phenotype relative to the same variant or set of variants. </td>
-    <td>https://www.ncbi.nlm.nih.gov/clinvar<br/>(not assigned yet)</td>
-    <td>not assigned yet</td>
+    <td>"RCV" refers to the first 3 letters of the accession calculated by ClinVar to aggregate information from all submissions interpreting the same phenotype relative to the same variant or set of variants.</td>
+    <td><a href="https://www.ncbi.nlm.nih.gov/clinvar/">https://www.ncbi.nlm.nih.gov/clinvar/</a></td>
+    <td>(not assigned yet)</td>
     <td></td>
   </tr>
   <tr>
     <td>COSMIC<br/>(Wellcome Trust Sanger Institute)</td>
     <td>This table includes only simple somatic (cancer) mutations, one per unique mutation ID. The code is the COSMIC mutation ID, and the name is constructed from Ensembl transcript reference sequences and p.HGVS that use the single letter codes for amino acids. It carries fields analogous to most of the key fields in ClinVar, but its reference sequences are Ensembl transcript reference sequences with prefixes of ENST; it specifies amino acid changes with the older HGVS single letter codes and it carries examples of primary cancers and primary tissues - fields that are not in ClinVar. COSMIC's source table includes multiple records per mutation - one per submission. The COSMIC- SimpleVariants table that we have extracted from the original file includes only one record per unique mutation – a total of more than 3 million records. These contents are copyright COSMIC (http://cancer.sanger.ac.uk/cosmic/license). LHC has produced a lookup table for these records, and for users to look up particular mutation IDs, both with permission from COSMIC. However, interested parties must contact COSMIC directly for permission to download these records.</td>
-    <td>http://cancer.sanger.ac.uk/cancergenome/projects/cosmic<br/>(http://cancer.sanger.ac.uk/cancergenome/projects/cosmic)</td>
-    <td>2.16.840.1.113883.3.912</td>
+    <td><a href="https://cancer.sanger.ac.uk/cosmic">https://cancer.sanger.ac.uk/cosmic</a></td>
+    <td>http://cancer.sanger.ac.uk/cancergenome/projects/cosmic</td>
     <td>COSMIC-Smpl, COSMIC-Stru</td>
   </tr>
   <tr>
     <td>Cytogenetic (chromosome) location<br/>(NCBI/NLM)</td>
     <td>Chromosome location (AKA chromosome locus or cytogenetic location), is the standardized syntax for recording the position of genes and large variants. It consists of three parts: the Chromosome number (e.g. 1-22, X, Y), an indicator of which arm – either “p” for the short or “q” for the long, and then generally a series of numbers separated by dots that indicate the region and any applicable band, sub-band, and sub-sub-band of the locus (e.g. 2p16.3). There are other conventions for reporting ranges and locations at the ends of the chromosomes. The table of these chromosome locations was loaded with all of the locations found in NCBI’s ClinVar variation tables. It will expand as additional sources become available. This does not include all finely grained chromosome locations that exist. Users can add to it as needed.</td>
-    <td>https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation<br/>(not assigned yet)</td>
-    <td>2.16.840.1.113883.6.335</td>
+    <td><a href="https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation">https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation</a><br/><a href="https://medlineplus.gov/genetics/understanding/howgeneswork/genelocation/">https://medlineplus.gov/genetics/understanding/howgeneswork/genelocation/</a></td>
+    <td>(not assigned yet)</td>
     <td>Chrom-Loc</td>
   </tr>
   <tr>
     <td>dbSNP<br/>(DBSNP : Single Nucleotide Polymorphism database )</td>
     <td>The Short Genetic Variations database (dbSNP) is a public-domain archive maintained by NCBI for a broad collection of short genetic polymorphisms. The SNP ID is unique for each position and length of DNA change. For example, a change of three nucleotides will have a different SNP ID than a change of four nucleotides at the same locus, but the code will be the same for all changes at the same locus and with the same length. So, to specify a variation in relation to a reference sequence, both the alt allele and the SNP code must be included.</td>
-    <td>http://www.ncbi.nlm.nih.gov/projects/SNP<br/>(http://www.ncbi.nlm.nih.gov/projects/SNP)</td>
-    <td>2.16.840.1.113883.6.284</td>
+    <td><a href="https://www.ncbi.nlm.nih.gov/snp/">https://www.ncbi.nlm.nih.gov/snp/</a></td>
+    <td>http://www.ncbi.nlm.nih.gov/projects/SNP</td>
     <td>dbSNP</td>
   </tr>
   <tr>
     <td>dbVar - Germline<br/>(NCBI/NLM)</td>
     <td>dbVar is NCBI's database of genomic structural variations (including copy number variants) that are larger than 50 contiguous base pairs. It is the complement of dbSNP, which identifies variants occurring in 50 or fewer contiguous base pairs. dbVar contains insertions, deletions, duplications, inversions, multi-nucleotide substitutions, mobile element insertions, translocations, and complex chromosomal rearrangements. dbVar carries structured Germline and Somatic variants in separate files. Accordingly, we have divided the coding system for dbVar the same way. This coding system represents the Germline dbVar variants. Its record ID may begin with one of four prefixes: nsv, nssv, esv and essv. These are accession prefixes for variant regions (nsv) and variant calls (or instances, nssv), respectively. Typically, one or more variant instances (nssv – variant calls based directly on experimental evidence) are merged into one variant region (nsv – a pair of start-stop coordinates reflecting the submitters’ assertion of the region of the genome that is affected by the variant instances). The “n” preceding sv or indicates that the variants were submitted to NCBI (dbVar). The prefix, “e” for esv and essv represent variant entities (corresponding to NCBI’s nsv and nssv) that were submitted to EBI (DGVa). The relation between variant call, and variant region, instances is many to one. The LHC lookup table for dbVar germline variations includes both variant instances (essv or nssv) and the variant region records (nsv, esv). Users can sub-select by searching on the appropriate prefix.</td>
-    <td>https://www.ncbi.nlm.nih.gov/dbvar/<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="https://www.ncbi.nlm.nih.gov/dbvar/">https://www.ncbi.nlm.nih.gov/dbvar/</a></td>
+    <td>(not assigned yet)</td>
     <td>dbVar-GL, dbVar-Som</td>
   </tr>
   <tr>
     <td>ENSEMBL genomic reference sequence<br/>(European Bioinformatics Institute)</td>
     <td>Set of Ensembl gene reference sequences whose identifiers have a prefix of "ENSG." It only includes genomic sequences associated with genes and uses the whole build plus the chromosome number to identify chromosome reference sequences, rather than a separate set of reference sequence identifier as NCBI does. LHC has not yet produced a convenient look up table for these files.</td>
-    <td>http://www.ensembl.org<br/>(http://www.ensembl.org)</td>
-    <td>not assigned yet</td>
+    <td><a href="https://www.ensembl.org">https://www.ensembl.org</a></td>
+    <td>http://www.ensembl.org</td>
     <td>Ensembl-G</td>
   </tr>
   <tr>
     <td>ENSEMBL protein reference sequence<br/>(European Bioinformatics Institute)</td>
     <td>Set of Ensembl gene reference sequences whose identifiers have a prefix of "ENSP" and correspond to NCBI's "NP_" reference sequence identifiers. LHC has not yet produced a convenient look up table for these files.</td>
-    <td>http://www.ensembl.org<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="https://www.ensembl.org">https://www.ensembl.org</a></td>
+    <td>http://www.ensembl.org</td>
     <td>Ensembl-P</td>
   </tr>
   <tr>
     <td>ENSEMBL transcript reference sequence<br/>(European Bioinformatics Institute)</td>
     <td>Set of Ensembl protein reference sequences. Their identifiers are distinguished by the prefix of "ENST," and correspond to NCBI's "NM_" reference sequence identifiers. LHC has not yet produced a convenient look up table for these files.</td>
-    <td>http://www.ensembl.org<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="https://www.ensembl.org">https://www.ensembl.org</a></td>
+    <td>http://www.ensembl.org</td>
     <td>Ensembl-T</td>
   </tr>
   <tr>
     <td>Gene Code<br/>(NCBI/NLM)</td>
     <td>When applicable, this variable identifies the gene on which the variant is located. The gene identifier is also carried in the transcript reference sequence database, and is part of a full HGVS expression. Not all genes have HGNC names and codes so NCBI has created gene IDs that cover the genes that are not registered by HGNC.</td>
-    <td>https://www.ncbi.nlm.nih.gov/gene/<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="https://www.ncbi.nlm.nih.gov/gene">https://www.ncbi.nlm.nih.gov/gene</a></td>
+    <td>(not assigned yet)</td>
     <td>NCBI-gene code</td>
   </tr>
   <tr>
     <td>GL String<br/></td>
     <td>The GL String Code (GLSC) code system combines Genotype List String (GL String) grammar with established HLA and KIR nomenclatures, thereby specifying a syntax for encoding of nomenclature-level genotyping results. The established HLA and KIR nomenclatures are primarily concerned with identification and characterization of individual alleles, and do not incorporate a grammar for genotyping results. GL String grammar is a string format for genotyping results from genetic systems with defined nomenclatures, such as HLA and KIR. In addition to genotyping results, the grammar can also describe data analysis artifacts such as multi-locus (multi-gene) haplotypes. From a terminology standpoint, the result of adding a compositional grammar to an established code system such as HLA or KIR nomenclature is a new code system, because the grammar may be used to construct expressions not explicitly defined in the original system as concept codes.</td>
-    <td>http://glstring.org<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="http://glstring.org">http://glstring.org</a></td>
+    <td>(not assigned yet)</td>
     <td></td>
   </tr>
-
   <tr>
-    <td>HGNC - GeneID<br/>(HGNC: HUGO Gene Nomenclature Committee)</td>
-    <td>The HGNC gene table carries the gene ID, gene symbol and full gene name. Gene IDs must be sent as codes and begin with "HGNC:". gene symbols should be sent as display. GENE IDs are specific to the species, whereas gene symbol and name are shared by all species with the same gene. The HGNC-Symb table provided by HUGO carries only human genes and is available in a table by LHC. The code for this coding system is the HGNC gene code, the "name" or print string is the HGNC gene symbol. More than 28,000 human gene symbols and names have been assigned so far, including almost all of the protein coding genes. NCBI creates what might be thought of as interim codes. HGNC codes may be sent without the "HGNC:" prefix in older systems so caution must be taken to confirm alignment. </td>
-    <td>http://www.genenames.org<br/>(http://www.genenames.org/geneId)</td>
-    <td></td>
+    <td>HGNC<br/>(HGNC: HUGO Gene Nomenclature Committee)</td>
+    <td><p>The HGNC gene table carries the gene ID, gene symbol and full gene name. Gene IDs must be sent as codes and begin with "HGNC:". Gene symbols should be sent as display. GENE IDs are specific to the species, whereas gene symbol and name are shared by all species with the same gene. The HGNC-Symb table provided by HUGO carries only human genes and is available in a table by LHC. The code for this coding system is the HGNC gene code, the "name" or print string is the HGNC gene symbol. More than 28,000 human gene symbols and names have been assigned so far, including almost all of the protein coding genes. NCBI creates what might be thought of as interim codes. HGNC codes may be sent without the "HGNC:" prefix in older systems so caution must be taken to confirm alignment.</p><p>HGNC also provides an index on gene families/groups. GeneGroup IDs do not begin with "HGNC:", so care must be made to ensure alignment of concepts when viewing an HGNC ID from an older system that may be referring to the GeneID and not a gene group. For example, <a href="https://www.genenames.org/data/genegroup/#!/group/588">588</a> refers to the HLA gene family, but <a href="https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:588">HGNC:588</a> identifies the ATG12 gene. To provide clarity for systems that do not distinguish codes from genes and gene families, we suggest appending "/geneID" or "/genegroup" to the code system URI. This will be resolved by the HTA, so please check with the <a href="https://terminology.hl7.org/external_terminologies.html">THO external terminologies page</a> in the future.</p></td>
+    <td><a href="https://terminology.hl7.org/CodeSystem-v3-hgnc.html">https://terminology.hl7.org/CodeSystem-v3-hgnc.html</a></td>
+    <td><p>http://www.genenames.org</p><p>http://www.genenames.org/geneId (Gene)</p><p>http://www.genenames.org/genegroup (Gene Family/Group)</p></td>
     <td>HGNC-Symb</td>
   </tr>
+<!--
   <tr>
     <td>HGNC - GeneGroup<br/>(HGNC: HUGO Gene Nomenclature Committee)</td>
     <td>HGNC also provides an index on gene families/groups. GeneGroup IDs do not begin with "HGNC:", so care must be made to ensure alignment of concepts when viewing an HGNC ID from an older system that may be referring to the GeneID and not a gene group.</td>
-    <td>http://www.genenames.org<br/>(http://www.genenames.org/genegroup)</td>
-    <td></td>
+    <td><a href="https://terminology.hl7.org/CodeSystem-v3-hgnc.html">https://terminology.hl7.org/CodeSystem-v3-hgnc.html</a></td>
+    <td>http://www.genenames.org/genegroup</td>
     <td>HGNC-Symb</td>
   </tr>
+-->
   <tr>
     <td>HGVS - Genomic syntax<br/>(HGVS: Human Genome Variation Society)</td>
     <td>HGVS syntax that describes the variations (mutations) at the genome level (the DNA before it is spliced to removeintrons). The genomic syntax statements which can describe simple or structural variants are distinguished by a leading "g."</td>
-    <td>http://varnomen.hgvs.org<br/>(http://varnomen.hgvs.org)</td>
-    <td></td>
+    <td><a href="https://terminology.hl7.org/CodeSystem-v3-hgvs.html">https://terminology.hl7.org/CodeSystem-v3-hgvs.html</a></td>
+    <td>http://varnomen.hgvs.org</td>
     <td>HGVS.g, HGVS.p, HGVS.c</td>
   </tr>
   <tr>
     <td>HLA Nomenclature<br/>(European Bioinformatics Institute)</td>
-    <td>Human leukocyte antigen (HLA) is a gene family found in the Major Histocompatibility Complex (MHC) of Chromosome 6 in humans. This family includes more than 50 genes. A subset of these are commonly used as markers for histocompatibility testing for stem cell and solid organ transplantation, drug sensitivity, and disease association. The WHO Nomenclature Committee for Factors of the HLA System is responsible for a common nomenclature of HLA alleles, allele sequences, and quality control, to communicate histocompatibility typing information to match donors and recipients. An HLA allele is defined as any set of variations found on a sequence of DNA comprising a HLA gene. So, if there are five variations found in this one gene sequence, this set is defined as one allele (vs. the definition of an allele being the variation found between the test specimen and the reference along a contiguous stretch of DNA). In the case of HLA, the contiguous stretch of DNA represents the entire gene, and the variations do not need to be contiguous within the gene sequence. Each HLA allele name has a unique name consisting of the gene name followed by up to four fields, each containing at least two digits, separated by colons. There are also optional suffixes added to indicate expression status. Individual HLA genes may have thousands of different alleles. For the full specification, please go to this website: http://hla.alleles.org/nomenclature/naming.html. HLA nomenclature can also be used to represent sets of alleles that share sequence identity in the Antigen Recognition Site (ARS). G-groups are alleles that have identical DNA sequences in the ARS, while P-groups are alleles that have identical protein sequences in the ARS. These are described, respectively, in http://hla.alleles.org/alleles/g_groups.html and http://hla.alleles.org/alleles/p_groups.html.</td>
-    <td>http://www.ebi.ac.uk/ipd/imgt/hla<br/>(http://www.ebi.ac.uk/ipd/imgt/hla)</td>
-    <td>2.16.840.1.113883.6.341</td>
+    <td>Human leukocyte antigen (HLA) is a gene family found in the Major Histocompatibility Complex (MHC) of Chromosome 6 in humans. This family includes more than 50 genes. A subset of these are commonly used as markers for histocompatibility testing for stem cell and solid organ transplantation, drug sensitivity, and disease association. The WHO Nomenclature Committee for Factors of the HLA System is responsible for a common nomenclature of HLA alleles, allele sequences, and quality control, to communicate histocompatibility typing information to match donors and recipients. An HLA allele is defined as any set of variations found on a sequence of DNA comprising a HLA gene. So, if there are five variations found in this one gene sequence, this set is defined as one allele (vs. the definition of an allele being the variation found between the test specimen and the reference along a contiguous stretch of DNA). In the case of HLA, the contiguous stretch of DNA represents the entire gene, and the variations do not need to be contiguous within the gene sequence. Each HLA allele name has a unique name consisting of the gene name followed by up to four fields, each containing at least two digits, separated by colons. There are also optional suffixes added to indicate expression status. Individual HLA genes may have thousands of different alleles. For the full specification, please go to this website: http://hla.alleles.org/nomenclature/naming.html. HLA nomenclature can also be used to represent sets of alleles that share sequence identity in the Antigen Recognition Site (ARS). G-groups are alleles that have identical DNA sequences in the ARS, while P-groups are alleles that have identical protein sequences in the ARS. These are described, respectively, in <a href="http://hla.alleles.org/alleles/g_groups.html">http://hla.alleles.org/alleles/g_groups.html</a> and <a href="http://hla.alleles.org/alleles/p_groups.html">http://hla.alleles.org/alleles/p_groups.html</a>.</td>
+    <td><a href="https://www.ebi.ac.uk/ipd/imgt/hla/">https://www.ebi.ac.uk/ipd/imgt/hla/</a></td>
+    <td>http://www.ebi.ac.uk/ipd/imgt/hla</td>
     <td>HLA-Allele</td>
   </tr>
   <tr>
     <td>Human Phenotype Ontology<br/>(HPO - Human Phenotype Ontology)</td>
     <td>The Human Phenotype Ontology (HPO) aims to provide a standardized vocabulary of phenotypic abnormalities encountered in human disease. Each term in the HPO describes a phenotypic abnormality, such as atrial septal defect.</td>
-    <td>https://hpo.jax.org/app/<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="https://hpo.jax.org/app/">https://hpo.jax.org/app/</a></td>
+    <td>(not assigned yet)</td>
     <td>HPO</td>
   </tr>
   <tr>
     <td>ISCN<br/>(International System for Human Cytogenetic Nomenclature)</td>
     <td>Like HGVS, The International System for Human Cytogenetic Nomenclature (ISCN) is a syntax. It came out of cytopathology and deals with reporting karyotypes down to the chromosome fusions and many types of small copy number variants. However, cytogenetics is out of the scope in this guide. ISCN syntax is often used to report large deletion-duplications in structural variants and to include other variants that have been observed.</td>
-    <td>https://www.karger.com/Book/Home/271658<br/>(not assigned yet)</td>
-    <td></td>
+    <td><a href="https://terminology.hl7.org/CodeSystem-ISCN.html">https://terminology.hl7.org/CodeSystem-ISCN.html</a></td>
+    <td>https://iscn.karger.com</td>
     <td>ISCN</td>
   </tr>
   <tr>
     <td>LOINC<br/>(Regenstrief Institute)</td>
     <td>Logical Observation Identifiers Names and Codes (LOINC®) provides a set of universal codes and names for identifying laboratory and other clinical observations. One of the main goals of LOINC is to facilitate the exchange and pooling of results for clinical care, outcomes management, and research. LOINC was initiated by Regenstrief Institute research scientists who continue to develop it with the collaboration of the LOINC Committee.</td>
-    <td>https://loinc.org<br/>(https://loinc.org)</td>
-    <td></td>
+    <td><a href="https://terminology.hl7.org/CodeSystem-v3-loinc.html">https://terminology.hl7.org/CodeSystem-v3-loinc.html</a></td>
+    <td>http://loinc.org</td>
     <td>LN</td>
   </tr>
   <tr>
     <td>LRG : Locus Reference Genomic Sequences<br/>(LRG : Locus Reference Genomic)</td>
     <td>LRG is a manually curated record that contains stable, and thus un-versioned, reference sequences designed specifically for reporting sequence variants with clinical implications. It provides a genomic DNA sequence representation of a single gene that is idealized, has a permanent ID (with no versioning), and core content that never changes. Their database includes maps to NCBI, Ensembl and UCSC reference sequences. It contained sequences for a total of 1073 genes as of April 2016, with identifiers of the form: "LRG_####", where#### can be from 1 to N, and N is the last gene processed. See PMIDs: 24285302, 20398331, and 20428090 for more information.</td>
-    <td>http://www.lrg-sequence.org<br/>(http://www.lrg-sequence.org)</td>
-    <td>2.16.840.1.113883.6.283</td>
+    <td><a href="https://www.lrg-sequence.org/">https://www.lrg-sequence.org/</a></td>
+    <td>http://www.lrg-sequence.org</td>
     <td>LRG-RefSeq</td>
   </tr>
   <tr>
     <td>OMIM: Online Mendelian Inheritance in Man<br/>(OMIM : Online Mendelian Inheritance in Man)</td>
-    <td></td>
-    <td>http://www.omim.org<br/>(http://www.omim.org)</td>
-    <td>2.16.840.1.113883.6.174</td>
+    <td>An Online Catalog of Human Genes and Genetic Disorders</td>
+    <td><a href="https://www.omim.org">https://www.omim.org</a></td>
+    <td>http://www.omim.org</td>
     <td></td>
   </tr>
   <tr>
     <td>PHARMGKB: Pharmacogenomic Knowledge Base<br/>(PHARMGKB : Pharmacogenomic Knowledge Base )</td>
-    <td></td>
-    <td>http://www.pharmgkb.org<br/>(http://www.pharmgkb.org)</td>
-    <td>2.16.840.1.113883.3.913</td>
+    <td>PharmGKB is a comprehensive resource that curates knowledge about the impact of genetic variation on drug response for clinicians and researchers.</td>
+    <td><a href="https://www.pharmgkb.org/">https://www.pharmgkb.org/</a></td>
+    <td>http://www.pharmgkb.org</td>
     <td></td>
   </tr>
   <tr>
     <td>PubMed<br/>(PubMed)</td>
-    <td></td>
-    <td>http://www.ncbi.nlm.nih.gov/pubmed<br/>(http://www.ncbi.nlm.nih.gov/pubmed)</td>
-    <td>2.16.840.1.113883.13.191</td>
+    <td>PubMed® comprises citations for biomedical literature from MEDLINE, life science journals, and online books. Citations may include links to full text content from PubMed Central and publisher web sites.</td>
+    <td><a href="https://pubmed.ncbi.nlm.nih.gov/">https://pubmed.ncbi.nlm.nih.gov/</a></td>
+    <td>http://www.ncbi.nlm.nih.gov/pubmed</td>
     <td></td>
   </tr>
   <tr>
     <td>RefSeq <br/>(NCBI/NLM)</td>
     <td>Subset of NCBI Human RefSeqs with prefix of NC_ or NG_. Those prefixed with "NC_" represent the whole genomic RefSeq for individual chromosomes. Those prefixed with "NG_" represent genes with all of their introns and flanking regions and other larger or smaller genomic sequences. These are available separately in the NCBI source data file, which includes all human RefSeqs (including those with prefix of NR_ or XM_): ftp://ftp.ncbi.nlm.nih.gov/genomes/Homo_sapiens</td>
-    <td>http://www.ncbi.nlm.nih.gov/refseq<br/>(http://www.ncbi.nlm.nih.gov/refseq)</td>
-    <td>2.16.840.1.113883.6.280</td>
+    <td><a href="https://www.ncbi.nlm.nih.gov/refseq/">https://www.ncbi.nlm.nih.gov/refseq/</a></td>
+    <td>http://www.ncbi.nlm.nih.gov/refseq</td>
     <td>RefSeq-G, RefSeq-P, RefSeq-T</td>
   </tr>
   <tr>
     <td>Sequence Ontology<br/>(Sequence Ontology)</td>
-    <td></td>
-    <td>http://sequenceontology.org<br/>(http://sequenceontology.org)</td>
-    <td>not assigned yet</td>
+    <td>Collaborative ontology project for the definition of sequence features used in biological sequence annotation</td>
+    <td><a href="https://confluence.hl7.org/pages/viewpage.action?pageId=113679151">https://confluence.hl7.org/pages/viewpage.action?pageId=113679151</a></td>
+    <td>http://sequenceontology.org</td>
     <td></td>
   </tr>
   <tr>
     <td>Pharmacogenomic Star Alleles (PharmVar Pharmacogene Variation Consortium)</td>
     <td>The star allele nomenclature is commonly used in pharmacogenomics as shorthand to specify one or more specific variants in a gene that is known to impact drug metabolism or response. A star allele can identify either a single variant or a group of variants found in cis, and therefore it usually represents a haplotype. A star allele name is composed of the gene symbol and an allele number, separated by an asterisk, e.g. TPMT*2. By convention, the *1 allele represents the allele that contains the "reference" sequence, although that is not true in all cases. Closely related alleles may be assigned a common number and be differentiated by a unique letter that specifies the suballele (e.g., TPMT*3A, TPMT*3B). Pharmacogenomics tests commonly report patient phenotypes as diplotypes, i.e. *1/*3A. The star nomenclature system is inadequately defined and inconsistently adopted. Therefore, although the system we are proposing supports the inclusion of pharmacogenomics star alleles as a legacy syntax, we strongly encourage messages that include star alleles to rigorously define those alleles through other means.</td>
-    <td>https://pharmvar.org/genes</td>
-    <td></td>
+    <td><a href="https://pharmvar.org/genes">https://pharmvar.org/genes</a></td>
+    <td>(not assigned yet)</td>
     <td>Star-Allele</td>
   </tr>
         </tbody>
