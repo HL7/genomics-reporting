@@ -64,7 +64,6 @@ Usage: #example
 * entry[=].request.method = #POST
 * entry[=].request.url = "DiagnosticReport"
 
-
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-1
 InstanceOf: Patient
 Usage: #inline
@@ -289,6 +288,9 @@ Usage: #inline
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-9
 InstanceOf: TherapeuticImplication
 Usage: #inline
+* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-assessed"
+* extension.valueReference = Reference(Inline-MedicationKnowledgeRuxolitinib)
+* contained[+] = Inline-MedicationKnowledgeRuxolitinib
 * status = #final
 * category = ObsCat#laboratory
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
@@ -303,6 +305,10 @@ Usage: #inline
 * component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
 * component[+].code = LNC#81259-4
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
-* component[+].code = LNC#51963-7 "Medication assessed"
-* component[=].valueCodeableConcept.text = "Ruxolitinib"
 
+Instance: Inline-MedicationKnowledgeRuxolitinib
+InstanceOf: MedicationKnowledge
+Usage: #inline
+Description: "Simple MedicationKnowledge instance for Ruxolitinib"
+* code.coding = RXN#1193326 "Ruxolitinib"
+* status = #active

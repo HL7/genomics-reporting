@@ -51,6 +51,10 @@ Usage: #example
 * entry[=].resource = Inline-Instance-for-oncologyexamples-r4-12
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
+* entry[+].fullUrl = "urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6ecb6"
+* entry[=].resource = Inline-Instance-for-oncologyexamples-r4-14
+* entry[=].request.method = #POST
+* entry[=].request.url = "Observation"
 * entry[+].fullUrl = "urn:uuid:ad7a499b-a43b-4cc8-bf46-cac62d9ecae5"
 * entry[=].resource = Inline-Instance-for-oncologyexamples-r4-13
 * entry[=].request.method = #POST
@@ -271,3 +275,43 @@ Usage: #inline
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
 * component[+].code = LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Ruxolitinib"
+
+
+Instance: Inline-Instance-for-oncologyexamples-r4-14
+InstanceOf: TherapeuticImplication
+Usage: #inline
+* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapy-assessed"
+* extension.valueReference = Reference(PlanDefRuxolitinib)
+* contained[+] = PlanDefRuxolitinib
+* status = #final
+* category = ObsCat#laboratory
+* code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
+
+Instance: PlanDefRuxolitinib
+InstanceOf: PlanDefinition
+Usage: #inline
+Description: "Plan Definition including Ruxolitinib (for example only)"
+* status = #draft
+* name = "RuxolitinibPlan"
+* description = """
+This is not a fully defined resource, just here as a place holder to show how a PlanDefinition could be packaged.
+"""
+
+/*
+NOTE - Planned to use this ResearchStudy as an example of the 'therapy-assesed' extension above, but the publisher (as of Mar 19 2022)
+       kept complaining that ResearchStudy was not a valid resource when building the example.
+
+Instance: ResearchStudyNCT02928978
+InstanceOf: ResearchStudy
+Usage: #inline
+Description: "Ruxolitinib for Premalignant Breast Disease (TBCRC 042)"
+* title = "Ruxolitinib for Premalignant Breast Disease (TBCRC 042)"
+* identifier[+].system = "http://clinicaltrials.gov"
+* identifier[=].value = "NCT02928978"
+* status = #active
+* description = """
+This study is evaluating how ruxolitinib affects premalignant breast cells. One half of the study participants will receive ruxolitinib for approximately 15 days, and the other half will receive a placebo (sugar pill) for approximately 15 days. Once study participants have completed their ruxolitinib or placebo, participants will undergo surgery to remove the premalignant breast tissue.
+"""
+*/

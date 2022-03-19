@@ -59,7 +59,7 @@ Id:          therapy-assessed
 Title:       "Therapy Assessed"
 Description: "Used to reference a specific therapy that was assessed (e.g. a FHIR ResearchStudy, a FHIR CarePlan, or a FHIR PlanDefinition)."
 * ^context[0].type = #element
-* ^context[0].expression = "TherapeuticImplication"
+* ^context[0].expression = "Observation"
 * value[x] only Reference(CarePlan or ResearchStudy or PlanDefinition)
 
 Extension:   MedicationAssessed
@@ -67,5 +67,5 @@ Id:          medication-assessed
 Title:       "Medication Assessed"
 Description: "Used to reference a specific medication that was assessed (e.g. a FHIR Medication or a FHIR MedicationKnowledge)."
 * ^context[0].type = #element
-* ^context[0].expression = "TherapeuticImplication"
+* ^context[0].expression = "Observation"
 * value[x] only Reference(Medication or MedicationKnowledge)
