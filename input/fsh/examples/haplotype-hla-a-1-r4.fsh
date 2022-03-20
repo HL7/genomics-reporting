@@ -12,7 +12,7 @@ Usage: #example
 * performer.type = "Organization"
 * performer.display = "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.31.0"
-* valueCodeableConcept.coding = $hla#HLA-A*03:01:01:01
+* valueCodeableConcept.coding = HLAALLELE#HLA-A*03:01:01:01
 * specimen.display = "buccal swab: 123456789"
 * derivedFrom.type = "MolecularSequence"
 * derivedFrom.display = "Sequence for HLA-A*03:01:01:01"

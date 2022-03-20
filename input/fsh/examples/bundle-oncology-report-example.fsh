@@ -326,7 +326,7 @@ Usage: #inline
 * identifier.value = "UNKNOWN"
 * type = specimenTypeCS#TUMOR "Tumor"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
-* collection.method = $IG_TODO#Biopsy "Biopsie"
+* collection.method.text = "Biopsy"
 * collection.bodySite = ICD10CM#C16.0
 
 Instance: Inline-Instance-for-oncology-report-example-4

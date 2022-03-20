@@ -95,7 +95,7 @@ Usage: #inline
 * component[0].code = LNC#53037-8
 * component[=].valueCodeableConcept.coding = LNC#LA6668-3 "Pathogenic"
 * component[+].code = LNC#81259-4
-* component[=].valueCodeableConcept.coding = $medgen#C1970173 "Acyl-CoA dehydrogenase family, member 9, deficiency of"
+* component[=].valueCodeableConcept.coding = MEDGEN#C1970173 "Acyl-CoA dehydrogenase family, member 9, deficiency of"
 
 Instance: complex-variant-1a
 InstanceOf: Variant
@@ -157,7 +157,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept.coding = $hla#*2
+* valueCodeableConcept.coding = HLAALLELE#*2
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(discrete-variant-1a)
 
@@ -171,7 +171,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept = $pharmvar#"CYP2C9 *2/*5" "CYP2C9 *2/*5"
+* valueCodeableConcept = PHARMVAR#"CYP2C9 *2/*5" "CYP2C9 *2/*5"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(haplotype-1a)
 * component[0].code = LNC#48018-6
@@ -312,7 +312,7 @@ Usage: #inline
 * component[=].valueCodeableConcept.coding = HGVS#NC_000003.11:g.128625063C>T
 * component[+].code = LNC#81255-2
 * component[=].valueCodeableConcept.coding.version = "137"
-* component[=].valueCodeableConcept.coding = $SNP#rs368949613
+* component[=].valueCodeableConcept.coding = SNP#rs368949613
 * component[+].code = LNC#48004-6
 * component[=].valueCodeableConcept.coding.version = "15.11"
 * component[=].valueCodeableConcept.coding = HGVS#c.1249C>T
@@ -331,7 +331,7 @@ Usage: #inline
 * component[+].code = LNC#69551-0
 * component[=].valueString = "T"
 * component[+].code = LNC#48001-2
-* component[=].valueCodeableConcept.coding = $Chrom-Loc#3q21
+* component[=].valueCodeableConcept.text = "3q21"
 * component[+].code = LNC#48002-0
 * component[=].valueCodeableConcept.coding = LNC#LA6683-2 "Germline"
 * component[+].code = LNC#53034-5

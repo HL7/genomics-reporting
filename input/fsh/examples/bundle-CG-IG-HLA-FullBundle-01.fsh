@@ -202,7 +202,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00001
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00001
 * referenceSeq.referenceSeqId.text = "HLA-A*01:01:01:01"
 * referenceSeq.windowStart = 503
 * referenceSeq.windowEnd = 773
@@ -214,7 +214,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00001
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00001
 * referenceSeq.referenceSeqId.text = "HLA-A*01:01:01:01"
 * referenceSeq.windowStart = 1014
 * referenceSeq.windowEnd = 1290
@@ -226,7 +226,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00002
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00002
 * referenceSeq.referenceSeqId.text = "HLA-A*01:02"
 * referenceSeq.windowStart = 503
 * referenceSeq.windowEnd = 773
@@ -238,7 +238,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00002
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00002
 * referenceSeq.referenceSeqId.text = "HLA-A*01:02"
 * referenceSeq.windowStart = 1014
 * referenceSeq.windowEnd = 1290
@@ -254,7 +254,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $hla#HLA-A*01:01:01G "HLA-A*01:01:01G"
+* valueCodeableConcept.coding = HLAALLELE#HLA-A*01:01:01G "HLA-A*01:01:01G"
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -275,7 +275,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $hla#HLA-A*01:02 "HLA-A*01:02"
+* valueCodeableConcept.coding = HLAALLELE#HLA-A*01:02 "HLA-A*01:02"
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -298,7 +298,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = $glstring#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
+* valueCodeableConcept.coding = GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -315,7 +315,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00162
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00162
 * referenceSeq.referenceSeqId.text = "HLA-B*15:01:01:01"
 * referenceSeq.windowStart = 486
 * referenceSeq.windowEnd = 756
@@ -327,7 +327,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00162
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00162
 * referenceSeq.referenceSeqId.text = "HLA-B*15:01:01:01"
 * referenceSeq.windowStart = 1001
 * referenceSeq.windowEnd = 1277
@@ -339,7 +339,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00381
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00381
 * referenceSeq.referenceSeqId.text = "HLA-B*57:01:01"
 * referenceSeq.windowStart = 485
 * referenceSeq.windowEnd = 755
@@ -351,7 +351,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00381
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00381
 * referenceSeq.referenceSeqId.text = "HLA-B*57:01:01"
 * referenceSeq.windowStart = 1001
 * referenceSeq.windowEnd = 1277
@@ -367,7 +367,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $hla#HGG00041 "HLA-B*15:01:01G"
+* valueCodeableConcept.coding = HLAALLELE#HGG00041 "HLA-B*15:01:01G"
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -388,7 +388,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $hla#HLA-B*57:01:01G "HLA-B*57:01:01G"
+* valueCodeableConcept.coding = HLAALLELE#HLA-B*57:01:01G "HLA-B*57:01:01G"
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -411,7 +411,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = $glstring#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
+* valueCodeableConcept.coding = GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -428,7 +428,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00401
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00401
 * referenceSeq.referenceSeqId.text = "HLA-C*01:02:01"
 * referenceSeq.windowStart = 486
 * referenceSeq.windowEnd = 756
@@ -440,7 +440,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00401
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00401
 * referenceSeq.referenceSeqId.text = "HLA-C*01:02:01"
 * referenceSeq.windowStart = 1002
 * referenceSeq.windowEnd = 1278
@@ -452,7 +452,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00413
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00413
 * referenceSeq.referenceSeqId.text = "HLA-C*03:04:01:01"
 * referenceSeq.windowStart = 486
 * referenceSeq.windowEnd = 756
@@ -464,7 +464,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = $hla#HLA00413
+* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00413
 * referenceSeq.referenceSeqId.text = "HLA-C*03:04:01:01"
 * referenceSeq.windowStart = 1001
 * referenceSeq.windowEnd = 1277
@@ -480,7 +480,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $hla#HLA-C*01:02:01G "HLA-C*01:02:01G"
+* valueCodeableConcept.coding = HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -501,7 +501,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $hla#HLA-C*01:02:01G "HLA-C*01:02:01G"
+* valueCodeableConcept.coding = HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
@@ -524,7 +524,7 @@ Usage: #inline
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = $glstring#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
+* valueCodeableConcept.coding = GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
 * method = GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"

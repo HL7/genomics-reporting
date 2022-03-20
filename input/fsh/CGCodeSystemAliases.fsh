@@ -38,3 +38,11 @@ Alias: HPO = http://hpo.jax.org/app/
 // The SEPIO-CG link is according to https://dataexchange.clinicalgenome.org/interpretation/terminologies/ but not working
 Alias: SEPIO-CG = http://purl.obolibrary.org/obo/sepio-clingen
 Alias: NCBIrefseq = http://www.ncbi.nlm.nih.gov/refseq
+
+Alias: HLAALLELE = http://www.ebi.ac.uk/ipd/imgt/hla
+Alias: GLSTRING = http://glstring.org
+Alias: MEDGEN = http://www.ncbi.nlm.nih.gov/medgen
+Alias: PHARMVAR = http://www.pharmvar.org
+Alias: ORPHA = http://www.orpha.net
+Alias: OMIM = http://www.omim.org
+Alias: SNP = http://www.ncbi.nlm.nih.gov/projects/SNP

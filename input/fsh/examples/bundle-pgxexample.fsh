@@ -117,7 +117,7 @@ Usage: #inline
 * code = LNC#84413-4 "genotype display name"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
-* valueCodeableConcept = $pharmvar#"CYP2C9 *4/*35B" "CYP2C9 *4/*35B"
+* valueCodeableConcept = PHARMVAR#"CYP2C9 *4/*35B" "CYP2C9 *4/*35B"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom[0] = Reference(haplotype-1-pgx-example)
 * derivedFrom[+] = Reference(haplotype-2-pgx-example)
@@ -132,7 +132,7 @@ Usage: #inline
 * code = LNC#84414-2 "Haplotype Name"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
-* valueCodeableConcept = $pharmvar#"CYP2C9 *35B" "CYP2C9 *35B"
+* valueCodeableConcept = PHARMVAR#"CYP2C9 *35B" "CYP2C9 *35B"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-1-pgx-example)
 * component.code = LNC#48018-6 "Gene studied ID"
@@ -146,7 +146,7 @@ Usage: #inline
 * code = LNC#84414-2 "Haplotype Name"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
-* valueCodeableConcept = $pharmvar#"CYP2C9 *4" "CYP2C9 *4"
+* valueCodeableConcept = PHARMVAR#"CYP2C9 *4" "CYP2C9 *4"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-2-pgx-example)
 * component.code = LNC#48018-6 "Gene studied ID"
@@ -166,7 +166,7 @@ Usage: #inline
 * component[0].code = LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = HGNCID#2623 "CYP2C9"
 * component[+].code = LNC#81255-2 "dbSNP ID"
-* component[=].valueCodeableConcept = $SNP#rs12345
+* component[=].valueCodeableConcept = SNP#rs12345
 * component[+].code = LNC#69547-8 "Ref nucleotide"
 * component[=].valueString = "T"
 * component[+].code = LNC#69551-0 "Alt allele"
@@ -191,7 +191,7 @@ Usage: #inline
 * component[+].code = LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = NUC#NG_007726.3
 * component[+].code = LNC#81255-2 "dbSNP ID"
-* component[=].valueCodeableConcept = $SNP#rs233455
+* component[=].valueCodeableConcept = SNP#rs233455
 * component[+].code = LNC#69547-8 "Ref nucleotide"
 * component[=].valueString = "T"
 * component[+].code = LNC#69551-0 "Alt allele"

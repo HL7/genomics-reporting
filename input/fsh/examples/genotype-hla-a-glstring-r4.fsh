@@ -11,7 +11,7 @@ Usage: #example
 * performer.type = "Organization"
 * performer.display = "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = $glstring#hla#3.31.0#HLA-A*03:01:01:01+HLA-A*30:01:01
+* valueCodeableConcept.coding = GLSTRING#hla#3.31.0#HLA-A*03:01:01:01+HLA-A*30:01:01
 * method.text = "PACBIO Sequel"
 * specimen.display = "buccal swab: 123456789"
 * derivedFrom[0].type = "Observation"

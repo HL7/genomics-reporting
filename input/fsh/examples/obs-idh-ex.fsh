@@ -12,9 +12,9 @@ Usage: #example
 * component[0].code = LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = LNC#LA6668-3 "Pathogenic"
 * component[+].code = LNC#81259-4
-* component[=].valueCodeableConcept.coding[0] = $medgen#C0010674 "Cystic fibrosis"
-* component[=].valueCodeableConcept.coding[+] = $orpha#ORPHA:586
-* component[=].valueCodeableConcept.coding[+] = $omim#219700
+* component[=].valueCodeableConcept.coding[0] = MEDGEN#C0010674 "Cystic fibrosis"
+* component[=].valueCodeableConcept.coding[+] = ORPHA#ORPHA:586
+* component[=].valueCodeableConcept.coding[+] = OMIM#219700
 * component[=].valueCodeableConcept.text = "Cystic fibrosis"
 * component[+].code = TbdCodesCS#condition-inheritance
-* component[=].valueCodeableConcept = $HPO#0000007 "Autosomal recessive inheritance"
+* component[=].valueCodeableConcept = HPO#0000007 "Autosomal recessive inheritance"
