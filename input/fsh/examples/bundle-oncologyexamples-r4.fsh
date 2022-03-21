@@ -75,68 +75,68 @@ Instance: Inline-Instance-for-oncologyexamples-r4-10
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
+* category = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* method = LNC#LA26811-2 "Computational analysis"
+* method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
 * component[0].code = TbdCodesCS#predicted-therapeutic-implication
-* component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
-* component[+].code = LNC#93044-6 "Level of Evidence"
-* component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
-* component[+].code = LNC#81259-4
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
+* component[+].code = $LNC#93044-6 "Level of Evidence"
+* component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
+* component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
-* component[+].code = LNC#51963-7 "Medication assessed"
+* component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "AT9283"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-11
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
+* category = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* method = LNC#LA26811-2 "Computational analysis"
+* method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
 * component[0].code = TbdCodesCS#predicted-therapeutic-implication
-* component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
-* component[+].code = LNC#93044-6 "Level of Evidence"
-* component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
-* component[+].code = LNC#81259-4
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
+* component[+].code = $LNC#93044-6 "Level of Evidence"
+* component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
+* component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
-* component[+].code = LNC#51963-7 "Medication assessed"
+* component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "SNX-5422"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-12
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
+* category = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* method = LNC#LA26811-2 "Computational analysis"
+* method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
 * component[0].code = TbdCodesCS#predicted-therapeutic-implication
-* component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
-* component[+].code = LNC#93044-6 "Level of Evidence"
-* component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
-* component[+].code = LNC#81259-4
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
+* component[+].code = $LNC#93044-6 "Level of Evidence"
+* component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
+* component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
-* component[+].code = LNC#51963-7 "Medication assessed"
+* component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "TG02"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-13
 InstanceOf: GenomicsReport
 Usage: #inline
 * status = #final
-* category = DiagnosticService#GE
-* code = LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* category = $DIAGNOSTICSERVICE#GE
+* code = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
   * text = "Genetic analysis report"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -193,22 +193,22 @@ Instance: Inline-Instance-for-oncologyexamples-r4-6
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#69548-6 "Genetic variant assessment"
+* category = $OBSCAT#laboratory
+* code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* valueCodeableConcept = LNC#LA9633-4 "Present"
-* method = LNC#LA26398-0 "Sequencing"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = LNC#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = HGVS#9:g.5073770G>T "9:g.5073770G>T"
-* component[+].code = LNC#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = HGVS#p.Val617Phe "p.Val617Phe"
-* component[+].code = LNC#48006-1 "Amino acid change type"
-* component[=].valueCodeableConcept = LNC#LA6698-0 "Missense"
-* component[+].code = LNC#48002-0 "Genomic source class"
-* component[=].valueCodeableConcept = LNC#LA6683-2 "Germline"
-* component[+].code = LNC#48018-6 "Gene studied ID"
+* component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[=].valueCodeableConcept = $HGVS#9:g.5073770G>T "9:g.5073770G>T"
+* component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
+* component[=].valueCodeableConcept = $HGVS#p.Val617Phe "p.Val617Phe"
+* component[+].code = $LNC#48006-1 "Amino acid change type"
+* component[=].valueCodeableConcept = $LNC#LA6698-0 "Missense"
+* component[+].code = $LNC#48002-0 "Genomic source class"
+* component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
 * component[=].valueCodeableConcept.coding.display = "JAK2"
 
@@ -216,22 +216,22 @@ Instance: Inline-Instance-for-oncologyexamples-r4-7
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#69548-6 "Genetic variant assessment"
+* category = $OBSCAT#laboratory
+* code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* valueCodeableConcept = LNC#LA9633-4 "Present"
-* method = LNC#LA26398-0 "Sequencing"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = LNC#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = HGVS#4:g.55972974T>A "4:g.55972974T>A"
-* component[+].code = LNC#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = HGVS#p.Gln472His "p.Gln472His"
-* component[+].code = LNC#48006-1 "Amino acid change type"
-* component[=].valueCodeableConcept = LNC#LA6698-0 "Missense"
-* component[+].code = LNC#48002-0 "Genomic source class"
-* component[=].valueCodeableConcept = LNC#LA6683-2 "Germline"
-* component[+].code = LNC#48018-6 "Gene studied ID"
+* component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[=].valueCodeableConcept = $HGVS#4:g.55972974T>A "4:g.55972974T>A"
+* component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
+* component[=].valueCodeableConcept = $HGVS#p.Gln472His "p.Gln472His"
+* component[+].code = $LNC#48006-1 "Amino acid change type"
+* component[=].valueCodeableConcept = $LNC#LA6698-0 "Missense"
+* component[+].code = $LNC#48002-0 "Genomic source class"
+* component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
 * component[=].valueCodeableConcept.coding.display = "KDR"
 
@@ -239,20 +239,20 @@ Instance: Inline-Instance-for-oncologyexamples-r4-8
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#69548-6 "Genetic variant assessment"
+* category = $OBSCAT#laboratory
+* code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* valueCodeableConcept = LNC#LA9633-4 "Present"
-* method = LNC#LA26398-0 "Sequencing"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = LNC#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = HGVS#2:g.212578380del "2:g.212578380del"
-* component[+].code = LNC#48006-1 "Amino acid change type"
-* component[=].valueCodeableConcept = LNC#LA6698-0 "Missense"
-* component[+].code = LNC#48002-0 "Genomic source class"
-* component[=].valueCodeableConcept = LNC#LA6683-2 "Germline"
-* component[+].code = LNC#48018-6 "Gene studied ID"
+* component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[=].valueCodeableConcept = $HGVS#2:g.212578380del "2:g.212578380del"
+* component[+].code = $LNC#48006-1 "Amino acid change type"
+* component[=].valueCodeableConcept = $LNC#LA6698-0 "Missense"
+* component[+].code = $LNC#48002-0 "Genomic source class"
+* component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
 * component[=].valueCodeableConcept.coding.display = "ERBB4"
 
@@ -260,20 +260,20 @@ Instance: Inline-Instance-for-oncologyexamples-r4-9
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
+* category = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* method = LNC#LA26811-2 "Computational analysis"
+* method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
 * component[0].code = TbdCodesCS#predicted-therapeutic-implication
-* component[=].valueCodeableConcept = LNC#LA6677-4 "Responsive"
-* component[+].code = LNC#93044-6 "Level of Evidence"
-* component[=].valueCodeableConcept = LNC#LA30200-2 "Very strong evidence pathogenic"
-* component[+].code = LNC#81259-4
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
+* component[+].code = $LNC#93044-6 "Level of Evidence"
+* component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
+* component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
-* component[+].code = LNC#51963-7 "Medication assessed"
+* component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Ruxolitinib"
 
 
@@ -284,7 +284,7 @@ Usage: #inline
 * extension.valueReference = Reference(PlanDefRuxolitinib)
 * contained[+] = PlanDefRuxolitinib
 * status = #final
-* category = ObsCat#laboratory
+* category = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)

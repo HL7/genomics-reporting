@@ -116,7 +116,7 @@ Instance: CG-IG-HLA-FullBundle-01-1
 InstanceOf: Patient
 Usage: #inline
 * identifier.use = #usual
-* identifier.type = IDTYPE#DR
+* identifier.type = $IDTYPE#DR
 * identifier.system = "urn:oid:0.0.0.0.0.0.0"
 * identifier.value = "12345"
 * identifier.period.start = "2012-11-10"
@@ -141,7 +141,7 @@ Usage: #inline
 * identifier.value = "123"
 * accessionIdentifier.system = "http://mylabsurl.com"
 * accessionIdentifier.value = "456"
-* type = SCT#122555007 "Venous blood specimen"
+* type = $SCT#122555007 "Venous blood specimen"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 
@@ -186,7 +186,7 @@ InstanceOf: ServiceRequest
 Usage: #inline
 * status = #completed
 * intent = #order
-* code = LNC#13303-3 "HLA-A+B+C (class I) [Type]"
+* code = $LNC#13303-3 "HLA-A+B+C (class I) [Type]"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * authoredOn = "2016-11-15"
@@ -202,7 +202,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00001
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00001
 * referenceSeq.referenceSeqId.text = "HLA-A*01:01:01:01"
 * referenceSeq.windowStart = 503
 * referenceSeq.windowEnd = 773
@@ -214,7 +214,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00001
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00001
 * referenceSeq.referenceSeqId.text = "HLA-A*01:01:01:01"
 * referenceSeq.windowStart = 1014
 * referenceSeq.windowEnd = 1290
@@ -226,7 +226,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00002
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00002
 * referenceSeq.referenceSeqId.text = "HLA-A*01:02"
 * referenceSeq.windowStart = 503
 * referenceSeq.windowEnd = 773
@@ -238,7 +238,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00002
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00002
 * referenceSeq.referenceSeqId.text = "HLA-A*01:02"
 * referenceSeq.windowStart = 1014
 * referenceSeq.windowEnd = 1290
@@ -248,43 +248,43 @@ Instance: CG-IG-HLA-FullBundle-01-10
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84414-2 "Haplotype name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = HLAALLELE#HLA-A*01:01:01G "HLA-A*01:01:01G"
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:01:01G "HLA-A*01:01:01G"
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804) "HLA-A*01:01:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675) "HLA-A*01:01:01:01, exon 3"
   * type = "MolecularSequence"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4931 "HLA-A"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: CG-IG-HLA-FullBundle-01-11
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84414-2 "Haplotype name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = HLAALLELE#HLA-A*01:02 "HLA-A*01:02"
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:02 "HLA-A*01:02"
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621) "HLA-A*01:02, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0) "HLA-A*01:02, exon 3"
   * type = "MolecularSequence"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4931 "HLA-A"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: CG-IG-HLA-FullBundle-01-12
 InstanceOf: Genotype
@@ -292,22 +292,22 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84413-4 "Genotype display name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6) "HLA-A*01:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32) "HLA-A*01:02, exons 2 and 3"
   * type = "Observation"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4931 "HLA-A"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: CG-IG-HLA-FullBundle-01-13
 InstanceOf: MolecularSequence
@@ -315,7 +315,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00162
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00162
 * referenceSeq.referenceSeqId.text = "HLA-B*15:01:01:01"
 * referenceSeq.windowStart = 486
 * referenceSeq.windowEnd = 756
@@ -327,7 +327,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00162
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00162
 * referenceSeq.referenceSeqId.text = "HLA-B*15:01:01:01"
 * referenceSeq.windowStart = 1001
 * referenceSeq.windowEnd = 1277
@@ -339,7 +339,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00381
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00381
 * referenceSeq.referenceSeqId.text = "HLA-B*57:01:01"
 * referenceSeq.windowStart = 485
 * referenceSeq.windowEnd = 755
@@ -351,7 +351,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00381
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00381
 * referenceSeq.referenceSeqId.text = "HLA-B*57:01:01"
 * referenceSeq.windowStart = 1001
 * referenceSeq.windowEnd = 1277
@@ -361,43 +361,43 @@ Instance: CG-IG-HLA-FullBundle-01-17
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84414-2 "Haplotype name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = HLAALLELE#HGG00041 "HLA-B*15:01:01G"
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $HLAALLELE#HGG00041 "HLA-B*15:01:01G"
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670) "HLA-B*15:01:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138) "HLA-B*15:01:01:01, exon 3"
   * type = "MolecularSequence"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4932 "HLA-B"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: CG-IG-HLA-FullBundle-01-18
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84414-2 "Haplotype name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = HLAALLELE#HLA-B*57:01:01G "HLA-B*57:01:01G"
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $HLAALLELE#HLA-B*57:01:01G "HLA-B*57:01:01G"
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe) "HLA-B*57:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:db69e549-6267-4777-b4b9-8813f3329309) "HLA-B*57:01:01, exon 3"
   * type = "MolecularSequence"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4932 "HLA-B"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: CG-IG-HLA-FullBundle-01-19
 InstanceOf: Genotype
@@ -405,22 +405,22 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84413-4 "Genotype display name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a) "HLA-B*15:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5) "HLA-B*57:01:01G, exons 2 and 3"
   * type = "Observation"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4932 "HLA-B"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: CG-IG-HLA-FullBundle-01-20
 InstanceOf: MolecularSequence
@@ -428,7 +428,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00401
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00401
 * referenceSeq.referenceSeqId.text = "HLA-C*01:02:01"
 * referenceSeq.windowStart = 486
 * referenceSeq.windowEnd = 756
@@ -440,7 +440,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00401
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00401
 * referenceSeq.referenceSeqId.text = "HLA-C*01:02:01"
 * referenceSeq.windowStart = 1002
 * referenceSeq.windowEnd = 1278
@@ -452,7 +452,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00413
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00413
 * referenceSeq.referenceSeqId.text = "HLA-C*03:04:01:01"
 * referenceSeq.windowStart = 486
 * referenceSeq.windowEnd = 756
@@ -464,7 +464,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.referenceSeqId.coding.version = "3.23"
-* referenceSeq.referenceSeqId.coding = HLAALLELE#HLA00413
+* referenceSeq.referenceSeqId.coding = $HLAALLELE#HLA00413
 * referenceSeq.referenceSeqId.text = "HLA-C*03:04:01:01"
 * referenceSeq.windowStart = 1001
 * referenceSeq.windowEnd = 1277
@@ -474,43 +474,43 @@ Instance: CG-IG-HLA-FullBundle-01-24
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84414-2 "Haplotype name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0) "HLA-C*01:02:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f) "HLA-C*01:02:01, exon 3"
   * type = "MolecularSequence"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4933 "HLA-C"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: CG-IG-HLA-FullBundle-01-25
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84414-2 "Haplotype name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce) "HLA-C*03:04:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9) "HLA-C*03:04:01:01, exon 3"
   * type = "MolecularSequence"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4933 "HLA-C"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: CG-IG-HLA-FullBundle-01-26
 InstanceOf: Genotype
@@ -518,22 +518,22 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = ObsCat#laboratory
-* code = LNC#84413-4 "Genotype display name"
+* category = $OBSCAT#laboratory
+* code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
-* valueCodeableConcept.coding = GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
-* method = GTR#GTR000000000.0
+* valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
+* method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47) "HLA-C*03:04:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:709c5315-9403-4867-9d82-0b953836665f) "HLA-C*01:02:01G, exons 2 and 3"
   * type = "Observation"
-* component.code = LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept = HGNCID#HGNC:4933 "HLA-C"
+* component.code = $LNC#48018-6 "Gene studied [ID]"
+* component.valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: CG-IG-HLA-FullBundle-01-27
 InstanceOf: GenomicsReport
@@ -549,9 +549,9 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = DiagnosticService#GE "Genetics"
-* code.coding[0] = LNC#81247-9 "Master HL7 genetic variant reporting panel"
-* code.coding[+] = HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
+* category = $DIAGNOSTICSERVICE#GE "Genetics"
+* code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* code.coding[+] = $HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"

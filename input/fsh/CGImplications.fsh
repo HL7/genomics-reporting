@@ -29,7 +29,7 @@ Description:    "Properties common to genomic implications expressed as computab
 * component contains
     evidence-level 0..* and
     prognosis 0..1
-* component[evidence-level].code = LNC#93044-6
+* component[evidence-level].code = $LNC#93044-6
 * component[evidence-level].code ^short = "93044-6"
 * component[evidence-level] ^short = "Level of Evidence"
 * component[evidence-level] ^definition = "Classification of the amount of observed support for the association between one or more particular variants and a particular disorder or disease state, not conflated with clinical significance."
@@ -70,7 +70,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
     functional-effect 0..*
 * component[predicted-phenotype] ^short = "Predicted phenotype"
 * component[predicted-phenotype] ^definition = "An observable characteristic (e.g., condition; disease) of an individual, as predicted by the presence of associated molecular finding(s)associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings. Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
-* component[predicted-phenotype].code = LNC#81259-4
+* component[predicted-phenotype].code = $LNC#81259-4
 * component[predicted-phenotype].code ^short = "81259-4"
 * component[predicted-phenotype].value[x] only CodeableConcept
 * component[predicted-phenotype].value[x] ^short = "Phenotype code, e.g. from SNOMED CT Clinical finding, ICD-10-CM chapters 1-18, or HPO"
@@ -89,7 +89,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 
 * component[clinical-significance] ^short = "Clinical significance"
 * component[clinical-significance] ^definition = "An assessment of the magnitude of the linked genomic findings' clinical effect, as related to the predicted phenotype and observed in the evidence."
-* component[clinical-significance].code = LNC#53037-8
+* component[clinical-significance].code = $LNC#53037-8
 * component[clinical-significance].code ^short = "53037-8"
 * component[clinical-significance].value[x] only CodeableConcept
 * component[clinical-significance].value[x] 1..1
@@ -128,7 +128,7 @@ Description:    "Profile with properties for observations that convey the potent
     medication-assessed 0..* and
     therapy-assessed 0..* and
     predicted-therapeutic-implication 0..*
-* component[phenotypic-treatment-context].code = LNC#81259-4
+* component[phenotypic-treatment-context].code = $LNC#81259-4
 * component[phenotypic-treatment-context].code ^short = "81259-4"
 * component[phenotypic-treatment-context] ^short = "Phenotypic treatment context"
 * component[phenotypic-treatment-context] ^definition = "A condition whose treatment in medication-assessed or therapy-assessed is contextually impacted by the variant. A code set is not specified, but it is ideal to use terms related to medical findings. Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and all of Human Phenotype Ontology (HPO). For example, if an individual's variant affects the efficacy of imatinib in non-small cell lung cancer, a valid response from SNOMED CT would be 'Non-small cell lung cancer (code 254637007)'."
@@ -138,7 +138,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[phenotypic-treatment-context].value[x] 1..1
 * component[phenotypic-treatment-context].value[x] ^short = "Contextual phenotype/condition code"
 
-* component[medication-assessed].code = LNC#51963-7
+* component[medication-assessed].code = $LNC#51963-7
 * component[medication-assessed].code ^short = "51963-7"
 * component[medication-assessed] ^short = "Medication Assessed"
 * component[medication-assessed] ^definition = "The codified medication whose implication is being described."
@@ -174,9 +174,9 @@ Title:          "Medication Recommendation"
 Description:    "Task proposing medication recommendations based on genetic results."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
-* status = TaskStatus#requested
+* status = $TASKSTATUS#requested
 * intent 1..1
-* intent = TaskIntent#proposal
+* intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL4049-4 
 * focus only Reference(MedicationStatement)
 * reasonReference only Reference(TherapeuticImplication)
@@ -188,7 +188,7 @@ Title:          "Followup Recommendation"
 Description:    "Task describing the follow-up that is recommended"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
-* status = TaskStatus#requested
+* status = $TASKSTATUS#requested
 * intent 1..1
-* intent = TaskIntent#proposal
+* intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)

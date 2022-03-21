@@ -19,7 +19,7 @@ InstanceOf: ServiceRequest
 Description: "ServiceRequest (order) example"
 * status = #active
 * intent = #original-order
-* code.coding = LNC#81247-9
+* code.coding = $LNC#81247-9
 * subject = Reference(ExamplePatient)
 * reasonCode.text = "Worried about family planning"
 
@@ -27,5 +27,5 @@ Instance: MedicationStatementWarfarin
 InstanceOf: MedicationStatement
 Description: "MedicationStatement for Warfarin"
 * status = #unknown
-* medicationCodeableConcept.coding = RXN#11289 "Warfarin"
+* medicationCodeableConcept.coding = $RXN#11289 "Warfarin"
 * subject = Reference(ExamplePatient)

@@ -24,8 +24,8 @@ Instance: sequence-phase-relation-CYP2C19
 InstanceOf: GenomicsReport
 Usage: #inline
 * status = #final
-* category = DiagnosticService#GE
-* code = LNC#81254-5
+* category = $DIAGNOSTICSERVICE#GE
+* code = $LNC#81254-5
   * text = "Genetic analysis report"
 * result[0] = Reference(dv-5c7e9e1ca8252)
 * result[+] = Reference(dv-5c7e9e1ca82e4)

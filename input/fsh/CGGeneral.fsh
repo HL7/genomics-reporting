@@ -11,7 +11,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * category ^slicing.ordered = false   // can be omitted, since false is the default
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
-* category[labCategory].coding = ObsCat#laboratory
+* category[labCategory].coding = $OBSCAT#laboratory
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * note only CodedAnnotation
@@ -42,7 +42,7 @@ Id:             overall-interpretation
 Title:          "Overall Interpretation"
 Description:    "Provides a coarse overall interpretation of the genomic results reported."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* code = LNC#51968-6
+* code = $LNC#51968-6
 * code ^short = "51968-6"
 * value[x] only CodeableConcept
 * value[x] 1..1
@@ -55,7 +55,7 @@ Id:             sequence-phase-relationship
 Title:          "Sequence Phase Relationship"
 Description:    "Indicates whether two entities are in Cis (same strand) or Trans (opposite strand) relationship to each other."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* code = LNC#82120-7
+* code = $LNC#82120-7
 * code ^short = "82120-7"
 * value[x] only CodeableConcept
 * value[x] 1..1
@@ -95,14 +95,14 @@ May include general statements about the report, or statements about significant
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
-//* code = LNC#81247-9
+//* code = $LNC#81247-9
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category code pattern"
 * category contains Genetics 1..1
 //* category[Genetics].coding.system = "http://terminology.hl7.org/CodeSystem/v2-0074"
-* category[Genetics].coding = DiagnosticService#GE
+* category[Genetics].coding = $DIAGNOSTICSERVICE#GE
 * effective[x] only dateTime
 * result ^slicing.discriminator.type = #profile
 * result ^slicing.discriminator.path = "resolve()"
