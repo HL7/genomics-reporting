@@ -486,7 +486,7 @@ Suggested minimal representations of common structural variants are shown in the
 </ul>
 
 <p>It is important to note in this example that the Variant observation indicates the presence or absence of a variant with the given ALT allele, and does not indicate presence of the REF allele on the other chromosome of the pair. Even though it is almost always the case for heterozygous variants that one chromosome has the variant and the other chromosome has the reference allele, one should not assume this is the case from a single heterozygous Variant without separate knowledge that no other variants were detected at that position.</p>
-<p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. <a href="Observation-Pgx-geno-1003.html">Example genotype</a>.</p>
+<p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. Here is a <a href="Bundle-bundle-complexVariant-nonHGVS.html">bundle</a> showing a compound heterozygous example with two Variant instances grouped together by one Genotype instance.</p>
 
 <a name="variant-confidence"></a>
 <h3>Variant Confidence Status</h3>

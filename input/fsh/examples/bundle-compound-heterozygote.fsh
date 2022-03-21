@@ -23,8 +23,11 @@ Usage: #inline
 * category = $OBSCAT#laboratory
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component.code = $LNC#48004-6 "DNA change (c.HGVS)"
-* component.valueCodeableConcept = $HGVS#NM_022787.3:c.769G>A "NM_022787.3:c.769G>A"
+* component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
+* component[=].valueCodeableConcept = $HGVS#NM_022787.3:c.769G>A "NM_022787.3:c.769G>A"
+* component[+].code = $LNC#53034-5 "Allelic state"
+* component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
+
 
 Instance: Inline-Instance-for-compound-heterozygote-2
 InstanceOf: Variant
@@ -33,8 +36,10 @@ Usage: #inline
 * category = $OBSCAT#laboratory
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component.code = $LNC#48004-6 "DNA change (c.HGVS)"
-* component.valueCodeableConcept = $HGVS#NM_022787.3:c.53A>G "NM_022787.3:c.53A>G"
+* component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
+* component[=].valueCodeableConcept = $HGVS#NM_022787.3:c.53A>G "NM_022787.3:c.53A>G"
+* component[+].code = $LNC#53034-5 "Allelic state"
+* component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
 
 Instance: Inline-Instance-for-compound-heterozygote-3
 InstanceOf: Genotype

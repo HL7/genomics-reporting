@@ -32,6 +32,9 @@ Usage: #inline
 * component[=].valueString = "G"
 * component[+].code = $LNC#69551-0 "Genomic alt allele [ID]"
 * component[=].valueString = "A"
+* component[+].code = $LNC#53034-5 "Allelic state"
+* component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
+
 
 Instance: Inline-Instance-for-complexVariant-nonHGVS-2
 InstanceOf: Variant
@@ -49,6 +52,8 @@ Usage: #inline
 * component[=].valueString = "A"
 * component[+].code = $LNC#69551-0 "Genomic alt allele [ID]"
 * component[=].valueString = "G"
+* component[+].code = $LNC#53034-5 "Allelic state"
+* component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
 
 Instance: Inline-Instance-for-complexVariant-nonHGVS-3
 InstanceOf: Genotype
