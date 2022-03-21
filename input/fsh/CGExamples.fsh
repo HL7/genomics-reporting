@@ -643,7 +643,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 
 Instance: GrouperEx01
 InstanceOf: Observation
-Description: "Therapeutic Implications"
+Description: "Generic grouping of Therapeutic Implication observations"
 * id = "GrouperEx01"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = $NCIT#C43359 "Group"
@@ -657,7 +657,7 @@ Description: "Therapeutic Implications"
 
 Instance: GrouperEx02
 InstanceOf: Observation
-Description: "Genotypes"
+Description: "Generic grouping of Genotype observations"
 * id = "GrouperEx02"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = $NCIT#C43359 "Group"
@@ -669,7 +669,7 @@ Description: "Genotypes"
 
 Instance: GrouperEx03
 InstanceOf: Observation
-Description: "Regions Studied and variant info"
+Description: "Generic grouping of Regions Studied and Variant observations"
 * id = "GrouperEx03"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = $NCIT#C43359 "Group"

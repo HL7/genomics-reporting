@@ -165,7 +165,7 @@ Usage: #inline
 * derivedFrom = Reference(sequence-1-pgx-example)
 * component[0].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#2623 "CYP2C9"
-* component[+].code = $LNC#81255-2 "dbSNP ID"
+* component[+].code = $LNC#81252-9
 * component[=].valueCodeableConcept = $SNP#rs12345
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
 * component[=].valueString = "T"
@@ -190,7 +190,7 @@ Usage: #inline
 * component[=].valueCodeableConcept = $HGNCID#2623 "CYP2C9"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NUCCORE#NG_007726.3
-* component[+].code = $LNC#81255-2 "dbSNP ID"
+* component[+].code = $LNC#81252-9
 * component[=].valueCodeableConcept = $SNP#rs233455
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
 * component[=].valueString = "T"

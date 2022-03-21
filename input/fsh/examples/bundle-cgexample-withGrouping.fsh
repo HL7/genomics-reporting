@@ -310,7 +310,7 @@ Usage: #inline
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NG_017064.1
 * component[+].code = $LNC#81290-9
 * component[=].valueCodeableConcept.coding = $HGVS#NC_000003.11:g.128625063C>T
-* component[+].code = $LNC#81255-2
+* component[+].code = $LNC#81252-9
 * component[=].valueCodeableConcept.coding.version = "137"
 * component[=].valueCodeableConcept.coding = $SNP#rs368949613
 * component[+].code = $LNC#48004-6

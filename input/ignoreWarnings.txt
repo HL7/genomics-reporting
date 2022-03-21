@@ -3,9 +3,6 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
 # ValueSets not recognized yet because of unrecognized CodeSystems
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.genenames.org/geneId' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated]
-[Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated]
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/condition-inheritance-mode-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://hpo.jax.org/app/' is unknown so the code cannot be validated]
 
 
@@ -16,6 +13,7 @@ Found multiple matching profiles for Task/med-usage-impact-task-pgx-example amon
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 
 # CodeSystems not supported yet
+Unknown System specified, so Concepts and Filters can''t be checked
 Error from server: Unable to provide support for code system http://sequenceontology.org
 Error from server: Unable to provide support for code system http://www.genenames.org/geneId
 Error from server: Unable to provide support for code system http://www.ebi.ac.uk/ols/ontologies/geno 
@@ -36,15 +34,61 @@ Code System URI 'http://www.omim.org' is unknown so the code cannot be validated
 Code System URI 'http://clinicaltrials.gov/' is unknown so the code cannot be validated
 Code System URI 'http://hpo.jax.org/app/' is unknown so the code cannot be validated
 Code System URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' is unknown so the code cannot be validated
-Unknown System specified, so Concepts and Filters can''t be checked
 Code System URI 'http://www.ncbi.nlm.nih.gov/projects/SNP' is unknown so the code cannot be validated
 
-# should evaluate these slicing messages
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
-This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype
+# Each of these reference MolecularSequence. Observation.derivedFrom() should always allow MolecularSequence but since we defined our own slices, the info messages are generated
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[9].resource.ofType(Observation).derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[9].resource.ofType(Observation).derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[10].resource.ofType(Observation).derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[10].resource.ofType(Observation).derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[16].resource.ofType(Observation).derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[16].resource.ofType(Observation).derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[17].resource.ofType(Observation).derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[17].resource.ofType(Observation).derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[23].resource.ofType(Observation).derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[23].resource.ofType(Observation).derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[24].resource.ofType(Observation).derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[24].resource.ofType(Observation).derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Observation/haplotype-hla-a-1-r4: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype
+INFORMATION: Observation/genotype-hla-a-glstring-r4: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype
+INFORMATION: Observation/genotype-hla-a-glstring-r4: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype
+
+# these use an R4 Core extension that exists for HLA
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[26].resource.ofType(DiagnosticReport).extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-CG-IG-HLA-FullBundle-01: Bundle.entry[26].resource.ofType(DiagnosticReport).extension[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+
+# example other Observations, which is acceptable. Examples include panels which shows some additional grouping of other observations, other genomics related observations that do not have profiles.
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource.ofType(DiagnosticReport).result[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[13].resource.ofType(DiagnosticReport).result[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[13].resource.ofType(DiagnosticReport).result[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource.ofType(DiagnosticReport).result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource.ofType(DiagnosticReport).result[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource.ofType(DiagnosticReport).result[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource.ofType(DiagnosticReport).result[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: DiagnosticReport/PGxGenomicsReportEMERGE-withGrouping: DiagnosticReport.result[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: DiagnosticReport/PGxGenomicsReportEMERGE-withGrouping: DiagnosticReport.result[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: DiagnosticReport/PGxGenomicsReportEMERGE-withGrouping: DiagnosticReport.result[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: DiagnosticReport/diagnosticreport-hla-glstring-r4: DiagnosticReport.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: DiagnosticReport/diagnosticreport-hla-glstring-r4: DiagnosticReport.result[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+INFORMATION: DiagnosticReport/diagnosticreport-hla-glstring-r4: DiagnosticReport.result[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-report
+
+# example of using DiagnosticImplication.derivedFrom as logical references
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication
+
+# additional component details that can be shared with a variant (we will likely provide better guidance for this in the future, but this is OK for now) (details about an array variant, and representing a complex variant)
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource.ofType(Observation).component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource.ofType(Observation).component[20]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[8].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[6].resource.ofType(Observation).component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[6].resource.ofType(Observation).component[20]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[8].resource.ofType(Observation).component[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant
+
 
 # Suppress Process Info messages
 Validate resource against profile http://hl7.org/fhir/StructureDefinition/Bundle

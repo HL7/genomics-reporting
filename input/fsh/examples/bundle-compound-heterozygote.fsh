@@ -37,14 +37,11 @@ Usage: #inline
 * component.valueCodeableConcept = $HGVS#NM_022787.3:c.53A>G "NM_022787.3:c.53A>G"
 
 Instance: Inline-Instance-for-compound-heterozygote-3
-InstanceOf: Variant
+InstanceOf: Genotype
 Usage: #inline
 * status = #final
 * category = $OBSCAT#laboratory
-* code = $LNC#69548-6 "Genetic variant assessment"
-* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* code = $LNC#84413-4
+* valueCodeableConcept = $CLINVAR#RCV000664188.1 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
 * hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e) "NM_022787.3:c.53A>G"
 * hasMember[+] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "NM_022787.3:c.769G>A"
-* component.code = $LNC#81263-6 "Complex Variant Type"
-* component.valueCodeableConcept = $LNC#LA26217-2 "Compound heterozygous"
-
