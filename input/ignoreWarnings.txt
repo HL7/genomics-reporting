@@ -9,9 +9,7 @@
 [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs because the value set or a code system it depends on is not known to the validator, Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated]
 
 # these messages are also from LOINC answer lists not being loaded at tx.fhir.org (and causes the validator to fail like this). Have seen the validator processes the two choices in a different order from one run to another, so for the two examples we have, we suppress 4 errors when really only 2 will occur.
-Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
-Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 
 # CodeSystems not supported yet
