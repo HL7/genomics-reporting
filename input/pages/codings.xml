@@ -102,13 +102,6 @@
     <td>CLINVAR-V</td>
   </tr>
   <tr>
-    <td>ClinVar Accession ID (RCV)<br/>(NCBI/NLM)</td>
-    <td>"RCV" refers to the first 3 letters of the accession calculated by ClinVar to aggregate information from all submissions interpreting the same phenotype relative to the same variant or set of variants.</td>
-    <td><a href="https://www.ncbi.nlm.nih.gov/clinvar/">https://www.ncbi.nlm.nih.gov/clinvar/</a></td>
-    <td>(not assigned yet)</td>
-    <td></td>
-  </tr>
-  <tr>
     <td>COSMIC<br/>(Wellcome Trust Sanger Institute)</td>
     <td>This table includes only simple somatic (cancer) mutations, one per unique mutation ID. The code is the COSMIC mutation ID, and the name is constructed from Ensembl transcript reference sequences and p.HGVS that use the single letter codes for amino acids. It carries fields analogous to most of the key fields in ClinVar, but its reference sequences are Ensembl transcript reference sequences with prefixes of ENST; it specifies amino acid changes with the older HGVS single letter codes and it carries examples of primary cancers and primary tissues - fields that are not in ClinVar. COSMIC's source table includes multiple records per mutation - one per submission. The COSMIC- SimpleVariants table that we have extracted from the original file includes only one record per unique mutation – a total of more than 3 million records. These contents are copyright COSMIC (http://cancer.sanger.ac.uk/cosmic/license). LHC has produced a lookup table for these records, and for users to look up particular mutation IDs, both with permission from COSMIC. However, interested parties must contact COSMIC directly for permission to download these records.</td>
     <td><a href="https://cancer.sanger.ac.uk/cosmic">https://cancer.sanger.ac.uk/cosmic</a></td>
@@ -118,7 +111,7 @@
   <tr>
     <td>Cytogenetic (chromosome) location<br/>(NCBI/NLM)</td>
     <td>Chromosome location (AKA chromosome locus or cytogenetic location), is the standardized syntax for recording the position of genes and large variants. It consists of three parts: the Chromosome number (e.g. 1-22, X, Y), an indicator of which arm – either “p” for the short or “q” for the long, and then generally a series of numbers separated by dots that indicate the region and any applicable band, sub-band, and sub-sub-band of the locus (e.g. 2p16.3). There are other conventions for reporting ranges and locations at the ends of the chromosomes. The table of these chromosome locations was loaded with all of the locations found in NCBI’s ClinVar variation tables. It will expand as additional sources become available. This does not include all finely grained chromosome locations that exist. Users can add to it as needed.</td>
-    <td><a href="https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation">https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation</a><br/><a href="https://medlineplus.gov/genetics/understanding/howgeneswork/genelocation/">https://medlineplus.gov/genetics/understanding/howgeneswork/genelocation/</a></td>
+    <td><a href="https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation">https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation</a></td>
     <td>(not assigned yet)</td>
     <td>Chrom-Loc</td>
   </tr>
@@ -130,7 +123,7 @@
     <td>dbSNP</td>
   </tr>
   <tr>
-    <td>dbVar - Germline<br/>(NCBI/NLM)</td>
+    <td>dbVar<br/>(NCBI/NLM)</td>
     <td>dbVar is NCBI's database of genomic structural variations (including copy number variants) that are larger than 50 contiguous base pairs. It is the complement of dbSNP, which identifies variants occurring in 50 or fewer contiguous base pairs. dbVar contains insertions, deletions, duplications, inversions, multi-nucleotide substitutions, mobile element insertions, translocations, and complex chromosomal rearrangements. dbVar carries structured Germline and Somatic variants in separate files. Accordingly, we have divided the coding system for dbVar the same way. This coding system represents the Germline dbVar variants. Its record ID may begin with one of four prefixes: nsv, nssv, esv and essv. These are accession prefixes for variant regions (nsv) and variant calls (or instances, nssv), respectively. Typically, one or more variant instances (nssv – variant calls based directly on experimental evidence) are merged into one variant region (nsv – a pair of start-stop coordinates reflecting the submitters’ assertion of the region of the genome that is affected by the variant instances). The “n” preceding sv or indicates that the variants were submitted to NCBI (dbVar). The prefix, “e” for esv and essv represent variant entities (corresponding to NCBI’s nsv and nssv) that were submitted to EBI (DGVa). The relation between variant call, and variant region, instances is many to one. The LHC lookup table for dbVar germline variations includes both variant instances (essv or nssv) and the variant region records (nsv, esv). Users can sub-select by searching on the appropriate prefix.</td>
     <td><a href="https://www.ncbi.nlm.nih.gov/dbvar/">https://www.ncbi.nlm.nih.gov/dbvar/</a></td>
     <td>(not assigned yet)</td>
@@ -267,7 +260,7 @@
   <tr>
     <td>Pharmacogenomic Star Alleles (PharmVar Pharmacogene Variation Consortium)</td>
     <td>The star allele nomenclature is commonly used in pharmacogenomics as shorthand to specify one or more specific variants in a gene that is known to impact drug metabolism or response. A star allele can identify either a single variant or a group of variants found in cis, and therefore it usually represents a haplotype. A star allele name is composed of the gene symbol and an allele number, separated by an asterisk, e.g. TPMT*2. By convention, the *1 allele represents the allele that contains the "reference" sequence, although that is not true in all cases. Closely related alleles may be assigned a common number and be differentiated by a unique letter that specifies the suballele (e.g., TPMT*3A, TPMT*3B). Pharmacogenomics tests commonly report patient phenotypes as diplotypes, i.e. *1/*3A. The star nomenclature system is inadequately defined and inconsistently adopted. Therefore, although the system we are proposing supports the inclusion of pharmacogenomics star alleles as a legacy syntax, we strongly encourage messages that include star alleles to rigorously define those alleles through other means.</td>
-    <td><a href="https://pharmvar.org/genes">https://pharmvar.org/genes</a></td>
+    <td><a href="http://www.pharmvar.org">http://www.pharmvar.org</a></td>
     <td>(not assigned yet)</td>
     <td>Star-Allele</td>
   </tr>
