@@ -1120,10 +1120,10 @@ Description: ""
           valueCodeableConcept: preferred codes: http://www.sequenceontology.org/browser/current_release/term/SO:0002072
         part (0..1)
           name: regionStudied
-          valueString: List of non-overlapping regions, each in zero-based RefSeq:Integer-range format, or 'unknown'
+          valueString: List of non-overlapping regions, each in zero-based RefSeq:Integer-range format; or 'unknown'
         part (0..1)
           name: uncallableRegions
-          valueString: List of non-overlapping regions, each in zero-based RefSeq:Integer-range format, or 'unknown'
+          valueString: List of non-overlapping regions, each in zero-based RefSeq:Integer-range format; or 'unknown'
 "
 * parameter[5].type = #canonical
 * parameter[5].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindStudyMetadataParameters"
