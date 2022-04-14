@@ -1098,7 +1098,7 @@ Description: ""
 * parameter[5].use = #out
 * parameter[5].min = 1
 * parameter[5].max = "1"
-* parameter[5].documentation = "Operation returns a list of identified sequencing studies with associated study metadata.
+* parameter[5].documentation = "Operation returns a list of identified sequencing studies with associated study metadata. 
 
     parameters
       parameter (0..*) (one for each test identified)
@@ -1120,10 +1120,10 @@ Description: ""
           valueCodeableConcept: preferred codes: http://www.sequenceontology.org/browser/current_release/term/SO:0002072
         part (0..1)
           name: regionStudied
-          valueString: pyranges dataframe format or 'unknown'
+          valueString: List of non-overlapping regions, each in zero-based RefSeq:Integer-range format, or 'unknown'
         part (0..1)
           name: uncallableRegions
-          valueString: pyranges dataframe format or 'unknown'
+          valueString: List of non-overlapping regions, each in zero-based RefSeq:Integer-range format, or 'unknown'
 "
 * parameter[5].type = #canonical
 * parameter[5].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindStudyMetadataParameters"
