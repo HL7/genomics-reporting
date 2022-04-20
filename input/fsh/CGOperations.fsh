@@ -62,7 +62,7 @@ Description: ""
 * parameter[7].name = #response
 * parameter[7].use = #out
 * parameter[7].min = 1
-* parameter[7].max = "1"
+* parameter[7].max = "*"
 * parameter[7].documentation = "Operation returns a FHIR Parameters resource, containing each range requested, a boolean indicating if variants are present in a range, and optionally, the variants present in a range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end.
 
     parameters
@@ -78,8 +78,8 @@ Description: ""
           name: variant
           resource: observation (variant profile)
 "
-* parameter[7].type = #canonical
-* parameter[7].targetProfile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/FindSubjectVariantsParameters"
+* parameter[7].type = #Parameters
+* parameter[7].targetProfile = Canonical(ParametersProfileSomething)
 
 Instance: find-subject-specific-variants
 InstanceOf: OperationDefinition
