@@ -57,7 +57,6 @@ Description: ""
   * min = 0
   * max = "1"
   * documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
-// changed to code, are "germline" and "somatic" the two valid options here?
   * type = #code
 * parameter[+]
   * name = #includeVariants
