@@ -12,74 +12,88 @@ Description: ""
 * type = true
 * instance = false
 * code = #match
-* parameter[0].name = #subject
-* parameter[0].use = #in
-* parameter[0].min = 1
-* parameter[0].max = "1"
-* parameter[0].documentation = "The subject of interest."
-* parameter[0].type = #string
-* parameter[0].searchType = #reference
-* parameter[1].name = #ranges
-* parameter[1].use = #in
-* parameter[1].min = 1
-* parameter[1].max = "*"
-* parameter[1].documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
-* parameter[1].type = #string
-* parameter[1].searchType = #special
-* parameter[2].name = #testIdentifiers
-* parameter[2].use = #in
-* parameter[2].min = 0
-* parameter[2].max = "*"
-* parameter[2].documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
-* parameter[2].type = #string
-* parameter[2].searchType = #token
-* parameter[3].name = #testDateRange
-* parameter[3].use = #in
-* parameter[3].min = 0
-* parameter[3].max = "1"
-* parameter[3].documentation = "Supply a date range. Only results generated during this range will be returned."
-* parameter[3].type = #Period
-* parameter[4].name = #specimenIdentifiers
-* parameter[4].use = #in
-* parameter[4].min = 0
-* parameter[4].max = "*"
-* parameter[4].documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
-* parameter[4].type = #string
-* parameter[4].searchType = #token
-* parameter[5].name = #genomicSourceClass
-* parameter[5].use = #in
-* parameter[5].min = 0
-* parameter[5].max = "1"
-* parameter[5].documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
-* parameter[5].type = #string
-* parameter[5].searchType = #token
-* parameter[6].name = #includeVariants
-* parameter[6].use = #in
-* parameter[6].min = 0
-* parameter[6].max = "1"
-* parameter[6].documentation = "Include variants in response if set to true. Default=false."
-* parameter[6].type = #boolean
-* parameter[7].name = #response
-* parameter[7].use = #out
-* parameter[7].min = 1
-* parameter[7].max = "*"
-* parameter[7].documentation = "Operation returns a FHIR Parameters resource, containing each range requested, a boolean indicating if variants are present in a range, and optionally, the variants present in a range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end.
-
-    parameters
-      parameter (1..*) (one for each range in rangeList)
-        name: variants
-        part (1..1)
-          name: rangeItem
-          valueString: range from rangeList
-        part (1..1)
-          name: presence
-          valueBoolean: boolean (True if as least one variant is identified in the range)
-        part (0..*) (if includeVariants=true then include variants in the range)
-          name: variant
-          resource: observation (variant profile)
-"
-* parameter[7].type = #Parameters
-* parameter[7].targetProfile = Canonical(ParametersProfileSomething)
+* parameter[+]
+  * name = #subject
+  * use = #in
+  * min = 1
+  * max = "1"
+  * documentation = "The subject of interest."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
+  * name = #ranges
+  * use = #in
+  * min = 1
+  * max = "*"
+  * documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+  * type = #string
+  * searchType = #special
+* parameter[+]
+  * name = #testIdentifiers
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #testDateRange
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Supply a date range. Only results generated during this range will be returned."
+  * type = #Period
+* parameter[+]
+  * name = #specimenIdentifiers
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #genomicSourceClass
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+// changed to code, are "germline" and "somatic" the two valid options here?
+  * type = #code
+* parameter[+]
+  * name = #includeVariants
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Include variants in response if set to true. Default=false."
+  * type = #boolean
+* parameter[+]
+  * name = #variants
+  * use = #out
+  * min = 1
+  * max = "*"
+  * documentation = "(one for each range in rangeList)"
+  * part[+]
+    * name = #rangeItem
+    * use = #out
+    * min = 1
+    * max = "1"
+    * documentation = "range from rangeList"
+    * type = #string
+  * part[+]
+    * name = #presence
+    * use = #out
+    * min = 1
+    * max = "1"
+    * documentation = "True if as least one variant is identified in the range"
+    * type = #boolean
+  * part[+]
+    * name = #variant
+    * use = #out
+    * min = 0
+    * max = "*"
+    * documentation = "if includeVariants=true then include variants in the rang"
+    * type = #Observation
+    * targetProfile = Canonical(Variant)
 
 Instance: find-subject-specific-variants
 InstanceOf: OperationDefinition
