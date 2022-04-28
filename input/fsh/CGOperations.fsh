@@ -90,7 +90,7 @@ Description: ""
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "if includeVariants=true then include variants in the rang"
+    * documentation = "If includeVariants=true then include variants in the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
     * type = #Observation
     * targetProfile = Canonical(Variant)
 
