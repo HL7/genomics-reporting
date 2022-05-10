@@ -1,0 +1,8 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+<p>
+This profile adds a CodeableConcept extension to the Annotation data type. The Annotation data type is meant to capture text notes plus information about who made the statement and when. This new extension gives a coded meaning (e.g. test disclaimer, tumor board preparation note) to the notes. Many notes will not require this code, so this extension is optional. It can be used when implementers feel the meaning is important.
+</p>
+<p>
+If there is a possibility of transporting the content of the note in a structured manner the usage of CodedAnnotation is forbidden and the corresponding data structures SHALL be used. For example, if the text to send resembles the interpretation or impression of the Observation, this guide adds <code>Observation.component</code> slice for <code><a href="StructureDefinition-genomics-base-definitions.html#Observation.component:conclusion-string">conclusion-string</a></code> which is more appropriate than a note. This would include text like interpretative information (typically canned) about a variant identified in the patient. This slice is defined in the <a href="StructureDefinition-genomics-base.html">Genomics Base</a> profile, which every observation builds upon. Therefore, this component is a defined slice on all observations profiles defined in this Implementation Guide.
+</p>
+</div>

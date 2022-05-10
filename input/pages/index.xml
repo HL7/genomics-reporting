@@ -9,31 +9,58 @@
 *****************************************************************************************
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <blockquote class="stu-note">
-    <p>
-      This implementation guide is not fully complete.  Portions of the implementation guide are provided for "framework purposes only" - giving a sense of what additional topics are intended to be covered and where that content will fit.  The work group has prioritized standardizing those portions of the specification with general applicability and related to sequencing.  At this time, the work group has not yet come to a consensus on a single minimal set of elements that are required to be supported for generic use cases. In a future release, specific lab reporting use cases will have individual capability statements including must-support elements. The work group will continue to flesh out additional sections for future ballot publications.
-    </p>
-  </blockquote>
+
   <a name="scope"> </a>
   <h3>Scope</h3>
   <p>
-    Genomics is a rapidly evolving area of healthcare that involves complex data structures.  There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice.  The value comes from the ability to easily sort, filter and perform decision support on such information and the resulting improvements in care and reduction in costs such as the elimination of redundant testing.  The implementation guide is also transmission protocol-independent - the data structures presented here could be used in RESTful, messaging, document or other paradigms.
-  </p>
+Genomics is a rapidly evolving area of healthcare that involves complex data structures. There is significant value in sharing this information in a way that is consistent, computable and that can accommodate ongoing evolution of medical science and practice. At present, this implementation guide focuses solely on data structures - what data should be/might be present and how it should be organized. It does not address workflows around how reports are requested, created, approved, routed, delivered, amended, etc.</p>
   <p>
-    This guide covers all aspects of human genomic genomics-reporting, including:
+    This guide covers many aspects of genomic data reporting, including:
   </p>
   <ul>
     <li>Representation of simple discrete variants, structural variants including copy number variants, complex variants as well as gross variations such as extra or missing chromosomes</li>
     <li>Representation of both known variants as well as fully describing de novo variations</li>
     <li>Germline and somatic variations</li>
-    <li>Relevance of identified variations from the perspective of disease pathology, pharmacogenomics, transplant suitability (e.g. HLA typing), etc.</li>
+    <li>Relevance of identified variations from the perspective of disease pathology, pharmacogenomics, transplant suitability (e.g., HLA typing), etc.</li>
     <li>Full and partial DNA sequencing, including whole genome and exome studies</li>
-    <li>Mosaicism (differing genomic characteristics for different specimens from the same subject)</li>
-    <li>Mitochondrial DNA variations</li>
   </ul>
+  <a name="how to use this guide"> </a>
+  <h3>How to Use this Guide</h3> 
   <p>
-    At present, this implementation guide focuses solely on data structures - what data should be/might be present and how it should be organized.  It does not address workflows around how reports are requested, created, approved, routed, delivered, amended, etc.  The implementation guide is also paradigm-independent -  the data structures presented here could be used in RESTful, messaging, documents or other mechanisms.
+  This implementation guide is organized into a set of sections. All implementers intending to do clinical genomic reporting should read the <a href="general.html">General Genomic Reporting</a> and the <a href="sequencing.html">Variant Reporting</a> sections. To understand the key profiles in this IG, as well as their relationship to one another, start with the General Genomics Reporting section. Those new to FHIR should review the Understanding FHIR section below.
   </p>
+  <p>
+  The remaining sections provide support for more specialized types of reporting. If your system is involved with genomic reports in a particular area, then read through that section of the implementation guide for further guidance.
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th><a href="background.html">Background</a></th>
+        <td>Introduces some of the key genomics terms and relationships that should be understood by those implementing this specification.</td>
+      </tr>
+      <tr>
+        <th><a href="general.html">General Genomic Reporting</a></th>
+        <td>Overall guidance in using the profiles and transactions defined in this guide. Guidance and examples for the general structure of genomic reports, how to report overall interpretations and how to report genotypes, haplotypes, and different types of variants.</td>
+      </tr>
+      <tr>
+        <th><a href="sequencing.html">Variant Reporting</a></th>
+        <td>Guidance on expressing information about variants gleaned from various sequencing approaches including direct sequencing, shotgun sequencing, array-based testing, etc.</td>
+      </tr>
+      <tr>
+        <th><a href="pharmacogenomics.html">Pharmacogenomic Reporting</a></th>
+        <td>Guidance and examples related to genomic testing done for the purpose of assessing genomic variations' implication on the use of medications - both for oncology and for general patient treatment.</td>
+      </tr>
+      <tr>
+        <th><a href="somatics.html">Somatic Reporting</a></th>
+        <td>Guidance related to genomic testing done on somatic (non-germline) tissues, including assessments of tumors.</td>
+      </tr>
+      <tr>
+        <th><a href="histocompatibility.html">Histocompatibility Reporting</a></th>
+        <td>Guidance related to genomic testing done for histocompatibility and immunogenomics assessments, including HLA typing.</td>
+      </tr>
+    </tbody>
+  </table>
+
   <a name="principles"> </a>
   <h3>Guiding principles</h3>
   <p>
@@ -41,13 +68,12 @@
   </p>
   <ul>
     <li>It is intended to be international in scope and only leverages terminologies which are freely available to all countries.</li>
-    <li>It avoids pre-coordinating the type of variant, medication or other information into the Observation.code as this makes it easier to leverage industry standard terminologies for genomic information (e.g. HGVS) and avoids needing to duplicate this information into observation coding systems such as LOINC.</li>
+    <li>It avoids pre-coordinating the type of variant, medication, or other information into the Observation.code as this makes it easier to leverage industry standard terminologies for genomic information (e.g., HGVS) and avoids needing to duplicate this information into observation coding systems such as LOINC.</li>
     <li>It maximizes the use of resources that are in common use by laboratory reporting systems for other clinical areas - specifically <a href="{{site.data.fhir.path}}observation.html">Observation</a> and <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a>.  This eases implementation and also reduces the chance of data being lost by systems that might not have been designed to specifically accommodate genomic-related information.</li>
     <li>It minimizes the use of FHIR extensions, also with an objective of reducing the risk of data loss when information is passed to systems that might not explicitly support this implementation guide.</li>
-    <li>It uses separate observations for each independently useful assertion.  This maximizes the discoverability and queriability of the data.</li>
-    <li>It tries to ensure that data is captured in a manner that's consistent regardless of the type of testing that was done to ensure data can be consistently queried even if captured differently (e.g. variations identified in assay tests are reported in the same manner as those identified through direct sequencing).</li>
+    <li>It uses separate observations for each independently useful assertion. This makes the data discoverable and queryable as seen in the <a href="usecases.html">query guidance</a>. Also review the guidance on the proper usage of <a href="{{site.data.fhir.path}}references.html#contained">contained</a> resources.</li>
+    <li>It tries to ensure that data is captured in a manner that's consistent regardless of the type of testing that was done to ensure data can be consistently queried even if captured differently (e.g., variations identified in assay tests are reported in the same manner as those identified through direct sequencing).</li>
     <li>The guide allows for variability in the amount of discrete information captured.  Systems are encouraged to populate what discrete elements they can and allows for the possibility of systems populating additional elements as their technical capability and/or time and other resources allow.</li>
-    <li>Where possible the guide aligns with HL7's <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=23">v2 Genetic Variation Model Implementation Guide</a> and <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=364">v2 Cytogenomic Model Implementation Guide</a> to maximize consistency for those FHIR systems converting from or otherwise interoperating with v2 systems (note that there are some variations driven by the the differeing approach between FHIR and HL7 v2 as well as additional requirements analysis going into the FHIR implementation guide).</li>
   </ul>
   <p>
     Together, these principles should make adoption easier and allow systems to more easily adapt in a compatible way as genomic reporting continues to evolve.
@@ -55,15 +81,12 @@
   <a name="previous"> </a>
   <h3>Previous Specifications</h3>
   <p>
-    FHIR STU3 included a set of profiles that provided guidance on how to convey genomic orders, results and observations.  Those profiles are superceded by this implementation guide.  Guidance for converting from these older profiles is found <a href="conversion.html">here</a>.
+    FHIR STU3 included a set of profiles that provided guidance on how to convey genomic orders, results, and observations. Those profiles are superseded by this implementation guide. Guidance for converting from these older profiles is found <a href="conversion.html">here</a>.
   </p>
   <a name="fhir"> </a>
   <h3>Understanding FHIR</h3>
   <p>
-    This implementation guide is based on the HL7 <a href="{{site.data.fhir.path}}index.html">FHIR</a> standard.  It uses terminology, notations and design principles that are
-    specific to FHIR.  Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well
-    as general guidance on how to read FHIR specifications.  Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following
-    prior to reading the rest of this implementation guide.
+    This implementation guide is based on the HL7 <a href="{{site.data.fhir.path}}index.html">FHIR</a> standard. It uses terminology, notations and design principles that are specific to FHIR. Before reading this implementation guide, it's important to be familiar with some of the basic principles of FHIR as well as general guidance on how to read FHIR specifications. Readers who are unfamiliar with FHIR are encouraged to read (or at least skim) the following prior to reading the rest of this implementation guide.
   </p>
   <ul>
     <li>
@@ -88,138 +111,78 @@
     <li>
       <a href="{{site.data.fhir.path}}resource.html">Base resource</a>
     </li>
+    <li>
+      <a href="{{site.data.fhir.path}}validation.html">FHIR Validation</a>
+    </li>
   </ul>
+
   <p>
-    It's a good idea to also look at the <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a> and review the resources that are used as part of this implementation guide, especially
-    <a href="{{site.data.fhir.path}}observation.html">Observation</a>,
-    <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a> and
-    <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
+    It is highly recommended that readers review <a href="{{site.data.fhir.path}}diagnostics-module.html">Diagnostics Module</a> and review the resources that are used as part of this implementation guide, especially <a href="{{site.data.fhir.path}}observation.html">Observation</a>, <a href="{{site.data.fhir.path}}diagnosticreport.html">DiagnosticReport</a>, and <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
   </p>
+	<p>
+		Importantly, implementers should pay close attention to the considerations in <a href="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3">Associated Observations</a> and <a href="{{site.data.fhir.path}}observation.html#obsgrouping">Observation Grouping</a> describing proper usage of the relationships <code>DiagnosticReport.result</code>, <code>Observation.hasMember</code>>, and <code>Observation.derivedFrom</code>. Consumers of <b>Genomic diagnostic reports</b> MUST navigate through all <code>hasMember</code> relations, and navigate through <code>derivedFrom</code> relationships in order to ensure all clinically relevant information is seen.
+</p>
   <p>
     Many Observation profiles and components in this guide require sending codes from http://loinc.org. If necessary for implementation (e.g., to map to a local system), equivalent codes from other code systems may *also* be sent, following the <a href="{{site.data.fhir.path}}observation.html#usingcodes">guidance</a> on observation.
   </p>
   <p>
-
-    For learning about validation, please refer to <a href="{{site.data.fhir.path}}validation.html">https://www.hl7.org/fhir/validation.html</a>.
-
-    The java validator is the most often updated tool (<a href = "https://wiki.hl7.org/Using_the_FHIR_Validator">https://wiki.hl7.org/Using_the_FHIR_Validator</a>) but you might find this notepad plugin useful (<a href = "https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation">https://wiki.hl7.org/index.php?title=FHIR_Notepad%2B%2B_Plugin_Documentation</a>)
-
-    NOTE: It is important that your examples declare the profile in the meta tag, like this:
-<pre>
-  &lt;meta&gt;
-    &lt;profile value="http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"/&gt;
-  &lt;/meta&gt;
-</pre>
-
-    Some example usages of the java validator (NOTE: these online references are for the "current build" and would need to be adjusted as needed):
-    <ul>
-      <li>
-        validating one of the examples in the IG, showing how to reference everything from an online location
-        <code>
-java -jar org.hl7.fhir.validator.jar http://build.fhir.org/ig/HL7/genomics-reporting/Observation-SNVexample.xml -version 4.0 -ig hl7.fhir.uv.genomics-reporting
-        </code>
-      </li>
-      <li>
-        if you have an example in your local directory, you can do this
-        <code>
-java -jar org.hl7.fhir.validator.jar report-CYP2C19.xml -version 4.0 -ig hl7.fhir.uv.genomics-reporting
-        </code>
-      </li>
-    </ul>
+    Since this Implementation Guide is not targeting a specific country or region, other requirements may be needed for local reporting. Observation instances adhering to other profiles should be built to validate against one of this Implementation Guide’s profiles wherever possible. Where incompatibilities may arise, it is most important to align with the codes and values for Observations and their components.
   </p>
-  <a name="content"> </a>
-  <h3>Content and organization</h3>
+  <a name="flexibility"> </a>
+  <h3>Extending beyond this Guide</h3>
   <p>
-    This implementation guide is organized into a set of sections. The first two sections are applicable to all types of genomic reporting. All implementers intending to do clinical genomic reporting should read 'Background' and 'General Genomic Reporting.'
+    Implementers should use this guide to structure genomics data in an interoperable way. The Clinical Genomics Working Group understands that this guide is not complete, and implementers might identify additional concepts and data elements. Please review this <a href="general.html#flexibility">guidance</a> for ways to handle those use cases.
   </p>
-  <p>
-    The remaining sections provide support for more specialized types of reporting.  They are optional.  If your system is involved with genomic reports in a particular area, then read through that section of the implementation guide.  However, there's no reason to read through sections that deal with reporting your system does not use.
-  </p>
-  <p>
-    The following table provides a list of the main sections in this guide and a summary of the content found in each:
-  </p>
+
+  <a name="appendices"> </a>
+  <h3>Appendices</h3>
   <table>
     <tbody>
-      <tr>
-        <th><a href="background.html">Background</a></th>
-        <td>Background on genomic concepts represented within this guide.  It's essential reading for those who may not have a deep knowledge of genomics, but it's recommended for all implementers as it provides definitions for terms as they are used in this implementation guide.  In some cases, agreement on term definitions is not unanimous within the genomics community, so this IG's use of a term may differ from the meaning you may be used to.</td>
-      </tr>
-      <tr>
-        <th><a href="general.html">General Genomic Reporting</a></th>
-        <td>Guidance and examples for the general structure of genomic reports, how to report overall interpretations and how to report genotypes, haplotypes and different types of variants.  This content will be leveraged by all genomic reporting implementations.</td>
-      </tr>
-      <tr>
-        <th><a href="sequencing.html">Variant Reporting</a></th>
-        <td>Guidance on expressing information about variants gleaned from various sequencing approaches including direct sequencing, shotgun sequencing, array-based testing, etc.</td>
-      </tr>
-      <!--
-      <tr>
-        <th><a href="cytogenomics.html">Cytogenomic Reporting</a></th>
-        <td>Guidance on expressing information gathered by testing techniques including FISH tests, chromosomal analysis, etc.</td>
-      </tr>
-    -->
-      <tr>
-        <th><a href="pharmacogenomics.html">Pharmacogenomic Reporting</a></th>
-        <td>Additional guidance and examples related to genomic testing done for the purpose of assessing genomic variations' implication on the use of medications - both for oncology and for general patient treatment</td>
-      </tr>
-      <tr>
-        <th><a href="somatics.html">Somatic Reporting</a></th>
-        <td>Additional guidance related to genomic testing done on somatic (non-germline) tissues, including assessments of tumors</td>
-      </tr>
-      <tr>
-        <th><a href="histocompatibility.html">Histocompatibility Reporting</a></th>
-        <td>Additional guidance related to genomic testing done for histocompatibility and immunogenomics assessments, including HLA typing</td>
-      </tr>
-      <tr>
-        <th><a href="usecases.html">HL7 Domain Analysis Use Cases</a></th>
-        <td>Some use cases on FHIR design: Specimen Identification, Clinical Sequencing and so on</td>
-      </tr>
       <tr>
         <th><a href="v2.html">Appendix A: Relation to v2 reporting</a></th>
         <td>Links to v2 Genetic Variation Model Implementation Guide and v2 Cytogenomic Model Implementation Guide</td>
       </tr>
       <tr>
         <th><a href="cgapps.html">Appendix B: Clinical Genomics Apps</a></th>
-        <td>Introduction of the Clinical Genomics Applications(Genomics Advisor, etc) apply for this implementation guide</td>
+        <td>Introduction of the Clinical Genomics Applications (Genomics Advisor, etc) apply for this implementation guide</td>
       </tr>
       <tr>
         <th><a href="domain.html">Appendix C: Domain Analysis Model</a></th>
-        <td>A domain analysis model for various use cases in clinical genomics with an emphasis on clinical sequencing</td>
+        <td>A domain analysis model for various use cases in clinical genomics</td>
       </tr>
       <tr>
-        <th><a href="codings.html">Appendix D: External Coding Systems</a></th>
+        <th><a href="usecases.html">Appendix D: Query Guidance</a></th>
+        <td>Query guidance based on use-cases from the Domain Analysis Document</td>
+      </tr>
+      <tr>
+        <th><a href="codings.html">Appendix E: External Coding Systems</a></th>
         <td>Reference for publicly available external coding systems</td>
       </tr>
       <tr>
-        <th><a href="conversion.html">Appendix E: Conversion from STU3 Extensions</a></th>
+        <th><a href="conversion.html">Appendix F: Conversion from STU3 Extensions</a></th>
         <td>Note on deprecated extensions defined in FHIR STU3</td>
       </tr>
       <tr>
-        <th><a href="molecularSequence.html">Appendix F: Molecular Sequence</a></th>
+        <th><a href="molecularSequence.html">Appendix G: Molecular Sequence</a></th>
         <td>Notes on the FHIR Resource for representing a Molecular Sequence</td>
       </tr>
+	  <tr>
+        <th><a href="groupingGuidance.html">Appendix H: Grouping observations</a></th>
+        <td>Guidance on the types of grouping that might be encountered</td>
+      </tr>
       <tr>
-        <th><a href="Glossary.html">Appendix G: Glossary</a></th>
+        <th><a href="Glossary.html">Appendix I: Glossary</a></th>
         <td>Table of concepts referenced on Observation profiles</td>
       </tr>
     </tbody>
   </table>
-
-  <!--
-  <blockquote class="stu-note">
-    <p>
-      Are there other reporting areas we should also cover?
-    </p>
-  </blockquote>
--->
-
-  <a name="acknowledgements"> </a>
-  <h3>Acknowledgements</h3>
+  <a name="acknowledgments"> </a>
+  <h3>Acknowledgments</h3>
   <p>
     The Clinical Genomics Reporting Implementation Guide is a product of the <a href="https://confluence.hl7.org/display/CGW/WorkGroup+Home">HL7 Clinical Genomics Work Group</a>. Questions or comments regarding this implementation guide should be directed to the HL7 Clinical Genomics Work Group at <a href="mailto:clingenomics@lists.hl7.org">clingenomics@lists.hl7.org</a>. 
   </p>
   <p>
     The authors of this guide wish to recognize the following participants who contributed their time and expertise to the continued development of this guide:
   </p>
-<table border="1"><tbody><tr><td><p>Name</p></td><td><p>Organization</p></td><td><p>Role</p></td></tr><tr><td><p>Bob Milius</p></td><td><p>NMDP/CIBMTR</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Mullai Murugan</p></td><td><p>Baylor College of Medicine </p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Patrick Werner</p></td><td><p>MOLIT Institut</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Kevin Power</p></td><td><p>Cerner</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Jamie Jones </p></td><td><p>Boston Children's Hospital</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Bob Freimuth</p></td><td><p>Mayo Clinic </p></td><td><p>CG Co-Chair, IM Sub-Group Lead</p></td></tr><tr><td><p>Arthur Hermann</p></td><td><p>Kaiser Permanente</p></td><td><p>Contributor</p></td></tr><tr><td><p>Kevin Roberg-Perez</p></td><td><p>Bioi</p></td><td><p>Contributor</p></td></tr><tr><td><p>Anand Kulanthaivel </p></td><td><p>Clinical Architecture</p></td><td><p>Contributor</p></td></tr><tr><td><p>JD Nolen</p></td><td><p>Children's Mercy Hospital</p></td><td><p>Contributor</p></td></tr><tr><td><p>Joel Schneider</p></td><td><p>NMDP/CIBMTR</p></td><td><p>Contributor</p></td></tr><tr><td><p>Liz Amos</p></td><td><p>National Library of Medicine</p></td><td><p>Contributor</p></td></tr><tr><td><p>Bob Dolin</p></td><td><p>Elimu Informatics</p></td><td><p>Contributor</p></td></tr><tr><td><p>May Terry</p></td><td><p>MITRE</p></td><td><p>Contributor</p></td></tr><tr><td><p>Bret Heale</p></td><td><p>Intermountain </p></td><td><p>Contributor</p></td></tr><tr><td><p>Rachel Kutner</p></td><td><p>Epic </p></td><td><p>Contributor</p></td></tr><tr><td><p>Clem McDonald</p></td><td><p>National Library of Medicine</p></td><td><p>Contributor</p></td></tr><tr><td><p>Ling teng</p></td><td><p>BWH </p></td><td><p>Contributor</p></td></tr><tr><td><p>Dora Walter </p></td><td><p>MOLIT Institut</p></td><td><p>Contributor</p></td></tr><tr><td><p>Lloyd McKenzie</p></td><td><p>Gevity</p></td><td><p>Contributor</p></td></tr><tr><td><p>Alex Mankovich</p></td><td><p>Philips</p></td><td><p>Contributor</p></td></tr><tr><td><p>Daniel Rutz</p></td><td><p>Epic</p></td><td><p>Contributor</p></td></tr><tr><td><p>Larry Babb</p></td><td><p>Broad</p></td><td><p>Contributor</p></td></tr><tr><td><p>Peter Muir </p><p></p></td><td><p></p></td><td><p>Contributor</p></td></tr></tbody></table>
+<table border="1"><tbody><tr><td><p>Name</p></td><td><p>Organization</p></td><td><p>Role</p></td></tr><tr><td><p>Bob Milius</p></td><td><p>NMDP/CIBMTR</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Mullai Murugan</p></td><td><p>Baylor College of Medicine </p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Patrick Werner</p></td><td><p>MOLIT Institut</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Kevin Power</p></td><td><p>Cerner</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Jamie Jones </p></td><td><p>Boston Children's Hospital</p></td><td><p>CG Co-Chair</p></td></tr><tr><td><p>Bob Freimuth</p></td><td><p>Mayo Clinic </p></td><td><p>CG Co-Chair, IM Sub-Group Lead</p></td></tr><tr><td><p>Arthur Hermann</p></td><td><p>Kaiser Permanente</p></td><td><p>Contributor</p></td></tr><tr><td><p>Kevin Roberg-Perez</p></td><td><p>Bioi</p></td><td><p>Contributor</p></td></tr><tr><td><p>Anand Kulanthaivel </p></td><td><p>Clinical Architecture</p></td><td><p>Contributor</p></td></tr><tr><td><p>JD Nolen</p></td><td><p>Children's Mercy Hospital</p></td><td><p>Contributor</p></td></tr><tr><td><p>Joel Schneider</p></td><td><p>NMDP/CIBMTR</p></td><td><p>Contributor</p></td></tr><tr><td><p>Liz Amos</p></td><td><p>National Library of Medicine</p></td><td><p>Contributor</p></td></tr><tr><td><p>Bob Dolin</p></td><td><p>Elimu Informatics</p></td><td><p>Contributor</p></td></tr><tr><td><p>May Terry</p></td><td><p>MITRE</p></td><td><p>Contributor</p></td></tr><tr><td><p>Bret Heale</p></td><td><p>Intermountain </p></td><td><p>Contributor</p></td></tr><tr><td><p>Rachel Kutner</p></td><td><p>Epic </p></td><td><p>Contributor</p></td></tr><tr><td><p>Clem McDonald</p></td><td><p>National Library of Medicine</p></td><td><p>Contributor</p></td></tr><tr><td><p>Ling teng</p></td><td><p>BWH </p></td><td><p>Contributor</p></td></tr><tr><td><p>Dora Walter </p></td><td><p>MOLIT Institut</p></td><td><p>Contributor</p></td></tr><tr><td><p>Lloyd McKenzie</p></td><td><p>Gevity</p></td><td><p>Contributor</p></td></tr><tr><td><p>Alex Mankovich</p></td><td><p>Philips</p></td><td><p>Contributor</p></td></tr><tr><td><p>Daniel Rutz</p></td><td><p>Epic</p></td><td><p>Contributor</p></td></tr><tr><td><p>Larry Babb</p></td><td><p>Broad</p></td><td><p>Contributor</p></td></tr><tr><td><p>Peter Muir </p><p></p></td><td><p></p></td><td><p>Contributor</p></td></tr><tr><td><p>Aly Khalifa</p></td><td><p>Mayo Clinic</p></td><td><p>Contributor</p></td></tr></tbody></table>
 </div>

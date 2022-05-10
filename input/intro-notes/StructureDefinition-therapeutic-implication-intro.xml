@@ -3,55 +3,77 @@
     <p>
     The content in this section may be significantly revised prior to the next ballot after initial use and feedback.
     </p>
+	  
   </blockquote>
   <p>
-    This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles.  Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide.
+    This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications.  This includes making recommendations for medication adjustments.  This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles. Implementers of pharmacogenomic reporting may also be interested in the <a href="somatics.html">Somatic Reporting</a> section of this implementation guide.
   </p>
 
   <a name="contextualmodifiers"> </a>
   <h3>Communicating disease or tumor context</h3>
   <p>
-  In general, treatments and medications have a set of indications for use which are not explicitly stated. However, if a pharmacogenomics statement has a specific context of a disease (indication) or a tumor indication use the components "associated phenotype" or "associated cancer" respectively. 
-  </p>
-  <p>
-  To explicitly link medication or treatment implication to oncology, for example, populate the associated-cancer component. E.g. If the associated-cancer component is populated, then effect-medication-efficacy pertains to the medication's efficacy on treating the cancer. For oncology related reporting in general see <a href="somatics.html">Somatic Reporting</a>.
+   In general, treatments and medications have a set of indications for use which are not explicitly stated. However, if a pharmacogenomics statement has a specific context of a disease or a tumor use the component <code>phenotypic-treatment-context</code> to indicate the disease. 
   </p>
 
   <a name="implications"> </a>
-  <h3>Pharmacogenomic-specific Genetic Implications</h3>
-  <img src="4-pharmacogenomics-fig1-implications.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Usage Implication task"/>
+  <h3>Pharmacogenomic-specific Genomic Implications</h3>
+  <img src="4-pharmacogenomics-fig1-implications.png" alt="Diagram showing the 3 medication implication profiles and the associated Medication Recommendation task"/>
   <p>
     <b>Figure 1: Pharmacogenomic Implications</b>
   </p>
   <p>
     (Profile links:
-    <a href="StructureDefinition-implication.html">Genetic Implication</a>,
+    <a href="StructureDefinition-implication.html">Genomic Implication</a>,
     <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>,
-    <a href="StructureDefinition-task-med-chg.html"> Medication Usage Implication</a>
-    )
+    <a href="StructureDefinition-medication-recommendation.html"> Medication Recommendadtion</a>)
   </p>
   <p>
-    All pharmacogenomic implications are intended to be communicated using components within <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic implication profile</a>. The profile component medication-assessed is the place to communicate the medication whose implication is being described, including a place for the coded value of the medication. The Therapy-assessed component is not intended for medications. Because this is an international profile, no guidance is provided on drug coding systems.  The typical or FHIR-mandated jurisdictional code system(s) should be used.
+    There are two ways to communicate details about a medication whose implication is being described. The profile component <code>medication-assessed</code> is the place to communicate a simple code for the medication. If more detail about the medication is to be shared, use the extension also named <code>medication-assessed</code>. The extension can refer to a <a href="{{site.data.fhir.path}}medication.html">Medication</a> or <a href="{{site.data.fhir.path}}medicationknowledge.html">MedicationKnowledge</a> resource. This might be used to share specific <a href="{{site.data.fhir.path}}medicationknowledge-definitions.html#MedicationKnowledge.medicineClassification">classification details</a> if they are important as part of the implication being described. It is important to note that since there two ways to do this, implementers SHALL ensure consistent usage. If both the extension and component are used at the same time, they SHALL deliver the same medication code. Because this is an international profile, no guidance is provided on drug coding systems.
   </p>
   <p>
-    There are several types of medication implication component defined in the <a href="StructureDefinition-therapeutic-implication.html">profile</a> for use in pharamcogenomics:
+    It is important to note there are also two ways to communicate details about non-medication therapies (e.g. altered diet, radiation therapy, surgery, etc.). The profile component <code>therapy-assessed</code> is the place to communicate a simple code for the therapy. If more detail about the therapy is to be shared, use the extension also named <code>therapy-assessed</code>. The extension can refer to a <a href="{{site.data.fhir.path}}careplan.html">CarePlan</a>, <a href="{{site.data.fhir.path}}researchstudy.html">ResearchStudy</a>, or <a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a> resource. It is important to note that since there two ways to do this, implementers SHALL ensure consistent usage. If both the extension and component are used at the same time, they SHALL deliver the same therapy code. Because this is an international profile, no guidance is provided on therapy coding systems.
+  </p>
+  <p>
+    The component <code>predicted-therapeutic-implication</code> lists one or more ramifications based on the presence of associated molecular finding(s), which may include:
   </p>
   <ul>
-	<li>The component Effect Medication Efficacy describes how the associated genetic findings affect the ability of the patient's body to respond to the medication (predicted phenotype) - distinct from metabolic impact, this is in regards to molecular function. This can influence the appropriateness of the medication for the patient.</li>
-  <li>The component Effect Medication Metabolism describes the implication of the associated genetic findings on how well the specified medication is metabolized by the patient - which can have implications on appropriate dosage.</li>
-  <li>The component Effect Medication High Risk indicates if the associated genetic findings pose a particular risk for the patient independent of metabolism or efficacy.  i.e. Does the medication have an unusual (and potentially dangerous) effect on patients with these genetic characteristics. For example, in the case of a known adverse event, such as Stevens-Johnson syndrome (SJS), the high-risk component would be used with the associated-phenotype to communicate the risk of SJS</li>
-	<li>The component Medication-assessed is a place to provide the medication which was assessed. For specific recommended actions, the Medication Usage Implication profile is used and focus indicates the medication that the recommended actions refer too (see 'Including Pharmacogenomic recommended actions'). </li>
+	<li>Alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time;</li>
+  <li>Alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration;</li>
+  <li>Alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies or eligibility for clinical trials;</li>
+	<li>Other pharmacogenomic statements as necessary, by extending the valueSet.</li>
   </ul>
   
   <a name="pgxRecommendedAction"> </a>
   <h3>Including Pharmacogenomic recommended actions</h3>
   <p>
-	To associate a Therapeutic-implication instance with a recommended action (e.g. discontinuing a medication, altering dosage, "choose alternative medication") use <a href="StructureDefinition-task-med-chg.html">Medication Usage Implication</a>, Recommended action, and Current Medication. Use "related artifact" in Therapeutic-implication for supporting documents such as CPIC guidelines. 
+	To associate a therapeutic implication instance with a recommendation (e.g. discontinuing a medication, altering dosage, choose alternative medication) use <a href="StructureDefinition-medication-recommendation.html">Medication Recommendation</a>, <a href="StructureDefinition-followup-recommendation.html">Followup Recommendation</a>, along with current medication if appropriate. Use <code>related-artifact</code> for supporting documents such as CPIC guidelines. 
   </p>
   <p>
-	Medication Usage Implications (task-med-chg) link to therapeutic implications through "reasonReference"and are included in the report as links for RecommendedAction, DiagnosticReport.extension:RecommendedAction. The  therapeutic implications do not have a link to medication usage implications (task-med-chg): so rev_include is currently necessary to find the therapeutic implication statements relevant to the medication usage implications. 
+	Medication Recommendation tasks link to therapeutic implications through <code>reasonReference</code> and are included in the report using the <a href="StructureDefinition-genomics-report-definitions.html#DiagnosticReport.extension:recommended-action">recommended-action</a> extension. The therapeutic implications do not have a link to medication recommendations, so the <a href="{{site.data.fhir.path}}search.html#revinclude">revinclude</a> search parameter can be used to find the therapeutic implication statements relevant to the recommendations. 
   </p>
   <p>
-	Note: if multiple medications are used in medication assessed, the usage implication should describe the combined effect. Note 2:  Implementers may also be interested in the <a href="somatics.html">Somatic Reporting</a> and <a href="pharmacogenomics.html">Pharmacogenomics Reporting</a> sections of this implementation guide.
+	Note: If multiple medications are used in medication assessed, the usage implication should describe the combined effect. 
+  </p>
+  <p>
+  Note 2: Implementers may also be interested in the <a href="somatics.html">Somatic Reporting</a> and <a href="pharmacogenomics.html">Pharmacogenomics Reporting</a> sections of this implementation guide.
+  </p>
+
+	<a name="Differentiating AND vs OR"> </a>
+	<h3>Differentiating AND vs OR</h3>
+	<p>
+		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. both drug X AND drug Y, in combination, are indicated in the presence of a variant) vs. 'OR' conditions (e.g. either drug X OR drug Y are indicated in the presence of a variant).
+		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents:
+	</p>
+	<p>
+		Where diagnostic and therapeutic implications have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances.
+	</p>
+	<p>
+   See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information.
+  </p>
+  <p>
+    Implication fields affected by this guidance include:
+  </p>
+  <p>
+    derivedFrom, evidence-level, phenotypic-treatment-context, medication-assessed, therapy-assessed, predicted-therapeutic-implication.
   </p>
 </div>

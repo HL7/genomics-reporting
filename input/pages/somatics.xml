@@ -25,8 +25,8 @@
   </p>
 
   <a name="implications"> </a>
-  <h3>Somatic-specific Implications</h3>
-  <img src="5-somatics-fig1-implications.png" alt="Diagram showing the somatic implication profiles"/>
+  <h3>Implications</h3>
+  <img src="figureonSomaticPage.png" alt="Diagram showing implication profiles"/>
   <p>
     <b>Figure 1: Implication Profiles</b>
   </p>
@@ -37,14 +37,14 @@
     <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a>)
   </p>
   <p>
-    This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in `Observation.note` as the issuing lab desires.
+    This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in <code>Observation.note</code> as the issuing lab desires.
   </p>
   <p>
-    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via Observation.derivedFrom) and a particular type of cancer in the associated-phenotype component. The evidence-level and clinical-significance components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines. The prognosis component can also be populated to convey a general indication on the overall outcome for the cancer patient, as described in a linked relatedArtifact.
+    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and a particular type of cancer in the <code>predicted-phenotype</code> component. The <code>evidence-level</code> and <code>clinical-significance</code> components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines. The prognosis component can also be populated to convey a general indication on the overall outcome for the cancer patient, as described in a linked relatedArtifact.
 
   </p>
   <p>
-    <b>Therapeutic Implication</b> indicates an association between the identified variant (linked via Observation.derivedFrom) and the efficacy of a particular medication or therapy for the specified cancer. Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications, therapies, or cancer descriptions. Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
+    <b>Therapeutic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and the efficacy of a particular medication or therapy for the specified cancer. Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications, therapies, or cancer descriptions. Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
 
   </p>
   <p>
@@ -56,13 +56,13 @@
   <h3>Somatic-specific Example instances</h3>
   <ul>
     <li>
-      <a href="Bundle-oncologyexamples-r4.html">Full transaction bundle</a> containing a Genomics DiagnosticReport referencing, Patient, Practicioner, Specimen, with Tumor Mutational Burden and MSI Status Observations, Variant Observations for JAK2/KDR/ERBB4 SNV analyses, and 4 derived Therapeutic Implication Observations.
+      <a href="Bundle-bundle-oncologyexamples-r4.html">Full transaction bundle</a> containing a Genomics DiagnosticReport referencing, Patient, Practicioner, Specimen, with Tumor Mutational Burden and MSI Status Observations, Variant Observations for JAK2/KDR/ERBB4 SNV analyses, and 4 derived Therapeutic Implication Observations.
     </li>
     <li>
-      <a href="Bundle-oncology-report-example.html">Multiple Oncology Variant Report Example</a> Oncology Example Report with 12 reported somatic variants
+      <a href="Bundle-bundle-oncology-report-example.html">Multiple Oncology Variant Report Example</a> Oncology Example Report with 12 reported somatic variants
     </li>
     <li>
-      <a href="Bundle-oncology-diagnostic.html">Melanoma implication</a> Small example report with 1 reported variant and diagnostic implication.
+      <a href="Bundle-bundle-oncology-diagnostic.html">Melanoma implication</a> Small example report with 1 reported variant and diagnostic implication.
 
     </li>
   </ul>

@@ -1,0 +1,44 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <blockquote class="stu-note">
+    <p>
+    The content in this section may be significantly revised prior to the next ballot after initial use and feedback.
+    </p>
+	  
+  </blockquote>
+  <p>
+    This section provides guidance for genomic reporting of patient genetic implications regarding specific conditions (sometimes referred to as phenotypes). This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide. 
+  </p>
+
+  <a name="Non-conflated semantics"> </a>
+  <h3>Non-conflated semantics</h3>
+	<p>
+		At times, external terminology development organizations develop codes that don't fit neatly into a particular field in an HL7 specification. For implications, we have identified two codes lists that conflate clinical significance and level of evidence, which we recommend not being used. These include:
+
+		<ul>
+			<li>LOINC list LL5356 https://loinc.org/LL5356-2/</li>
+			<li>
+				Oncokb levels https://www.oncokb.org/levels#version=V2
+			</li>
+		</ul>
+	</p>
+
+	<a name="Differentiating AND vs OR"> </a>
+	<h3>Differentiating AND vs OR</h3>
+	<p>
+		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. both drug X AND drug Y, in combination, are indicated in the presence of a variant) vs. 'OR' conditions (e.g. either drug X OR drug Y are indicated in the presence of a variant).
+		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents:
+	</p>
+	<p>
+		Where Diagnostic and Therapeutic implications have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances.
+
+	</p>
+	<p>
+		see <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information.
+		<p>
+			Implication fields affected by this guidance include:
+		</p>
+		<p>
+			derivedFrom, evidence-level, predicted-phenotype, functional-effect, genomics-risk-assessment.
+		</p>
+	</p>
+</div>
