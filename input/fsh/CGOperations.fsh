@@ -2,7 +2,7 @@ Instance: find-subject-variants
 InstanceOf: OperationDefinition
 Title: "Find Subject Variants"
 Usage: #definition
-Description: ""
+Description: "Determine if simple variants are present that overlap range(s)."
 * name = "FindSubjectVariants"
 * title = "Find Subject Variants"
 * status = #active
@@ -98,7 +98,7 @@ Instance: find-subject-specific-variants
 InstanceOf: OperationDefinition
 Title: "Find Subject Specific Variants"
 Usage: #definition
-Description: ""
+Description: "Determine if specified simple variants are present."
 * name = "FindSubjectSpecificVariants"
 * title = "Find Subject Specific Variants"
 * status = #active
@@ -187,7 +187,7 @@ Instance: find-subject-structural-intersecting-variants
 InstanceOf: OperationDefinition
 Title: "Find Subject Structural Intersecting Variants"
 Usage: #definition
-Description: ""
+Description: "Determine if structural variants are present that overlap range(s)."
 * name = "FindSubjectStructuralIntersectingVariants"
 * title = "Find Subject Structural Intersecting Variants"
 * status = #active
@@ -284,7 +284,7 @@ Instance: find-subject-structural-subsuming-variants
 InstanceOf: OperationDefinition
 Title: "Find Subject Structural Subsuming Variants"
 Usage: #definition
-Description: ""
+Description: "Determine if structural variants are present that fully subsume a range."
 * name = "FindSubjectStructuralSubsumingVariants"
 * title = "Find Subject Structural Subsuming Variants"
 * status = #active
@@ -381,7 +381,7 @@ Instance: find-subject-haplotypes
 InstanceOf: OperationDefinition
 Title: "Find Subject Haplotypes"
 Usage: #definition
-Description: ""
+Description: "Retrieve haplotypes/genotypes for specified genes."
 * name = "FindSubjectHaplotypes"
 * title = "Find Subject Haplotypes"
 * status = #active
@@ -472,7 +472,7 @@ Instance: find-subject-specific-haplotypes
 InstanceOf: OperationDefinition
 Title: "Find Subject Specific Haplotypes"
 Usage: #definition
-Description: ""
+Description: "See if specified haplotypes/genotypes are present."
 * name = "FindSubjectSpecificHaplotypes"
 * title = "Find Subject Specific Haplotypes"
 * status = #active
@@ -569,7 +569,7 @@ Instance: find-subject-tx-implications
 InstanceOf: OperationDefinition
 Title: "Find Subject Treatment Implications"
 Usage: #definition
-Description: ""
+Description: "Retrieves genetic therapeutic implications for variants/haplotypes/genotypes."
 * name = "FindSubjectTxImplications"
 * title = "Find Subject Treatment Implications"
 * status = #active
@@ -692,7 +692,7 @@ Instance: find-subject-dx-implications
 InstanceOf: OperationDefinition
 Title: "Find Subject Diagnostic Implications"
 Usage: #definition
-Description: ""
+Description: "Retrieves genetic diagnostic implications for variants."
 * name = "FindSubjectDxImplications"
 * title = "Find Subject Diagnostic Implications"
 * status = #active
@@ -783,7 +783,7 @@ Instance: find-population-specific-variants
 InstanceOf: OperationDefinition
 Title: "Find Population Specific Variants"
 Usage: #definition
-Description: ""
+Description: "Retrieve count or list of patients having specified variants."
 * name = "FindPopulationSpecificVariants"
 * title = "Find Population Specific Variants"
 * status = #active
@@ -854,7 +854,7 @@ Instance: find-population-structural-intersecting-variants
 InstanceOf: OperationDefinition
 Title: "Find Population Structural Intersecting Variants"
 Usage: #definition
-Description: ""
+Description: "Retrieve count or list of patients having structural intersecting variants in specified regions."
 * name = "FindPopulationStructuralIntersectingVariants"
 * title = "Find Population Structural Intersecting Variants"
 * status = #active
@@ -925,7 +925,7 @@ Instance: find-population-structural-subsuming-variants
 InstanceOf: OperationDefinition
 Title: "Find Population Structural Subsuming Variants"
 Usage: #definition
-Description: ""
+Description: "Retrieve count or list of patients having structural subsuming variants in specified regions."
 * name = "FindPopulationStructuralSubsumingVariants"
 * title = "Find Population Structural Subsuming Variants"
 * status = #active
@@ -996,7 +996,7 @@ Instance: find-population-specific-haplotypes
 InstanceOf: OperationDefinition
 Title: "Find Population Specific Haplotypes"
 Usage: #definition
-Description: ""
+Description: "Retrieve count or list of patients having specified genotypes/haplotypes."
 * name = "FindPopulationSpecificHaplotypes"
 * title = "Find Population Specific Haplotypes"
 * status = #active
@@ -1068,7 +1068,7 @@ Instance: find-population-tx-implications
 InstanceOf: OperationDefinition
 Title: "Find Population Treatment Implications"
 Usage: #definition
-Description: ""
+Description: "Retrieve count or list of patients having therapeutic implications."
 * name = "FindPopulationTxImplications"
 * title = "Find Population Treatment Implications"
 * status = #active
@@ -1156,7 +1156,7 @@ Instance: find-population-dx-implications
 InstanceOf: OperationDefinition
 Title: "Find Population Diagnostic Implications"
 Usage: #definition
-Description: ""
+Description: "Retrieve count or list of patients having diagnostic implications."
 * name = "FindPopulationDxImplications"
 * title = "Find Population Diagnostic Implications"
 * status = #active
@@ -1236,7 +1236,7 @@ Instance: find-study-metadata
 InstanceOf: OperationDefinition
 Title: "Find Study Metadata"
 Usage: #definition
-Description: ""
+Description: "Retrieve metadata about sequencing studies performed on a subject."
 * name = "FindStudyMetadata"
 * title = "Find Study Metadata"
 * status = #active

@@ -178,15 +178,15 @@
 		<li><b>Source class</b>: Enables an App to limit results to those that are 'germline' or 'somatic'.</li>
 	</ul>
   
-        <a name="AND_OR_logic"/>
+        <a name="and-or-logic-in-queries"/>
   <h4>AND/OR logic in queries</h4>
   <p><a href="http://hl7.org/fhir/r4/search.html">FHIR Search</a> defines general AND/OR logic in FHIR queries: A logical 'AND' is achieved by repeating a query parameter (e.g. '/Patient?language=FR&amp;language=NL') , whereas a logical 'OR' is achieved via a comma-separated list of values for a single query parameter (e.g. '/Patient?language=FR,NL'). Unless stated otherwise, all FHIR Genomics Operations support 'OR' logic, and only support 'AND' logic for date fields (e.g. '...&amp;testDateRange=ge2020-06-01&amp;testDateRange=le2020-08-01'). Parameters that have a cardinality greater than one can be populated with a comma-separated list of values that represent a logical 'OR'.  </p>
 
-        <a name="Simple_Structural"/>
+        <a name="simple-structural"/>
   <h4>Simple vs. Structural variant operations</h4>
   <p>While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on endpoint precision. Simple variant operations (find-subject-variants, find-subject-specific-variants) assume precise endpoints and return variants in a '<a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#variants-defined-by-multiple-components-vcf-like">VCF-like</a>' format, with 'exact-start-end' coordinates. Structural variant operations (find-subject-structural-intersecting-variants, find-subject-structural-subsuming-variants) assume imprecise endpoints and return variants per <a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#representing-structural-variants">structural variant reporting guidelines</a> with 'outer-start-end' and 'inner-start-end' coordinates. </p>
 
-    <a name="GenesRegions"/>
+    <a name="genes-vs-regions"/>
   <h4>Use of genomic regions</h4>
   <p>As our understanding of genomics grows, we continue to recognize the clinical significance of variations not only within protein-coding gene exons, but also in introns and intergenic regions. To enable a consistent approach to query, whether for variants within or outside a gene, these operations are generally based on regions as parameters, and not gene names or identifiers. As a result, to query for variants within a specific gene, an application must determine the position of that gene, and supply the position as a parameter. For instance, assume an App wants to use the <b>'find-subject-variants'</b> operation to see if a subject has any variants in the APC gene. On human genome reference assembly GRCh38, the APC gene is located on chromosome 5 (reference sequence NC_000005.10), at position 112707497-112846239. Thus, the query would be for variants that overlap NC_000005.10:112707497-112846239. The definitive location of genes based on human genome resources at the NCBI can be found <a href="https://www.ncbi.nlm.nih.gov/genome/guide/human/">here</a>.</p>
   <p>For all operations, positional coordinates are <a href="https://www.biostars.org/p/84686/">zero-based</a>. Some operations return variants that overlap a 0-based interval range of integers, whereas some operations return variants that subsume a range. In the following figure, variants 1-5 overlap or intersect with the X..Y range, whereas only variant 2 subsumes the X..Y range. </p>
@@ -195,7 +195,7 @@
   <img src="zero-based.png" alt="Zero-based example"/>
   
   
-  <a name="Normalization"/>
+  <a name="normalization"/>
   <h4>Expectation of normalized variant search</h4>
   <p>Optionality in the Variant profile allows for different implementations to represent variants in different ways. For instance, the following variant representations are synonymous:</p>
   <ul>
@@ -219,7 +219,7 @@
   <p>'SPDI' is the NCBI's variation notation for variants with known breakpoints. The notation represents an observed variant sequence using deleted and inserted sequences at a given position in a reference sequence. SPDI notation uses four fields and is written out as four elements delimited by colons S:P:D:I, where S=SequenceId; P=Position, a 0-based coordinate for where the Deleted Sequence starts; D=DeletedSequence, and I=InsertedSequence. Variation Services only support variants where the coordinates of both the upstream and downstream breakpoints are known (e.g. single nucleotide change, deletions at precise coordinates). Such variants can be encoded precisely using the SPDI notation.</p>  
   <p><a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI Variation Services</a> provide a rich set of APIs that can be used to normalize variants from many formats (e.g. HGVS, VCF) into SPDI, and to normalize variants in SPDI into a canonical SPDI format. The variant above, in canonical SPDI format, resolves to this: NC_000019.10:11089559:G:A, where it can easily be determined that it overlaps the requested region (NC_000019.10:11,089,362-11,133,830).</p>
   
-  <a name="Liftover"/>
+  <a name="liftover"/>
   <h4>Expectation of genomic 'liftover'</h4>
  
   <p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:
@@ -232,7 +232,8 @@
   <p>Several groups have identified edge cases that pose genome assembly conversion challenges (e.g. see <a href="https://github.com/PharmGKB/PharmCAT/wiki/Preparing-VCF-Files">PharmGKB's PharmCAT posting</a>; <a href="https://www.biostars.org/p/14187/">Biostars posting</a>). For example, <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/212026/">NC_000001.11:145923295:C:C</a> (build 38 representation) does not convert to a corresponding build 37 representation using <a href="https://api.ncbi.nlm.nih.gov/variation/v0/spdi/NC_000001.11%3A145923295%3AC%3AC/all_equivalent_contextual">NCBI Variation Services</a>. As a result, there is no requirement that servers normalize all variants against a single build.
 </p>
   <p>Rather, where a server is storing variants aligned to multiple builds (and hasn't normalized all variants against a single build), it will be necessary for the server to lift over the query region into corresponding regions in other builds. For example, a query for variants in NC_000001.11:145507556-145513536 (build 38 range) may also need to query for variants in NC_000001.10:145921556-145927537 (build 37 range) in order to gather variants expressed against build 38 and build 37, respectively.</p>  
-    <p>Many efficient and open source liftover tools exist (e.g. many are listed <a href="https://genviz.org/module-01-intro/0001/06/02/liftoverTools/">here</a>). As with variant liftover, translating a region between builds can also fail. For example, attempting to liftover NC_000001.11:145923295-145923296 (build 38 range) into a build 37 range with the <a href="https://genome.ucsc.edu/cgi-bin/hgLiftOver">UCSD LiftOver tool</a> fails, because the region is partially deleted in build 37. In the (very uncommon) case of a failed lift over, a server can widen the query region as necessary in order to have a successful liftover. For example, the widened build 38 range NC_000001.11:145923285-145923306 will successfully translate into the build 37 range NC_000001.10:145511787-145511807. In the rare case where a server is storing variants aligned to multiple builds and the server is unable to liftover the query region, the server can return a response code of 422 "ERROR: Failed LiftOver", in which case the onus falls to the client to modify the query region.</p>  
+    <p>Many efficient and open source liftover tools exist (e.g. many are listed <a href="https://genviz.org/module-01-intro/0001/06/02/liftoverTools/">here</a>). As with variant liftover, translating a region between builds can also fail. For example, attempting to liftover NC_000001.11:145923295-145923296 (build 38 range) into a build 37 range with the <a href="https://genome.ucsc.edu/cgi-bin/hgLiftOver">UCSD LiftOver tool</a> fails, because the region is partially deleted in build 37. In the (very uncommon) case of a failed lift over, a server can widen the query region as necessary in order to have a successful liftover. For example, the widened build 38 range NC_000001.11:145923285-145923306 will successfully translate into the build 37 range NC_000001.10:145511787-145511807. In the rare case where a server is storing variants aligned to multiple builds and the server is unable to liftover the query region, the server can return a response code of 422 "ERROR: Failed LiftOver", in which case the onus falls to the client to modify the query region.
+    </p>  
 
 
 </div>
