@@ -9,11 +9,17 @@
 *****************************************************************************************
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+
+<blockquote class="stu-note">
+  <p>
+The Clinical Genomics committee has identified overlaps and redundancies between content in the MolecularSequence resource and content in this implementation guide. The committee is considering options for modifying the resource and anticipates potential changes being brought forward in an upcoming ballot.
+  </p>
+</blockquote>
 <p>
 This section is about the FHIR resource <a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a>.
 </p>
 <p>
-<a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a> can be used to hold clinically relevant sequence data in a manner that is both efficient and versatile, integrating new and as yet undefined types of genomic and other -omics data that will soon be commonly entered into health records for clinical use. MolecularSequence will be leveraged by other FHIR resources, including Observation. This is consistent with how all FHIR resources are designed and used.
+<a href="{{site.data.fhir.path}}molecularsequence.html">MolecularSequence</a> can be used to hold clinically relevant sequence data in a manner that is both efficient and versatile, integrating new and yet undefined types of genomic and other -omics data that will soon be commonly entered into health records for clinical use. MolecularSequence will be leveraged by other FHIR resources, including Observation. This is consistent with how all FHIR resources are designed and used.
 </p>
 <p>
 This resource can be used with the profiles found in this Implementation Guide to support a large set of clinical use cases. The goal of this approach is to address all emergent -omics use cases, including Next-Generation Sequencing (NGS) in a way that is simple to implement, will optimize payload sizes, and help developers avoid redundant retrieval of data.
@@ -22,6 +28,6 @@ This resource can be used with the profiles found in this Implementation Guide t
 The September 2014 Informative Ballot (“HL7 Clinical Genomics, Domain Analysis Model: Clinical Sequencing Release 1”) provided guiding use cases, which initially informed development of the initial Standard Genetics profile that is found in FHIR DSTU2. The same use cases also led to a second Project to develop a MolecularSequence resource (“Develop FHIR sequence resource for Clinical Genomics”). A preliminary effort to address these issues has been explored and published in context of the <a href="http://smarthealthit.org/an-app-platform-for-healthcare/about/">Substitutable Medical Applications and Reusable Technologies</a> Platforms Project and described in an article (“<a href="http://jamia.oxfordjournals.org/content/early/2015/07/21/jamia.ocv045.long">SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps</a>”).
 </p>
 <p>
-Some examples in this guide, including <a href="Bundle-CG-IG-HLA-FullBundle-01.html">this one</a> leverage MolecularSequence. The community is still evaluating overlap between MolecularSequence and Observation and encourages adopter feedback.
+Some examples in this guide, including <a href="Bundle-bundle-CG-IG-HLA-FullBundle-01.html">this one</a> leverage MolecularSequence. The community is still evaluating overlap between MolecularSequence and Observation and encourages adopter feedback.
 </p>
 </div>
