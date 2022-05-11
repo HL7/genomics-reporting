@@ -1,0 +1,19 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Description"/>
+	<h3>Description</h3>
+	<p>Retrieves genetic diagnostic implications for variants.</p>
+	
+	<p>
+	Returned implications are those derived from a variant present in the subject that satisfy other parameter values. For instance, if only variants are provided, the operation returns identified diagnostic implications for the subset of supplied variants present in the subject. If only conditions are provided, the operation returns identified diagnostic implications where the implication is one of the supplied conditions and where the implication is derived from a variant present in the subject. If both variants and conditions are provided, the operation returns identified diagnostic implications where the implication is one of the supplied conditions and where the implication is derived from the subset of supplied variants present in the subject.</p>
+	
+	<p>Where no variants or conditions are provided, the operation returns no implications. </p>
+	
+	<p>As shown in the following picture, this operation can return previously instantiated implications and/or dynamically computed implications. Specific implementations can indicate their capabilities using a <a href="https://www.hl7.org/fhir/capabilitystatement.html">FHIR Capability Statement</a>. Rules around the retention of dynamically computed implications are outside the scope of this operation, but a server could potentially instantiate those results based on the <a href="http://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a> and <a href="http://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html">Diagnostic Implication</a> FHIR profiles. </p>
+	<img src="implications.png" alt="Instantiated vs Dynamically Computed Implications"/>
+
+ <blockquote class="stu-note">
+    <p>
+      The committee is actively seeking feedback on the feasibility of using this operation to return dynamically computed implications of structural variants.
+    </p>
+  </blockquote>
+</div>

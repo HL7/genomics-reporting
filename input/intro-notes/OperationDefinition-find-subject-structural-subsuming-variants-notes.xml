@@ -30,10 +30,10 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-<p>Patient HG00403 has WES of a tumor biopsy specimen. See if patient HG00403 had any simple somatic variants detected in BRAF (NC_000007.14:140713327-140924929) or ERBB2 (NC_000017.11:39688093-39728660) by test1.
+<p>Patient HG00403 has a tumor recurrence. WES of new mass (specimen1) is performed. Clinical trial inclusion criteria includes somatic MET amplification. See if patient HG00403 has a structural variant that subsumes MET (NC_000007.14:116672195-116798386) in specimen1.
 </p>
 <ul>
-<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true">GET .../$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true</a></li>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-structural-subsuming-variants?subject=HG00403&amp;ranges=NC_000007.14:116672195-116798386&amp;specimenIdentifiers=specimen1&amp;genomicSourceClass=somatic&amp;includeVariants=true">GET .../$find-subject-structural-subsuming-variants?subject=HG00403&amp;ranges=NC_000007.14:116672195-116798386&amp;specimenIdentifiers=specimen1&amp;genomicSourceClass=somatic&amp;includeVariants=true</a></li>
 </ul>
 
 </div>

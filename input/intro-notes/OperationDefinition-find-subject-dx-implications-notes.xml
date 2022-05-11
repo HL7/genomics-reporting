@@ -1,0 +1,47 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+	<p>Diagnostic implications for familial hypercholesterolemia? (This query seeks to determine if the subject has any diagnostic implications of familial hypercholesterolemia that are derived from any variant present in the subject).</p>
+	
+	<pre>$find-subject-dx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|398036000</pre>
+	
+	
+	<p>Diagnostic implications for variant X or variant Y? (This query seeks to determine if the subject has any diagnostic implications whatsoever that are derived from variant X or variant Y).</p>
+	
+	<pre>$find-subject-dx-implications?subject=HG00403&amp;variants=X,Y</pre>
+	
+<p>Patient HG00403 has a germline variant in the RYR1 gene (NC_000019.10:38499669:C:T). What are the diagnostic implications of this variant? (Results indicate that the variant is pathogenic for Malignant Hyperthermia).</p>
+<ul>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-dx-implications?subject=HG00403&amp;variants=NC_000019.10:38499669:C:T">GET .../$find-subject-dx-implications?subject=HG00403&amp;variants=NC_000019.10:38499669:C:T</a></li>
+</ul>
+
+</div>

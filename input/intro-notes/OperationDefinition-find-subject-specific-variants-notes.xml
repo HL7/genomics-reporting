@@ -30,10 +30,10 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-<p>Patient HG00403 has WES of a tumor biopsy specimen. See if patient HG00403 had any simple somatic variants detected in BRAF (NC_000007.14:140713327-140924929) or ERBB2 (NC_000017.11:39688093-39728660) by test1.
-</p>
+<p>See if patient HG00403 had any of these [NM_001354609.2:c.1799T>A, NM_007294.4:c.5559C>A, NC_000001.10:g.12225351T>A, NM_000038.6:c.55G>T, NM_001354609.2:c.1802=] germline variants detected by test1 or test2. </p>
 <ul>
-<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true">GET .../$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true</a></li>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-specific-variants?subject=HG00403&amp;variants=NM_001354609.2:c.1799T>A,NM_007294.4:c.5559C>A,NC_000001.10:g.12225351T>A,NM_000038.6:c.55G>T,NM_001354609.2:c.1802=&amp;testIdentifiers=test1,test2&amp;genomicSourceClass=germline">GET .../$find-subject-specific-variants?subject=HG00403&amp;variants=NM_001354609.2:c.1799T>A,NM_007294.4:c.5559C>A,NC_000001.10:g.12225351T>A,NM_000038.6:c.55G>T,NM_001354609.2:c.1802=&amp;testIdentifiers=test1,test2&amp;genomicSourceClass=germline</a></li>
 </ul>
+
 
 </div>

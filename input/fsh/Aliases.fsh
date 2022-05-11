@@ -35,3 +35,6 @@ Alias: $PHARMVAR = http://www.pharmvar.org
 Alias: $ORPHA = http://www.orpha.net
 Alias: $OMIM = http://www.omim.org
 Alias: $SNP = http://www.ncbi.nlm.nih.gov/projects/SNP
+
+//Extensions
+Alias: operationAllowedType = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile

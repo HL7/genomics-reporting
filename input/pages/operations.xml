@@ -9,17 +9,231 @@
 *****************************************************************************************
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+ <blockquote class="stu-note">
+    <p>
+      FHIR Genomics Operations have a FHIR Maturity Level of 'draft', and have not yet gone through an HL7 ballot cycle.
+    </p>
+  </blockquote>
+
   <p>
-    <a href="http://hl7.org/fhir/operations.html">FHIR Operations</a> are a supplement to standard queries, and are used to fulfill a number of purposes, such as where the server needs to play an active role in formulating the content of the response, where the intended purpose is to cause side effects such as the creation of new resources, and for data normalization to abstract away from variability in variant representation.
+    <a href="http://hl7.org/fhir/operations.html">FHIR Operations</a> are a supplement to standard queries, and are used to fulfill a number of purposes, such as where the server needs to play an active role in formulating the content of the response, where the intended purpose is to cause side effects such as the creation of new resources, and for data normalization to abstract away from variability in variant representation. This is particularly relevant in genomics, where a tremendous amount of raw data exists in non-FHIR formats, and where variability in variant representation is a known barrier to matching a patient’s genetic profile against knowledge bases – for clinical trials matching, for precision medication selection, etc.
   </p>
   <p>
-    Genomics operations are analogous to terminology operations in that a specified set of input parameters will yield a consistent output result, regardless of a server's internal data structures or a specific server's implementation of the operation. The following figure illustrates this:
+  FHIR Genomics operations are based on the premise that genomic data, in FHIR format and/or some other format (e.g. <a href="https://samtools.github.io/hts-specs/VCFv4.3.pdf">VCF format</a>), are stored in a repository, either in or alongside an EHR, possibly along with phenotype annotations. The FHIR Genomics operations essentially 'wrap' the repository, presenting a uniform interface to applications, regardless of internal repository data structures.
   </p>
-	<img src="operations.png" alt="Illustration of genomic operations"/>
-<a name="OperationsList"/>
-  <h3>Operations list</h3>
-  <p>The following operations are defined:</p>
+  <p>
+  A common use case driving the operations is the notion of an application (e.g. a SMART-ON-FHIR clinical genomics App, a clinical decision support application, an EHR screen) needing specific genotype or phenotype information, for a patient or a population. Applications have diverse needs, such as matching a cancer patient to available clinical trials based on identified somatic variants; screening for actionable hereditary conditions; identifying a risk for adverse medication reactions based on pharmacogenomic variants; updating a patient's risk as knowledge of their variants evolves; and more. A goal for FHIR Genomics operations is to ultimately support any and all of these clinical scenarios.
+  </p>
+  <p>
+  In scope are clinical genomics operations. In the future, operations supporting genomics research, variant calling and annotation, and knowledge base lookups may be added. We further categorize clinical genomics operations along two orthogonal axes - subject vs. population, and genotype vs. phenotype. For example, the <b>'find-subject-variants'</b> operation retrieves genotype information for a single subject; whereas the <b>'find-population-tx-implications'</b> retrieves a count or list of patients having specific phenotypes (such as being intermediate metabolizers of clopidogrel).
+  </p>
+
+  <a name="OperationsList"/>
+  <h3>FHIR Genomics Operations</h3>
+
+  <a name="OperationsSummary"/>
+  <h4>Summary of Operations</h4>
+
+<table border="1">
+<thead>
+  <tr>
+    <th></th>
+    <th>Subject Operations</th>
+    <th>Population Operations</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="3"><b>Genotype Operations</b></td>
+  </tr>
+  <tr>
+    <td>simple variants</td>
+    <td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a>; <a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a></td>
+    <td><a href="OperationDefinition-find-population-specific-variants.html">find-population-specific-variants</a></td>
+  </tr>
+  <tr>
+    <td>structural variants</td>
+    <td><a href="OperationDefinition-find-subject-structural-intersecting-variants.html">find-subject-structural-intersecting-variants</a>; <a href="OperationDefinition-find-subject-structural-subsuming-variants.html">find-subject-structural-subsuming-variants</a></td>
+    <td><a href="OperationDefinition-find-population-structural-intersecting-variants.html">find-population-structural-intersecting-variants</a>; <a href="OperationDefinition-find-population-structural-subsuming-variants.html">find-population-structural-subsuming-variants</a></td>
+  </tr>
+  <tr>
+    <td>haplotype/genotypes</td>
+    <td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a>; <a href="OperationDefinition-find-subject-specific-haplotypes.html">find-subject-specific-haplotypes</a></td>
+    <td><a href="OperationDefinition-find-population-specific-haplotypes.html">find-population-specific-haplotypes</a></td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Phenotype Operations</b></td>
+  </tr>
+  <tr>
+    <td>therapeutic implications</td>
+    <td><a href="OperationDefinition-find-subject-tx-implications.html">find-subject-tx-implications</a></td>
+    <td><a href="OperationDefinition-find-population-tx-implications.html">find-population-tx-implications</a></td>
+  </tr>
+  <tr>
+    <td>diagnostic implications</td>
+    <td><a href="OperationDefinition-find-subject-dx-implications.html">find-subject-dx-implications</a></td>
+    <td><a href="OperationDefinition-find-population-dx-implications.html">find-population-dx-implications</a></td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>Metadata Operations</b></td>
+  </tr>
+  <tr>
+    <td>study metadata</td>
+    <td><a href="OperationDefinition-find-study-metadata.html">find-study-metadata</a></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+  <a name="OperationDescriptions"/>
+  <h4>Operation Descriptions</h4>
+ <table border="1">
+ <thead>
+  <tr>
+    <th>Operation</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a></td>
+    <td>Determine if simple variants are present that overlap range(s).</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a></td>
+    <td>Determine if specified simple variants are present.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-structural-intersecting-variants.html">find-subject-structural-intersecting-variants</a></td>
+    <td>Determine if structural variants are present that overlap range(s).</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-structural-subsuming-variants.html">find-subject-structural-subsuming-variants</a></td>
+    <td>Determine if structural variants are present that fully subsume a range.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a></td>
+    <td>Retrieve haplotypes/genotypes for specified genes.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-specific-haplotypes.html">find-subject-specific-haplotypes</a></td>
+    <td>See if specified haplotypes/genotypes are present.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-tx-implications.html">find-subject-tx-implications</a></td>
+    <td>Retrieves genetic therapeutic implications for variants/haplotypes/genotypes.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-subject-dx-implications.html">find-subject-dx-implications</a></td>
+    <td>Retrieves genetic diagnostic implications for variants.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-specific-variants.html">find-population-specific-variants</a></td>
+    <td>Retrieve count or list of patients having specified variants.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-structural-intersecting-variants.html">find-population-structural-intersecting-variants</a></td>
+    <td>Retrieve count or list of patients having structural intersecting variants in specified regions.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-structural-subsuming-variants.html">find-population-structural-subsuming-variants</a></td>
+    <td>Retrieve count or list of patients having structural subsuming variants in specified regions.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-specific-haplotypes.html">find-population-specific-haplotypes</a></td>
+    <td>Retrieve count or list of patients having specified genotypes/haplotypes.</td>
+  </tr>
+   <tr>
+    <td><a href="OperationDefinition-find-population-tx-implications.html">find-population-tx-implications</a></td>
+    <td>Retrieve count or list of patients having therapeutic implications.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-population-dx-implications.html">find-population-dx-implications</a></td>
+    <td>Retrieve count or list of patients having diagnostic implications.</td>
+  </tr>
+  <tr>
+    <td><a href="OperationDefinition-find-study-metadata.html">find-study-metadata</a></td>
+    <td>Retrieve metadata about sequencing studies performed on a subject.</td>
+  </tr>
+</tbody>
+</table>
+
+    <a name="Guidance"/>
+  <h3>General Guidance for the use of these Operations</h3>
+  <p>Genomics is a complex and highly dynamic field. We provide general guidance applicable to all FHIR Genomics operations here.</p>
+
+        <a name="QueryByCode"/>
+  <h4>Use of coded query parameters</h4>
+  <p>Many operations have coded elements as input parameters. In such cases, the description of the parameter will include 'must be in token or codesystem|code format'. A token is a string that should be used by the server to perform case-insensitive search through text, display, code, and/or codeSystem. Servers may optionally broaden the use of a token to also perform close to exact searching. If supplied parameter is in codeSystem|code format, server should only perform case-sensitive code- and codeSystem-specific retrieval.</p>
+
+    <a name="QueryFilters"/>
+  <h4>Query filters</h4>
+  <p>Genomic data repositories will often contain the results of more than one test on a given patient. A patient with cancer may be sequenced repeatedly over time, e.g. at initial diagnosis and again if the tumor recurs; a patient with a diagnostic odyssey may have one test focused on the identification of simple variants and another test focused on structural variants; a patient with multiple metastases may have multiple tumor specimens that are sequenced; a patient may have both a germline sequencing test and a tumor sequencing test; etc.
+</p>
+  <p>In such cases, it is important that FHIR Genomics operations be able to specify query filters, so that only the clinically relevant subset of results are returned. Currently, operations support four filters, all of which are optional, and all of which can be determined using the <b>find-study-metadata</b> operation: </p>
+	<ul>
+		<li><b>Test identifiers</b>: Only results originating from one of these tests will be returned.</li>
+		<li><b>Test date range</b>: Only results generated during this range will be returned</li>
+		<li><b>Specimen identifiers</b>: Only results derived from one of these specimens will be returned.</li>
+		<li><b>Source class</b>: Enables an App to limit results to those that are 'germline' or 'somatic'.</li>
+	</ul>
+
+        <a name="and-or-logic-in-queries"/>
+  <h4>AND/OR logic in queries</h4>
+  <p><a href="http://hl7.org/fhir/r4/search.html">FHIR Search</a> defines general AND/OR logic in FHIR queries: A logical 'AND' is achieved by repeating a query parameter (e.g. '/Patient?language=FR&amp;language=NL') , whereas a logical 'OR' is achieved via a comma-separated list of values for a single query parameter (e.g. '/Patient?language=FR,NL'). Unless stated otherwise, all FHIR Genomics Operations support 'OR' logic, and only support 'AND' logic for date fields (e.g. '...&amp;testDateRange=ge2020-06-01&amp;testDateRange=le2020-08-01'). Parameters that have a cardinality greater than one can be populated with a comma-separated list of values that represent a logical 'OR'.  </p>
+
+        <a name="simple-structural"/>
+  <h4>Simple vs. Structural variant operations</h4>
+  <p>While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on endpoint precision. Simple variant operations (find-subject-variants, find-subject-specific-variants) assume precise endpoints and return variants in a '<a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#variants-defined-by-multiple-components-vcf-like">VCF-like</a>' format, with 'exact-start-end' coordinates. Structural variant operations (find-subject-structural-intersecting-variants, find-subject-structural-subsuming-variants) assume imprecise endpoints and return variants per <a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#representing-structural-variants">structural variant reporting guidelines</a> with 'outer-start-end' and 'inner-start-end' coordinates. </p>
+
+    <a name="genes-vs-regions"/>
+  <h4>Use of genomic regions</h4>
+  <p>As our understanding of genomics grows, we continue to recognize the clinical significance of variations not only within protein-coding gene exons, but also in introns and intergenic regions. To enable a consistent approach to query, whether for variants within or outside a gene, these operations are generally based on regions as parameters, and not gene names or identifiers. As a result, to query for variants within a specific gene, an application must determine the position of that gene, and supply the position as a parameter. For instance, assume an App wants to use the <b>'find-subject-variants'</b> operation to see if a subject has any variants in the APC gene. On human genome reference assembly GRCh38, the APC gene is located on chromosome 5 (reference sequence NC_000005.10), at position 112707497-112846239. Thus, the query would be for variants that overlap NC_000005.10:112707497-112846239. The definitive location of genes based on human genome resources at the NCBI can be found <a href="https://www.ncbi.nlm.nih.gov/genome/guide/human/">here</a>.</p>
+  <p>For all operations, positional coordinates are <a href="https://www.biostars.org/p/84686/">zero-based</a>. Some operations return variants that overlap a 0-based interval range of integers, whereas some operations return variants that subsume a range. In the following figure, variants 1-5 overlap or intersect with the X..Y range, whereas only variant 2 subsumes the X..Y range. </p>
+	<img src="find-variants-fig1.png" alt="Genes vs. Regions"/>
+  <p>A zero-based coordinate system has an inclusive start and an exclusive end. For example, in the following figure, bases GCT are in range 1..4, whereas base A is not in range 1..4. As a result, a variant at position X is considered to intersect the X..Y range, whereas a variant at position Y does not. (Note that an insertion that starts before X, regardless of length, would not overlap X..Y, and would therefore not be returned). Imprecise implementations are allowed, where results contain some records outside a requested range.</p>
+  <img src="zero-based.png" alt="Zero-based example"/>
+
+
+  <a name="normalization"/>
+  <h4>Expectation of normalized variant search</h4>
+  <p>Optionality in the Variant profile allows for different implementations to represent variants in different ways. For instance, the following variant representations are synonymous:</p>
   <ul>
-    <li><a href="OperationDefinition-find-subject-variants.html">$find-subject-variants</a>: Retrieves variants from a specified genomic region</li>
-  </ul>
+	<li>component:variation-code: ClinVar ID = 237860</li>
+	<li>component:dna-chg: HGVS = NM_001195798.2:c.12G>A</li>
+	<li>component:genomic-dna-chg: HGVS = NC_000019.9:g.11200236G>A</li>
+	<li>component:genomic-dna-chg: HGVS = NC_000019.10:g.11089560G>A</li>
+	<li>Multiple components:
+	 <ul>
+	  <li>component:genomic-ref-seq: NC_000019.10</li>
+	  <li>component:ref-allele: G</li>
+	  <li>component:alt-allele: A</li>
+	  <li>component:coordinate-system: 0-based interval counting</li>
+	  <li>component:exact-start-end: start = 11089559</li>
+	</ul>
+	</li>
+</ul>
+
+  <p>Implicit in these FHIR Genomics operations is that variants in requested regions are returned regardless of how they are formatted/represented/stored in a server. While the specific implementation of an Operation is outside the scope of HL7, we do provide guidance on how the above representations might be normalized such that any would be found and returned in a request for variants overlapping, say, the region of the LDLR gene (NC_000019.10:11089362-11133830). There are likely other effective normalization strategies beyond what is described here.</p>
+  <p>One approach to normalization is to convert all representations to a canonical form, such as the <a href="https://www.ncbi.nlm.nih.gov/variation/notation/">NCBI's Sequence Position Deletion Insertion (SPDI)</a> format. Variant queries then only need to query a single format.</p>
+  <p>'SPDI' is the NCBI's variation notation for variants with known breakpoints. The notation represents an observed variant sequence using deleted and inserted sequences at a given position in a reference sequence. SPDI notation uses four fields and is written out as four elements delimited by colons S:P:D:I, where S=SequenceId; P=Position, a 0-based coordinate for where the Deleted Sequence starts; D=DeletedSequence, and I=InsertedSequence. Variation Services only support variants where the coordinates of both the upstream and downstream breakpoints are known (e.g. single nucleotide change, deletions at precise coordinates). Such variants can be encoded precisely using the SPDI notation.</p>
+  <p><a href="https://api.ncbi.nlm.nih.gov/variation/v0/">NCBI Variation Services</a> provide a rich set of APIs that can be used to normalize variants from many formats (e.g. HGVS, VCF) into SPDI, and to normalize variants in SPDI into a canonical SPDI format. The variant above, in canonical SPDI format, resolves to this: NC_000019.10:11089559:G:A, where it can easily be determined that it overlaps the requested region (NC_000019.10:11,089,362-11,133,830).</p>
+
+  <a name="liftover"/>
+  <h4>Expectation of genomic 'liftover'</h4>
+
+  <p>LiftOver is a process whereby a genome position is converted from one genome assembly to another genome assembly. It is the process that, among other things, allows us to determine that these two variants are the same:
+</p>
+<ul>
+<li>NC_000019.9:g.11200236G>A (build 37 representation)</li>
+<li>NC_000019.10:g.11089560G>A (build 38 representation)</li>
+</ul>
+
+  <p>Several groups have identified edge cases that pose genome assembly conversion challenges (e.g. see <a href="https://github.com/PharmGKB/PharmCAT/wiki/Preparing-VCF-Files">PharmGKB's PharmCAT posting</a>; <a href="https://www.biostars.org/p/14187/">Biostars posting</a>). For example, <a href="https://www.ncbi.nlm.nih.gov/clinvar/variation/212026/">NC_000001.11:145923295:C:C</a> (build 38 representation) does not convert to a corresponding build 37 representation using <a href="https://api.ncbi.nlm.nih.gov/variation/v0/spdi/NC_000001.11%3A145923295%3AC%3AC/all_equivalent_contextual">NCBI Variation Services</a>. As a result, there is no requirement that servers normalize all variants against a single build.
+</p>
+  <p>Rather, where a server is storing variants aligned to multiple builds (and hasn't normalized all variants against a single build), it will be necessary for the server to lift over the query region into corresponding regions in other builds. For example, a query for variants in NC_000001.11:145507556-145513536 (build 38 range) may also need to query for variants in NC_000001.10:145921556-145927537 (build 37 range) in order to gather variants expressed against build 38 and build 37, respectively.</p>
+    <p>Many efficient and open source liftover tools exist (e.g. many are listed <a href="https://genviz.org/module-01-intro/0001/06/02/liftoverTools/">here</a>). As with variant liftover, translating a region between builds can also fail. For example, attempting to liftover NC_000001.11:145923295-145923296 (build 38 range) into a build 37 range with the <a href="https://genome.ucsc.edu/cgi-bin/hgLiftOver">UCSD LiftOver tool</a> fails, because the region is partially deleted in build 37. In the (very uncommon) case of a failed lift over, a server can widen the query region as necessary in order to have a successful liftover. For example, the widened build 38 range NC_000001.11:145923285-145923306 will successfully translate into the build 37 range NC_000001.10:145511787-145511807. In the rare case where a server is storing variants aligned to multiple builds and the server is unable to liftover the query region, the server can return a response code of 422 "ERROR: Failed LiftOver", in which case the onus falls to the client to modify the query region.
+    </p>
+
+
 </div>

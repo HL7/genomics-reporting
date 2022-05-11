@@ -30,10 +30,12 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-<p>Patient HG00403 has WES of a tumor biopsy specimen. See if patient HG00403 had any simple somatic variants detected in BRAF (NC_000007.14:140713327-140924929) or ERBB2 (NC_000017.11:39688093-39728660) by test1.
+	<p>A pharmacogeneticist is studying the accuracy of CYP2D6*5 (whole gene deletion) calling, and wants to compare cases where a structural variant caller indicates a whole gene deletion of CYP2D6 (NC_000022.10:42522500-42526812) against a pipeline used to report pharmacogenes. 
 </p>
+	
+<p>To begin the process, the pharmacogeneticist identifies all patients that have structural variants subsuming CYP2D6.</p>
 <ul>
-<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true">GET .../$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true</a></li>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-population-structural-subsuming-variants?ranges=NC_000022.10:42522500-42526812&amp;includePatientList=true">GET .../$find-population-structural-subsuming-variants?ranges=NC_000022.10:42522500-42526812&amp;includePatientList=true</a></li>
 </ul>
 
 </div>

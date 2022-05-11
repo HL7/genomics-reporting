@@ -1,0 +1,44 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+	<p>An oncologist treating a patient with metastatic breast cancer determines the patient has the following somatic oncogenic mutations [NC_000010.10:g.121551307G>A, NC_000011.10:g.8263343T>C,  NC_000001.10:g.198742263G>A], and wants to see if there are other patients that have <b>ALL</b> of these variants.</p>
+	
+<ul>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-population-specific-variants?variants=NC_000010.10:g.121551307G>A&amp;variants=NC_000011.10:g.8263343T>C&amp;variants=NC_000001.10:g.198742263G>A">GET .../$find-population-specific-variants?variants=NC_000010.10:g.121551307G>A&amp;variants=NC_000011.10:g.8263343T>C&amp;variants=NC_000001.10:g.198742263G>A</a></li>
+</ul>	
+	
+<p>In the same scenario, the oncologist now wants to see if there are other patients that have <b>ANY</b> of these variants.</p>
+<ul>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-population-specific-variants?variants=NC_000010.10:g.121551307G>A,NC_000011.10:g.8263343T>C,NC_000001.10:g.198742263G>A">GET .../$find-population-specific-variants?variants=NC_000010.10:g.121551307G>A,NC_000011.10:g.8263343T>C,NC_000001.10:g.198742263G>A</a></li>
+</ul>
+
+</div>

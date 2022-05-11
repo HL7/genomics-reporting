@@ -1,22 +1,6 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<a name="Description"/>
 	<h3>Description</h3>
-	<p>Use this operation to retrieve variants with precise endpoints from a specified genomic region for a specified patient. If the range in question has been studied, the operation returns a <a href="http://hl7.org/fhir/parameters.html">FHIR Parameters resource</a> containing variants overlapping the region. If the patient or the specified region has not been studied, the operation returns a 404 error.
-</p>
-	<a name="INParameters"/>
-	<h3>IN Parameters</h3>
-	<ul>
-		<li>The 'region' parameter is specified as a 0-based interval range of integers. Variants that overlap the range (variants 1-5 in the picture) would be returned, as would a point mutation at position x, but not a point mutation at position y. (Note that an insertion that starts before x, regardless of length, would not overlap x..y, and would therefore not be returned).</li>
-		<li>The 'genomicRefSeq' parameter is a genomic reference sequence specified as a valid NCBI chromosome-level ('NC_') <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.13/">build 37</a> or <a href="https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.26/">build 38</a> identifier, or a valid mitochondrion identifier (NC_012920.1, NC_001807.4).</li>
-	</ul>
-	<img src="find-variants-fig1.png" alt="region of interest"/>
-	<a name="OUTParameters"> </a>
-	<h3>OUT Parameters</h3>
-	<ul>
-		<li>Response shall include 0..1 observation (RegionStudied), 0..* observation (Variant), 0..* observation (SequencePhaseRelationship).</li>
-		<li>The 'regionStudied' parameter is an instance of the observation (RegionStudied) profile, and can optionally be used to reflect back those studied regions that overlap with the query range. For WGS, the entire region of the request may have been studied and can be represented as a single component:ranges-examined. For WES, each examined exon overlapping the query range can be represented in its own component:ranges-examined. For targeted panels, each examined region overlapping the query range can be represented in its own component:ranges-examined.</li>
-		<li>The 'variant' parameter instantiates the observation (Variant) profile, there being one instance for each identified variant. Variants must be represented using a combination of all of these components: genomic-ref-seq; ref-allele; alt-allele; coordinate-system (valued with '0-based interval counting'); exact-start-end. Additional components can optionally be included.</li>
-		<li>Implicit in this service is that variants in the requested range, regardless of how they are formatted/represented/stored in a server, are returned. See <a href="#variant-normalization">'Variant normalization'</a> section below for guidance on variant normalization. Furthermore, where a server is storing variants aligned to multiple builds, it may be necessary for the server to translate or 'lift over' the specified region into corresponding regions in other builds. See <a href="#variant-liftover">'Variant liftover'</a> section below for more details.</li>
-		<li>If the region hasn't been studied, return a 404 response code. </li>
-	</ul>
+	<p>Determine if simple variants are present that overlap range(s). (See section '<a href="operations.html#simple-structural">Simple vs. Structural variant operations</a>' for the distinction between simple and structural variants).	
+	</p>
 </div>

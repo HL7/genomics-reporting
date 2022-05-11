@@ -1,0 +1,53 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+	<p>Treatment implications for CYP2C19 *1/*2? (This query seeks to determine if the subject has any therapeutic implications (such as drug-gene interactions) based on the presence of the CYP2C19 genotype).</p>
+	<pre>$find-subject-tx-implications?subject=HG00403&amp;haplotypes=CYP2C19 *1/*2</pre>
+	
+	<p>Treatment implications related to clopidogrel? (This query seeks to determine if the subject has any genetic findings that have implications for the use of clopidogrel).</p>
+	<pre>$find-subject-tx-implications?subject=HG00403&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
+	
+	<p>Treatment implications for CYP2C19 *1/*2 specifically for clopidogrel? (This query seeks to determine if the subject has any therapeutic implications (such as drug-gene interactions) based on the presence of the CYP2C19 genotype, specifically for the use of clopidogrel).</p>
+	<pre>$find-subject-tx-implications?subject=HG00403&amp;haplotypes=CYP2C19 *1/*2&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
+	
+	<p>Treatment implications for breast cancer based on analysis of somatic variants found in recent specimen? (This query seeks to determine if the subject has any breast cancer-specific therapeutic implications (e.g. medications, clinical trials) based on identified somatic variants).</p>
+	<pre>$find-subject-tx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|372137005&amp;genomicSourceClass=somatic&amp;specimenIdentfiers=1</pre>
+	
+	<p>Treatment implications for clinical trial NCT01234567? (This query seeks to determine if the subject has any genetic findings that have implications for inclusion in clinical trial NCT01234567).</p>
+	<pre>$find-subject-tx-implications?subject=HG00403&amp;treatments=https://clinicaltrials.gov/|NCT01234567</pre>
+	
+<p>Patient HG00403 has metastatic breast cancer. Targeted sequencing of a tumor biopsy specimen shows ERBB2 (HER2) variant NM_004448.4:c.2264_2278del. What are the treatment implications for this patient? (Results indicate responsiveness to lapatinib).</p>
+<ul>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-tx-implications?subject=HG00403&amp;variants=NM_004448.4:c.2264_2278del&amp;conditions=http://snomed.info/sct|372137005">GET .../$find-subject-tx-implications?subject=HG00403&amp;variants=NM_004448.4:c.2264_2278del&amp;conditions=http://snomed.info/sct|372137005</a></li>
+</ul>
+
+</div>

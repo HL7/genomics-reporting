@@ -30,10 +30,13 @@
 	</table>
 <a name="Examples"/>
 	<h3>Examples</h3>
-<p>Patient HG00403 has WES of a tumor biopsy specimen. See if patient HG00403 had any simple somatic variants detected in BRAF (NC_000007.14:140713327-140924929) or ERBB2 (NC_000017.11:39688093-39728660) by test1.
+	<p>CYP2D6 haplotypes?</p><pre>$find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:2625</pre>
+	<p>Haplotypes that include HLA-A or HLA-B?</p><pre>$find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:4931,http://www.genenames.org/geneId|HGNC:4932</pre>
+	
+<p>Patient HG00403 underwent preemptive pharmacogenomic testing. Clinician now wants to prescribe amitriptyline, but first wants to see CYP2D6 and CYP2C19 star alleles.
 </p>
 <ul>
-<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true">GET .../$find-subject-variants?subject=HG00403&amp;ranges=NC_000007.14:140713327-140924929,NC_000017.11:39688093-39728660&amp;testIdentifiers=test1&amp;genomicSourceClass=somatic&amp;includeVariants=true</a></li>
+<li><a href="https://9bfba4c0-2589-4d6c-857a-ee41008c1003.mock.pstmn.io/$find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:2625,http://www.genenames.org/geneId|HGNC:2621">GET .../$find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org/geneId|HGNC:2625,http://www.genenames.org/geneId|HGNC:2621</a></li>
 </ul>
 
 </div>
