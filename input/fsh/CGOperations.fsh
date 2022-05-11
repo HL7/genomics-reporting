@@ -92,7 +92,7 @@ Description: ""
     * max = "*"
     * documentation = "If includeVariants=true then include variants in the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
     * type = #Observation
-    * targetProfile = Canonical(Variant)
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-subject-specific-variants
 InstanceOf: OperationDefinition
@@ -181,7 +181,7 @@ Description: ""
     * max = "*"
     * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
     * type = #Observation
-    * targetProfile = Canonical(Variant)
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-subject-structural-intersecting-variants
 InstanceOf: OperationDefinition
@@ -278,7 +278,7 @@ Description: ""
     * max = "*"
     * documentation = "If includeVariants=true then include variants that intersect the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:coding-change-type; component:genomic-ref-seq; component:coordinate-system (valued with '0-based interval counting'); components outer-start-end and/or inner-start-end."
     * type = #Observation
-    * targetProfile = Canonical(Variant)
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-subject-structural-subsuming-variants
 InstanceOf: OperationDefinition
@@ -375,7 +375,7 @@ Description: ""
     * max = "*"
     * documentation = "If includeVariants=true then include variants that subsume the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:coding-change-type; component:genomic-ref-seq; component:coordinate-system (valued with '0-based interval counting'); components outer-start-end and/or inner-start-end."
     * type = #Observation
-    * targetProfile = Canonical(Variant)
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-subject-haplotypes
 InstanceOf: OperationDefinition
@@ -458,7 +458,7 @@ Description: ""
     * max = "*"
     * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
     * type = #Observation
-    * targetProfile = Canonical(Haplotype)
+    * extension[operationAllowedType].valueUri = Canonical(Haplotype)
   * part[+]
     * name = #genotype
     * use = #out
@@ -466,7 +466,7 @@ Description: ""
     * max = "*"
     * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
     * type = #Observation
-    * targetProfile = Canonical(Genotype)
+    * extension[operationAllowedType].valueUri = Canonical(Genotype)
 
 Instance: find-subject-specific-haplotypes
 InstanceOf: OperationDefinition
@@ -555,7 +555,7 @@ Description: ""
     * max = "*"
     * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
     * type = #Observation
-    * targetProfile = Canonical(Haplotype)
+    * extension[operationAllowedType].valueUri = Canonical(Haplotype)
   * part[+]
     * name = #genotype
     * use = #out
@@ -563,7 +563,7 @@ Description: ""
     * max = "*"
     * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
     * type = #Observation
-    * targetProfile = Canonical(Genotype)
+    * extension[operationAllowedType].valueUri = Canonical(Genotype)
 
 Instance: find-subject-tx-implications
 InstanceOf: OperationDefinition
@@ -662,7 +662,7 @@ Description: ""
     * max = "1"
     * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication]."
     * type = #Observation
-    * targetProfile = Canonical(TherapeuticImplication)
+    * extension[operationAllowedType].valueUri = Canonical(TherapeuticImplication)
   * part[+]
     * name = #variant
     * use = #out
@@ -670,7 +670,7 @@ Description: ""
     * max = "*"
     * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
     * type = #Observation
-    * targetProfile = Canonical(Variant)
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
   * part[+]
     * name = #haplotype
     * use = #out
@@ -678,7 +678,7 @@ Description: ""
     * max = "*"
     * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
     * type = #Observation
-    * targetProfile = Canonical(Haplotype)
+    * extension[operationAllowedType].valueUri = Canonical(Haplotype)
   * part[+]
     * name = #genotype
     * use = #out
@@ -686,7 +686,7 @@ Description: ""
     * max = "*"
     * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
     * type = #Observation
-    * targetProfile = Canonical(Genotype)
+    * extension[operationAllowedType].valueUri = Canonical(Genotype)
 
 Instance: find-subject-dx-implications
 InstanceOf: OperationDefinition
@@ -769,7 +769,7 @@ Description: ""
     * max = "1"
     * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication]."
     * type = #Observation
-    * targetProfile = Canonical(DiagnosticImplication)
+    * extension[operationAllowedType].valueUri = Canonical(DiagnosticImplication)
   * part[+]
     * name = #variant
     * use = #out
@@ -777,7 +777,7 @@ Description: ""
     * max = "*"
     * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
     * type = #Observation
-    * targetProfile = Canonical(Variant)
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-population-specific-variants
 InstanceOf: OperationDefinition
