@@ -508,7 +508,7 @@ Usage: #example
 
 Instance: FindANYPopulationSpecificVariantsOutput
 InstanceOf: Parameters
-Description: "Example Output of 'FindPopulationSpecificVariants' Operation based on 'OR' logic"
+Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'OR' logic"
 Usage: #example
 * parameter[0].name = "variants"
 * parameter[=].part[0].name = "variantItem"
@@ -528,7 +528,7 @@ Usage: #example
 
 Instance: FindALLPopulationSpecificVariantsOutput
 InstanceOf: Parameters
-Description: "Example Output of 'FindPopulationSpecificVariants' Operation based on 'AND' logic"
+Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'AND' logic"
 Usage: #example
 * parameter.name = "variants"
 * parameter.part[0].name = "variantItem"
