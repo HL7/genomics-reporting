@@ -235,5 +235,9 @@
     <p>Many efficient and open source liftover tools exist (e.g. many are listed <a href="https://genviz.org/module-01-intro/0001/06/02/liftoverTools/">here</a>). As with variant liftover, translating a region between builds can also fail. For example, attempting to liftover NC_000001.11:145923295-145923296 (build 38 range) into a build 37 range with the <a href="https://genome.ucsc.edu/cgi-bin/hgLiftOver">UCSD LiftOver tool</a> fails, because the region is partially deleted in build 37. In the (very uncommon) case of a failed lift over, a server can widen the query region as necessary in order to have a successful liftover. For example, the widened build 38 range NC_000001.11:145923285-145923306 will successfully translate into the build 37 range NC_000001.10:145511787-145511807. In the rare case where a server is storing variants aligned to multiple builds and the server is unable to liftover the query region, the server can return a response code of 422 "ERROR: Failed LiftOver", in which case the onus falls to the client to modify the query region.
     </p>
 
-
+  <a name="referenceimplementations"/>
+  <h3>Reference Implementation</h3>
+  <p>
+An open source reference implementation of the operations is provided <a href="https://github.com/FHIR/genomics-operations">here</a>.
+  </p>
 </div>
