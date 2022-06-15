@@ -1,3 +1,51 @@
+Instance: HG00403 
+InstanceOf: Patient
+Description: "Example for Patient. Supports references to subject for multiple genomics reporting profile conforming instances."
+* id = "HG00403"
+// * text = "Patient example used for subject reference by CG FHIR examples"
+* identifier.use = #usual
+* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
+* identifier.system = "http://hospital.example.org"
+* identifier.value = "m234"
+* name.family = "Everyone"
+* name.given[0] = "Alanine"
+* name.given[1] = "B."
+* contact.telecom[0].system = #phone
+* contact.telecom[0].value = "555-555-5555"
+* contact.telecom[0].use = #home
+* contact.telecom[1].system = #email
+* contact.telecom[1].value = "alanine.everyone@example.com"
+* gender = #unknown
+* birthDate = "1951-01-20"
+* address.line = "123 Main St"
+* address.city = "Anytown"
+* address.postalCode = "12345"
+* address.country = "US"
+* communication.language = urn:ietf:bcp:47#en-US "English (Region=United States)"
+* communication.language.text = "English"
+
+Instance: VariantExample
+InstanceOf: Variant
+Description: "Example for Variant NM_004448.4(ERBB2):c.2264_2278del"
+* id = "VariantExample"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = $OBSCAT#laboratory
+* subject = Reference(HG00403)
+* effectiveDateTime = "2019-04-01"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
+* component[0].valueCodeableConcept.coding = $NUCCORE#NC_000017.11
+* component[1].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
+* component[1].valueString = "ATTGAGGGAAAACACAT"
+* component[2].code.coding = http://loinc.org#69551-0 "Alt allele"
+* component[2].valueString = "T"
+* component[3].code.coding = http://loinc.org#81254-5 "Variant exact start and end"
+* component[3].valueRange.low.value = 39723965
+* component[4].code.coding = http://loinc.org#92822-6 "Genomic coord system"
+* component[4].valueCodeableConcept.coding = http://loinc.org#LA30100-4
+
+
 Instance: GenomicSpecimenExample01 
 InstanceOf: Specimen
 Description: "Example for Genomic Specimen"
