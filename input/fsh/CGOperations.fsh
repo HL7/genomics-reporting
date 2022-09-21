@@ -66,6 +66,13 @@ Description: "Determine if simple variants are present that overlap range(s)."
   * documentation = "Include variants in response if set to true. Default=false."
   * type = #boolean
 * parameter[+]
+  * name = #includePhasing
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "If true, and if includeVariants=true, then return sequence-phase-relationships between returned variants. Default=false."
+  * type = #boolean
+* parameter[+]
   * name = #variants
   * use = #out
   * min = 1
