@@ -603,6 +603,14 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * type = #string
   * searchType = #string
 * parameter[+]
+  * name = #ranges
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+  * type = #string
+  * searchType = #special
+* parameter[+]
   * name = #haplotypes
   * use = #in
   * min = 0
@@ -725,6 +733,14 @@ Description: "Retrieves genetic diagnostic implications for variants."
   * documentation = "List of variants from which implications are derived. Must be in HGVS or SPDI format."
   * type = #string
   * searchType = #string
+* parameter[+]
+  * name = #ranges
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+  * type = #string
+  * searchType = #special
 * parameter[+]
   * name = #conditions
   * use = #in
