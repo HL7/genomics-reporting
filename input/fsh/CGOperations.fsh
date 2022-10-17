@@ -100,6 +100,14 @@ Description: "Determine if simple variants are present that overlap range(s)."
     * documentation = "If includeVariants=true then include variants in the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
     * type = #Observation
     * extension[operationAllowedType].valueUri = Canonical(Variant)
+  * part[+]
+    * name = #sequencePhaseRelationship
+    * use = #out
+    * min = 0
+    * max = "*"
+    * documentation = "If includePhasing=true and includeVariants=true then include sequence-phase-relationships between returned variants. Sequence phase relationships must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-sequence-phase-relationship.html] and minimally include valueCodeableConcept and 2..2 derivedFrom:variant references."
+    * type = #Observation
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-subject-specific-variants
 InstanceOf: OperationDefinition
