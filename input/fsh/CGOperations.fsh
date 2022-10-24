@@ -70,7 +70,7 @@ Description: "Determine if simple variants are present that overlap range(s)."
   * use = #in
   * min = 0
   * max = "1"
-  * documentation = "If true, and if includeVariants=true, then return sequence-phase-relationships between returned variants. Default=false."
+  * documentation = "If true, then assume includeVariants=true, and return variants and sequence-phase-relationships between returned variants. Default=false."
   * type = #boolean
 * parameter[+]
   * name = #variants
