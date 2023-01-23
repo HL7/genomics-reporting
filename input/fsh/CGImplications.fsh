@@ -66,8 +66,8 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component contains
     predicted-phenotype 0..* and
     mode-of-inheritance	0..1 and
-    clinical-significance 0..1 and
-    functional-effect 0..*
+    clinical-significance 0..1 //and
+//    functional-effect 0..*
 * component[predicted-phenotype] ^short = "Predicted phenotype"
 * component[predicted-phenotype] ^definition = "An observable characteristic (e.g., condition; disease) of an individual, as predicted by the presence of associated molecular finding(s)associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings. Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
 * component[predicted-phenotype].code = $LNC#81259-4
@@ -96,15 +96,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
 * component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
 
-* component[functional-effect].code = TbdCodesCS#functional-effect
-* component[functional-effect].code ^short = "functional-effect"
-* component[functional-effect] ^short = "Functional Effect"
-* component[functional-effect] ^definition = "A predicted or observed effect of a variant on the ability of its gene(s) or protein product(s) to function."
-* component[functional-effect].value[x] only CodeableConcept
-* component[functional-effect].value[x] 1..1
-* component[functional-effect].value[x] ^short = "gain of function | loss of function | loss of heterozygosity | decreased transcript level | increased transcipt level | dominant negative variant | ... (more)"
-* component[functional-effect].value[x] from FunctionalEffectVS (extensible)
-* component[functional-effect].value[x] ^binding.description = "Sequence Ontology terms under SO:0001536"
+
 
 Profile:        TherapeuticImplication
 Parent:         GenomicImplication
@@ -192,3 +184,87 @@ Description:    "Task describing the follow-up that is recommended"
 * intent 1..1
 * intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)
+
+
+Profile:        MolecularConsequence
+Parent:         GenomicImplication
+Id:             molecular-consequence
+Title:          "Molecular Consequence"
+Description:    "Profile for communicating the calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
+* . ^short = "Molecular Consequence"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* code = TbdCodesCS#molecular-consequence
+* code ^short = "molecular-consequence"
+
+//* valueCodeableConcept from http://loinc.org/vs/LL1971-2 (required)
+//* valueCodeableConcept ^short = "Indeterminate | No call | Present | Absent."
+//* valueCodeableConcept ^definition = "The presence or absence of the variant described in the components. If not searching for specific variations and merely reporting what's found, the profile's value should be set to 'Present'."
+
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slice based on the component.code pattern"
+* component contains
+    coding-hgvs 0..1 and
+    transcript-ref-seq 0..1 and
+    protein-hgvs 0..1 and
+    amino-acid-change-type 0..1 and
+    molecular-consequence 0..1 and
+    functional-effect 0..1
+
+* component[coding-hgvs].code = $LNC#48004-6
+* component[coding-hgvs].code ^short = "48004-6"
+* component[coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
+* component[coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string."
+* component[coding-hgvs].value[x] only CodeableConcept
+* component[coding-hgvs].value[x] 1..1
+* component[coding-hgvs].value[x] from HGVSVS (required) 
+* component[coding-hgvs].value[x] ^short = "A valid HGVS-formatted 'c.' string, e.g. NM_005228.5:c.2369C>T."
+
+* component[transcript-ref-seq].code = $LNC#51958-7
+* component[transcript-ref-seq].code ^short = "51958-7"
+* component[transcript-ref-seq] ^short = "Reference Transcript"
+* component[transcript-ref-seq] ^definition = "NCBI's RefSeq ('NM_...'), Ensembl ('ENST...'), and LRG ('LRG...' plus 't1' to indicate transcript)"
+* component[transcript-ref-seq].value[x] only CodeableConcept
+* component[transcript-ref-seq].value[x] ^binding.strength = #example
+* component[transcript-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
+* component[transcript-ref-seq].value[x] 1..1
+* component[transcript-ref-seq].value[x] ^short = "Versioned transcript reference sequence identifier"
+
+* component[protein-hgvs].code = $LNC#48005-3
+* component[protein-hgvs].code ^short = "48005-3"
+* component[protein-hgvs] ^short = "Protein (Amino Acid) Change - pHGVS"
+* component[protein-hgvs] ^definition = "Description of the protein (amino acid) sequence change using a valid HGVS-formatted string. The description of the variant is surrounded in parentheses if it is calculated rather than directly observed."
+* component[protein-hgvs].value[x] only CodeableConcept
+* component[protein-hgvs].value[x] 1..1
+* component[protein-hgvs].value[x] from HGVSVS (required)
+* component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
+
+* component[amino-acid-change-type].code = $LNC#48006-1
+* component[amino-acid-change-type].code ^short = "48006-1"
+* component[amino-acid-change-type] ^short = "Amino Acid Change Type"
+* component[amino-acid-change-type] ^definition = "Codified type for associated Amino Acid Marker, for convenience."
+* component[amino-acid-change-type].value[x] only CodeableConcept
+* component[amino-acid-change-type].value[x] 1..1
+* component[amino-acid-change-type].value[x] from http://loinc.org/vs/LL380-7 (extensible)
+* component[amino-acid-change-type].value[x] ^short = "Wild type | Deletion | Duplication | Frameshift | Initiating Methionine | Insertion | Insertion and Deletion | Missense | Nonsense | Silent"
+
+* component[molecular-consequence].code = TbdCodesCS#molecular-consequence
+* component[molecular-consequence].code ^short = "molecular-consequence"
+* component[molecular-consequence] ^short = "Molecular Consequence"
+* component[molecular-consequence] ^definition = "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
+* component[molecular-consequence].value[x] only CodeableConcept
+* component[molecular-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
+* component[molecular-consequence].value[x] 1..1
+* component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
+* component[molecular-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
+
+* component[functional-effect].code = TbdCodesCS#functional-effect
+* component[functional-effect].code ^short = "functional-effect"
+* component[functional-effect] ^short = "Functional Effect"
+* component[functional-effect] ^definition = "A predicted or observed effect of a variant on the ability of its gene(s) or protein product(s) to function."
+* component[functional-effect].value[x] only CodeableConcept
+* component[functional-effect].value[x] 1..1
+* component[functional-effect].value[x] ^short = "gain of function | loss of function | loss of heterozygosity | decreased transcript level | increased transcipt level | dominant negative variant | ... (more)"
+* component[functional-effect].value[x] from FunctionalEffectVS (extensible)
+* component[functional-effect].value[x] ^binding.description = "Sequence Ontology terms under SO:0001536"

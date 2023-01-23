@@ -72,12 +72,12 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    coding-hgvs 0..1 and
+//    coding-hgvs 0..1 and
     genomic-hgvs 0..1 and
     cytogenomic-nomenclature 0..1 and
     
     genomic-ref-seq 0..1 and
-    transcript-ref-seq 0..1 and
+//    transcript-ref-seq 0..1 and
     exact-start-end 0..1 and
     inner-start-end 0..1 and
     outer-start-end 0..1 and
@@ -94,22 +94,14 @@ Description:    "Details about a set of changes in the tested sample compared to
     variation-code 0..* and
     chromosome-identifier 0..* and
 
-    protein-hgvs 0..1 and
+//    protein-hgvs 0..1 and
 
-    amino-acid-change-type 0..1 and
-    molecular-consequence 0..1 and
+//    amino-acid-change-type 0..1 and
+// molecular-consequence 0..1 and
     copy-number 0..1 and
 
     variant-confidence-status 0..1
 
-* component[coding-hgvs].code = $LNC#48004-6
-* component[coding-hgvs].code ^short = "48004-6"
-* component[coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
-* component[coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string."
-* component[coding-hgvs].value[x] only CodeableConcept
-* component[coding-hgvs].value[x] 1..1
-* component[coding-hgvs].value[x] from HGVSVS (required) 
-* component[coding-hgvs].value[x] ^short = "A valid HGVS-formatted 'c.' string, e.g. NM_005228.5:c.2369C>T."
 
 * component[coding-change-type].code = $LNC#48019-4
 * component[coding-change-type].code ^short = "48019-4"
@@ -121,15 +113,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coding-change-type].value[x] from DNAChangeTypeVS (extensible)
 * component[coding-change-type].value[x] ^binding.description = "Concepts in sequence ontology under SO:0002072"
 
-* component[molecular-consequence].code = TbdCodesCS#molecular-consequence
-* component[molecular-consequence].code ^short = "molecular-consequence"
-* component[molecular-consequence] ^short = "Molecular Consequence"
-* component[molecular-consequence] ^definition = "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
-* component[molecular-consequence].value[x] only CodeableConcept
-* component[molecular-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
-* component[molecular-consequence].value[x] 1..1
-* component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
-* component[molecular-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
+
 
 * component[variation-code].code = $LNC#81252-9
 * component[variation-code].code ^short = "81252-9"
@@ -159,33 +143,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-source-class].value[x] ^short = "Germline | Somatic | Fetal | Likely germline | Likely somatic | Likely fetal | Unknown genomic origin | De novo"
 * component[genomic-source-class].value[x] from http://loinc.org/vs/LL378-1 (extensible)
 
-* component[protein-hgvs].code = $LNC#48005-3
-* component[protein-hgvs].code ^short = "48005-3"
-* component[protein-hgvs] ^short = "Protein (Amino Acid) Change - pHGVS"
-* component[protein-hgvs] ^definition = "Description of the protein (amino acid) sequence change using a valid HGVS-formatted string. The description of the variant is surrounded in parentheses if it is calculated rather than directly observed."
-* component[protein-hgvs].value[x] only CodeableConcept
-* component[protein-hgvs].value[x] 1..1
-* component[protein-hgvs].value[x] from HGVSVS (required)
-* component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
 
-* component[amino-acid-change-type].code = $LNC#48006-1
-* component[amino-acid-change-type].code ^short = "48006-1"
-* component[amino-acid-change-type] ^short = "Amino Acid Change Type"
-* component[amino-acid-change-type] ^definition = "Codified type for associated Amino Acid Marker, for convenience."
-* component[amino-acid-change-type].value[x] only CodeableConcept
-* component[amino-acid-change-type].value[x] 1..1
-* component[amino-acid-change-type].value[x] from http://loinc.org/vs/LL380-7 (extensible)
-* component[amino-acid-change-type].value[x] ^short = "Wild type | Deletion | Duplication | Frameshift | Initiating Methionine | Insertion | Insertion and Deletion | Missense | Nonsense | Silent"
-
-* component[transcript-ref-seq].code = $LNC#51958-7
-* component[transcript-ref-seq].code ^short = "51958-7"
-* component[transcript-ref-seq] ^short = "Reference Transcript"
-* component[transcript-ref-seq] ^definition = "NCBI's RefSeq ('NM_...'), Ensembl ('ENST...'), and LRG ('LRG...' plus 't1' to indicate transcript)"
-* component[transcript-ref-seq].value[x] only CodeableConcept
-* component[transcript-ref-seq].value[x] ^binding.strength = #example
-* component[transcript-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
-* component[transcript-ref-seq].value[x] 1..1
-* component[transcript-ref-seq].value[x] ^short = "Versioned transcript reference sequence identifier"
 
 * component[genomic-ref-seq].code = $LNC#48013-7
 * component[genomic-ref-seq].code ^short = "48013-7"
