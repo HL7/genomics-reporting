@@ -72,7 +72,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-//    coding-hgvs 0..1 and
+    representative-coding-hgvs 0..1 and
     genomic-hgvs 0..1 and
     cytogenomic-nomenclature 0..1 and
     
@@ -94,7 +94,7 @@ Description:    "Details about a set of changes in the tested sample compared to
     variation-code 0..* and
     chromosome-identifier 0..* and
 
-//    protein-hgvs 0..1 and
+    representative-protein-hgvs 0..1 and
 
 //    amino-acid-change-type 0..1 and
 // molecular-consequence 0..1 and
@@ -102,6 +102,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 
     variant-confidence-status 0..1
 
+* component[representative-coding-hgvs].code = $LNC#48004-6
+* component[representative-coding-hgvs].code ^short = "48004-6"
+* component[representative-coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
+* component[representative-coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string."
+* component[representative-coding-hgvs].value[x] only CodeableConcept
+* component[representative-coding-hgvs].value[x] 1..1
+* component[representative-coding-hgvs].value[x] from HGVSVS (required) 
+* component[representative-coding-hgvs].value[x] ^short = "A valid HGVS-formatted 'c.' string, e.g. NM_005228.5:c.2369C>T."
 
 * component[coding-change-type].code = $LNC#48019-4
 * component[coding-change-type].code ^short = "48019-4"
@@ -256,6 +264,15 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[chromosome-identifier].value[x] 1..1
 * component[chromosome-identifier].value[x] ^short = "Chromosome 1 | Chromosome 2 | ... | Chromosome 22 | Chromosome X | Chromosome Y"
 * component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
+
+* component[representative-protein-hgvs].code = $LNC#48005-3
+* component[representative-protein-hgvs].code ^short = "48005-3"
+* component[representative-protein-hgvs] ^short = "Protein (Amino Acid) Change - pHGVS"
+* component[representative-protein-hgvs] ^definition = "Description of the protein (amino acid) sequence change using a valid HGVS-formatted string. The description of the variant is surrounded in parentheses if it is calculated rather than directly observed."
+* component[representative-protein-hgvs].value[x] only CodeableConcept
+* component[representative-protein-hgvs].value[x] 1..1
+* component[representative-protein-hgvs].value[x] from HGVSVS (required)
+* component[representative-protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
 
 * component[variant-confidence-status].code = TbdCodesCS#variant-confidence-status
 * component[variant-confidence-status].code ^short = "variant-confidence-status"

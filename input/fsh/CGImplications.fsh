@@ -209,7 +209,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
     transcript-ref-seq 0..1 and
     protein-hgvs 0..1 and
     amino-acid-change-type 0..1 and
-    molecular-consequence 0..1 and
+    molecular-consequence 0..* and
     functional-effect 0..1
 
 * component[coding-hgvs].code = $LNC#48004-6
