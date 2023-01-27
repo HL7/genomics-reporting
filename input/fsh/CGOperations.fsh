@@ -66,6 +66,13 @@ Description: "Determine if simple variants are present that overlap range(s)."
   * documentation = "Include variants in response if set to true. Default=false."
   * type = #boolean
 * parameter[+]
+  * name = #includePhasing
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "If true, then assume includeVariants=true, and return variants and sequence-phase-relationships between returned variants. Default=false."
+  * type = #boolean
+* parameter[+]
   * name = #variants
   * use = #out
   * min = 1
@@ -91,6 +98,14 @@ Description: "Determine if simple variants are present that overlap range(s)."
     * min = 0
     * max = "*"
     * documentation = "If includeVariants=true then include variants in the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
+    * type = #Observation
+    * extension[operationAllowedType].valueUri = Canonical(Variant)
+  * part[+]
+    * name = #sequencePhaseRelationship
+    * use = #out
+    * min = 0
+    * max = "*"
+    * documentation = "If includePhasing=true and includeVariants=true then include sequence-phase-relationships between returned variants. Sequence phase relationships must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-sequence-phase-relationship.html] and minimally include valueCodeableConcept and 2..2 derivedFrom:variant references."
     * type = #Observation
     * extension[operationAllowedType].valueUri = Canonical(Variant)
 
@@ -596,6 +611,14 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * type = #string
   * searchType = #string
 * parameter[+]
+  * name = #ranges
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+  * type = #string
+  * searchType = #special
+* parameter[+]
   * name = #haplotypes
   * use = #in
   * min = 0
@@ -718,6 +741,14 @@ Description: "Retrieves genetic diagnostic implications for variants."
   * documentation = "List of variants from which implications are derived. Must be in HGVS or SPDI format."
   * type = #string
   * searchType = #string
+* parameter[+]
+  * name = #ranges
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+  * type = #string
+  * searchType = #special
 * parameter[+]
   * name = #conditions
   * use = #in

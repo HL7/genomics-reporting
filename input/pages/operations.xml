@@ -184,7 +184,7 @@
 
         <a name="simple-structural"/>
   <h4>Simple vs. Structural variant operations</h4>
-  <p>While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on endpoint precision. Simple variant operations (find-subject-variants, find-subject-specific-variants) assume precise endpoints and return variants in a '<a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#variants-defined-by-multiple-components-vcf-like">VCF-like</a>' format, with 'exact-start-end' coordinates. Structural variant operations (find-subject-structural-intersecting-variants, find-subject-structural-subsuming-variants) assume imprecise endpoints and return variants per <a href="http://build.fhir.org/ig/HL7/genomics-reporting/sequencing.html#representing-structural-variants">structural variant reporting guidelines</a> with 'outer-start-end' and 'inner-start-end' coordinates. </p>
+  <p>While sources vary in how they differentiate simple vs. structural variants, here we differentiate based on endpoint precision. Simple variant operations (find-subject-variants, find-subject-specific-variants) assume precise endpoints and return variants in a '<a href="sequencing.html#variants-defined-by-multiple-components-vcf-like">VCF-like</a>' format, with 'exact-start-end' coordinates. Structural variant operations (find-subject-structural-intersecting-variants, find-subject-structural-subsuming-variants) assume imprecise endpoints and return variants per <a href="sequencing.html#representing-structural-variants">structural variant reporting guidelines</a> with 'outer-start-end' and 'inner-start-end' coordinates. </p>
 
     <a name="genes-vs-regions"/>
   <h4>Use of genomic regions</h4>
