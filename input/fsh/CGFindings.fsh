@@ -75,9 +75,8 @@ Description:    "Details about a set of changes in the tested sample compared to
     representative-coding-hgvs 0..1 and
     genomic-hgvs 0..1 and
     cytogenomic-nomenclature 0..1 and
-    
     genomic-ref-seq 0..1 and
-//    transcript-ref-seq 0..1 and
+    representative-transcript-ref-seq 0..1 and
     exact-start-end 0..1 and
     inner-start-end 0..1 and
     outer-start-end 0..1 and
@@ -90,17 +89,14 @@ Description:    "Details about a set of changes in the tested sample compared to
     allelic-read-depth 0..1 and
     allelic-state 0..1 and
     variant-inheritance 0..1 and
-    
     variation-code 0..* and
     chromosome-identifier 0..* and
-
     representative-protein-hgvs 0..1 and
-
-//    amino-acid-change-type 0..1 and
-// molecular-consequence 0..1 and
+//  amino-acid-change-type 0..1 and
+//  molecular-consequence 0..1 and
     copy-number 0..1 and
-
-    variant-confidence-status 0..1
+    variant-confidence-status 0..1 and
+	population-allelic-frequency 0..1
 
 * component[representative-coding-hgvs].code = $LNC#48004-6
 * component[representative-coding-hgvs].code ^short = "48004-6"
@@ -120,8 +116,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[coding-change-type].value[x] 1..1
 * component[coding-change-type].value[x] from DNAChangeTypeVS (extensible)
 * component[coding-change-type].value[x] ^binding.description = "Concepts in sequence ontology under SO:0002072"
-
-
 
 * component[variation-code].code = $LNC#81252-9
 * component[variation-code].code ^short = "81252-9"
@@ -151,8 +145,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-source-class].value[x] ^short = "Germline | Somatic | Fetal | Likely germline | Likely somatic | Likely fetal | Unknown genomic origin | De novo"
 * component[genomic-source-class].value[x] from http://loinc.org/vs/LL378-1 (extensible)
 
-
-
 * component[genomic-ref-seq].code = $LNC#48013-7
 * component[genomic-ref-seq].code ^short = "48013-7"
 * component[genomic-ref-seq] ^short = "Genomic Reference Sequence"
@@ -162,6 +154,16 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
 * component[genomic-ref-seq].value[x] 1..1
+
+* component[representative-transcript-ref-seq].code = $LNC#51958-7
+* component[representative-transcript-ref-seq].code ^short = "51958-7"
+* component[representative-transcript-ref-seq] ^short = "Reference Transcript"
+* component[representative-transcript-ref-seq] ^definition = "NCBI's RefSeq ('NM_...'), Ensembl ('ENST...'), and LRG ('LRG...' plus 't1' to indicate transcript)"
+* component[representative-transcript-ref-seq].value[x] only CodeableConcept
+* component[representative-transcript-ref-seq].value[x] ^binding.strength = #example
+* component[representative-transcript-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
+* component[representative-transcript-ref-seq].value[x] 1..1
+* component[representative-transcript-ref-seq].value[x] ^short = "Versioned transcript reference sequence identifier"
 
 * component[sample-allelic-frequency].code = $LNC#81258-6
 * component[sample-allelic-frequency].code ^short = "81258-6"
@@ -282,6 +284,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variant-confidence-status].value[x] 1..1
 * component[variant-confidence-status].value[x] ^short = "High | Intermediate | Low"
 * component[variant-confidence-status].value[x] from VariantConfidenceStatusVS (required)
+
+* component[population-allelic-frequency].code = $LNC#92821-8
+* component[population-allelic-frequency].code ^short = "92821-8"
+* component[population-allelic-frequency] ^short = "Population Allelic Frequency"
+* component[population-allelic-frequency] ^definition = "The relative frequency (or fraction) of the given allele reported at the locus of interest in a given population."
+* component[population-allelic-frequency].value[x] only Quantity
+* component[population-allelic-frequency].value[x].system = $UCUM
+* component[population-allelic-frequency].value[x] ^short = "Relative frequency in the population"
 
 Profile:        RegionStudied
 Parent:         GenomicsBase

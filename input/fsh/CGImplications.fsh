@@ -190,7 +190,7 @@ Profile:        MolecularConsequence
 Parent:         GenomicImplication
 Id:             molecular-consequence
 Title:          "Molecular Consequence"
-Description:    "Profile for communicating the calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
+Description:    "Profile for communicating the calculated or observed effect of a DNA variant on its downstream transcript and, if applicable, ensuing protein sequence."
 * . ^short = "Molecular Consequence"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#molecular-consequence
@@ -209,7 +209,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
     transcript-ref-seq 0..1 and
     protein-hgvs 0..1 and
     amino-acid-change-type 0..1 and
-    molecular-consequence 0..* and
+    transcript-consequence 0..* and
     functional-effect 0..1
 
 * component[coding-hgvs].code = $LNC#48004-6
@@ -249,15 +249,15 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[amino-acid-change-type].value[x] from http://loinc.org/vs/LL380-7 (extensible)
 * component[amino-acid-change-type].value[x] ^short = "Wild type | Deletion | Duplication | Frameshift | Initiating Methionine | Insertion | Insertion and Deletion | Missense | Nonsense | Silent"
 
-* component[molecular-consequence].code = TbdCodesCS#molecular-consequence
-* component[molecular-consequence].code ^short = "molecular-consequence"
-* component[molecular-consequence] ^short = "Molecular Consequence"
-* component[molecular-consequence] ^definition = "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
-* component[molecular-consequence].value[x] only CodeableConcept
-* component[molecular-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
-* component[molecular-consequence].value[x] 1..1
-* component[molecular-consequence].value[x] from MolecularConsequenceVS (extensible)
-* component[molecular-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
+* component[transcript-consequence].code = TbdCodesCS#transcript-consequence
+* component[transcript-consequence].code ^short = "transcript-consequence"
+* component[transcript-consequence] ^short = "Transcript Consequence"
+* component[transcript-consequence] ^definition = "The calculated or observed effect of a DNA variant on its downstream transcript."
+* component[transcript-consequence].value[x] only CodeableConcept
+* component[transcript-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
+* component[transcript-consequence].value[x] 1..1
+* component[transcript-consequence].value[x] from MolecularConsequenceVS (extensible)
+* component[transcript-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
 
 * component[functional-effect].code = TbdCodesCS#functional-effect
 * component[functional-effect].code ^short = "functional-effect"
