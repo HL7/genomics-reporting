@@ -23,7 +23,9 @@ Usage: #example
 * component[=].valueString = "G"
 * component[+].code = http://loinc.org#92822-6 "Genomic coord system"
 * component[=].valueCodeableConcept = http://loinc.org#LA30100-4 "0-based interval counting"
-* component[+].code = http://loinc.org#81254-5 "Variant exact start-end"
+* component[+].code = http://loinc.org#81254-5 //"Variant exact start-end"
+* component[+].code.text = "Variant exact start-end"
 * component[=].valueRange.low.value = 86852620
-* component[+].code = http://loinc.org#92821-8 "Population allele frequency"
+* component[+].code = http://loinc.org#92821-8 //"Population allele frequency"
+* component[+].code.text = "Population allele frequency"
 * component[=].valueQuantity = 0.327084 '1'
