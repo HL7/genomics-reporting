@@ -7,7 +7,7 @@ Usage: #example
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * subject = Reference(Patient/HG00403)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)
-* interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#MOD "Modifier"
+* interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction#MOD "Modifier"
 * component[0].code = http://loinc.org#48004-6 //"coding HGVS"
 * component[0].code.text = "coding HGVS
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#c.-171T>C "c.-171T>C"
