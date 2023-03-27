@@ -62,7 +62,7 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #81254-5
-* parameter[=].part[=].resource.component[=].code.coding.display = "Variant exact start and end"
+* parameter[=].part[=].resource.component[=].code.text = "Variant exact start and end"
 * parameter[=].part[=].resource.component[=].valueRange.low.value = 140753335
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-specific-variants.html
@@ -143,7 +143,7 @@ Usage: #example
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #81254-5
-* parameter[=].part[=].resource.component[=].code.coding.display = "Variant exact start and end"
+* parameter[=].part[=].resource.component[=].code.text = "Variant exact start and end"
 * parameter[=].part[=].resource.component[=].valueRange.low.value = 112090641
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-structural-intersecting-variants.html
@@ -200,7 +200,7 @@ Usage: #example
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81302-2
-* parameter.part[=].resource.component[=].code.coding.display = "Variant inner start and end"
+* parameter.part[=].resource.component[=].code.text = "Variant inner start and end"
 * parameter.part[=].resource.component[=].valueRange.high.value = 55250000
 * parameter.part[=].resource.component[=].valueRange.low.value = 55240000
 
@@ -264,7 +264,7 @@ Usage: #example
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81302-2
-* parameter.part[=].resource.component[=].code.coding.display = "Variant inner start and end"
+* parameter.part[=].resource.component[=].code.text = "Variant inner start and end"
 * parameter.part[=].resource.component[=].valueRange.high.value = 116800000
 * parameter.part[=].resource.component[=].valueRange.low.value = 116600000
 
@@ -427,7 +427,7 @@ Usage: #example
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81254-5
-* parameter.part[=].resource.component[=].code.coding.display = "Variant exact start and end"
+* parameter.part[=].resource.component[=].code.text = "Variant exact start and end"
 * parameter.part[=].resource.component[=].valueRange.low.value = 39723965
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-dx-implications.html
@@ -450,13 +450,14 @@ Usage: #example
 * parameter.part[=].resource.derivedFrom.reference = "Observation/VariantExample2"
 * parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #53037-8
-* parameter.part[=].resource.component[=].code.coding.display = "Genetic variation clinical significance"
+//* parameter.part[=].resource.component[=].code.coding.display = "Genetic variation clinical significance"
+* parameter.part[=].resource.component[=].code.text = "Genetic variation clinical significance"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA6668-3
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Pathogenic"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81259-4
-* parameter.part[=].resource.component[=].code.coding.display = "Predicted phenotype"
+* parameter.part[=].resource.component[=].code.text = "Predicted phenotype"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://snomed.info/sct"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #405501007
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Malignant hyperthermia"
@@ -501,7 +502,7 @@ Usage: #example
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81254-5
-* parameter.part[=].resource.component[=].code.coding.display = "Variant exact start and end"
+* parameter.part[=].resource.component[=].code.text = "Variant exact start and end"
 * parameter.part[=].resource.component[=].valueRange.low.value = 38499669
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-population-specific-variants.html
