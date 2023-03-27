@@ -8,7 +8,8 @@ Usage: #example
 * subject = Reference(Patient/HG00403)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
-* component[0].code = http://loinc.org#48004-6 "coding HGVS"
+* component[0].code = http://loinc.org#48004-6 //"coding HGVS"
+* component[0].code.text = "coding HGVS
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#c.90T>C "c.90T>C"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
