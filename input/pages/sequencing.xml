@@ -54,7 +54,7 @@ It is NOT intended to support other Observations that are clinically relevant on
 </p>
 <ol>
   <li>
-  Statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, and <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>. Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
+  Statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>, <a href="StructureDefinition-molecular-consequence.html"> Molecular Consequence</a>). Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
   </li>
   <li>
   Presence statements of whole haplotypes, genotypes, or phasing data (see <a href="StructureDefinition-haplotype.html">Haplotype</a>, <a href="StructureDefinition-genotype.html">Genotype</a>, and <a href="StructureDefinition-sequence-phase-relationship.html">Sequence Phase Relationship</a>);
@@ -89,7 +89,7 @@ This pattern describes the observed nucleotide sequence or configuration using H
   </thead>
   <tbody>
     <tr>
-      <td>genomic-hgvs (LOINC 81290-9) OR coding-hgvs (LOINC 48004-6)</td>
+      <td>genomic-hgvs (LOINC 81290-9) OR representative-coding-hgvs (LOINC 48004-6)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://varnomen.hgvs.org", 
@@ -131,10 +131,10 @@ This representation leverages multiple component slices to communicate an allele
 "code" : "NC_000010.10"
 }          </pre></div>
      </td>
-      <td>must send at least this or transcript refseq</td>
+      <td>must send at least this or representative transcript refseq</td>
     </tr>
     <tr>
-      <td>transcript-ref-seq (LOINC 51958-7)</td>
+      <td>representative-transcript-ref-seq (LOINC 51958-7)</td>
       <td><div class="example"><pre class="json">
 {
 "system" : "http://www.ncbi.nlm.nih.gov/refseq",
@@ -323,18 +323,6 @@ This implementation guide defines several components on <a href="StructureDefini
       <td>derivable from reference sequence</td>
     </tr>
     <tr>
-      <td>molecular-consequence</td>
-      <td><div class="example"><pre class="json">
-{ 
-"system" : "http://sequenceontology.org",
-"code" : "SO:0001583",
-"display" : "missense_variant" 
-}
-          </pre></div>
-      </td>
-      <td>available from NCBI, tied to representative transcript</td>
-    </tr>
-    <tr>
       <td>coding-change-type (LOINC 48019-4)</td>
       <td><div class="example"><pre class="json">
 {
@@ -346,7 +334,7 @@ This implementation guide defines several components on <a href="StructureDefini
       <td>may be required for certain types of structural variants. See below.</td>
     </tr>
     <tr>
-      <td>protein-hgvs (LOINC 48005-3)</td>
+      <td>representative-protein-hgvs (LOINC 48005-3)</td>
       <td><div class="example"><pre class="json">
 {
 "system": "http://varnomen.hgvs.org",
