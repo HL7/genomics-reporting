@@ -3,6 +3,7 @@ Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
 * ^caseSensitive = true
+* ^experimental = false
 * #Cis "Cis" "Phase is in cis (same chromosome)"
 * #Trans "Trans" "Phase is in trans (different chromosomes)"
 * #Indeterminate "Indeterminate" "Phase is unable to be determined"
@@ -14,6 +15,7 @@ Id: tbd-codes-cs
 Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD' codes. The CG WG plans to request formal LOINC codes to replace these codes as these concepts are validated."
 * ^caseSensitive = true
+* ^experimental = false
 * #predicted-therapeutic-implication "Predicted Therapeutic Implication" "A predicted ramification based on the presence of associated molecular finding(s). Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
 * #prognostic-implication "Prognostic Implication" "Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."
 * #associated-therapy "Associated Therapy" "The non-medication therapy (procedure) associated with this implication."
@@ -34,6 +36,7 @@ Id: clinvar-evidence-level-custom-cs
 Title: "ClinVar Evidence Level Example Codes"
 Description: "ClinVar contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on  ClinVar https://www.ncbi.nlm.nih.gov/clinvar/docs/review_status/ . These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
+* ^experimental = false
 * #4-star	"4 star"	"Supported by practice guideline"
 * #3-star	"3 star"	"Supported by expert panel review"
 * #2-star	"2 star"	"Supported by submission by multiple-submitters with documentation of criteria for assertion"
@@ -45,6 +48,7 @@ Id: pharmgkb-evidence-level-custom-cs
 Title: "PharmGKB Evidence Level Example Codes"
 Description: "PharmGKB contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on PharmGKB https://www.pharmgkb.org/page/clinAnnLevels. These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
+* ^experimental = false
 * #1A	"PGKB 1A"	"High level of evidence. Supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
 * #1B	"PGKB 1B"	"High level of evidence. But, NOT supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
 * #2A	"PGKB 2A"	"Moderate level of evidence. Supported by being a KNOWN pharmacogene on https://www.pharmgkb.org/vips. Also, found in multiple studies but may have a minority of studies that did not support the majority opinion. Supported by at least two indpendent publications."
@@ -57,6 +61,7 @@ Id: variant-confidence-status-cs
 Title: "Variant Confidence Status Codes"
 Description: "A code that represents the confidence of a true positive variant call."
 * ^caseSensitive = true
+* ^experimental = false
 * #high	        "High"	        "High confidence true positive variant call. Suitable for clinical reporting."
 * #intermediate	"Intermediate"	"Candidate true positive variant call. Unable to confirm without additional testing."
 * #low	        "Low"	        "High confidence false positive variant call."
@@ -66,6 +71,7 @@ Id: coded-annotation-types-cs
 Title: "Coded Annotation Type Codes"
 Description: "Code System for specific types of coded annotations"
 * ^caseSensitive = true
+* ^experimental = false
 * #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
 * #test-methodology "Test Methodology" "Additional details regarding the test methdology"
 * #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"
