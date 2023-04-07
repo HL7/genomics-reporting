@@ -96,8 +96,6 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
 * component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
 
-
-
 Profile:        TherapeuticImplication
 Parent:         GenomicImplication
 Id:             therapeutic-implication
@@ -239,9 +237,9 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[protein-hgvs].value[x] from HGVSVS (required)
 * component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
 
-* component[feature-consequence].code = TbdCodesCS#transcript-consequence
-* component[feature-consequence].code ^short = "transcript-consequence"
-* component[feature-consequence] ^short = "Transcript Consequence"
+* component[feature-consequence].code = TbdCodesCS#feature-consequence
+* component[feature-consequence].code ^short = "feature-consequence"
+* component[feature-consequence] ^short = "Feature Consequence"
 * component[feature-consequence] ^definition = "A feature consequence categorizes the structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion). NOTE: The bound Molecular Consequence value set is extensible. Variant annotation tools such as snpEff provide a rich assortment of feature consequences (see http://pcingola.github.io/SnpEff/se_inputoutput/#effect-prediction-details), some of which are outside the value set. "
 * component[feature-consequence].value[x] only CodeableConcept
 * component[feature-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
