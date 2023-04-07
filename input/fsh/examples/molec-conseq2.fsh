@@ -15,5 +15,5 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#transcript-consequence
+* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
 * component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001819 "synonymous_variant"
