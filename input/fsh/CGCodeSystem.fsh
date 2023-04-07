@@ -21,7 +21,7 @@ Description: "These codes are currently 'TBD' codes. The CG WG plans to request 
 * #associated-therapy "Associated Therapy" "The non-medication therapy (procedure) associated with this implication."
 * #region-coverage "Region Coverage" "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."
 * #molecular-consequence "Molecular Consequence" "The calculated or observed effect of a DNA variant on its downstream transcript and, if applicable, ensuing protein sequence."
-* #transcript-consequence "Transcript Consequence" "The calculated or observed effect of a DNA variant on its downstream transcript."
+* #feature-consequence "Feature Consequence" "The structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion)."
 * #variant-inheritance "Variant Inheritance" "A quality inhering in a variant by virtue of its origin. The terms are in the sequence ontology under SO:0001762."
 * #diagnostic-implication "Diagnostic Implication" "An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition."
 * #therapeutic-implication "Therapeutic Implication" "An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy."

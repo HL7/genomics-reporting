@@ -95,8 +95,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 //  amino-acid-change-type 0..1 and
 //  molecular-consequence 0..1 and
     copy-number 0..1 and
-    variant-confidence-status 0..1 and
-	population-allelic-frequency 0..1
+    variant-confidence-status 0..1
 
 * component[representative-coding-hgvs].code = $LNC#48004-6
 * component[representative-coding-hgvs].code ^short = "48004-6"
@@ -285,13 +284,6 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variant-confidence-status].value[x] ^short = "High | Intermediate | Low"
 * component[variant-confidence-status].value[x] from VariantConfidenceStatusVS (required)
 
-* component[population-allelic-frequency].code = $LNC#92821-8
-* component[population-allelic-frequency].code ^short = "92821-8"
-* component[population-allelic-frequency] ^short = "Population Allelic Frequency"
-* component[population-allelic-frequency] ^definition = "The relative frequency (or fraction) of the given allele reported at the locus of interest in a given population."
-* component[population-allelic-frequency].value[x] only Quantity
-* component[population-allelic-frequency].value[x].system = $UCUM
-* component[population-allelic-frequency].value[x] ^short = "Relative frequency in the population"
 
 Profile:        RegionStudied
 Parent:         GenomicsBase

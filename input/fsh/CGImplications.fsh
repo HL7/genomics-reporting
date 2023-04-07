@@ -190,7 +190,7 @@ Profile:        MolecularConsequence
 Parent:         GenomicImplication
 Id:             molecular-consequence
 Title:          "Molecular Consequence"
-Description:    "Profile for communicating the calculated or observed effect of a DNA variant on its downstream transcript and, if applicable, ensuing protein sequence."
+Description:    "Profile for communicating the calculated or observed effect of a DNA variant, generally on its downstream transcript and, if applicable, ensuing protein sequence. Molecular consequences may also apply to DNA, such as intergenic regions where there are no transcripts (e.g. 'regulary_region_variant'). Component 'feature-consequence' categorizes the structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion), whereas component 'functional-effect' categorizes how the variant affects overall function (e.g. is predicted to result in loss of gene function)."
 * . ^short = "Molecular Consequence"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#molecular-consequence
@@ -208,8 +208,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
     coding-hgvs 0..1 and
     transcript-ref-seq 0..1 and
     protein-hgvs 0..1 and
-    amino-acid-change-type 0..1 and
-    transcript-consequence 0..* and
+    feature-consequence 0..* and
     functional-effect 0..1
 
 * component[coding-hgvs].code = $LNC#48004-6
@@ -240,24 +239,15 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[protein-hgvs].value[x] from HGVSVS (required)
 * component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
 
-* component[amino-acid-change-type].code = $LNC#48006-1
-* component[amino-acid-change-type].code ^short = "48006-1"
-* component[amino-acid-change-type] ^short = "Amino Acid Change Type"
-* component[amino-acid-change-type] ^definition = "Codified type for associated Amino Acid Marker, for convenience."
-* component[amino-acid-change-type].value[x] only CodeableConcept
-* component[amino-acid-change-type].value[x] 1..1
-* component[amino-acid-change-type].value[x] from http://loinc.org/vs/LL380-7 (extensible)
-* component[amino-acid-change-type].value[x] ^short = "Wild type | Deletion | Duplication | Frameshift | Initiating Methionine | Insertion | Insertion and Deletion | Missense | Nonsense | Silent"
-
-* component[transcript-consequence].code = TbdCodesCS#transcript-consequence
-* component[transcript-consequence].code ^short = "transcript-consequence"
-* component[transcript-consequence] ^short = "Transcript Consequence"
-* component[transcript-consequence] ^definition = "The calculated or observed effect of a DNA variant on its downstream transcript."
-* component[transcript-consequence].value[x] only CodeableConcept
-* component[transcript-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
-* component[transcript-consequence].value[x] 1..1
-* component[transcript-consequence].value[x] from MolecularConsequenceVS (extensible)
-* component[transcript-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
+* component[feature-consequence].code = TbdCodesCS#transcript-consequence
+* component[feature-consequence].code ^short = "transcript-consequence"
+* component[feature-consequence] ^short = "Transcript Consequence"
+* component[feature-consequence] ^definition = "A feature consequence categorizes the structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion). NOTE: The bound Molecular Consequence value set is extensible. Variant annotation tools such as snpEff provide a rich assortment of feature consequences (see http://pcingola.github.io/SnpEff/se_inputoutput/#effect-prediction-details), some of which are outside the value set. "
+* component[feature-consequence].value[x] only CodeableConcept
+* component[feature-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
+* component[feature-consequence].value[x] 1..1
+* component[feature-consequence].value[x] from MolecularConsequenceVS (extensible)
+* component[feature-consequence].value[x] ^binding.description = "Concepts in sequence ontology under SO:0001537."
 
 * component[functional-effect].code = TbdCodesCS#functional-effect
 * component[functional-effect].code ^short = "functional-effect"
