@@ -58,7 +58,7 @@
   <p>
     The <a href="StructureDefinition-genomics-report.html">genomics report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organized into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>, which is especially useful for later analysis steps. Additionally, an observation can be used to <a href="groupingGuidance.html">group</a> content for viewing purposes or to indicate a higher-level panel (with a specific LOINC panel code in the <code>Observation.code</code> for example).
   </p>
-  <img src="general-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report"/>
+  <img src="general-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report" width="429" height="333"/>
   <p>
     <b>Genomic Report Overview</b>
   </p>
@@ -115,7 +115,7 @@
   <p>
     All genomic observations are derived from a <a href="StructureDefinition-genomics-base.html">common abstract profile</a> that asserts they should have a category, effective date, issued date and status.
   </p>
-  <img src="general-observations.png" alt="Class diagram showing the inheritance structure for genomic observations."/>
+  <img src="general-observations.png" alt="Class diagram showing the inheritance structure for genomic observations." width="622" height="345"/>
   <p>
     <b>Genomic Observations</b>
   </p>
@@ -150,7 +150,7 @@
   <p>
     The primary focus of genomic testing is making Genomic Findings. These are the fine and/or coarse-grained descriptions of a specimen's genomic characteristics. It is this information that leads to the <i>Overall Interpretations</i> for the report, as well as <a href="#implications">Genomic Implications</a> that are used to convey the potential impact of the genomic findings for the subject of the test.
   </p>
-  <img src="general-genomic-findings.png" alt="Class diagram showing relationship of genomic findings as well as genotypes, haplotypes, variants and sequences."/>
+  <img src="general-genomic-findings.png" alt="Class diagram showing relationship of genomic findings as well as genotypes, haplotypes, variants and sequences."  width="522" height="325"/>
   <p>
     <b>Genomic Findings</b>
   </p>
@@ -234,7 +234,7 @@
       At present, implications are noted as explicit observations about the patient/subject. However, it's not clear this is the correct approach. The work group is evaluating introducing a new resource that allows conveying "knowledge" about a variant in a patient-independent way. This would allow saying "this variant is associated with an increased risk of cardiovascular disease" rather than "based on this variant, the patient is at an increased risk of cardiovascular disease", which isn't necessarily a determination the reporting organization may wish to assert. Feedback is welcome.
     </p>
   </blockquote>
-  <img src="general-genomic-implications.png" alt="Class diagram showing relationship of genomic implications."/>
+  <img src="general-genomic-implications.png" alt="Class diagram showing relationship of genomic implications." width="639" height="365"/>
   <p>
     <b>Genomic Implications</b>
   </p>
