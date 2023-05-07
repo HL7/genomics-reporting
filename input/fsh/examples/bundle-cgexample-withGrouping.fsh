@@ -48,7 +48,7 @@ InstanceOf: GenomicsReport
 Usage: #inline
 * basedOn = Reference(ExampleServiceRequest)
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE
+* category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code.coding = $LNC#81247-9
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -71,7 +71,8 @@ Instance: overall-interp-1a
 InstanceOf: OverallInterpretation
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#51968-6
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -85,7 +86,8 @@ Instance: dis-path-1a
 InstanceOf: DiagnosticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -101,7 +103,8 @@ Instance: complex-variant-1a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -118,7 +121,8 @@ Instance: complex-dis-path-1a
 InstanceOf: DiagnosticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -136,7 +140,8 @@ Usage: #inline
 * extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommended-action"
 * extension.valueReference = Reference(usage-1a)
 * status = #final
-* category = $OBSCAT#laboratory
+* category[+].coding = $OBSCAT#laboratory
+* category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIMETA#C43359 "Panel"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -151,7 +156,8 @@ Instance: haplotype-1a
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -165,7 +171,8 @@ Instance: genotype-1a
 InstanceOf: Genotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -183,7 +190,8 @@ Instance: metab-1a
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -199,7 +207,8 @@ Instance: efficacy-1a
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -215,7 +224,8 @@ Instance: highrisk-1a
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -243,7 +253,8 @@ Instance: complex-component-D-1a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -268,7 +279,8 @@ Instance: complex-component-E-1a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -289,7 +301,8 @@ Instance: discrete-variant-1a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"

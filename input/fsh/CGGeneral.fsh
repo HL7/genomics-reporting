@@ -4,14 +4,16 @@ Id:             genomics-base
 Title:          "Genomics Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 * ^abstract = true
-* category 1..*
+* category 2..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.ordered = false   // can be omitted, since false is the default
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
+    and geCategory 1..1
 * category[labCategory].coding = $OBSCAT#laboratory
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * note only CodedAnnotation

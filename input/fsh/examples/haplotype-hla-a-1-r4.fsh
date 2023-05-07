@@ -5,7 +5,8 @@ Usage: #example
 * basedOn.type = "ServiceRequest"
 * basedOn.display = "Sequence-based typing of HLA-A for sample 001-246802468"
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code.coding[0] = $LNC#84414-2 "Haplotype name"
 * code.coding[+] = $LNC#57290-9 "HLA-A [Type] by High resolution"
 * effectiveDateTime = "2018-07-26"

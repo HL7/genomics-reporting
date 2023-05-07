@@ -6,7 +6,7 @@ Usage: #example
 * basedOn[+].display = "Sequence-based typing of HLA-B for sample-id=123456789"
 * basedOn[+].display = "Sequence-based typing of HLA-C for sample-id=123456789"
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE "Genetics"
+* category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
 * code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
 * code.coding[+] = $HGNCID#588 "Histocompatibility complex (HLA)"
 * effectiveDateTime = "2018-07-26"

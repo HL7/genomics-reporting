@@ -3,7 +3,8 @@ InstanceOf: Variant
 Description: "Example Variant"
 Usage: #example
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"

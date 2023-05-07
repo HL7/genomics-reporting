@@ -3,7 +3,8 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence that includes Loss of Function prediction"
 Usage: #example
 * status = #final
-* category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * subject = Reference(Patient/HG00403)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)

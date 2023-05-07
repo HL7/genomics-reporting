@@ -31,6 +31,7 @@ Description: "Example for Variant NM_004448.4(ERBB2):c.2264_2278del"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * subject = Reference(HG00403)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -89,6 +90,7 @@ Description: "Example for Tumor Mutation Burden"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/tmb"
 * status = #final "final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * subject = Reference(CGPatientExample01)
 * valueQuantity.value = 250
 
@@ -99,6 +101,7 @@ Description: "Example for MSI"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/msi"
 * status = #final "final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"
 
@@ -119,6 +122,7 @@ Description: "Example for Variant given by HGVS"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -136,6 +140,7 @@ Description: "Example for genomic Variant given by VCF columns"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -166,7 +171,8 @@ InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication for Carbamazepine"
 * id = "TherapeuticImplicationExample1"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].valueCodeableConcept.coding = $LNC#LA19541-4 "High risk"
@@ -182,7 +188,8 @@ InstanceOf: DiagnosticImplication
 Description: "Example of a Diagnostic Implication for Familial hypercholesterolemia"
 * id = "AnnotationExample"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
 * component[clinical-significance].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[predicted-phenotype].valueCodeableConcept = $SCT#398036000 "Familial hypercholesterolemia (disorder)"
@@ -194,7 +201,8 @@ Instance: GenotypeExample1
 InstanceOf: Genotype
 Description: "Example of a Genotype, Medication Recommendation, and MedicationStatement"
 * id = "GenotypeExample1"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#14909 "HLA-B*15:02"
 * component.code.coding = $LNC#48018-6 "Gene studied [ID]"
 * component.valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:4932 "HLA-B"
@@ -238,7 +246,8 @@ InstanceOf: SequencePhaseRelationship
 Description: "Example for sequence phase relation."
 * id = "SequencePhaseRelationExample1"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * derivedFrom[0] = Reference(VariantExample1)
 * derivedFrom[1] = Reference(VariantExample2)
 * issued = "2019-03-05T16:04:44+00:00"
@@ -249,6 +258,8 @@ Instance: OverallInterpExample1
 InstanceOf: OverallInterpretation
 Description: "Example for Overall Interpretation."
 * id = "OverallInterpExample1"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept = $LNC#LA6576-8 "Positive"
 * subject = Reference(CGPatientExample01)
 * specimen = Reference(GenomicSpecimenExample01)
@@ -262,6 +273,7 @@ Description: "Example variant 1011"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -288,6 +300,7 @@ Description: "Example variant 1012"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -314,6 +327,7 @@ Description: "Example variant 1013"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -341,6 +355,7 @@ Description: "Example variant 1014"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -367,6 +382,7 @@ Description: "Example variant 1015"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -387,6 +403,7 @@ Description: "Example variant 1016"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -413,6 +430,7 @@ Description: "Example variant 1017"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -439,6 +457,7 @@ Description: "Example variant 1018"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -465,6 +484,7 @@ Description: "Example variant 1019"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -489,6 +509,7 @@ Description: "Example variant 1020"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -519,6 +540,7 @@ Description: "Example variant 1021"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2020-01-01"
@@ -546,7 +568,8 @@ Instance: Pgx-geno-1001
 InstanceOf: Genotype
 Description: "Example of a Genotype from eMERGE"
 * id = "Pgx-geno-1001"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#638797 "CYP2C19*2/*2"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
 * effectiveDateTime = "2020-01-01"
@@ -569,7 +592,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * text.status = #generated
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Clopidogrel</div>"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0070166 "clopidogrel"
 * component[predicted-therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
@@ -585,7 +609,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp02"
 * text.status = #generated
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Voriconazole</div>"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0393080 "voriconazole"
 * component[predicted-therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
@@ -601,7 +626,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp03"
 * text.status = #generated
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Citalopram</div>"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0008845 "citalopram"
 * component[predicted-therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
@@ -617,7 +643,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp04"
 * text.status = #generated
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Escitalopram</div>"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C1099456 "escitalopram"
 * component[predicted-therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
@@ -633,7 +660,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp05"
 * text.status = #generated
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Poor metabolizer of Amitriptyline</div>"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0002600 "amitriptyline"
 * component[predicted-therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
@@ -647,7 +675,8 @@ Instance: Pgx-geno-1002
 InstanceOf: Genotype
 Description: "Example of a Genotype from eMERGE"
 * id = "Pgx-geno-1002"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.text = "CYP2C9*1/*1"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * effectiveDateTime = "2020-01-01"
@@ -662,7 +691,8 @@ Instance: Pgx-geno-1003
 InstanceOf: Genotype
 Description: "Example of a Genotype from eMERGE"
 * id = "Pgx-geno-1003"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.text = "VKORC1 rs9923231 C/T"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
 * effectiveDateTime = "2020-01-01"
@@ -678,7 +708,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * id = "TxImp06"
 * text.status = #generated
 * text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Normal metabolizer of Warfarin</div>"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0043031 "warfarin"
 * component[predicted-therapeutic-implication].valueCodeableConcept = $LNC#LA25391-6 "Normal metabolizer"
@@ -693,7 +724,8 @@ Instance: GrouperEx01
 InstanceOf: Observation
 Description: "Generic grouping of Therapeutic Implication observations"
 * id = "GrouperEx01"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[+].coding = $OBSCAT#laboratory
+* category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIT#C43359 "Group"
 * status = #final
 * hasMember[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
@@ -707,7 +739,8 @@ Instance: GrouperEx02
 InstanceOf: Observation
 Description: "Generic grouping of Genotype observations"
 * id = "GrouperEx02"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[+].coding = $OBSCAT#laboratory
+* category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIT#C43359 "Group"
 * status = #final
 * hasMember[0] = Reference(Pgx-geno-1001)
@@ -719,7 +752,8 @@ Instance: GrouperEx03
 InstanceOf: Observation
 Description: "Generic grouping of Regions Studied and Variant observations"
 * id = "GrouperEx03"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[+].coding = $OBSCAT#laboratory
+* category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIT#C43359 "Group"
 * status = #final
 * hasMember[0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
@@ -743,7 +777,8 @@ Instance: RegionStudiedPGx1
 InstanceOf: RegionStudied
 Description: "eMERGE PGx CYP2C19"
 * id = "RegionStudiedPGx1"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
@@ -754,7 +789,8 @@ Instance: RegionStudiedPGx2
 InstanceOf: RegionStudied
 Description: "eMERGE PGx CYP2C9"
 * id = "RegionStudiedPGx2"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
@@ -764,7 +800,8 @@ Instance: RegionStudiedPGx3
 InstanceOf: RegionStudied
 Description: "eMERGE PGx VKORC1"
 * id = "RegionStudiedPGx3"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
@@ -890,6 +927,8 @@ Instance: OverallInterpExample2
 InstanceOf: OverallInterpretation
 Description: "Example for Overall Interpretation."
 * id = "OverallInterpExample2"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept = $LNC#LA6576-8 "Positive"
 * subject = Reference(CGPatientExample01)
 * specimen = Reference(GenomicSpecimenExample01)
@@ -931,6 +970,7 @@ Description: "Example for germline CNV"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -953,6 +993,7 @@ Description: "Example for somatic CNV"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -975,6 +1016,7 @@ Description: "Example for germline DEL"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -995,6 +1037,7 @@ Description: "Example for somatic DEL"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -1017,6 +1060,7 @@ Description: "Example for germline INV"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -1038,6 +1082,7 @@ Description: "Example for somatic INV"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
@@ -1070,7 +1115,8 @@ InstanceOf: DiagnosticImplication
 Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a polygenic risk score."
 * id = "PolyGenicDiagnosticImpExample"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
 * status = #final
 * performer = Reference(ExampleOrg)
@@ -1159,6 +1205,7 @@ Description: "Example for Somatic Variant and Clinical Trial"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * specimen = Reference(GenomicSpecimenExample01)
@@ -1174,7 +1221,8 @@ InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication for Clinical Trial"
 * id = "Therapeutic-Implication-Clinical-Trial-Somatic"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
@@ -1191,7 +1239,8 @@ Instance: HaplotypeSet-Clinical-Trial-Example-1of2
 InstanceOf: Haplotype
 Description: "Example of a Haplotype as part of a Haplotype Set (1 of 2). A complete haplotype set defines a genotype."
 * id = "HaplotypeSet-Clinical-Trial-Example-1of2"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
 * effectiveDateTime = "2018"
@@ -1205,7 +1254,8 @@ Instance: HaplotypeSet-Clinical-Trial-Example-2of2
 InstanceOf: Haplotype
 Description: "Example of a Haplotype as part of a Haplotype Set (2 of 2). A complete haplotype set defines a genotype."
 * id = "HaplotypeSet-Clinical-Trial-Example-2of2"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
 * effectiveDateTime = "2018"
@@ -1219,7 +1269,8 @@ Instance: Genotype-Clinical-Trial-Example-using-haplotypes
 InstanceOf: Genotype
 Description: "Example of a Genotype. A complete haplotype set defines a genotype. In this example the gneotype is dervied from  observations of the underlying haplotypes."
 * id = "Genotype-Clinical-Trial-Example-using-haplotypes"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.text = "APOE e1/e1"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
 * effectiveDateTime = "2018"
@@ -1233,7 +1284,8 @@ Instance: Therapeutic-Implication-Clinical-Trial-2
 InstanceOf: TherapeuticImplication
 Description: "Example of a Therapeutic Implication for Carbamazepine"
 * id = "Therapeutic-Implication-Clinical-Trial-2"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
 * specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
@@ -1264,7 +1316,8 @@ InstanceOf: Haplotype
 Title: "HaplotypeExamplePharmVar01"
 Description: "Example of a Haplotype using PharmVar"
 * id = "HaplotypeExamplePharmVar01"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = http://www.pharmvar.org#PV00155 "CYP2D6*7.001" //https://www.pharmvar.org/api-service/alleles/pv00155
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
 * effectiveDateTime = "2021"
@@ -1277,7 +1330,8 @@ InstanceOf: Haplotype
 Title: "HaplotypeExamplePharmVar02"
 Description: "Example of a Haplotype using PharmVar"
 * id = "HaplotypeExamplePharmVar02"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = http://www.pharmvar.org#PV00126 "CYP2D6*1.001" //https://www.pharmvar.org/api-service/alleles/pv00126
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
 * effectiveDateTime = "2021"
@@ -1290,7 +1344,8 @@ InstanceOf: Genotype
 Title: "GenotypeExamplePharmVar"
 Description: "Example of a Genotype using Pharmvar Haplotypes"
 * id = "GenotypeExamplePharmVar"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.text = "CYP2D6*7.001 / CYP2D6*1.001"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
 * effectiveDateTime = "2021"

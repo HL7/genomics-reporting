@@ -248,7 +248,8 @@ Instance: CG-IG-HLA-FullBundle-01-10
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -269,7 +270,8 @@ Instance: CG-IG-HLA-FullBundle-01-11
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -292,7 +294,8 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -361,7 +364,8 @@ Instance: CG-IG-HLA-FullBundle-01-17
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -382,7 +386,8 @@ Instance: CG-IG-HLA-FullBundle-01-18
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -405,7 +410,8 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -474,7 +480,8 @@ Instance: CG-IG-HLA-FullBundle-01-24
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -495,7 +502,8 @@ Instance: CG-IG-HLA-FullBundle-01-25
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -518,7 +526,8 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
@@ -549,7 +558,7 @@ Usage: #inline
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE "Genetics"
+* category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
 * code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
 * code.coding[+] = $HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"

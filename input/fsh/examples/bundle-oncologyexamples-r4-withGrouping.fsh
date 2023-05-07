@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example bundle with an oncology report with SNVs, TMB, MSI, and therapy matches, including some groupings of observations"
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+* entry[+].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
 * entry[=].resource = Inline-Instance-for-oncologyexamples-r4-withGrouping-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
@@ -68,7 +68,7 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-1
 InstanceOf: Patient
 Usage: #inline
 * identifier.value = "1007"
-* name.given[0] = "Carrot"
+* name.given[+] = "Carrot"
 * name.given[+] = "John"
 * name.given[+] = "Mr"
 * gender = #male
@@ -79,14 +79,15 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-10
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = TbdCodesCS#predicted-therapeutic-implication
+* component[+].code = TbdCodesCS#predicted-therapeutic-implication
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -99,7 +100,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-11
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -119,7 +121,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-12
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -139,7 +142,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-13
 InstanceOf: Observation
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[+].coding = $OBSCAT#laboratory
+* category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIMETA#C43359 "Group"
 * hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "SNV analysis for JAK2 variant"
 * hasMember[+] = Reference(urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd) "SNV analysis for KDR variant"
@@ -151,7 +155,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-14
 InstanceOf: Observation
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[+].coding = $OBSCAT#laboratory
+* category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIMETA#C43359 "Group"
 * hasMember[0] = Reference(urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524) "Therapy match result 1"
 * hasMember[+] = Reference(urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b) "Therapy match result 2"
@@ -162,7 +167,7 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-15
 InstanceOf: GenomicsReport
 Usage: #inline
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE
+* category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
   * text = "Genetic analysis report"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
@@ -222,7 +227,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-6
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -243,7 +249,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-7
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -264,7 +271,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-8
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -286,7 +294,8 @@ Usage: #inline
 * extension.valueReference = Reference(Inline-MedicationKnowledgeRuxolitinib)
 * contained[+] = Inline-MedicationKnowledgeRuxolitinib
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
