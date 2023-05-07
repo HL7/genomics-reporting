@@ -90,8 +90,6 @@ Usage: #inline
 * component[=].valueCodeableConcept = $CLINVAR#13961 "Clinvar ID 13961"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#p.Val600Glu "p.Val600Glu"
-* component[+].code = $LNC#48006-1 "Amino acid change type"
-* component[=].valueCodeableConcept = $LNC#LA6698-0 "Missense"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:1097 "BRAF"
 

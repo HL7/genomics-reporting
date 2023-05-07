@@ -19,8 +19,6 @@ Usage: #example
 * component[=].valueCodeableConcept.coding = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#p.(Ala412Val) "p.(Ala412Val)"
-* component[+].code = $LNC#48006-1 "Amino acid change type"
-* component[=].valueCodeableConcept = $LNC#LA6698-0 "Missense"
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000044.3 "NM_000044.3"
 * component[+].code = $LNC#81258-6 "Sample VAF"

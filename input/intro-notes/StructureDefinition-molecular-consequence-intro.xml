@@ -1,0 +1,40 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+
+	<a name="molConUseCase"> </a>
+	<h3>Molecular Consequence Use Case</h3>
+  <p>A given variant can have multiple transcript-specific predicted molecular consequences. Clinical applications such as rare disease variant discovery, clinical trial matching, and the determination of therapeutic options for cancer patients may need to examine each predicted consequence as part of a variant filtration and prioritization process. </p>
+
+	<a name="detailedExample"> </a>
+	<h3>Detailed Example</h3>
+<p>In this example, a variant in a gene with multiple transcripts is annotated with multiple transcript-specific molecular consequence predictions. This figure shows multiple transcripts of the ODF2L gene.</p>
+<img src="molecularConsequences2.png" alt="Multiple transcripts of ODF2L gene" width="710" height="108"/>
+<p> </p>
+<p>This next figure shows a VCF row. A variant in the ODF2L gene has been annotated with the <a href="http://pcingola.github.io/SnpEff/">snpEff/snpSIFT variant prediction tool</a>. Things to note include: </p>
+<ul>
+<li>snpEff predicts a molecular consequence for each known transcript</li>
+<li>Each molecular consequence has one or more 'effects' (drawn from Sequence Ontology), and an 'impact category' (HIGH, MODERATE, LOW, MODIFIER)</li>
+<li>Note how variants occurring outside of exons in certain transcripts (e.g. intron_variant) do not have an associated pHGVS</li>
+<li>snpEff may assign an overall 'LOF' (Loss of Function) prediction. (In these examples, we include the 'LOF' where effect=HIGH)</li>
+<li>This example uses snpSIFT with <a href="https://gnomad.broadinstitute.org/">gnomAD</a> to annotate a population allele frequency</li>
+<li>In some cases, snpEff will assign more than one molecular consequence to a given transcript (e.g. splice_donor_variant&amp;intron_variant)</li>
+</ul>
+<img src="molecularConsequences3.png" alt="Predicted ODF2L molecular consequences" width="708" height="165"/>
+<p> </p>
+<p>These following examples correspond to the annotated VCF row. </p>
+<ul>
+<li><a href="Observation-variant-with-molec-consequences.html">Variant</a> (includes population allele frequency)</li>
+<li><a href="Observation-molec-conseq1.html">Molecular consequence 1</a> (includes LOF prediction)</li>
+<li><a href="Observation-molec-conseq2.html">Molecular consequence 2</a></li>
+<li><a href="Observation-molec-conseq3.html">Molecular consequence 3</a></li>
+<li><a href="Observation-molec-conseq4.html">Molecular consequence 4</a></li>
+</ul>
+
+	<a name="Differentiating AND vs OR"> </a>
+	<h3>Differentiating AND vs OR</h3>
+	<p>
+		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. a consequence of a DNA variant is both X and Y, as in the first example above where a consequence is both a 'splice_donor_variation' AND a 'intron_variant') vs. 'OR' conditions (e.g. a consequence of a DNA variant may be X or may by Y, as in the example above where a consequence might be 'synonymous variant' OR 'intron_variant'). This situation is not unique to molecular consequences, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents, where molecular consequences have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances.
+	</p>
+	<p>
+		see <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information. Implication fields affected by this guidance include: derivedFrom, evidence-level, feature-consequence.
+	</p>
+</div>

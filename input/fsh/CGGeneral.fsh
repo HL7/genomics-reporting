@@ -111,6 +111,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result contains overall 0..1 and
     diagnostic-implication 0..* and
     therapeutic-implication 0..* and
+	molecular-consequence 0..* and
     variant 0..* and
     sequence-phase-relation 0..* and 
     region-studied 0..* and 
@@ -122,6 +123,8 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[diagnostic-implication] ^short = "Diagnostic Implication"
 * result[therapeutic-implication] only Reference(TherapeuticImplication)
 * result[therapeutic-implication] ^short = "Therapeutic Implication"
+* result[molecular-consequence] only Reference(MolecularConsequence)
+* result[molecular-consequence] ^short = "Molecular Consequence"
 * result[variant] only Reference(Variant)
 * result[variant] ^short = "Variant"
 * result[sequence-phase-relation] only Reference(SequencePhaseRelationship)

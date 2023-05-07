@@ -26,15 +26,16 @@
 
   <a name="implications"> </a>
   <h3>Implications</h3>
-  <img src="figureonSomaticPage.png" alt="Diagram showing implication profiles"/>
+  <img src="figureonSomaticPage.png" alt="Diagram showing implication profiles" width="670" height="362"/>
   <p>
     <b>Figure 1: Implication Profiles</b>
   </p>
   <p>
     (Profile links:
     <a href="StructureDefinition-implication.html">Genomic Implication (abstract)</a>,
-    <a href="StructureDefinition-diagnostic-implication.html">Diagnostic Implication</a>
-    <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a>)
+    <a href="StructureDefinition-diagnostic-implication.html">Diagnostic Implication</a>,
+    <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a>,
+	<a href="StructureDefinition-molecular-consequence.html"> Molecular Consequence</a>)
   </p>
   <p>
     This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in <code>Observation.note</code> as the issuing lab desires.
@@ -47,6 +48,9 @@
     <b>Therapeutic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and the efficacy of a particular medication or therapy for the specified cancer. Because this implementation guide is intended for international use, it does not mandate the use of any particular code systems for medications, therapies, or cancer descriptions. Implementations should use the code systems most typically used in their jurisdictions or that are mandated by national FHIR profiles.
 
   </p>
+  <p>
+    <b>Molecular Consequence</b> indicates the calculated or observed effect of a DNA variant (linked via <code>Observation.derivedFrom</code>) on its downstream transcript and, if applicable, ensuing protein sequence.</p>
+
   <p>
     For a description of use cases populating other optional components on the above implication profiles, see the Pharmacogenomic Reporting section.
   </p>

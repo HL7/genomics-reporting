@@ -263,8 +263,6 @@ Usage: #inline
 * component[=].valueCodeableConcept.coding = $HGVS#p.Arg296Cys
 * component[+].code = $LNC#48019-4
 * component[=].valueCodeableConcept.coding = $LNC#LA6690-7 "Substitution"
-* component[+].code = $LNC#48006-1
-* component[=].valueCodeableConcept.coding = $LNC#LA6698-0 "Missense"
 
 Instance: complex-component-E-1a
 InstanceOf: Variant
@@ -321,8 +319,6 @@ Usage: #inline
 * component[=].valueCodeableConcept.coding = $HGVS#p.Arg417Cys
 * component[+].code = $LNC#48019-4
 * component[=].valueCodeableConcept.coding = $LNC#LA6690-7 "Substitution"
-* component[+].code = $LNC#48006-1
-* component[=].valueCodeableConcept.coding = $LNC#LA6698-0 "Missense"
 * component[+].code = $LNC#69547-8
 * component[=].valueString = "C"
 * component[+].code = $LNC#81254-5
