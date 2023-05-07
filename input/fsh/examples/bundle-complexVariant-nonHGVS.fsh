@@ -20,7 +20,8 @@ Instance: Inline-Instance-for-complexVariant-nonHGVS-1
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#51958-7 "Transcript ref sequence ID"
@@ -40,7 +41,8 @@ Instance: Inline-Instance-for-complexVariant-nonHGVS-2
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#51958-7 "Transcript ref sequence ID"
@@ -59,7 +61,8 @@ Instance: Inline-Instance-for-complexVariant-nonHGVS-3
 InstanceOf: Genotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4
 * valueCodeableConcept = $CLINVAR#RCV000664188.1 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
 * hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e) "unpacked representation of NM_022787.3:c.53A>G"

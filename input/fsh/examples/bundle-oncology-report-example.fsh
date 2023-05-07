@@ -82,7 +82,8 @@ Instance: Inline-Instance-for-oncology-report-example-10
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -115,7 +116,8 @@ Instance: Inline-Instance-for-oncology-report-example-11
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -148,7 +150,8 @@ Instance: Inline-Instance-for-oncology-report-example-12
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -181,7 +184,8 @@ Instance: Inline-Instance-for-oncology-report-example-13
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -214,7 +218,8 @@ Instance: Inline-Instance-for-oncology-report-example-14
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -247,7 +252,8 @@ Instance: Inline-Instance-for-oncology-report-example-15
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -321,7 +327,8 @@ Instance: Inline-Instance-for-oncology-report-example-4
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -354,7 +361,8 @@ Instance: Inline-Instance-for-oncology-report-example-5
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -387,7 +395,8 @@ Instance: Inline-Instance-for-oncology-report-example-6
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -420,7 +429,8 @@ Instance: Inline-Instance-for-oncology-report-example-7
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -453,7 +463,8 @@ Instance: Inline-Instance-for-oncology-report-example-8
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
@@ -486,7 +497,8 @@ Instance: Inline-Instance-for-oncology-report-example-9
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)

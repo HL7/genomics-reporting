@@ -6,7 +6,8 @@ Usage: #example
 * extension.valueRelatedArtifact.type = #citation
 * extension.valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(SNVexample)
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"

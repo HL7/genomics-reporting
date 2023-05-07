@@ -71,7 +71,7 @@ Usage: #inline
 * extension.valueReference = Reference(med-usage-impact-task-pgx-example)
 * basedOn = Reference(pgx-request)
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE "Genetics"
+* category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81247-9
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
@@ -97,7 +97,8 @@ Instance: med-impact-pgx-example
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
@@ -113,7 +114,8 @@ Instance: genotype-pgx-example
 InstanceOf: Genotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4 "genotype display name"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
@@ -128,7 +130,8 @@ Instance: haplotype-1-pgx-example
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
@@ -142,7 +145,8 @@ Instance: haplotype-2-pgx-example
 InstanceOf: Haplotype
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
@@ -156,7 +160,8 @@ Instance: variant-1-pgx-example
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
@@ -179,7 +184,8 @@ Instance: variant-2-pgx-example
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"

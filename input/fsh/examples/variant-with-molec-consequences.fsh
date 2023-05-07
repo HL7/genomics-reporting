@@ -3,7 +3,8 @@ InstanceOf: Variant
 Description: "Variant with molecular consequences"
 Usage: #example
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(Patient/HG00403)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"

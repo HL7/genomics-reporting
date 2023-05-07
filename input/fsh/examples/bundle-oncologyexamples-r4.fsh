@@ -75,7 +75,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-10
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -95,7 +96,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-11
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -115,7 +117,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-12
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -135,7 +138,7 @@ Instance: Inline-Instance-for-oncologyexamples-r4-13
 InstanceOf: GenomicsReport
 Usage: #inline
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE
+* category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
   * text = "Genetic analysis report"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
@@ -193,7 +196,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-6
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -214,7 +218,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-7
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -235,7 +240,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-8
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -254,7 +260,8 @@ Instance: Inline-Instance-for-oncologyexamples-r4-9
 InstanceOf: TherapeuticImplication
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -278,7 +285,8 @@ Usage: #inline
 * extension.valueReference = Reference(PlanDefRuxolitinib)
 * contained[+] = PlanDefRuxolitinib
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)

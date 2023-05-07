@@ -19,8 +19,8 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.id = "dv-5a7f781e83514"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * parameter[=].part[=].resource.status = #final
-* parameter[=].part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter[=].part[=].resource.category.coding.code = #laboratory
+* parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].part[=].resource.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.code.coding.code = #69548-6
 * parameter[=].part[=].resource.code.coding.display = "Genetic variant assessment"
@@ -101,8 +101,8 @@ Usage: #example
 * parameter[=].part[=].resource.id = "dv-5a7f781e83514"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * parameter[=].part[=].resource.status = #final
-* parameter[=].part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter[=].part[=].resource.category.coding.code = #laboratory
+* parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].part[=].resource.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.code.coding.code = #69548-6
 * parameter[=].part[=].resource.code.coding.display = "Genetic variant assessment"
@@ -162,8 +162,8 @@ Usage: #example
 * parameter.part[=].resource.id = "dv-fff9d40035a04"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.code.coding.code = #69548-6
 * parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
@@ -220,8 +220,8 @@ Usage: #example
 * parameter.part[=].resource.id = "dv-64c82675925d4"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.code.coding.code = #69548-6
 * parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
@@ -282,8 +282,8 @@ Usage: #example
 * parameter[=].part[=].resource.id = "GenotypeCYP2D6"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
 * parameter[=].part[=].resource.status = #final
-* parameter[=].part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter[=].part[=].resource.category.coding.code = #laboratory
+* parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].part[=].resource.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.code.coding.code = #84413-4
 * parameter[=].part[=].resource.code.coding.display = "Genotype display name"
@@ -306,8 +306,8 @@ Usage: #example
 * parameter[=].part[=].resource.id = "GenotypeCYP2C19"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
 * parameter[=].part[=].resource.status = #final
-* parameter[=].part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter[=].part[=].resource.category.coding.code = #laboratory
+* parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].part[=].resource.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.code.coding.code = #84413-4
 * parameter[=].part[=].resource.code.coding.display = "Genotype display name"
@@ -339,8 +339,8 @@ Usage: #example
 * parameter.part[=].resource.id = "Genotype7"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.code.coding.code = #84413-4
 * parameter.part[=].resource.code.coding.display = "Genotype display name"
@@ -369,8 +369,8 @@ Usage: #example
 * parameter.part[=].resource.id = "TherapeuticImplicationExample"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
 * parameter.part[=].resource.code.coding.code = #therapeutic-implication
 * parameter.part[=].resource.subject.reference = "Patient/HG00403"
@@ -391,8 +391,8 @@ Usage: #example
 * parameter.part[=].resource.id = "variantExample"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.code.coding.code = #69548-6
 * parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
@@ -442,8 +442,8 @@ Usage: #example
 * parameter.part[=].resource.id = "DiagnosticImplicationExample"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
 * parameter.part[=].resource.code.coding.code = #diagnostic-implication
 * parameter.part[=].resource.subject.reference = "Patient/HG00403"
@@ -466,8 +466,8 @@ Usage: #example
 * parameter.part[=].resource.id = "variantExample2"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
 * parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"
-* parameter.part[=].resource.category.coding.code = #laboratory
+* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter.part[=].resource.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.code.coding.code = #69548-6
 * parameter.part[=].resource.code.coding.display = "Genetic variant assessment"

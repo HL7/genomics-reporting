@@ -316,7 +316,7 @@ Instance: report-CYP2C19
 InstanceOf: GenomicsReport
 Usage: #inline
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE
+* category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81247-9
   * text = "Genetic analysis report"
 * result[0] = Reference(rs-5c7e9e1ca6214)
@@ -402,7 +402,8 @@ Instance: dv-5c7e9e1ca62b5
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -425,7 +426,8 @@ Instance: dv-5c7e9e1ca6342
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -448,7 +450,8 @@ Instance: dv-5c7e9e1ca63bf
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -471,7 +474,8 @@ Instance: dv-5c7e9e1ca643a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -494,7 +498,8 @@ Instance: dv-5c7e9e1ca64b5
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -517,7 +522,8 @@ Instance: dv-5c7e9e1ca6531
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -540,7 +546,8 @@ Instance: dv-5c7e9e1ca65ac
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -563,7 +570,8 @@ Instance: dv-5c7e9e1ca6627
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -586,7 +594,8 @@ Instance: dv-5c7e9e1ca66a1
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -609,7 +618,8 @@ Instance: dv-5c7e9e1ca671c
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -632,7 +642,8 @@ Instance: dv-5c7e9e1ca6797
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -655,7 +666,8 @@ Instance: dv-5c7e9e1ca6812
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -678,7 +690,8 @@ Instance: dv-5c7e9e1ca688c
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -701,7 +714,8 @@ Instance: dv-5c7e9e1ca6922
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -724,7 +738,8 @@ Instance: dv-5c7e9e1ca69a3
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -747,7 +762,8 @@ Instance: dv-5c7e9e1ca6a1d
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -770,7 +786,8 @@ Instance: dv-5c7e9e1ca6a97
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -793,7 +810,8 @@ Instance: dv-5c7e9e1ca6b11
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -816,7 +834,8 @@ Instance: dv-5c7e9e1ca6b86
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -839,7 +858,8 @@ Instance: dv-5c7e9e1ca6c31
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -862,7 +882,8 @@ Instance: dv-5c7e9e1ca6ccc
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -885,7 +906,8 @@ Instance: dv-5c7e9e1ca6d4b
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -908,7 +930,8 @@ Instance: dv-5c7e9e1ca6de3
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -931,7 +954,8 @@ Instance: dv-5c7e9e1ca6e86
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -954,7 +978,8 @@ Instance: dv-5c7e9e1ca6f11
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -977,7 +1002,8 @@ Instance: dv-5c7e9e1ca6fa5
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1000,7 +1026,8 @@ Instance: dv-5c7e9e1ca7025
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1023,7 +1050,8 @@ Instance: dv-5c7e9e1ca70a2
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1046,7 +1074,8 @@ Instance: dv-5c7e9e1ca7141
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1069,7 +1098,8 @@ Instance: dv-5c7e9e1ca71bf
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1092,7 +1122,8 @@ Instance: dv-5c7e9e1ca724a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1115,7 +1146,8 @@ Instance: dv-5c7e9e1ca72e4
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1138,7 +1170,8 @@ Instance: dv-5c7e9e1ca7377
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1161,7 +1194,8 @@ Instance: dv-5c7e9e1ca740a
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1184,7 +1218,8 @@ Instance: dv-5c7e9e1ca7497
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1207,7 +1242,8 @@ Instance: dv-5c7e9e1ca7513
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1230,7 +1266,8 @@ Instance: dv-5c7e9e1ca758e
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1253,7 +1290,8 @@ Instance: dv-5c7e9e1ca7609
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1276,7 +1314,8 @@ Instance: dv-5c7e9e1ca7684
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1299,7 +1338,8 @@ Instance: dv-5c7e9e1ca76ff
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1322,7 +1362,8 @@ Instance: dv-5c7e9e1ca7779
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1345,7 +1386,8 @@ Instance: dv-5c7e9e1ca77f4
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1368,7 +1410,8 @@ Instance: dv-5c7e9e1ca786f
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1391,7 +1434,8 @@ Instance: dv-5c7e9e1ca78eb
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1414,7 +1458,8 @@ Instance: dv-5c7e9e1ca7967
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1437,7 +1482,8 @@ Instance: dv-5c7e9e1ca79ef
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1460,7 +1506,8 @@ Instance: dv-5c7e9e1ca7a79
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1483,7 +1530,8 @@ Instance: dv-5c7e9e1ca7afb
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1506,7 +1554,8 @@ Instance: dv-5c7e9e1ca7bcb
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1529,7 +1578,8 @@ Instance: dv-5c7e9e1ca7c49
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1552,7 +1602,8 @@ Instance: dv-5c7e9e1ca7cd3
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1575,7 +1626,8 @@ Instance: dv-5c7e9e1ca7d94
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1598,7 +1650,8 @@ Instance: dv-5c7e9e1ca7e45
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1621,7 +1674,8 @@ Instance: dv-5c7e9e1ca7ed6
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1644,7 +1698,8 @@ Instance: dv-5c7e9e1ca7f69
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1667,7 +1722,8 @@ Instance: dv-5c7e9e1ca7ffd
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1690,7 +1746,8 @@ Instance: dv-5c7e9e1ca8085
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1713,7 +1770,8 @@ Instance: dv-5c7e9e1ca811f
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1736,7 +1794,8 @@ Instance: dv-5c7e9e1ca81b9
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1759,7 +1818,8 @@ Instance: dv-5c7e9e1ca8252
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1782,7 +1842,8 @@ Instance: dv-5c7e9e1ca82e4
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1805,7 +1866,8 @@ Instance: dv-5c7e9e1ca837c
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1828,7 +1890,8 @@ Instance: dv-5c7e9e1ca8410
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1851,7 +1914,8 @@ Instance: dv-5c7e9e1ca8493
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1874,7 +1938,8 @@ Instance: dv-5c7e9e1ca8514
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1897,7 +1962,8 @@ Instance: dv-5c7e9e1ca8596
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1920,7 +1986,8 @@ Instance: dv-5c7e9e1ca8618
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1943,7 +2010,8 @@ Instance: dv-5c7e9e1ca869c
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1966,7 +2034,8 @@ Instance: dv-5c7e9e1ca871e
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -1989,7 +2058,8 @@ Instance: dv-5c7e9e1ca879f
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -2012,7 +2082,8 @@ Instance: dv-5c7e9e1ca8820
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -2035,7 +2106,8 @@ Instance: dv-5c7e9e1ca88a5
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -2058,7 +2130,8 @@ Instance: dv-5c7e9e1ca8927
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -2081,7 +2154,8 @@ Instance: dv-5c7e9e1ca89a8
 InstanceOf: Variant
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -2104,7 +2178,8 @@ Instance: rs-5c7e9e1ca6214
 InstanceOf: RegionStudied
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#53041-0 "DNA Region of interest panel"
 * issued = "2019-03-05T16:04:44+00:00"
 * component.code = $LNC#48018-6 "Gene studied ID"
@@ -2114,7 +2189,8 @@ Instance: sid-5c7e9e1ca8a29
 InstanceOf: SequencePhaseRelationship
 Usage: #inline
 * status = #final
-* category = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#82120-7 "Allelic phase"
 * issued = "2019-03-05T16:04:44+00:00"
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
