@@ -27,6 +27,6 @@ Usage: #inline
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81254-5
   * text = "Genetic analysis report"
-* result[0] = Reference(dv-5c7e9e1ca8252)
-* result[+] = Reference(dv-5c7e9e1ca82e4)
-* result[+] = Reference(sid-5c7e9e1ca8a29)
+* result[0] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe00)
+* result[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)
+* result[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe02)
