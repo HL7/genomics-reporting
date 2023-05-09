@@ -182,9 +182,9 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(haplotype-1a)
 * component[0].code = $LNC#48018-6
-* component[=].valueCodeableConcept.coding = $HGNCID#2623 "CYP2C9"
+* component[=].valueCodeableConcept.coding = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#48018-6
-* component[=].valueCodeableConcept.coding = $HGNCID#23663 "VKORC1"
+* component[=].valueCodeableConcept.coding = $HGNCID#HGNC:23663 "VKORC1"
 
 Instance: metab-1a
 InstanceOf: TherapeuticImplication
@@ -314,7 +314,7 @@ Usage: #inline
 * component[=].valueCodeableConcept.coding.version = "???"
 * component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"
 * component[+].code = $LNC#48018-6
-* component[=].valueCodeableConcept.coding = $HGNCID#21497 "ACAD9"
+* component[=].valueCodeableConcept.coding = $HGNCID#HGNC:21497 "ACAD9"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NM_014049.4
 * component[+].code = $LNC#48013-7
