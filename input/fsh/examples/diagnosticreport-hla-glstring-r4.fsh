@@ -8,7 +8,7 @@ Usage: #example
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
 * code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
-* code.coding[+] = $HGNCID#588 "Histocompatibility complex (HLA)"
+* code.coding[+] = $HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
 * effectiveDateTime = "2018-07-26"
 * performer.display = "aTypingLab, Inc"
 * specimen.display = "buccal swab: 123456789"

@@ -124,7 +124,7 @@ Usage: #inline
 * derivedFrom[0] = Reference(haplotype-1-pgx-example)
 * derivedFrom[+] = Reference(haplotype-2-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
-* component.valueCodeableConcept = $HGNCID#2623 "CYP2C9"
+* component.valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 
 Instance: haplotype-1-pgx-example
 InstanceOf: Haplotype
@@ -139,7 +139,7 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-1-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
-* component.valueCodeableConcept = $HGNCID#2623 "CYP2C9"
+* component.valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 
 Instance: haplotype-2-pgx-example
 InstanceOf: Haplotype
@@ -154,7 +154,7 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-2-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
-* component.valueCodeableConcept = $HGNCID#2623 "CYP2C9"
+* component.valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 
 Instance: variant-1-pgx-example
 InstanceOf: Variant
@@ -169,7 +169,7 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(sequence-1-pgx-example)
 * component[0].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept = $HGNCID#2623 "CYP2C9"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#81252-9
 * component[=].valueCodeableConcept = $SNP#rs12345
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -193,7 +193,7 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(sequence-2-pgx-example)
 * component[0].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept = $HGNCID#2623 "CYP2C9"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NUCCORE#NG_007726.3
 * component[+].code = $LNC#81252-9
