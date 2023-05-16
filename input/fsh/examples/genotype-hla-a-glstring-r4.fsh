@@ -2,7 +2,6 @@ Instance: genotype-hla-a-glstring-r4
 InstanceOf: Genotype
 Description: "Genotype example: Sequence-based typing of HLA-A"
 Usage: #example
-* basedOn.display = "Sequence-based typing of HLA-A for sample-id=123456789"
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
@@ -14,10 +13,7 @@ Usage: #example
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.31.0#HLA-A*03:01:01:01+HLA-A*30:01:01
 * method.text = "PACBIO Sequel"
-* specimen.display = "buccal swab: 123456789"
-* derivedFrom[0].type = "Observation"
-* derivedFrom[=].display = "HLA-A Allele: HLA-A*03:01:01:01"
-* derivedFrom[+].type = "Observation"
-* derivedFrom[=].display = "HLA-A Allele: HLA-A*30:01:01"
+* specimen = Reference(specimen-hla-r4)
+* derivedFrom[0] = Reference(haplotype-hla-a-1-r4)
 * component.code = $LNC#48018-6 "Gene studied [ID]"
 * component.valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
