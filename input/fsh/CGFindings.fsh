@@ -95,7 +95,9 @@ Description:    "Details about a set of changes in the tested sample compared to
 //  amino-acid-change-type 0..1 and
 //  molecular-consequence 0..1 and
     copy-number 0..1 and
-    variant-confidence-status 0..1
+    variant-confidence-status 0..1 and
+    repeat-motif 0..* and
+    repeat-number 0..*
 
 * component[representative-coding-hgvs].code = $LNC#48004-6
 * component[representative-coding-hgvs].code ^short = "48004-6"
@@ -283,6 +285,22 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variant-confidence-status].value[x] 1..1
 * component[variant-confidence-status].value[x] ^short = "High | Intermediate | Low"
 * component[variant-confidence-status].value[x] from VariantConfidenceStatusVS (required)
+
+* component[repeat-motif].code = TbdCodesCS#repeat-motif
+* component[repeat-motif].code ^short = "repeat-motif"
+* component[repeat-motif] ^short = "Repeat Motif"
+* component[repeat-motif] ^definition = "Nucleotides of a repeat expansion motif."
+* component[repeat-motif].value[x] only string
+* component[repeat-motif].value[x] 1..1
+* component[repeat-motif].value[x] ^short = "CAG"
+
+* component[repeat-number].code = TbdCodesCS#repeat-number
+* component[repeat-number].code ^short = "repeat-number"
+* component[repeat-number] ^short = "Repeat Number"
+* component[repeat-number] ^definition = "Number of repeats of a repeat expansion."
+* component[repeat-number].value[x] only Quantity
+* component[repeat-number].value[x] 1..1
+* component[repeat-number].value[x] ^short = "40"
 
 
 Profile:        RegionStudied
