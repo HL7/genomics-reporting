@@ -62,7 +62,7 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #81254-5
-* parameter[=].part[=].resource.component[=].code.text = "Variant exact start and end"
+* parameter[=].part[=].resource.component[=].code.text = "Genomic allele start-end"
 * parameter[=].part[=].resource.component[=].valueRange.low.value = 140753335
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-specific-variants.html
@@ -143,7 +143,7 @@ Usage: #example
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #81254-5
-* parameter[=].part[=].resource.component[=].code.text = "Variant exact start and end"
+* parameter[=].part[=].resource.component[=].code.text = "Genomic allele start-end"
 * parameter[=].part[=].resource.component[=].valueRange.low.value = 112090641
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-structural-intersecting-variants.html
@@ -427,7 +427,7 @@ Usage: #example
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81254-5
-* parameter.part[=].resource.component[=].code.text = "Variant exact start and end"
+* parameter.part[=].resource.component[=].code.text = "Genomic allele start-end"
 * parameter.part[=].resource.component[=].valueRange.low.value = 39723965
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-dx-implications.html
@@ -502,7 +502,7 @@ Usage: #example
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #81254-5
-* parameter.part[=].resource.component[=].code.text = "Variant exact start and end"
+* parameter.part[=].resource.component[=].code.text = "Genomic allele start-end"
 * parameter.part[=].resource.component[=].valueRange.low.value = 38499669
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-population-specific-variants.html

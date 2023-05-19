@@ -17,7 +17,7 @@ Usage: #example
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004643.4 "NM_004643.4"
 
-* component[+].code = $LNC#48004-6 "Coding (cDNA) Change - cHGVS"
+* component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
 * component[=].valueCodeableConcept.coding = $HGVS#NM_004643.3:c.3GGC[14] "NM_004643.3:c.3GGC[14]"
 
 * component[+].code = $LNC#81254-5 "Genomic allele start-end"
@@ -28,6 +28,8 @@ Usage: #example
 
 * component[+].code = TbdCodesCS#repeat-motif "Repeat Expansion Motif"
 * component[=].valueString = "GGC"
+* component[=].extension[RepeatMotifOrder].valuePositiveInt = 1
 
 * component[+].code = TbdCodesCS#repeat-number "Number of Repeat Expansions"
 * component[=].valueQuantity.value = 11
+* component[=].extension[RepeatMotifOrder].valuePositiveInt = 1

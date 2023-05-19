@@ -41,7 +41,7 @@ Description: "Example for Variant NM_004448.4(ERBB2):c.2264_2278del"
 * component[1].valueString = "ATTGAGGGAAAACACAT"
 * component[2].code.coding = http://loinc.org#69551-0 "Alt allele"
 * component[2].valueString = "T"
-* component[3].code.coding = http://loinc.org#81254-5 "Variant exact start and end"
+* component[3].code.coding = http://loinc.org#81254-5 "Genomic allele start-end"
 * component[3].valueRange.low.value = 39723965
 * component[4].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 * component[4].valueCodeableConcept.coding = http://loinc.org#LA30100-4
