@@ -73,7 +73,7 @@ Description: "Used to reference a specific medication that was assessed (e.g. a 
 Extension:   RepeatMotifOrder
 Id:          repeat-motif-order
 Title:       "Repeat Motif Order"
-Description: "Use to group and order repeat expansion details."
+Description: "Use to group and order repeat expansion motifs."
 * ^context[0].type = #element
 * ^context[0].expression = "Observation.component"
 * value[x] only positiveInt

@@ -180,6 +180,60 @@ This representation leverages multiple component slices to communicate an allele
   </tbody>
 </table> 
 
+<a name="RepeatExpansionVariants"></a>
+<h4>Defining Repeat Expansion Variants</h4>
+<p>
+When reporting a repeat expansion variant (also know as trinucleotide repeat or tandem repeat), additional details are required to fully define the variant. Implementers should use as many of the elements in the section above (VCF-like) to describe the location of the repeat expansion, then use the elements from this section specific to a repeat expansion.
+</p>
+<table>
+  <thead>
+    <th>Defining Element</th>
+    <th>Example Value</th>
+    <th>Note</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Component: repeat-motif (TBD code repeat-motif)</td>
+      <td><div class="example"><pre class="json">
+{
+"valueString" : "GGC"
+}          </pre></div>
+     </td>
+      <td>the nucleotides of the repeat expansion motif</td>
+    </tr>
+    <tr>
+      <td>Comonent: repeat-number (TBD code repeat-number)</td>
+      <td><div class="example"><pre class="json">
+{
+  "valueQuantity" : {
+    "value" : 11
+  }
+}          </pre></div>
+     </td>
+      <td>the number of repeats of the repeat expansion</td>
+    </tr>
+    <tr>
+      <td>Extension: repeat-motif-order</td>
+      <td><div class="example"><pre class="json">
+{
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/repeat-motif-order",
+    "valuePositiveInt" : 1
+  }]
+}          </pre></div>
+     </td>
+      <td>
+      <p>
+      If there are multiple repeat expansion pairs, this extension is used both to indicate the sequence position of a given motif-number pair and to group the related components together. Related components with the same repeat-motif-order extension describe the same motif.
+      </p>
+      <p>
+      This extension is optional when a single repeat expansion pair is used, but is required when multiple are used.
+      </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <a name="ContextualComponents"></a>
 <h3>Contextualizing Variants</h3>
 <p>Clinical context for observing the variant are often important in understanding the variant. Often, multiple tests are done to determine the values for these elements.
