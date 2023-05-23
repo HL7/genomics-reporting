@@ -183,7 +183,7 @@ This representation leverages multiple component slices to communicate an allele
 <a name="RepeatExpansionVariants"></a>
 <h4>Defining Repeat Expansion Variants</h4>
 <p>
-When reporting a repeat expansion variant (also know as trinucleotide repeat or tandem repeat), additional details are required to fully define the variant. Implementers should use as many of the elements in the section above (VCF-like) to describe the location of the repeat expansion, then use the elements from this section specific to a repeat expansion.
+When reporting a repeat expansion variant (also know as trinucleotide repeat or tandem repeat), additional details are required to fully define the variant. Implementers should use as many of the elements in the section above (VCF-like) to describe the location of the repeat expansion, then use both the components from this section to state the observed repeat expansion. If the change is described as multiple contiguous repeat expansions, the extension in this section can be used to link the component pairs as in <a href="Observation-MultipleRepeatExpansions.html">this</a> example.
 </p>
 <table>
   <thead>
