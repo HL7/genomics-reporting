@@ -8,11 +8,11 @@ Usage: #example
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
-* component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
-* component[=].valueCodeableConcept.text = "chr14"
-
 * component[0].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:8565 "PABPN1"
+
+* component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
+* component[=].valueCodeableConcept.text = "chr14"
 
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004643.4 "NM_004643.4"
@@ -45,11 +45,11 @@ Usage: #example
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
-* component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
-* component[=].valueCodeableConcept.text = "chr14"
-
 * component[0].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:8565 "PABPN1"
+
+* component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
+* component[=].valueCodeableConcept.text = "chr14"
 
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004643.4 "NM_004643.4"
