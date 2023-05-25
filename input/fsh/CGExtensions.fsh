@@ -69,3 +69,11 @@ Description: "Used to reference a specific medication that was assessed (e.g. a 
 * ^context[0].type = #element
 * ^context[0].expression = "Observation"
 * value[x] only Reference(Medication or MedicationKnowledge)
+
+Extension:   RepeatMotifOrder
+Id:          repeat-motif-order
+Title:       "Repeat Motif Order"
+Description: "Use to group and order repeat expansion motifs."
+* ^context[0].type = #element
+* ^context[0].expression = "Observation.component"
+* value[x] only positiveInt

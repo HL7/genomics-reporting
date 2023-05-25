@@ -211,8 +211,8 @@ Description:    "Profile for communicating the calculated or observed effect of 
 
 * component[coding-hgvs].code = $LNC#48004-6
 * component[coding-hgvs].code ^short = "48004-6"
-* component[coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
-* component[coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string."
+* component[coding-hgvs] ^short = "DNA change (c.HGVS)"
+* component[coding-hgvs] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples."
 * component[coding-hgvs].value[x] only CodeableConcept
 * component[coding-hgvs].value[x] 1..1
 * component[coding-hgvs].value[x] from HGVSVS (required) 

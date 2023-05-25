@@ -95,12 +95,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 //  amino-acid-change-type 0..1 and
 //  molecular-consequence 0..1 and
     copy-number 0..1 and
-    variant-confidence-status 0..1
+    variant-confidence-status 0..1 and
+    repeat-motif 0..* and
+    repeat-number 0..*
 
 * component[representative-coding-hgvs].code = $LNC#48004-6
 * component[representative-coding-hgvs].code ^short = "48004-6"
-* component[representative-coding-hgvs] ^short = "Coding (cDNA) Change - cHGVS"
-* component[representative-coding-hgvs] ^definition = "Description of the coding (cDNA) sequence change using a valid HGVS-formatted string."
+* component[representative-coding-hgvs] ^short = "DNA change (c.HGVS)"
+* component[representative-coding-hgvs] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples."
 * component[representative-coding-hgvs].value[x] only CodeableConcept
 * component[representative-coding-hgvs].value[x] 1..1
 * component[representative-coding-hgvs].value[x] from HGVSVS (required) 
@@ -284,6 +286,27 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variant-confidence-status].value[x] ^short = "High | Intermediate | Low"
 * component[variant-confidence-status].value[x] from VariantConfidenceStatusVS (required)
 
+* component[repeat-motif].code = TbdCodesCS#repeat-motif
+* component[repeat-motif].code ^short = "repeat-motif"
+* component[repeat-motif] ^short = "Repeat Motif"
+* component[repeat-motif] ^definition = "Nucleotides of a repeat expansion motif."
+* component[repeat-motif].value[x] only string
+* component[repeat-motif].value[x] 1..1
+* component[repeat-motif].value[x] ^short = "CAG"
+* component[repeat-motif].extension contains RepeatMotifOrder named repeat-motif-order 0..1
+* component[repeat-motif].extension[RepeatMotifOrder] ^requirements = "The value must be a natural number starting from 1 and increasing sequentially"
+* component[repeat-motif].extension[RepeatMotifOrder] ^comment = "If there are multiple repeat expansion pairs, this must be used both to indicate the sequence position of a given repeat-motif and repeat-number pair and to group the related components together. Components with the same extension value describe the same motif."
+
+* component[repeat-number].code = TbdCodesCS#repeat-number
+* component[repeat-number].code ^short = "repeat-number"
+* component[repeat-number] ^short = "Repeat Number"
+* component[repeat-number] ^definition = "Number of repeats of a repeat expansion."
+* component[repeat-number].value[x] only Quantity
+* component[repeat-number].value[x] 1..1
+* component[repeat-number].value[x] ^short = "40"
+* component[repeat-number].extension contains RepeatMotifOrder named repeat-motif-order 0..1
+* component[repeat-number].extension[RepeatMotifOrder] ^requirements = "The value must be a natural number starting from 1 and increasing sequentially"
+* component[repeat-number].extension[RepeatMotifOrder] ^comment = "If there are multiple repeat expansion pairs, this must be used both to indicate the sequence position of a given repeat-motif and repeat-number pair and to group the related components together. Components with the same extension value describe the same motif."
 
 Profile:        RegionStudied
 Parent:         GenomicsBase

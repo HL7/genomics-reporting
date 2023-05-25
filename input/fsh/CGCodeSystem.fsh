@@ -30,6 +30,8 @@ Description: "These codes are currently 'TBD' codes. The CG WG plans to request 
 * #conclusion-string "Conclusion Text" "Clinical conclusion (interpretation) of the observation."
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
 * #variant-confidence-status "Variant Confidence Status" "The confidence of a true positive variant call."
+* #repeat-motif "Repeat Expansion Motif" "Nucleotides of a repeat expansion motif"
+* #repeat-number "Number of Repeat Expansions" "Number of repeats of a repeat expansion"
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
