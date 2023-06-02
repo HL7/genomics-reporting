@@ -1,13 +1,4 @@
-
-Extension:   GenomicsArtifact
-Id:          genomics-artifact
-Title:       "Genomics Artifact"
-Description: "Captures citations, evidence and other supporting documentation for the observation or report."
-* ^context[+].type = #element
-* ^context[=].expression = "DiagnosticReport"
-* ^context[+].type = #element
-* ^context[=].expression = "Observation"
-* value[x] only RelatedArtifact
+Alias: workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
 
 Extension:   RecommendedAction
 Id:          recommended-action

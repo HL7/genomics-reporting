@@ -84,8 +84,7 @@ Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
 
-* extension contains GenomicsArtifact named genomics-artifact 0..*
-    and GenomicsFile named genomics-file 0..*
+* extension contains GenomicsFile named genomics-file 0..*
     and RecommendedAction named recommended-action 0..*
     and GenomicsRiskAssessment named genomics-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*

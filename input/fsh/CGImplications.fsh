@@ -5,8 +5,6 @@ Title:          "Genomics Implication"
 Description:    "Properties common to genomic implications expressed as computable discrete elements."
 * ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* extension contains GenomicsArtifact named related-artifact 0..1
-* extension[GenomicsArtifact] ^short = "Attachments and/or related metadata or citations"
 * value[x] 0..0
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "$this.resolve()"

@@ -101,7 +101,7 @@
     For receivers to make use of these files, many facets of the generation of the files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use cases must be carefully evaluated to ensure appropriate file preparation. The <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
   </p>
   <p>
-    It should be noted that the Genomic File extension is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>. Also note the Genomic File extension is different than the <a href="StructureDefinition-genomics-artifact.html">Genomics Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. Another approach which should be avoided (at least for this current release) is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case. As noted in the STU note above, this will be changing in a future release.
+    It should be noted that the Genomic File extension is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>. Also note the Genomic File extension is different than the <a href="{{site.data.fhir.path}}extension-workflow-relatedartifact.html">Related Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. Another approach which should be avoided (at least for this current release) is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case. As noted in the STU note above, this will be changing in a future release.
   </p>
   <p>
     A full, detailed implementation discussion is outside the scope of this IG. In a future release, this IG may include other profiles or artifacts along with more specific guidance.
@@ -261,7 +261,7 @@
     Implications inherit a common set of elements:
   </p>
   <ul>
-    <li><code>genomics-artifact</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication</li>
+    <li><code>Related Artifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication</li>
     <li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
     <li><code>prognosis (component)</code> indicates the likely diagnostic or therapeutic outcome of the implication</li>
   </ul>

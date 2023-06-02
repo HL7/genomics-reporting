@@ -97,9 +97,8 @@ Usage: #inline
 Instance: Inline-Instance-for-oncology-diagnostic-6
 InstanceOf: DiagnosticImplication
 Usage: #inline
-* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-artifact"
-* extension.valueRelatedArtifact.type = #justification
-* extension.valueRelatedArtifact.display = "https://pmkb.weill.cornell.edu/therapies/103"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.type = #justification
+* extension[workflow-relatedArtifact].valueRelatedArtifact.display = "https://pmkb.weill.cornell.edu/therapies/103"
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
