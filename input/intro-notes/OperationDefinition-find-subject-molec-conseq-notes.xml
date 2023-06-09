@@ -1,0 +1,46 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Error codes"/>
+	<h3>Error Codes</h3>
+	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Response Code</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>200</td>
+				<td>Successfully executed request</td>
+			</tr>
+			<tr>
+				<td>400</td>
+				<td>ERROR: Invalid query parameters</td>
+			</tr>
+			<tr>
+				<td>404</td>
+				<td>ERROR: Patient not found</td>
+			</tr>
+			<tr>
+				<td>422</td>
+				<td>ERROR: Failed <a href="operations.html#liftover">LiftOver</a></td>
+			</tr>
+			</tbody>
+	</table>
+<a name="Examples"/>
+	<h3>Examples</h3>
+	<p>A patient with lung cancer has no known druggable targets. Their clinician wants to see if any variants in ALK (NC_000002.12:29190991-29921589), BRAF (NC_000007.14:140713327-140924929), or EGFR (NC_000007.14:55019016-55211628) are predicted to be consequential.</p>
+	
+	<pre>$find-subject-molec-conseq?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628</pre>
+	
+	<p>The clinician wants to further constrain the query in the prior example to only return variants predicted to affect splice donor sites</p>
+	
+	<pre>$find-subject-molec-conseq?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628&amp;featureConsequences=http://sequenceontology.org|SO:0001575</pre>
+	
+<p>Patient HG00403 is detected as having a variant (NC_000001.10:86852620:A:G) in the ODF2L gene, and their clinician wants to further characterize the variant by examining its predicted molecular consequences. (Results indicate that the variant affects a splice donor site and can lead to gene loss of function).</p>
+<ul>
+<li><a href="Parameters-FindSubjectMolecConseqOutput.html">GET .../$find-subject-molec-conseq?subject=HG00403&amp;variants=NC_000001.10:86852620:A:G</a></li>
+</ul>
+
+</div>
