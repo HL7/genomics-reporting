@@ -800,12 +800,12 @@ Description: "Retrieves genetic diagnostic implications for variants."
   * type = #Observation
   * extension[operationAllowedType].valueUri = Canonical(Variant)
 
-Instance: find-subject-molec-conseq
+Instance: find-subject-molecular-consequences
 InstanceOf: OperationDefinition
 Title: "Find Subject Molecular Consequences"
 Usage: #definition
 Description: "Retrieves molecular consequences of a DNA variant."
-* name = "FindSubjectMolecConseq"
+* name = "FindSubjectMolecularConsequences"
 * title = "Find Subject Molecular Consequences"
 * status = #active
 * kind = #operation
@@ -843,7 +843,7 @@ Description: "Retrieves molecular consequences of a DNA variant."
   * use = #in
   * min = 0
   * max = "*"
-  * documentation = "List of consequences sought. Must be in token or codesystem|code format."
+  * documentation = "List of consequences sought. Must be in token or codesystem|code format. (These will generally be coded with Sequence Ontology codes under SO:0001537)"
   * type = #string
   * searchType = #token
 * parameter[+]
@@ -1347,12 +1347,12 @@ Description: "Retrieve count or list of patients having diagnostic implications.
     * documentation = "Patient ID. Include if includePatientList=true"
     * type = #string
 
-Instance: find-population-molec-conseq
+Instance: find-population-molecular-consequences
 InstanceOf: OperationDefinition
 Title: "Find Population Molecular Consequences"
 Usage: #definition
 Description: "Retrieve count or list of patients having molecular consequences."
-* name = "FindPopulationMolecConseq"
+* name = "FindPopulationMolecularConsequences"
 * title = "Find Population Molecular Consequences"
 * status = #active
 * kind = #operation
@@ -1374,7 +1374,7 @@ Description: "Retrieve count or list of patients having molecular consequences."
   * use = #in
   * min = 0
   * max = "*"
-  * documentation = "List of consequences sought. Must be in token or codesystem|code format."
+  * documentation = "List of consequences sought. Must be in token or codesystem|code format. (These will generally be coded with Sequence Ontology codes under SO:0001537)"
   * type = #string
   * searchType = #token
 * parameter[+]

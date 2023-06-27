@@ -32,15 +32,15 @@
 	<h3>Examples</h3>
 	<p>A patient with lung cancer has no known druggable targets. Their clinician wants to see if any variants in ALK (NC_000002.12:29190991-29921589), BRAF (NC_000007.14:140713327-140924929), or EGFR (NC_000007.14:55019016-55211628) are predicted to be consequential.</p>
 	
-	<pre>$find-subject-molec-conseq?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628</pre>
+	<pre>$find-subject-molecular-consequences?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628</pre>
 	
 	<p>The clinician wants to further constrain the query in the prior example to only return variants predicted to affect splice donor sites</p>
 	
-	<pre>$find-subject-molec-conseq?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628&amp;featureConsequences=http://sequenceontology.org|SO:0001575</pre>
+	<pre>$find-subject-molecular-consequences?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628&amp;featureConsequences=http://sequenceontology.org|SO:0001575</pre>
 	
 <p>Patient HG00403 is detected as having a variant (NC_000001.10:86852620:A:G) in the ODF2L gene, and their clinician wants to further characterize the variant by examining its predicted molecular consequences. (Results indicate that the variant affects a splice donor site and can lead to gene loss of function).</p>
 <ul>
-<li><a href="Parameters-FindSubjectMolecConseqOutput.html">GET .../$find-subject-molec-conseq?subject=HG00403&amp;variants=NC_000001.10:86852620:A:G</a></li>
+<li><a href="Parameters-FindSubjectMolecConseqOutput.html">GET .../$find-subject-molecular-consequences?subject=HG00403&amp;variants=NC_000001.10:86852620:A:G</a></li>
 </ul>
 
 </div>
