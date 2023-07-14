@@ -363,72 +363,71 @@ Instance: FindSubjectTxImplicationsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectTxImplications' Operation"
 Usage: #example
-* parameter.name = "implications"
-* parameter.part[0].name = "implication"
-* parameter.part[=].resource.resourceType = "Observation"
-* parameter.part[=].resource.id = "TherapeuticImplicationExample"
-* parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
-* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter.part[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
-* parameter.part[=].resource.code.coding.code = #therapeutic-implication
-* parameter.part[=].resource.subject.reference = "Patient/HG00403"
-* parameter.part[=].resource.derivedFrom.reference = "Observation/VariantExample"
-* parameter.part[=].resource.component[0].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
-* parameter.part[=].resource.component[=].code.coding.code = #predicted-therapeutic-implication
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA6677-4
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Responsive"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #51963-7
-* parameter.part[=].resource.component[=].code.coding.display = "Medication assessed"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #480167
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Lapatinib"
-* parameter.part[+].name = "variant"
-* parameter.part[=].resource.resourceType = "Observation"
-* parameter.part[=].resource.id = "variantExample"
-* parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
-* parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
-* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter.part[=].resource.code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.code.coding.code = #69548-6
-* parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
-* parameter.part[=].resource.subject.reference = "Patient/HG00403"
-* parameter.part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
-* parameter.part[=].resource.valueCodeableConcept.coding.display = "Present"
-* parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #48002-0
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA6684-0
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Somatic"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #48013-7
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000017.11
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #69547-8
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic Ref allele [ID]"
-* parameter.part[=].resource.component[=].valueString = "ATTGAGGGAAAACACAT"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #69551-0
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic Alt allele [ID]"
-* parameter.part[=].resource.component[=].valueString = "T"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #92822-6
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic coord system"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA30100-4
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #81254-5
-* parameter.part[=].resource.component[=].code.text = "Genomic allele start-end"
-* parameter.part[=].resource.component[=].valueRange.low.value = 39723965
+* parameter.name = "implication"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "TherapeuticImplicationExample"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+* parameter[=].resource.code.coding.code = #therapeutic-implication
+* parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.derivedFrom.reference = "Observation/VariantExample"
+* parameter[=].resource.component[0].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+* parameter[=].resource.component[=].code.coding.code = #predicted-therapeutic-implication
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA6677-4
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Responsive"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #51963-7
+* parameter[=].resource.component[=].code.coding.display = "Medication assessed"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #480167
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Lapatinib"
+* parameter[+].name = "variant"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "variantExample"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code.coding.system = "http://loinc.org"
+* parameter[=].resource.code.coding.code = #69548-6
+* parameter[=].resource.code.coding.display = "Genetic variant assessment"
+* parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.valueCodeableConcept.coding.code = #LA9633-4
+* parameter[=].resource.valueCodeableConcept.coding.display = "Present"
+* parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #48002-0
+* parameter[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA6684-0
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Somatic"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #48013-7
+* parameter[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000017.11
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #69547-8
+* parameter[=].resource.component[=].code.coding.display = "Genomic Ref allele [ID]"
+* parameter[=].resource.component[=].valueString = "ATTGAGGGAAAACACAT"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #69551-0
+* parameter[=].resource.component[=].code.coding.display = "Genomic Alt allele [ID]"
+* parameter[=].resource.component[=].valueString = "T"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #92822-6
+* parameter[=].resource.component[=].code.coding.display = "Genomic coord system"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA30100-4
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #81254-5
+* parameter[=].resource.component[=].code.text = "Genomic allele start-end"
+* parameter[=].resource.component[=].valueRange.low.value = 39723965
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-dx-implications.html
 
@@ -436,74 +435,185 @@ Instance: FindSubjectDxImplicationsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectDxImplications' Operation"
 Usage: #example
-* parameter.name = "implications"
-* parameter.part[0].name = "implication"
-* parameter.part[=].resource.resourceType = "Observation"
-* parameter.part[=].resource.id = "DiagnosticImplicationExample"
-* parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
-* parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
-* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter.part[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
-* parameter.part[=].resource.code.coding.code = #diagnostic-implication
-* parameter.part[=].resource.subject.reference = "Patient/HG00403"
-* parameter.part[=].resource.derivedFrom.reference = "Observation/VariantExample2"
-* parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #53037-8
-//* parameter.part[=].resource.component[=].code.coding.display = "Genetic variation clinical significance"
-* parameter.part[=].resource.component[=].code.text = "Genetic variation clinical significance"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA6668-3
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Pathogenic"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #81259-4
-* parameter.part[=].resource.component[=].code.text = "Predicted phenotype"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://snomed.info/sct"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #405501007
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Malignant hyperthermia"
-* parameter.part[+].name = "variant"
-* parameter.part[=].resource.resourceType = "Observation"
-* parameter.part[=].resource.id = "variantExample2"
-* parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
-* parameter.part[=].resource.status = #final
-* parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
-* parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter.part[=].resource.code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.code.coding.code = #69548-6
-* parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
-* parameter.part[=].resource.subject.reference = "Patient/HG00403"
-* parameter.part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
-* parameter.part[=].resource.valueCodeableConcept.coding.display = "Present"
-* parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #48002-0
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA6683-2
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "Germline"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #48013-7
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000019.10
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #69547-8
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic Ref allele [ID]"
-* parameter.part[=].resource.component[=].valueString = "C"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #69551-0
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic Alt allele [ID]"
-* parameter.part[=].resource.component[=].valueString = "T"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #92822-6
-* parameter.part[=].resource.component[=].code.coding.display = "Genomic coord system"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #LA30100-4
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
-* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
-* parameter.part[=].resource.component[=].code.coding.code = #81254-5
-* parameter.part[=].resource.component[=].code.text = "Genomic allele start-end"
-* parameter.part[=].resource.component[=].valueRange.low.value = 38499669
+* parameter.name = "implication"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "DiagnosticImplicationExample"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+* parameter[=].resource.code.coding.code = #diagnostic-implication
+* parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.derivedFrom.reference = "Observation/VariantExample2"
+* parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #53037-8
+* parameter[=].resource.component[=].code.text = "Genetic variation clinical significance"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA6668-3
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Pathogenic"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #81259-4
+* parameter[=].resource.component[=].code.text = "Predicted phenotype"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://snomed.info/sct"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #405501007
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Malignant hyperthermia"
+* parameter[+].name = "variant"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "variantExample2"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code.coding.system = "http://loinc.org"
+* parameter[=].resource.code.coding.code = #69548-6
+* parameter[=].resource.code.coding.display = "Genetic variant assessment"
+* parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.valueCodeableConcept.coding.code = #LA9633-4
+* parameter[=].resource.valueCodeableConcept.coding.display = "Present"
+* parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #48002-0
+* parameter[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA6683-2
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Germline"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #48013-7
+* parameter[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000019.10
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #69547-8
+* parameter[=].resource.component[=].code.coding.display = "Genomic Ref allele [ID]"
+* parameter[=].resource.component[=].valueString = "C"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #69551-0
+* parameter[=].resource.component[=].code.coding.display = "Genomic Alt allele [ID]"
+* parameter[=].resource.component[=].valueString = "T"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #92822-6
+* parameter[=].resource.component[=].code.coding.display = "Genomic coord system"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA30100-4
+* parameter[=].resource.component[=].valueCodeableConcept.coding.display = "0-based interval counting"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[=].code.coding.code = #81254-5
+* parameter[=].resource.component[=].code.text = "Genomic allele start-end"
+* parameter[=].resource.component[=].valueRange.low.value = 38499669
+
+//http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-subject-molec-conseq.html
+
+Instance: FindSubjectMolecConseqOutput
+InstanceOf: Parameters
+Description: "Example Output of 'FindSubjectMolecConseq' Operation"
+Usage: #example
+* parameter.name = "consequence"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "MC1"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
+* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
+* parameter[=].resource.component[0].code = http://loinc.org#48004-6
+* parameter[=].resource.component[0].code.text = "coding HGVS"
+* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
+* parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
+* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001575 "splice_donor_variant"
+* parameter[=].resource.component[=].valueCodeableConcept.coding[1] = http://sequenceontology.org#SO:0001627 "intron_variant"
+* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#functional-effect
+* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* parameter[+].name = "consequence"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "MC2"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
+* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#LOW "Low"
+* parameter[=].resource.component[0].code = http://loinc.org#48004-6
+* parameter[=].resource.component[0].code.text = "coding HGVS"
+* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001366781.1:c.90T>C "NM_001366781.1:c.90T>C"
+* parameter[=].resource.component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
+* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
+* parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
+* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001819 "synonymous_variant"
+* parameter[+].name = "consequence"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "MC3"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
+* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
+* parameter[=].resource.component[0].code = http://loinc.org#48004-6
+* parameter[=].resource.component[0].code.text = "coding HGVS"
+* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
+* parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
+* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001623 "5_prime_UTR_variant"
+* parameter[+].name = "consequence"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "MC4"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
+* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
+* parameter[=].resource.component[0].code = http://loinc.org#48004-6
+* parameter[=].resource.component[0].code.text = "coding HGVS"
+* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
+* parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
+* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001627 "intron_variant"
+* parameter[+].name = "variant"
+* parameter[=].resource.resourceType = "Observation"
+* parameter[=].resource.id = "variantExampleMC"
+* parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.status = #final
+* parameter[=].resource.category[+].coding = $OBSCAT#laboratory
+* parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
+* parameter[=].resource.code = $LNC#69548-6 "Genetic variant assessment"
+* parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.valueCodeableConcept = $LNC#LA9633-4 "Present"
+* parameter[=].resource.component[+].code = $LNC#48002-0 "Genomic source class"
+* parameter[=].resource.component[=].valueCodeableConcept.coding = $LNC#LA6683-2 "Germline"
+* parameter[=].resource.component[+].code = http://loinc.org#48013-7 "Genomic reference sequence ID"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/nuccore#NC_000001.10
+* parameter[=].resource.component[+].code = $LNC#53034-5 "Allelic state"
+* parameter[=].resource.component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
+* parameter[=].resource.component[+].code = http://loinc.org#81252-9 "Discrete genetic variant"
+* parameter[=].resource.component[=].valueCodeableConcept = https://api.ncbi.nlm.nih.gov/variation/v0/#NC_000001.10:86852620:A:G "NC_000001.10:86852620:A:G"
+* parameter[=].resource.component[+].code = http://loinc.org#81258-6 "Sample VAF"
+* parameter[=].resource.component[=].valueQuantity = 0.6 '1' "relative frequency of a particular allele in the specimen"
+* parameter[=].resource.component[+].code = http://loinc.org#69547-8 "Genomic Ref allele [ID]"
+* parameter[=].resource.component[=].valueString = "A"
+* parameter[=].resource.component[+].code = http://loinc.org#69551-0 "Genomic Alt allele [ID]"
+* parameter[=].resource.component[=].valueString = "G"
+* parameter[=].resource.component[+].code = http://loinc.org#92822-6 "Genomic coord system"
+* parameter[=].resource.component[=].valueCodeableConcept = http://loinc.org#LA30100-4 "0-based interval counting"
+* parameter[=].resource.component[+].code = http://loinc.org#81254-5 //"Variant exact start-end"
+* parameter[=].resource.component[+].code.text = "Variant exact start-end"
+* parameter[=].resource.component[=].valueRange.low.value = 86852620
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-population-specific-variants.html
 
@@ -621,6 +731,22 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationDxImplications' Operation"
 Usage: #example
 * parameter.name = "implications"
+* parameter.part[0].name = "numerator"
+* parameter.part[=].valueQuantity.value = 23
+* parameter.part[+].name = "subject"
+* parameter.part[=].valueString = "patient/12345"
+* parameter.part[+].name = "subject"
+* parameter.part[=].valueString = "patient/23456"
+* parameter.part[+].name = "subject"
+* parameter.part[=].valueString = "..."
+
+//http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-population-molec-conseq.html
+
+Instance: FindPopulationMolecConseqOutput
+InstanceOf: Parameters
+Description: "Example Output of 'FindPopulationMolecConseq' Operation"
+Usage: #example
+* parameter.name = "consequences"
 * parameter.part[0].name = "numerator"
 * parameter.part[=].valueQuantity.value = 23
 * parameter.part[+].name = "subject"

@@ -674,42 +674,37 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * type = #string
   * searchType = #token
 * parameter[+]
-  * name = #implications
+  * name = #implication
   * use = #out
   * min = 0
   * max = "*"
-  * part[+]
-    * name = #implication
-    * use = #out
-    * min = 1
-    * max = "1"
-    * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication]."
-    * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(TherapeuticImplication)
-  * part[+]
-    * name = #variant
-    * use = #out
-    * min = 0
-    * max = "*"
-    * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
-    * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
-  * part[+]
-    * name = #haplotype
-    * use = #out
-    * min = 0
-    * max = "*"
-    * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
-    * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Haplotype)
-  * part[+]
-    * name = #genotype
-    * use = #out
-    * min = 0
-    * max = "*"
-    * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
-    * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Genotype)
+  * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication]. The target(s) of the implication's derivedFrom shall also be included in the response."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(TherapeuticImplication)
+* parameter[+]
+  * name = #variant
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(Variant)
+* parameter[+]
+  * name = #haplotype
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(Haplotype)
+* parameter[+]
+  * name = #genotype
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(Genotype)
 
 Instance: find-subject-dx-implications
 InstanceOf: OperationDefinition
@@ -789,26 +784,115 @@ Description: "Retrieves genetic diagnostic implications for variants."
   * type = #string
   * searchType = #token
 * parameter[+]
-  * name = #implications
+  * name = #implication
   * use = #out
   * min = 0
   * max = "*"
-  * part[+]
-    * name = #implication
-    * use = #out
-    * min = 1
-    * max = "1"
-    * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication]."
-    * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(DiagnosticImplication)
-  * part[+]
-    * name = #variant
-    * use = #out
-    * min = 1
-    * max = "*"
-    * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
-    * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
+  * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication]. The target(s) of the implication's derivedFrom shall also be included in the response."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(DiagnosticImplication)
+* parameter[+]
+  * name = #variant
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(Variant)
+
+Instance: find-subject-molecular-consequences
+InstanceOf: OperationDefinition
+Title: "Find Subject Molecular Consequences"
+Usage: #definition
+Description: "Retrieves molecular consequences of a DNA variant."
+* name = "FindSubjectMolecularConsequences"
+* title = "Find Subject Molecular Consequences"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[+]
+  * name = #subject
+  * use = #in
+  * min = 1
+  * max = "1"
+  * documentation = "The subject of interest."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
+  * name = #variants
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of variants from which consequences are derived. Must be in HGVS or SPDI format."
+  * type = #string
+  * searchType = #string
+* parameter[+]
+  * name = #ranges
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of regions to be searched for variants. Must be in zero-based RefSeq:Integer-range format (e.g. 'NC_000007.14:55174721-55174820')."
+  * type = #string
+  * searchType = #special
+* parameter[+]
+  * name = #featureConsequences
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of consequences sought. Must be in token or codesystem|code format. (These will generally be coded with Sequence Ontology codes under SO:0001537)"
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #testIdentifiers
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "Supply a list of test identifiers. Only results originating from one of these tests will be returned."
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #testDateRange
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Supply a date range. Only results generated during this range will be returned."
+  * type = #Period
+* parameter[+]
+  * name = #specimenIdentifiers
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "Supply a list of specimen identifiers. Only results derived from one of these specimens will be returned."
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #genomicSourceClass
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #consequence
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Consequences must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence]. The target(s) of the consequence's derivedFrom shall also be included in the response."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(MolecularConsequence)
+* parameter[+]
+  * name = #variant
+  * use = #out
+  * min = 0
+  * max = "*"
+  * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
+  * type = #Observation
+  * extension[operationAllowedType].valueUri = Canonical(Variant)
 
 Instance: find-population-specific-variants
 InstanceOf: OperationDefinition
@@ -1247,6 +1331,78 @@ Description: "Retrieve count or list of patients having diagnostic implications.
     * min = 1
     * max = "1"
     * documentation = "Count of patients having this variant"
+    * type = #Quantity
+  * part[+]
+    * name = #denominator
+    * use = #out
+    * min = 0
+    * max = "1"
+    * documentation = "Count of patients in the cohort searched"
+    * type = #Quantity
+  * part[+]
+    * name = #subject
+    * use = #out
+    * min = 0
+    * max = "*"
+    * documentation = "Patient ID. Include if includePatientList=true"
+    * type = #string
+
+Instance: find-population-molecular-consequences
+InstanceOf: OperationDefinition
+Title: "Find Population Molecular Consequences"
+Usage: #definition
+Description: "Retrieve count or list of patients having molecular consequences."
+* name = "FindPopulationMolecularConsequences"
+* title = "Find Population Molecular Consequences"
+* status = #active
+* kind = #operation
+* publisher = "HL7 International Clinical Genomics Work Group"
+* system = false
+* type = true
+* instance = false
+* code = #match
+* parameter[+]
+  * name = #variants
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of variants from which implications are derived. Must be in HGVS or SPDI format."
+  * type = #string
+  * searchType = #string
+* parameter[+]
+  * name = #featureConsequences
+  * use = #in
+  * min = 0
+  * max = "*"
+  * documentation = "List of consequences sought. Must be in token or codesystem|code format. (These will generally be coded with Sequence Ontology codes under SO:0001537)"
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #genomicSourceClass
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Enables an App to limit results to those that are 'germline' or 'somatic'. Default is to include variants irrespective of genomic source class."
+  * type = #string
+  * searchType = #token
+* parameter[+]
+  * name = #includePatientList
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Include list of matching patients if set to true. Default=false."
+  * type = #boolean
+* parameter[+]
+  * name = #consequences
+  * use = #out
+  * min = 1
+  * max = "1"
+  * part[+]
+    * name = #numerator
+    * use = #out
+    * min = 1
+    * max = "1"
+    * documentation = "Count of patients meeting criteria"
     * type = #Quantity
   * part[+]
     * name = #denominator

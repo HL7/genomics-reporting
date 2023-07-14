@@ -3,12 +3,12 @@
 	<h3>Description</h3>
 	<p>Retrieves genetic diagnostic implications for variants.</p>
 	
-	<p>
-	Returned implications are those derived from a variant present in the subject that satisfy other parameter values. For instance, if only variants are provided, the operation returns identified diagnostic implications for the subset of supplied variants present in the subject. If only conditions are provided, the operation returns identified diagnostic implications where the implication is one of the supplied conditions and where the implication is derived from a variant present in the subject. If both variants and conditions are provided, the operation returns identified diagnostic implications where the implication is one of the supplied conditions and where the implication is derived from the subset of supplied variants present in the subject.</p>
+		<p>
+	Generally, the operation will be called with 'subject' and 'ranges' parameters, which will return diagnostic implications for patient variants in supplied ranges. Another common pattern is to call the operation with just 'subject' and 'conditions' to do a broad sweep of the patient's variants for any associated with the supplied conditions; or with 'subject', 'ranges', and 'conditions' parameters, which will limit the return to diagnostic implications for the supplied conditions in supplied ranges - this is useful, for instance, to see if a patient has any variants in a given gene that are associated with a given disease. For other combinations of input parameters, the operation returns diagnostic implications satisfying all parameters. </p>
 	
-	<p>Where no variants or conditions are provided, the operation returns no implications. </p>
+	<p>Where no variants, ranges, or conditions are provided, the operation returns no implications.</p>
 	
-	<p>As shown in the following picture, this operation can return previously instantiated implications and/or dynamically computed implications. Specific implementations can indicate their capabilities using a <a href="https://www.hl7.org/fhir/capabilitystatement.html">FHIR Capability Statement</a>. Rules around the retention of dynamically computed implications are outside the scope of this operation, but a server could potentially instantiate those results based on the <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a> and <a href="StructureDefinition-diagnostic-implication.html">Diagnostic Implication</a> FHIR profiles. </p>
+	<p>As shown in the following picture, this operation can return previously instantiated implications and/or dynamically computed implications. Specific implementations can indicate their capabilities using a <a href="https://www.hl7.org/fhir/capabilitystatement.html">FHIR Capability Statement</a>. Rules around the retention of dynamically computed implications are outside the scope of this operation, but a server could potentially instantiate those results based on the <a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a>, <a href="StructureDefinition-diagnostic-implication.html">Diagnostic Implication</a>, or <a href="StructureDefinition-molecular-consequence.html">Molecular Consequence</a> FHIR profiles. </p>
 	<img src="implications.png" alt="Instantiated vs Dynamically Computed Implications"/>
 
  <blockquote class="stu-note">
