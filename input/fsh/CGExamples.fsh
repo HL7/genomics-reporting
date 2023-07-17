@@ -1354,3 +1354,17 @@ Description: "Example of a Genotype using Pharmvar Haplotypes"
 * status = #final
 * derivedFrom[+] = Reference(HaplotypeExamplePharmVar01)
 * derivedFrom[+] = Reference(HaplotypeExamplePharmVar02)
+
+Instance: ISCNExample
+InstanceOf: Variant
+Description: "Example for karyotype Variant expressed in ISCN"
+* id = "ISCNExample"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(HG00403)
+* effectiveDateTime = "2023-04-01"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* component[0].code.coding = $LNC#81291-7 "Variant ISCN"
+* component[0].valueCodeableConcept.coding = $ISCN#46,XX,t(9;22)(q34;q4)
