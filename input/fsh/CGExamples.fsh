@@ -1354,3 +1354,43 @@ Description: "Example of a Genotype using Pharmvar Haplotypes"
 * status = #final
 * derivedFrom[+] = Reference(HaplotypeExamplePharmVar01)
 * derivedFrom[+] = Reference(HaplotypeExamplePharmVar02)
+
+Instance: ISCN-NormalExample
+InstanceOf: Variant
+Description: "Normal example for karyotype Variant expressed in ISCN"
+* id = "ISCN-NormalExample"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(HG00403)
+* effectiveDateTime = "2023-05-01"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* component[0].code.coding = $LNC#81291-7 "Variant ISCN"
+* component[0].valueCodeableConcept.coding = $ISCN#46,XX
+
+Instance: ISCN-CMLExample
+InstanceOf: Variant
+Description: "Basic example for karyotype Variant expressed in ISCN"
+* id = "ISCN-CMLExample"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* status = #final "Final"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(HG00403)
+* effectiveDateTime = "2023-04-01"
+* valueCodeableConcept = $LNC#LA9633-4 "Present"
+* component[0].code.coding = $LNC#81291-7 "Variant ISCN"
+* component[0].valueCodeableConcept.coding = $ISCN#46,XX,t(9;22)(q34;q4)
+
+Instance: ISCN-CMLImplication
+InstanceOf: DiagnosticImplication
+Description: "Basic example of a Diagnostic Implication for CML"
+* id = "ISCN-CMLImplication"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = TbdCodesCS#diagnostic-implication
+* component[predicted-phenotype].valueCodeableConcept = $SCT#92818009 "Chronic myeloid leukemia"
+* derivedFrom = Reference(ISCN-CMLExample)
+* status = #final
