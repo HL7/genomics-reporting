@@ -250,14 +250,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[cytogenomic-nomenclature].value[x] ^binding.description = "Binding not yet defined"
 * component[cytogenomic-nomenclature].value[x] 1..1
 
-* component[variant-inheritance].code = TbdCodesCS#variant-inheritance
-* component[variant-inheritance].code ^short = "variant-inheritance"
-* component[variant-inheritance] ^short = "Variant Inheritance"
-* component[variant-inheritance] ^definition = "By which parent the variant was inherited in the patient, if known."
+* component[variant-inheritance].code = $LNC#94186-4
+* component[variant-inheritance].code ^short = "94186-4"
+* component[variant-inheritance] ^short = "Origin of germline genetic variant"
+* component[variant-inheritance] ^definition = "The source or inheritance of a specific germline variation found in an individual patient."
 * component[variant-inheritance].value[x] only CodeableConcept
 * component[variant-inheritance].value[x] 1..1
 * component[variant-inheritance].value[x] ^short = "Maternal | Paternal | Unknown"
-* component[variant-inheritance].value[x] from VariantInheritanceVS (extensible)
+* component[variant-inheritance].value[x] from http://loinc.org/vs/LL5489-1 (extensible)
 
 * component[chromosome-identifier].code = $LNC#48000-4
 * component[chromosome-identifier].code ^short = "48000-4"
