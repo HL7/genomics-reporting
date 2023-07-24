@@ -34,7 +34,7 @@
     It is important to note there are also two ways to communicate details about non-medication therapies (e.g. altered diet, radiation therapy, surgery, etc.). The profile component <code>therapy-assessed</code> is the place to communicate a simple code for the therapy. If more detail about the therapy is to be shared, use the extension also named <code>therapy-assessed</code>. The extension can refer to a <a href="{{site.data.fhir.path}}careplan.html">CarePlan</a>, <a href="{{site.data.fhir.path}}researchstudy.html">ResearchStudy</a>, or <a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a> resource. It is important to note that since there two ways to do this, implementers SHALL ensure consistent usage. If both the extension and component are used at the same time, they SHALL deliver the same therapy code. Because this is an international profile, no guidance is provided on therapy coding systems.
   </p>
   <p>
-    The component <code>predicted-therapeutic-implication</code> lists one or more ramifications based on the presence of associated molecular finding(s), which may include:
+    The component <code>therapeutic-implication</code> lists one or more ramifications based on the presence of associated molecular finding(s), which may include:
   </p>
   <ul>
 	<li>Alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time;</li>
@@ -65,6 +65,6 @@
 		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents, where diagnostic and therapeutic implications have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances.
 	</p>
 	<p>
-   See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information. Implication fields affected by this guidance include: derivedFrom, evidence-level, phenotypic-treatment-context, medication-assessed, therapy-assessed, predicted-therapeutic-implication.
+   See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information. Implication fields affected by this guidance include: derivedFrom, evidence-level, therapeutic-implication, phenotypic-treatment-context, medication-assessed, therapy-assessed.
   </p>
 </div>

@@ -291,7 +291,7 @@ Usage: #inline
 * derivedFrom = Reference(genotype)
 * component[0].code = $LNC#51963-7
 * component[=].valueCodeableConcept.coding = $RXN#11289 "Warfarin"
-* component[+].code = TbdCodesCS#predicted-therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept.coding = $LNC#LA25390-8 "Rapid metabolizer"
 
 Instance: efficacy
@@ -306,7 +306,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype)
-* component[0].code = TbdCodesCS#predicted-therapeutic-implication
+* component[0].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept.coding = $LNC#LA6676-6 "Resistant"
 * component[+].code = $LNC#51963-7
 * component[=].valueCodeableConcept.coding = $RXN#11289 "Warfarin"
@@ -323,7 +323,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype)
-* component[0].code = TbdCodesCS#predicted-therapeutic-implication
+* component[0].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept.coding = $LNC#LA19542-2 "Low risk"
 * component[+].code = $LNC#51963-7
 * component[=].valueCodeableConcept.coding = $RXN#11289 "Warfarin"

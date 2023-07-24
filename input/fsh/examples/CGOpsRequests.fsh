@@ -375,7 +375,7 @@ Usage: #example
 * parameter[=].resource.subject.reference = "Patient/HG00403"
 * parameter[=].resource.derivedFrom.reference = "Observation/VariantExample"
 * parameter[=].resource.component[0].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
-* parameter[=].resource.component[=].code.coding.code = #predicted-therapeutic-implication
+* parameter[=].resource.component[=].code.coding.code = #therapeutic-implication
 * parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA6677-4
 * parameter[=].resource.component[=].valueCodeableConcept.coding.display = "Responsive"
