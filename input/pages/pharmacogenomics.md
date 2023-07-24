@@ -101,7 +101,7 @@ Below is one of the therapeutic implications in the report:
    <code>
      <coding>
        <system value="http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"/>
-       <code value="predicted-therapeutic-implication"/>
+       <code value="therapeutic-implication"/>
      </coding>
    </code>
    <valueCodeableConcept>

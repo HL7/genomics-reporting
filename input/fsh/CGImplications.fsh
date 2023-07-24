@@ -112,10 +112,20 @@ Description:    "Profile with properties for observations that convey the potent
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
+    therapeutic-implication 0..* and
     phenotypic-treatment-context 0..* and
     medication-assessed 0..* and
-    therapy-assessed 0..* and
-    predicted-therapeutic-implication 0..*
+    therapy-assessed 0..*
+
+* component[therapeutic-implication] ^short = "Therapeutic Implication"
+* component[therapeutic-implication] ^definition = "A predicted ramification based on the presence of associated molecular finding(s). Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
+* component[therapeutic-implication].code = TbdCodesCS#therapeutic-implication
+* component[therapeutic-implication].code ^short = "therapeutic-implication"
+* component[therapeutic-implication].value[x] only CodeableConcept
+* component[therapeutic-implication].value[x] 1..1
+* component[therapeutic-implication].value[x] from GeneticTherapeuticImplicationsVS (extensible)
+* component[therapeutic-implication].value[x] ^short = "Responsive | Resistant | Poor metabolizer | Rapid metabolizer | Decreased function | Increased function | Does not meet eligibility criteria for clinical trial | ... (more)"
+
 * component[phenotypic-treatment-context].code = $LNC#81259-4
 * component[phenotypic-treatment-context].code ^short = "81259-4"
 * component[phenotypic-treatment-context] ^short = "Phenotypic treatment context"
@@ -145,15 +155,6 @@ Description:    "Profile with properties for observations that convey the potent
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[therapy-assessed].value[x] 1..1
-
-* component[predicted-therapeutic-implication] ^short = "Predicted Therapeutic Implication"
-* component[predicted-therapeutic-implication] ^definition = "A predicted ramification based on the presence of associated molecular finding(s). Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
-* component[predicted-therapeutic-implication].code = TbdCodesCS#predicted-therapeutic-implication
-* component[predicted-therapeutic-implication].code ^short = "predicted-therapeutic-implication"
-* component[predicted-therapeutic-implication].value[x] only CodeableConcept
-* component[predicted-therapeutic-implication].value[x] 1..1
-* component[predicted-therapeutic-implication].value[x] from GeneticTherapeuticImplicationsVS (extensible)
-* component[predicted-therapeutic-implication].value[x] ^short = "Responsive | Resistant | Poor metabolizer | Rapid metabolizer | Decreased function | Increased function | Does not meet eligibility criteria for clinical trial | ... (more)"
 
 Profile:        MedicationRecommendation
 Parent:         Task
