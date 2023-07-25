@@ -89,6 +89,7 @@ Description:    "Details about a set of changes in the tested sample compared to
     allelic-read-depth 0..1 and
     allelic-state 0..1 and
     variant-inheritance 0..1 and
+    variant-inheritance-basis 0..1 and
     variation-code 0..* and
     chromosome-identifier 0..* and
     representative-protein-hgvs 0..1 and
@@ -258,6 +259,15 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[variant-inheritance].value[x] 1..1
 * component[variant-inheritance].value[x] ^short = "Maternal | Paternal | Unknown"
 * component[variant-inheritance].value[x] from http://loinc.org/vs/LL5489-1 (extensible)
+
+* component[variant-inheritance-basis].code = $LNC#82309-6
+* component[variant-inheritance-basis].code ^short = "Basis for allelic phase"
+* component[variant-inheritance-basis] ^short = "Evidential basis for variant inheritance"
+* component[variant-inheritance-basis] ^definition = "The method by which the variant inheritance is determined."
+* component[variant-inheritance-basis].value[x] only CodeableConcept
+* component[variant-inheritance-basis].value[x] 1..1
+* component[variant-inheritance-basis].value[x] ^short = "Directly measured | Family DNA | Family history | Inferred from population data"
+* component[variant-inheritance-basis].value[x] from http://loinc.org/vs/LL4050-2 (extensible)
 
 * component[chromosome-identifier].code = $LNC#48000-4
 * component[chromosome-identifier].code ^short = "48000-4"

@@ -985,6 +985,8 @@ Description: "Example for germline CNV"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 42523949
 * component[inner-start-end].valueRange.high.value = 42533891
+* component[variant-inheritance].valueCodeableConcept = $LNC#LA26320-4 "Maternal"
+* component[variant-inheritance-basis].valueCodeableConcept = $LNC#LA26426-9 "Directly measured"
 
 Instance: ExampleSomaticCNV
 InstanceOf: Variant
