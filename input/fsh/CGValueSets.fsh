@@ -142,3 +142,10 @@ Title:          "Coded Annotation Types"
 Description:    "Value Set for specific types of coded annotations"
 * ^experimental = false
 * codes from system CodedAnnotationTypesCS
+
+ValueSet:       MolecularBiomarkerCategoryVS
+Id:             molecular-biomarker-category-vs
+Title:          "Molecular Biomarker Categories"
+Description:    "This value set is drawn from the Molecular Biomarker Ontology code system, which provides codes that characterize a molecular biomarker."
+* ^experimental = false
+* include codes from system MolecularBiomarkerOntologyCS

@@ -30,6 +30,7 @@ Description: "These codes are currently 'TBD' codes. The CG WG plans to request 
 * #variant-confidence-status "Variant Confidence Status" "The confidence of a true positive variant call."
 * #repeat-motif "Repeat Expansion Motif" "Nucleotides of a repeat expansion motif"
 * #repeat-number "Number of Repeat Expansions" "Number of repeats of a repeat expansion"
+* #biomarker-category "A characterization of a given biomarker observation."
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
@@ -75,3 +76,18 @@ Description: "Code System for specific types of coded annotations"
 * #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
 * #test-methodology "Test Methodology" "Additional details regarding the test methdology"
 * #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"
+
+CodeSystem: MolecularBiomarkerOntologyCS
+Id: molecular-biomarker-ontology-cs
+Title: "Molecular Biomarder Ontology Codes"
+Description: "This code system provides a categorization of biomarkers along several axes."
+* ^caseSensitive = true
+* ^experimental = false
+* #antibodyCategory	"antibody category"	"Molecular biomarker physiologic role is an antibody."
+* #cellReceptorCategory	        "cell receptor category"	        "Molecular biomarker physiologic role is a cell receptor."
+* #immuneStainCategory "immune stain category"	"Molecular biomarker method is immune stain."
+* #immunoassayCategory	"immunoassay category"	"Molecular biomarker method is immunoassay."
+* #molgenCategory	"molecular sequence adjacent category"	"Molecular biomarker method is molecular sequence adjacent observation."
+* #proteinCategory	"protein category"	"Molecular biomarker molecule type is a protein."
+
+
