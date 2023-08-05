@@ -87,7 +87,7 @@ Instance: TumorMutationBurdenExample01
 InstanceOf: MolecularBiomarker
 Description: "Example for Tumor Mutation Burden"
 * id = "TumorMutationBurdenExample01"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecularBiomarker"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
 * category[0] = $OBSCAT#laboratory
 * category[1] = $DIAGNOSTICSERVICE#GE
@@ -101,7 +101,7 @@ Instance: MicrosatelliteInstabilityExample01
 InstanceOf: MolecularBiomarker
 Description: "Example for MSI"
 * id = "MicrosatelliteInstabilityExample01"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecularBiomarker"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
 * category[0] = $OBSCAT#laboratory
 * category[1] = $DIAGNOSTICSERVICE#GE
@@ -115,7 +115,7 @@ Instance: HER2byImmuneStainExample
 InstanceOf: MolecularBiomarker
 Description: "Example for HER2 by immune stain"
 * id = "HER2byImmuneStainExample"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecularBiomarker"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
 * category[0] = $OBSCAT#laboratory
 * code = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
@@ -134,7 +134,7 @@ Instance: HER2byImmunoassayExample
 InstanceOf: MolecularBiomarker
 Description: "Example for HER2 by immunoassay"
 * id = "HER2byImmunoassayExample"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecularBiomarker"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
 * category[0] = $OBSCAT#laboratory
 * code = $LNC#72382-5 "HER2 [Units/volume] in Tissue by Immunoassay"

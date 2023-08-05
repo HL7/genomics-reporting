@@ -441,7 +441,7 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
 
 Profile:        MolecularBiomarker
 Parent:         Observation
-Id:             molecularBiomarker
+Id:             molecular-biomarker
 Title:          "Molecular Biomarker"
 Description:    "This profile is used to represent laboratory measurements of human inherent substances such as gene products, antigens and antibodies, complex chemicals that result from post-translational processing of multi-gene products, etc."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
@@ -464,6 +464,9 @@ Description:    "This profile is used to represent laboratory measurements of hu
 
 * component[biomarker-category] ^short = "Biomarker Category"
 * component[biomarker-category] ^definition = "A categorization of a given biomarker observation."
+* component[biomarker-category] ^comment = """
+Component biomarker-category is an optional and repeating field that provides for a categorization of a given biomarker observation. The example 'molecular biomarker ontology' value set provides a categorization of biomarkers along several axes. A given lab test can be associated with more than one category within more than one axis. For example, LOINC code 85337-4 represents Estrogen receptor antigen in tissue by immune stain. It can be categorized by physiologic role of cell receptor and antigen; by molecule type of protein; and by method of immune stain.
+"""
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
 * component[biomarker-category].value[x] only CodeableConcept
 * component[biomarker-category].value[x] 1..1
