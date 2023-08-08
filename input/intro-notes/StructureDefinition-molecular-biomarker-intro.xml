@@ -1,0 +1,110 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <p>The term '<b>biomarker</b>' is broad, encompassing observable characteristics that indicate normal or abnormal biological processes and that are often used to assess prognosis or guide therapy. In the broad sense, many clinical and laboratory observations might be considered a 'biomarker'. '<b>Molecular biomarker</b>' is likewise broad, primarily encompassing laboratory measurements of human inherent substances such as gene products, antigens and antibodies, complex chemicals that result from post-translational processing of multi-gene products, etc. Molecular biomarkers include many different types of measurements, such as presence or absence of a chemical, or the level of a chemical. Here, we are primarily interested in those molecular biomarkers that have associated therapeutic implications, particularly in precision cancer care, including but not limited to: cell receptor levels (e.g. ER, PR, HER2); molecular sequence adjacent observations (e.g. microsatellite instability, tumor mutation burden, gene promoter methylation); cell receptor ligands (e.g. PD-L1); proteins, antigens, and antibodies (e.g. HLA type).
+  </p>
+  <p>Component '<b>gene-studied</b>' is an optional and repeating field for representing the gene or genes from which the observed substance is derived. </p>
+  <p>Component '<b>biomarker-category</b>' is an optional and repeating field that provides for a categorization of a given biomarker observation. The example 'molecular biomarker categories' value set provides a categorization of biomarkers along several axes. A given lab test can be associated with more than one category within more than one axis. For example, LOINC code 85337-4 represents Estrogen receptor antigen in tissue by immune stain. It can be categorized by physiologic role of cell receptor and antigen; by molecule type of protein; and by method of immune stain.
+</p>
+
+<p>Ontology with examples</p>
+<ul>
+ <li>Molecular biomarker</li>
+ <ul>
+  <li>Molecular biomarker categorized by physiologic</li>
+  <ul>
+   <li>cell receptor: 
+    <a href="https://loinc.org/85337-4/">ER</a>,
+    <a href="https://loinc.org/72382-5/">HER2 by IA</a>, 
+    <a href="https://loinc.org/77637-7/">HLA class I</a>, 
+    <a href="https://loinc.org/40557-1/">PR</a></li>
+   <li>cell receptor ligand: 
+    <a href="https://loinc.org/85147-7/">PD-L1</a></li>
+   <li>antibody: 
+    <a href="https://loinc.org/59025-7/">Neutrophil Ab</a></li>
+   <li>antigen: 
+    <a href="https://loinc.org/85337-4/">ER</a>,
+    <a href="https://loinc.org/77637-7/">HLA class I</a>, 
+    <a href="https://loinc.org/10495-0/">Insulin</a>, 
+    <a href="https://loinc.org/40557-1/">PR</a></li>
+  </ul>
+  <li>Molecular biomarker categorized by molecule type</li>
+  <ul>
+   <li>carbohydrate:</li>
+   <li>lipid:</li>
+   <li>protein (includes single or multi-subunit protein with or without post-translational modifications):
+    <a href="https://loinc.org/85337-4/">ER</a>,
+    <a href="https://loinc.org/72382-5/">HER2 by IA</a>, 
+    <a href="https://loinc.org/4551-8/">Hgb A2</a>, 
+    <a href="https://loinc.org/77637-7/">HLA class I</a>, 
+    <a href="https://loinc.org/59025-7/">Neutrophil Ab</a>, 
+    <a href="https://loinc.org/40557-1/">PR</a>,
+    <a href="https://loinc.org/19195-7/">PSA</a>,
+    <a href="https://loinc.org/10495-0/">Insulin</a></li>
+   <li>nucleic acid: 
+    <a href="https://loinc.org/64083-9/">MGMT gene methylation</a></li>
+  </ul>
+  <li>Molecular biomarker categorized by method (from LOINC and <a href="https://www.ncbi.nlm.nih.gov/gtr/docs/submit/test_method/#methods">GTR</a>)</li>
+  <ul>
+   <li>Cytology stain:</li>
+   <li>Enzyme assay:</li>
+   <li>Flow cytometry: 
+    <a href="https://loinc.org/59025-7/">Neutrophil Ab</a></li>
+   <li>Immune stain: 
+    <a href="https://loinc.org/85337-4/">ER</a>,
+    <a href="https://loinc.org/10495-0/">Insulin</a>,
+    <a href="https://loinc.org/62862-8/">MSI by immune stain</a>, 
+    <a href="https://loinc.org/85147-7/">PD-L1</a>, 
+    <a href="https://loinc.org/40557-1/">PR</a></li>
+   <li>Immunoassay: 
+    <a href="https://loinc.org/72382-5/">HER2 by IA</a>,
+    <a href="https://loinc.org/77637-7/">HLA class I</a></li>
+   <li>Methylation analysis: 
+    <a href="https://loinc.org/64083-9/">MGMT gene methylation</a></li>
+   <li>Molgen:
+    <a href="https://loinc.org/81704-9/">MSI by marker</a>, 
+    <a href="https://loinc.org/94077-5/">TMB</a></li>
+  </ul>
+ </ul>
+</ul>
+
+<p>Biomarker categories can be associated with LOINC value sets to facilitate retrieval, as shown in this non-normative example table.</p>
+
+<table>
+ <tr>
+  <td>Biomarker Category</td>
+  <td>Example LOINC codes</td>
+ </tr>
+ <tr>
+  <td>cell receptor</td>
+  <td>
+    <p><a href="https://loinc.org/85337-4/">ER</a>
+    <a href="https://loinc.org/72382-5/">HER2 by IA</a>
+    <a href="https://loinc.org/77637-7/">HLA class I</a>
+    <a href="https://loinc.org/40557-1/">PR</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td>protein</td>
+  <td>
+    <p><a href="https://loinc.org/85337-4/">ER</a>
+    <a href="https://loinc.org/72382-5/">HER2 by IA</a>
+    <a href="https://loinc.org/4551-8/">Hgb A2</a>
+    <a href="https://loinc.org/77637-7/">HLA class I</a>
+    <a href="https://loinc.org/59025-7/">Neutrophil Ab</a>
+    <a href="https://loinc.org/40557-1/">PR</a>
+    <a href="https://loinc.org/19195-7/">PSA</a>
+    <a href="https://loinc.org/10495-0/">Insulin</a></p>
+  </td>
+ </tr>
+ <tr>
+  <td>immune stain</td>
+  <td>
+    <p><a href="https://loinc.org/85337-4/">ER</a>
+    <a href="https://loinc.org/10495-0/">Insulin</a>
+    <a href="https://loinc.org/62862-8/">MSI by immune stain</a>
+    <a href="https://loinc.org/85147-7/">PD-L1</a>
+    <a href="https://loinc.org/40557-1/">PR</a></p>
+  </td>
+ </tr>
+</table>
+
+</div>
