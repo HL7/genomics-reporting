@@ -79,7 +79,7 @@ Description: "Code System for specific types of coded annotations"
 CodeSystem: MolecularBiomarkerOntologyCS
 Id: molecular-biomarker-ontology-cs
 Title: "Molecular Biomarker Ontology Codes"
-Description: "This code system provides a categorization of biomarkers along several axes."
+Description: "This code system provides for a categorization of biomarkers along several axes."
 * ^status = #active
 * ^content = #complete
 * ^version = "1.0.0"

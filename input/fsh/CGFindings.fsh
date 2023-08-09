@@ -443,7 +443,7 @@ Profile:        MolecularBiomarker
 Parent:         Observation
 Id:             molecular-biomarker
 Title:          "Molecular Biomarker"
-Description:    "This profile is used to represent laboratory measurements of human inherent substances such as gene products, antigens and antibodies, complex chemicals that result from post-translational processing of multi-gene products, etc."
+Description:    "This profile is used to represent laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
 * category 1..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
@@ -451,7 +451,6 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains labCategory 1..1
 * category[labCategory].coding = $OBSCAT#laboratory
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * . ^short = "MolecularBiomarker"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
