@@ -95,7 +95,7 @@ Description: "Example for Tumor Mutation Burden"
 * subject = Reference(CGPatientExample01)
 * valueQuantity.value = 250
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
-* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgenCategory "molecular sequence adjacent category"
+* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
 
 Instance: MicrosatelliteInstabilityExample01
 InstanceOf: MolecularBiomarker
@@ -109,7 +109,7 @@ Description: "Example for MSI"
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
-* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgenCategory "molecular sequence adjacent category"
+* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
 
 Instance: HER2byImmuneStainExample
 InstanceOf: MolecularBiomarker
@@ -124,11 +124,11 @@ Description: "Example for HER2 by immune stain"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = http://www.genenames.org/geneId#HGNC:3430 "ERBB2"
 * component[biomarker-category][0].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStainCategory "immune stain category"
+* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
 * component[biomarker-category][1].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptorCategory	        "cell receptor category"
+* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptor	        "cell receptor category"
 * component[biomarker-category][2].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#proteinCategory	"protein category"
+* component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
 
 Instance: HER2byImmunoassayExample
 InstanceOf: MolecularBiomarker
@@ -144,11 +144,11 @@ Description: "Example for HER2 by immunoassay"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = http://www.genenames.org/geneId#HGNC:3430 "ERBB2"
 * component[biomarker-category][0].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immunoassayCategory	"immunoassay category"
+* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immunoassay	"immunoassay category"
 * component[biomarker-category][1].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptorCategory	        "cell receptor category"
+* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptor	        "cell receptor category"
 * component[biomarker-category][2].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#proteinCategory	"protein category"
+* component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
 
 Instance: GenomicsServiceRequestExample01
 InstanceOf: ServiceRequest
