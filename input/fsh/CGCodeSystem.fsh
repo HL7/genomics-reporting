@@ -79,7 +79,7 @@ Description: "Code System for specific types of coded annotations"
 CodeSystem: MolecularBiomarkerOntologyCS
 Id: molecular-biomarker-ontology-cs
 Title: "Molecular Biomarker Ontology Codes"
-Description: "This code system provides for a categorization of biomarkers along several axes."
+Description: "This experimental code system provides for a draft categorization of biomarkers along several axes. Based on ballot feedback, the committee anticipates significant revisions."
 * ^status = #active
 * ^content = #complete
 * ^version = "1.0.0"
@@ -96,7 +96,7 @@ Description: "This code system provides for a categorization of biomarkers along
   * #lipid "lipid category" "Molecular biomarker molecule type is a lipid."
   * #nucleicAcid "nucleic acid category" "Molecular biomarker molecule type is a nucleic acid."
   * #protein "protein category" "Molecular biomarker molecule type is a protein. Includes single or multi-subunit proteins with or without post-translational modifications."
-* #_methodBiomarkerCategory "Molecular biomarker method type category" "A category based on the measurement ascertainment method of the biomarker. (Methods are drawn from LOINC and NCBI Genetic Testing Registry)."
+* #_methodBiomarkerCategory "Molecular biomarker method type category" "A category based on the measurement ascertainment method of the biomarker. (Methods are drawn from LOINC (https://loinc.org/kb/users-guide/major-parts-of-a-loinc-term/#type-of-method-6th-part) and NCBI Genetic Testing Registry (https://www.ncbi.nlm.nih.gov/gtr/))."
   * #enzymeAssay "enzyme assay category" "Molecular biomarker method is enzyme assay."
   * #flowCytometry "flow cytometry category" "Molecular biomarker method is flow cytometry."
   * #immuneStain "immune stain category" "Molecular biomarker method is immune stain."
