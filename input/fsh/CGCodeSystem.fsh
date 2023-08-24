@@ -84,7 +84,7 @@ Description: "This (experimental) code system provides for a draft categorizatio
 * ^content = #complete
 * ^version = "1.0.0"
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 * ^hierarchyMeaning = #is-a
 * #_physiologyBiomarkerCategory "Molecular biomarker physiologic role category" "A category based on the normal bodily function of the biomarker."
   * #antibody "antibody category" "Molecular biomarker physiologic role is an antibody."

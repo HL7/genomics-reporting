@@ -89,8 +89,8 @@ Description: "Example for Tumor Mutation Burden"
 * id = "TumorMutationBurdenExample01"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
-* category[0] = $OBSCAT#laboratory
-* category[1] = $DIAGNOSTICSERVICE#GE
+* category[labCategory] = $OBSCAT#laboratory
+* category[genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
 * subject = Reference(CGPatientExample01)
 * valueQuantity.value = 250
@@ -103,8 +103,8 @@ Description: "Example for MSI"
 * id = "MicrosatelliteInstabilityExample01"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
-* category[0] = $OBSCAT#laboratory
-* category[1] = $DIAGNOSTICSERVICE#GE
+* category[labCategory] = $OBSCAT#laboratory
+* category[genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"
@@ -117,7 +117,7 @@ Description: "Example for HER2 by immune stain"
 * id = "HER2byImmuneStainExample"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
-* category[0] = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
@@ -136,7 +136,7 @@ Description: "Example for HER2 by immunoassay"
 * id = "HER2byImmunoassayExample"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
-* category[0] = $OBSCAT#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = $LNC#72382-5 "HER2 [Units/volume] in Tissue by Immunoassay"
 * subject = Reference(CGPatientExample01)
 * valueQuantity.value = 20
