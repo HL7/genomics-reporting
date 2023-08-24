@@ -90,7 +90,7 @@ Description: "Example for Tumor Mutation Burden"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
 * category[labCategory] = $OBSCAT#laboratory
-* category[genetics] = $DIAGNOSTICSERVICE#GE
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
 * subject = Reference(CGPatientExample01)
 * valueQuantity.value = 250
@@ -104,7 +104,7 @@ Description: "Example for MSI"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
 * category[labCategory] = $OBSCAT#laboratory
-* category[genetics] = $DIAGNOSTICSERVICE#GE
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"

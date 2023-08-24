@@ -451,9 +451,9 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * category ^slicing.description = "Slice based on the category.code pattern"
 * category contains 
      labCategory 1..1 and
-     genetics 0..1
+     geCategory 0..1
 * category[labCategory].coding = $OBSCAT#laboratory
-* category[genetics].coding = $DIAGNOSTICSERVICE#GE
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
