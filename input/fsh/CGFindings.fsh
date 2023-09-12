@@ -445,7 +445,7 @@ Id:             molecular-biomarker
 Title:          "Molecular Biomarker"
 Description:    "This profile is used to represent laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
 * category 1..*
-* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category.code pattern"
