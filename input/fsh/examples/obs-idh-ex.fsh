@@ -17,4 +17,4 @@ Usage: #example
 * component[=].valueCodeableConcept.coding[+] = $OMIM#219700
 * component[=].valueCodeableConcept.text = "Cystic fibrosis"
 * component[+].code = TbdCodesCS#condition-inheritance
-* component[=].valueCodeableConcept = $HPO#0000007 "Autosomal recessive inheritance"
+* component[=].valueCodeableConcept = $HPO#HP:0000007 "Autosomal recessive inheritance"
