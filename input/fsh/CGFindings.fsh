@@ -444,6 +444,9 @@ Parent:         Observation
 Id:             molecular-biomarker
 Title:          "Molecular Biomarker"
 Description:    "This profile is used to represent laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
+* code from MolecularBiomarkerCodeVS (example)
+* code ^short = "Code for the biomarker"
+* code ^definition = "The code is used to represent the biomarker - laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
 * category 1..*
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"

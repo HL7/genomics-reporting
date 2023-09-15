@@ -149,3 +149,29 @@ Title:          "Molecular Biomarker Categories"
 Description:    "This value set is drawn from the Molecular Biomarker Ontology code system, which provides codes that characterize a molecular biomarker."
 * ^experimental = true
 * include codes from system MolecularBiomarkerOntologyCS
+
+ValueSet:       MolecularBiomarkerCodeVS
+Id:             molecular-biomarker-code-vs
+Title:          "Molecular Biomarker Codes"
+Description:    "Value Set for terms that can be used as Biomarkers."
+* ^copyright = """
+This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc.
+This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.
+"""
+* ^experimental = false
+* $LNC#85337-4 "Estrogen receptor Ag Immune stain Ql (Breast cancer specimen)"
+* $LNC#72382-5 "HER2 IA Qn (Tiss)" 
+* $LNC#77637-7 "HLA-A and B and C (class I) IgG panel IA [Identifier]"
+* $LNC#40557-1 "Progesterone receptor Ag Immune stain Ql (Tiss)"
+* $LNC#85147-7 "PD-L1 by clone 22C3 Immune stain Doc (Tiss)"
+* $LNC#59025-7 "Neutrophil Ab FC Qn (S)"
+* $LNC#59003-4 "Lactoferrin Ab IA Qn (S)"
+* $LNC#10495-0 "Insulin Ag Immune stain Ql (Tiss)"
+* $LNC#16550-6 "Carbohydrates Nom (U)"
+* $LNC#2569-2 "Lipids (S) [Mass/Vol]"
+* $LNC#4551-8 "Hemoglobin A2 (Bld) [Mass fraction]"
+* $LNC#19195-7 "Prostate specific Ag Qn"
+* $LNC#64083-9 "MGMT gene methylation score Molgen (Tiss) [Ratio]"
+* $LNC#62862-8 "Microsatellite instability Immune stain Ql (Tiss)"
+* $LNC#81704-9 "Microsatellite instability marker D17S250 Ql (Cancer specimen)"
+* $LNC#94077-5 "Tumor mutation burden Ql (Tumor) [Interp]"
