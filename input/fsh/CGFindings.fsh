@@ -480,6 +480,6 @@ Component biomarker-category is an optional and repeating field that provides fo
 """
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
 * component[biomarker-category].value[x] only CodeableConcept
-* component[biomarker-category].value[x] 0..1
+* component[biomarker-category].value[x] 1..1
 * component[biomarker-category].value[x] ^short = "cell receptor | antigen | protein | immune stain"
 * component[biomarker-category].value[x] from MolecularBiomarkerCategoryVS (example)
