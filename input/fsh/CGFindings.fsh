@@ -463,7 +463,7 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains 
     gene-studied 0..* and 
-    biomarker-category 1..*
+    biomarker-category 0..*
 * component[gene-studied] ^short = "Gene Studied"
 * component[gene-studied] ^definition = "The gene(s) directly or indirectly assessed by the biomarker."
 * component[gene-studied].code = $LNC#48018-6
