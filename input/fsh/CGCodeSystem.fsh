@@ -9,7 +9,6 @@ Description: "Code System for specific types of relationships"
 * #Indeterminate "Indeterminate" "Phase is unable to be determined"
 * #Unknown "Unknown" "Phase is unknown"
 
-
 CodeSystem: TbdCodesCS
 Id: tbd-codes-cs
 Title: "To Be Determined Codes"
@@ -30,6 +29,7 @@ Description: "These codes are currently 'TBD' codes. The CG WG plans to request 
 * #variant-confidence-status "Variant Confidence Status" "The confidence of a true positive variant call."
 * #repeat-motif "Repeat Expansion Motif" "Nucleotides of a repeat expansion motif"
 * #repeat-number "Number of Repeat Expansions" "Number of repeats of a repeat expansion"
+* #biomarker-category "A characterization of a given biomarker observation."
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
@@ -75,3 +75,32 @@ Description: "Code System for specific types of coded annotations"
 * #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
 * #test-methodology "Test Methodology" "Additional details regarding the test methdology"
 * #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"
+
+CodeSystem: MolecularBiomarkerOntologyCS
+Id: molecular-biomarker-ontology-cs
+Title: "Molecular Biomarker Ontology Codes"
+Description: "This (experimental) code system provides for a draft categorization of biomarkers along several axes. Based on ballot feedback, the committee anticipates significant revisions."
+* ^status = #active
+* ^content = #complete
+* ^version = "1.0.0"
+* ^caseSensitive = true
+* ^experimental = true
+* ^hierarchyMeaning = #is-a
+* #_physiologyBiomarkerCategory "Molecular biomarker physiologic role category" "A category based on the normal bodily function of the biomarker."
+  * #antibody "antibody category" "Molecular biomarker physiologic role is an antibody."
+  * #antgen "antigen category" "Molecular biomarker physiologic role is an antigen."
+  * #cellReceptor "cell receptor category" "Molecular biomarker physiologic role is a cell receptor."
+  * #cellReceptorLigand "cell receptor ligand category" "Molecular biomarker physiologic role is a cell receptor ligand."
+* #_moleculeTypeBiomarkerCategory "Molecular biomarker molecular type category" "A category based on the type of biomarker molecule."
+  * #carbohydrate "carbohydrate category" "Molecular biomarker molecule type is a carbohydrate."
+  * #lipid "lipid category" "Molecular biomarker molecule type is a lipid."
+  * #nucleicAcid "nucleic acid category" "Molecular biomarker molecule type is a nucleic acid."
+  * #protein "protein category" "Molecular biomarker molecule type is a protein. Includes single or multi-subunit proteins with or without post-translational modifications."
+* #_methodBiomarkerCategory "Molecular biomarker method type category" "A category based on the measurement ascertainment method of the biomarker. (Methods are drawn from LOINC (https://loinc.org/kb/users-guide/major-parts-of-a-loinc-term/#type-of-method-6th-part) and NCBI Genetic Testing Registry (https://www.ncbi.nlm.nih.gov/gtr/))."
+  * #enzymeAssay "enzyme assay category" "Molecular biomarker method is enzyme assay."
+  * #flowCytometry "flow cytometry category" "Molecular biomarker method is flow cytometry."
+  * #immuneStain "immune stain category" "Molecular biomarker method is immune stain."
+  * #immunoassay "immunoassay category" "Molecular biomarker method is immunoassay."
+  * #methylationAnalysis "methylation analysis category" "Molecular biomarker method is methylation analysis."
+  * #molgen "molecular sequence adjacent category" "Molecular biomarker method is molecular sequence adjacent observation."
+

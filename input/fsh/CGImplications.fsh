@@ -13,13 +13,16 @@ Description:    "Properties common to genomic implications expressed as computab
 * derivedFrom 1..*
 * derivedFrom contains variant 0..* and
     genotype 0..* and
-    haplotype 0..*
+    haplotype 0..* and 
+    biomarker 0..*
 * derivedFrom[variant] only Reference(Variant)
 * derivedFrom[variant] ^short = "Variant the implication is derived from"
 * derivedFrom[genotype] only Reference(Genotype)
 * derivedFrom[genotype] ^short = "Genotype the implication is derived from"
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype the implication is derived from"
+* derivedFrom[biomarker] only Reference(MolecularBiomarker)
+* derivedFrom[biomarker] ^short = "MolecularBiomarker the implication is derived from"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open

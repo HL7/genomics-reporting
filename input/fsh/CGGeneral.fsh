@@ -117,7 +117,8 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
     sequence-phase-relation 0..* and 
     region-studied 0..* and 
     genotype 0..* and 
-    haplotype 0..*
+    haplotype 0..* and
+    biomarker 0..*
 * result[overall] only Reference(OverallInterpretation)
 * result[overall] ^short = "Assessment of overall results"
 * result[diagnostic-implication] only Reference(DiagnosticImplication)
@@ -136,6 +137,8 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[genotype] ^short = "Genotype"
 * result[haplotype] only Reference(Haplotype)
 * result[haplotype] ^short = "Haplotype"
+* result[biomarker] only Reference(MolecularBiomarker)
+* result[biomarker] ^short = "MolecularBiomarker"
 
 Profile:        GenomicsDocumentReference
 Parent:         DocumentReference

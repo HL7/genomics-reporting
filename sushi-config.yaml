@@ -1,4 +1,11 @@
 id: genomics-reporting
+extension:
+#  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+#    valueCode: trial-use
+#  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+#    valueInteger: 2
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: cg
 canonical: http://hl7.org/fhir/uv/genomics-reporting
 packageId: hl7.fhir.uv.genomics-reporting
 version: 2.1.0-SNAPSHOT
@@ -6,7 +13,7 @@ name: GenomicsReporting
 title: Genomics Reporting Implementation Guide
 status: active
 publisher:
-  name: HL7 Clinical Genomics Working Group
+  name: HL7 International / Clinical Genomics
   url: http://www.hl7.org/Special/committees/clingenomics
   email: cg@lists.HL7.org
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World"
