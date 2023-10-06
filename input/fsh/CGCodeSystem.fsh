@@ -15,7 +15,6 @@ Title: "To Be Determined Codes"
 Description: "These codes are currently 'TBD' codes. The CG WG plans to request formal LOINC codes to replace these codes as these concepts are validated."
 * ^caseSensitive = true
 * ^experimental = false
-* #prognostic-implication "Prognostic Implication" "Finding of whether a particular somatic genotype/haplotype/variation or combination-thereof predicts a particular outcome for the specified cancer - either on its own or in conjunction with one or more interventions."
 * #associated-therapy "Associated Therapy" "The non-medication therapy (procedure) associated with this implication."
 * #region-coverage "Region Coverage" "Given as a number between 0 and 100. Mean mapped read depth. Obtained by counting total number of mapped reads and divided by the number of bases in the region sequence."
 * #molecular-consequence "Molecular Consequence" "The calculated or observed effect of a DNA variant on its downstream transcript and, if applicable, ensuing protein sequence."
