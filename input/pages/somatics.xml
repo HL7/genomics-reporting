@@ -41,7 +41,7 @@
     This implementation guide defines two implication profiles that can both be used for reporting somatic use cases. They each carry a collection of components that provide context for the implication, which can be captured in <code>Observation.note</code> as the issuing lab desires.
   </p>
   <p>
-    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and a particular type of cancer in the <code>predicted-phenotype</code> component. The <code>evidence-level</code> and <code>clinical-significance</code> components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines. The prognosis component can also be populated to convey a general indication on the overall outcome for the cancer patient, as described in a linked relatedArtifact.
+    <b>Diagnostic Implication</b> indicates an association between the identified variant (linked via <code>Observation.derivedFrom</code>) and a particular type of cancer in the <code>predicted-phenotype</code> component. The <code>evidence-level</code> and <code>clinical-significance</code> components can convey the evidence-based categorization of the variant for the given cancer type per the AMP/ASCO/CAP guidelines.
 
   </p>
   <p>

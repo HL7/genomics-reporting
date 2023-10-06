@@ -204,24 +204,34 @@ Usage: #inline
 * collection.collector = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-4
-InstanceOf: Observation
+InstanceOf: MolecularBiomarker
 Usage: #inline
-* status = #final
-* code.text = "Tumor Mutational Burden"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
+* status = #final "final"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueQuantity = 25.0 '1/1000000{Base}' "somatic variants per megabase of sequenced DNA"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
+* component[biomarker-category].code = TbdCodesCS#biomarker-category
+* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-5
-InstanceOf: Observation
+InstanceOf: MolecularBiomarker
 Usage: #inline
-* status = #final
-* code.text = "MSI status"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
+* status = #final "final"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* valueString = "High"
+* valueCodeableConcept = $LNC#LA14122-8 "Stable"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
+* component[biomarker-category].code = TbdCodesCS#biomarker-category
+* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-6
 InstanceOf: Variant

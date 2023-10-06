@@ -99,6 +99,8 @@
 <artifact id="Observation/GrouperEx01" key="Observation-GrouperEx01" name="GrouperEx01"/>
 <artifact id="Observation/GrouperEx02" key="Observation-GrouperEx02" name="GrouperEx02"/>
 <artifact id="Observation/GrouperEx03" key="Observation-GrouperEx03" name="GrouperEx03"/>
+<artifact id="Observation/HER2byImmuneStainExample" key="Observation-HER2byImmuneStainExample" name="HER2byImmuneStainExample"/>
+<artifact id="Observation/HER2byImmunoassayExample" key="Observation-HER2byImmunoassayExample" name="HER2byImmunoassayExample"/>
 <artifact id="Patient/HG00403" key="Patient-HG00403" name="HG00403"/>
 <artifact id="ValueSet/hgnc-vs" key="ValueSet-hgnc" name="HUGO Gene Nomenclature Committee Gene Names (HGNC)"/>
 <artifact id="StructureDefinition/haplotype" key="StructureDefinition-haplotype" name="Haplotype"/>
@@ -116,8 +118,12 @@
 <artifact id="StructureDefinition/medication-recommendation" key="StructureDefinition-medication-recommendation" name="Medication Recommendation"/>
 <artifact id="Task/MedicationRecommendationExample1" key="StructureDefinition-task-med-chg" name="MedicationRecommendationExample1"/>
 <artifact id="MedicationStatement/MedicationStatementWarfarin" key="MedicationStatement-MedicationStatementWarfarin" name="MedicationStatementWarfarin"/>
-<artifact id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite Instability"/>
+<artifact deprecated="true" id="StructureDefinition/msi" key="StructureDefinition-msi" name="Microsatellite Instability"/>
 <artifact id="Observation/MicrosatelliteInstabilityExample01" key="Observation-MicrosatelliteInstabilityExample01" name="MicrosatelliteInstabilityExample01"/>
+<artifact id="StructureDefinition/molecular-biomarker" key="StructureDefinition-molecular-biomarker" name="Molecular Biomarker"/>
+<artifact id="ValueSet/molecular-biomarker-category-vs" key="ValueSet-molecular-biomarker-category-vs" name="Molecular Biomarker Categories"/>
+<artifact id="ValueSet/molecular-biomarker-code-vs" key="ValueSet-molecular-biomarker-code-vs" name="Molecular Biomarker Codes"/>
+<artifact id="CodeSystem/molecular-biomarker-ontology-cs" key="CodeSystem-molecular-biomarker-ontology-cs" name="Molecular Biomarker Ontology Codes"/>
 <artifact id="StructureDefinition/molecular-consequence" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
 <artifact id="ValueSet/molecular-consequence-vs" key="ValueSet-molecular-consequence" name="Molecular Consequence"/>
 <artifact deprecated="true" key="Sequence" name="MolecularSequence"/>
@@ -171,7 +177,7 @@
 <artifact id="StructureDefinition/therapy-assessed" key="StructureDefinition-therapy-assessed" name="Therapy Assessed"/>
 <artifact id="CodeSystem/tbd-codes-cs" key="CodeSystem-TbdCodes" name="To Be Determined Codes"/>
 <artifact id="ValueSet/tbd-codes-vs" key="ValueSet-tbd" name="To Be Determined Value Set"/>
-<artifact id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor Mutation Burden"/>
+<artifact deprecated="true" id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor Mutation Burden"/>
 <artifact id="Observation/TumorMutationBurdenExample01" key="Observation-TumorMutationBurdenExample01" name="TumorMutationBurdenExample01"/>
 <artifact id="Observation/TxImp01" key="Observation-TxImp01" name="TxImp01"/>
 <artifact id="Observation/TxImp02" key="Observation-TxImp02" name="TxImp02"/>
