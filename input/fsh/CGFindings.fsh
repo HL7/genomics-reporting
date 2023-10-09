@@ -61,6 +61,7 @@ Description:    "Details about a set of changes in the tested sample compared to
     genomic-hgvs 0..1 and
     cytogenomic-nomenclature 0..1 and
     genomic-ref-seq 0..1 and
+    representative-protein-ref-seq 0..1 and
     representative-transcript-ref-seq 0..1 and
     exact-start-end 0..1 and
     inner-start-end 0..1 and
@@ -141,6 +142,16 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
 * component[genomic-ref-seq].value[x] 1..1
+
+* component[representative-protein-ref-seq].code = TbdCodesCS#protein-ref-seq
+* component[representative-protein-ref-seq].code ^short = "protein-ref-seq"
+* component[representative-protein-ref-seq] ^short = "Protein Reference Sequence"
+* component[representative-protein-ref-seq] ^definition = "ID of the protein reference sequence, which includes transcribed and non transcribed stretches. It covers the entire protein described."
+* component[representative-protein-ref-seq].value[x] only CodeableConcept
+* component[representative-protein-ref-seq].value[x] ^short = "Versioned protein reference sequence identifier"
+* component[representative-protein-ref-seq].value[x] ^binding.strength = #example
+* component[representative-protein-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
+* component[representative-protein-ref-seq].value[x] 1..1
 
 * component[representative-transcript-ref-seq].code = $LNC#51958-7
 * component[representative-transcript-ref-seq].code ^short = "51958-7"

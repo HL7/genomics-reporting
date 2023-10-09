@@ -198,6 +198,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
     coding-hgvs 0..1 and
     transcript-ref-seq 0..1 and
     protein-hgvs 0..1 and
+    protein-ref-seq 0..1 and
     feature-consequence 0..* and
     functional-effect 0..1
 
@@ -228,6 +229,16 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[protein-hgvs].value[x] 1..1
 * component[protein-hgvs].value[x] from HGVSVS (required)
 * component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
+
+* component[protein-ref-seq].code = TbdCodesCS#protein-ref-seq
+* component[protein-ref-seq].code ^short = "protein-ref-seq"
+* component[protein-ref-seq] ^short = "Protein Reference Sequence"
+* component[protein-ref-seq] ^definition = "ID of the protein reference sequence, which includes transcribed and non transcribed stretches. It covers the entire protein described."
+* component[protein-ref-seq].value[x] only CodeableConcept
+* component[protein-ref-seq].value[x] ^short = "Versioned protein reference sequence identifier"
+* component[protein-ref-seq].value[x] ^binding.strength = #example
+* component[protein-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
+* component[protein-ref-seq].value[x] 1..1
 
 * component[feature-consequence].code = TbdCodesCS#feature-consequence
 * component[feature-consequence].code ^short = "feature-consequence"
