@@ -1,9 +1,22 @@
+Extension:   GenomicsStudyAnalysisExt
+Id:          genomics-study-analysis-ext
+Title:       "Genomics Study Analysis Extension"
+Description: "Used to transmit the one or more analysis per GenomimcStudy"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(GenomicStudyAnalysis)
+
+
 Profile: GenomicStudy
 Parent: Procedure
 Id: GenomicStudy
 Title: "GenomicStudy"
 Description: "This is the backport of the GenomicStudy Resource from R5"
+* extension contains GenomicsStudyAnalysisExt named genomics-study-analysis-ext 0..*
+* extension[GenomicsStudyAnalysisExt] ^short = "GenomicStudy.analysis"
 * identifier ^short = "GenomicStudy.identifier"
+* instantiatesCanonical ^short = "GenomicStudy.instantiatesCanonical (canonical(PlanDefinition))"
+* instantiatesUri ^short = "GenomicStudy.instantiatesUri (uri)"
 * status 
   * ^short = "GenomicStudy.status"
   //TODO: status mapping...
@@ -15,6 +28,47 @@ Description: "This is the backport of the GenomicStudy Resource from R5"
 * encounter ^short = "GenomicStudy.encounter"
 * performedDateTime ^short = "GenomicsStudy.startDate"
 * basedOn ^short = "GenomicsStudy.basedOn"
+* asserter ^short = "GenomicStudy.interpreter"
+* performer.function ^short = "referrer"
+* performer.actor ^short = "GenomicStudy.referrer"
+* reasonCode ^short = "GenomicStudy.reason (CodeableReference)"
+* reasonReference ^short = "GenomicStudy.reason (CodeableReference(Condition,Observation))"
+* note ^short = "GenomicStudy.note (Annotation)"
+//"GenomicStudy.description (markdown)"
+
+Profile: GenomicStudyAnalysis
+Parent: Procedure
+Id: GenomicStudyAnalysis
+Title: "GenomicStudyAnalysis"
+Description: "This is the backport of the GenomicStudy.analysis BackboneElement from R5"
+* identifier ^short = "GenomicStudy.analysis.identifier"
+* instantiatesCanonical ^short = "GenomicStudy.analysis.instantiatesCanonical (canonical(PlanDefinition, ActivityDefinition))"
+* instantiatesUri ^short = "GenomicStudy.analysis.instantiatesUri (uri)"
+//"GenomicStudy.analysis.methodType (CodeableConcept)"
+//"GenomicStudy.analysis.changeType (CodeableConcept)"
+//"GenomicStudy.analysis.genomeBuild (CodeableConcept)"
+//"GenomicStudy.analysis.title (string)"
+//"GenomicStudy.analysis.focus (Reference(Any))"
+//"GenomicStudy.analysis.specimen (Reference(Specimen))"
+//"GenomicStudy.analysis.date (dateTime)"
+//"GenomicStudy.analysis.note (Annotation)"
+//"GenomicStudy.analysis.protocolPerformed (Reference(Procedure, Task))"
+//"GenomicStudy.analysis.regionsStudied (Reference(DocumentReference, Observation))"
+//"GenomicStudy.analysis.regionsCalled (Reference(DocumentReference, Observation))"
+//"GenomicStudy.analysis.input"
+//"GenomicStudy.analysis.input.file (Reference(DocumentReference))"
+//"GenomicStudy.analysis.input.type (CodeableConcept)"
+//"GenomicStudy.analysis.input.generatedBy[x] (Identifier,Reference(GenomicStudy))"
+//"GenomicStudy.analysis.output"
+//"GenomicStudy.analysis.output.file (Reference(DocumentReference))"
+//"GenomicStudy.analysis.output.type (CodeableConcept)"
+//"GenomicStudy.analysis.performer"
+//"GenomicStudy.analysis.performer.actor (Reference(Practitioner, PractitionerRole, Organization, Device))"
+//"GenomicStudy.analysis.performer.role (CodeableConcept)"
+//"GenomicStudy.analysis.device"
+//"GenomicStudy.analysis.performer.device (Reference(Device))"
+//"GenomicStudy.analysis.performer.function (CodeableConcept)"
+
 
 
 
