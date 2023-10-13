@@ -82,6 +82,39 @@ Description: "Defines the genome build for a genomic analysis"
 * value[x] only CodeableConcept
 * valueCodeableConcept from http://loinc.org/vs/LL1040-6 (extensible)
 
+Extension:      GenomicsStudyAnalysisInput
+Id:             genomics-study-analysis-input
+Title:          "Genomic Study Analysis Input"
+Description:    "Genomic Study Analysis Input"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* extension contains
+    file 0..1 and
+    type 0..1 and
+    generatedBy 0..1
+* extension[file] ^short = "GenomicStudy.analysis.input.file"
+* extension[file].value[x] only Reference(DocumentReference)
+* extension[type] ^short = "GenomicStudy.analysis.input.type"
+* extension[type].value[x] only CodeableConcept
+//* extension[type].value[x] from <> (required)
+* extension[generatedBy] ^short = "GenomicStudy.analysis.input.generatedBy"
+* extension[generatedBy].value[x] only Identifier or Reference(GenomicStudy)
+
+Extension:      GenomicsStudyAnalysisOutput
+Id:             genomics-study-analysis-output
+Title:          "Genomic Study Analysis Output"
+Description:    "Genomic Study Analysis Output"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* extension contains
+    file 0..1 and
+    type 0..1 
+* extension[file] ^short = "GenomicStudy.analysis.output.file"
+* extension[file].value[x] only Reference(DocumentReference)
+* extension[type] ^short = "GenomicStudy.analysis.output.type"
+* extension[type].value[x] only CodeableConcept
+//* extension[type].value[x] from <> (required)
+
 Profile: GenomicStudyAnalysis
 Parent: Procedure
 Id: genomic-study-analysis
@@ -90,9 +123,13 @@ Description: "This is the backport of the GenomicStudy.analysis BackboneElement 
 * extension contains GenomicsStudyAnalysisMethodType named genomics-study-analysis-method-type 0..*
                  and GenomicsStudyAnalysisChangeType named genomics-study-analysis-change-type 0..*
                  and GenomicsStudyAnalysisGenomeBuild named genomics-study-analysis-genome-build 0..1
+                 and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
+                 and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
 * extension[GenomicsStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicsStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicsStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
+* extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
+* extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
 * identifier ^short = "GenomicStudy.analysis.identifier"
 * instantiatesCanonical ^short = "GenomicStudy.analysis.instantiatesCanonical"
 * instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
@@ -109,13 +146,6 @@ Description: "This is the backport of the GenomicStudy.analysis BackboneElement 
 //"GenomicStudy.analysis.protocolPerformed (Reference(Procedure, Task))"
 //"GenomicStudy.analysis.regionsStudied (Reference(DocumentReference, Observation))"
 //"GenomicStudy.analysis.regionsCalled (Reference(DocumentReference, Observation))"
-//"GenomicStudy.analysis.input"
-//"GenomicStudy.analysis.input.file (Reference(DocumentReference))"
-//"GenomicStudy.analysis.input.type (CodeableConcept)"
-//"GenomicStudy.analysis.input.generatedBy[x] (Identifier,Reference(GenomicStudy))"
-//"GenomicStudy.analysis.output"
-//"GenomicStudy.analysis.output.file (Reference(DocumentReference))"
-//"GenomicStudy.analysis.output.type (CodeableConcept)"
 //"GenomicStudy.analysis.performer"
 //"GenomicStudy.analysis.performer.actor (Reference(Practitioner, PractitionerRole, Organization, Device))"
 //"GenomicStudy.analysis.performer.role (CodeableConcept)"
