@@ -1,6 +1,6 @@
 Extension:   GenomicsStudyAnalysisExt
 Id:          genomics-study-analysis-ext
-Title:       "Genomics Study Analysis Extension"
+Title:      "Genomics Study Analysis Extension"
 Description: "Used to transmit the one or more analysis per GenomimcStudy"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
@@ -57,7 +57,7 @@ Description: "This is the backport of the GenomicStudy Resource from R5"
 
 Extension:   GenomicsStudyAnalysisMethodType
 Id:          genomics-study-analysis-method-type
-Title:       "Genomics Study Analysis Type"
+Title:      "Genomics Study Analysis Type"
 Description: "Defines a method type for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
@@ -66,7 +66,7 @@ Description: "Defines a method type for a genomic analysis"
 
 Extension:   GenomicsStudyAnalysisChangeType
 Id:          genomics-study-analysis-change-type
-Title:       "Genomics Study Analysis Change Type"
+Title:      "Genomics Study Analysis Change Type"
 Description: "Defines the change type for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
@@ -75,7 +75,7 @@ Description: "Defines the change type for a genomic analysis"
 
 Extension:   GenomicsStudyAnalysisGenomeBuild
 Id:          genomics-study-analysis-genome-build
-Title:       "Genomics Study Analysis Genome Build"
+Title:      "Genomics Study Analysis Genome Build"
 Description: "Defines the genome build for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
@@ -84,8 +84,8 @@ Description: "Defines the genome build for a genomic analysis"
 
 Extension:      GenomicsStudyAnalysisInput
 Id:             genomics-study-analysis-input
-Title:          "Genomic Study Analysis Input"
-Description:    "Genomic Study Analysis Input"
+Title:         "Genomic Study Analysis Input"
+Description:   "Genomic Study Analysis Input"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * extension contains
@@ -96,14 +96,14 @@ Description:    "Genomic Study Analysis Input"
 * extension[file].value[x] only Reference(DocumentReference)
 * extension[type] ^short = "GenomicStudy.analysis.input.type"
 * extension[type].value[x] only CodeableConcept
-//* extension[type].value[x] from <> (required)
+* extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
 * extension[generatedBy] ^short = "GenomicStudy.analysis.input.generatedBy"
 * extension[generatedBy].value[x] only Identifier or Reference(GenomicStudy)
 
 Extension:      GenomicsStudyAnalysisOutput
 Id:             genomics-study-analysis-output
-Title:          "Genomic Study Analysis Output"
-Description:    "Genomic Study Analysis Output"
+Title:         "Genomic Study Analysis Output"
+Description:   "Genomic Study Analysis Output"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * extension contains
@@ -113,7 +113,55 @@ Description:    "Genomic Study Analysis Output"
 * extension[file].value[x] only Reference(DocumentReference)
 * extension[type] ^short = "GenomicStudy.analysis.output.type"
 * extension[type].value[x] only CodeableConcept
-//* extension[type].value[x] from <> (required)
+* extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
+
+Extension:   GenomicsStudyAnalysisTitle
+Id:          genomics-study-analysis-title
+Title:      "Genomics Study Analysis Title"
+Description: "Defines a title for a genomic analysis"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only string
+
+Extension:   GenomicsStudyAnalysisFocus
+Id:          genomics-study-analysis-focus
+Title:      "Genomics Study Analysis Focus"
+Description: "Defines a focus for a genomic analysis"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(Resource)
+
+Extension:   GenomicsStudyAnalysisSpecimen
+Id:          genomics-study-analysis-specimen
+Title:      "Genomics Study Analysis Specimen"
+Description: "Defines a specimen for a genomic analysis"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(Specimen)
+
+Extension:   GenomicsStudyAnalysisProtocolPerformed
+Id:          genomics-study-analysis-protocol-performed
+Title:      "Genomics Study Analysis Protocol Performed"
+Description: "Defines a protocol that was performed for a genomic analysis"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(Procedure or Task)
+
+Extension:   GenomicsStudyAnalysisRegionsStudied
+Id:          genomics-study-analysis-regions-studied
+Title:      "Genomics Study Analysis Regions Studied"
+Description: "Defines a regions studied for a genomic analysis"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(GenomicsDocumentReference or RegionStudied)
+
+Extension:   GenomicsStudyAnalysisRegionsCalled
+Id:          genomics-study-analysis-regions-called
+Title:      "Genomics Study Analysis Regions called"
+Description: "Defines a regions called for a genomic analysis"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(GenomicsDocumentReference or RegionStudied)
 
 Profile: GenomicStudyAnalysis
 Parent: Procedure
@@ -125,11 +173,21 @@ Description: "This is the backport of the GenomicStudy.analysis BackboneElement 
                  and GenomicsStudyAnalysisGenomeBuild named genomics-study-analysis-genome-build 0..1
                  and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
                  and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
+                 and GenomicsStudyAnalysisTitle named genomics-study-analysis-title 0..1
+                 and GenomicsStudyAnalysisFocus named genomics-study-analysis-focus 0..*
+                 and GenomicsStudyAnalysisSpecimen named genomics-study-analysis-specimen 0..*
+                 and GenomicsStudyAnalysisRegionsStudied named genomics-study-analysis-regions-studied 0..*
+                 and GenomicsStudyAnalysisRegionsCalled named genomics-study-analysis-regions-called 0..*
 * extension[GenomicsStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicsStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicsStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
 * extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
 * extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
+* extension[GenomicsStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
+* extension[GenomicsStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
+* extension[GenomicsStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
+* extension[GenomicsStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
+* extension[GenomicsStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
 * identifier ^short = "GenomicStudy.analysis.identifier"
 * instantiatesCanonical ^short = "GenomicStudy.analysis.instantiatesCanonical"
 * instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
@@ -140,18 +198,12 @@ Description: "This is the backport of the GenomicStudy.analysis BackboneElement 
 * performed[x] only dateTime
 * performedDateTime ^short = "GenomicsStudy.analysis.date"
 * note ^short = "GenomicStudy.analysis.note"
-//"GenomicStudy.analysis.title (string)"
-//"GenomicStudy.analysis.focus (Reference(Any))"
-//"GenomicStudy.analysis.specimen (Reference(Specimen))"
-//"GenomicStudy.analysis.protocolPerformed (Reference(Procedure, Task))"
-//"GenomicStudy.analysis.regionsStudied (Reference(DocumentReference, Observation))"
-//"GenomicStudy.analysis.regionsCalled (Reference(DocumentReference, Observation))"
 //"GenomicStudy.analysis.performer"
 //"GenomicStudy.analysis.performer.actor (Reference(Practitioner, PractitionerRole, Organization, Device))"
 //"GenomicStudy.analysis.performer.role (CodeableConcept)"
 //"GenomicStudy.analysis.device"
-//"GenomicStudy.analysis.performer.device (Reference(Device))"
-//"GenomicStudy.analysis.performer.function (CodeableConcept)"
+//"GenomicStudy.analysis.device.device (Reference(Device))"
+//"GenomicStudy.analysis.device.function (CodeableConcept)"
 * basedOn 0..0
 * partOf 0..0
 * statusReason 0..0
@@ -197,87 +249,87 @@ CodeSystem: GenomicStudyMethodTypeCS
 Id: genomic-study-method-type-cs
 Title: "Genomic Study Method Type CS"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-methodtype"
-* #biochemical-genetics	"Biochemical Genetics"
-* #cytogenetics	"Cytogenetics"
-* #molecular-genetics	"Molecular Genetics"
-* #analyte	"Analyte"
-* #chromosome-breakage-studies	"Chromosome breakage studies"
-* #deletion-duplication-analysis	"Deletion/duplication analysis"
-* #detection-of-homozygosity	"Detection of homozygosity"
-* #enzyme-assay	"Enzyme assay"
-* #fish-interphase	"FISH-interphase"
-* #fish-metaphase	"FISH-metaphase"
-* #flow-cytometry	"Flow cytometry"
-* #fish	"Fluorescence in situ hybridization (FISH)"
-* #immunohistochemistry	"Immunohistochemistry"
-* #karyotyping	"Karyotyping"
-* #linkage-analysis	"Linkage analysis"
-* #methylation-analysis	"Methylation analysis"
-* #msi	"Microsatellite instability testing (MSI)"
-* #m-fish	"Multicolor FISH (M-FISH)"
-* #mutation-scanning-of-select-exons	"Mutation scanning of select exons"
-* #mutation-scanning-of-the-entire-coding-region	"Mutation scanning of the entire coding region"
-* #protein-analysis	"Protein analysis"
-* #protein-expression	"Protein expression"
-* #rna-analysis	"RNA analysis"
-* #sequence-analysis-of-select-exons	"Sequence analysis of select exons"
-* #sequence-analysis-of-the-entire-coding-region	"Sequence analysis of the entire coding region"
-* #sister-chromatid-exchange	"Sister chromatid exchange"
-* #targeted-variant-analysis	"Targeted variant analysis"
-* #udp	"Uniparental disomy study (UPD)"
-* #aspe	"Allele-specific primer extension (ASPE)"
-* #alternative-splicing-detection	"Alternative splicing detection"
-* #bi-directional-sanger-sequence-analysis	"Bi-directional Sanger Sequence Analysis"
-* #c-banding	"C-banding"
-* #cia	"Chemiluminescent Immunoassay (CIA)"
-* #chromatin-immunoprecipitation-on-chip	"Chromatin Immunoprecipitation on ChIP"
-* #comparative-genomic-hybridization	"Comparative Genomic Hybridization"
-* #damid	"DamID"
-* #digital-virtual-karyotyping	"Digital / Virtual karyotyping"
-* #digital-microfluidic-microspheres	"Digital microfluidic microspheres"
-* #enzymatic-levels	"Enzymatic levels"
-* #enzyme-activity	"Enzyme activity"
-* #elisa	"Enzyme-Linked Immunosorbent Assays (ELISA)"
-* #fluorometry	"Fluorometry"
-* #fusion-genes-microarrays	"Fusion genes microarrays"
-* #g-banding	"G-banding"
-* #gc-ms	"Gas chromatographymass spectrometry (GC-MS)"
-* #gene-expression-profiling	"Gene expression profiling"
-* #gene-id	"GeneID"
-* #gold-nanoparticle-probe-technology	"Gold nanoparticle probe technology"
-* #hplc	"High-performance liquid chromatography (HPLC)"
-* #lc-ms	"Liquid chromatography mass spectrometry (LC-MS)"
-* #lc-ms-ms	"Liquid chromatography-tandem mass spectrometry (LC-MS/MS)"
-* #metabolite-levels	"Metabolite levels"
-* #methylation-specific-pcr	"Methylation-specific PCR"
-* #microarray	"Microarray"
-* #mlpa	"Multiplex Ligation-dependent Probe Amplification (MLPA)"
-* #ngs-mps	"Next-Generation (NGS)/Massively parallel sequencing (MPS)"
-* #ola	"Oligonucleotide Ligation Assay (OLA)"
-* #oligonucleotide-hybridization-based-dna-sequencing	"Oligonucleotide hybridization-based DNA sequencing"
-* #other	"Other"
-* #pcr	"PCR"
-* #pcr-with-allele-specific-hybridization	"PCR with allele specific hybridization"
-* #pcr-rflp-with-southern-hybridization	"PCR-RFLP with Southern hybridization"
-* #protein-truncation-test	"Protein truncation test"
-* #pyrosequencing	"Pyrosequencing"
-* #q-banding	"Q-banding"
-* #qpcr	"Quantitative PCR (qPCR)"
-* #r-banding	"R-banding"
-* #rflp	"RFLP"
-* #rt-lamp	"RT-LAMP"
-* #rt-pcr	"RT-PCR"
-* #rt-pcr-with-gel-analysis	"RT-PCR with gel analysis"
-* #rt-qpcr	"RT-qPCR"
-* #snp-detection	"SNP Detection"
-* #silver-staining	"Silver staining"
-* #sky	"Spectral karyotyping (SKY)"
-* #t-banding	"T-banding"
-* #ms-ms	"Tandem mass spectrometry (MS/MS)"
-* #tetra-nucleotide-repeat-by-pcr-or-southern-blot	"Tetra-nucleotide repeat by PCR or Southern Blot"
-* #tiling-arrays	"Tiling Arrays"
-* #trinucleotide-repeat-by-pcr-or-southern-blot	"Trinucleotide repeat by PCR or Southern Blot"
-* #uni-directional-sanger-sequencing	"Uni-directional Sanger sequencing"
+* #biochemical-genetics "Biochemical Genetics"
+* #cytogenetics "Cytogenetics"
+* #molecular-genetics "Molecular Genetics"
+* #analyte "Analyte"
+* #chromosome-breakage-studies "Chromosome breakage studies"
+* #deletion-duplication-analysis "Deletion/duplication analysis"
+* #detection-of-homozygosity "Detection of homozygosity"
+* #enzyme-assay "Enzyme assay"
+* #fish-interphase "FISH-interphase"
+* #fish-metaphase "FISH-metaphase"
+* #flow-cytometry "Flow cytometry"
+* #fish "Fluorescence in situ hybridization (FISH)"
+* #immunohistochemistry "Immunohistochemistry"
+* #karyotyping "Karyotyping"
+* #linkage-analysis "Linkage analysis"
+* #methylation-analysis "Methylation analysis"
+* #msi "Microsatellite instability testing (MSI)"
+* #m-fish "Multicolor FISH (M-FISH)"
+* #mutation-scanning-of-select-exons "Mutation scanning of select exons"
+* #mutation-scanning-of-the-entire-coding-region "Mutation scanning of the entire coding region"
+* #protein-analysis "Protein analysis"
+* #protein-expression "Protein expression"
+* #rna-analysis "RNA analysis"
+* #sequence-analysis-of-select-exons "Sequence analysis of select exons"
+* #sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* #sister-chromatid-exchange "Sister chromatid exchange"
+* #targeted-variant-analysis "Targeted variant analysis"
+* #udp "Uniparental disomy study (UPD)"
+* #aspe "Allele-specific primer extension (ASPE)"
+* #alternative-splicing-detection "Alternative splicing detection"
+* #bi-directional-sanger-sequence-analysis "Bi-directional Sanger Sequence Analysis"
+* #c-banding "C-banding"
+* #cia "Chemiluminescent Immunoassay (CIA)"
+* #chromatin-immunoprecipitation-on-chip "Chromatin Immunoprecipitation on ChIP"
+* #comparative-genomic-hybridization "Comparative Genomic Hybridization"
+* #damid "DamID"
+* #digital-virtual-karyotyping "Digital / Virtual karyotyping"
+* #digital-microfluidic-microspheres "Digital microfluidic microspheres"
+* #enzymatic-levels "Enzymatic levels"
+* #enzyme-activity "Enzyme activity"
+* #elisa "Enzyme-Linked Immunosorbent Assays (ELISA)"
+* #fluorometry "Fluorometry"
+* #fusion-genes-microarrays "Fusion genes microarrays"
+* #g-banding "G-banding"
+* #gc-ms "Gas chromatographymass spectrometry (GC-MS)"
+* #gene-expression-profiling "Gene expression profiling"
+* #gene-id "GeneID"
+* #gold-nanoparticle-probe-technology "Gold nanoparticle probe technology"
+* #hplc "High-performance liquid chromatography (HPLC)"
+* #lc-ms "Liquid chromatography mass spectrometry (LC-MS)"
+* #lc-ms-ms "Liquid chromatography-tandem mass spectrometry (LC-MS/MS)"
+* #metabolite-levels "Metabolite levels"
+* #methylation-specific-pcr "Methylation-specific PCR"
+* #microarray "Microarray"
+* #mlpa "Multiplex Ligation-dependent Probe Amplification (MLPA)"
+* #ngs-mps "Next-Generation (NGS)/Massively parallel sequencing (MPS)"
+* #ola "Oligonucleotide Ligation Assay (OLA)"
+* #oligonucleotide-hybridization-based-dna-sequencing "Oligonucleotide hybridization-based DNA sequencing"
+* #other "Other"
+* #pcr "PCR"
+* #pcr-with-allele-specific-hybridization "PCR with allele specific hybridization"
+* #pcr-rflp-with-southern-hybridization "PCR-RFLP with Southern hybridization"
+* #protein-truncation-test "Protein truncation test"
+* #pyrosequencing "Pyrosequencing"
+* #q-banding "Q-banding"
+* #qpcr "Quantitative PCR (qPCR)"
+* #r-banding "R-banding"
+* #rflp "RFLP"
+* #rt-lamp "RT-LAMP"
+* #rt-pcr "RT-PCR"
+* #rt-pcr-with-gel-analysis "RT-PCR with gel analysis"
+* #rt-qpcr "RT-qPCR"
+* #snp-detection "SNP Detection"
+* #silver-staining "Silver staining"
+* #sky "Spectral karyotyping (SKY)"
+* #t-banding "T-banding"
+* #ms-ms "Tandem mass spectrometry (MS/MS)"
+* #tetra-nucleotide-repeat-by-pcr-or-southern-blot "Tetra-nucleotide repeat by PCR or Southern Blot"
+* #tiling-arrays "Tiling Arrays"
+* #trinucleotide-repeat-by-pcr-or-southern-blot "Trinucleotide repeat by PCR or Southern Blot"
+* #uni-directional-sanger-sequencing "Uni-directional Sanger sequencing"
 
 ValueSet: GenomicStudyMethodTypeVS
 Id: genomic-study-method-type-vs
@@ -290,15 +342,65 @@ CodeSystem: GenomicStudyChangeTypeCS
 Id: genomic-study-change-type-cs
 Title: "Genomic Study Change Type CS"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-changetype"
-* #DNA "DNA change"	"Change that involves Deoxyribonucleic acid (DNA) sequences."
-* #RNA	"RNA change"	"Change that involves Ribonucleic Acid (RNA) sequences."
-* #AA	"Protein/amino Acids change"	"Change that involves Amino Acid (AA) or protein sequences."
-* #CHR	"Chromosomal changes"	"Change that involves number or strcture of chromosomes."
-* #CNV	"Copy number variations"	"Change that involves copy number variations among various genomes."
-
+* #DNA "DNA change" "Change that involves Deoxyribonucleic acid (DNA) sequences."
+* #RNA "RNA change" "Change that involves Ribonucleic Acid (RNA) sequences."
+* #AA "Protein/amino Acids change" "Change that involves Amino Acid (AA) or protein sequences."
+* #CHR "Chromosomal changes" "Change that involves number or strcture of chromosomes."
+* #CNV "Copy number variations" "Change that involves copy number variations among various genomes."
 
 ValueSet: GenomicStudyChangeTypeVS
 Id: genomic-study-change-type-vs
 Title: "Genomic Study Change Type VS"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-changetype"
 * include codes from system GenomicStudyChangeTypeCS
+
+CodeSystem: GenomicStudyDataFormatCS
+Id: genomic-study-data-format-cs
+Title: "Genomic Study Data Format CS"
+Description: "Backport of http://hl7.org/fhir/genomicstudy-dataformat"
+* #bam "BAM"
+* #bed "BED"
+* #bedpe "BEDPE"
+* #bedgraph "BedGraph"
+* #bigbed "bigBed"
+* #bigWig "bigWig"
+* #birdsuite-files "Birdsuite-Files"
+* #broadpeak "broadPeak"
+* #cbs "CBS"
+* #chemical-reactivity-probing-profiles "Chemical-Reactivity-Probing-Profiles"
+* #chrom-sizes "chrom-sizes"
+* #cn "CN"
+* #custom-file-formats "Custom-File-Formats"
+* #cytoband "Cytoband"
+* #fasta "FASTA"
+* #gct "GCT"
+* #cram "CRAM"
+* #genepred "genePred"
+* #gff-gtf "GFF/GTF"
+* #gistic "GISTIC"
+* #goby "Goby"
+* #gwas "GWAS"
+* #igv "IGV"
+* #loh "LOH"
+* #maf-multiple-alignment-format "MAF-Multiple Alignment Format"
+* #maf-mutation-annotation-format "MAF-Mutation-Annotation-Format"
+* #merged-bam-file "Merged BAM File"
+* #mut "MUT"
+* #narrowpeak "narrowPeak"
+* #psl "PSL"
+* #res "RES"
+* #rna-secondary-structure-formats "RNA-Secondary-Structure-Formats"
+* #sam "SAM"
+* #sample-info-attributes-file "Sample-Info-Attributes-file"
+* #seg "SEG"
+* #tdf "TDF"
+* #track-line "Track Line"
+* #type-line "Type Line"
+* #vcf "VCF"
+* #wig "WIG"
+
+ValueSet: GenomicStudyDataFormatVS
+Id: genomic-study-data-format-vs
+Title: "Genomic Study Data Format VS"
+Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"
+* include codes from system GenomicStudyDataFormatCS
