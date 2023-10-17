@@ -1,3 +1,13 @@
+Extension:   GenomicsStudyReference
+Id:          genomics-study-reference
+Title:      "Genomics Study Reference"
+Description: "Used to reference a GenomicStudy profile"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation"
+* value[x] only Reference(GenomicStudy)
+
 Extension:   GenomicsStudyAnalysisExt
 Id:          genomics-study-analysis-ext
 Title:      "Genomics Study Analysis Extension"

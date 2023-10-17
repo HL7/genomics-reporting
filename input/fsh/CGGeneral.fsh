@@ -4,6 +4,9 @@ Id:             genomics-base
 Title:          "Genomics Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 * ^abstract = true
+//* extension contains GenomicStudy named genomic-study 0..*
+//* extension[GenomicStudy] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
+* partOf only Reference(MedicationAdministration or MedicationDispense or MedicationStatement or Procedure or Immunization or ImagingStudy or GenomicStudy)
 * category 2..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
@@ -83,12 +86,12 @@ Parent:         DiagnosticReport
 Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
-
 * extension contains GenomicsFile named genomics-file 0..*
     and RecommendedAction named recommended-action 0..*
     and GenomicsRiskAssessment named genomics-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
     and $SupportingInfo named supporting-info 0..*
+    and GenomicsStudyReference named genomic-study 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * extension[GenomicReportNote] ^comment = """
@@ -96,6 +99,7 @@ May include general statements about the report, or statements about significant
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
+* extension[GenomicsStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 //* code = $LNC#81247-9
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
