@@ -16,29 +16,27 @@ Description: "This is the backport of the GenomicStudy Resource from R5"
 * extension[GenomicsStudyAnalysisExt] ^short = "GenomicStudy.analysis"
 * text ^short = "GenomicStudy.description"
 * identifier ^short = "GenomicStudy.identifier"
-* instantiatesCanonical ^short = "GenomicStudy.instantiatesCanonical"
 * instantiatesCanonical only Canonical(PlanDefinition)
+  * ^short = "GenomicStudy.instantiatesCanonical"
 * instantiatesUri ^short = "GenomicStudy.instantiatesUri"
 * status 
   * ^short = "GenomicStudy.status"
-  //TODO: status mapping...
-  * ^definition = "GenomicStudy.status is different from Procedure.status, see mapping: ..."
+  * ^definition = "GenomicStudy.status is different from Procedure.status, see [mapping](ConceptMap-GenomicStudyStatusMap.html)"
 * category 1..1
 * category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
 * code from GenomicStudyTypeVS
   * ^short = "GenomicStudy.type"
-  //TODO: backport CS & VS & add binding
 * subject ^short = "GenomicStudy.subject"
 * encounter ^short = "GenomicStudy.encounter"
 * performed[x] only dateTime
 * performedDateTime ^short = "GenomicsStudy.startDate"
-* basedOn ^short = "GenomicsStudy.basedOn"
 * basedOn only Reference(ServiceRequest)
-* asserter ^short = "GenomicStudy.interpreter"
+  * ^short = "GenomicsStudy.basedOn"
 * asserter only Reference(Practitioner or PractitionerRole)
+  * ^short = "GenomicStudy.interpreter"
 * reasonCode ^short = "GenomicStudy.reason"
-* reasonReference ^short = "GenomicStudy.reason"
 * reasonReference only Reference(Condition or Observation)
+  * ^short = "GenomicStudy.reason"
 * note ^short = "GenomicStudy.note"
 //GenomicStudy.referrer (Reference(Practitioner, PractitionerRole))
 * partOf 0..0
@@ -163,6 +161,20 @@ Description: "Defines a regions called for a genomic analysis"
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(GenomicsDocumentReference or RegionStudied)
 
+Extension:      GenomicsStudyAnalysisDevice
+Id:             genomics-study-analysis-device
+Title:         "Genomic Study Analysis Device"
+Description:   "Genomic Study Analysis Device"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* extension contains
+    device 0..1 and
+    function 0..1 
+* extension[device] ^short = "GenomicStudy.analysis.device.device"
+* extension[device].value[x] only Reference(Device)
+* extension[function] ^short = "GenomicStudy.analysis.device.type"
+* extension[function].value[x] only CodeableConcept
+
 Profile: GenomicStudyAnalysis
 Parent: Procedure
 Id: genomic-study-analysis
@@ -171,39 +183,38 @@ Description: "This is the backport of the GenomicStudy.analysis BackboneElement 
 * extension contains GenomicsStudyAnalysisMethodType named genomics-study-analysis-method-type 0..*
                  and GenomicsStudyAnalysisChangeType named genomics-study-analysis-change-type 0..*
                  and GenomicsStudyAnalysisGenomeBuild named genomics-study-analysis-genome-build 0..1
-                 and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
-                 and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
                  and GenomicsStudyAnalysisTitle named genomics-study-analysis-title 0..1
                  and GenomicsStudyAnalysisFocus named genomics-study-analysis-focus 0..*
                  and GenomicsStudyAnalysisSpecimen named genomics-study-analysis-specimen 0..*
                  and GenomicsStudyAnalysisRegionsStudied named genomics-study-analysis-regions-studied 0..*
                  and GenomicsStudyAnalysisRegionsCalled named genomics-study-analysis-regions-called 0..*
+                 and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
+                 and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
+                 and GenomicsStudyAnalysisDevice named genomics-study-analysis-device 0..*
 * extension[GenomicsStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicsStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicsStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
-* extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
-* extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
 * extension[GenomicsStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
 * extension[GenomicsStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
 * extension[GenomicsStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
 * extension[GenomicsStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
 * extension[GenomicsStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
+* extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
+* extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
+* extension[GenomicsStudyAnalysisDevice] ^short = "GenomicStudy.analysis.device"
 * identifier ^short = "GenomicStudy.analysis.identifier"
-* instantiatesCanonical ^short = "GenomicStudy.analysis.instantiatesCanonical"
 * instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
+  * ^short = "GenomicStudy.analysis.instantiatesCanonical"
 * instantiatesUri ^short = "GenomicStudy.analysis.instantiatesUri"
 * status = #completed
 * category 1..1
 * category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
 * performed[x] only dateTime
 * performedDateTime ^short = "GenomicsStudy.analysis.date"
+* performer.actor only Reference(Practitioner or PractitionerRole or Organization or Device)
+  * ^short = "GenomicStudy.analysis.performer.actor"
+* performer.function ^short = "GenomicStudy.analysis.performer.role"
 * note ^short = "GenomicStudy.analysis.note"
-//"GenomicStudy.analysis.performer"
-//"GenomicStudy.analysis.performer.actor (Reference(Practitioner, PractitionerRole, Organization, Device))"
-//"GenomicStudy.analysis.performer.role (CodeableConcept)"
-//"GenomicStudy.analysis.device"
-//"GenomicStudy.analysis.device.device (Reference(Device))"
-//"GenomicStudy.analysis.device.function (CodeableConcept)"
 * basedOn 0..0
 * partOf 0..0
 * statusReason 0..0
@@ -220,12 +231,86 @@ Description: "This is the backport of the GenomicStudy.analysis BackboneElement 
 * focalDevice 0..0
 * usedReference 0..0
 * usedCode 0..0
+* reasonCode 0..0
+* reasonReference 0..0
+* report 0..0
 
+// Concept Maps
+Instance: GenomicStudyStatusMap
+InstanceOf: ConceptMap
+Usage: #definition
+Description: "Mapping from Procedure's EventStatus (http://hl7.org/fhir/ValueSet/event-status) ValueSet for 'status' to http://hl7.org/fhir/uv/genomics-reporting/ValueSet/genomicstudy-status-vs codes"
+* title = "Genomic Study Status Map"
+* experimental = false
+* name = "GenomicStudyStatusMap"
+* status = #draft
+* publisher = "HL7 International Clinical Genomics Work Group"
+* sourceCanonical = "http://hl7.org/fhir/ValueSet/event-status"
+* targetCanonical = "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/genomic-study-status-vs"
+* group[+].source = "http://hl7.org/fhir/event-status"
+* group[=].target = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs"
+* group[=].element[+].code = http://hl7.org/fhir/event-status#completed
+* group[=].element[=].display = "Completed"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#available
+* group[=].element[=].target[=].display = "Available"
+* group[=].element[=].target[=].equivalence = #equivalent
+
+* group[=].element[+].code = http://hl7.org/fhir/event-status#preparation
+* group[=].element[=].display = "Preparation"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#registered
+* group[=].element[=].target[=].display = "Registered"
+* group[=].element[=].target[=].equivalence = #wider
+* group[=].element[+].code = http://hl7.org/fhir/event-status#in-progress
+* group[=].element[=].display = "In Progress"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#registered
+* group[=].element[=].target[=].display = "Registered"
+* group[=].element[=].target[=].equivalence = #wider
+* group[=].element[+].code = http://hl7.org/fhir/event-status#on-hold
+* group[=].element[=].display = "On Hold"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#registered
+* group[=].element[=].target[=].display = "Registered"
+* group[=].element[=].target[=].equivalence = #wider
+
+* group[=].element[+].code = http://hl7.org/fhir/event-status#not-done
+* group[=].element[=].display = "Not Done"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#cancelled
+* group[=].element[=].target[=].display = "Cancelled"
+* group[=].element[=].target[=].equivalence = #wider
+* group[=].element[+].code = http://hl7.org/fhir/event-status#stopped
+* group[=].element[=].display = "Stopped"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#cancelled
+* group[=].element[=].target[=].display = "Cancelled"
+* group[=].element[=].target[=].equivalence = #wider
+
+* group[=].element[+].code = http://hl7.org/fhir/event-status#entered-in-error
+* group[=].element[=].display = "Entered in Error"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#entered-in-error
+* group[=].element[=].target[=].display = "Entered in Error"
+* group[=].element[=].target[=].equivalence = #equal
+* group[=].element[+].code = http://hl7.org/fhir/event-status#unknown
+* group[=].element[=].display = "Unknown"
+* group[=].element[=].target[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-status-cs#unknown
+* group[=].element[=].target[=].display = "Unknown"
+* group[=].element[=].target[=].equivalence = #equivalent
+
+CodeSystem: GenomicStudyStatusCS
+Id: genomic-study-status-cs
+Title: "Genomic Study Status CS"
+Description: "Backport of http://hl7.org/fhir/genomicstudy-status"
+* ^caseSensitive = true
+* ^experimental = false
+* #registered "Registered" "The existence of the genomic study is registered, but there is nothing yet available."
+* #available "Available" "At least one instance has been associated with this genomic study."
+* #cancelled "Cancelled" "The genomic study is unavailable because the genomic study was not started or not completed (also sometimes called 'aborted')."
+* #entered-in-error "Entered in Error" "The genomic study has been withdrawn following a previous final release. This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be 'cancelled' rather than 'entered-in-error'.)."
+* #unknown "Unknown" "The system does not know which of the status values currently applies for this request. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, it's just not known which one."
 
 CodeSystem: GenomicStudyTypeCS
 Id: genomic-study-type-cs
 Title: "Genomic Study Type CS"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-type"
+* ^caseSensitive = true
+* ^experimental = true
 * #alt-splc "Alternative splicing detection" "Identification of multiple different processed mRNA transcripts from the same DNA template"
 * #chromatin "Chromatin conformation" "Analysis of the spacial organization of chromatin within a cell"
 * #cnv "CNV detection" "Detection of a change in the number of copies of a defined region of genomic DNA sequence resulting in structural variation when compared to the reference sequence"
@@ -249,6 +334,8 @@ CodeSystem: GenomicStudyMethodTypeCS
 Id: genomic-study-method-type-cs
 Title: "Genomic Study Method Type CS"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-methodtype"
+* ^caseSensitive = true
+* ^experimental = true
 * #biochemical-genetics "Biochemical Genetics"
 * #cytogenetics "Cytogenetics"
 * #molecular-genetics "Molecular Genetics"
@@ -337,11 +424,12 @@ Title: "Genomic Study Method Type VS"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"
 * include codes from system GenomicStudyMethodTypeCS
 
-
 CodeSystem: GenomicStudyChangeTypeCS
 Id: genomic-study-change-type-cs
 Title: "Genomic Study Change Type CS"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-changetype"
+* ^caseSensitive = true
+* ^experimental = true
 * #DNA "DNA change" "Change that involves Deoxyribonucleic acid (DNA) sequences."
 * #RNA "RNA change" "Change that involves Ribonucleic Acid (RNA) sequences."
 * #AA "Protein/amino Acids change" "Change that involves Amino Acid (AA) or protein sequences."
@@ -358,6 +446,8 @@ CodeSystem: GenomicStudyDataFormatCS
 Id: genomic-study-data-format-cs
 Title: "Genomic Study Data Format CS"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-dataformat"
+* ^caseSensitive = true
+* ^experimental = true
 * #bam "BAM"
 * #bed "BED"
 * #bedpe "BEDPE"
