@@ -17,4 +17,14 @@
 
 <p>Detailed information about the results of the analyses may be represented by Observations and gathered in a <a href="StructureDefinition-genomics-report.html">Genomics Report</a>. Both resources may refer back to the originating genomic study to allow navigation.</p>
 
+<p>The following figure is based on the <a href="Procedure-lungMass.html">Procedure/lungMass</a> example. Some things to note:</p>
+<ul>
+<li>A genomics report can reference a genomic study.</li>
+<li>A genomic study can reference genomic study analyses.</li>
+<li>A genomic study analysis can reference BED files that provide precise sequencing coverage regions.</li>
+<li>A genomic study analysis can reference a VCF file generated via the analysis.</li>
+<li>Variant and other observations can explicitly reference the genomic study from which the observation was derived.</li>
+</ul>
+<img src="genomicStudy.png" alt="genomic study" height="415" width="452"/>
+
 </div>
