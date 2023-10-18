@@ -21,7 +21,7 @@ Profile: GenomicStudy
 Parent: Procedure
 Id: genomic-study
 Title: "Genomic Study"
-Description: "This is the backport of the GenomicStudy Resource from R5"
+Description: "A genomic study is a set of analyses performed to analyze and generate genomic data."
 * extension contains GenomicsStudyAnalysisExt named genomics-study-analysis-ext 0..*
 * extension[GenomicsStudyAnalysisExt] ^short = "GenomicStudy.analysis"
 * text ^short = "GenomicStudy.description"
@@ -34,7 +34,7 @@ Description: "This is the backport of the GenomicStudy Resource from R5"
   * ^definition = "GenomicStudy.status is different from Procedure.status, see [mapping](ConceptMap-GenomicStudyStatusMap.html)"
 * category 1..1
 * category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
-* code from GenomicStudyTypeVS
+* code from GenomicStudyTypeVS (extensible)
   * ^short = "GenomicStudy.type"
 * subject ^short = "GenomicStudy.subject"
 * encounter ^short = "GenomicStudy.encounter"
@@ -189,7 +189,7 @@ Profile: GenomicStudyAnalysis
 Parent: Procedure
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
-Description: "This is the backport of the GenomicStudy.analysis BackboneElement from R5"
+Description: "A genomic study analysis is a component of a genomic study."
 * extension contains GenomicsStudyAnalysisMethodType named genomics-study-analysis-method-type 0..*
                  and GenomicsStudyAnalysisChangeType named genomics-study-analysis-change-type 0..*
                  and GenomicsStudyAnalysisGenomeBuild named genomics-study-analysis-genome-build 0..1
