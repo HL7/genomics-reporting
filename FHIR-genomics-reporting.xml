@@ -14,6 +14,7 @@
 <artifact id="Observation/AnnotationExample" key="Observation-AnnotationExample" name="AnnotationExample"/>
 <artifact deprecated="true" key="Feed" name="Bundle"/>
 <artifact id="Patient/CGPatientExample01" key="Patient-CGPatientExample01" name="CGPatientExample01"/>
+<artifact id="DocumentReference/CNVAnalysis-called" key="DocumentReference-CNVAnalysis-called" name="CNVAnalysis-called"/>
 <artifact id="CodeSystem/clinvar-evidence-level-custom-cs" key="CodeSystem-clinvar-evidence-level-custom-cs" name="ClinVar Evidence Level Example Codes"/>
 <artifact id="StructureDefinition/coded-annotation" key="StructureDefinition-coded-annotation" name="Coded Annotation"/>
 <artifact id="CodeSystem/coded-annotation-types-cs" key="CodeSystem-coded-annotation-types-cs" name="Coded Annotation Type Codes"/>
@@ -88,6 +89,7 @@
 <artifact id="ValueSet/genomic-study-data-format-vs" key="ValueSet-genomic-study-data-format-vs" name="Genomic Study Data Format VS"/>
 <artifact id="CodeSystem/genomic-study-method-type-cs" key="CodeSystem-genomic-study-method-type-cs" name="Genomic Study Method Type CS"/>
 <artifact id="ValueSet/genomic-study-method-type-vs" key="ValueSet-genomic-study-method-type-vs" name="Genomic Study Method Type VS"/>
+<artifact id="ValueSet/genomic-study-status-vs" key="ValueSet-genomic-study-status-vs" name="Genomic Study Status CS"/>
 <artifact id="CodeSystem/genomic-study-status-cs" key="CodeSystem-genomic-study-status-cs" name="Genomic Study Status CS"/>
 <artifact id="CodeSystem/genomic-study-type-cs" key="CodeSystem-genomic-study-type-cs" name="Genomic Study Type CS"/>
 <artifact id="ValueSet/genomic-study-type-vs" key="ValueSet-genomic-study-type-vs" name="Genomic Study Type VS"/>
@@ -194,6 +196,7 @@
 <artifact id="CodeSystem/sequence-phase-relationship-cs" key="CodeSystem-SequencePhaseRelationshipCS" name="Sequence Phase Relationship Codes"/>
 <artifact id="ValueSet/sequence-phase-relationship-vs" key="ValueSet-seq-phase-relationship" name="Sequence Phase Relationships"/>
 <artifact id="Observation/SequencePhaseRelationExample1" key="Observation-SequencePhaseRelationExample1" name="SequencePhaseRelationExample1"/>
+<artifact id="DocumentReference/SimpleVariantAnalysis-called" key="DocumentReference-SimpleVariantAnalysis-called" name="SimpleVariantAnalysis-called"/>
 <artifact deprecated="true" id="StructureDefinition/supporting-information" key="StructureDefinition-SupportingInfo" name="Supporting Information"/>
 <artifact deprecated="true" key="Task" name="Task"/>
 <artifact id="StructureDefinition/therapeutic-implication" key="StructureDefinition-therapeutic-implication" name="Therapeutic Implication"/>
@@ -220,6 +223,7 @@
 <artifact id="Observation/VariantExample" key="Observation-VariantExample" name="VariantExample"/>
 <artifact id="Observation/VariantExample1" key="Observation-VariantExample1" name="VariantExample1"/>
 <artifact id="Observation/VariantExample2" key="Observation-VariantExample2" name="VariantExample2"/>
+<artifact id="DocumentReference/WES-FullSequencedRegion-GRCh38" key="DocumentReference-WES-FullSequencedRegion-GRCh38" name="WES-FullSequencedRegion-GRCh38"/>
 <artifact id="Bundle/bundle-CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="bundle-CG-IG-HLA-FullBundle-01"/>
 <artifact id="Bundle/bundle-CYP2C19" key="DiagnosticReport-report-CYP2C19" name="bundle-CYP2C19"/>
 <artifact id="Bundle/bundle-cgexample" key="Bundle-diagnosticreport-cgexample" name="bundle-cgexample"/>
@@ -235,13 +239,22 @@
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="diagnosticreport-hla-glstring-r4"/>
 <artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="dna-change-type-map"/>
 <artifact id="ServiceRequest/eMERGEServiceRequest" key="ServiceRequest-eMERGEServiceRequest" name="eMERGEServiceRequest"/>
+<artifact id="Patient/genomicPatient" key="Patient-genomicPatient" name="genomicPatient"/>
+<artifact id="ServiceRequest/genomicServiceRequest" key="ServiceRequest-genomicServiceRequest" name="genomicServiceRequest"/>
+<artifact id="Specimen/genomicSpecimen" key="Specimen-genomicSpecimen" name="genomicSpecimen"/>
+<artifact id="DocumentReference/genomicVCFfile-cnv" key="DocumentReference-genomicVCFfile-cnv" name="genomicVCFfile-cnv"/>
+<artifact id="DocumentReference/genomicVCFfile-simple" key="DocumentReference-genomicVCFfile-simple" name="genomicVCFfile-simple"/>
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="genotype-hla-a-glstring-r4"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="haplotype-hla-a-1-r4"/>
+<artifact id="Procedure/lungMass" key="Procedure-lungMass" name="lungMass"/>
+<artifact id="Procedure/lungMass-analysis1" key="Procedure-lungMass-analysis1" name="lungMass-analysis1"/>
+<artifact id="Procedure/lungMass-analysis2" key="Procedure-lungMass-analysis2" name="lungMass-analysis2"/>
 <artifact id="Observation/molec-conseq1" key="Observation-molec-conseq1" name="molec-conseq1"/>
 <artifact id="Observation/molec-conseq2" key="Observation-molec-conseq2" name="molec-conseq2"/>
 <artifact id="Observation/molec-conseq3" key="Observation-molec-conseq3" name="molec-conseq3"/>
 <artifact id="Observation/molec-conseq4" key="Observation-molec-conseq4" name="molec-conseq4"/>
 <artifact id="Observation/obs-idh-ex" key="Observation-obs-idh-ex" name="obs-idh-ex"/>
+<artifact id="Practitioner/practitioner02" key="Practitioner-practitioner02" name="practitioner02"/>
 <artifact id="ServiceRequest/servicerequest-hla-a-r4" key="ServiceRequest-servicerequest-hla-a-r4" name="servicerequest-hla-a-r4"/>
 <artifact id="Specimen/specimen-hla-r4" key="Specimen-specimen-hla-r4" name="specimen-hla-r4"/>
 <artifact id="Observation/variant-with-molec-consequences" key="Observation-variant-with-molec-consequences" name="variant-with-molec-consequences"/>

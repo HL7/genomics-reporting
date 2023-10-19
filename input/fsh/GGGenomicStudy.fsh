@@ -253,6 +253,7 @@ Description: "Mapping from Procedure's EventStatus (http://hl7.org/fhir/ValueSet
 * title = "Genomic Study Status Map"
 * experimental = false
 * name = "GenomicStudyStatusMap"
+* description = "Mapping from Procedure's EventStatus (http://hl7.org/fhir/ValueSet/event-status) ValueSet for 'status' to http://hl7.org/fhir/uv/genomics-reporting/ValueSet/genomicstudy-status-vs codes"
 * status = #draft
 * publisher = "HL7 International Clinical Genomics Work Group"
 * sourceCanonical = "http://hl7.org/fhir/ValueSet/event-status"
@@ -315,6 +316,13 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-status"
 * #entered-in-error "Entered in Error" "The genomic study has been withdrawn following a previous final release. This electronic record should never have existed, though it is possible that real-world decisions were based on it. (If real-world activity has occurred, the status should be 'cancelled' rather than 'entered-in-error'.)."
 * #unknown "Unknown" "The system does not know which of the status values currently applies for this request. Note: This concept is not to be used for 'other' - one of the listed statuses is presumed to apply, it's just not known which one."
 
+ValueSet: GenomicStudyStatusVS
+Id: genomic-study-status-vs
+Title: "Genomic Study Status CS"
+Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-status"
+* ^experimental = false
+* include codes from system GenomicStudyStatusCS
+
 CodeSystem: GenomicStudyTypeCS
 Id: genomic-study-type-cs
 Title: "Genomic Study Type CS"
@@ -338,6 +346,7 @@ ValueSet: GenomicStudyTypeVS
 Id: genomic-study-type-vs
 Title: "Genomic Study Type VS"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-type"
+* ^experimental = true
 * include codes from system GenomicStudyTypeCS
 
 CodeSystem: GenomicStudyMethodTypeCS
@@ -432,6 +441,7 @@ ValueSet: GenomicStudyMethodTypeVS
 Id: genomic-study-method-type-vs
 Title: "Genomic Study Method Type VS"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"
+* ^experimental = true
 * include codes from system GenomicStudyMethodTypeCS
 
 CodeSystem: GenomicStudyChangeTypeCS
@@ -450,6 +460,7 @@ ValueSet: GenomicStudyChangeTypeVS
 Id: genomic-study-change-type-vs
 Title: "Genomic Study Change Type VS"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-changetype"
+* ^experimental = true
 * include codes from system GenomicStudyChangeTypeCS
 
 CodeSystem: GenomicStudyDataFormatCS
@@ -503,4 +514,5 @@ ValueSet: GenomicStudyDataFormatVS
 Id: genomic-study-data-format-vs
 Title: "Genomic Study Data Format VS"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"
+* ^experimental = true
 * include codes from system GenomicStudyDataFormatCS
