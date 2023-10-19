@@ -13,20 +13,22 @@ Description:    "Properties common to genomic implications expressed as computab
 * derivedFrom 1..*
 * derivedFrom contains variant 0..* and
     genotype 0..* and
-    haplotype 0..*
+    haplotype 0..* and 
+    biomarker 0..*
 * derivedFrom[variant] only Reference(Variant)
 * derivedFrom[variant] ^short = "Variant the implication is derived from"
 * derivedFrom[genotype] only Reference(Genotype)
 * derivedFrom[genotype] ^short = "Genotype the implication is derived from"
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype the implication is derived from"
+* derivedFrom[biomarker] only Reference(MolecularBiomarker)
+* derivedFrom[biomarker] ^short = "MolecularBiomarker the implication is derived from"
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    evidence-level 0..* and
-    prognosis 0..1
+    evidence-level 0..*
 * component[evidence-level].code = $LNC#93044-6
 * component[evidence-level].code ^short = "93044-6"
 * component[evidence-level] ^short = "Level of Evidence"
@@ -37,15 +39,6 @@ Description:    "Properties common to genomic implications expressed as computab
 * component[evidence-level].value[x] ^binding.description = "PharmGKB or ClinVar"
 * component[evidence-level].value[x] ^short = "1A | 1B | 2A | 2B | 3 | 4 | 4-star | 3-star | 2-star | 1-star | no-star"
 //* component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (example)
-
-* component[prognosis] ^short = "Prognosis"
-* component[prognosis] ^definition = "Codified information on likely patient health outcome (e.g. disease recurrence) of the related clinical or biological characteristics, irrespective of the treatment"
-* component[prognosis].code = TbdCodesCS#prognostic-implication
-* component[prognosis].code ^short = "prognostic-implication"
-* component[prognosis].value[x] only CodeableConcept
-* component[prognosis].value[x] 1..1
-* component[prognosis].value[x] ^short = "Better outcome | poorer outcome"
-//* component[prognosis].value[x] from (example) (extensible)
 
 Profile:        DiagnosticImplication
 Parent:         GenomicImplication
@@ -205,6 +198,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
     coding-hgvs 0..1 and
     transcript-ref-seq 0..1 and
     protein-hgvs 0..1 and
+    protein-ref-seq 0..1 and
     feature-consequence 0..* and
     functional-effect 0..1
 
@@ -235,6 +229,16 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[protein-hgvs].value[x] 1..1
 * component[protein-hgvs].value[x] from HGVSVS (required)
 * component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
+
+* component[protein-ref-seq].code = TbdCodesCS#protein-ref-seq
+* component[protein-ref-seq].code ^short = "protein-ref-seq"
+* component[protein-ref-seq] ^short = "Protein Reference Sequence"
+* component[protein-ref-seq] ^definition = "ID of the protein reference sequence, which includes transcribed and non transcribed stretches. It covers the entire protein described."
+* component[protein-ref-seq].value[x] only CodeableConcept
+* component[protein-ref-seq].value[x] ^short = "Versioned protein reference sequence identifier"
+* component[protein-ref-seq].value[x] ^binding.strength = #example
+* component[protein-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
+* component[protein-ref-seq].value[x] 1..1
 
 * component[feature-consequence].code = TbdCodesCS#feature-consequence
 * component[feature-consequence].code ^short = "feature-consequence"

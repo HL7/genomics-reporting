@@ -38,21 +38,6 @@ Description:    "Properties common to genetic findings whose results are express
 * component[reference-sequence-assembly].value[x] ^short = "GRCh37 | GRCh38 | ..."
 * component[reference-sequence-assembly].value[x] from http://loinc.org/vs/LL1040-6 (extensible)
 
-Profile:        TMB
-Parent:         GenomicsBase
-Id:             tmb
-Title:          "Tumor Mutation Burden"
-Description:    """
-The total number of mutations (changes) found in the DNA of cancer cells. Knowing the tumor mutational burden may help plan the best treatment. For example, tumors that have a high number of mutations appear to be more likely to respond to certain types of immunotherapy. Tumor mutational burden is being used as a type of biomarker.
-"""
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* . ^short = "Tumor Mutation Burden"
-* code = $LNC#94076-7
-* code ^short = "94076-7"
-* valueQuantity = $UCUM#1/1000000{Base}
-* valueQuantity.unit = "Mutations/Megabase"
-* interpretation from HighLowCodesVS
-
 Profile:        Variant
 Parent:         GenomicFinding
 Id:             variant
@@ -76,6 +61,7 @@ Description:    "Details about a set of changes in the tested sample compared to
     genomic-hgvs 0..1 and
     cytogenomic-nomenclature 0..1 and
     genomic-ref-seq 0..1 and
+    representative-protein-ref-seq 0..1 and
     representative-transcript-ref-seq 0..1 and
     exact-start-end 0..1 and
     inner-start-end 0..1 and
@@ -156,6 +142,16 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-ref-seq].value[x] ^binding.strength = #example
 * component[genomic-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
 * component[genomic-ref-seq].value[x] 1..1
+
+* component[representative-protein-ref-seq].code = TbdCodesCS#protein-ref-seq
+* component[representative-protein-ref-seq].code ^short = "protein-ref-seq"
+* component[representative-protein-ref-seq] ^short = "Protein Reference Sequence"
+* component[representative-protein-ref-seq] ^definition = "ID of the protein reference sequence, which includes transcribed and non transcribed stretches. It covers the entire protein described."
+* component[representative-protein-ref-seq].value[x] only CodeableConcept
+* component[representative-protein-ref-seq].value[x] ^short = "Versioned protein reference sequence identifier"
+* component[representative-protein-ref-seq].value[x] ^binding.strength = #example
+* component[representative-protein-ref-seq].value[x] ^binding.description = "Multiple bindings acceptable (NCBI or LRG)"
+* component[representative-protein-ref-seq].value[x] 1..1
 
 * component[representative-transcript-ref-seq].code = $LNC#51958-7
 * component[representative-transcript-ref-seq].code ^short = "51958-7"
@@ -402,18 +398,6 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[uncallable-regions].value[x] only Range
 * component[uncallable-regions].value[x] ^short = "Must be inside the range given by 'ranges examined' in the given reference sequence and coordinate system."
 
-Profile:        MSI
-Parent:         GenomicsBase
-Id:             msi
-Title:          "Microsatellite Instability"
-Description:    "Microsatellite Instability (MSI) is the condition of genetic hypermutability (predisposition to mutation) that results from impaired DNA mismatch repair (MMR)."
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* . ^short = "Microsatellite Instability"
-* code = $LNC#81695-9 // Mutations/Megabase [# Ratio] in Tumor
-* code ^short = "81695-9"
-* valueCodeableConcept from http://loinc.org/vs/LL3994-2 (extensible)
-* valueCodeableConcept ^short = "Stable | MSI-L | MSI-H | Indeterminate"
-
 Profile:        Haplotype
 Parent:         GenomicFinding
 Id:             haplotype
@@ -465,3 +449,50 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
 * derivedFrom[Haplotype] ^short = "Haplotype this genotype is derived from"
 * derivedFrom[Variant] only Reference(Variant)
 * derivedFrom[Variant] ^short = "Variant this genotype is derived from"
+
+Profile:        MolecularBiomarker
+Parent:         Observation
+Id:             molecular-biomarker
+Title:          "Molecular Biomarker"
+Description:    "This profile is used to represent laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
+* code from MolecularBiomarkerCodeVS (example)
+* code ^short = "Code for the biomarker"
+* code ^definition = "The code is used to represent the biomarker - laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
+* category 1..*
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Slice based on the category.code pattern"
+* category contains 
+     labCategory 1..1 and
+     mbCategory 1..1 and
+     geCategory 0..1
+* category[labCategory].coding = $OBSCAT#laboratory
+* category[mbCategory].coding = TbdCodesCS#biomarker-category
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slice based on the component.code pattern"
+* component contains 
+    gene-studied 0..* and 
+    biomarker-category 0..*
+* component[gene-studied] ^short = "Gene Studied"
+* component[gene-studied] ^definition = "The gene(s) directly or indirectly assessed by the biomarker."
+* component[gene-studied].code = $LNC#48018-6
+* component[gene-studied].code ^short = "48018-6"
+* component[gene-studied].value[x] only CodeableConcept
+* component[gene-studied].value[x] ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
+* component[gene-studied].value[x] 1..1
+* component[gene-studied].value[x] from HGNCVS (extensible)
+
+* component[biomarker-category] ^short = "Biomarker Category"
+* component[biomarker-category] ^definition = "A categorization of a given biomarker observation."
+* component[biomarker-category] ^comment = """
+Component biomarker-category is an optional and repeating field that provides for a categorization of a given biomarker observation. The example 'molecular biomarker ontology' value set provides a categorization of biomarkers along several axes. A given lab test can be associated with more than one category within more than one axis. For example, LOINC code 85337-4 represents Estrogen receptor antigen in tissue by immune stain. It can be categorized by physiologic role of cell receptor and antigen; by molecule type of protein; and by method of immune stain.
+"""
+* component[biomarker-category].code = TbdCodesCS#biomarker-category
+* component[biomarker-category].value[x] only CodeableConcept
+* component[biomarker-category].value[x] 1..1
+* component[biomarker-category].value[x] ^short = "cell receptor | antigen | protein | immune stain"
+* component[biomarker-category].value[x] from MolecularBiomarkerCategoryVS (example)
