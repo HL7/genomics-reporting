@@ -34,7 +34,7 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
   * ^definition = "GenomicStudy.status is different from Procedure.status, see [mapping](ConceptMap-GenomicStudyStatusMap.html)"
 * category 1..1
 * category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
-* code from GenomicStudyTypeVS (extensible)
+* code from GenomicStudyTypeVS (example)
   * ^short = "GenomicStudy.type"
 * subject ^short = "GenomicStudy.subject"
 * encounter ^short = "GenomicStudy.encounter"

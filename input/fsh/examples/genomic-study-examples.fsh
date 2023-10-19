@@ -1,22 +1,13 @@
-Alias: $sct = http://snomed.info/sct
-Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
-Alias: $sequenceontology = http://sequenceontology.org
-Alias: $loinc = http://loinc.org
-Alias: $CodeSystem-v3-ParticipationType.html = http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html
-Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
-Alias: $v3-Confidentiality = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
-
 Instance: lungMass
-InstanceOf: Procedure
+InstanceOf: GenomicStudy
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study"
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
-* extension[=].valueReference = Reference(Procedure/lungMass-analysis1)
+* extension[=].valueReference = Reference(lungMass-analysis1)
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
-* extension[=].valueReference = Reference(Procedure/lungMass-analysis2)
+* extension[=].valueReference = Reference(lungMass-analysis2)
 * status = #completed
-* code = $sct#443968007 "Whole Exome Sequencing - Sequencing of entire coding region of gene (procedure)"
-* category = $observation-category#laboratory
+* code.text = "Solid tumor whole exome sequencing panel"
+* category = $OBSCAT#laboratory
 * subject = Reference(Patient/genomicPatient)
 * performedDateTime = "2019-03-01"
 * basedOn = Reference(ServiceRequest/genomicServiceRequest)
@@ -27,19 +18,18 @@ Usage: #example
 * note.text = "For technical reasons, PIK3CB was deemed uncallable."
 
 Instance: lungMass-analysis1
-InstanceOf: Procedure
+InstanceOf: GenomicStudyAnalysis
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis"
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $sct#117040002 "Nucleic acid sequencing (procedure)"
+* extension[=].valueCodeableConcept = $methodType#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $sequenceontology#SO:0001483 "SNV"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $sequenceontology#SO:0002007 "MNV"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $sequenceontology#SO:1000032 "delins"
+* extension[=].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $loinc#LA26806-2 "GRCh38"
+* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
 * extension[=].valueReference = Reference(Specimen/genomicSpecimen)
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-focus"
@@ -48,26 +38,29 @@ Usage: #example
 * extension[=].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-called"
 * extension[=].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-output"
+* extension[=].extension[0].url = "type"
+* extension[=].extension[=].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[=].extension[+].url = "file"
+* extension[=].extension[=].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
-* category = $observation-category#laboratory
+* category = $OBSCAT#laboratory
 * performedDateTime = "2019-03-01T01:01:10-06:00"
 * note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
 * performer.actor = Reference(Practitioner/practitioner02)
 * performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
-* report = Reference(DocumentReference/genomicVCFfile-simple)
 * subject = Reference(Patient/genomicPatient)
 
 Instance: lungMass-analysis2
-InstanceOf: Procedure
+InstanceOf: GenomicStudyAnalysis
 Usage: #example
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis"
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $sct#117040002 "Nucleic acid sequencing (procedure)"
+* extension[=].valueCodeableConcept = $methodType#deletion-duplication-analysis "Deletion/duplication analysis"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $sequenceontology#SO:0001019 "CNV"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $loinc#LA26806-2 "GRCh38"
+* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
 * extension[=].valueReference = Reference(Specimen/genomicSpecimen)
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-focus"
@@ -76,14 +69,18 @@ Usage: #example
 * extension[=].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-called"
 * extension[=].valueReference = Reference(DocumentReference/CNVAnalysis-called)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-output"
+* extension[=].extension[0].url = "type"
+* extension[=].extension[=].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[=].extension[+].url = "file"
+* extension[=].extension[=].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
-* category = $observation-category#laboratory
+* category = $OBSCAT#laboratory
 * performedDateTime = "2019-03-01T01:01:10-06:00"
 * note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
 * performer.actor = Reference(Practitioner/practitioner02)
 * performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
-* report = Reference(DocumentReference/genomicVCFfile-cnv)
 * subject = Reference(Patient/genomicPatient)
 
 Instance: genomicSpecimen
@@ -92,7 +89,7 @@ Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
 * identifier.value = "4"
 * status = #available
-* type = $sct#122610009 "Specimen from lung obtained by biopsy (specimen)"
+* type = $SCT#122610009 "Specimen from lung obtained by biopsy (specimen)"
 * subject = Reference(Patient/genomicPatient) "John Doe"
 * receivedTime = "2019-03-01T01:01:01Z"
 * request = Reference(ServiceRequest/genomicServiceRequest)
@@ -100,13 +97,13 @@ Usage: #example
 * collection.collectedDateTime = "2019-03-01T01:01:00Z"
 * collection.quantity.value = 1
 * collection.quantity.unit = "mm2"
-* collection.method = $sct#129314006 "Biopsy - action"
+* collection.method = $SCT#129314006 "Biopsy - action"
 
 Instance: genomicPatient
 InstanceOf: Patient
 Usage: #example
 * identifier.use = #temp
-* identifier.type = $v2-0203#MR "Medical record number"
+* identifier.type = $IDTYPE#MR "Medical record number"
 * identifier.system = "http://www.somesystemabc.net/identifiers/persons"
 * identifier.value = "11117"
 * identifier.period.start = "2021-01-01"
@@ -123,7 +120,7 @@ Instance: practitioner02
 InstanceOf: Practitioner
 Usage: #example
 * identifier.use = #temp
-* identifier.type = $v2-0203#PRN "Provider number"
+* identifier.type = $IDTYPE#PRN "Provider number"
 * identifier.system = "http://www.somesystemabc.net/identifiers/persons"
 * identifier.value = "11116"
 * identifier.period.start = "2021-01-01"
@@ -136,7 +133,7 @@ Usage: #example
 Instance: genomicServiceRequest
 InstanceOf: ServiceRequest
 Usage: #example
-* identifier.type = $v2-0203#LACSN
+* identifier.type = $IDTYPE#LACSN
 * identifier.type.text = "Laboratory Accession ID"
 * identifier.system = "http://www.somesystemabc.net/identifiers/serviceRequests"
 * identifier.value = "111111112"
