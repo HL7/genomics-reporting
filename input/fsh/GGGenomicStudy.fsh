@@ -306,7 +306,7 @@ Description: "Mapping from Procedure's EventStatus (http://hl7.org/fhir/ValueSet
 
 CodeSystem: GenomicStudyStatusCS
 Id: genomic-study-status-cs
-Title: "Genomic Study Status CS"
+Title: "Genomic Study Status"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-status"
 * ^caseSensitive = true
 * ^experimental = false
@@ -318,14 +318,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-status"
 
 ValueSet: GenomicStudyStatusVS
 Id: genomic-study-status-vs
-Title: "Genomic Study Status CS"
+Title: "Genomic Study Status"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-status"
 * ^experimental = false
 * include codes from system GenomicStudyStatusCS
 
 CodeSystem: GenomicStudyTypeCS
 Id: genomic-study-type-cs
-Title: "Genomic Study Type CS"
+Title: "Genomic Study Type"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-type"
 * ^caseSensitive = true
 * ^experimental = true
@@ -344,14 +344,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-type"
 
 ValueSet: GenomicStudyTypeVS
 Id: genomic-study-type-vs
-Title: "Genomic Study Type VS"
+Title: "Genomic Study Type"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-type"
 * ^experimental = true
 * include codes from system GenomicStudyTypeCS
 
 CodeSystem: GenomicStudyMethodTypeCS
 Id: genomic-study-method-type-cs
-Title: "Genomic Study Method Type CS"
+Title: "Genomic Study Method Type"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-methodtype"
 * ^caseSensitive = true
 * ^experimental = true
@@ -439,14 +439,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-methodtype"
 
 ValueSet: GenomicStudyMethodTypeVS
 Id: genomic-study-method-type-vs
-Title: "Genomic Study Method Type VS"
+Title: "Genomic Study Method Type"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"
 * ^experimental = true
 * include codes from system GenomicStudyMethodTypeCS
 
 CodeSystem: GenomicStudyChangeTypeCS
 Id: genomic-study-change-type-cs
-Title: "Genomic Study Change Type CS"
+Title: "Genomic Study Change Type"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-changetype"
 * ^caseSensitive = true
 * ^experimental = true
@@ -458,14 +458,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-changetype"
 
 ValueSet: GenomicStudyChangeTypeVS
 Id: genomic-study-change-type-vs
-Title: "Genomic Study Change Type VS"
+Title: "Genomic Study Change Type"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-changetype"
 * ^experimental = true
 * include codes from system GenomicStudyChangeTypeCS
 
 CodeSystem: GenomicStudyDataFormatCS
 Id: genomic-study-data-format-cs
-Title: "Genomic Study Data Format CS"
+Title: "Genomic Study Data Format"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-dataformat"
 * ^caseSensitive = true
 * ^experimental = true
@@ -512,7 +512,7 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-dataformat"
 
 ValueSet: GenomicStudyDataFormatVS
 Id: genomic-study-data-format-vs
-Title: "Genomic Study Data Format VS"
+Title: "Genomic Study Data Format"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"
 * ^experimental = true
 * include codes from system GenomicStudyDataFormatCS
