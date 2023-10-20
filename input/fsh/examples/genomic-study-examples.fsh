@@ -1,10 +1,9 @@
 Instance: lungMass
 InstanceOf: GenomicStudy
+Description: "Example of solid tumor whole exome sequencing panel"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
-* extension[=].valueReference = Reference(lungMass-analysis1)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
-* extension[=].valueReference = Reference(lungMass-analysis2)
+* extension[GenomicsStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis1)
+* extension[GenomicsStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis2)
 * status = #completed
 * code.text = "Solid tumor whole exome sequencing panel"
 * category = $OBSCAT#laboratory
@@ -12,37 +11,24 @@ Usage: #example
 * performedDateTime = "2019-03-01"
 * basedOn = Reference(ServiceRequest/genomicServiceRequest)
 * asserter = Reference(Practitioner/practitioner02)
-* reasonCode.coding.system = "http://snomed.info/sct"
-* reasonCode.coding.code = #309529002
-* reasonCode.coding.display = "Lung mass (finding)"
+* reasonCode = $SCT#309529002 "Lung mass (finding)"
 * note.text = "For technical reasons, PIK3CB was deemed uncallable."
 
 Instance: lungMass-analysis1
 InstanceOf: GenomicStudyAnalysis
+Description: "Example of Sequence analysis of the entire coding region"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $methodType#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
-* extension[=].valueReference = Reference(Specimen/genomicSpecimen)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-focus"
-* extension[=].valueReference = Reference(Patient/genomicPatient)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-studied"
-* extension[=].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-called"
-* extension[=].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-output"
-* extension[=].extension[0].url = "type"
-* extension[=].extension[=].valueCodeableConcept = $fileType#vcf "VCF"
-* extension[=].extension[+].url = "file"
-* extension[=].extension[=].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
+* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $methodType#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
+* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
+* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
+* extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicsStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
+* extension[GenomicsStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
+* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+* extension[GenomicsStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
+* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[GenomicsStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
 * category = $OBSCAT#laboratory
@@ -54,26 +40,17 @@ Usage: #example
 
 Instance: lungMass-analysis2
 InstanceOf: GenomicStudyAnalysis
+Description: "Example of Deletion/duplication analysis"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $methodType#deletion-duplication-analysis "Deletion/duplication analysis"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
-* extension[=].valueReference = Reference(Specimen/genomicSpecimen)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-focus"
-* extension[=].valueReference = Reference(Patient/genomicPatient)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-studied"
-* extension[=].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-called"
-* extension[=].valueReference = Reference(DocumentReference/CNVAnalysis-called)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-output"
-* extension[=].extension[0].url = "type"
-* extension[=].extension[=].valueCodeableConcept = $fileType#vcf "VCF"
-* extension[=].extension[+].url = "file"
-* extension[=].extension[=].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
+* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $methodType#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
+* extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicsStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
+* extension[GenomicsStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
+* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+* extension[GenomicsStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
+* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[GenomicsStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
 * category = $OBSCAT#laboratory
@@ -85,6 +62,7 @@ Usage: #example
 
 Instance: genomicSpecimen
 InstanceOf: Specimen
+Description: "Example of lung specimen obtained by biopsy"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
 * identifier.value = "4"
@@ -101,6 +79,7 @@ Usage: #example
 
 Instance: genomicPatient
 InstanceOf: Patient
+Description: "Example patient"
 Usage: #example
 * identifier.use = #temp
 * identifier.type = $IDTYPE#MR "Medical record number"
@@ -118,6 +97,7 @@ Usage: #example
 
 Instance: practitioner02
 InstanceOf: Practitioner
+Description: "Example practitioner"
 Usage: #example
 * identifier.use = #temp
 * identifier.type = $IDTYPE#PRN "Provider number"
@@ -132,6 +112,7 @@ Usage: #example
 
 Instance: genomicServiceRequest
 InstanceOf: ServiceRequest
+Description: "Example of Molecular genetic test"
 Usage: #example
 * identifier.type = $IDTYPE#LACSN
 * identifier.type.text = "Laboratory Accession ID"
@@ -139,13 +120,12 @@ Usage: #example
 * identifier.value = "111111112"
 * status = #active
 * intent = #plan
-* code.coding.system = "http://snomed.info/sct"
-* code.coding.code = #405825005
-* code.coding.display = "Molecular genetic test (procedure)"
+* code = $SCT#405825005 "Molecular genetic test (procedure)"
 * subject = Reference(Patient/genomicPatient)
 
 Instance: WES-FullSequencedRegion-GRCh38
-InstanceOf: DocumentReference
+InstanceOf: GenomicsDocumentReference
+Description: "WES_FullSequencedRegion_GRCh38: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "11117"
@@ -158,7 +138,8 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: CNVAnalysis-called
-InstanceOf: DocumentReference
+InstanceOf: GenomicsDocumentReference
+Description: "CNVAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "11120"
@@ -171,7 +152,8 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: genomicVCFfile-cnv
-InstanceOf: DocumentReference
+InstanceOf: GenomicsDocumentReference
+Description: "genomicVCFfile_cnv: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "11121"
@@ -184,7 +166,8 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: genomicVCFfile-simple
-InstanceOf: DocumentReference
+InstanceOf: GenomicsDocumentReference
+Description: "genomicVCFfile_simple: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "11119"
@@ -197,7 +180,8 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: SimpleVariantAnalysis-called
-InstanceOf: DocumentReference
+InstanceOf: GenomicsDocumentReference
+Description: "SimpleVariantAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "11118"

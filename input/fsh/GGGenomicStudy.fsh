@@ -101,7 +101,7 @@ Description:   "Genomic Study Analysis Input"
     type 0..1 and
     generatedBy 0..1
 * extension[file] ^short = "GenomicStudy.analysis.input.file"
-* extension[file].value[x] only Reference(DocumentReference)
+* extension[file].value[x] only Reference(GenomicsDocumentReference)
 * extension[type] ^short = "GenomicStudy.analysis.input.type"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
@@ -118,7 +118,7 @@ Description:   "Genomic Study Analysis Output"
     file 0..1 and
     type 0..1 
 * extension[file] ^short = "GenomicStudy.analysis.output.file"
-* extension[file].value[x] only Reference(DocumentReference)
+* extension[file].value[x] only Reference(GenomicsDocumentReference)
 * extension[type] ^short = "GenomicStudy.analysis.output.type"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
