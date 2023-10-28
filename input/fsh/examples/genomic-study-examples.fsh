@@ -18,7 +18,7 @@ Instance: lungMass-analysis1
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of Sequence analysis of the entire coding region"
 Usage: #example
-* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $methodType#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
 * extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
 * extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
 * extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
@@ -27,7 +27,7 @@ Usage: #example
 * extension[GenomicsStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
 * extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
 * extension[GenomicsStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
-* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
 * extension[GenomicsStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
@@ -35,21 +35,21 @@ Usage: #example
 * performedDateTime = "2019-03-01T01:01:10-06:00"
 * note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
 * performer.actor = Reference(Practitioner/practitioner02)
-* performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
+* performer.function = $PARTICIPATIONTYPE#PRF "Performer"
 * subject = Reference(Patient/genomicPatient)
 
 Instance: lungMass-analysis2
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of Deletion/duplication analysis"
 Usage: #example
-* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $methodType#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
 * extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
 * extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
 * extension[GenomicsStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
 * extension[GenomicsStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
 * extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
 * extension[GenomicsStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
-* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
 * extension[GenomicsStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
@@ -57,7 +57,7 @@ Usage: #example
 * performedDateTime = "2019-03-01T01:01:10-06:00"
 * note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
 * performer.actor = Reference(Practitioner/practitioner02)
-* performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
+* performer.function = $PARTICIPATIONTYPE#PRF "Performer"
 * subject = Reference(Patient/genomicPatient)
 
 Instance: genomicSpecimen
@@ -132,7 +132,7 @@ Usage: #example
 * status = #current
 * docStatus = #preliminary
 * description = "WES_FullSequencedRegion_GRCh38: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
-* securityLabel = $v3-Confidentiality#R "Restricted"
+* securityLabel = $CONFIDENTIALITY#R "Restricted"
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/BILYJerATC59WlG15J316BEf/WES_FullSequencedRegion_GRCh38.bed"
 * content.attachment.title = "WES_FullSequencedRegion_GRCh38"
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
@@ -146,7 +146,7 @@ Usage: #example
 * status = #current
 * docStatus = #preliminary
 * description = "CNVAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
-* securityLabel = $v3-Confidentiality#R "Restricted"
+* securityLabel = $CONFIDENTIALITY#R "Restricted"
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/Hnv3LtumKn-1QjeyS2KVuw4R/CNVAnalysis_called.bed"
 * content.attachment.title = "CNVAnalysis_called"
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
@@ -160,7 +160,7 @@ Usage: #example
 * status = #current
 * docStatus = #preliminary
 * description = "genomicVCFfile_cnv: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
-* securityLabel = $v3-Confidentiality#R "Restricted"
+* securityLabel = $CONFIDENTIALITY#R "Restricted"
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/dxn3s6R1Y-Cv0h-1bTCu-JvY/genomicVCFFile_cnv.vcf"
 * content.attachment.title = "genomicVCFfile_cnv"
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
@@ -174,7 +174,7 @@ Usage: #example
 * status = #current
 * docStatus = #preliminary
 * description = "genomicVCFfile_simple: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
-* securityLabel = $v3-Confidentiality#R "Restricted"
+* securityLabel = $CONFIDENTIALITY#R "Restricted"
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/gdL90-np7lJjGwUxeARapUHB/genomicVCFFile_simple.vcf"
 * content.attachment.title = "genomicVCFfile_simple"
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
@@ -188,7 +188,7 @@ Usage: #example
 * status = #current
 * docStatus = #preliminary
 * description = "SimpleVariantAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
-* securityLabel = $v3-Confidentiality#R "Restricted"
+* securityLabel = $CONFIDENTIALITY#R "Restricted"
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/jQZWWKs4JO8ZfhfrbsCbbMUA/SimpleVariantAnalysis_called.bed"
 * content.attachment.title = "SimpleVariantAnalysis_called"
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
