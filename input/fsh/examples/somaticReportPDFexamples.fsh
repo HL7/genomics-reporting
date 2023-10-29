@@ -905,7 +905,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * subject = Reference(CGPatientExample01)
-* derivedFrom = Reference(ATM-insertion-var)
+* derivedFrom = Reference(ATM-missense-var)
 * component[0].code = http://loinc.org#48004-6
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001184.4:c.2878_2879insAGTAA "NM_001184.4:c.2878_2879insAGTAA"
