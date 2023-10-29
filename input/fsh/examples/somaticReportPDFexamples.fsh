@@ -1,7 +1,7 @@
 Instance: bundle-somaticReportPDFdraftExamples
 InstanceOf: Bundle
-Description: "data instances for somatic report pdf with Srikar."
-Usage: #example
+Description: "data instances for somatic report."
+// Usage: #os1dddpe = #collection
 * type = #collection
 * entry[+].resource = NOTCH1-uncertain-var
 * entry[+].resource = ZFHX3-uncertain-var
@@ -42,8 +42,8 @@ Usage: #example
 * entry[+].resource = ATM-insertion-molc
 * entry[+].resource = EGFR-L858R-molc
 * entry[+].resource = ROS1-Fusion
-
-
+* entry[+].resource = somaticStudy
+* entry[+].resource = overallInt
 
 Instance: NOTCH1-uncertain-var
 InstanceOf: Variant
@@ -53,7 +53,7 @@ Description: "Example for NOTCH1 uncertain"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -84,7 +84,7 @@ Description: "Example for ZFHX3 uncertain"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -115,7 +115,7 @@ Description: "Example for NTHL1 with 2 diseases"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -146,7 +146,7 @@ Description: "Example for MSH2 deletion"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -178,7 +178,7 @@ Description: "Example for NTHL1 SNV"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -209,7 +209,7 @@ Description: "Example for STAG2 insertion"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -240,7 +240,7 @@ Description: "Example for ATR insertion"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -271,7 +271,7 @@ Description: "Example for ATM missense"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -314,7 +314,7 @@ Description: "Example for EGFR L858R"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -345,7 +345,7 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(TBD)
+* subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2019-04-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -948,3 +948,171 @@ Usage: #example
 * derivedFrom = Reference(ROS1-Fusion-var)
 * component[+].code = TbdCodesCS#functional-effect
 * component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001565 "gene_fusion"
+
+Instance: somaticPatient
+InstanceOf: Patient
+Usage: #example
+* identifier.use = #temp
+* identifier.type = $IDTYPE#MR "Medical record number"
+* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.value = "1234567"
+* identifier.period.start = "2021-01-01"
+* identifier.assigner.display = "General Hospital"
+* active = true
+* name.use = #official
+* name.family = "Hamsburg"
+* name.given[0] = "Substance"
+* name.given[+] = "Junior"
+* gender = #male
+* birthDate = "1987-09-01"
+
+Instance: somaticStudy
+InstanceOf: GenomicStudy
+Usage: #example
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
+* extension[=].valueReference = Reference(analysisTumorNormalDNA)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
+* extension[=].valueReference = Reference(analysisTumorRNA)
+* status = #completed
+* code.text = "Genomic Cancer Testing Assay"
+* category = $OBSCAT#laboratory
+* subject = Reference(Patient/somaticPatient)
+* performedDateTime = "2023-02-02"
+* asserter = Reference(Practitioner/practitioner02)
+* reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+
+Instance: analysisTumorNormalDNA
+InstanceOf: GenomicStudyAnalysis
+Usage: #example
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
+* extension[=].valueCodeableConcept = $methodType#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
+* extension[=].valueCodeableConcept = $methodType#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
+* extension[=].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-genome-build"
+* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
+* extension[=].valueReference = Reference(Specimen/tumorSpecimen)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
+* extension[=].valueReference = Reference(Specimen/normalSpecimen)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-focus"
+* extension[=].valueReference = Reference(Patient/somaticPatient)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-studied"
+* extension[=].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-uncallable"
+* extension[=].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-output"
+* extension[=].extension[0].url = "type"
+* extension[=].extension[=].valueCodeableConcept = $fileType#vcf "VCF"
+* extension[=].extension[+].url = "file"
+* extension[=].extension[=].valueReference = Reference(DocumentReference/somaticVCFfile)
+* status = #completed
+* category = $OBSCAT#laboratory
+* performedDateTime = "2023-02-02T01:01:10-06:00"
+* note.text = "For technical reasons, BCR gene was deemed uncallable."
+* performer.actor = Reference(Practitioner/practitioner02)
+* performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
+* subject = Reference(Patient/somaticPatient)
+
+Instance: analysisTumorRNA
+InstanceOf: GenomicStudyAnalysis
+Usage: #example
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-method-type"
+* extension[=].valueCodeableConcept = $methodType#rna-analysis "RNA analysis"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0001565 "gene_fusion"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-change-type"
+* extension[=].valueCodeableConcept = $SEQONT#SO:0001576 "transcript_variant"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-specimen"
+* extension[=].valueReference = Reference(Specimen/tumorSpecimen)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-focus"
+* extension[=].valueReference = Reference(Patient/somaticPatient)
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-regions-studied"
+* extension[=].valueReference = Reference(DocumentReference/FullGenome-GRCh38)
+* status = #completed
+* category = $OBSCAT#laboratory
+* performedDateTime = "2023-02-02T01:01:10-06:00"
+* performer.actor = Reference(Practitioner/practitioner02)
+* performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
+* subject = Reference(Patient/somaticPatient)
+
+Instance: tumorSpecimen
+InstanceOf: Specimen
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
+* identifier.value = "222333"
+* status = #available
+* type = $SCT#122610009 "Specimen from lung obtained by biopsy (specimen)"
+* subject = Reference(Patient/somaticPatient) "Hamsburg, Substance Jr"
+* receivedTime = "2023-01-23T01:01:01Z"
+* collection.collector = Reference(Practitioner/practitioner02)
+* collection.collectedDateTime = "2023-01-01T01:01:00Z"
+* collection.method = $SCT#129314006 "Biopsy - action"
+* collection.bodySite = $SCT#3341006 "Right lung structure (body structure)"
+* note.text = "Tumor: 20%"
+
+Instance: normalSpecimen
+InstanceOf: Specimen
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
+* identifier.value = "444555"
+* status = #available
+* type = $SCT#119297000 "Blood specimen (specimen)"
+* subject = Reference(Patient/somaticPatient) "Hamsburg, Substance Jr"
+* receivedTime = "2023-01-23T01:01:01Z"
+* collection.collector = Reference(Practitioner/practitioner02)
+* collection.collectedDateTime = "2023-01-01T01:01:00Z"
+
+Instance: WES-UncallableRegions-GRCh38
+InstanceOf: DocumentReference
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.value = "11146520"
+* status = #current
+* docStatus = #preliminary
+* description = "Regions deemed uncallable (generally due to low coverage)."
+* securityLabel = $v3-Confidentiality#R "Restricted"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/kTufC6Mv8FR6WM5-HDu64YD_/WES-UncallableRegions-GRCh38.bed"
+* content.attachment.title = "WES-UncallableRegions-GRCh38"
+
+Instance: somaticVCFfile
+InstanceOf: DocumentReference
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.value = "1134121"
+* status = #current
+* docStatus = #preliminary
+* description = "VCF file containing identified variants"
+* securityLabel = $v3-Confidentiality#R "Restricted"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/M8IzVpRjRAEYBLkH2JytSFM-/somaticVCFFile.vcf"
+* content.attachment.title = "somatic VCF File"
+
+Instance: FullGenome-GRCh38
+InstanceOf: DocumentReference
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.value = "1076146520"
+* status = #current
+* docStatus = #preliminary
+* description = "Studied region for RNA sequencing."
+* securityLabel = $v3-Confidentiality#R "Restricted"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/wih8YSNPChCcEZfR7m8Duutm/Default.WGS.GRCh38.bed"
+* content.attachment.title = "Full Genome"
+
+Instance: overallInt
+InstanceOf: OverallInterpretation
+Description: "Example for Overall Interpretation."
+* id = "overallInt"
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* valueCodeableConcept = $LNC#LA6576-8 "Positive"
+* subject = Reference(somaticPatient)
+* status = #final
+* component[conclusion-string].valueString = "Patient is positive for Tier 1 / Level A variants, including variants with FDA-approved indications."
