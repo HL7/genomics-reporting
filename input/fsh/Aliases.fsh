@@ -40,6 +40,7 @@ Alias: $CodeSystem-v3-ParticipationType.html = http://terminology.hl7.org/3.1.0/
 Alias: $v3-Confidentiality = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
 Alias: $methodType = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs
 Alias: $fileType = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-data-format-cs
+Alias: $BIOMARKER = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/molecular-biomarker-ontology-cs
 
 //Extensions
 Alias: operationAllowedType = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile

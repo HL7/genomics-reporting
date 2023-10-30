@@ -44,6 +44,15 @@ Description: "data instances for somatic report."
 * entry[+].resource = ROS1-Fusion
 * entry[+].resource = somaticStudy
 * entry[+].resource = overallInt
+* entry[+].resource = TMBExample
+* entry[+].resource = MSIExample
+* entry[+].resource = PDL1Example
+* entry[+].resource = HLA-A-haplotype1
+* entry[+].resource = HLA-A-haplotype2
+* entry[+].resource = HLA-B-haplotype1
+* entry[+].resource = HLA-B-haplotype2
+* entry[+].resource = HLA-C-haplotype1
+* entry[+].resource = HLA-C-haplotype2
 
 Instance: NOTCH1-uncertain-var
 InstanceOf: Variant
@@ -54,7 +63,7 @@ Description: "Example for NOTCH1 uncertain"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_060087.3:p.A1931T
@@ -85,7 +94,7 @@ Description: "Example for ZFHX3 uncertain"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_008816.3:p.G585S
@@ -116,7 +125,7 @@ Description: "Example for NTHL1 with 2 diseases"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_002519.2:p.Gln279Ter
@@ -147,7 +156,7 @@ Description: "Example for MSH2 deletion"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000242.1:p.Val611fs
@@ -179,7 +188,7 @@ Description: "Example for NTHL1 SNV"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_002519.2:p.Trp243Ter
@@ -210,7 +219,7 @@ Description: "Example for STAG2 insertion"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_006594.3:p.S1178*
@@ -241,7 +250,7 @@ Description: "Example for ATR insertion"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_001175.2:p.R960fs*2
@@ -272,7 +281,7 @@ Description: "Example for ATM missense"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000042.3:p.Asn2875His
@@ -315,7 +324,7 @@ Description: "Example for EGFR L858R"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_005219.2:p.Leu858Arg
@@ -346,7 +355,7 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2019-04-01"
+* effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 //* component[representative-protein-hgvs].valueCodeableConcept =
@@ -364,9 +373,9 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 //* component[variation-code].valueCodeableConcept = 
 //* component[genomic-hgvs].valueCodeableConcept = 
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.075
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+//* component[sample-allelic-frequency][0].valueQuantity.value = 0.075
+//* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
+//* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
 
 Instance: NOTCH1-significance
 InstanceOf: DiagnosticImplication
@@ -1116,3 +1125,117 @@ Description: "Example for Overall Interpretation."
 * subject = Reference(somaticPatient)
 * status = #final
 * component[conclusion-string].valueString = "Patient is positive for Tier 1 / Level A variants, including variants with FDA-approved indications."
+
+Instance: TMBExample
+InstanceOf: MolecularBiomarker
+Description: "Example for Tumor Mutation Burden"
+* id = "TMBExample"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
+* status = #final "final"
+* category[labCategory].coding = $OBSCAT#laboratory
+* category[mbCategory].coding = TbdCodesCS#biomarker-category
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
+* code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
+* subject = Reference(somaticPatient)
+* valueQuantity.value = 5.2
+* component[biomarker-category].code = TbdCodesCS#biomarker-category
+* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
+* note.text = "83rd percentile"
+
+Instance: MSIExample
+InstanceOf: MolecularBiomarker
+Description: "Example for MSI"
+* id = "MSIExample"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
+* status = #final "final"
+* category[labCategory].coding = $OBSCAT#laboratory
+* category[mbCategory].coding = TbdCodesCS#biomarker-category
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
+* code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
+* subject = Reference(somaticPatient)
+* valueCodeableConcept = $LNC#LA26203-2 "MSI-H"
+* component[biomarker-category].code = TbdCodesCS#biomarker-category
+* component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
+
+Instance: PDL1Example
+InstanceOf: MolecularBiomarker
+Description: "Example for PD-L1"
+* id = "PDL1Example"
+* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
+* status = #final "final"
+* category[labCategory].coding = $OBSCAT#laboratory
+* category[mbCategory].coding = TbdCodesCS#biomarker-category
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
+* code = $LNC#85147-7 "PD-L1 by clone 22C3 in Tissue by Immune stain Report"
+* subject = Reference(somaticPatient)
+* valueCodeableConcept = $LNC#LA6576-8 "Positive"
+* component[biomarker-category][0].valueCodeableConcept = $BIOMARKER#cellReceptorLigand "cell receptor ligand category"
+* component[biomarker-category][1].valueCodeableConcept = $BIOMARKER#immuneStain "immune stain category"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:17635 "CD274"
+* note.text = "5% tumor proportion score"
+
+Instance: HLA-A-haplotype1
+InstanceOf: Haplotype
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#84414-2 "Haplotype Name"
+* issued = "2023-02-01T00:00:00-05:00"
+* valueCodeableConcept = $HLAALLELE#A*24:02 "HLA-A*24:02"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
+
+Instance: HLA-A-haplotype2
+InstanceOf: Haplotype
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#84414-2 "Haplotype Name"
+* issued = "2023-02-01T00:00:00-05:00"
+* valueCodeableConcept = $HLAALLELE#A*02:06 "HLA-A*02:06"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
+
+Instance: HLA-B-haplotype1
+InstanceOf: Haplotype
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#84414-2 "Haplotype Name"
+* issued = "2023-02-01T00:00:00-05:00"
+* valueCodeableConcept = $HLAALLELE#B*35:01 "HLA-B*35:01"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
+
+Instance: HLA-B-haplotype2
+InstanceOf: Haplotype
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#84414-2 "Haplotype Name"
+* issued = "2023-02-01T00:00:00-05:00"
+* valueCodeableConcept = $HLAALLELE#B*35:01 "HLA-B*35:01"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
+
+Instance: HLA-C-haplotype1
+InstanceOf: Haplotype
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#84414-2 "Haplotype Name"
+* issued = "2023-02-01T00:00:00-05:00"
+* valueCodeableConcept = $HLAALLELE#C*03:03 "HLA-C*03:03"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
+
+Instance: HLA-C-haplotype2
+InstanceOf: Haplotype
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = $LNC#84414-2 "Haplotype Name"
+* issued = "2023-02-01T00:00:00-05:00"
+* valueCodeableConcept = $HLAALLELE#C*15:02 "HLA-C*15:02"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
