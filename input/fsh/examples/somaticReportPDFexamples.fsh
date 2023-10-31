@@ -53,6 +53,7 @@ Description: "data instances for somatic report."
 * entry[+].resource = HLA-B-haplotype2
 * entry[+].resource = HLA-C-haplotype1
 * entry[+].resource = HLA-C-haplotype2
+* entry[+].resource = somaticReport
 
 Instance: NOTCH1-uncertain-var
 InstanceOf: Variant
@@ -1239,3 +1240,63 @@ Usage: #example
 * issued = "2023-02-01T00:00:00-05:00"
 * valueCodeableConcept = $HLAALLELE#C*15:02 "HLA-C*15:02"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
+
+Instance: somaticReport
+InstanceOf: GenomicsReport
+Description: "Example somatic GenomicsReport"
+Usage: #example
+* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-reference"
+* extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
+* status = #final
+* category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
+* code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* effectiveDateTime = "2023-02-02"
+* result[0] = Reference(overallInt)
+* result[+] = Reference(NOTCH1-uncertain-var)
+* result[+] = Reference(ZFHX3-uncertain-var)
+* result[+] = Reference(NTHL1-2disease-var)
+* result[+] = Reference(MSH2-del-var)
+* result[+] = Reference(NTHL1-snv-var)
+* result[+] = Reference(STAG2-insertion-var)
+* result[+] = Reference(ATR-insertion-var)
+* result[+] = Reference(ATM-missense-var)
+* result[+] = Reference(EGFR-L858R-var)
+* result[+] = Reference(ROS1-Fusion-var)
+* result[+] = Reference(NOTCH1-significance)
+* result[+] = Reference(ZFHX3-significance)
+* result[+] = Reference(NTHL1-2disease1)
+* result[+] = Reference(NTHL1-2disease2)
+* result[+] = Reference(MSH2-del-disease)
+* result[+] = Reference(NTHL1-snv-disease)
+* result[+] = Reference(STAG2-insertion-significance)
+* result[+] = Reference(ATR-insertion-significance)
+* result[+] = Reference(ATM-missense-significance)
+* result[+] = Reference(EGFR-L858R-significance)
+* result[+] = Reference(ROS1-Fusion-disease)
+* result[+] = Reference(ROS1-Fusion-therapuTrial)
+* result[+] = Reference(ROS1-Fusion-therapuDrug)
+* result[+] = Reference(EGFR-L858R-therapuDrug1)
+* result[+] = Reference(EGFR-L858R-therapuDrug2)
+* result[+] = Reference(NOTCH1-haplotype)
+* result[+] = Reference(ZFHX3-haplotype)
+* result[+] = Reference(STAG2-insertion-haplotype)
+* result[+] = Reference(ATR-insertion-haplotype)
+* result[+] = Reference(NOTCH1-uncertain-molc)
+* result[+] = Reference(ZFHX3-uncertain-molc)
+* result[+] = Reference(NTHL1-2disease-molc)
+* result[+] = Reference(MSH2-del-molc)
+* result[+] = Reference(NTHL1-snv-molc)
+* result[+] = Reference(STAG2-insertion-molc)
+* result[+] = Reference(ATR-insertion-molc)
+* result[+] = Reference(ATM-insertion-molc)
+* result[+] = Reference(EGFR-L858R-molc)
+* result[+] = Reference(ROS1-Fusion)
+* result[+] = Reference(TMBExample)
+* result[+] = Reference(MSIExample)
+* result[+] = Reference(PDL1Example)
+* result[+] = Reference(HLA-A-haplotype1)
+* result[+] = Reference(HLA-A-haplotype2)
+* result[+] = Reference(HLA-B-haplotype1)
+* result[+] = Reference(HLA-B-haplotype2)
+* result[+] = Reference(HLA-C-haplotype1)
+* result[+] = Reference(HLA-C-haplotype2)
