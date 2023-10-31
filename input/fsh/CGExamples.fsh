@@ -891,7 +891,6 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
-* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
 * extension[GenomicReportNote][0].valueAnnotation.extension[AnnotationCode].valueCodeableConcept = CodedAnnotationTypesCS#test-disclaimer
 * extension[GenomicReportNote][0].valueAnnotation.text = """
 This test was developed and its performance determined by this laboratory. It has not been cleared or approved by U.S. Food and Drug Administration.
@@ -919,7 +918,6 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
 * extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
 * extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
-* extension[GenomicsFile][0].valueReference = Reference(VCFFile)
 * status = #final
 
 
@@ -1141,20 +1139,6 @@ Description: "Example for somatic INV"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 70391323
 * component[inner-start-end].valueRange.high.value = 70391466
-
-
-
-
-Instance: VCFFile
-InstanceOf: GenomicsDocumentReference
-Description: "Example of what a VCF as a DocumentRefence would look like."
-* id = "VCFFile"
-* status = #current
-* subject = Reference(CGPatientExample01)
-* description = "... details about how this VCF was generated ..."
-* content.attachment.url = "http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v5b.20130502.genotypes.vcf.gz"
-* context.related = Reference(PGxGenomicsReportEMERGE)
-
 
  //* Implication of polygenic risk score X - at risk for Type 2 Diabetes
 Instance: PolyGenicDiagnosticImpExample

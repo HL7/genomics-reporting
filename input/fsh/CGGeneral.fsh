@@ -86,8 +86,7 @@ Parent:         DiagnosticReport
 Id:             genomics-report
 Title:          "Genomics Report"
 Description:    "Genomics profile of DiagnosticReport."
-* extension contains GenomicsFile named genomics-file 0..*
-    and RecommendedAction named recommended-action 0..*
+* extension contains RecommendedAction named recommended-action 0..*
     and GenomicsRiskAssessment named genomics-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
     and $SupportingInfo named supporting-info 0..*
