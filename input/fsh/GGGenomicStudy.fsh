@@ -16,14 +16,23 @@ Description: "Used to transmit the one or more analysis per GenomimcStudy"
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(GenomicStudyAnalysis)
 
+Extension:   GenomicsStudyReferrerExt
+Id:          genomics-study-referrer-ext
+Title:      "Genomics Study Referrer Extension"
+Description: "Used to reference to the referrer of the study"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(Practitioner or PractitionerRole)
 
 Profile: GenomicStudy
 Parent: Procedure
 Id: genomic-study
 Title: "Genomic Study"
 Description: "A genomic study is a set of analyses performed to analyze and generate genomic data."
-* extension contains GenomicsStudyAnalysisExt named genomics-study-analysis-ext 0..*
+* extension contains GenomicsStudyAnalysisExt named genomics-study-analysis-ext 0..* 
+  and GenomicsStudyReferrerExt named genomics-study-referrer-ext 0..1
 * extension[GenomicsStudyAnalysisExt] ^short = "GenomicStudy.analysis"
+* extension[GenomicsStudyReferrerExt] ^short = "GenomicStudy.referrer"
 * text ^short = "GenomicStudy.description"
 * identifier ^short = "GenomicStudy.identifier"
 * instantiatesCanonical only Canonical(PlanDefinition)
@@ -48,7 +57,6 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 * reasonReference only Reference(Condition or Observation)
   * ^short = "GenomicStudy.reason"
 * note ^short = "GenomicStudy.note"
-//GenomicStudy.referrer (Reference(Practitioner, PractitionerRole))
 * partOf 0..0
 * statusReason 0..0
 * recorder 0..0
@@ -201,6 +209,7 @@ Description: "A genomic study analysis is a component of a genomic study."
                  and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
                  and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
                  and GenomicsStudyAnalysisDevice named genomics-study-analysis-device 0..*
+                 and GenomicsStudyAnalysisProtocolPerformed named genomics-study-analysis-protocol-performed 0..1
 * extension[GenomicsStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicsStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicsStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
@@ -212,6 +221,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
 * extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
 * extension[GenomicsStudyAnalysisDevice] ^short = "GenomicStudy.analysis.device"
+* extension[GenomicsStudyAnalysisProtocolPerformed] ^short = "GenomicStudy.protocolPerformed"
 * identifier ^short = "GenomicStudy.analysis.identifier"
 * instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
   * ^short = "GenomicStudy.analysis.instantiatesCanonical"
