@@ -179,6 +179,14 @@ Description: "Defines a regions called for a genomic analysis"
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(GenomicsDocumentReference or RegionStudied)
 
+Extension:   GenomicsStudyAnalysisRegionsUncallable
+Id:          genomics-study-analysis-regions-uncallable
+Title:      "Genomics Study Analysis Regions uncallable"
+Description: "Defines regions deemed uncallable (generally due to low coverage)"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(GenomicsDocumentReference or RegionStudied)
+
 Extension:      GenomicsStudyAnalysisDevice
 Id:             genomics-study-analysis-device
 Title:         "Genomic Study Analysis Device"
@@ -205,6 +213,7 @@ Description: "A genomic study analysis is a component of a genomic study."
                  and GenomicsStudyAnalysisFocus named genomics-study-analysis-focus 0..*
                  and GenomicsStudyAnalysisSpecimen named genomics-study-analysis-specimen 0..*
                  and GenomicsStudyAnalysisRegionsStudied named genomics-study-analysis-regions-studied 0..*
+                 and GenomicsStudyAnalysisRegionsUncallable named genomics-study-analysis-regions-uncallable 0..*
                  and GenomicsStudyAnalysisRegionsCalled named genomics-study-analysis-regions-called 0..*
                  and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
                  and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
@@ -217,6 +226,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension[GenomicsStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
 * extension[GenomicsStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
 * extension[GenomicsStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
+* extension[GenomicsStudyAnalysisRegionsUncallable] ^short = "GenomicStudy.analysis.regionsUncallable"
 * extension[GenomicsStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
 * extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
 * extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
