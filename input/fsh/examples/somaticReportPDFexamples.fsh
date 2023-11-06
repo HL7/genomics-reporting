@@ -54,6 +54,11 @@ Description: "data instances for somatic report."
 * entry[+].resource = HLA-C-haplotype1
 * entry[+].resource = HLA-C-haplotype2
 * entry[+].resource = somaticReport
+* entry[+].resource = somaticServiceRequest
+* entry[+].resource = orderingPractitioner
+* entry[+].resource = pathologistPractitioner
+* entry[+].resource = supervisorPractitioner
+* entry[+].resource = performingOrganization
 
 Instance: NOTCH1-uncertain-var
 InstanceOf: Variant
@@ -272,6 +277,7 @@ Description: "Example for ATR insertion"
 * component[sample-allelic-frequency][0].valueQuantity.value = 0.075
 * component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
 * component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[conclusion-string].valueString = "Gene: ATR; Exon: 14; Nucleotide: NM_001184.4:c.2878_2879insAGTAA; Genomic Location: NC_000003.11:g.142269071_142269072insTTACT; Amino acid: NP_001175.2:p.R960fs*2; Function: loss; Assessment: Likely Pathogenic; Classification: Tier 2C; Allele Fraction: 5.34% (of 131 reads); Variation: Insertion; Interpretation: The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
 
 Instance: ATM-missense-var
 InstanceOf: Variant
@@ -303,6 +309,7 @@ Description: "Example for ATM missense"
 * component[sample-allelic-frequency][0].valueQuantity.value = 0.062
 * component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
 * component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[conclusion-string].valueString = "Gene: ATM; Exon: 14; Nucleotide:NM_001184.4:c.2878_2879insAGTAA; Genomic Location: NC_000003.11:g.142269071_142269072insTTACT; Amino acid: NP_001175.2:p.R960fs*2; Function: loss; Assessment: Likely Pathogenic; Classification: Tier 2C; Allele Fraction: 5.34% (of 131 reads); Variation: Insertion; Interpretation: The protein encoded by this gene belongs to the PI3/PI4-kinase family. This protein is an important cell cycle checkpoint kinase that phosphorylates; thus, it functions as a regulator of a wide variety ... more."
 
 //ATM IS NOT CONSISTENT
 //Tier I - Level A	6.20%		
@@ -984,12 +991,12 @@ Usage: #example
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-analysis-ext"
 * extension[=].valueReference = Reference(analysisTumorRNA)
 * status = #completed
-* code.text = "Genomic Cancer Testing Assay"
+* code.text = "My Test Cancer 700 Gene Panel"
 * category = $OBSCAT#laboratory
-* subject = Reference(Patient/somaticPatient)
+* subject = Reference(somaticPatient)
 * performedDateTime = "2023-02-02"
-* asserter = Reference(Practitioner/practitioner02)
 * reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+* note.text = "I. Assay Overview: The Genomic Cancer Testing Assay is a comprehensive molecular examination designed to detect and quantify specific DNA and RNA alterations associated with malignancies. The test incorporates Next Generation Sequencing (NGS) technology to profile tumor samples, providing insights into the genomic alterations that drive tumor behavior and prognosis. II. Target Genes and Biomarkers: This assay evaluates an extensive panel of cancer-related genes, focusing on mutations, copy number variations, fusions, and select RNA expression levels known to be relevant in the oncology field. The analyzed genes are implicated in various cancer types and have established therapeutic, diagnostic, prognostic, or predictive relevance. Genes tested: ABL1, ATK1, ALK, APC, etc. III. Methodology: Sample Type: Formalin-fixed, paraffin-embedded (FFPE) tumor tissue. Sequencing Platform: Illumina-based NGS technology. Library Preparation: Amplification of specific target regions within the genes of interest. Bioinformatics Analysis: Employing advanced algorithms and databases to annotate and interpret the detected variants' clinical significance. IV. Assay Performance: Sensitivity: Detects variants with a mutant allele frequency (MAF) as low as 5%. Specificity: >99% for single nucleotide variants (SNVs) and indels. Reportable Range: Identification and quantification of SNVs, indels, fusions, amplifications, and RNA expression levels of specific genes. V. Clinical Interpretation: The report offers a concise clinical interpretation of identified genomic alterations, linking the detected variants to FDA-approved therapies, clinical trials, or the patient's potential response to specific treatments. VI. Limitations: The assay might not detect alterations present at low levels or in regions not covered by the test. Variants may be present in genes not included in the panel. The test does not assess epigenetic changes, like methylation status. False negatives and false positives, although rare, may occur due to the technical limitations of the methodology employed. VII. Quality Assurance: The laboratory follows CAP/CLIA guidelines, ensuring stringent quality control and assurance practices at each step, from sample reception to result reporting. VIII. Result Delivery: Results are delivered within 10-14 working days from the sample receipt. The report outlines detected genomic alterations, their clinical implications, and potential therapeutic options. IX. Contact: For further clarification or questions regarding the results, healthcare providers are encouraged to contact our molecular pathology board-certified experts."
 
 Instance: analysisTumorNormalDNA
 InstanceOf: GenomicStudyAnalysis
@@ -1027,9 +1034,7 @@ Usage: #example
 * category = $OBSCAT#laboratory
 * performedDateTime = "2023-02-02T01:01:10-06:00"
 * note.text = "For technical reasons, BCR gene was deemed uncallable."
-* performer.actor = Reference(Practitioner/practitioner02)
-* performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
-* subject = Reference(Patient/somaticPatient)
+* subject = Reference(somaticPatient)
 
 Instance: analysisTumorRNA
 InstanceOf: GenomicStudyAnalysis
@@ -1049,9 +1054,7 @@ Usage: #example
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2023-02-02T01:01:10-06:00"
-* performer.actor = Reference(Practitioner/practitioner02)
-* performer.function = $CodeSystem-v3-ParticipationType.html#PRF "Performer"
-* subject = Reference(Patient/somaticPatient)
+* subject = Reference(somaticPatient)
 
 Instance: tumorSpecimen
 InstanceOf: Specimen
@@ -1062,7 +1065,6 @@ Usage: #example
 * type = $SCT#122610009 "Specimen from lung obtained by biopsy (specimen)"
 * subject = Reference(Patient/somaticPatient) "Hamsburg, Substance Jr"
 * receivedTime = "2023-01-23T01:01:01Z"
-* collection.collector = Reference(Practitioner/practitioner02)
 * collection.collectedDateTime = "2023-01-01T01:01:00Z"
 * collection.method = $SCT#129314006 "Biopsy - action"
 * collection.bodySite = $SCT#3341006 "Right lung structure (body structure)"
@@ -1077,7 +1079,6 @@ Usage: #example
 * type = $SCT#119297000 "Blood specimen (specimen)"
 * subject = Reference(Patient/somaticPatient) "Hamsburg, Substance Jr"
 * receivedTime = "2023-01-23T01:01:01Z"
-* collection.collector = Reference(Practitioner/practitioner02)
 * collection.collectedDateTime = "2023-01-01T01:01:00Z"
 
 Instance: WES-UncallableRegions-GRCh38
@@ -1247,10 +1248,19 @@ Description: "Example somatic GenomicsReport"
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomics-study-reference"
 * extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
+* identifier.type.coding.code = #ACSN
+* identifier.type.coding.display = "Accession ID"
+* identifier.type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* identifier.value = "23-0000345"
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
 * code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
 * effectiveDateTime = "2023-02-02"
+* basedOn = Reference(somaticServiceRequest)
+* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(performingOrganization)
+* resultsInterpreter[0] = Reference(supervisorPractitioner)
+* resultsInterpreter[+] = Reference(performingOrganization)
 * result[0] = Reference(overallInt)
 * result[+] = Reference(NOTCH1-uncertain-var)
 * result[+] = Reference(ZFHX3-uncertain-var)
@@ -1300,3 +1310,63 @@ Usage: #example
 * result[+] = Reference(HLA-B-haplotype2)
 * result[+] = Reference(HLA-C-haplotype1)
 * result[+] = Reference(HLA-C-haplotype2)
+
+Instance: somaticServiceRequest
+InstanceOf: ServiceRequest
+Usage: #example
+* identifier.type = $IDTYPE#LACSN
+* identifier.type.text = "Laboratory Accession ID"
+* identifier.system = "http://www.somesystemabc.net/identifiers/serviceRequests"
+* identifier.value = "1111jh11112"
+* status = #active
+* intent = #plan
+* code.text = "My Test Cancer 700 Gene Panel"
+* subject = Reference(somaticPatient)
+* reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+* requester = Reference(orderingPractitioner)
+
+Instance: orderingPractitioner
+InstanceOf: Practitioner
+Usage: #example
+* identifier.system = "http://hl7.org/fhir/sid/us-npi"
+* identifier.value = "1245319599"
+* active = true
+* name.family = "Submitter"
+* name.given = "Test"
+* name.prefix = "Dr"
+* address.line = "1000 SE Submitter Ave"
+* address.city = "Los Angeles"
+* address.state = "CA"
+* address.postalCode = "90027"
+
+Instance: pathologistPractitioner
+InstanceOf: Practitioner
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.value = "11d116"
+* active = true
+* name.family = "Dolin"
+* name.given = "Test"
+* name.prefix = "Dr"
+
+Instance: supervisorPractitioner
+InstanceOf: Practitioner
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.value = "11d1x16"
+* active = true
+* name.family = "Chamala"
+* name.given = "Test"
+* name.prefix = "Dr"
+
+Instance: performingOrganization
+InstanceOf: Organization
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/CLIA"
+* identifier.value = "10000DLAB8"
+* name = "My Test Pathology Laboratories"
+* telecom.value = "Main: (100) 200-3000; Fax: (400) 500-6000; mytestpathlabs.com"
+* address.line = "1000 SE Lab Ave"
+* address.city = "Los Angeles"
+* address.state = "CA"
+* address.postalCode = "90027"

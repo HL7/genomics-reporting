@@ -16,14 +16,14 @@
 <a name="SampleReportSchema"></a>
 <h3>Example Schema for Somatic Reporting</h3>
 <p>The schema below depicts a “decomposition” of the somatic FHIR resources used to construct the example report. </p>
-<img src="Somatic_Report_Overview.png" alt="Somatic report overview" height="351" width="628"/>
+<img src="Somatic_Report_Overview.svg" alt="Somatic report overview" height="351" width="628"/>
 
 <a name="SampleReport"></a>
 <h3>Sample PDF Report</h3>
 <p>The following four images are pages 1-4 of a synthetic somatic report that is designed to illustrate a wide range of findings and implications.</p>
 <table>
-<tr><td><img src="Report_Page1.png" alt="report page 1" height="806" width="608"/></td><td><img src="Report_Page2.png" alt="report page 2" height="806" width="608"/></td></tr>
-<tr><td><img src="Report_Page3.png" alt="report page 3" height="806" width="608"/></td><td><img src="Report_Page4.png" alt="report page 4" height="806" width="608"/></td></tr>
+<tr><td><img src="Report_Page1.svg" alt="report page 1" height="806" width="608"/></td><td><img src="Report_Page2.svg" alt="report page 2" height="806" width="608"/></td></tr>
+<tr><td><img src="Report_Page3.svg" alt="report page 3" height="806" width="608"/></td><td><img src="Report_Page4.svg" alt="report page 4" height="806" width="608"/></td></tr>
 </table>
 
 
@@ -33,8 +33,8 @@
 <table border="1">
 <thead>
   <tr>
-    <th>Profile</th>
-    <th>Examples</th>
+    <th>Resource / Profile</th>
+    <th>Example(s)</th>
   </tr>
 </thead>
 <tbody>
@@ -46,8 +46,11 @@
   <tr><td><a href="StructureDefinition-haplotype.html">Haplotype</a></td><td><a href="Observation-NOTCH1-haplotype.html">NOTCH1-haplotype</a>, <a href="Observation-ZFHX3-haplotype.html">ZFHX3-haplotype</a>, <a href="Observation-STAG2-insertion-haplotype.html">STAG2-insertion-haplotype</a>, <a href="Observation-ATR-insertion-haplotype.html">ATR-insertion-haplotype</a>, <a href="Observation-HLA-A-haplotype1.html">HLA-A-haplotype1</a>, <a href="Observation-HLA-A-haplotype2.html">HLA-A-haplotype2</a>, <a href="Observation-HLA-B-haplotype1.html">HLA-B-haplotype1</a>, <a href="Observation-HLA-B-haplotype2.html">HLA-B-haplotype2</a>, <a href="Observation-HLA-C-haplotype1.html">HLA-C-haplotype1</a>, <a href="Observation-HLA-C-haplotype2.html">HLA-C-haplotype2</a></td></tr>
   <tr><td><a href="StructureDefinition-molecular-biomarker.html">Molecular Biomarker</a></td><td><a href="Observation-TMBExample.html">TMBExample</a>, <a href="Observation-MSIExample.html">MSIExample</a>, <a href="Observation-PDL1Example.html">PDL1Example</a></td></tr>
   <tr><td><a href="StructureDefinition-molecular-consequence.html">Molecular Consequences</a></td><td><a href="Observation-NOTCH1-uncertain-molc.html">NOTCH1-uncertain-molc</a>, <a href="Observation-ZFHX3-uncertain-molc.html">ZFHX3-uncertain-molc</a>, <a href="Observation-NTHL1-2disease-molc.html">NTHL1-2disease-molc</a>, <a href="Observation-MSH2-del-molc.html">MSH2-del-molc</a>, <a href="Observation-NTHL1-snv-molc.html">NTHL1-snv-molc</a>, <a href="Observation-STAG2-insertion-molc.html">STAG2-insertion-molc</a>, <a href="Observation-ATR-insertion-molc.html">ATR-insertion-molc</a>, <a href="Observation-ATM-insertion-molc.html">ATM-insertion-molc</a>, <a href="Observation-EGFR-L858R-molc.html">EGFR-L858R-molc</a>, <a href="Observation-ROS1-Fusion.html">ROS1-Fusion</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></td><td><a href="Organization-performingOrganization.html">performingOrganization</a></td></tr>
   <tr><td><a href="StructureDefinition-overall-interpretation.html">Overall Interpretation</a></td><td><a href="Observation-overallInt.html">overallInt</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></td><td><a href="Patient-somaticPatient.html">somaticPatient</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/practitioner.html">Practitioner</a></td><td><a href="Practitioner-orderingPractitioner.html">orderingPractitioner</a>, <a href="Practitioner-additionalPractitioner.html">additionalPractitioner</a>, <a href="Practitioner-pathologistPractitioner.html">pathologistPractitioner</a>, <a href="Practitioner-supervisorPractitioner.html">supervisorPractitioner</a></td></tr>
+  <tr><td><a href="http://hl7.org/fhir/R4/serviceRequest.html">Service Request</a></td><td><a href="ServiceRequest-somaticServiceRequest.html">somaticServiceRequest</a></td></tr>
   <tr><td><a href="http://hl7.org/fhir/R4/specimen.html">Specimen</a></td><td><a href="Specimen-tumorSpecimen.html">tumorSpecimen</a>, <a href="Specimen-normalSpecimen.html">normalSpecimen</a></td></tr>
   <tr><td><a href="StructureDefinition-therapeutic-implication.html">Therapeutic Implication</a></td><td><a href="Observation-ROS1-Fusion-therapuTrial.html">ROS1-Fusion-therapuTrial</a>, <a href="Observation-ROS1-Fusion-therapuDrug.html">ROS1-Fusion-therapuDrug</a>, <a href="Observation-EGFR-L858R-therapuDrug1.html">EGFR-L858R-therapuDrug1</a>, <a href="Observation-EGFR-L858R-therapuDrug2.html">EGFR-L858R-therapuDrug2</a></td></tr>
   <tr><td><a href="StructureDefinition-variant.html">Variant</a></td><td><a href="Observation-NOTCH1-uncertain-var.html">NOTCH1-uncertain-var</a>, <a href="Observation-ZFHX3-uncertain-var.html">ZFHX3-uncertain-var</a>, <a href="Observation-NTHL1-2disease-var.html">NTHL1-2disease-var</a>, <a href="Observation-MSH2-del-var.html">MSH2-del-var</a>, <a href="Observation-NTHL1-snv-var.html">NTHL1-snv-var</a>, <a href="Observation-STAG2-insertion-var.html">STAG2-insertion-var</a>, <a href="Observation-ATR-insertion-var.html">ATR-insertion-var</a>, <a href="Observation-ATM-missense-var.html">ATM-missense-var</a>, <a href="Observation-EGFR-L858R-var.html">EGFR-L858R-var</a>, <a href="Observation-ROS1-Fusion-var.html">ROS1-Fusion-var</a></td></tr>
