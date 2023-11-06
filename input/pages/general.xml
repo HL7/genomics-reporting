@@ -82,18 +82,21 @@
     In some cases, the lab or other reporting organization may generate risk assessments as part of their reports. These are referenced from a report or an observation from the <a href="StructureDefinition-genomics-risk-assessment.html">Genomics Risk</a> extension.
   </p>
    <p>
-    Results observation profiles, like genomic observations, are typically referenced directly by a Diagnostic Report. For genomics this would be in the <a href="StructureDefinition-genomics-report.html">genomics report</a>. The genetic findings, implications and region studied profiles all contain links to computably define their composite relationships (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, observations could be organized into groups by other observations. See this <a href="groupingGuidance.html">grouping guidance</a> for an overview with examples and considerations for processing reports. Be aware that consumers of Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships to ensure processing of all clinically relevant information.
+    Results observation profiles, like genomic observations, are typically referenced directly by a Diagnostic Report. For genomics this would be in the <a href="StructureDefinition-genomics-report.html">genomics report</a>. The genetic findings and implication profiles all contain links to computably define their composite relationships (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, observations could be organized into groups by other observations. See this <a href="groupingGuidance.html">grouping guidance</a> for an overview with examples and considerations for processing reports. Be aware that consumers of Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships to ensure processing of all clinically relevant information.
    </p>
+  <p>
+    When sending a copy of the report (e.g., PDF or other document containing the written report), use <code>DiagnosticReport.presentedForm</code>. Note this is different than the <a href="{{site.data.fhir.path}}extension-workflow-relatedartifact.html">Related Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. Another approach which should be avoided (at least for this current release) is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case.
+  </p>
 
   <a name="genomicstudy"> </a>
   <h3>Genomic Study</h3>
     <p>
-     In the R5 release, the <a href="https://hl7.org/fhir/R5/genomicstudy.html">GenomicStudy</a> resource was introduced. This resource is intending at capturing relevant information about the reasons, purpose, and performers of the study. It also provides technical endpoints to access the data. It could be a logical aggregator for complex analyses.
+     In the R5 release, the <a href="https://hl7.org/fhir/R5/genomicstudy.html">GenomicStudy resource</a> was introduced. This resource is intending at capturing relevant information about the reasons, purpose, and performers of the study. It also provides technical endpoints to access the data. It could be a logical aggregator for complex analyses.
     </p>
     <p>
      These features are important to appropriately manage and structure the metadata about a genomic study. As such, this guide has introduced new profiles to 'backport' these features for this R4 based implementation guide. Refer to these profiles for additional details:
-     <p><a href="StructureDefinition-genomic-study.html">GenomicStudy</a> to represent the study level metadata.</p>
-     <p><a href="StructureDefinition-genomic-study-analysis.html">GenomicStudyAnalysis</a> to represent the analysis level metadata.</p>
+     <p><a href="StructureDefinition-genomic-study.html">GenomicStudy profile</a> to represent the study level metadata.</p>
+     <p><a href="StructureDefinition-genomic-study-analysis.html">GenomicStudyAnalysis profile</a> to represent the analysis level metadata.</p>
     </p>
     <p>
      The <code>GenomicStudy</code> instance SHOULD be referenced from a <a href="#diagnosticreport">report</a> and CAN be referenced by various <a href="#observations">observations</a>.
@@ -118,7 +121,7 @@
     For receivers to make use of these files, many facets of the generation of the files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use cases must be carefully evaluated to ensure appropriate file preparation. The <a href="StructureDefinition-genomic-study-analysis.html">Genomic Study Analysis</a> defines a number of attributes that can be used to better understand the file. Also, the <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
   </p>
   <p>
-    It should be noted that this <code>Genomic Study</code> approach is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>. Also note this is different than the <a href="{{site.data.fhir.path}}extension-workflow-relatedartifact.html">Related Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. Another approach which should be avoided (at least for this current release) is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case. As noted in the STU note above, this will be changing in a future release.
+    It should be noted that this <code>Genomic Study</code> approach is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>.
   </p>
   <p>
     A full, detailed implementation discussion is outside the scope of this IG. In a future release, this IG may include other profiles or artifacts along with more specific guidance.

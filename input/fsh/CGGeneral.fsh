@@ -118,7 +118,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 	molecular-consequence 0..* and
     variant 0..* and
     sequence-phase-relation 0..* and 
-    region-studied 0..* and 
     genotype 0..* and 
     haplotype 0..* and
     biomarker 0..*
@@ -134,8 +133,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[variant] ^short = "Variant"
 * result[sequence-phase-relation] only Reference(SequencePhaseRelationship)
 * result[sequence-phase-relation] ^short = "Sequence Phase Relationship"
-* result[region-studied] only Reference(RegionStudied)
-* result[region-studied] ^short = "Region Studied"
 * result[genotype] only Reference(Genotype)
 * result[genotype] ^short = "Genotype"
 * result[haplotype] only Reference(Haplotype)
