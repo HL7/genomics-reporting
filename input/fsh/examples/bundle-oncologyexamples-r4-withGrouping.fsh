@@ -252,7 +252,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
 * component[=].valueCodeableConcept.coding.display = "JAK2"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-7
@@ -274,7 +274,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
 * component[=].valueCodeableConcept.coding.display = "KDR"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-8
@@ -294,7 +294,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
 * component[=].valueCodeableConcept.coding.display = "ERBB4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-9

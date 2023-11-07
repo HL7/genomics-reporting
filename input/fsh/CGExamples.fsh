@@ -122,7 +122,7 @@ Description: "Example for HER2 by immune stain"
 * subject = Reference(CGPatientExample01)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
-* component[gene-studied].valueCodeableConcept = http://www.genenames.org/geneId#HGNC:3430 "ERBB2"
+* component[gene-studied].valueCodeableConcept = http://www.genenames.org#HGNC:3430 "ERBB2"
 * component[biomarker-category][0].code = TbdCodesCS#biomarker-category
 * component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
 * component[biomarker-category][1].code = TbdCodesCS#biomarker-category
@@ -142,7 +142,7 @@ Description: "Example for HER2 by immunoassay"
 * valueQuantity.value = 20
 * valueQuantity.unit = "IU/mL"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
-* component[gene-studied].valueCodeableConcept = http://www.genenames.org/geneId#HGNC:3430 "ERBB2"
+* component[gene-studied].valueCodeableConcept = http://www.genenames.org#HGNC:3430 "ERBB2"
 * component[biomarker-category][0].code = TbdCodesCS#biomarker-category
 * component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immunoassay	"immunoassay category"
 * component[biomarker-category][1].code = TbdCodesCS#biomarker-category
@@ -250,7 +250,7 @@ Description: "Example of a Genotype, Medication Recommendation, and MedicationSt
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#14909 "HLA-B*15:02"
 * component.code.coding = $LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:4932 "HLA-B"
+* component.valueCodeableConcept.coding = http://www.genenames.org#HGNC:4932 "HLA-B"
 * effectiveDateTime = "2018"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
@@ -1297,7 +1297,7 @@ Description: "Example of a Haplotype as part of a Haplotype Set (1 of 2). A comp
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * effectiveDateTime = "2018"
 * specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
@@ -1312,7 +1312,7 @@ Description: "Example of a Haplotype as part of a Haplotype Set (2 of 2). A comp
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * effectiveDateTime = "2018"
 * specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
@@ -1327,7 +1327,7 @@ Description: "Example of a Genotype. A complete haplotype set defines a genotype
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.text = "APOE e1/e1"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * effectiveDateTime = "2018"
 * specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
@@ -1374,7 +1374,7 @@ Description: "Example of a Haplotype using PharmVar"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = http://www.pharmvar.org#PV00155 "CYP2D6*7.001" //https://www.pharmvar.org/api-service/alleles/pv00155
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:2625 "CYP2D6"
 * effectiveDateTime = "2021"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
@@ -1388,7 +1388,7 @@ Description: "Example of a Haplotype using PharmVar"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = http://www.pharmvar.org#PV00126 "CYP2D6*1.001" //https://www.pharmvar.org/api-service/alleles/pv00126
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:2625 "CYP2D6"
 * effectiveDateTime = "2021"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
@@ -1402,7 +1402,7 @@ Description: "Example of a Genotype using Pharmvar Haplotypes"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.text = "CYP2D6*7.001 / CYP2D6*1.001"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:2625 "CYP2D6"
 * effectiveDateTime = "2021"
 * specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)

@@ -276,7 +276,7 @@ Description: "Example Output of 'FindSubjectHaplotypes' Operation"
 Usage: #example
 * parameter[0].name = "haplotypes"
 * parameter[=].part[0].name = "geneItem"
-* parameter[=].part[=].valueString = "http://www.genenames.org/geneId|HGNC:2625"
+* parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2625"
 * parameter[=].part[+].name = "genotype"
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "GenotypeCYP2D6"
@@ -295,12 +295,12 @@ Usage: #example
 * parameter[=].part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component.code.coding.code = #48018-6
 * parameter[=].part[=].resource.component.code.coding.display = "Gene studied [ID]"
-* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org"
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:2625
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.display = "CYP2D6"
 * parameter[+].name = "haplotypes"
 * parameter[=].part[0].name = "geneItem"
-* parameter[=].part[=].valueString = "http://www.genenames.org/geneId|HGNC:2621"
+* parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2621"
 * parameter[=].part[+].name = "genotype"
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "GenotypeCYP2C19"
@@ -319,7 +319,7 @@ Usage: #example
 * parameter[=].part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component.code.coding.code = #48018-6
 * parameter[=].part[=].resource.component.code.coding.display = "Gene studied [ID]"
-* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org"
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:2621
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.display = "CYP2C19"
 
@@ -353,7 +353,7 @@ Usage: #example
 * parameter.part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component.code.coding.code = #48018-6
 * parameter.part[=].resource.component.code.coding.display = "Gene studied [ID]"
-* parameter.part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* parameter.part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org"
 * parameter.part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:4931
 * parameter.part[=].resource.component.valueCodeableConcept.coding.display = "HLA-A"
 
