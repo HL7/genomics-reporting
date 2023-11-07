@@ -36,6 +36,10 @@ Alias: $ORPHA = http://www.orpha.net
 Alias: $OMIM = http://www.omim.org
 Alias: $SNP = http://www.ncbi.nlm.nih.gov/projects/SNP
 Alias: $ISCN = https://iscn.karger.com
+Alias: $PARTICIPATIONTYPE = http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html
+Alias: $CONFIDENTIALITY = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
+Alias: $GSMETHODTYPE = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs
+Alias: $GSFILETYPE = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-data-format-cs
 
 //Extensions
 Alias: operationAllowedType = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile

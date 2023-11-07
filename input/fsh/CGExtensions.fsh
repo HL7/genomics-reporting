@@ -37,14 +37,6 @@ Description: "Adds codified notes to a report to capture additional content"
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only CodedAnnotation
 
-Extension:   GenomicsFile
-Id:          genomics-file
-Title:       "Genomics File"
-Description: "Used to transmit the contents of or links to files that were produced as part of the testing process. Examples are VCF, BAM, CRAM, and other similar files."
-* ^context[+].type = #element
-* ^context[=].expression = "DiagnosticReport"
-* value[x] only Reference(GenomicsDocumentReference)
-
 Extension:   TherapyAssessed
 Id:          therapy-assessed
 Title:       "Therapy Assessed"

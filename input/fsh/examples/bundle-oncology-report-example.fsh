@@ -283,12 +283,11 @@ Usage: #inline
 * component[=].valueQuantity = 160 '{reads}/{base}' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-16
-InstanceOf: DiagnosticReport
+InstanceOf: GenomicsReport
 Usage: #inline
 * identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/reportID"
 * identifier.value = "42867"
 * status = #final
-* category = $DIAGNOSTICSERVICE#GE "Genetics"
 * code = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * issued = "2019-09-15T11:35:05.722-04:00"

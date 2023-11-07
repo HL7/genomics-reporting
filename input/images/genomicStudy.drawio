@@ -1,0 +1,65 @@
+<mxfile host="Electron" modified="2023-10-19T22:59:35.043Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="dYdV75MofqOGRwizBe7g" version="22.0.2" type="device">
+  <diagram name="Page-1" id="Qga-8MMVED-p3xGbg-Ct">
+    <mxGraphModel dx="1209" dy="712" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-4" value="genomics-study-reference" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.384;entryY=-0.031;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="E3DRZCAaYlrznMF6Y9QS-1" target="E3DRZCAaYlrznMF6Y9QS-2" edge="1">
+          <mxGeometry x="-0.0476" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-1" value="Genomics Report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="30" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-2" value="&amp;nbsp;Genomic Study #1&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;nbsp; - &lt;/span&gt;code&lt;span style=&quot;font-weight: normal;&quot;&gt;: Solid tumor WES&lt;br&gt;&amp;nbsp; - &lt;/span&gt;reason&lt;span style=&quot;font-weight: normal;&quot;&gt;: lung mass&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="180" y="210" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-5" value="&amp;nbsp;Genomic Study Analysis #1&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;nbsp; - &lt;/span&gt;method type&lt;span style=&quot;font-weight: normal;&quot;&gt;:&amp;nbsp; WES&lt;br&gt;&lt;/span&gt;&amp;nbsp;&lt;span style=&quot;font-weight: normal;&quot;&gt; - &lt;/span&gt;change type&lt;span style=&quot;font-weight: normal;&quot;&gt;: SNV, MNV, delins&lt;br&gt;&amp;nbsp; - &lt;/span&gt;specimen&lt;span style=&quot;font-weight: normal;&quot;&gt;: lung biopsy&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;nbsp; - &lt;/span&gt;regions studied&lt;span style=&quot;font-weight: normal;&quot;&gt;:&amp;nbsp;WES_FullSequencedRegion_GRCh38.bed&lt;br&gt;&amp;nbsp; - &lt;/span&gt;regions called&lt;span style=&quot;font-weight: normal;&quot;&gt;: SimpleVariantAnalysis_called.bed&lt;br&gt;&amp;nbsp; - &lt;/span&gt;output&lt;span style=&quot;font-weight: normal;&quot;&gt;: genomicVCFfile_simple.vcf&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;verticalAlign=top;align=left;" parent="1" vertex="1">
+          <mxGeometry x="280" y="320" width="350" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="270" as="sourcePoint" />
+            <mxPoint x="450" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="300" />
+              <mxPoint x="450" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-15" value="genomics-study-analysis-ext" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="E3DRZCAaYlrznMF6Y9QS-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.8059" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-17" value="&amp;nbsp;Genomic Study Analysis #2&lt;br&gt;&amp;nbsp; -&amp;nbsp;method type&lt;span style=&quot;border-color: var(--border-color); font-weight: normal;&quot;&gt;:&amp;nbsp; Deletion/duplication analysis&lt;/span&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&amp;nbsp; - &lt;/span&gt;change type&lt;span style=&quot;font-weight: normal;&quot;&gt;: CNV&lt;br&gt;&amp;nbsp; - &lt;/span&gt;specimen&lt;span style=&quot;font-weight: normal;&quot;&gt;: lung biopsy&lt;br&gt;&amp;nbsp; - &lt;/span&gt;regions studied&lt;span style=&quot;font-weight: normal;&quot;&gt;:&amp;nbsp;WES_FullSequencedRegion_GRCh38.bed&lt;br&gt;&amp;nbsp; - &lt;/span&gt;regions called&lt;span style=&quot;font-weight: normal;&quot;&gt;: CNVAnalysis_called.bed&lt;br&gt;&amp;nbsp; - &lt;/span&gt;output&lt;span style=&quot;font-weight: normal;&quot;&gt;: genomicVCFFile_cnv.vcf&lt;br&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;verticalAlign=top;align=left;" parent="1" vertex="1">
+          <mxGeometry x="280" y="461" width="350" height="109" as="geometry" />
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-19" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" target="E3DRZCAaYlrznMF6Y9QS-17" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="270" as="sourcePoint" />
+            <mxPoint x="450" y="461" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="441" />
+              <mxPoint x="450" y="441" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-21" value="&amp;nbsp;Variant #1&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&amp;nbsp; - &lt;/span&gt;partOf&lt;span style=&quot;font-weight: normal;&quot;&gt;: Genomic Study #1&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+          <mxGeometry x="180" y="585" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E3DRZCAaYlrznMF6Y9QS-22" value="result" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="E3DRZCAaYlrznMF6Y9QS-1" target="E3DRZCAaYlrznMF6Y9QS-21" edge="1">
+          <mxGeometry x="0.7445" y="8" relative="1" as="geometry">
+            <mxPoint x="100" y="160" as="sourcePoint" />
+            <mxPoint x="250" y="220" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="90" y="608" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
