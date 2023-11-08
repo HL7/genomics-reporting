@@ -79,6 +79,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -100,6 +101,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -121,6 +123,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -181,6 +184,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueQuantity = 25.0 '1/1000000{Base}' "somatic variants per megabase of sequenced DNA"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -196,6 +200,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -210,6 +215,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -232,6 +238,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -254,6 +261,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -274,6 +282,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -299,6 +308,8 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-04-05"
+* performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
 
 Instance: PlanDefRuxolitinib

@@ -7,6 +7,8 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(Patient/HG00403)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept.coding = $LNC#LA6683-2 "Germline"

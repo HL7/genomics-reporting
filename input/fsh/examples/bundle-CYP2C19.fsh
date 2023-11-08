@@ -247,7 +247,7 @@ Usage: #example
 * entry[=].resource = dv-5c7e9e1ca8252
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
-* entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe61"
+* entry[+].fullUrl = "urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01"
 * entry[=].resource = dv-5c7e9e1ca82e4
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
@@ -422,7 +422,7 @@ Usage: #inline
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe58)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe59)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
-* result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe61)
+* result[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe62)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe63)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe64)
@@ -2465,4 +2465,4 @@ Usage: #inline
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
 * derivedFrom[0] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
-* derivedFrom[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe61)
+* derivedFrom[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)

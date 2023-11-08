@@ -86,6 +86,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -120,6 +121,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -154,6 +156,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -188,6 +191,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -222,6 +226,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -256,6 +261,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -330,6 +336,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -364,6 +371,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -398,6 +406,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -432,6 +441,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -466,6 +476,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -500,6 +511,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
+* effectiveDateTime = "2023-03-05"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"

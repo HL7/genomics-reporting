@@ -7,6 +7,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code.coding[0] = $LNC#84413-4 "Genotype display name"
 * code.coding[+] = $LNC#57290-9 "HLA-A [Type] by High resolution"
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018-07-26"
 * performer.type = "Organization"
 * performer.display = "aTypingLab, Inc"

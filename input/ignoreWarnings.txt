@@ -31,6 +31,7 @@ Code System URI 'http://www.genenames.org' is unknown so the code cannot be vali
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|2.1.0-SNAPSHOT
 Code System URI 'https://www.pharmvar.org/' is unknown so the code cannot be validated
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
+Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|2.1.0-SNAPSHOT
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|2.1.0-SNAPSHOT
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|2.1.0-SNAPSHOT
@@ -45,6 +46,12 @@ The definition for the Code System with URI 'https://iscn.karger.com' doesnt pro
 The definition for the Code System with URI 'http://human-phenotype-ontology.org' doesnt provide any codes so the code cannot be validated
 Error from server: HGVS is not supported at this time
 Error from http://tx.fhir.org/r4: HGVS is not supported at this time
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.ebi.ac.uk/ols/ontologies/geno
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://sequenceontology.org
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.genenames.org
+Unknown System 'http://www.ebi.ac.uk/ols/ontologies/geno' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://www.ebi.ac.uk/ols/ontologies/geno is unknown (from Tx-Server))
+Unknown System 'http://human-phenotype-ontology.org' specified, so Concepts and Filters can't be checked (Details: Resolved system http://human-phenotype-ontology.org (v1.0.0), but the definition is not complete)
+Unknown System 'http://purl.obolibrary.org/obo/sepio-clingen' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://purl.obolibrary.org/obo/sepio-clingen is unknown (from Tx-Server))
 
 # Misc information messages
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)

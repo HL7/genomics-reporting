@@ -117,9 +117,11 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84413-4 "genotype display name"
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
-* valueCodeableConcept = $PHARMVAR#"CYP2C9 *4/*35B" "CYP2C9 *4/*35B"
+* performer = Reference(ExampleLab)
+* valueCodeableConcept = $PHARMVAR#"CYP2C9 "CYP2C9 *4/*35B"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom[0] = Reference(haplotype-1-pgx-example)
 * derivedFrom[+] = Reference(haplotype-2-pgx-example)
@@ -133,9 +135,11 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
-* valueCodeableConcept = $PHARMVAR#"CYP2C9 *35B" "CYP2C9 *35B"
+* performer = Reference(ExampleLab)
+* valueCodeableConcept = $PHARMVAR#"CYP2C9 "CYP2C9 *35B"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-1-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
@@ -148,9 +152,11 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
-* valueCodeableConcept = $PHARMVAR#"CYP2C9 *4" "CYP2C9 *4"
+* performer = Reference(ExampleLab)
+* valueCodeableConcept = $PHARMVAR#"CYP2C9 "CYP2C9 *4"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-2-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
@@ -163,8 +169,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
+* performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(sequence-1-pgx-example)
@@ -187,8 +195,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
+* performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(sequence-2-pgx-example)
@@ -232,4 +242,3 @@ Usage: #inline
 * status = #unknown
 * medicationCodeableConcept = $RXN#103 "mercaptopurine"
 * subject = Reference(ExamplePatient)
-

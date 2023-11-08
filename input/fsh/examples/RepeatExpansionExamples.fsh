@@ -6,6 +6,9 @@ Usage: #example
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
 * component[0].code = $LNC#48018-6 "Gene studied ID"
@@ -43,6 +46,9 @@ Usage: #example
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
 * component[0].code = $LNC#48018-6 "Gene studied ID"
