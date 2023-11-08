@@ -2,6 +2,12 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
+# This is a publisher induced issue.   The extension in question is introduced by the publisher.   See https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/New.20ConceptMap.20Warning.20--.20induced.20by.20IG.20Publisher 
+The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version {3} is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
+
+# ignore warnings about annotations in UCUM codes
+%Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked%
+
 # the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation

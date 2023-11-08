@@ -27,6 +27,7 @@ May include general statements about the observation, or statements about signif
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of interpretation, value, or component values.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
+* component.extension contains RelatedArtifactComponent named related-artifact 0..*
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open

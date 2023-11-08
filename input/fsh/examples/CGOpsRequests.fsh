@@ -18,6 +18,8 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "dv-5a7f781e83514"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -102,6 +104,8 @@ Usage: #example
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "dv-5a7f781e83514"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -165,6 +169,8 @@ Usage: #example
 * parameter.part[=].resource.resourceType = "Observation"
 * parameter.part[=].resource.id = "dv-fff9d40035a04"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter.part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter.part[=].resource.text.status = #generated
 * parameter.part[=].resource.status = #final
 * parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -225,6 +231,8 @@ Usage: #example
 * parameter.part[=].resource.resourceType = "Observation"
 * parameter.part[=].resource.id = "dv-64c82675925d4"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter.part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter.part[=].resource.text.status = #generated
 * parameter.part[=].resource.status = #final
 * parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -289,6 +297,8 @@ Usage: #example
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "GenotypeCYP2D6"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Genotype</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -315,6 +325,8 @@ Usage: #example
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "GenotypeCYP2C19"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Genotype</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -350,6 +362,8 @@ Usage: #example
 * parameter.part[=].resource.resourceType = "Observation"
 * parameter.part[=].resource.id = "Genotype7"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+* parameter.part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Genotype</div>"
+* parameter.part[=].resource.text.status = #generated
 * parameter.part[=].resource.status = #final
 * parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -381,6 +395,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "TherapeuticImplicationExample"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Therapeutic Implication</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -405,6 +421,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExample"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -457,6 +475,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "DiagnosticImplicationExample"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Pathogenic - Malignant hyperthermia</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -482,6 +502,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExample2"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>NC_000019.10:g.38499669C>T</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -534,6 +556,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC1"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>NM_001395525.1:c.-281+2T>C - intronic_variant:loss_of_function_variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -557,6 +581,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC2"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>NM_001366781.1:c.90T>C - synonymous_variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -579,6 +605,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC3"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Molecular Consequence</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -599,6 +627,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC4"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Molecular Consequence</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -619,6 +649,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExampleMC"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
