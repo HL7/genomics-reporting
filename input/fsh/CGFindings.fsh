@@ -92,7 +92,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[representative-coding-hgvs] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples."
 * component[representative-coding-hgvs].value[x] only CodeableConcept
 * component[representative-coding-hgvs].value[x] 1..1
-* component[representative-coding-hgvs].value[x] from HGVSVS (extensible) 
+* component[representative-coding-hgvs].value[x] from HGVSVS (required) 
 * component[representative-coding-hgvs].value[x] ^short = "A valid HGVS-formatted 'c.' string, e.g. NM_005228.5:c.2369C>T."
 
 * component[coding-change-type].code = $LNC#48019-4
@@ -122,7 +122,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[genomic-hgvs].value[x] only CodeableConcept
 * component[genomic-hgvs].value[x] 1..1
 * component[genomic-hgvs].value[x] ^short = "A valid HGVS-formatted 'g.' string, e.g. NC_000016.9:g.2124200_2138612dup"
-* component[genomic-hgvs].value[x] from HGVSVS (extensible)
+* component[genomic-hgvs].value[x] from HGVSVS (required)
 
 * component[genomic-source-class].code = $LNC#48002-0
 * component[genomic-source-class].code ^short = "48002-0"
@@ -280,7 +280,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[representative-protein-hgvs] ^definition = "Description of the protein (amino acid) sequence change using a valid HGVS-formatted string. The description of the variant is surrounded in parentheses if it is calculated rather than directly observed."
 * component[representative-protein-hgvs].value[x] only CodeableConcept
 * component[representative-protein-hgvs].value[x] 1..1
-* component[representative-protein-hgvs].value[x] from HGVSVS (extensible)
+* component[representative-protein-hgvs].value[x] from HGVSVS (required)
 * component[representative-protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
 
 * component[variant-confidence-status].code = TbdCodesCS#variant-confidence-status
@@ -352,7 +352,7 @@ Description:    "The Region Studied profile is used to assert actual regions stu
 * component[gene-mutations].code ^short = "36908-2"
 * component[gene-mutations].value[x] only CodeableConcept
 * component[gene-mutations].value[x] 1..1
-* component[gene-mutations].value[x] from HGVSVS (extensible)
+* component[gene-mutations].value[x] from HGVSVS (required)
 
 * component[region-description] ^short = "Region Description"
 * component[region-description] ^definition = "Description of region examined."

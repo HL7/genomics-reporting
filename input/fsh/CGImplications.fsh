@@ -208,7 +208,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[coding-hgvs] ^definition = "Human Genome Variation Society (HGVS) nomenclature for a single DNA marker. The use of the nomenclature must be extended to describe non-variations (aka. wild types) see samples for wild type examples."
 * component[coding-hgvs].value[x] only CodeableConcept
 * component[coding-hgvs].value[x] 1..1
-* component[coding-hgvs].value[x] from HGVSVS (extensible) 
+* component[coding-hgvs].value[x] from HGVSVS (required) 
 * component[coding-hgvs].value[x] ^short = "A valid HGVS-formatted 'c.' string, e.g. NM_005228.5:c.2369C>T."
 
 * component[transcript-ref-seq].code = $LNC#51958-7
@@ -227,7 +227,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[protein-hgvs] ^definition = "Description of the protein (amino acid) sequence change using a valid HGVS-formatted string. The description of the variant is surrounded in parentheses if it is calculated rather than directly observed."
 * component[protein-hgvs].value[x] only CodeableConcept
 * component[protein-hgvs].value[x] 1..1
-* component[protein-hgvs].value[x] from HGVSVS (extensible)
+* component[protein-hgvs].value[x] from HGVSVS (required)
 * component[protein-hgvs].value[x] ^short = "A valid HGVS-formatted 'p.' string, e.g. NP_000050.2:p.(Asn1836Lys)"
 
 * component[protein-ref-seq].code = TbdCodesCS#protein-ref-seq

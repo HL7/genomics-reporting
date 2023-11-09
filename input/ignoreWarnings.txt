@@ -8,9 +8,6 @@ The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-Con
 # ignore warnings about annotations in UCUM codes
 %Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked%
 
-# ignore slicing information messages (for now)
-%(this may not be a problem, but you should check that it's not intended to match a slice)%
-
 # the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
