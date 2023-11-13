@@ -335,6 +335,7 @@ Description: "Example for EGFR L858R"
 * effectiveDateTime = "2023-02-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
+* component[variation-code].valueCodeableConcept.text = "EGFR-L858R"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_005219.2:p.Leu858Arg
 //* component[representative-transcript-ref-seq].valueCodeableConcept = 
 //* component[allelic-read-depth].valueQuantity = 
@@ -552,8 +553,6 @@ Usage: #example
 
 //EGFR L858R
 //LA6668-3 Pathogenic
-//Tier I - Level A
-//https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg
 Instance: EGFR-L858R-significance
 InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - EGFR pathogenic"
@@ -565,25 +564,6 @@ Usage: #example
 * derivedFrom = Reference(EGFR-L858R-var)
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
-
-* component[+].code = $LNC#93044-6 "Level of evidence"
-//* component[=].valueCodeableConcept = codesystem#code "display"
-* component[=].valueCodeableConcept.text = "Tier I - Level A"
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
-
-* component[+].code = $LNC#81259-4 "Associated phenotype"
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
-* component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
-
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
-
-* component[+].code = TbdCodesCS#conclusion-string
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/variants/33/summary"
 
 
 Instance: ROS1-Fusion-disease
@@ -650,7 +630,7 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * component[=].valueCodeableConcept.text = "Crizotinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/molecular-profiles/2562/summary"
-* derivedFrom = Reference(ROS1-Fusion-var)
+* derivedFrom = Reference(ROS1--var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer positive for ROS1 fusions are sensitive to crizotinib"
@@ -659,13 +639,19 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 
 Instance: EGFR-L858R-therapuDrug1
 InstanceOf: TherapeuticImplication
-Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
+Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept = https://civicdb.org/evidence#2994 
 * component[=].valueCodeableConcept.text = "cancer sensitive to gefitinib"
+* component[+].code = $LNC#93044-6 "Level of evidence"
+//* component[=].valueCodeableConcept = codesystem#code "display"
+* component[=].valueCodeableConcept.text = "Tier I - Level A"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
@@ -680,15 +666,22 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
 
+
 Instance: EGFR-L858R-therapuDrug2
 InstanceOf: TherapeuticImplication
-Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
+Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept = https://civicdb.org/evidence#2994 
 * component[=].valueCodeableConcept.text = "cancer sensitive to erlotinib"
+* component[+].code = $LNC#93044-6 "Level of evidence"
+//* component[=].valueCodeableConcept = codesystem#code "display"
+* component[=].valueCodeableConcept.text = "Tier I - Level A"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
@@ -964,7 +957,7 @@ Usage: #example
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ROS1-Fusion-var)
 * component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001565 "gene_fusion"
+* component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001886 "transcript_fusion"
 
 Instance: somaticPatient
 InstanceOf: Patient
