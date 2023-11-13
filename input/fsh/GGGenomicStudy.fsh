@@ -109,7 +109,7 @@ Description:   "Genomic Study Analysis Input"
     type 0..1 and
     generatedBy 0..1
 * extension[file] ^short = "GenomicStudy.analysis.input.file"
-* extension[file].value[x] only Reference(GenomicDocumentReference)
+* extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.input.type"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
@@ -126,7 +126,7 @@ Description:   "Genomic Study Analysis Output"
     file 0..1 and
     type 0..1 
 * extension[file] ^short = "GenomicStudy.analysis.output.file"
-* extension[file].value[x] only Reference(GenomicDocumentReference)
+* extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.output.type"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
@@ -169,7 +169,7 @@ Title:      "Genomic Study Analysis Regions Studied"
 Description: "Defines a regions studied for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDocumentReference or RegionStudied)
+* value[x] only Reference(GenomicDataFile or RegionStudied)
 
 Extension:   GenomicStudyAnalysisRegionsCalled
 Id:          genomic-study-analysis-regions-called
@@ -177,7 +177,7 @@ Title:      "Genomic Study Analysis Regions called"
 Description: "Defines a regions called for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDocumentReference or RegionStudied)
+* value[x] only Reference(GenomicDataFile or RegionStudied)
 
 Extension:   GenomicStudyAnalysisRegionsUncallable
 Id:          genomic-study-analysis-regions-uncallable
@@ -185,7 +185,7 @@ Title:      "Genomic Study Analysis Regions uncallable"
 Description: "Defines regions deemed uncallable (generally due to low coverage)"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDocumentReference or RegionStudied)
+* value[x] only Reference(GenomicDataFile or RegionStudied)
 
 Extension:      GenomicStudyAnalysisDevice
 Id:             genomic-study-analysis-device

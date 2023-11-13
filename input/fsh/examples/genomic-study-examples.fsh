@@ -126,7 +126,7 @@ Usage: #example
 * subject = Reference(Patient/genomicPatient)
 
 Instance: WES-FullSequencedRegion-GRCh38
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "WES_FullSequencedRegion_GRCh38: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -140,7 +140,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: CNVAnalysis-called
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "CNVAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -154,7 +154,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: genomicVCFfile-cnv
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "genomicVCFfile_cnv: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -168,7 +168,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: genomicVCFfile-simple
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "genomicVCFfile_simple: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -182,7 +182,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: SimpleVariantAnalysis-called
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "SimpleVariantAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -196,7 +196,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: UncallableRegions
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "Representing a BED file that represents uncallable regions"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -315,7 +315,7 @@ Usage: #example
   * given[+] = "Mother"
 
 Instance: genomicFileProbandBAM
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
@@ -331,7 +331,7 @@ Usage: #example
   * title = "Probands BAM file"
 
 Instance: genomicFileMotherBAM
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
@@ -347,7 +347,7 @@ Usage: #example
   * title = "Mothers BAM file"
 
 Instance: genomicFileFatherBAM
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
@@ -363,7 +363,7 @@ Usage: #example
   * title = "Fathers BAM file"
 
 Instance: genomicFileProbandVCF
-InstanceOf: GenomicDocumentReference
+InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]

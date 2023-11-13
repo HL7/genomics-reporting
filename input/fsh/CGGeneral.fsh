@@ -141,10 +141,10 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[biomarker] only Reference(MolecularBiomarker)
 * result[biomarker] ^short = "MolecularBiomarker"
 
-Profile:        GenomicDocumentReference
+Profile:        GenomicDataFile
 Parent:         DocumentReference
-Id:             genomic-document-reference
-Title:          "Genomic DocumentReference"
+Id:             genomic-data-file
+Title:          "Genomic Data File"
 Description:    "A profile of DocumentReference used to represent a genomics file."
 * context.related only Reference(GenomicReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"
