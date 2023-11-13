@@ -1,6 +1,6 @@
 Instance: diagnosticreport-hla-glstring-r4 
-InstanceOf: GenomicsReport
-Description: "Example GenomicsReport including an HLA glstring"
+InstanceOf: GenomicReport
+Description: "Example GenomicReport including an HLA glstring"
 Usage: #example
 * basedOn[0] = Reference(servicerequest-hla-a-r4)
 * status = #final

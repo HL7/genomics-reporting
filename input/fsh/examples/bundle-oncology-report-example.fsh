@@ -289,7 +289,7 @@ Usage: #inline
 * component[=].valueQuantity = 160 '{reads}/{base}' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-16
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/reportID"
 * identifier.value = "42867"

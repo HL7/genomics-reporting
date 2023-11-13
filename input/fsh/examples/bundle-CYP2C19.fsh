@@ -355,7 +355,7 @@ Usage: #inline
 * address.country = "USA"
 
 Instance: report-CYP2C19
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE

@@ -1,7 +1,7 @@
-Profile:        GenomicsBase
+Profile:        GenomicBase
 Parent:         Observation
-Id:             genomics-base
-Title:          "Genomics Base"
+Id:             genomic-base
+Title:          "Genomic Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 * ^abstract = true
 //* extension contains GenomicStudy named genomic-study 0..*
@@ -43,7 +43,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"
 
 Profile:        OverallInterpretation
-Parent:         GenomicsBase
+Parent:         GenomicBase
 Id:             overall-interpretation
 Title:          "Overall Interpretation"
 Description:    "Provides a coarse overall interpretation of the genomic results reported."
@@ -82,16 +82,16 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 
 Alias: $SupportingInfo = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
 
-Profile:        GenomicsReport
+Profile:        GenomicReport
 Parent:         DiagnosticReport
-Id:             genomics-report
-Title:          "Genomics Report"
-Description:    "Genomics profile of DiagnosticReport."
+Id:             genomic-report
+Title:          "Genomic Report"
+Description:    "Genomic profile of DiagnosticReport."
 * extension contains RecommendedAction named recommended-action 0..*
-    and GenomicsRiskAssessment named genomics-risk-assessment 0..*
+    and GenomicRiskAssessment named genomic-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
     and $SupportingInfo named supporting-info 0..*
-    and GenomicsStudyReference named genomic-study 0..*
+    and GenomicStudyReference named genomic-study 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * extension[GenomicReportNote] ^comment = """
@@ -99,7 +99,7 @@ May include general statements about the report, or statements about significant
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
-* extension[GenomicsStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
+* extension[GenomicStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 //* code = $LNC#81247-9
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
@@ -141,10 +141,10 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[biomarker] only Reference(MolecularBiomarker)
 * result[biomarker] ^short = "MolecularBiomarker"
 
-Profile:        GenomicsDocumentReference
+Profile:        GenomicDocumentReference
 Parent:         DocumentReference
-Id:             genomics-document-reference
-Title:          "Genomics DocumentReference"
+Id:             genomic-document-reference
+Title:          "Genomic DocumentReference"
 Description:    "A profile of DocumentReference used to represent a genomics file."
-* context.related only Reference(GenomicsReport)
+* context.related only Reference(GenomicReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"

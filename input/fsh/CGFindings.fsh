@@ -1,7 +1,7 @@
 Profile:        GenomicFinding
-Parent:         GenomicsBase
+Parent:         GenomicBase
 Id:             finding
-Title:          "Genomics Finding"
+Title:          "Genomic Finding"
 Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * ^abstract = true
@@ -315,7 +315,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[repeat-number].extension[RepeatMotifOrder] ^comment = "If there are multiple repeat expansion pairs, this must be used both to indicate the sequence position of a given repeat-motif and repeat-number pair and to group the related components together. Components with the same extension value describe the same motif."
 
 Profile:        RegionStudied
-Parent:         GenomicsBase
+Parent:         GenomicBase
 Id:             region-studied
 Title:          "Region Studied"
 Description:    "The Region Studied profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g. due to technical limitations during test performance)."

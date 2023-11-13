@@ -138,7 +138,7 @@ Usage: #inline
 * component[=].valueCodeableConcept.text = "TG02"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-13
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE

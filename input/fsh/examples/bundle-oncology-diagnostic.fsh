@@ -124,7 +124,7 @@ Usage: #inline
 * component[=].valueCodeableConcept.text = "melanoma"
 
 Instance: Inline-Instance-for-oncology-diagnostic-7
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE

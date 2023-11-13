@@ -29,7 +29,7 @@ Usage: #example
 * entry[=].request.url = "Patient"
 
 Instance: sequence-phase-relation-CYP2C19
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE

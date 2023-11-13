@@ -54,7 +54,7 @@ Once HLA is typed, perhaps using targeted probes, exon sequencing, or full gene 
   <a name="hla-dg-genotype"> </a>
   <h4>HLA - DiagnosticReport and Genotype</h4>
   <p>
-    In a simple case, the <a href="StructureDefinition-genomics-report.html">Genomics Report</a> (DiagnosticReport) refers to an <a href="StructureDefinition-genotype.html">Genotype Observation</a> for each HLA gene. The HLA alleles found in the genotype are typically assigned to alleles found in the Immuno Polymorphism Database (IPD) through the international ImMunoGeneTics (IMGT) project (found <a href="https://www.ebi.ac.uk/ipd/imgt/hla">here</a>) and preferably expressed as a <a href="https://www.ncbi.nlm.nih.gov/pubmed/23849068">Genotype List String (GLString)</a> using a <a href="https://glstring.org">GLString Code</a>.
+    In a simple case, the <a href="StructureDefinition-genomic-report.html">Genomic Report</a> (DiagnosticReport) refers to an <a href="StructureDefinition-genotype.html">Genotype Observation</a> for each HLA gene. The HLA alleles found in the genotype are typically assigned to alleles found in the Immuno Polymorphism Database (IPD) through the international ImMunoGeneTics (IMGT) project (found <a href="https://www.ebi.ac.uk/ipd/imgt/hla">here</a>) and preferably expressed as a <a href="https://www.ncbi.nlm.nih.gov/pubmed/23849068">Genotype List String (GLString)</a> using a <a href="https://glstring.org">GLString Code</a>.
   </p>
   <p>
     If it is necessary to report the molecular sequence that was used to derive the <a href="StructureDefinition-genotype.html">Genotype Observation</a>, one or more MolecularSequence resources can be used. This is shown in Fig 1.

@@ -554,7 +554,7 @@ Usage: #inline
 * component.valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: CG-IG-HLA-FullBundle-01-27
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
 * extension[=].valueCodeableConcept.coding.system = "http://www.ebi.ac.uk/ipd/imgt/hla"

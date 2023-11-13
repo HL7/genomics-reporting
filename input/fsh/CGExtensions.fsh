@@ -10,9 +10,9 @@ Description: "References a proposed action that is recommended based on the resu
 * ^context[=].expression = "Observation"
 * value[x] only Reference(MedicationRecommendation or FollowupRecommendation)
 
-Extension:   GenomicsRiskAssessment
-Id:          genomics-risk-assessment
-Title:       "Genomics Risk Assessment"
+Extension:   GenomicRiskAssessment
+Id:          genomic-risk-assessment
+Title:       "Genomic Risk Assessment"
 Description: "RiskAssessment delivered as part of a genomics report or observation"
 * ^context[0].type = #element
 * ^context[0].expression = "DiagnosticReport"

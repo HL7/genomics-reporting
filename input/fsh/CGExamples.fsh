@@ -159,10 +159,10 @@ Description: "Example for HER2 by immunoassay"
 * component[biomarker-category][2].code = TbdCodesCS#biomarker-category
 * component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
 
-Instance: GenomicsServiceRequestExample01
+Instance: GenomicServiceRequestExample01
 InstanceOf: ServiceRequest
 Description: "Example for Service Request"
-* id = "GenomicsServiceRequestExample01"
+* id = "GenomicServiceRequestExample01"
 * status = $REQUESTSTATUS#completed "completed"
 * code = $LNC#94231-8 "G6PD gene full mutation analysis in Blood or Tissue by Sequencing"
 * subject = Reference(CGPatientExample01)
@@ -285,11 +285,11 @@ Description: "Example of a Medication Recommendation"
 * reasonReference = Reference(TherapeuticImplicationExample1)
 * status = #requested
 
-Instance: GenomicsReportExample01
-InstanceOf: GenomicsReport
+Instance: GenomicReportExample01
+InstanceOf: GenomicReport
 Description: "Example of a Report carrying a Genotype, Therapeutic Implication, and Medication Recommendation"
-* id = "GenomicsReportExample01"
-* basedOn = Reference(GenomicsServiceRequestExample01)
+* id = "GenomicReportExample01"
+* basedOn = Reference(GenomicServiceRequestExample01)
 * code = $LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
 * extension[RecommendedAction][0].valueReference = Reference(MedicationRecommendationExample1)
@@ -926,11 +926,11 @@ Description: "eMERGE PGx VKORC1"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
 * component[region-coverage].valueQuantity.value = 100
 
-Instance: PGxGenomicsReportEMERGE
-InstanceOf: GenomicsReport
+Instance: PGxGenomicReportEMERGE
+InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
-* extension[GenomicsStudyReference][+].valueReference = Reference(PGXGenomicStudy)
-* id = "PGxGenomicsReportEMERGE"
+* extension[GenomicStudyReference][+].valueReference = Reference(PGXGenomicStudy)
+* id = "PGxGenomicReportEMERGE"
 * basedOn = Reference(eMERGEServiceRequest)
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
@@ -975,7 +975,7 @@ Instance: PGXGenomicStudy
 InstanceOf: GenomicStudy
 Description: "Example of PGX sequencing panel"
 Usage: #example
-* extension[GenomicsStudyAnalysisExt][+].valueReference = Reference(PGXGenomicStudyAnalysis)
+* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(PGXGenomicStudyAnalysis)
 * status = #completed
 * code.text = "PGX sequencing panel"
 * category = $OBSCAT#laboratory
@@ -988,19 +988,19 @@ Instance: PGXGenomicStudyAnalysis
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of PGX Sequence analysis"
 Usage: #example
-* extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx1) "CYP2C19"
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx2) "CYP2C9"
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx3) "VKORC1"
+* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx1) "CYP2C19"
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx2) "CYP2C9"
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx3) "VKORC1"
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2021-01-01T01:01:10-06:00"
 * subject = Reference(CGPatientExample01)
 
-Instance: PGxGenomicsReportEMERGE-withGrouping
-InstanceOf: GenomicsReport
+Instance: PGxGenomicReportEMERGE-withGrouping
+InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
-* id = "PGxGenomicsReportEMERGE-withGrouping"
+* id = "PGxGenomicReportEMERGE-withGrouping"
 * basedOn = Reference(eMERGEServiceRequest)
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
@@ -1259,7 +1259,7 @@ Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a pol
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* extension[GenomicsRiskAssessment][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
+* extension[GenomicRiskAssessment][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
 //Reference(GenomicRiskAssesmPolyGenicScoreRef)
 * component[clinical-significance].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[predicted-phenotype].valueCodeableConcept = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"

@@ -173,7 +173,7 @@ Usage: #inline
 * hasMember[+] = Reference(urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4) "Therapy match result 4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-15
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE

@@ -65,7 +65,7 @@ Usage: #example
 * entry[=].request.url = "MedicationStatement"
 
 Instance: pgx-report
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/recommended-action"
 * extension.valueReference = Reference(med-usage-impact-task-pgx-example)

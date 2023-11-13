@@ -2,8 +2,8 @@ Instance: lungMass
 InstanceOf: GenomicStudy
 Description: "Example of solid tumor whole exome sequencing panel"
 Usage: #example
-* extension[GenomicsStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis1)
-* extension[GenomicsStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis2)
+* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis1)
+* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis2)
 * status = #completed
 * code.text = "Solid tumor whole exome sequencing panel"
 * category = $OBSCAT#laboratory
@@ -18,17 +18,19 @@ Instance: lungMass-analysis1
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of Sequence analysis of the entire coding region"
 Usage: #example
-* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
-* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
-* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
-* extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicsStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
-* extension[GenomicsStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[GenomicsStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
-* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
-* extension[GenomicsStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
+* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
+* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
+* extension[GenomicStudyAnalysisDevice][+].extension[device].valueReference = Reference(Device/triodenovo-software)
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+* extension[GenomicStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
+* extension[GenomicStudyAnalysisRegionsUncallable][+].valueReference = Reference(DocumentReference/UncallableRegions)
+* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
+* extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
 * category = $OBSCAT#laboratory
@@ -42,15 +44,15 @@ Instance: lungMass-analysis2
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of Deletion/duplication analysis"
 Usage: #example
-* extension[GenomicsStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
-* extension[GenomicsStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
-* extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicsStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
-* extension[GenomicsStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[GenomicsStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
-* extension[GenomicsStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
-* extension[GenomicsStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
+* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
+* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+* extension[GenomicStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
+* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
+* extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
 * category = $OBSCAT#laboratory
@@ -124,7 +126,7 @@ Usage: #example
 * subject = Reference(Patient/genomicPatient)
 
 Instance: WES-FullSequencedRegion-GRCh38
-InstanceOf: GenomicsDocumentReference
+InstanceOf: GenomicDocumentReference
 Description: "WES_FullSequencedRegion_GRCh38: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -138,7 +140,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: CNVAnalysis-called
-InstanceOf: GenomicsDocumentReference
+InstanceOf: GenomicDocumentReference
 Description: "CNVAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -152,7 +154,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: genomicVCFfile-cnv
-InstanceOf: GenomicsDocumentReference
+InstanceOf: GenomicDocumentReference
 Description: "genomicVCFfile_cnv: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -166,7 +168,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: genomicVCFfile-simple
-InstanceOf: GenomicsDocumentReference
+InstanceOf: GenomicDocumentReference
 Description: "genomicVCFfile_simple: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -180,7 +182,7 @@ Usage: #example
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
 
 Instance: SimpleVariantAnalysis-called
-InstanceOf: GenomicsDocumentReference
+InstanceOf: GenomicDocumentReference
 Description: "SimpleVariantAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
@@ -192,3 +194,195 @@ Usage: #example
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/jQZWWKs4JO8ZfhfrbsCbbMUA/SimpleVariantAnalysis_called.bed"
 * content.attachment.title = "SimpleVariantAnalysis_called"
 * content.attachment.creation = "2019-03-01T01:02:01+01:00"
+
+Instance: UncallableRegions
+InstanceOf: GenomicDocumentReference
+Description: "Representing a BED file that represents uncallable regions"
+Usage: #example
+* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.value = "11125"
+* status = #current
+* docStatus = #preliminary
+* description = "Representing a BED file that represents uncallable regions"
+* securityLabel = $CONFIDENTIALITY#R "Restricted"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/jQZWWKs4JO8ZfhfrbsCbbMUA/uncallable_regions.bed"
+* content.attachment.title = "Uncalleable Regions"
+* content.attachment.creation = "2019-03-01T01:02:01+01:00"
+
+
+Instance: genomicstudy-trio2
+InstanceOf: GenomicStudy
+Description: "GenomicStudy example of a trio analysis"
+Usage: #example
+* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(genomicstudyanalysis-trio2)
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept.text =  "Trio-analysis"
+* extension[GenomicStudyReferrerExt].valueReference = Reference(Practitioner/practitioner02)
+* identifier[+]
+  * use = #temp
+  * system = "http://www.somesystemabc.net/identifiers/genomicstudies"
+  * value = "urn:uuid:1111-1111-1111-1113"
+* status = #completed
+* code.text = "Trio Analysis"
+* category = $OBSCAT#laboratory
+* subject = Reference(Patient/denovoChild)
+* performedDateTime = "2023-10-01"
+* asserter = Reference(Practitioner/practitioner02)
+* note.text = "De novo mutation study of the patient. The Prenatal Trio Whole Exome Sequencing (Prenatal Trio WES) test is ordered by a physician and must be accompanied with a consent form and detailed clinical information. In general, the test is used when prenatal imaging detects an anomaly that strongly suggests that there is an underlying genetic etiology. Prenatal Trio WES is often considered only after fetal chromosome microarray analysis has been non-diagnostic."
+
+Instance: genomicstudyanalysis-trio2
+InstanceOf: GenomicStudyAnalysis
+Description: "GenomicStudy Analysis example of a trio analysis"
+Usage: #example
+* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/denovoFather)
+* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/denovoMother)
+* extension[GenomicStudyAnalysisTitle].valueString = "Parental Sequence Variation Detection Using Next Generation Sequencing"
+* extension[GenomicStudyAnalysisProtocolPerformed].valueReference = Reference(Procedure/SequencingProcedure)
+* extension[GenomicStudyAnalysisInput][+]
+  * extension[file].valueReference = Reference(DocumentReference/genomicFileProbandBAM)
+  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#bam "BAM"
+* extension[GenomicStudyAnalysisInput][+]
+  * extension[file].valueReference = Reference(DocumentReference/genomicFileMotherBAM)
+  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#bam "BAM"
+* extension[GenomicStudyAnalysisInput][+]
+  * extension[file].valueReference = Reference(DocumentReference/genomicFileFatherBAM)
+  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#bam "BAM"
+* extension[GenomicStudyAnalysisOutput][+]
+  * extension[file].valueReference = Reference(DocumentReference/genomicFileProbandVCF)
+  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
+* status = #completed
+* category = $OBSCAT#laboratory
+* performedDateTime = "2023-10-01"
+* instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
+* subject = Reference(Patient/denovoChild)
+
+Instance: triodenovo-software
+InstanceOf: Device
+Description: "Triodenovo Software"
+Usage: #example
+* id = "triodenovo-software"
+* identifier[+]
+  * system = "http://www.somesystemabc.net/identifiers/devices"
+  * value = "11112"
+* status = #active
+* manufacturer = "Vanderbilt Genetics Institute"
+* deviceName[+]
+  * name = "Triodenovo Software"
+  * type = #user-friendly-name
+* type = $SCT#706687001 "Software (physical object)"
+* version[+].value = "0.06"
+
+Instance: denovoChild
+InstanceOf: Patient
+Description: "Child of a trio"
+Usage: #example
+* identifier[+]
+  * use = #temp
+  * type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical record number"
+  * system = "http://www.somesystemabc.net/identifiers/persons"
+  * value = "1234-11111"
+* name[+]
+  * use = #official
+  * family = "Denovo"
+  * given[+] = "Child"
+
+Instance: denovoFather
+InstanceOf: Patient
+Description: "Father of a trio"
+Usage: #example
+* identifier[+]
+  * use = #temp
+  * type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical record number"
+  * system = "http://www.somesystemabc.net/identifiers/persons"
+  * value = "6789-11111"
+* name[+]
+  * use = #official
+  * family = "Denovo"
+  * given[+] = "Father"
+
+Instance: denovoMother
+InstanceOf: Patient
+Description: "Mother of a trio"
+Usage: #example
+* identifier[+]
+  * use = #temp
+  * type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical record number"
+  * system = "http://www.somesystemabc.net/identifiers/persons"
+  * value = "0987-11111"
+* name[+]
+  * use = #official
+  * family = "Denovo"
+  * given[+] = "Mother"
+
+Instance: genomicFileProbandBAM
+InstanceOf: GenomicDocumentReference
+Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
+Usage: #example
+* identifier[+]
+  * system = "http://www.somesystemabc.net/identifiers/files"
+  * value = "11118"
+* status = #current
+* docStatus = #preliminary
+* subject = Reference(Patient/denovoChild)
+* description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
+* securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
+* content[+].attachment
+  * url = "http://www.somesystemabc.net/identifiers/files/11111"
+  * title = "Probands BAM file"
+
+Instance: genomicFileMotherBAM
+InstanceOf: GenomicDocumentReference
+Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
+Usage: #example
+* identifier[+]
+  * system = "http://www.somesystemabc.net/identifiers/files"
+  * value = "11125"
+* status = #current
+* docStatus = #preliminary
+* subject = Reference(Patient/denovoMother)
+* description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
+* securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
+* content[+].attachment
+  * url = "http://www.somesystemabc.net/identifiers/files/11125"
+  * title = "Mothers BAM file"
+
+Instance: genomicFileFatherBAM
+InstanceOf: GenomicDocumentReference
+Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
+Usage: #example
+* identifier[+]
+  * system = "http://www.somesystemabc.net/identifiers/files"
+  * value = "11132"
+* status = #current
+* docStatus = #preliminary
+* subject = Reference(Patient/denovoFather)
+* description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
+* securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
+* content[+].attachment
+  * url = "http://www.somesystemabc.net/identifiers/files/11132"
+  * title = "Fathers BAM file"
+
+Instance: genomicFileProbandVCF
+InstanceOf: GenomicDocumentReference
+Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
+Usage: #example
+* identifier[+]
+  * system = "http://www.somesystemabc.net/identifiers/files"
+  * value = "11150"
+* status = #current
+* docStatus = #preliminary
+* subject = Reference(Patient/denovoChild)
+* description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
+* securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
+* content[+].attachment
+  * url = "http://www.somesystemabc.net/identifiers/files/11150"
+  * title = "Probands VCF file"
+
+Instance: SequencingProcedure
+InstanceOf: Procedure
+Description: "Very simple producure representing a genomic study's protocol"
+Usage: #example
+* status = #completed
+* code = $SCT#443968007 "Sequencing of entire coding region of gene (procedure)"
+* subject = Reference(Patient/denovoChild)
+* performer.actor = Reference(Practitioner/practitioner02)

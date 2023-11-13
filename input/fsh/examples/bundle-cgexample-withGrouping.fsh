@@ -44,7 +44,7 @@ Usage: #example
 
 
 Instance: report-withGrouping
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * basedOn = Reference(ExampleServiceRequest)
 * status = #final
