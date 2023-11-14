@@ -10,9 +10,9 @@ Description: "References a proposed action that is recommended based on the resu
 * ^context[=].expression = "Observation"
 * value[x] only Reference(MedicationRecommendation or FollowupRecommendation)
 
-Extension:   GenomicsRiskAssessment
-Id:          genomics-risk-assessment
-Title:       "Genomics Risk Assessment"
+Extension:   GenomicRiskAssessment
+Id:          genomic-risk-assessment
+Title:       "Genomic Risk Assessment"
 Description: "RiskAssessment delivered as part of a genomics report or observation"
 * ^context[0].type = #element
 * ^context[0].expression = "DiagnosticReport"
@@ -37,14 +37,6 @@ Description: "Adds codified notes to a report to capture additional content"
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only CodedAnnotation
 
-Extension:   GenomicsFile
-Id:          genomics-file
-Title:       "Genomics File"
-Description: "Used to transmit the contents of or links to files that were produced as part of the testing process. Examples are VCF, BAM, CRAM, and other similar files."
-* ^context[+].type = #element
-* ^context[=].expression = "DiagnosticReport"
-* value[x] only Reference(GenomicsDocumentReference)
-
 Extension:   TherapyAssessed
 Id:          therapy-assessed
 Title:       "Therapy Assessed"
@@ -68,3 +60,11 @@ Description: "Use to group and order repeat expansion motifs."
 * ^context[0].type = #element
 * ^context[0].expression = "Observation.component"
 * value[x] only positiveInt
+
+Extension:   RelatedArtifactComponent
+Id:          related-artifact-component
+Title:       "Related Artifact for Observation component"
+Description: "Use the RelatedArtifact at the Observation.component element (not valid in the R4 extension)"
+* ^context[0].type = #element
+* ^context[0].expression = "Observation.component"
+* value[x] only RelatedArtifact

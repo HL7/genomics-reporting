@@ -41,7 +41,7 @@ Usage: #example
 * entry[=].resource = usage
 
 Instance: report
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * basedOn = Reference(ExampleServiceRequest)
 * status = #final

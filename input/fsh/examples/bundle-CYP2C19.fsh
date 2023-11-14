@@ -247,7 +247,7 @@ Usage: #example
 * entry[=].resource = dv-5c7e9e1ca8252
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
-* entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe61"
+* entry[+].fullUrl = "urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01"
 * entry[=].resource = dv-5c7e9e1ca82e4
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
@@ -311,9 +311,51 @@ Usage: #example
 * entry[=].resource = report-CYP2C19
 * entry[=].request.method = #POST
 * entry[=].request.url = "DiagnosticReport"
+* entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab"
+* entry[=].resource = performingLab
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
+* entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac"
+* entry[=].resource = patient
+* entry[=].request.method = #POST
+* entry[=].request.url = "Patient"
+
+Instance: patient
+InstanceOf: Patient
+Usage: #inline
+* name[0].use = #official
+* name[=].text = "John Storm"
+* name[=].family = "Storm"
+* name[=].given = "John"
+* name[+].use = #nickname
+* name[=].text = "Johnny Storm"
+* name[=].family = "Storm"
+* name[=].given = "Johnny"
+* name[+].use = #nickname
+* name[=].text = "The Human Torch"
+* gender = #male
+* birthDate = "1986-12-31"
+
+Instance: performingLab
+InstanceOf: Organization
+Usage: #inline
+* name = "aTypingLab Inc"
+* alias = "aTL"
+* telecom.system = #phone
+* telecom.value = "1-800-555-1234"
+* telecom.use = #work
+* telecom.rank = 1
+* address.use = #work
+* address.type = #both
+* address.text = "123 Main St, Sometown, ND 99999"
+* address.line = "123 Main St"
+* address.city = "Sometown"
+* address.state = "ND"
+* address.postalCode = "99999"
+* address.country = "USA"
 
 Instance: report-CYP2C19
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
@@ -380,7 +422,7 @@ Usage: #inline
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe58)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe59)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
-* result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe61)
+* result[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe62)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe63)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe64)
@@ -405,7 +447,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -429,7 +474,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -453,7 +501,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -477,7 +528,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -501,7 +555,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -525,7 +582,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -549,7 +609,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -573,7 +636,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -597,7 +663,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -621,7 +690,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -645,7 +717,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -669,7 +744,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -693,7 +771,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -717,7 +798,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -741,7 +825,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -765,7 +852,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -789,7 +879,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -813,7 +906,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -837,7 +933,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -861,7 +960,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -885,7 +987,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -909,7 +1014,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -933,7 +1041,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -957,7 +1068,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -981,7 +1095,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1005,7 +1122,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1029,7 +1149,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1053,7 +1176,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1077,7 +1203,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1101,7 +1230,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1125,7 +1257,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1149,7 +1284,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1173,7 +1311,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1197,7 +1338,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1221,7 +1365,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1245,7 +1392,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1269,7 +1419,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1293,7 +1446,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1317,7 +1473,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1341,7 +1500,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1365,7 +1527,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1389,7 +1554,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1413,7 +1581,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1437,7 +1608,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1461,7 +1635,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1485,7 +1662,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1509,7 +1689,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1533,7 +1716,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1557,7 +1743,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1581,7 +1770,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1605,7 +1797,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1629,7 +1824,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1653,7 +1851,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1677,7 +1878,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1701,7 +1905,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1725,7 +1932,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1749,7 +1959,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1773,7 +1986,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1797,7 +2013,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1821,7 +2040,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1845,7 +2067,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1869,7 +2094,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1893,7 +2121,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1917,7 +2148,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1941,7 +2175,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1965,7 +2202,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -1989,7 +2229,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2013,7 +2256,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2037,7 +2283,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2061,7 +2310,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2085,7 +2337,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2109,7 +2364,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2133,7 +2391,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2157,7 +2418,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
@@ -2181,7 +2445,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#53041-0 "DNA Region of interest panel"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * component.code = $LNC#48018-6 "Gene studied ID"
 * component.valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
 
@@ -2192,7 +2459,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#82120-7 "Allelic phase"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
 * derivedFrom[0] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
-* derivedFrom[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe61)
+* derivedFrom[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)

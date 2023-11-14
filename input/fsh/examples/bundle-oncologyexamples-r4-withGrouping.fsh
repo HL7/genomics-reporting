@@ -83,6 +83,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -104,6 +105,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -125,6 +127,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -145,6 +148,9 @@ Usage: #inline
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIMETA#C43359 "Group"
+* subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
+* performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "SNV analysis for JAK2 variant"
 * hasMember[+] = Reference(urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd) "SNV analysis for KDR variant"
 * hasMember[+] = Reference(urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01) "SNV analysis for ERBB4 variant"
@@ -158,13 +164,16 @@ Usage: #inline
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIMETA#C43359 "Group"
+* subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
+* performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * hasMember[0] = Reference(urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524) "Therapy match result 1"
 * hasMember[+] = Reference(urn:uuid:1301943b-55db-4adf-8355-3635f7268a1b) "Therapy match result 2"
 * hasMember[+] = Reference(urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20) "Therapy match result 3"
 * hasMember[+] = Reference(urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4) "Therapy match result 4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-15
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
@@ -212,6 +221,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueQuantity = 25.0 '1/1000000{Base}' "somatic variants per megabase of sequenced DNA"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -227,6 +237,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
@@ -241,6 +252,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -252,7 +264,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
 * component[=].valueCodeableConcept.coding.display = "JAK2"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-7
@@ -263,6 +275,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -274,7 +287,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
 * component[=].valueCodeableConcept.coding.display = "KDR"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-8
@@ -285,6 +298,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
@@ -294,7 +308,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
 * component[=].valueCodeableConcept.coding.display = "ERBB4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-9
@@ -308,6 +322,7 @@ Usage: #inline
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
+* effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)

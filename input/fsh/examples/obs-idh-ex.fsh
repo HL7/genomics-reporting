@@ -6,11 +6,14 @@ Usage: #example
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
+* subject = Reference(Patient/HG00403)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
 * derivedFrom = Reference(SNVexample)
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"
 * component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.coding[0] = $MEDGEN#C0010674 "Cystic fibrosis"
 * component[=].valueCodeableConcept.coding[+] = $ORPHA#ORPHA:586

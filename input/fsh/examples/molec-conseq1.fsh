@@ -7,6 +7,8 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * subject = Reference(Patient/HG00403)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)
 * interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 * component[0].code = http://loinc.org#48004-6

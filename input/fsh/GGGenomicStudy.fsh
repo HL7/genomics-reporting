@@ -1,6 +1,6 @@
-Extension:   GenomicsStudyReference
-Id:          genomics-study-reference
-Title:      "Genomics Study Reference"
+Extension:   GenomicStudyReference
+Id:          genomic-study-reference
+Title:      "Genomic Study Reference"
 Description: "Used to reference a GenomicStudy profile"
 * ^context[+].type = #element
 * ^context[=].expression = "DiagnosticReport"
@@ -8,22 +8,31 @@ Description: "Used to reference a GenomicStudy profile"
 * ^context[=].expression = "Observation"
 * value[x] only Reference(GenomicStudy)
 
-Extension:   GenomicsStudyAnalysisExt
-Id:          genomics-study-analysis-ext
-Title:      "Genomics Study Analysis Extension"
+Extension:   GenomicStudyAnalysisExt
+Id:          genomic-study-analysis-ext
+Title:      "Genomic Study Analysis Extension"
 Description: "Used to transmit the one or more analysis per GenomimcStudy"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(GenomicStudyAnalysis)
 
+Extension:   GenomicStudyReferrerExt
+Id:          genomic-study-referrer-ext
+Title:      "Genomic Study Referrer Extension"
+Description: "Used to reference to the referrer of the study"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only Reference(Practitioner or PractitionerRole)
 
 Profile: GenomicStudy
 Parent: Procedure
 Id: genomic-study
 Title: "Genomic Study"
 Description: "A genomic study is a set of analyses performed to analyze and generate genomic data."
-* extension contains GenomicsStudyAnalysisExt named genomics-study-analysis-ext 0..*
-* extension[GenomicsStudyAnalysisExt] ^short = "GenomicStudy.analysis"
+* extension contains GenomicStudyAnalysisExt named genomic-study-analysis-ext 0..* 
+  and GenomicStudyReferrerExt named genomic-study-referrer-ext 0..1
+* extension[GenomicStudyAnalysisExt] ^short = "GenomicStudy.analysis"
+* extension[GenomicStudyReferrerExt] ^short = "GenomicStudy.referrer"
 * text ^short = "GenomicStudy.description"
 * identifier ^short = "GenomicStudy.identifier"
 * instantiatesCanonical only Canonical(PlanDefinition)
@@ -39,16 +48,15 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 * subject ^short = "GenomicStudy.subject"
 * encounter ^short = "GenomicStudy.encounter"
 * performed[x] only dateTime
-* performedDateTime ^short = "GenomicsStudy.startDate"
+* performedDateTime ^short = "GenomicStudy.startDate"
 * basedOn only Reference(ServiceRequest)
-  * ^short = "GenomicsStudy.basedOn"
+  * ^short = "GenomicStudy.basedOn"
 * asserter only Reference(Practitioner or PractitionerRole)
   * ^short = "GenomicStudy.interpreter"
 * reasonCode ^short = "GenomicStudy.reason"
 * reasonReference only Reference(Condition or Observation)
   * ^short = "GenomicStudy.reason"
 * note ^short = "GenomicStudy.note"
-//GenomicStudy.referrer (Reference(Practitioner, PractitionerRole))
 * partOf 0..0
 * statusReason 0..0
 * recorder 0..0
@@ -63,35 +71,35 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 * usedReference 0..0
 * usedCode 0..0
 
-Extension:   GenomicsStudyAnalysisMethodType
-Id:          genomics-study-analysis-method-type
-Title:      "Genomics Study Analysis Type"
+Extension:   GenomicStudyAnalysisMethodType
+Id:          genomic-study-analysis-method-type
+Title:      "Genomic Study Analysis Method Type"
 Description: "Defines a method type for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
 * valueCodeableConcept from GenomicStudyMethodTypeVS (example)
 
-Extension:   GenomicsStudyAnalysisChangeType
-Id:          genomics-study-analysis-change-type
-Title:      "Genomics Study Analysis Change Type"
+Extension:   GenomicStudyAnalysisChangeType
+Id:          genomic-study-analysis-change-type
+Title:      "Genomic Study Analysis Change Type"
 Description: "Defines the change type for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
 * valueCodeableConcept from GenomicStudyChangeTypeVS (example)
 
-Extension:   GenomicsStudyAnalysisGenomeBuild
-Id:          genomics-study-analysis-genome-build
-Title:      "Genomics Study Analysis Genome Build"
+Extension:   GenomicStudyAnalysisGenomeBuild
+Id:          genomic-study-analysis-genome-build
+Title:      "Genomic Study Analysis Genome Build"
 Description: "Defines the genome build for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
 * valueCodeableConcept from http://loinc.org/vs/LL1040-6 (extensible)
 
-Extension:      GenomicsStudyAnalysisInput
-Id:             genomics-study-analysis-input
+Extension:      GenomicStudyAnalysisInput
+Id:             genomic-study-analysis-input
 Title:         "Genomic Study Analysis Input"
 Description:   "Genomic Study Analysis Input"
 * ^context[+].type = #element
@@ -101,15 +109,15 @@ Description:   "Genomic Study Analysis Input"
     type 0..1 and
     generatedBy 0..1
 * extension[file] ^short = "GenomicStudy.analysis.input.file"
-* extension[file].value[x] only Reference(DocumentReference)
+* extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.input.type"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
 * extension[generatedBy] ^short = "GenomicStudy.analysis.input.generatedBy"
 * extension[generatedBy].value[x] only Identifier or Reference(GenomicStudy)
 
-Extension:      GenomicsStudyAnalysisOutput
-Id:             genomics-study-analysis-output
+Extension:      GenomicStudyAnalysisOutput
+Id:             genomic-study-analysis-output
 Title:         "Genomic Study Analysis Output"
 Description:   "Genomic Study Analysis Output"
 * ^context[+].type = #element
@@ -118,69 +126,69 @@ Description:   "Genomic Study Analysis Output"
     file 0..1 and
     type 0..1 
 * extension[file] ^short = "GenomicStudy.analysis.output.file"
-* extension[file].value[x] only Reference(DocumentReference)
+* extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.output.type"
 * extension[type].value[x] only CodeableConcept
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
 
-Extension:   GenomicsStudyAnalysisTitle
-Id:          genomics-study-analysis-title
-Title:      "Genomics Study Analysis Title"
+Extension:   GenomicStudyAnalysisTitle
+Id:          genomic-study-analysis-title
+Title:      "Genomic Study Analysis Title"
 Description: "Defines a title for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only string
 
-Extension:   GenomicsStudyAnalysisFocus
-Id:          genomics-study-analysis-focus
-Title:      "Genomics Study Analysis Focus"
+Extension:   GenomicStudyAnalysisFocus
+Id:          genomic-study-analysis-focus
+Title:      "Genomic Study Analysis Focus"
 Description: "Defines a focus for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(Resource)
 
-Extension:   GenomicsStudyAnalysisSpecimen
-Id:          genomics-study-analysis-specimen
-Title:      "Genomics Study Analysis Specimen"
+Extension:   GenomicStudyAnalysisSpecimen
+Id:          genomic-study-analysis-specimen
+Title:      "Genomic Study Analysis Specimen"
 Description: "Defines a specimen for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(Specimen)
 
-Extension:   GenomicsStudyAnalysisProtocolPerformed
-Id:          genomics-study-analysis-protocol-performed
-Title:      "Genomics Study Analysis Protocol Performed"
+Extension:   GenomicStudyAnalysisProtocolPerformed
+Id:          genomic-study-analysis-protocol-performed
+Title:      "Genomic Study Analysis Protocol Performed"
 Description: "Defines a protocol that was performed for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(Procedure or Task)
 
-Extension:   GenomicsStudyAnalysisRegionsStudied
-Id:          genomics-study-analysis-regions-studied
-Title:      "Genomics Study Analysis Regions Studied"
+Extension:   GenomicStudyAnalysisRegionsStudied
+Id:          genomic-study-analysis-regions-studied
+Title:      "Genomic Study Analysis Regions Studied"
 Description: "Defines a regions studied for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicsDocumentReference or RegionStudied)
+* value[x] only Reference(GenomicDataFile or RegionStudied)
 
-Extension:   GenomicsStudyAnalysisRegionsCalled
-Id:          genomics-study-analysis-regions-called
-Title:      "Genomics Study Analysis Regions called"
+Extension:   GenomicStudyAnalysisRegionsCalled
+Id:          genomic-study-analysis-regions-called
+Title:      "Genomic Study Analysis Regions called"
 Description: "Defines a regions called for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicsDocumentReference or RegionStudied)
+* value[x] only Reference(GenomicDataFile or RegionStudied)
 
-Extension:   GenomicsStudyAnalysisRegionsUncallable
-Id:          genomics-study-analysis-regions-uncallable
-Title:      "Genomics Study Analysis Regions uncallable"
+Extension:   GenomicStudyAnalysisRegionsUncallable
+Id:          genomic-study-analysis-regions-uncallable
+Title:      "Genomic Study Analysis Regions uncallable"
 Description: "Defines regions deemed uncallable (generally due to low coverage)"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicsDocumentReference or RegionStudied)
+* value[x] only Reference(GenomicDataFile or RegionStudied)
 
-Extension:      GenomicsStudyAnalysisDevice
-Id:             genomics-study-analysis-device
+Extension:      GenomicStudyAnalysisDevice
+Id:             genomic-study-analysis-device
 Title:         "Genomic Study Analysis Device"
 Description:   "Genomic Study Analysis Device"
 * ^context[+].type = #element
@@ -198,30 +206,32 @@ Parent: Procedure
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
 Description: "A genomic study analysis is a component of a genomic study."
-* extension contains GenomicsStudyAnalysisMethodType named genomics-study-analysis-method-type 0..*
-                 and GenomicsStudyAnalysisChangeType named genomics-study-analysis-change-type 0..*
-                 and GenomicsStudyAnalysisGenomeBuild named genomics-study-analysis-genome-build 0..1
-                 and GenomicsStudyAnalysisTitle named genomics-study-analysis-title 0..1
-                 and GenomicsStudyAnalysisFocus named genomics-study-analysis-focus 0..*
-                 and GenomicsStudyAnalysisSpecimen named genomics-study-analysis-specimen 0..*
-                 and GenomicsStudyAnalysisRegionsStudied named genomics-study-analysis-regions-studied 0..*
-                 and GenomicsStudyAnalysisRegionsUncallable named genomics-study-analysis-regions-uncallable 0..*
-                 and GenomicsStudyAnalysisRegionsCalled named genomics-study-analysis-regions-called 0..*
-                 and GenomicsStudyAnalysisInput named genomics-study-analysis-input 0..*
-                 and GenomicsStudyAnalysisOutput named genomics-study-analysis-output 0..*
-                 and GenomicsStudyAnalysisDevice named genomics-study-analysis-device 0..*
-* extension[GenomicsStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
-* extension[GenomicsStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
-* extension[GenomicsStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
-* extension[GenomicsStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
-* extension[GenomicsStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
-* extension[GenomicsStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
-* extension[GenomicsStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
-* extension[GenomicsStudyAnalysisRegionsUncallable] ^short = "GenomicStudy.analysis.regionsUncallable"
-* extension[GenomicsStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
-* extension[GenomicsStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
-* extension[GenomicsStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
-* extension[GenomicsStudyAnalysisDevice] ^short = "GenomicStudy.analysis.device"
+* extension contains GenomicStudyAnalysisMethodType named genomic-study-analysis-method-type 0..*
+                 and GenomicStudyAnalysisChangeType named genomic-study-analysis-change-type 0..*
+                 and GenomicStudyAnalysisGenomeBuild named genomic-study-analysis-genome-build 0..1
+                 and GenomicStudyAnalysisTitle named genomic-study-analysis-title 0..1
+                 and GenomicStudyAnalysisFocus named genomic-study-analysis-focus 0..*
+                 and GenomicStudyAnalysisSpecimen named genomic-study-analysis-specimen 0..*
+                 and GenomicStudyAnalysisRegionsStudied named genomic-study-analysis-regions-studied 0..*
+                 and GenomicStudyAnalysisRegionsUncallable named genomic-study-analysis-regions-uncallable 0..*
+                 and GenomicStudyAnalysisRegionsCalled named genomic-study-analysis-regions-called 0..*
+                 and GenomicStudyAnalysisInput named genomic-study-analysis-input 0..*
+                 and GenomicStudyAnalysisOutput named genomic-study-analysis-output 0..*
+                 and GenomicStudyAnalysisDevice named genomic-study-analysis-device 0..*
+                 and GenomicStudyAnalysisProtocolPerformed named genomic-study-analysis-protocol-performed 0..1
+* extension[GenomicStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
+* extension[GenomicStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
+* extension[GenomicStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
+* extension[GenomicStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
+* extension[GenomicStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
+* extension[GenomicStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
+* extension[GenomicStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
+* extension[GenomicStudyAnalysisRegionsUncallable] ^short = "GenomicStudy.analysis.regionsUncallable"
+* extension[GenomicStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
+* extension[GenomicStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
+* extension[GenomicStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
+* extension[GenomicStudyAnalysisDevice] ^short = "GenomicStudy.analysis.device"
+* extension[GenomicStudyAnalysisProtocolPerformed] ^short = "GenomicStudy.protocolPerformed"
 * identifier ^short = "GenomicStudy.analysis.identifier"
 * instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
   * ^short = "GenomicStudy.analysis.instantiatesCanonical"
@@ -230,7 +240,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * category 1..1
 * category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
 * performed[x] only dateTime
-* performedDateTime ^short = "GenomicsStudy.analysis.date"
+* performedDateTime ^short = "GenomicStudy.analysis.date"
 * performer.actor only Reference(Practitioner or PractitionerRole or Organization or Device)
   * ^short = "GenomicStudy.analysis.performer.actor"
 * performer.function ^short = "GenomicStudy.analysis.performer.role"
@@ -316,7 +326,7 @@ Description: "Mapping from Procedure's EventStatus (http://hl7.org/fhir/ValueSet
 
 CodeSystem: GenomicStudyStatusCS
 Id: genomic-study-status-cs
-Title: "Genomic Study Status"
+Title: "Genomic Study Status CodeSystem"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-status"
 * ^caseSensitive = true
 * ^experimental = false
@@ -328,14 +338,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-status"
 
 ValueSet: GenomicStudyStatusVS
 Id: genomic-study-status-vs
-Title: "Genomic Study Status"
+Title: "Genomic Study Status ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-status"
 * ^experimental = false
 * include codes from system GenomicStudyStatusCS
 
 CodeSystem: GenomicStudyTypeCS
 Id: genomic-study-type-cs
-Title: "Genomic Study Type"
+Title: "Genomic Study Type CodeSystem"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-type"
 * ^caseSensitive = true
 * ^experimental = true
@@ -354,14 +364,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-type"
 
 ValueSet: GenomicStudyTypeVS
 Id: genomic-study-type-vs
-Title: "Genomic Study Type"
+Title: "Genomic Study Type ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-type"
 * ^experimental = true
 * include codes from system GenomicStudyTypeCS
 
 CodeSystem: GenomicStudyMethodTypeCS
 Id: genomic-study-method-type-cs
-Title: "Genomic Study Method Type"
+Title: "Genomic Study Method Type CodeSystem"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-methodtype"
 * ^caseSensitive = true
 * ^experimental = true
@@ -449,14 +459,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-methodtype"
 
 ValueSet: GenomicStudyMethodTypeVS
 Id: genomic-study-method-type-vs
-Title: "Genomic Study Method Type"
+Title: "Genomic Study Method Type ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"
 * ^experimental = true
 * include codes from system GenomicStudyMethodTypeCS
 
 CodeSystem: GenomicStudyChangeTypeCS
 Id: genomic-study-change-type-cs
-Title: "Genomic Study Change Type"
+Title: "Genomic Study Change Type CodeSystem"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-changetype"
 * ^caseSensitive = true
 * ^experimental = true
@@ -468,14 +478,14 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-changetype"
 
 ValueSet: GenomicStudyChangeTypeVS
 Id: genomic-study-change-type-vs
-Title: "Genomic Study Change Type"
+Title: "Genomic Study Change Type ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-changetype"
 * ^experimental = true
 * include codes from system GenomicStudyChangeTypeCS
 
 CodeSystem: GenomicStudyDataFormatCS
 Id: genomic-study-data-format-cs
-Title: "Genomic Study Data Format"
+Title: "Genomic Study Data Format CodeSystem"
 Description: "Backport of http://hl7.org/fhir/genomicstudy-dataformat"
 * ^caseSensitive = true
 * ^experimental = true
@@ -522,7 +532,7 @@ Description: "Backport of http://hl7.org/fhir/genomicstudy-dataformat"
 
 ValueSet: GenomicStudyDataFormatVS
 Id: genomic-study-data-format-vs
-Title: "Genomic Study Data Format"
+Title: "Genomic Study Data Format ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"
 * ^experimental = true
 * include codes from system GenomicStudyDataFormatCS

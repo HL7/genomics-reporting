@@ -254,6 +254,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:01:01G "HLA-A*01:01:01G"
 * method = $GTR#GTR000000000.0
@@ -276,6 +277,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:02 "HLA-A*01:02"
 * method = $GTR#GTR000000000.0
@@ -300,6 +302,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
 * method = $GTR#GTR000000000.0
@@ -370,6 +373,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HGG00041 "HLA-B*15:01:01G"
 * method = $GTR#GTR000000000.0
@@ -392,6 +396,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-B*57:01:01G "HLA-B*57:01:01G"
 * method = $GTR#GTR000000000.0
@@ -416,6 +421,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
 * method = $GTR#GTR000000000.0
@@ -485,6 +491,7 @@ Usage: #inline
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
@@ -508,6 +515,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
 * method = $GTR#GTR000000000.0
@@ -531,6 +539,7 @@ Usage: #inline
 * code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * effectiveDateTime = "2016-12-15"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
@@ -545,7 +554,7 @@ Usage: #inline
 * component.valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: CG-IG-HLA-FullBundle-01-27
-InstanceOf: GenomicsReport
+InstanceOf: GenomicReport
 Usage: #inline
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
 * extension[=].valueCodeableConcept.coding.system = "http://www.ebi.ac.uk/ipd/imgt/hla"
@@ -574,5 +583,3 @@ Usage: #inline
   * type = "Observation"
 * result[+] = Reference(urn:uuid:0e0a780e-4486-4cd0-bfae-7243c579f208) "HLA-C: HLA-C*01:02:01G+HLA-C*03:04:01G"
   * type = "Observation"
-
-  

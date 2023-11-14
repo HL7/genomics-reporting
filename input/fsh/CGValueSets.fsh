@@ -38,14 +38,14 @@ Description:    "Value Set for codes yet to be defined in LOINC"
 
 ValueSet:       MolecularConsequenceVS
 Id:             molecular-consequence-vs
-Title:          "Molecular Consequence"
+Title:          "Molecular Consequence Value Set"
 Description:    "The calculated or observed effect of a variant on its downstream transcript and, if applicable, ensuing protein sequence."
 * ^experimental = false
 * include codes from system $SEQONT where concept is-a #SO:0001537
 
 ValueSet:       FunctionalEffectVS
 Id:             functional-effect-vs
-Title:          "Functional Effect"
+Title:          "Functional Effect Value Set"
 Description:    "The effect of a variant on downstream biological products or pathways."
 * ^experimental = false
 * include codes from system $SEQONT where concept is-a #SO:0001536
