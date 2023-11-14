@@ -18,6 +18,8 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "dv-5a7f781e83514"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -25,6 +27,8 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.code.coding.code = #69548-6
 * parameter[=].part[=].resource.code.coding.display = "Genetic variant assessment"
 * parameter[=].part[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "Present"
@@ -100,6 +104,8 @@ Usage: #example
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "dv-5a7f781e83514"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -107,6 +113,8 @@ Usage: #example
 * parameter[=].part[=].resource.code.coding.code = #69548-6
 * parameter[=].part[=].resource.code.coding.display = "Genetic variant assessment"
 * parameter[=].part[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "Present"
@@ -161,6 +169,8 @@ Usage: #example
 * parameter.part[=].resource.resourceType = "Observation"
 * parameter.part[=].resource.id = "dv-fff9d40035a04"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter.part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter.part[=].resource.text.status = #generated
 * parameter.part[=].resource.status = #final
 * parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -168,6 +178,8 @@ Usage: #example
 * parameter.part[=].resource.code.coding.code = #69548-6
 * parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
 * parameter.part[=].resource.subject.reference = "Patient/HG00403"
+* parameter.part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter.part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter.part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter.part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter.part[=].resource.valueCodeableConcept.coding.display = "present"
@@ -219,6 +231,8 @@ Usage: #example
 * parameter.part[=].resource.resourceType = "Observation"
 * parameter.part[=].resource.id = "dv-64c82675925d4"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter.part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter.part[=].resource.text.status = #generated
 * parameter.part[=].resource.status = #final
 * parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -226,6 +240,8 @@ Usage: #example
 * parameter.part[=].resource.code.coding.code = #69548-6
 * parameter.part[=].resource.code.coding.display = "Genetic variant assessment"
 * parameter.part[=].resource.subject.reference = "Patient/HG00403"
+* parameter.part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter.part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter.part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter.part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter.part[=].resource.valueCodeableConcept.coding.display = "present"
@@ -276,11 +292,13 @@ Description: "Example Output of 'FindSubjectHaplotypes' Operation"
 Usage: #example
 * parameter[0].name = "haplotypes"
 * parameter[=].part[0].name = "geneItem"
-* parameter[=].part[=].valueString = "http://www.genenames.org/geneId|HGNC:2625"
+* parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2625"
 * parameter[=].part[+].name = "genotype"
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "GenotypeCYP2D6"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Genotype</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -288,6 +306,8 @@ Usage: #example
 * parameter[=].part[=].resource.code.coding.code = #84413-4
 * parameter[=].part[=].resource.code.coding.display = "Genotype display name"
 * parameter[=].part[=].resource.subject.reference = "Patient/CGPatientExample01"
+* parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.system = "https://www.pharmvar.org/"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #CYP2D6_*1/*1
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "CYP2D6 *1/*1"
@@ -295,16 +315,18 @@ Usage: #example
 * parameter[=].part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component.code.coding.code = #48018-6
 * parameter[=].part[=].resource.component.code.coding.display = "Gene studied [ID]"
-* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org"
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:2625
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.display = "CYP2D6"
 * parameter[+].name = "haplotypes"
 * parameter[=].part[0].name = "geneItem"
-* parameter[=].part[=].valueString = "http://www.genenames.org/geneId|HGNC:2621"
+* parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2621"
 * parameter[=].part[+].name = "genotype"
 * parameter[=].part[=].resource.resourceType = "Observation"
 * parameter[=].part[=].resource.id = "GenotypeCYP2C19"
 * parameter[=].part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+* parameter[=].part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Genotype</div>"
+* parameter[=].part[=].resource.text.status = #generated
 * parameter[=].part[=].resource.status = #final
 * parameter[=].part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -312,6 +334,8 @@ Usage: #example
 * parameter[=].part[=].resource.code.coding.code = #84413-4
 * parameter[=].part[=].resource.code.coding.display = "Genotype display name"
 * parameter[=].part[=].resource.subject.reference = "Patient/CGPatientExample01"
+* parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.system = "https://www.pharmvar.org/"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #CYP2C19_*1/*2
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "CYP2C19 *1/*2"
@@ -319,7 +343,7 @@ Usage: #example
 * parameter[=].part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component.code.coding.code = #48018-6
 * parameter[=].part[=].resource.component.code.coding.display = "Gene studied [ID]"
-* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* parameter[=].part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org"
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:2621
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.display = "CYP2C19"
 
@@ -338,6 +362,8 @@ Usage: #example
 * parameter.part[=].resource.resourceType = "Observation"
 * parameter.part[=].resource.id = "Genotype7"
 * parameter.part[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype"
+* parameter.part[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Genotype</div>"
+* parameter.part[=].resource.text.status = #generated
 * parameter.part[=].resource.status = #final
 * parameter.part[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter.part[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -345,6 +371,8 @@ Usage: #example
 * parameter.part[=].resource.code.coding.code = #84413-4
 * parameter.part[=].resource.code.coding.display = "Genotype display name"
 * parameter.part[=].resource.subject.reference = "Patient/CGPatientExample01"
+* parameter.part[=].resource.effectiveDateTime = "2023-07-01"
+* parameter.part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter.part[=].resource.valueCodeableConcept.coding.system = "http://glstring.org"
 * parameter.part[=].resource.valueCodeableConcept.coding.version = "1.0"
 * parameter.part[=].resource.valueCodeableConcept.coding.code = #hla#3.33.0#HLA-A*02:69+HLA-A*23:30|HLA-A*02:302+HLA-A*23:26/HLA-A*23:39
@@ -353,7 +381,7 @@ Usage: #example
 * parameter.part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component.code.coding.code = #48018-6
 * parameter.part[=].resource.component.code.coding.display = "Gene studied [ID]"
-* parameter.part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org/geneId"
+* parameter.part[=].resource.component.valueCodeableConcept.coding.system = "http://www.genenames.org"
 * parameter.part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:4931
 * parameter.part[=].resource.component.valueCodeableConcept.coding.display = "HLA-A"
 
@@ -367,12 +395,16 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "TherapeuticImplicationExample"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Therapeutic Implication</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
 * parameter[=].resource.code.coding.code = #therapeutic-implication
 * parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.effectiveDateTime = "2023-07-01"
+* parameter[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].resource.derivedFrom.reference = "Observation/VariantExample"
 * parameter[=].resource.component[0].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
 * parameter[=].resource.component[=].code.coding.code = #therapeutic-implication
@@ -389,6 +421,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExample"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -396,6 +430,8 @@ Usage: #example
 * parameter[=].resource.code.coding.code = #69548-6
 * parameter[=].resource.code.coding.display = "Genetic variant assessment"
 * parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.effectiveDateTime = "2023-07-01"
+* parameter[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].resource.valueCodeableConcept.coding.display = "Present"
@@ -439,12 +475,16 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "DiagnosticImplicationExample"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Pathogenic - Malignant hyperthermia</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
 * parameter[=].resource.code.coding.code = #diagnostic-implication
 * parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].resource.derivedFrom.reference = "Observation/VariantExample2"
 * parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #53037-8
@@ -462,6 +502,8 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExample2"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>NC_000019.10:g.38499669C>T</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
@@ -469,6 +511,8 @@ Usage: #example
 * parameter[=].resource.code.coding.code = #69548-6
 * parameter[=].resource.code.coding.display = "Genetic variant assessment"
 * parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].resource.valueCodeableConcept.coding.display = "Present"
@@ -512,11 +556,15 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC1"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>NM_001395525.1:c.-281+2T>C - intronic_variant:loss_of_function_variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
@@ -533,11 +581,15 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC2"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>NM_001366781.1:c.90T>C - synonymous_variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#LOW "Low"
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
@@ -553,11 +605,15 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC3"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Molecular Consequence</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
@@ -571,11 +627,15 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC4"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Molecular Consequence</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
@@ -589,11 +649,15 @@ Usage: #example
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExampleMC"
 * parameter[=].resource.meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
+* parameter[=].resource.text.div = "<div xmlns='http://www.w3.org/1999/xhtml'>Variant</div>"
+* parameter[=].resource.text.status = #generated
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
 * parameter[=].resource.code = $LNC#69548-6 "Genetic variant assessment"
-* parameter[=].resource.subject.reference = "Patient/HG00403"
+* parameter[=].resource.subject = Reference(Patient/HG00403)
+* parameter[=].resource.effectiveDateTime = "2023-04-01"
+* parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.valueCodeableConcept = $LNC#LA9633-4 "Present"
 * parameter[=].resource.component[+].code = $LNC#48002-0 "Genomic source class"
 * parameter[=].resource.component[=].valueCodeableConcept.coding = $LNC#LA6683-2 "Germline"

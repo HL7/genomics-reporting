@@ -6,6 +6,9 @@ Usage: #example
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(ExamplePatient)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://slk-kliniken.de/fhir/namingSystem/tissueID"

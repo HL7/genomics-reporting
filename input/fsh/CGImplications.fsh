@@ -1,7 +1,7 @@
 Profile:        GenomicImplication
-Parent:         GenomicsBase
+Parent:         GenomicBase
 Id:             implication
-Title:          "Genomics Implication"
+Title:          "Genomic Implication"
 Description:    "Properties common to genomic implications expressed as computable discrete elements."
 * ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
@@ -46,7 +46,7 @@ Id:             diagnostic-implication
 Title:          "Diagnostic Implication"
 Description:    "Observation stating a linkage between one or more genotype/haplotype/variation Observations and evidence for or against a particular disease, condition, or cancer diagnosis."
 * . ^short = "Diagnostic Implication"
-* extension contains GenomicsRiskAssessment named genomics-risk-assessment 0..*
+* extension contains GenomicRiskAssessment named genomic-risk-assessment 0..*
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#diagnostic-implication
 * code ^short = "diagnostic-implication"

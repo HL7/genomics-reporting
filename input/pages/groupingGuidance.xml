@@ -15,7 +15,7 @@
 	<a name="grouper"> </a>
 	<h3>Overview with examples</h3>
 	<p>
-		Observations are the core representation of structured genomic information. Result observations profiles are typically referenced directly in a Diagnostic Report (e.g., the <a href="StructureDefinition-genomics-report.html">genomics report</a>). The genetic findings and implication profiles all contain links to computably define which profiles go together (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). That is, the relationships define a semantic grouping, a composite relationship between implication, haplotype, or genotype observations and the appropriate variant observation(s).<br></br><br></br>
+		Observations are the core representation of structured genomic information. Result observations profiles are typically referenced directly in a Diagnostic Report (e.g., the <a href="StructureDefinition-genomic-report.html">genomic report</a>). The genetic findings and implication profiles all contain links to computably define which profiles go together (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). That is, the relationships define a semantic grouping, a composite relationship between implication, haplotype, or genotype observations and the appropriate variant observation(s).<br></br><br></br>
 		However, sometimes it is desired to group observations with a grouping observation. In this version of the specification, no guidance is provided on where or if a grouping observation should be used (the HL7 Orders and Observation work group owns the Observation resource and may issue guidance in the future). This is left up to the discretion of the reporting lab. Currently, observations might be organized for visualization purposes on the basis of subject, specimen, chromosome, gene, condition/disease, medication, etc. The recursive <code>hasMember</code> relationship on observation supports a nested tree-structure of observations if appropriate, though more than two levels of grouping observations is likely excessive. This <a href="Bundle-bundle-oncologyexamples-r4-withGrouping.html"> example</a> uses grouping to separately reference variants and other Observations as results of the report. For a version of the same report without grouping see this example<a href="Bundle-bundle-oncologyexamples-r4.html"> without grouping</a>. In the grouping examples, the NCI Metathesaurus code C43359 (for 'Group' or 'Panel') is used for the grouping <code>Observation.code</code> field. Genomic panels that have specific codes, such as a specific LOINC code, could also be used if the grouping observation contains all the elements typically reported by the specific panel.
 	</p>
 	<div class="container">
@@ -25,7 +25,7 @@
 			<div class="col-sm-4">
 				<div class="caption">
 					<p>
-						Example showing diagnostic report directly referencing the resultant genomic observations without grouping (similar to <a href="Bundle-bundle-oncologyexamples-r4.html"> this oncology example without grouping</a> and <a href="DiagnosticReport-PGxGenomicsReportEMERGE.html">this pharmacogenomics example based on EMERGE</a>):
+						Example showing diagnostic report directly referencing the resultant genomic observations without grouping (similar to <a href="Bundle-bundle-oncologyexamples-r4.html"> this oncology example without grouping</a> and <a href="DiagnosticReport-PGxGenomicReportEMERGE.html">this pharmacogenomics example based on EMERGE</a>):
 					</p>
 				</div>
 				<div class="thumbnail">
@@ -38,7 +38,7 @@
 			<div class="col-sm-4">
 				<div class="caption">
 					<p>
-						Example of grouping on the basis of type of genomic observation, similar to <a href="Bundle-bundle-oncologyexamples-r4-withGrouping.html">the oncology example above</a> and <a href="DiagnosticReport-PGxGenomicsReportEMERGE-withGrouping.html">the pharmacogenomics example based on EMERGE</a> :
+						Example of grouping on the basis of type of genomic observation, similar to <a href="Bundle-bundle-oncologyexamples-r4-withGrouping.html">the oncology example above</a> and <a href="DiagnosticReport-PGxGenomicReportEMERGE-withGrouping.html">the pharmacogenomics example based on EMERGE</a> :
 					</p>
 				</div>
 				<div class="thumbnail">

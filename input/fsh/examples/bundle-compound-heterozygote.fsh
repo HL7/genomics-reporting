@@ -15,6 +15,14 @@ Usage: #example
 * entry[=].resource = Inline-Instance-for-compound-heterozygote-3
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
+* entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab"
+* entry[=].resource = performingLab
+* entry[=].request.method = #POST
+* entry[=].request.url = "Organization"
+* entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac"
+* entry[=].resource = patient
+* entry[=].request.method = #POST
+* entry[=].request.url = "Patient"
 
 Instance: Inline-Instance-for-compound-heterozygote-1
 InstanceOf: Variant
@@ -23,6 +31,10 @@ Usage: #inline
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#69548-6 "Genetic variant assessment"
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
+* issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
 * component[=].valueCodeableConcept = $HGVS#NM_022787.3:c.769G>A "NM_022787.3:c.769G>A"
@@ -36,6 +48,10 @@ Usage: #inline
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
+* issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * code = $LNC#69548-6 "Genetic variant assessment"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
@@ -49,6 +65,10 @@ Usage: #inline
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
+* effectiveDateTime = "2019-03-05"
+* issued = "2019-03-05T16:04:44+00:00"
+* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * code = $LNC#84413-4
 * valueCodeableConcept = $CLINVAR#RCV000664188.1 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
 * hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e) "NM_022787.3:c.53A>G"

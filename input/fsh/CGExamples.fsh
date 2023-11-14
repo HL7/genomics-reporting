@@ -34,6 +34,7 @@ Description: "Example for Variant NM_004448.4(ERBB2):c.2264_2278del"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * subject = Reference(HG00403)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
 * component[0].valueCodeableConcept.coding = $NUCCORE#NC_000017.11
@@ -93,6 +94,8 @@ Description: "Example for Tumor Mutation Burden"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#94076-7 "Mutations/Megabase [# Ratio] in Tumor"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueQuantity.value = 250
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
 * component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
@@ -107,6 +110,8 @@ Description: "Example for MSI"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81695-9 "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA14122-8 "Stable"
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
 * component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"
@@ -120,9 +125,11 @@ Description: "Example for HER2 by immune stain"
 * category[labCategory] = $OBSCAT#laboratory
 * code = $LNC#18474-7 "HER2 Ag [Presence] in Tissue by Immune stain"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
-* component[gene-studied].valueCodeableConcept = http://www.genenames.org/geneId#HGNC:3430 "ERBB2"
+* component[gene-studied].valueCodeableConcept = http://www.genenames.org#HGNC:3430 "ERBB2"
 * component[biomarker-category][0].code = TbdCodesCS#biomarker-category
 * component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
 * component[biomarker-category][1].code = TbdCodesCS#biomarker-category
@@ -139,10 +146,12 @@ Description: "Example for HER2 by immunoassay"
 * category[labCategory] = $OBSCAT#laboratory
 * code = $LNC#72382-5 "HER2 [Units/volume] in Tissue by Immunoassay"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueQuantity.value = 20
 * valueQuantity.unit = "IU/mL"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
-* component[gene-studied].valueCodeableConcept = http://www.genenames.org/geneId#HGNC:3430 "ERBB2"
+* component[gene-studied].valueCodeableConcept = http://www.genenames.org#HGNC:3430 "ERBB2"
 * component[biomarker-category][0].code = TbdCodesCS#biomarker-category
 * component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immunoassay	"immunoassay category"
 * component[biomarker-category][1].code = TbdCodesCS#biomarker-category
@@ -150,10 +159,10 @@ Description: "Example for HER2 by immunoassay"
 * component[biomarker-category][2].code = TbdCodesCS#biomarker-category
 * component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
 
-Instance: GenomicsServiceRequestExample01
+Instance: GenomicServiceRequestExample01
 InstanceOf: ServiceRequest
 Description: "Example for Service Request"
-* id = "GenomicsServiceRequestExample01"
+* id = "GenomicServiceRequestExample01"
 * status = $REQUESTSTATUS#completed "completed"
 * code = $LNC#94231-8 "G6PD gene full mutation analysis in Blood or Tissue by Sequencing"
 * subject = Reference(CGPatientExample01)
@@ -171,6 +180,7 @@ Description: "Example for Variant given by HGVS"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 //* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:11389 "STK11"
@@ -189,6 +199,7 @@ Description: "Example for genomic Variant given by VCF columns"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 //* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
@@ -219,6 +230,9 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[0].valueCodeableConcept.coding = $LNC#LA19541-4 "High risk"
 * component[1].code.coding = $LNC#51963-7 "Medication assessed"
@@ -236,6 +250,9 @@ Description: "Example of a Diagnostic Implication for Familial hypercholesterole
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[clinical-significance].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[predicted-phenotype].valueCodeableConcept = $SCT#398036000 "Familial hypercholesterolemia (disorder)"
 * derivedFrom = Reference(VariantExample2)
@@ -248,12 +265,13 @@ Description: "Example of a Genotype, Medication Recommendation, and MedicationSt
 * id = "GenotypeExample1"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept.coding = $CLINVAR#14909 "HLA-B*15:02"
 * component.code.coding = $LNC#48018-6 "Gene studied [ID]"
-* component.valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:4932 "HLA-B"
-* effectiveDateTime = "2018"
+* component.valueCodeableConcept.coding = http://www.genenames.org#HGNC:4932 "HLA-B"
 * specimen = Reference(GenomicSpecimenExample01)
-* subject = Reference(CGPatientExample01)
 * status = #final
 
 Instance: MedicationRecommendationExample1
@@ -267,11 +285,11 @@ Description: "Example of a Medication Recommendation"
 * reasonReference = Reference(TherapeuticImplicationExample1)
 * status = #requested
 
-Instance: GenomicsReportExample01
-InstanceOf: GenomicsReport
+Instance: GenomicReportExample01
+InstanceOf: GenomicReport
 Description: "Example of a Report carrying a Genotype, Therapeutic Implication, and Medication Recommendation"
-* id = "GenomicsReportExample01"
-* basedOn = Reference(GenomicsServiceRequestExample01)
+* id = "GenomicReportExample01"
+* basedOn = Reference(GenomicServiceRequestExample01)
 * code = $LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
 * extension[RecommendedAction][0].valueReference = Reference(MedicationRecommendationExample1)
@@ -297,6 +315,9 @@ Description: "Example for sequence phase relation."
 * derivedFrom[1] = Reference(VariantExample2)
 * issued = "2019-03-05T16:04:44+00:00"
 * status = #final
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
 
 Instance: OverallInterpExample1
@@ -307,6 +328,8 @@ Description: "Example for Overall Interpretation."
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept = $LNC#LA6576-8 "Positive"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 * component[conclusion-string].valueString = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
@@ -321,6 +344,8 @@ Description: "Example variant 1011"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96521657C=
@@ -348,7 +373,8 @@ Description: "Example variant 1012"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96522463A=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -375,7 +401,8 @@ Description: "Example variant 1013"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96535173T=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -403,7 +430,8 @@ Description: "Example variant 1014"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96535210G=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -430,7 +458,8 @@ Description: "Example variant 1015"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96540410G>A
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
@@ -451,7 +480,8 @@ Description: "Example variant 1016"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96541616G=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -478,7 +508,8 @@ Description: "Example variant 1017"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96541756T=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -505,7 +536,8 @@ Description: "Example variant 1018"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96612495C=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -532,7 +564,8 @@ Description: "Example variant 1019"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000016.9:g.31096368C>T
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
@@ -557,7 +590,8 @@ Description: "Example variant 1020"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96702047C=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -588,7 +622,8 @@ Description: "Example variant 1021"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2020-01-01"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96741053A=
 * component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
@@ -617,9 +652,10 @@ Description: "Example of a Genotype from eMERGE"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept.coding = $CLINVAR#638797 "CYP2C19*2/*2"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* effectiveDateTime = "2020-01-01"
-* specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 * derivedFrom[0] = Reference(Pgx-var-1011)
 * derivedFrom[1] = Reference(Pgx-var-1012)
@@ -640,6 +676,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0070166 "clopidogrel"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
@@ -657,6 +696,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0393080 "voriconazole"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
@@ -674,6 +716,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0008845 "citalopram"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -691,6 +736,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C1099456 "escitalopram"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -708,6 +756,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0002600 "amitriptyline"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
@@ -722,11 +773,12 @@ Description: "Example of a Genotype from eMERGE"
 * id = "Pgx-geno-1002"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept.text = "CYP2C9*1/*1"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-* effectiveDateTime = "2020-01-01"
 * specimen = Reference(GenomicSpecimenExample01)
-* subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(Pgx-var-1020)
 * derivedFrom = Reference(Pgx-var-1021)
 * status = #final
@@ -738,11 +790,12 @@ Description: "Example of a Genotype from eMERGE"
 * id = "Pgx-geno-1003"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept.text = "VKORC1 rs9923231 C/T"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
-* effectiveDateTime = "2020-01-01"
 * specimen = Reference(GenomicSpecimenExample01)
-* subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(Pgx-var-1019)
 * status = #final
 //* derivedFrom[0] = Reference(Pgx-var-1011)
@@ -756,6 +809,9 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[medication-assessed].valueCodeableConcept = $NCIMETA#C0043031 "warfarin"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA25391-6 "Normal metabolizer"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
@@ -772,6 +828,9 @@ Description: "Generic grouping of Therapeutic Implication observations"
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIT#C43359 "Group"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * status = #final
 * hasMember[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
 * hasMember[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
@@ -787,6 +846,9 @@ Description: "Generic grouping of Genotype observations"
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIT#C43359 "Group"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * status = #final
 * hasMember[0] = Reference(Pgx-geno-1001)
 * hasMember[1] = Reference(Pgx-geno-1003)
@@ -800,6 +862,9 @@ Description: "Generic grouping of Regions Studied and Variant observations"
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
 * code = $NCIT#C43359 "Group"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * status = #final
 * hasMember[0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
 * hasMember[1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
@@ -812,9 +877,9 @@ Description: "Generic grouping of Regions Studied and Variant observations"
 * hasMember[8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
 * hasMember[9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
 * hasMember[10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
-* hasMember[0] = Reference(RegionStudiedPGx1) "CYP2C19"
-* hasMember[1] = Reference(RegionStudiedPGx2) "CYP2C9"
-* hasMember[2] = Reference(RegionStudiedPGx3) "VKORC1"
+* hasMember[11] = Reference(RegionStudiedPGx1) "CYP2C19"
+* hasMember[12] = Reference(RegionStudiedPGx2) "CYP2C9"
+* hasMember[13] = Reference(RegionStudiedPGx3) "VKORC1"
 
 //* variants if needed
 
@@ -824,6 +889,9 @@ Description: "eMERGE PGx CYP2C19"
 * id = "RegionStudiedPGx1"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
@@ -834,6 +902,9 @@ Instance: RegionStudiedPGx2
 InstanceOf: RegionStudied
 Description: "eMERGE PGx CYP2C9"
 * id = "RegionStudiedPGx2"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * status = #final
@@ -847,16 +918,19 @@ Description: "eMERGE PGx VKORC1"
 * id = "RegionStudiedPGx3"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * status = #final
 * component[region-description].valueString = "protein-coding and exon-splicing regions."
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
 * component[region-coverage].valueQuantity.value = 100
 
-Instance: PGxGenomicsReportEMERGE
-InstanceOf: GenomicsReport
+Instance: PGxGenomicReportEMERGE
+InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
-* extension[GenomicsStudyReference][+].valueReference = Reference(PGXGenomicStudy)
-* id = "PGxGenomicsReportEMERGE"
+* extension[GenomicStudyReference][+].valueReference = Reference(PGXGenomicStudy)
+* id = "PGxGenomicReportEMERGE"
 * basedOn = Reference(eMERGEServiceRequest)
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
@@ -901,7 +975,7 @@ Instance: PGXGenomicStudy
 InstanceOf: GenomicStudy
 Description: "Example of PGX sequencing panel"
 Usage: #example
-* extension[GenomicsStudyAnalysisExt][+].valueReference = Reference(PGXGenomicStudyAnalysis)
+* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(PGXGenomicStudyAnalysis)
 * status = #completed
 * code.text = "PGX sequencing panel"
 * category = $OBSCAT#laboratory
@@ -914,19 +988,19 @@ Instance: PGXGenomicStudyAnalysis
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of PGX Sequence analysis"
 Usage: #example
-* extension[GenomicsStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx1) "CYP2C19"
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx2) "CYP2C9"
-* extension[GenomicsStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx3) "VKORC1"
+* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx1) "CYP2C19"
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx2) "CYP2C9"
+* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx3) "VKORC1"
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2021-01-01T01:01:10-06:00"
 * subject = Reference(CGPatientExample01)
 
-Instance: PGxGenomicsReportEMERGE-withGrouping
-InstanceOf: GenomicsReport
+Instance: PGxGenomicReportEMERGE-withGrouping
+InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
-* id = "PGxGenomicsReportEMERGE-withGrouping"
+* id = "PGxGenomicReportEMERGE-withGrouping"
 * basedOn = Reference(eMERGEServiceRequest)
 * code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
@@ -996,8 +1070,10 @@ Description: "Example for Overall Interpretation."
 * id = "OverallInterpExample2"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept = $LNC#LA6576-8 "Positive"
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept = $LNC#LA6576-8 "Positive"
 * specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 * component[conclusion-string].valueString = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram."
@@ -1041,6 +1117,7 @@ Description: "Example for germline CNV"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0001019 "copy_number_variation"
 * component[ref-allele].valueString = "T"
@@ -1066,6 +1143,7 @@ Description: "Example for somatic CNV"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0001019 "copy_number_variation"
 * component[ref-allele].valueString = "T"
@@ -1089,6 +1167,7 @@ Description: "Example for germline DEL"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0000159 "deletion"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
@@ -1110,6 +1189,7 @@ Description: "Example for somatic DEL"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0000159 "deletion"
 * component[ref-allele].valueString = "C"
@@ -1133,6 +1213,7 @@ Description: "Example for germline INV"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000036 "inversion"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
@@ -1155,6 +1236,7 @@ Description: "Example for somatic INV"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000036 "inversion"
 * component[ref-allele].valueString = "T"
@@ -1174,9 +1256,10 @@ Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a pol
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
 * status = #final
-* performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* extension[GenomicsRiskAssessment][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* extension[GenomicRiskAssessment][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
 //Reference(GenomicRiskAssesmPolyGenicScoreRef)
 * component[clinical-significance].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[predicted-phenotype].valueCodeableConcept = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"
@@ -1263,8 +1346,9 @@ Description: "Example for Somatic Variant and Clinical Trial"
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(CGPatientExample01)
-* specimen = Reference(GenomicSpecimenExample01)
 * effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* specimen = Reference(GenomicSpecimenExample01)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:3689 "FGFR2"
@@ -1279,6 +1363,9 @@ Description: "Example of a Therapeutic Implication for Clinical Trial"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[0].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
 * component[1].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -1296,11 +1383,12 @@ Description: "Example of a Haplotype as part of a Haplotype Set (1 of 2). A comp
 * id = "HaplotypeSet-Clinical-Trial-Example-1of2"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
-* effectiveDateTime = "2018"
-* specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
+* specimen = Reference(GenomicSpecimenExample02)
 //* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
 //* derivedFrom =NM_000041.4(APOE):c.434G>A (p.Gly145Asp) - Variation ID 478904
 * status = #final
@@ -1311,11 +1399,12 @@ Description: "Example of a Haplotype as part of a Haplotype Set (2 of 2). A comp
 * id = "HaplotypeSet-Clinical-Trial-Example-2of2"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
-* effectiveDateTime = "2018"
-* specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
+* specimen = Reference(GenomicSpecimenExample02)
 //* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
 //* derivedFrom =NM_000041.4(APOE):c.434G>A (p.Gly145Asp) - Variation ID 478904
 * status = #final
@@ -1326,11 +1415,12 @@ Description: "Example of a Genotype. A complete haplotype set defines a genotype
 * id = "Genotype-Clinical-Trial-Example-using-haplotypes"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept.text = "APOE e1/e1"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:613 "APOE"
-* effectiveDateTime = "2018"
-* specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept.text = "APOE e1/e1"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
+* specimen = Reference(GenomicSpecimenExample02)
 * derivedFrom[0] = Reference(HaplotypeSet-Clinical-Trial-Example-1of2)
 * derivedFrom[1] = Reference(HaplotypeSet-Clinical-Trial-Example-2of2)
 * status = #final
@@ -1342,8 +1432,10 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#therapeutic-implication
-* specimen = Reference(GenomicSpecimenExample02)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* specimen = Reference(GenomicSpecimenExample02)
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[0].valueCodeableConcept.coding = $SCT#444734003 "Does not meet eligibility criteria for clinical trial"
 * component[1].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
@@ -1373,11 +1465,12 @@ Description: "Example of a Haplotype using PharmVar"
 * id = "HaplotypeExamplePharmVar01"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept.coding = http://www.pharmvar.org#PV00155 "CYP2D6*7.001" //https://www.pharmvar.org/api-service/alleles/pv00155
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
-* effectiveDateTime = "2021"
-* specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept.coding = http://www.pharmvar.org#PV00155 "CYP2D6*7.001" //https://www.pharmvar.org/api-service/alleles/pv00155
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:2625 "CYP2D6"
+* specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 
 Instance: HaplotypeExamplePharmVar02
@@ -1387,11 +1480,12 @@ Description: "Example of a Haplotype using PharmVar"
 * id = "HaplotypeExamplePharmVar02"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept.coding = http://www.pharmvar.org#PV00126 "CYP2D6*1.001" //https://www.pharmvar.org/api-service/alleles/pv00126
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
-* effectiveDateTime = "2021"
-* specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept.coding = http://www.pharmvar.org#PV00126 "CYP2D6*1.001" //https://www.pharmvar.org/api-service/alleles/pv00126
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:2625 "CYP2D6"
+* specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 
 Instance: GenotypeExamplePharmVar
@@ -1401,11 +1495,12 @@ Description: "Example of a Genotype using Pharmvar Haplotypes"
 * id = "GenotypeExamplePharmVar"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept.text = "CYP2D6*7.001 / CYP2D6*1.001"
-* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org/geneId#HGNC:2625 "CYP2D6"
-* effectiveDateTime = "2021"
-* specimen = Reference(GenomicSpecimenExample01)
 * subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
+* valueCodeableConcept.text = "CYP2D6*7.001 / CYP2D6*1.001"
+* component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:2625 "CYP2D6"
+* specimen = Reference(GenomicSpecimenExample01)
 * status = #final
 * derivedFrom[+] = Reference(HaplotypeExamplePharmVar01)
 * derivedFrom[+] = Reference(HaplotypeExamplePharmVar02)
@@ -1418,8 +1513,9 @@ Description: "Normal example for karyotype Variant expressed in ISCN"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* subject = Reference(HG00403)
-* effectiveDateTime = "2023-05-01"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code.coding = $LNC#81291-7 "Variant ISCN"
 * component[0].valueCodeableConcept.coding = $ISCN#46,XX
@@ -1432,8 +1528,9 @@ Description: "Basic example for karyotype Variant expressed in ISCN"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* subject = Reference(HG00403)
-* effectiveDateTime = "2023-04-01"
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code.coding = $LNC#81291-7 "Variant ISCN"
 * component[0].valueCodeableConcept.coding = $ISCN#46,XX,t(9;22)(q34;q4)
@@ -1446,6 +1543,9 @@ Description: "Basic example of a Diagnostic Implication for CML"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication
+* subject = Reference(CGPatientExample01)
+* effectiveDateTime = "2019-04-01"
+* performer = Reference(ExampleOrg)
 * component[predicted-phenotype].valueCodeableConcept = $SCT#92818009 "Chronic myeloid leukemia"
 * derivedFrom = Reference(ISCN-CMLExample)
 * status = #final
