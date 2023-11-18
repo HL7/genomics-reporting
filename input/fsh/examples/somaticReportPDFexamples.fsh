@@ -1,5 +1,3 @@
-/* kp - is there any value to having this bundle? If we need it, please review all the errors in qa.html
-
 Instance: bundle-somaticReportPDFdraftExamples
 InstanceOf: Bundle
 Description: "data instances for somatic report."
