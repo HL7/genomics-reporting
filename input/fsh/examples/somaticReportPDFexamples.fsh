@@ -573,6 +573,7 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * performer[0] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[=].valueCodeableConcept.text = "cancer sensitive to crizotinib"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
@@ -1049,6 +1050,9 @@ Description: "Example for Tumor Mutation Burden"
 * id = "TMBExample"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
@@ -1064,6 +1068,9 @@ Description: "Example for MSI"
 * id = "MSIExample"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
@@ -1079,6 +1086,9 @@ Description: "Example for PD-L1"
 * id = "PDL1Example"
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-biomarker"
 * status = #final "final"
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
@@ -1094,6 +1104,9 @@ Instance: HLA-A-haplotype1
 InstanceOf: Haplotype
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1105,6 +1118,9 @@ Instance: HLA-A-haplotype2
 InstanceOf: Haplotype
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1116,6 +1132,9 @@ Instance: HLA-B-haplotype1
 InstanceOf: Haplotype
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1127,6 +1146,9 @@ Instance: HLA-B-haplotype2
 InstanceOf: Haplotype
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1138,6 +1160,9 @@ Instance: HLA-C-haplotype1
 InstanceOf: Haplotype
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1149,6 +1174,9 @@ Instance: HLA-C-haplotype2
 InstanceOf: Haplotype
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
