@@ -848,7 +848,7 @@ Instance: EGFR-L858R-molc
 InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence EGFR L858R missense_variant"
 Usage: #example
-* status = #
+* status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[0] = Reference(pathologistPractitioner)
