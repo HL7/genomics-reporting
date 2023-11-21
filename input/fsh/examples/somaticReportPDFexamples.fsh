@@ -1329,7 +1329,7 @@ Usage: #example
 * telecom[+].system = #fax
 * telecom[=].value = "(400) 500-6000"
 * telecom[+].system = #url
-* telecom[=].value = "www.example.com/mytestpathlabs"
+* telecom[=].value = "http://www.example.com/mytestpathlabs"
 * address.line = "1000 SE Lab Ave"
 * address.city = "Los Angeles"
 * address.state = "CA"
