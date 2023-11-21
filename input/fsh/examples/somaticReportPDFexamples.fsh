@@ -1327,9 +1327,9 @@ Usage: #example
 * telecom[0].system = #phone
 * telecom[=].value = "(100) 200-3000"
 * telecom[+].system = #fax
-* telecom[=].value = "(400) 500-6000; mytestpathlabs.com"
+* telecom[=].value = "(400) 500-6000"
 * telecom[+].system = #url
-* telecom[=].value = "mytestpathlabs.com"
+* telecom[=].value = "www.example.com/mytestpathlabs"
 * address.line = "1000 SE Lab Ave"
 * address.city = "Los Angeles"
 * address.state = "CA"
