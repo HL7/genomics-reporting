@@ -884,6 +884,7 @@ Usage: #example
 
 Instance: somaticPatient
 InstanceOf: Patient
+Description: "Somatic example Patient"
 Usage: #example
 * identifier.use = #temp
 * identifier.type = $IDTYPE#MR "Medical record number"
@@ -901,6 +902,7 @@ Usage: #example
 
 Instance: somaticStudy
 InstanceOf: GenomicStudy
+Description: "Example for somatic genetic study"
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
 * extension[=].valueReference = Reference(analysisTumorNormalDNA)
@@ -916,6 +918,7 @@ Usage: #example
 
 Instance: analysisTumorNormalDNA
 InstanceOf: GenomicStudyAnalysis
+Description: "Example for Tumor Normal Genomics Study Analysis"
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
 * extension[=].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
@@ -954,6 +957,7 @@ Usage: #example
 
 Instance: analysisTumorRNA
 InstanceOf: GenomicStudyAnalysis
+Description: "Example for just Tumor RNA Genomic Study Analysis"
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
 * extension[=].valueCodeableConcept = $GSMETHODTYPE#rna-analysis "RNA analysis"
@@ -974,6 +978,7 @@ Usage: #example
 
 Instance: tumorSpecimen
 InstanceOf: Specimen
+Description: "Example for tumor specimen"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
 * identifier.value = "222333"
@@ -988,6 +993,7 @@ Usage: #example
 
 Instance: normalSpecimen
 InstanceOf: Specimen
+Description: "Example for normal specimen"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
 * identifier.value = "444555"
@@ -999,6 +1005,7 @@ Usage: #example
 
 Instance: WES-UncallableRegions-GRCh38
 InstanceOf: GenomicDataFile
+Description: "Example for Genomic Data File WES-UncallableRegions-GRCh38"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "11146520"
@@ -1011,6 +1018,7 @@ Usage: #example
 
 Instance: somaticVCFfile
 InstanceOf: GenomicDataFile
+Description: "Example for Genomic Data File somaticVCFfile"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "1134121"
@@ -1023,6 +1031,7 @@ Usage: #example
 
 Instance: FullGenome-GRCh38
 InstanceOf: GenomicDataFile
+Description: "Example for Genomic Data File FullGenome-GRCh38"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/files"
 * identifier.value = "1076146520"
@@ -1102,6 +1111,7 @@ Description: "Example for PD-L1"
 
 Instance: HLA-A-haplotype1
 InstanceOf: Haplotype
+Description: "Example for HLA-A-haplotype1"
 Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
@@ -1116,6 +1126,7 @@ Usage: #example
 
 Instance: HLA-A-haplotype2
 InstanceOf: Haplotype
+Description: "Example for HLA-A-haplotype2"
 Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
@@ -1130,6 +1141,7 @@ Usage: #example
 
 Instance: HLA-B-haplotype1
 InstanceOf: Haplotype
+Description: "Example for HLA-B-haplotype1"
 Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
@@ -1144,6 +1156,7 @@ Usage: #example
 
 Instance: HLA-B-haplotype2
 InstanceOf: Haplotype
+Description: "Example for HLA-B-haplotype2"
 Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
@@ -1158,6 +1171,7 @@ Usage: #example
 
 Instance: HLA-C-haplotype1
 InstanceOf: Haplotype
+Description: "Example for HLA-C-haplotype1"
 Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
@@ -1172,6 +1186,7 @@ Usage: #example
 
 Instance: HLA-C-haplotype2
 InstanceOf: Haplotype
+Description: "Example for HLA-C-haplotype2"
 Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
@@ -1248,6 +1263,7 @@ Usage: #example
 
 Instance: somaticServiceRequest
 InstanceOf: ServiceRequest
+Description: "Example for Somatic Testing Request"
 Usage: #example
 * identifier.type = $IDTYPE#LACSN
 * identifier.type.text = "Laboratory Accession ID"
@@ -1262,6 +1278,7 @@ Usage: #example
 
 Instance: orderingPractitioner
 InstanceOf: Practitioner
+Description: "Example of an ordering provider"
 Usage: #example
 * identifier.system = "http://hl7.org/fhir/sid/us-npi"
 * identifier.value = "1245319599"
@@ -1276,6 +1293,7 @@ Usage: #example
 
 Instance: pathologistPractitioner
 InstanceOf: Practitioner
+Description: "Example of a pathologist"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/persons"
 * identifier.value = "11d116"
@@ -1286,6 +1304,7 @@ Usage: #example
 
 Instance: supervisorPractitioner
 InstanceOf: Practitioner
+Description: "Example of a supervisor"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/persons"
 * identifier.value = "11d1x16"
@@ -1296,6 +1315,7 @@ Usage: #example
 
 Instance: performingOrganization
 InstanceOf: Organization
+Description: "Example of a Pathology lab"
 Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/CLIA"
 * identifier.value = "10000DLAB8"
