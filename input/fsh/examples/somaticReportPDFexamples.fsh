@@ -604,6 +604,7 @@ Description: "Example of high TMB Therapeutic Implication for drug treatment"
 * effectiveDateTime = "2023-02-01"
 * performer[0] = Reference(pathologistPractitioner)
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[=].valueCodeableConcept.text = "cancer sensitive to pembrolizumab"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
@@ -1046,6 +1047,9 @@ Instance: overallInt
 InstanceOf: OverallInterpretation
 Description: "Example for Overall Interpretation."
 * id = "overallInt"
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * valueCodeableConcept = $LNC#LA6576-8 "Positive"
@@ -1320,7 +1324,12 @@ Usage: #example
 * identifier.system = "http://www.somesystemabc.net/identifiers/CLIA"
 * identifier.value = "10000DLAB8"
 * name = "My Test Pathology Laboratories"
-* telecom.value = "Main: (100) 200-3000; Fax: (400) 500-6000; mytestpathlabs.com"
+* telecom[0].system = #phone
+* telecom[=]value = "(100) 200-3000"
+* telecom[+].system = #fax
+* telecom[=].value = "(400) 500-6000; mytestpathlabs.com"
+* telecom[+].system = #url
+* telecom[=].value = "mytestpathlabs.com"
 * address.line = "1000 SE Lab Ave"
 * address.city = "Los Angeles"
 * address.state = "CA"
