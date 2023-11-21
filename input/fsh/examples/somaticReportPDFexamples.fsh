@@ -1,57 +1,57 @@
-Instance: bundle-somaticReportPDFdraftExamples
-InstanceOf: Bundle
-Description: "data instances for somatic report."
-// Usage: #os1dddpe = #collection
-* type = #collection
-* entry[+].resource = NOTCH1-uncertain-var
-* entry[+].resource = ZFHX3-uncertain-var
-* entry[+].resource = MSH2-del-var
-* entry[+].resource = NTHL1-snv-var
-* entry[+].resource = STAG2-insertion-var
-* entry[+].resource = ATR-insertion-var
-* entry[+].resource = ATM-missense-var
-* entry[+].resource = EGFR-L858R-var
-* entry[+].resource = ROS1-Fusion-var
-* entry[+].resource = NOTCH1-significance
-* entry[+].resource = ZFHX3-significance
-* entry[+].resource = MSH2-del-disease
-* entry[+].resource = NTHL1-snv-disease
-* entry[+].resource = STAG2-insertion-significance
-* entry[+].resource = ATR-insertion-significance
-* entry[+].resource = ATM-missense-significance
-* entry[+].resource = EGFR-L858R-significance
-* entry[+].resource = ROS1-Fusion-disease
-* entry[+].resource = ROS1-Fusion-therapuTrial
-* entry[+].resource = ROS1-Fusion-therapuDrug
-* entry[+].resource = EGFR-L858R-therapuDrug1
-* entry[+].resource = EGFR-L858R-therapuDrug2
-* entry[+].resource = TMB-therapuDrug
-* entry[+].resource = NOTCH1-uncertain-molc
-* entry[+].resource = ZFHX3-uncertain-molc
-* entry[+].resource = MSH2-del-molc
-* entry[+].resource = NTHL1-snv-molc
-* entry[+].resource = STAG2-insertion-molc
-* entry[+].resource = ATR-insertion-molc
-* entry[+].resource = ATM-insertion-molc
-* entry[+].resource = EGFR-L858R-molc
-* entry[+].resource = ROS1-Fusion
-* entry[+].resource = somaticStudy
-* entry[+].resource = overallInt
-* entry[+].resource = TMBExample
-* entry[+].resource = MSIExample
-* entry[+].resource = PDL1Example
-* entry[+].resource = HLA-A-haplotype1
-* entry[+].resource = HLA-A-haplotype2
-* entry[+].resource = HLA-B-haplotype1
-* entry[+].resource = HLA-B-haplotype2
-* entry[+].resource = HLA-C-haplotype1
-* entry[+].resource = HLA-C-haplotype2
-* entry[+].resource = somaticReport
-* entry[+].resource = somaticServiceRequest
-* entry[+].resource = orderingPractitioner
-* entry[+].resource = pathologistPractitioner
-* entry[+].resource = supervisorPractitioner
-* entry[+].resource = performingOrganization
+//Instance: bundle-somaticReportPDFdraftExamples
+//InstanceOf: Bundle
+//Description: "data instances for somatic report."
+//// Usage: #os1dddpe = #collection
+//* type = #collection
+//* entry[+].resource = NOTCH1-uncertain-var
+//* entry[+].resource = ZFHX3-uncertain-var
+//* entry[+].resource = MSH2-del-var
+//* entry[+].resource = NTHL1-snv-var
+//* entry[+].resource = STAG2-insertion-var
+//* entry[+].resource = ATR-insertion-var
+//* entry[+].resource = ATM-missense-var
+//* entry[+].resource = EGFR-L858R-var
+//* entry[+].resource = ROS1-Fusion-var
+//* entry[+].resource = NOTCH1-significance
+//* entry[+].resource = ZFHX3-significance
+//* entry[+].resource = MSH2-del-disease
+//* entry[+].resource = NTHL1-snv-disease
+//* entry[+].resource = STAG2-insertion-significance
+//* entry[+].resource = ATR-insertion-significance
+//* entry[+].resource = ATM-missense-significance
+//* entry[+].resource = EGFR-L858R-significance
+//* entry[+].resource = ROS1-Fusion-disease
+//* entry[+].resource = ROS1-Fusion-therapuTrial
+//* entry[+].resource = ROS1-Fusion-therapuDrug
+//* entry[+].resource = EGFR-L858R-therapuDrug1
+//* entry[+].resource = EGFR-L858R-therapuDrug2
+//* entry[+].resource = TMB-therapuDrug
+//* entry[+].resource = NOTCH1-uncertain-molc
+//* entry[+].resource = ZFHX3-uncertain-molc
+//* entry[+].resource = MSH2-del-molc
+//* entry[+].resource = NTHL1-snv-molc
+//* entry[+].resource = STAG2-insertion-molc
+//* entry[+].resource = ATR-insertion-molc
+//* entry[+].resource = ATM-insertion-molc
+//* entry[+].resource = EGFR-L858R-molc
+//* entry[+].resource = ROS1-Fusion
+//* entry[+].resource = somaticStudy
+//* entry[+].resource = overallInt
+//* entry[+].resource = TMBExample
+//* entry[+].resource = MSIExample
+//* entry[+].resource = PDL1Example
+//* entry[+].resource = HLA-A-haplotype1
+//* entry[+].resource = HLA-A-haplotype2
+//* entry[+].resource = HLA-B-haplotype1
+//* entry[+].resource = HLA-B-haplotype2
+//* entry[+].resource = HLA-C-haplotype1
+//* entry[+].resource = HLA-C-haplotype2
+//* entry[+].resource = somaticReport
+//* entry[+].resource = somaticServiceRequest
+//* entry[+].resource = orderingPractitioner
+//* entry[+].resource = pathologistPractitioner
+//* entry[+].resource = supervisorPractitioner
+//* entry[+].resource = performingOrganization
 
 Instance: NOTCH1-uncertain-var
 InstanceOf: Variant
@@ -63,6 +63,7 @@ Description: "Example for NOTCH1 uncertain"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_060087.3:p.A1931T
@@ -94,6 +95,7 @@ Description: "Example for ZFHX3 uncertain"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_008816.3:p.G585S
@@ -125,6 +127,7 @@ Description: "Example for MSH2 deletion"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000242.1:p.Val611fs
@@ -155,8 +158,10 @@ Description: "Example for NTHL1 SNV"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * method = $LNC#LA26398-0 "Sequencing"
+
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_002519.2:p.Trp243Ter
@@ -188,6 +193,7 @@ Description: "Example for STAG2 insertion"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_006594.3:p.S1178*
@@ -219,6 +225,7 @@ Description: "Example for ATR insertion"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_001175.2:p.R960fs*2
@@ -251,6 +258,7 @@ Description: "Example for ATM missense"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000042.3:p.Asn2875His
@@ -283,6 +291,7 @@ Description: "Example for EGFR L858R"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[variation-code].valueCodeableConcept.text = "EGFR L858R"
@@ -315,6 +324,7 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[variation-code].valueCodeableConcept.text = "ROS1 Fusion"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -342,6 +352,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - NOTCH1 uncertain significance"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -355,6 +368,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - ZFHX3 uncertain significance"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -370,6 +386,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - MSH2 deletion Hereditary cancer-predisposing syndrome"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -388,6 +407,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - NTHL1 SNV Hereditary cancer-predisposing syndrome"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -406,6 +428,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - STAG2 likely pathogenic"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -424,6 +449,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - ATR likely pathogenic"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -448,6 +476,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - ATM likely pathogenic"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -472,6 +503,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - EGFR pathogenic"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -485,6 +519,9 @@ InstanceOf: DiagnosticImplication
 Description: "Example DiagnosticImplication - ROS1 disease"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
@@ -492,20 +529,7 @@ Usage: #example
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 
-* component[+].code = $LNC#93044-6 "Level of evidence"
-//* component[=].valueCodeableConcept = codesystem#code "display"
-* component[=].valueCodeableConcept.text = "Tier I - Level A"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 
-* component[+].code = $LNC#81259-4 "Associated phenotype"
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
-* component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://civicdb.org/variants/33/summary"
-
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 
 Instance: ROS1-Fusion-therapuTrial
 InstanceOf: TherapeuticImplication
@@ -513,6 +537,9 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 //* component[=].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -526,6 +553,14 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 * component[=].valueCodeableConcept.text = "A Single-Arm, Open-Label, Multicenter Phase 2 Study to Evaluate the Efficacy and Safety of Taletrectinib in Patients With Advanced or Metastatic ROS1 Positive NSCLC and Other Solid Tumors"
 * derivedFrom = Reference(ROS1-Fusion-var)
 * status = #final
+* component[+].code = $LNC#93044-6 "Level of evidence"
+//* component[=].valueCodeableConcept = codesystem#code "display"
+* component[=].valueCodeableConcept.text = "Tier I - Level A"
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+
 
 Instance: ROS1-Fusion-therapuDrug
 InstanceOf: TherapeuticImplication
@@ -533,8 +568,10 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
-
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept.text = "cancer sensitive to crizotinib"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -550,12 +587,21 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * component[=].valueString = "Non-small cell lung cancer positive for ROS1 fusions are sensitive to crizotinib"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://civicdb.org/evidence/7282/summary"
+* component[+].code = $LNC#93044-6 "Level of evidence"
+//* component[=].valueCodeableConcept = codesystem#code "display"
+* component[=].valueCodeableConcept.text = "Tier I - Level A"
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
+* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+
 
 Instance: TMB-therapuDrug
 InstanceOf: TherapeuticImplication
 Description: "Example of high TMB Therapeutic Implication for drug treatment"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept.text = "cancer sensitive to pembrolizumab"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -574,6 +620,9 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = https://civicdb.org/evidence#2994 
@@ -604,6 +653,9 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = https://civicdb.org/evidence#2994 
@@ -632,6 +684,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence NOTCH1 missense_variant"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -655,6 +710,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence ZFHX3 missense_variant"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -674,6 +732,9 @@ Instance: MSH2-del-molc
 InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence MSH2 frameshift"
 Usage: #example
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
@@ -693,6 +754,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence NTHL1 SNV variant with nonsense codon"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -712,6 +776,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence STAG2 frameshift"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -732,6 +799,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence ATR frameshift"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -754,6 +824,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence ATM frameshift"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -775,7 +848,10 @@ Instance: EGFR-L858R-molc
 InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence EGFR L858R missense_variant"
 Usage: #example
-* status = #final
+* status = #
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
@@ -794,6 +870,9 @@ InstanceOf: MolecularConsequence
 Description: "Example Molecular Consequence ROS1 Fusion"
 Usage: #example
 * status = #final
+* subject = Reference(Patient/somaticPatient)
+* effectiveDateTime = "2023-02-01"
+* performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
