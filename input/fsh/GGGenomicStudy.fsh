@@ -163,6 +163,36 @@ Description: "Defines a protocol that was performed for a genomic analysis"
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(Procedure or Task)
 
+Extension:   GenomicStudyAnalysisSequencingScope
+Id:          genomic-study-analysis-sequencing-scope
+Title:       "Genomic Study Analysis Sequencing Scope"
+Description: "Metadata about the scope and quality of a sequencing analysis that was performed"
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* extension contains
+    sequencing-scope 0..1 and
+//    sequencing-depth 0..1 and
+//    sequencing-coverage 0..1 and
+//    genes-studied 0..* and
+    region-studied-detail 0..1
+    
+* extension[sequencing-scope] ^short = "Sequencing Scope"
+* extension[sequencing-scope] ^definition = "For a sequencing test, represents the type of test that was performed."
+* extension[sequencing-scope].value[x] only CodeableConcept
+* extension[sequencing-scope].value[x] ^short = "WGS, WES, Panel"
+
+
+* extension[region-studied-detail] ^short = "Region Studied Detail"
+* extension[region-studied-detail] ^definition = "If additional details need to be shared about the regions sequenced, a BED file SHALL be shared to further describe the regions studied."
+* extension[region-studied-detail].value[x] only Reference(GenomicDataFile)
+
+
+
+
+
+
+
+
 Extension:   GenomicStudyAnalysisRegionsStudied
 Id:          genomic-study-analysis-regions-studied
 Title:      "Genomic Study Analysis Regions Studied"
