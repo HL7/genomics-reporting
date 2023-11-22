@@ -26,9 +26,9 @@ Usage: #example
 * extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
 * extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
 * extension[GenomicStudyAnalysisDevice][+].extension[device].valueReference = Reference(Device/triodenovo-software)
-* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[GenomicStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
-* extension[GenomicStudyAnalysisRegionsUncallable][+].valueReference = Reference(DocumentReference/UncallableRegions)
+* extension[GenomicStudyAnalysisSequencingScope].extension[region-studied-detail].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+* extension[GenomicStudyAnalysisUncalledRegions].extension[uncalled-region-detail].valueReference = Reference(DocumentReference/UncallableRegions)
+//kp* extension[GenomicStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
 * extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
 * extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
@@ -49,8 +49,8 @@ Usage: #example
 * extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
 * extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
 * extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
-* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[GenomicStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
+//kp* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+//kp* extension[GenomicStudyAnalysisRegionsCalled][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
 * extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
 * extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"

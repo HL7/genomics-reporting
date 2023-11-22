@@ -39,10 +39,6 @@
         <td>These represent observations where the <code>Observation.subject</code> is typically the Patient and the <code>Observation.derivedFrom</code> should refer to Genomic Findings or Molecular Biomarkers. For example, "Patient may have increased susceptibility to heart attacks"</td>
       </tr>
       <tr>
-        <th><a href="#regionstudied">Region Studied</a></th>
-        <td>These are observations describing the region or regions that were studied as part of this Genomic Report.</td>
-      </tr>
-      <tr>
         <th><a href="#biomarkers">Molecular Biomarkers</a></th>
         <td>These are observations describing Molecular Biomarkers, which encompasses laboratory measurements of human inherent substances such as gene products, antigens and antibodies, or complex chemicals that result from post-translational processing of multi-gene products.</td>
       </tr>
@@ -72,7 +68,7 @@
     <a href="#findings">Genomic Findings</a>,
     <a href="#implications">Genomic Implications</a>,
     <!--<a href="#grouper">Grouper</a>,-->
-    <a href="#regionstudied">Region Studied</a>,
+    <a href="#genomicstudy">Genomic Study</a>,
     <a href="#recommendations">Recommended Actions</a>
   </p>
   <p>
@@ -101,31 +97,40 @@
     <p>
      The <code>GenomicStudy</code> instance SHOULD be referenced from a <a href="#diagnosticreport">report</a> and CAN be referenced by various <a href="#observations">observations</a>.
     </p>
-  <a name="fileattachments"> </a>
-  <h4>Attaching Genomic Files</h4>
-  <blockquote class="stu-note">
+
+    <h4>Scope and Quality Metrics</h4>
     <p>
-      The guidance below for file attachments needs to be carefully reviewed and considered. There are potential issues, and the Work Group welcomes feedback.
+      For any sort of sequencing test, the <a href="StructureDefinition-genomic-study-analysis-sequencing-scope.html">Sequencing Scope</a> extension is used to assert high level quality metrics, as well as genes or regions studied for the performed test(s).
     </p>
-  </blockquote>
-  <p>
-    While this implementation guide strives to provide structured genomic data via a variety of <a href="#observations">observations</a>, there are use cases that warrant a deeper level of data than this guide allows. These use cases might be best served by sending commonly used files (VCF, BAM, CRAM, MAF, BED to name a few) with the genomic study. To promote a consistent approach to sharing these files, we provide the guidance in this section. Even with this guidance, note that best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API, remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
-  </p>
-  <p>
-    When sending these genomic files, implementers should utilize first utilze the <a href="#genomicstudy">Genomic Study</a> profiles. Each study has one or more analyses, each of which can define <code>input</code> and <code>output</code> elements. From there, the <a href="StructureDefinition-genomic-data-file.html">GenomicDataFile</a> can be used to send the file content along with meaningful metadata. This approach allows the files to have their own existence and enables queries to find them via the <code>DocumentReference</code> resource. To enable linking from the report to files, the <a href="StructureDefinition-genomic-study-reference.html">Genomic Study Reference</a> extension can be used to reference the study, corresponding analyses, and then the files. This can be helpful for those processing the report to easily identify the files that were sent along with the report.
-  </p>
-  <p>
-    When sending genomic files there are many considerations. For example, it is not unusual for files to be gigabytes in size. The <code>DocumentReference</code> resource has different options to evaluate for your use case. If embedded directly using <code>DocumentReference.content.attachment.data</code>, servers receiving the files may have size constraints per resource or per transaction which may limit your options. Instead of sending a large data file, the file can be referenced by a URL and title using the using <code>DocumentReference.content.attachment.url</code> element. This can point to an online resource that hosts the file or from where the file can be accessed. For genomic files, the host is likely not the FHIR server providing the <code>DocumentReference</code> data instance. Be aware that use of <code>DocumentReference</code> to provide access to files through URLs introduces authorization requirements that are out of scope of this Implementation Guide. With either of these approaches, it is important to note the files might be compressed. Also, the mime types for these genomic files will vary, or possibly be missing. The senders of the data should include as much metadata as possible to enable the receiver to appropriately handle the files.
-  </p>
-  <p>
-    For receivers to make use of these files, many facets of the generation of the files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use cases must be carefully evaluated to ensure appropriate file preparation. The <a href="StructureDefinition-genomic-study-analysis.html">Genomic Study Analysis</a> defines a number of attributes that can be used to better understand the file. Also, the <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
-  </p>
-  <p>
-    It should be noted that this <code>Genomic Study</code> approach is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>.
-  </p>
-  <p>
-    A full, detailed implementation discussion is outside the scope of this IG. In a future release, this IG may include other profiles or artifacts along with more specific guidance.
-  </p>
+    <p>
+      The <a href="StructureDefinition-genomic-study-analysis-uncalled-regions.html">Uncalled Regions</a> extension is used to assert all regions that were attempted but deemed uncallable, typically due to low coverage.
+    </p>
+
+    <a name="fileattachments"> </a>
+    <h4>Attaching Genomic Files</h4>
+    <blockquote class="stu-note">
+      <p>
+        The guidance below for file attachments needs to be carefully reviewed and considered. There are potential issues, and the Work Group welcomes feedback.
+      </p>
+    </blockquote>
+    <p>
+      While this implementation guide strives to provide structured genomic data via a variety of <a href="#observations">observations</a>, there are use cases that warrant a deeper level of data than this guide allows. These use cases might be best served by sending commonly used files (VCF, BAM, CRAM, MAF, BED to name a few) with the genomic study. To promote a consistent approach to sharing these files, we provide the guidance in this section. Even with this guidance, note that best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API, remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
+    </p>
+    <p>
+      When sending these genomic files, implementers should utilize first utilze the <a href="#genomicstudy">Genomic Study</a> profiles. Each study has one or more analyses, each of which can define <code>input</code> and <code>output</code> elements. From there, the <a href="StructureDefinition-genomic-data-file.html">GenomicDataFile</a> can be used to send the file content along with meaningful metadata. This approach allows the files to have their own existence and enables queries to find them via the <code>DocumentReference</code> resource. To enable linking from the report to files, the <a href="StructureDefinition-genomic-study-reference.html">Genomic Study Reference</a> extension can be used to reference the study, corresponding analyses, and then the files. This can be helpful for those processing the report to easily identify the files that were sent along with the report.
+    </p>
+    <p>
+      When sending genomic files there are many considerations. For example, it is not unusual for files to be gigabytes in size. The <code>DocumentReference</code> resource has different options to evaluate for your use case. If embedded directly using <code>DocumentReference.content.attachment.data</code>, servers receiving the files may have size constraints per resource or per transaction which may limit your options. Instead of sending a large data file, the file can be referenced by a URL and title using the using <code>DocumentReference.content.attachment.url</code> element. This can point to an online resource that hosts the file or from where the file can be accessed. For genomic files, the host is likely not the FHIR server providing the <code>DocumentReference</code> data instance. Be aware that use of <code>DocumentReference</code> to provide access to files through URLs introduces authorization requirements that are out of scope of this Implementation Guide. With either of these approaches, it is important to note the files might be compressed. Also, the mime types for these genomic files will vary, or possibly be missing. The senders of the data should include as much metadata as possible to enable the receiver to appropriately handle the files.
+    </p>
+    <p>
+      For receivers to make use of these files, many facets of the generation of the files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use cases must be carefully evaluated to ensure appropriate file preparation. The <a href="StructureDefinition-genomic-study-analysis.html">Genomic Study Analysis</a> defines a number of attributes that can be used to better understand the file. Also, the <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
+    </p>
+    <p>
+      It should be noted that this <code>Genomic Study</code> approach is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>.
+    </p>
+    <p>
+      A full, detailed implementation discussion is outside the scope of this IG. In a future release, this IG may include other profiles or artifacts along with more specific guidance.
+    </p>
 
   <a name="observations"> </a>
   <h3>Genomic Observations</h3>
@@ -146,7 +151,6 @@
     <a href="StructureDefinition-variant.html"> Variant</a>,
     <a href="StructureDefinition-haplotype.html"> Haplotype</a>,
     <a href="StructureDefinition-genotype.html"> Genotype</a>,
-    <a href="StructureDefinition-region-studied.html"> Region Studied</a>,
     <!--<a href="StructureDefinition-grouper.html"> Grouper</a>,-->
     <a href="StructureDefinition-sequence-phase-relationship.html"> Sequence Phase Relationship</a>,
     <a href="StructureDefinition-implication.html"> Genomic Implication (abstract)</a>,
@@ -333,12 +337,6 @@
         </pre></div>
       </li>
     </ul>
-  </p>
-
-  <a name="regionstudied"> </a>
-  <h4>Region Studied</h4>
-  <p>
-    The <a href="StructureDefinition-region-studied.html">Region Studied</a> profile is used to assert actual regions studied for the performed test(s). Intended coverage areas may differ from actual coverage areas (e.g., due to technical limitations during test performance). It can assert and describe actual regions studied for the performed test(s). It can provide this description at the known level of detail using components.
   </p>
 
   <a name="biomarkers"> </a>

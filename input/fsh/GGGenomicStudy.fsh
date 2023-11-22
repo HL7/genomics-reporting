@@ -171,51 +171,60 @@ Description: "Metadata about the scope and quality of a sequencing analysis that
 * ^context[=].expression = "Procedure"
 * extension contains
     sequencing-scope 0..1 and
-//    sequencing-depth 0..1 and
-//    sequencing-coverage 0..1 and
-//    genes-studied 0..* and
-    region-studied-detail 0..1
-    
+    read-depth 0..1 and
+    sequencing-coverage 0..1 and
+    genes-studied 0..* and
+    region-studied-detail 0..1 and 
+    scope-description 0..1
 * extension[sequencing-scope] ^short = "Sequencing Scope"
-* extension[sequencing-scope] ^definition = "For a sequencing test, represents the type of test that was performed."
+* extension[sequencing-scope] ^definition = "Represents the type of sequencing test that was performed."
 * extension[sequencing-scope].value[x] only CodeableConcept
 * extension[sequencing-scope].value[x] ^short = "WGS, WES, Panel"
-
-
+* extension[read-depth] ^short = "Read Depth"
+* extension[read-depth] ^definition = "The average read depth (number of reads for a position) for the sequencing test"
+* extension[read-depth] ^requirements = "This value is typically represented with an 'x' after the number (30x). Simply share the quantity here."
+* extension[read-depth].value[x] only SimpleQuantity
+* extension[read-depth].value[x] ^short = "30, 100"
+* extension[sequencing-coverage] ^short = "Sequencing Coverage"
+* extension[sequencing-coverage] ^definition = "For the scope of the test, the percentage of the regions that were covered"
+* extension[sequencing-coverage] ^requirements = "This value is typically represented with an '%' after the number (95%). Simply share the quantity here."
+* extension[sequencing-coverage].value[x] only SimpleQuantity
+* extension[sequencing-coverage].value[x] ^short = "95, 100"
+* extension[genes-studied] ^short = "Genes Studied"
+* extension[genes-studied] ^definition = "The gene(s) that were sequenced."
+* extension[genes-studied].value[x] only CodeableConcept
+* extension[genes-studied].value[x] ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
+* extension[genes-studied].value[x] 1..1
+* extension[genes-studied].value[x] from HGNCVS (extensible)
 * extension[region-studied-detail] ^short = "Region Studied Detail"
-* extension[region-studied-detail] ^definition = "If additional details need to be shared about the regions sequenced, a BED file SHALL be shared to further describe the regions studied."
+* extension[region-studied-detail] ^definition = "Further details about the regions that were sequenced."
+* extension[region-studied-detail] ^requirements = "If additional details need to be shared, a BED file SHALL be shared to further describe the regions studied."
 * extension[region-studied-detail].value[x] only Reference(GenomicDataFile)
+* extension[region-studied-detail].value[x] ^short = "BED file"
+* extension[scope-description] ^short = "Scope Description"
+* extension[scope-description] ^definition = "Freetext description of the scope and coverage for the sequencing test"
+* extension[scope-description].value[x] only string
 
-
-
-
-
-
-
-
-Extension:   GenomicStudyAnalysisRegionsStudied
-Id:          genomic-study-analysis-regions-studied
-Title:      "Genomic Study Analysis Regions Studied"
-Description: "Defines a regions studied for a genomic analysis"
-* ^context[+].type = #element
-* ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDataFile or RegionStudied)
-
-Extension:   GenomicStudyAnalysisRegionsCalled
-Id:          genomic-study-analysis-regions-called
-Title:      "Genomic Study Analysis Regions called"
-Description: "Defines a regions called for a genomic analysis"
-* ^context[+].type = #element
-* ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDataFile or RegionStudied)
-
-Extension:   GenomicStudyAnalysisRegionsUncallable
-Id:          genomic-study-analysis-regions-uncallable
-Title:      "Genomic Study Analysis Regions uncallable"
+Extension:   GenomicStudyAnalysisUncalledRegions
+Id:          genomic-study-analysis-uncalled-regions
+Title:      "Genomic Study Analysis Uncalled Regions"
 Description: "Defines regions deemed uncallable (generally due to low coverage)"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDataFile or RegionStudied)
+* extension contains
+    uncalled-genes 0..* and
+    uncalled-region-detail 0..1
+* extension[uncalled-genes] ^short = "Uncalled Genes"
+* extension[uncalled-genes] ^definition = "The gene(s) that were deemed uncallable."
+* extension[uncalled-genes].value[x] only CodeableConcept
+* extension[uncalled-genes].value[x] ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
+* extension[uncalled-genes].value[x] 1..1
+* extension[uncalled-genes].value[x] from HGNCVS (extensible)
+* extension[uncalled-region-detail] ^short = "Uncalled Region Detail"
+* extension[uncalled-region-detail] ^definition = "Further details about the regions that were deemed uncallable."
+* extension[uncalled-region-detail] ^requirements = "If additional details need to be shared, a BED file SHALL be shared to further describe the regions deemed uncallable."
+* extension[uncalled-region-detail].value[x] only Reference(GenomicDataFile)
+
 
 Extension:      GenomicStudyAnalysisDevice
 Id:             genomic-study-analysis-device
@@ -242,9 +251,8 @@ Description: "A genomic study analysis is a component of a genomic study."
                  and GenomicStudyAnalysisTitle named genomic-study-analysis-title 0..1
                  and GenomicStudyAnalysisFocus named genomic-study-analysis-focus 0..*
                  and GenomicStudyAnalysisSpecimen named genomic-study-analysis-specimen 0..*
-                 and GenomicStudyAnalysisRegionsStudied named genomic-study-analysis-regions-studied 0..*
-                 and GenomicStudyAnalysisRegionsUncallable named genomic-study-analysis-regions-uncallable 0..*
-                 and GenomicStudyAnalysisRegionsCalled named genomic-study-analysis-regions-called 0..*
+                 and GenomicStudyAnalysisSequencingScope named genomic-study-analysis-sequencing-scope 0..1
+                 and GenomicStudyAnalysisUncalledRegions named genomic-study-analsys-uncalled-regions 0..1
                  and GenomicStudyAnalysisInput named genomic-study-analysis-input 0..*
                  and GenomicStudyAnalysisOutput named genomic-study-analysis-output 0..*
                  and GenomicStudyAnalysisDevice named genomic-study-analysis-device 0..*
@@ -255,9 +263,8 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension[GenomicStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
 * extension[GenomicStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
 * extension[GenomicStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
-* extension[GenomicStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
-* extension[GenomicStudyAnalysisRegionsUncallable] ^short = "GenomicStudy.analysis.regionsUncallable"
-* extension[GenomicStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
+* extension[GenomicStudyAnalysisSequencingScope] ^short = "Genomic Study Analysis Sequencing Scope"
+* extension[GenomicStudyAnalysisUncalledRegions] ^short = "Genomic Study Analysis Uncalled Regions"
 * extension[GenomicStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
 * extension[GenomicStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
 * extension[GenomicStudyAnalysisDevice] ^short = "GenomicStudy.analysis.device"
