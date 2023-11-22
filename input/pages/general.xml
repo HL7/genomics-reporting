@@ -98,14 +98,6 @@
      The <code>GenomicStudy</code> instance SHOULD be referenced from a <a href="#diagnosticreport">report</a> and CAN be referenced by various <a href="#observations">observations</a>.
     </p>
 
-    <h4>Scope and Quality Metrics</h4>
-    <p>
-      For any sort of sequencing test, the <a href="StructureDefinition-genomic-study-analysis-sequencing-scope.html">Sequencing Scope</a> extension is used to assert high level quality metrics, as well as genes or regions studied for the performed test(s).
-    </p>
-    <p>
-      The <a href="StructureDefinition-genomic-study-analysis-uncalled-regions.html">Uncalled Regions</a> extension is used to assert all regions that were attempted but deemed uncallable, typically due to low coverage.
-    </p>
-
     <a name="fileattachments"> </a>
     <h4>Attaching Genomic Files</h4>
     <blockquote class="stu-note">

@@ -54,7 +54,7 @@ It is NOT intended to support other Observations that are clinically relevant on
 </p>
 <ol>
   <li>
-  Statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>, <a href="StructureDefinition-molecular-consequence.html"> Molecular Consequence</a>). Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
+  Statements of pathogenicity or of correlations with conditions or therapeutic interactions (see <a href="pharmacogenomics.html">pharmacogenomics</a>, <a href="somatics.html">somatic reporting</a>, <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implication</a>, <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implication</a>, <a href="StructureDefinition-molecular-consequence.html"> Molecular Consequence</a>). Note that these statement observations will often use `Observation.derivedFrom` to point to one or more variants. This approach allows those statements to be reevaluated and updated or created downstream as the underlying knowledge bases and guidelines are updated.
   </li>
   <li>
   Presence statements of whole haplotypes, genotypes, or phasing data (see <a href="StructureDefinition-haplotype.html">Haplotype</a>, <a href="StructureDefinition-genotype.html">Genotype</a>, and <a href="StructureDefinition-sequence-phase-relationship.html">Sequence Phase Relationship</a>);
@@ -230,6 +230,84 @@ When reporting a repeat expansion variant (also known as trinucleotide repeat or
       This extension is optional when a single repeat expansion pair is used, but is required when multiple are used.
       </p>
       </td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="variantassessment"></a>
+<h3>Variant Assessment</h3>
+<p>Data producers SHALL include an assessment for each variant that is shared. This assessment indicates if the defined variant is present in the sample or not, or if there was an issue in calling the variant. It is structured in <code>Observation.valueCodeableConcept</code>, and is bound to the answer list <a href="https://loinc.org/LL1971-2/">LL1917-2 Variant Assess</a>.
+</p>
+<p>
+See below for additional guidance on each answer from this value set.
+</p>
+<table>
+  <thead>
+    <th>Answer</th>
+    <th>Usage Notes</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Present</td>
+      <td>The defined variant is present in the sample.</td>
+    </tr>
+    <tr>
+      <td>Absent</td>
+      <td>The defined variant was NOT found in the sample. This can be used to structure a 'Pertinant Negative', or a variant whose absence is deemed important enough to share, even though the defined variant is not present.
+      </td>
+    </tr>
+    <tr>
+      <td>No call</td>
+      <td>The defined variant could not be called by the analysis, but the variant was deemed important enough to share. This usage of this value SHALL be constrained to coverage issues with the variant's region (i.e. the locus was sequenced but the coverage was insufficent to support calling the presence or absence of the variant).
+      </td>
+    </tr>
+    <tr>
+      <td>Indeterminate</td>
+      <td>The defined variant could not be called by the analysis, but the variant was deemed important enough to share. This usage of this value SHALL used for any issues with the sample or analysis that are not related to the coverage of the locus for the variant. Additional details about the call MAY be shared in <code>Observation.note</code>.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+These variant assessments are supplemented by other indicators of the analysis like quality and coverage. These other indicators include:
+</p>
+<table>
+  <thead>
+    <th>Indicator</th>
+    <th>Usage Notes</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-variant-definitions.html#diff_Observation.component:variant-confidence-status">Variant Confidence Status</a></td>
+      <td>
+        <p>Provides a way to indicate the reporting organization’s confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence:</p>
+        <div class="example"><pre class="json">
+        {
+        "system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs",
+        "code" : "high",
+        "display" : "High"
+        }
+        </pre></div>
+        <p>
+        It is important to note that variant confidence status is not a required component. If the reporting organization’s confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-variant-definitions.html#diff_Observation.component:allelic-read-depth">Allelic Read Depth</a></td>
+      <td>
+        <p>
+          Specifies the number of reads that identified the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-genomic-study-analysis-metrics.html">Genomic Study Analysis: Metrics</a></td>
+      <td>This extension on the Genomic Study Analysis profile is used to structure high level metrics like read depth and coverage.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-genomic-study-analysis-regions.html">Genomic Study Analysis: Regions</a></td>
+      <td>This extension on the Genomic Study Analysis profile is used to assert genes or regions that were targeted in analysis, genes or regions called, and genes or regions that were deemed uncallable.</td>
     </tr>
   </tbody>
 </table>
@@ -534,20 +612,4 @@ Suggested minimal representations of common structural variants are shown in the
 
 <p>It is important to note in this example that the Variant observation indicates the presence or absence of a variant with the given ALT allele, and does not indicate presence of the REF allele on the other chromosome of the pair. Even though it is almost always the case for heterozygous variants that one chromosome has the variant and the other chromosome has the reference allele, one should not assume this is the case from a single heterozygous Variant without separate knowledge that no other variants were detected at that position.</p>
 <p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. Here is a <a href="Bundle-bundle-complexVariant-nonHGVS.html">bundle</a> showing a compound heterozygous example with two Variant instances grouped together by one Genotype instance.</p>
-
-<a name="variant-confidence"></a>
-<h3>Variant Confidence Status</h3>
-<p>Variant confidence status provides a way to indicate the reporting organization’s confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence:</p>
-<p>
-<div class="example"><pre class="json">
-{
-"system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs",
-"code" : "high",
-"display" : "High"
-}
-</pre></div>
-</p>
-<p>
-It is important to note that variant confidence status is not a required component. If the reporting organization’s confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive.
-</p>
 </div>

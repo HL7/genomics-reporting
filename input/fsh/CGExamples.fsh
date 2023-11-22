@@ -942,13 +942,12 @@ InstanceOf: GenomicStudyAnalysis
 Description: "Example of PGX Sequence analysis"
 Usage: #example
 * extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisSequencingScope]
-  * extension[sequencing-scope].valueCodeableConcept.text = "Panel"
-  * extension[sequencing-coverage].valueQuantity.value = 100
-  * extension[scope-description].valueString = "protein-coding and exon-splicing regions"
-  * extension[genes-studied][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-  * extension[genes-studied][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-  * extension[genes-studied][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
+* extension[GenomicStudyAnalysisMetrics].extension[sequencing-coverage].valueQuantity.value = 100
+* extension[GenomicStudyAnalysisRegions]
+  * extension[description].valueString = "protein-coding and exon-splicing regions"
+  * extension[targeted][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
+  * extension[targeted][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
+  * extension[targeted][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2021-01-01T01:01:10-06:00"
