@@ -2,30 +2,20 @@
 
   <p>
     Genotype describes combinations of genomic variations that together are associated with a particular phenotype - i.e., a specific physical, behavioral, or risk-associated difference associated with the organism whose specimen was tested. Genotype is used to convey corresponding <a href="StructureDefinition-haplotype.html">haplotypes</a> or <a href="StructureDefinition-variant.html">variations</a> at a particular locus. Many genotypes are expressed as simple strings, and can be conveyed in <code>valueCodeableConcept.text</code>. In some cases, genotypes are sufficiently standardized to be conveyed as codes in <code>valueCodeableConcept.code</code>.
-    <ul>
-      <li><code>TPMT *1/*3A</code> represents the TPMT *1 haplotype (or 'star allele') on one chromosome and the TPMT *3A haplotype on the homologous chromosome</li>
-      <li><code>A/C</code> represents a heterozygous "A" and a heterozygous "C" at SNP rs1142345. </li>
-    </ul>
   </p>
   <p>
     For HLA, KIR, and other genes in the immunogenomics domain, the National Marrow Donor Program (NMDP) led a community effort to define the Genotype List String (GL String) grammar, described <a href="https://glstring.org">here</a>. Notably, the GL String uses '+' as a delimiter between alleles in a genotype. It also has delimiters for ambiguous genotypes, allele lists, and haplotypes.
   </p>
   <p>
-    For Pharmacogenomics, we define here a simple grammar of [HGNC gene symbol followed by white space followed by a slash ('/') delimited list of haplotype codes], where the codeSystem is set to the codeSystem of the haplotypes (e.g., PharmVar).
+    For Pharmacogenomics, implementers SHOULD send coded haplotypes, and for genotypes (diplotypes) MAY use a simple, human readable grammar of:
   </p>
   <p>
-    Here are some examples that are standardized, note that there are some other examples which still lack standardization today.
+    [HGNC gene symbol], followed by white space, followed by a slash ('/') delimited list of haplotype names].
+  </p>
+  <p>
+    Here are some examples that are standardized, note that there are examples which still lack standardization today.
     <ul>
-      <li>Text only<br/>
-        <div class="example"><pre class="json">
-{
-  "valueCodeableConcept": {
-    "text": "A/C at SNP rs1142345"
-  }
-}
-        </pre></div>
-      </li>
-      <li>Coded HLA<br/>
+      <li>Coded HLA (glstring)<br/>
         <div class="example"><pre class="json">
 {
   "valueCodeableConcept": {
@@ -38,15 +28,11 @@
 }
         </pre></div>
       </li>
-      <li>Coded PGx<br/>
+      <li>PGx Genotype (textually represents the CYP2C9 *2C haplotype (or 'star allele') on one chromosome and the CYP2C9 *1A haplotype on the homologous chromosome)<br/>
         <div class="example"><pre class="json">
 {
   "valueCodeableConcept": {
-    "coding": [{
-      "system": "http://www.pharmvar.org",
-      "code": "PV00044",
-      "display": "CYP2C9*2.001"
-    }]
+    "text": "CYP2C9 *2C/*1A"
   }
 }
         </pre></div>
@@ -54,6 +40,6 @@
     </ul>
   </p>
   <p>
-    For both genotypes and haplotypes, reporting the structured variant data is optional. However, it is always recommended when possible. For example, sending PGX star-alleles without variant-level information is not best practice as it is both potentially ambiguous and can preclude future utility of the report.
+    For both genotypes and haplotypes, reporting the structured variant data is optional. However, implementers SHOULD when possible. For example, sending PGX star-alleles without variant-level information is not best practice as it is both potentially ambiguous and can preclude future utility of the report.
   </p>
 </div>
