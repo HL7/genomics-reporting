@@ -27,7 +27,7 @@ Usage: #example
 * extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
 * extension[GenomicStudyAnalysisDevice][+].extension[device].valueReference = Reference(Device/triodenovo-software)
 * extension[GenomicStudyAnalysisRegions]
-  * extension[targeted][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
   * extension[uncalled][+].valueReference = Reference(DocumentReference/UncallableRegions) 
   * extension[called][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
 * extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
@@ -51,7 +51,7 @@ Usage: #example
 * extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
 * extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
 * extension[GenomicStudyAnalysisRegions]
-  * extension[targeted][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
   * extension[called][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
 * extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
 * extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)

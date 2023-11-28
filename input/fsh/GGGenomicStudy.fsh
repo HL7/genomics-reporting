@@ -179,7 +179,7 @@ Description: "Metrics about the sequencing analysis that was performed"
 * extension[read-depth].value[x] only SimpleQuantity
 * extension[read-depth].value[x] ^short = "30, 100"
 * extension[sequencing-coverage] ^short = "Sequencing Coverage"
-* extension[sequencing-coverage] ^definition = "The percentage of the targeted regions that were sequenced"
+* extension[sequencing-coverage] ^definition = "The percentage of the studied regions that were sequenced"
 * extension[sequencing-coverage] ^requirements = "This value is typically represented with an '%' after the number (95%). Simply share the quantity here."
 * extension[sequencing-coverage].value[x] only SimpleQuantity
 * extension[sequencing-coverage].value[x] ^short = "95, 100"
@@ -190,28 +190,28 @@ Description: "Metrics about the sequencing analysis that was performed"
 Extension:   GenomicStudyAnalysisRegions
 Id:          genomic-study-analysis-regions
 Title:       "Genomic Study Analysis Regions"
-Description: "Defines the regions targeted, regions called, and regions deemed uncallable (generally due to low coverage)"
+Description: "Defines the regions studied, regions called, and regions deemed uncallable (generally due to low coverage)"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * extension contains
     description 0..1 and
-    targeted 0..* and
+    studied 0..* and
     called 0..* and
     uncalled 0..*
-* extension[description] ^short = "Regions Targeted Description"
-* extension[description] ^definition = "Freetext description of the regions targeted for the sequencing test"
+* extension[description] ^short = "Regions Studied Description"
+* extension[description] ^definition = "Freetext description of the regions studied for the sequencing test"
 * extension[description].value[x] only string
 
-* extension[targeted] ^short = "Genes or Regions Targeted (GenomicStudy.analysis.regionsStudied)"
-* extension[targeted] ^definition = "The genes or regions that were targeted in the analysis."
-* extension[targeted] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions targeted in the analysis."
-* extension[targeted].value[x] only CodeableConcept or Reference(GenomicDataFile)
-* extension[targeted].value[x] 1..1
-* extension[targeted].value[x] ^short = "Gene codes or BED file"
-* extension[targeted].value[x] from HGNCVS (extensible)
+* extension[studied] ^short = "Genes or Regions Studied (GenomicStudy.analysis.regionsStudied)"
+* extension[studied] ^definition = "The genes or regions that were studied in the analysis."
+* extension[studied] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions studied in the analysis."
+* extension[studied].value[x] only CodeableConcept or Reference(GenomicDataFile)
+* extension[studied].value[x] 1..1
+* extension[studied].value[x] ^short = "Gene codes or BED file"
+* extension[studied].value[x] from HGNCVS (extensible)
 
 * extension[called] ^short = "Genes or Regions Called (GenomicStudy.analysis.regionsCalled)"
-* extension[called] ^definition = "The genes or regions that were targeted for the analysis with sufficient coverage and quality to be called."
+* extension[called] ^definition = "The genes or regions that were studied for the analysis with sufficient coverage and quality to be called."
 * extension[called] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions deemed callable."
 * extension[called].value[x] only CodeableConcept or Reference(GenomicDataFile)
 * extension[called].value[x] 1..1
@@ -219,7 +219,7 @@ Description: "Defines the regions targeted, regions called, and regions deemed u
 * extension[called].value[x] from HGNCVS (extensible)
 
 * extension[uncalled] ^short = "Genes or Regions Uncalled"
-* extension[uncalled] ^definition = "The genes or regions that were targeted for the analysis but were deemed uncallable."
+* extension[uncalled] ^definition = "The genes or regions that were studied for the analysis but were deemed uncallable."
 * extension[uncalled] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions deemed uncallable."
 * extension[uncalled].value[x] only CodeableConcept or Reference(GenomicDataFile)
 * extension[uncalled].value[x] 1..1

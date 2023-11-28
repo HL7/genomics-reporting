@@ -945,9 +945,9 @@ Usage: #example
 * extension[GenomicStudyAnalysisMetrics].extension[sequencing-coverage].valueQuantity.value = 100
 * extension[GenomicStudyAnalysisRegions]
   * extension[description].valueString = "protein-coding and exon-splicing regions"
-  * extension[targeted][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-  * extension[targeted][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-  * extension[targeted][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2021-01-01T01:01:10-06:00"

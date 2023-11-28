@@ -11,7 +11,7 @@
   
 	<a name="Scope and Usage"> </a>
 	<h3>Scope and Usage</h3>
-<p>A genomic study instance aims at delineating relevant information of a performed genomic study. A genomic study might comprise one or more analyses, each serving a specific purpose. These analyses may vary in method (e.g., karyotyping, CNV, or SNV detection), performer, software, devices used, or regions targeted.</p>
+<p>A genomic study instance aims at delineating relevant information of a performed genomic study. A genomic study might comprise one or more analyses, each serving a specific purpose. These analyses may vary in method (e.g., karyotyping, CNV, or SNV detection), performer, software, devices used, or regions studied.</p>
 
 <p>A genomic study instance describes relevant information including the reasons, purpose, and performers of the study. It also provides technical endpoints to access these data. It serves as a logical aggregator for complex genomic analyses.</p>
 
@@ -27,7 +27,7 @@
   Since the release of R5 included the GenomicStudy resource, some concepts are being added and others are being slightly reframed. The <a href="StructureDefinition-genomic-study-analysis-metrics.html">Metrics</a> extension is used to assert high level quality metrics. The <a href="StructureDefinition-genomic-study-analysis-regions.html">Regions</a> extension is used to assert details about the scope of the analysis. There are options to express detail about genes and regions in the analysis. These include:
 </p>
 <ul>
-  <li>all genes or regions that were targeted for analysis</li>
+  <li>all genes or regions that were studied for analysis</li>
   <li>genes or regions that had sufficient quality and coverage and are deemed to be called</li> 
   <li>genes or regions that were deemed uncallable, typically due to low coverage, but could be due to other quality issues</li>
 </ul>
