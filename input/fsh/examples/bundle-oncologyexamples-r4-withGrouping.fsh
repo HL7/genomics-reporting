@@ -314,8 +314,6 @@ Usage: #inline
 Instance: Inline-Instance-for-oncologyexamples-r4-withGrouping-9
 InstanceOf: TherapeuticImplication
 Usage: #inline
-* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-assessed"
-* extension.valueReference = Reference(Inline-MedicationKnowledgeRuxolitinib)
 * contained[+] = Inline-MedicationKnowledgeRuxolitinib
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
@@ -333,6 +331,9 @@ Usage: #inline
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
 * component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
+* component[medication-assessed]
+  * valueCodeableConcept = $RXN#1193326 "Ruxolitinib"
+  * extension[MedicationAssessedReference].valueReference = Reference(Inline-MedicationKnowledgeRuxolitinib)
 
 Instance: Inline-MedicationKnowledgeRuxolitinib
 InstanceOf: MedicationKnowledge

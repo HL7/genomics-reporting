@@ -96,10 +96,6 @@ Description:    "Profile with properties for observations that convey the potent
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
 * code ^short = "therapeutic-implication"
-* extension contains TherapyAssessed named therapy-assessed 0..*
-                 and MedicationAssessed named medication-assessed 0..*
-* extension[MedicationAssessed] ^requirements = "NOTE - If this extension is used, it should not conflict with the component also named 'medication-assessed' which allows for a simple medication code to be shared."
-* extension[TherapyAssessed] ^requirements = "NOTE - If this extension is used, it should not conflict with the component also named 'therapy-assessed' which allows for a simple therapy code to be shared."
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -139,6 +135,8 @@ Description:    "Profile with properties for observations that convey the potent
 * component[medication-assessed].value[x] ^binding.description = "Binding not yet defined (RxNorm or similar)"
 * component[medication-assessed].value[x] 1..1
 * component[medication-assessed].value[x] ^short = "Medication code"
+* component[medication-assessed].extension contains MedicationAssessedReference named medication-assessed-reference 0..*
+* component[medication-assessed].extension[MedicationAssessedReference] ^requirements = "NOTE - If this extension is used, it should not conflict with the code delivered in the component.valueCodeableConcept."
 
 * component[therapy-assessed] ^short = "Non-medication therapy assessed"
 * component[therapy-assessed] ^definition = "The non-medication therapy (e.g., altered diet, radiation therapy, surgery) implicated with respect to the related finding(s) and cancer/phenotypic treatment context"
@@ -148,6 +146,8 @@ Description:    "Profile with properties for observations that convey the potent
 * component[therapy-assessed].value[x] ^binding.strength = #example
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[therapy-assessed].value[x] 1..1
+* component[therapy-assessed].extension contains TherapyAssessedReference named therapy-assessed-reference 0..*
+* component[therapy-assessed].extension[TherapyAssessedReference] ^requirements = "NOTE - If this extension is used, it should not conflict with the code delivered in the component.valueCodeableConcept."
 
 Profile:        MedicationRecommendation
 Parent:         Task
