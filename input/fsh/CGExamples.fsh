@@ -877,55 +877,8 @@ Description: "Generic grouping of Regions Studied and Variant observations"
 * hasMember[8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
 * hasMember[9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
 * hasMember[10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
-* hasMember[11] = Reference(RegionStudiedPGx1) "CYP2C19"
-* hasMember[12] = Reference(RegionStudiedPGx2) "CYP2C9"
-* hasMember[13] = Reference(RegionStudiedPGx3) "VKORC1"
 
 //* variants if needed
-
-Instance: RegionStudiedPGx1
-InstanceOf: RegionStudied
-Description: "eMERGE PGx CYP2C19"
-* id = "RegionStudiedPGx1"
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2019-04-01"
-* performer = Reference(ExampleOrg)
-* status = #final
-* component[region-description].valueString = "protein-coding and exon-splicing regions."
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[region-coverage].valueQuantity.value = 100
-
-
-Instance: RegionStudiedPGx2
-InstanceOf: RegionStudied
-Description: "eMERGE PGx CYP2C9"
-* id = "RegionStudiedPGx2"
-* subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2019-04-01"
-* performer = Reference(ExampleOrg)
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* status = #final
-* component[region-description].valueString = "protein-coding and exon-splicing regions."
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-* component[region-coverage].valueQuantity.value = 100
-
-Instance: RegionStudiedPGx3
-InstanceOf: RegionStudied
-Description: "eMERGE PGx VKORC1"
-* id = "RegionStudiedPGx3"
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2019-04-01"
-* performer = Reference(ExampleOrg)
-* status = #final
-* component[region-description].valueString = "protein-coding and exon-splicing regions."
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
-* component[region-coverage].valueQuantity.value = 100
-
 Instance: PGxGenomicReportEMERGE
 InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
@@ -989,9 +942,12 @@ InstanceOf: GenomicStudyAnalysis
 Description: "Example of PGX Sequence analysis"
 Usage: #example
 * extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx1) "CYP2C19"
-* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx2) "CYP2C9"
-* extension[GenomicStudyAnalysisRegionsStudied][+].valueReference = Reference(RegionStudiedPGx3) "VKORC1"
+* extension[GenomicStudyAnalysisMetrics].extension[sequencing-coverage].valueQuantity.value = 100
+* extension[GenomicStudyAnalysisRegions]
+  * extension[description].valueString = "protein-coding and exon-splicing regions"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2021-01-01T01:01:10-06:00"
