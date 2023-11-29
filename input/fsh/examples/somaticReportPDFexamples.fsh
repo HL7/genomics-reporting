@@ -1014,7 +1014,7 @@ Usage: #example
 * docStatus = #preliminary
 * description = "Regions deemed uncallable (generally due to low coverage)."
 * securityLabel = $CONFIDENTIALITY#R "Restricted"
-* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/TR-A6mx76UzMMOwbtObT7f1o/WES-UncallableRegions-GRCh38.bed"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/WrHnNR_WvMcqM2aXQ3BRHxlA/WES-UncallableRegions-GRCh38.bed"
 * content.attachment.title = "WES-UncallableRegions-GRCh38"
 
 Instance: somaticVCFfile
@@ -1027,7 +1027,7 @@ Usage: #example
 * docStatus = #preliminary
 * description = "VCF file containing identified variants"
 * securityLabel = $CONFIDENTIALITY#R "Restricted"
-* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/bS9vjji0N3X8BrAm2Jz70WuH/somaticVCFFile.vcf"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/Rp_GBGx6jz5reuS_Py7XQDjr/somaticVCFFile.vcf"
 * content.attachment.title = "somatic VCF File"
 
 Instance: FullGenome-GRCh38
@@ -1040,7 +1040,7 @@ Usage: #example
 * docStatus = #preliminary
 * description = "Studied region for RNA sequencing."
 * securityLabel = $CONFIDENTIALITY#R "Restricted"
-* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/Zi2CoEsUhGXjKMfIvcAwc5q-/Default.WGS.GRCh38.bed"
+* content.attachment.url = "https://chat.fhir.org/user_uploads/10155/ha97JexWz8T5PLHl7zoLsosd/Default.WGS.GRCh38.bed"
 * content.attachment.title = "Full Genome"
 
 Instance: overallInt
