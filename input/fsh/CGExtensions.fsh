@@ -37,20 +37,20 @@ Description: "Adds codified notes to a report to capture additional content"
 * ^context[=].expression = "DiagnosticReport"
 * value[x] only CodedAnnotation
 
-Extension:   TherapyAssessed
-Id:          therapy-assessed
-Title:       "Therapy Assessed"
+Extension:   TherapyAssessedReference
+Id:          therapy-assessed-reference
+Title:       "Therapy Assessed reference to a FHIR resource"
 Description: "Used to reference a specific therapy that was assessed (e.g. a FHIR ResearchStudy, a FHIR CarePlan, or a FHIR PlanDefinition)."
 * ^context[0].type = #element
-* ^context[0].expression = "Observation"
+* ^context[0].expression = "Observation.component"
 * value[x] only Reference(CarePlan or ResearchStudy or PlanDefinition)
 
-Extension:   MedicationAssessed
-Id:          medication-assessed
-Title:       "Medication Assessed"
+Extension:   MedicationAssessedReference
+Id:          medication-assessed-reference
+Title:       "Medication Assessed reference to a FHIR resource"
 Description: "Used to reference a specific medication that was assessed (e.g. a FHIR Medication or a FHIR MedicationKnowledge)."
 * ^context[0].type = #element
-* ^context[0].expression = "Observation"
+* ^context[0].expression = "Observation.component"
 * value[x] only Reference(Medication or MedicationKnowledge)
 
 Extension:   RepeatMotifOrder

@@ -300,8 +300,6 @@ Usage: #inline
 Instance: Inline-Instance-for-oncologyexamples-r4-14
 InstanceOf: TherapeuticImplication
 Usage: #inline
-* extension.url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapy-assessed"
-* extension.valueReference = Reference(PlanDefRuxolitinib)
 * contained[+] = PlanDefRuxolitinib
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
@@ -311,6 +309,9 @@ Usage: #inline
 * effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
+* component[therapy-assessed]
+  * valueCodeableConcept.text = "Ruxolitinib"
+  * extension[TherapyAssessedReference].valueReference = Reference(PlanDefRuxolitinib)
 
 Instance: PlanDefRuxolitinib
 InstanceOf: PlanDefinition
