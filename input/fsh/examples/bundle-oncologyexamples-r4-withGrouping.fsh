@@ -325,12 +325,9 @@ Usage: #inline
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = TbdCodesCS#therapeutic-implication
-* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
-* component[+].code = $LNC#93044-6 "Level of Evidence"
-* component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
-* component[+].code = $LNC#81259-4
-* component[=].valueCodeableConcept.text = "Polycythemia vera (PV)"
+* component[therapeutic-implication].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
+* component[evidence-level].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
+* component[phenotypic-treatment-context].valueCodeableConcept.text = "Polycythemia vera (PV)"
 * component[medication-assessed]
   * valueCodeableConcept = $RXN#1193326 "Ruxolitinib"
   * extension[MedicationAssessedReference].valueReference = Reference(Inline-MedicationKnowledgeRuxolitinib)

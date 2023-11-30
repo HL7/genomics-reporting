@@ -190,9 +190,14 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[copy-number].code = $LNC#82155-3
 * component[copy-number].code ^short = "82155-3"
 * component[copy-number] ^short = "Genomic Structural Variant Copy Number"
-* component[copy-number] ^definition = "The copy number of the large variant. In HGVS, this is the numeric value following the “X”. It is a unit-less value. Note that a copy number of 1 can imply a deletion."
-* component[copy-number].value[x] only Quantity
-* component[copy-number].value[x] obeys cnt-3  // MLT: adjust to conform to cnt-3 which is an invariant for Quantity specialization, Count.
+* component[copy-number] ^definition = "The copy number of the large variant. In HGVS, this is the numeric value following the “X”. It is a unit-less value. If the value determined by the assay is not a whole number, a range or decimal number can be specified. Note that a copy number of 1 can imply a deletion."
+* component[copy-number] ^requirements = "There SHALL be a code with a value of '1' if there is a value. If system is present, it SHALL be UCUM."
+* component[copy-number] ^comment = """
+Copy number variants are often described with a single copy number value. However, due to the nature of assays, such as qPCR and microarray, it can be difficult to assign an exact copy number. Therefore, labs sometimes report a range instead of an exact copy number. They may alternatively choose to report decimal numbers, even if whole numbers are biologically correct.
+
+In general, it can be difficult to estimate a copy number from measurements taken on a heterogenous population of cells, such as a tumor. As indicated in the ISCN 2020 specifications, it is appropriate to express the measurements using a range. Furthermore, regardless of cell population, many assays use fluorescent probes to detect copy number. These testing methodologies do not always provide an exact, discrete value for this data point.
+"""
+* component[copy-number].value[x] only Quantity or Range
 
 * component[ref-allele].code = $LNC#69547-8
 * component[ref-allele].code ^short = "69547-8"
