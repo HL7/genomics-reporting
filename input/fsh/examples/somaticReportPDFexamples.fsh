@@ -921,35 +921,22 @@ Instance: analysisTumorNormalDNA
 InstanceOf: GenomicStudyAnalysis
 Description: "Example for Tumor Normal Genomics Study Analysis"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-genome-build"
-* extension[=].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-specimen"
-* extension[=].valueReference = Reference(Specimen/tumorSpecimen)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-specimen"
-* extension[=].valueReference = Reference(Specimen/normalSpecimen)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-focus"
-* extension[=].valueReference = Reference(Patient/somaticPatient)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-regions-studied"
-* extension[=].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-regions-uncallable"
-* extension[=].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-output"
-* extension[=].extension[0].url = "type"
-* extension[=].extension[=].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
-* extension[=].extension[+].url = "file"
-* extension[=].extension[=].valueReference = Reference(DocumentReference/somaticVCFfile)
+* extension[GenomicStudyAnalysisRegions]
+  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+  * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
+* extension[GenomicStudyAnalysisGenomeBuild].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
+* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
+* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/normalSpecimen)
+* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
+* extension[GenomicStudyAnalysisOutput][+]
+  * extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
+  * extension[file].valueReference = Reference(DocumentReference/somaticVCFfile)
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2023-02-02T01:01:10-06:00"
@@ -960,18 +947,12 @@ Instance: analysisTumorRNA
 InstanceOf: GenomicStudyAnalysis
 Description: "Example for just Tumor RNA Genomic Study Analysis"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-method-type"
-* extension[=].valueCodeableConcept = $GSMETHODTYPE#rna-analysis "RNA analysis"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0001565 "gene_fusion"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-change-type"
-* extension[=].valueCodeableConcept = $SEQONT#SO:0001576 "transcript_variant"
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-specimen"
-* extension[=].valueReference = Reference(Specimen/tumorSpecimen)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-focus"
-* extension[=].valueReference = Reference(Patient/somaticPatient)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-regions-studied"
-* extension[=].valueReference = Reference(DocumentReference/FullGenome-GRCh38)
+* extension[GenomicStudyAnalysisRegions].extension[studied][+].valueReference = Reference(DocumentReference/FullGenome-GRCh38)
+* extension[GenomicStudyAnalysisMethodType].valueCodeableConcept = $GSMETHODTYPE#rna-analysis "RNA analysis"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001565 "gene_fusion"
+* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001576 "transcript_variant"
+* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
+* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
 * status = #completed
 * category = $OBSCAT#laboratory
 * performedDateTime = "2023-02-02T01:01:10-06:00"
