@@ -3,10 +3,6 @@ InstanceOf: Bundle
 Description: "Example bundle containing CYP2C19 report and variants"
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe00"
-* entry[=].resource = rs-5c7e9e1ca6214
-* entry[=].request.method = #POST
-* entry[=].request.url = "Observation"
 * entry[+].fullUrl = "urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe01"
 * entry[=].resource = dv-5c7e9e1ca62b5
 * entry[=].request.method = #POST
@@ -361,7 +357,6 @@ Usage: #inline
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#81247-9
   * text = "Genetic analysis report"
-* result[0] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe00)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe01)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe02)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe03)
@@ -2437,20 +2432,6 @@ Usage: #inline
 * component[=].valueCodeableConcept = $LNC#LA30102-0
 * component[+].code = $LNC#81254-5
 * component[=].valueRange.low.value = 96537137
-
-Instance: rs-5c7e9e1ca6214
-InstanceOf: RegionStudied
-Usage: #inline
-* status = #final
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = $LNC#53041-0 "DNA Region of interest panel"
-* subject = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeac)
-* effectiveDateTime = "2019-03-05"
-* issued = "2019-03-05T16:04:44+00:00"
-* performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
-* component.code = $LNC#48018-6 "Gene studied ID"
-* component.valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
 
 Instance: sid-5c7e9e1ca8a29
 InstanceOf: SequencePhaseRelationship

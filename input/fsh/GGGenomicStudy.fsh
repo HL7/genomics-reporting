@@ -29,8 +29,8 @@ Parent: Procedure
 Id: genomic-study
 Title: "Genomic Study"
 Description: "A genomic study is a set of analyses performed to analyze and generate genomic data."
-* extension contains GenomicStudyAnalysisExt named genomic-study-analysis-ext 0..* 
-  and GenomicStudyReferrerExt named genomic-study-referrer-ext 0..1
+* extension contains GenomicStudyAnalysisExt named genomic-study-analysis 0..* 
+  and GenomicStudyReferrerExt named referrer 0..1
 * extension[GenomicStudyAnalysisExt] ^short = "GenomicStudy.analysis"
 * extension[GenomicStudyReferrerExt] ^short = "GenomicStudy.referrer"
 * text ^short = "GenomicStudy.description"
@@ -42,7 +42,7 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
   * ^short = "GenomicStudy.status"
   * ^definition = "GenomicStudy.status is different from Procedure.status, see [mapping](ConceptMap-GenomicStudyStatusMap.html)"
 * category 1..1
-* category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
+* category.coding = $OBSCAT#laboratory
 * code from GenomicStudyTypeVS (example)
   * ^short = "GenomicStudy.type"
 * subject ^short = "GenomicStudy.subject"
@@ -163,29 +163,68 @@ Description: "Defines a protocol that was performed for a genomic analysis"
 * ^context[=].expression = "Procedure"
 * value[x] only Reference(Procedure or Task)
 
-Extension:   GenomicStudyAnalysisRegionsStudied
-Id:          genomic-study-analysis-regions-studied
-Title:      "Genomic Study Analysis Regions Studied"
-Description: "Defines a regions studied for a genomic analysis"
+Extension:   GenomicStudyAnalysisMetrics
+Id:          genomic-study-analysis-metrics
+Title:       "Genomic Study Analysis Metrics"
+Description: "Metrics about the sequencing analysis that was performed"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDataFile or RegionStudied)
+* extension contains
+    read-depth 0..1 and
+    sequencing-coverage 0..1 and
+    metrics-description 0..1
+* extension[read-depth] ^short = "Read Depth"
+* extension[read-depth] ^definition = "The average read depth (number of reads for a position) for the sequencing test"
+* extension[read-depth] ^requirements = "This value is typically represented with an 'x' after the number (30x). Simply share the quantity here."
+* extension[read-depth].value[x] only SimpleQuantity
+* extension[read-depth].value[x] ^short = "30, 100"
+* extension[sequencing-coverage] ^short = "Sequencing Coverage"
+* extension[sequencing-coverage] ^definition = "The percentage of the studied regions that were sequenced"
+* extension[sequencing-coverage] ^requirements = "This value is typically represented with an '%' after the number (95%). Simply share the quantity here."
+* extension[sequencing-coverage].value[x] only SimpleQuantity
+* extension[sequencing-coverage].value[x] ^short = "95, 100"
+* extension[metrics-description] ^short = "Metrics Description"
+* extension[metrics-description] ^definition = "Freetext description of the coverage metrics for the sequencing test"
+* extension[metrics-description].value[x] only string
 
-Extension:   GenomicStudyAnalysisRegionsCalled
-Id:          genomic-study-analysis-regions-called
-Title:      "Genomic Study Analysis Regions called"
-Description: "Defines a regions called for a genomic analysis"
+Extension:   GenomicStudyAnalysisRegions
+Id:          genomic-study-analysis-regions
+Title:       "Genomic Study Analysis Regions"
+Description: "Defines the regions studied, regions called, and regions deemed uncallable (generally due to low coverage)"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDataFile or RegionStudied)
+* extension contains
+    description 0..1 and
+    studied 0..* and
+    called 0..* and
+    uncalled 0..*
+* extension[description] ^short = "Regions Studied Description"
+* extension[description] ^definition = "Freetext description of the regions studied for the sequencing test"
+* extension[description].value[x] only string
 
-Extension:   GenomicStudyAnalysisRegionsUncallable
-Id:          genomic-study-analysis-regions-uncallable
-Title:      "Genomic Study Analysis Regions uncallable"
-Description: "Defines regions deemed uncallable (generally due to low coverage)"
-* ^context[+].type = #element
-* ^context[=].expression = "Procedure"
-* value[x] only Reference(GenomicDataFile or RegionStudied)
+* extension[studied] ^short = "Genes or Regions Studied (GenomicStudy.analysis.regionsStudied)"
+* extension[studied] ^definition = "The genes or regions that were studied in the analysis."
+* extension[studied] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions studied in the analysis."
+* extension[studied].value[x] only CodeableConcept or Reference(GenomicDataFile)
+* extension[studied].value[x] 1..1
+* extension[studied].value[x] ^short = "Gene codes or BED file"
+* extension[studied].value[x] from HGNCVS (extensible)
+
+* extension[called] ^short = "Genes or Regions Called (GenomicStudy.analysis.regionsCalled)"
+* extension[called] ^definition = "The genes or regions that were studied for the analysis with sufficient coverage and quality to be called."
+* extension[called] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions deemed callable."
+* extension[called].value[x] only CodeableConcept or Reference(GenomicDataFile)
+* extension[called].value[x] 1..1
+* extension[called].value[x] ^short = "Gene codes or BED file"
+* extension[called].value[x] from HGNCVS (extensible)
+
+* extension[uncalled] ^short = "Genes or Regions Uncalled"
+* extension[uncalled] ^definition = "The genes or regions that were studied for the analysis but were deemed uncallable."
+* extension[uncalled] ^requirements = "Shared as a coded list of HGNC gene symbols or a BED file. For coded genes, the HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used. If details beyond a coded list of genes are needed, a BED file SHALL be used to further describe the regions deemed uncallable."
+* extension[uncalled].value[x] only CodeableConcept or Reference(GenomicDataFile)
+* extension[uncalled].value[x] 1..1
+* extension[uncalled].value[x] ^short = "Gene codes or BED file"
+* extension[uncalled].value[x] from HGNCVS (extensible)
 
 Extension:      GenomicStudyAnalysisDevice
 Id:             genomic-study-analysis-device
@@ -206,39 +245,37 @@ Parent: Procedure
 Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
 Description: "A genomic study analysis is a component of a genomic study."
-* extension contains GenomicStudyAnalysisMethodType named genomic-study-analysis-method-type 0..*
-                 and GenomicStudyAnalysisChangeType named genomic-study-analysis-change-type 0..*
-                 and GenomicStudyAnalysisGenomeBuild named genomic-study-analysis-genome-build 0..1
-                 and GenomicStudyAnalysisTitle named genomic-study-analysis-title 0..1
-                 and GenomicStudyAnalysisFocus named genomic-study-analysis-focus 0..*
-                 and GenomicStudyAnalysisSpecimen named genomic-study-analysis-specimen 0..*
-                 and GenomicStudyAnalysisRegionsStudied named genomic-study-analysis-regions-studied 0..*
-                 and GenomicStudyAnalysisRegionsUncallable named genomic-study-analysis-regions-uncallable 0..*
-                 and GenomicStudyAnalysisRegionsCalled named genomic-study-analysis-regions-called 0..*
-                 and GenomicStudyAnalysisInput named genomic-study-analysis-input 0..*
-                 and GenomicStudyAnalysisOutput named genomic-study-analysis-output 0..*
-                 and GenomicStudyAnalysisDevice named genomic-study-analysis-device 0..*
-                 and GenomicStudyAnalysisProtocolPerformed named genomic-study-analysis-protocol-performed 0..1
+* extension contains GenomicStudyAnalysisMethodType named method-type 0..*
+                 and GenomicStudyAnalysisChangeType named change-type 0..*
+                 and GenomicStudyAnalysisGenomeBuild named genome-build 0..1
+                 and GenomicStudyAnalysisTitle named title 0..1
+                 and GenomicStudyAnalysisFocus named focus 0..*
+                 and GenomicStudyAnalysisSpecimen named specimen 0..*
+                 and GenomicStudyAnalysisMetrics named metrics 0..1
+                 and GenomicStudyAnalysisRegions named regions 0..1
+                 and GenomicStudyAnalysisDevice named device 0..*
+                 and GenomicStudyAnalysisProtocolPerformed named protocol-performed 0..1
+                 and GenomicStudyAnalysisInput named input 0..*
+                 and GenomicStudyAnalysisOutput named output 0..*
 * extension[GenomicStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
 * extension[GenomicStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
 * extension[GenomicStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
 * extension[GenomicStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
-* extension[GenomicStudyAnalysisRegionsStudied] ^short = "GenomicStudy.analysis.regionsStudied"
-* extension[GenomicStudyAnalysisRegionsUncallable] ^short = "GenomicStudy.analysis.regionsUncallable"
-* extension[GenomicStudyAnalysisRegionsCalled] ^short = "GenomicStudy.analysis.regionsCalled"
-* extension[GenomicStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
-* extension[GenomicStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
+* extension[GenomicStudyAnalysisMetrics] ^short = "Genomic Study Analysis Metrics"
+* extension[GenomicStudyAnalysisRegions] ^short = "Genomic Study Analysis Regions"
 * extension[GenomicStudyAnalysisDevice] ^short = "GenomicStudy.analysis.device"
 * extension[GenomicStudyAnalysisProtocolPerformed] ^short = "GenomicStudy.protocolPerformed"
+* extension[GenomicStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
+* extension[GenomicStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
 * identifier ^short = "GenomicStudy.analysis.identifier"
 * instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
   * ^short = "GenomicStudy.analysis.instantiatesCanonical"
 * instantiatesUri ^short = "GenomicStudy.analysis.instantiatesUri"
 * status = #completed
 * category 1..1
-* category.coding = $OBSCAT#laboratory //kp -- perhaps should find a SNOMED code for laboratory?
+* category.coding = $OBSCAT#laboratory
 * performed[x] only dateTime
 * performedDateTime ^short = "GenomicStudy.analysis.date"
 * performer.actor only Reference(Practitioner or PractitionerRole or Organization or Device)

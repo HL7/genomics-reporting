@@ -106,11 +106,10 @@
 <artifact id="StructureDefinition/genomic-study-analysis-genome-build" key="StructureDefinition-genomic-study-analysis-genome-build" name="Genomic Study Analysis Genome Build"/>
 <artifact id="StructureDefinition/genomic-study-analysis-input" key="StructureDefinition-genomic-study-analysis-input" name="Genomic Study Analysis Input"/>
 <artifact id="StructureDefinition/genomic-study-analysis-method-type" key="StructureDefinition-genomic-study-analysis-method-type" name="Genomic Study Analysis Method Type"/>
+<artifact id="StructureDefinition/genomic-study-analysis-metrics" key="StructureDefinition-genomic-study-analysis-metrics" name="Genomic Study Analysis Metrics"/>
 <artifact id="StructureDefinition/genomic-study-analysis-output" key="StructureDefinition-genomic-study-analysis-output" name="Genomic Study Analysis Output"/>
 <artifact id="StructureDefinition/genomic-study-analysis-protocol-performed" key="StructureDefinition-genomic-study-analysis-protocol-performed" name="Genomic Study Analysis Protocol Performed"/>
-<artifact id="StructureDefinition/genomic-study-analysis-regions-studied" key="StructureDefinition-genomic-study-analysis-regions-studied" name="Genomic Study Analysis Regions Studied"/>
-<artifact id="StructureDefinition/genomic-study-analysis-regions-called" key="StructureDefinition-genomic-study-analysis-regions-called" name="Genomic Study Analysis Regions called"/>
-<artifact id="StructureDefinition/genomic-study-analysis-regions-uncallable" key="StructureDefinition-genomic-study-analysis-regions-uncallable" name="Genomic Study Analysis Regions uncallable"/>
+<artifact id="StructureDefinition/genomic-study-analysis-regions" key="StructureDefinition-genomic-study-analysis-regions" name="Genomic Study Analysis Regions"/>
 <artifact id="StructureDefinition/genomic-study-analysis-specimen" key="StructureDefinition-genomic-study-analysis-specimen" name="Genomic Study Analysis Specimen"/>
 <artifact id="StructureDefinition/genomic-study-analysis-title" key="StructureDefinition-genomic-study-analysis-title" name="Genomic Study Analysis Title"/>
 <artifact id="CodeSystem/genomic-study-change-type-cs" key="CodeSystem-genomic-study-change-type-cs" name="Genomic Study Change Type CodeSystem"/>
@@ -173,7 +172,8 @@
 <artifact id="Observation/MSH2-del-molc" key="Observation-MSH2-del-molc" name="MSH2-del-molc"/>
 <artifact id="Observation/MSH2-del-var" key="Observation-MSH2-del-var" name="MSH2-del-var"/>
 <artifact id="Observation/MSIExample" key="Observation-MSIExample" name="MSIExample"/>
-<artifact id="StructureDefinition/medication-assessed" key="StructureDefinition-medication-assessed" name="Medication Assessed"/>
+<artifact deprecated="true" id="StructureDefinition/medication-assessed" key="StructureDefinition-medication-assessed" name="Medication Assessed"/>
+<artifact id="StructureDefinition/medication-assessed-reference" key="StructureDefinition-medication-assessed-reference" name="Medication Assessed reference to a FHIR resource"/>
 <artifact id="StructureDefinition/medication-recommendation" key="StructureDefinition-medication-recommendation" name="Medication Recommendation"/>
 <artifact id="Task/MedicationRecommendationExample1" key="StructureDefinition-task-med-chg" name="MedicationRecommendationExample1"/>
 <artifact id="MedicationStatement/MedicationStatementWarfarin" key="MedicationStatement-MedicationStatementWarfarin" name="MedicationStatementWarfarin"/>
@@ -236,10 +236,10 @@
 <artifact id="Observation/ROS1-Fusion-therapuTrial" key="Observation-ROS1-Fusion-therapuTrial" name="ROS1-Fusion-therapuTrial"/>
 <artifact id="Observation/ROS1-Fusion-var" key="Observation-ROS1-Fusion-var" name="ROS1-Fusion-var"/>
 <artifact id="StructureDefinition/recommended-action" key="StructureDefinition-RecommendedAction" name="Recommended Action"/>
-<artifact id="StructureDefinition/region-studied" key="StructureDefinition-region-studied" name="Region Studied"/>
-<artifact id="Observation/RegionStudiedPGx1" key="Observation-RegionStudiedPGx1" name="RegionStudiedPGx1"/>
-<artifact id="Observation/RegionStudiedPGx2" key="Observation-RegionStudiedPGx2" name="RegionStudiedPGx2"/>
-<artifact id="Observation/RegionStudiedPGx3" key="Observation-RegionStudiedPGx3" name="RegionStudiedPGx3"/>
+<artifact deprecated="true" id="StructureDefinition/region-studied" key="StructureDefinition-region-studied" name="Region Studied"/>
+<artifact deprecated="true" id="Observation/RegionStudiedPGx1" key="Observation-RegionStudiedPGx1" name="RegionStudiedPGx1"/>
+<artifact deprecated="true" id="Observation/RegionStudiedPGx2" key="Observation-RegionStudiedPGx2" name="RegionStudiedPGx2"/>
+<artifact deprecated="true" id="Observation/RegionStudiedPGx3" key="Observation-RegionStudiedPGx3" name="RegionStudiedPGx3"/>
 <artifact deprecated="true" id="StructureDefinition/CGRelatedArtifact" key="StructureDefinition-CGRelatedArtifact" name="Related Artifact"/>
 <artifact id="StructureDefinition/related-artifact-component" key="StructureDefinition-related-artifact-component" name="Related Artifact for Observation component"/>
 <artifact id="StructureDefinition/repeat-motif-order" key="StructureDefinition-repeat-motif-order" name="Repeat Motif Order"/>
@@ -262,7 +262,8 @@
 <artifact id="Observation/Therapeutic-Implication-Clinical-Trial-2" key="Observation-Therapeutic-Implication-Clinical-Trial-2" name="Therapeutic-Implication-Clinical-Trial-2"/>
 <artifact id="Observation/Therapeutic-Implication-Clinical-Trial-Somatic" key="Observation-Therapeutic-Implication-Clinical-Trial-Somatic" name="Therapeutic-Implication-Clinical-Trial-Somatic"/>
 <artifact id="Observation/TherapeuticImplicationExample1" key="Observation-TherapeuticImplicationExample1" name="TherapeuticImplicationExample1"/>
-<artifact id="StructureDefinition/therapy-assessed" key="StructureDefinition-therapy-assessed" name="Therapy Assessed"/>
+<artifact deprecated="true" id="StructureDefinition/therapy-assessed" key="StructureDefinition-therapy-assessed" name="Therapy Assessed"/>
+<artifact id="StructureDefinition/therapy-assessed-reference" key="StructureDefinition-therapy-assessed-reference" name="Therapy Assessed reference to a FHIR resource"/>
 <artifact id="CodeSystem/tbd-codes-cs" key="CodeSystem-TbdCodes" name="To Be Determined Codes"/>
 <artifact id="ValueSet/tbd-codes-vs" key="ValueSet-tbd" name="To Be Determined Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/tmb" key="StructureDefinition-tmb" name="Tumor Mutation Burden"/>

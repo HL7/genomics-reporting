@@ -308,7 +308,7 @@ Usage: #example
 * parameter[=].part[=].resource.subject.reference = "Patient/CGPatientExample01"
 * parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
 * parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
-* parameter[=].part[=].resource.valueCodeableConcept.coding.system = "https://www.pharmvar.org/"
+* parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://www.pharmvar.org"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #CYP2D6_*1/*1
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "CYP2D6 *1/*1"
 * parameter[=].part[=].resource.specimen.reference = "Specimen/GenomicSpecimenExample01"
@@ -336,7 +336,7 @@ Usage: #example
 * parameter[=].part[=].resource.subject.reference = "Patient/CGPatientExample01"
 * parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
 * parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
-* parameter[=].part[=].resource.valueCodeableConcept.coding.system = "https://www.pharmvar.org/"
+* parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://www.pharmvar.org"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #CYP2C19_*1/*2
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "CYP2C19 *1/*2"
 * parameter[=].part[=].resource.specimen.reference = "Specimen/GenomicSpecimenExample01"

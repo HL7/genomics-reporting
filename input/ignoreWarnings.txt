@@ -17,51 +17,91 @@ Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 
-# CodeSystems not supported yet
-Error from server: Unable to provide support for code system http://sequenceontology.org
-Error from server: Unable to provide support for code system http://www.ebi.ac.uk/ols/ontologies/geno 
-Code System URI 'https://hgsc.bcm.edu/lab-test-codes/' is unknown so the code cannot be validated
-Code System URI 'http://www.genenames.org' is unknown so the code cannot be validated
-Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' is unknown so the code cannot be validated
-Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated
-Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
-Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' is unknown so the code cannot be validated
-Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' is unknown so the code cannot be validated
-Code System URI 'http://glstring.org' is unknown so the code cannot be validated
-Code System URI 'http://www.pharmvar.org' is unknown so the code cannot be validated
-Code System URI 'http://www.ncbi.nlm.nih.gov/medgen' is unknown so the code cannot be validated
-Code System URI 'http://www.orpha.net' is unknown so the code cannot be validated
-Code System URI 'http://www.omim.org' is unknown so the code cannot be validated
-Code System URI 'http://clinicaltrials.gov/' is unknown so the code cannot be validated
-Code System URI 'http://human-phenotype-ontology.org' is unknown so the code cannot be validated
-Code System URI 'http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction' is unknown so the code cannot be validated
-Code System URI 'https://api.ncbi.nlm.nih.gov/variation/v0/' is unknown so the code cannot be validated
-Code System URI 'https://civicdb.org/evidence' is unknown so the code cannot be validated
+# CodeSystems and ValueSets not supported yet
+
+# genenames
 Code System URI 'http://www.genenames.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|2.1.0-SNAPSHOT
+Code System URI 'http://www.genenames.org' could not be found so the code cannot be validated
+Code System URI 'http://www.genenames.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|2.1.0-SNAPSHOT
+The definition for the Code System with URI 'http://www.genenames.org' doesnt provide any codes so the code cannot be validated
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.genenames.org
+
+# HGVS
+Error from server: HGVS is not supported at this time
+Error from http://tx.fhir.org/r4: HGVS is not supported at this time
+
+# sequenceontology
+Error from server: Unable to provide support for code system http://sequenceontology.org
+Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated
+Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|2.1.0-SNAPSHOT
-Code System URI 'https://www.pharmvar.org/' is unknown so the code cannot be validated
+Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|2.1.0-SNAPSHOT
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
+Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
+Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
 Code System URI 'http://sequenceontology.org' is unknown so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|2.1.0-SNAPSHOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|2.1.0-SNAPSHOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|2.1.0-SNAPSHOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|2.1.0-SNAPSHOT
-The definition for the Code System with URI 'http://www.genenames.org' doesnt provide any codes so the code cannot be validated
+Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|2.1.0-SNAPSHOT
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://sequenceontology.org
+
+# glstring
+Code System URI 'http://glstring.org' is unknown so the code cannot be validated
+Code System URI 'http://glstring.org' could not be found so the code cannot be validated
+
+# human-phenotype-ontology
+Code System URI 'http://human-phenotype-ontology.org' is unknown so the code cannot be validated
+Code System URI 'http://human-phenotype-ontology.org' could not be found so the code cannot be validated
+The definition for the Code System with URI 'http://human-phenotype-ontology.org' doesnt provide any codes so the code cannot be validated
+Unknown System 'http://human-phenotype-ontology.org' specified, so Concepts and Filters can't be checked (Details: Resolved system http://human-phenotype-ontology.org (v1.0.0), but the definition is not complete)
+
+# pharmvar
+Code System URI 'http://www.pharmvar.org' is unknown so the code cannot be validated
+Code System URI 'http://www.pharmvar.org' could not be found so the code cannot be validated
+
+# clinicaltrials
+Code System URI 'http://clinicaltrials.gov/' is unknown so the code cannot be validated
+Code System URI 'http://clinicaltrials.gov/' could not be found so the code cannot be validated
+
+# various nih
+Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' is unknown so the code cannot be validated
+Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' could not be found so the code cannot be validated
+Code System URI 'http://ncimeta.nci.nih.gov' is unknown so the code cannot be validated
+Code System URI 'http://ncimeta.nci.nih.gov' could not be found so the code cannot be validated
+Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' is unknown so the code cannot be validated
+Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' could not be found so the code cannot be validated
+Code System URI 'http://www.ncbi.nlm.nih.gov/medgen' is unknown so the code cannot be validated
+Code System URI 'http://www.ncbi.nlm.nih.gov/medgen' could not be found so the code cannot be validated
+Code System URI 'https://api.ncbi.nlm.nih.gov/variation/v0/' is unknown so the code cannot be validated
+Code System URI 'https://api.ncbi.nlm.nih.gov/variation/v0/' could not be found so the code cannot be validated
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/clinvar' doesnt provide any codes so the code cannot be validated
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/refseq' doesnt provide any codes so the code cannot be validated
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/projects/SNP' doesnt provide any codes so the code cannot be validated
 The definition for the Code System with URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' doesnt provide any codes so the code cannot be validated
+
+# other misc 
 The definition for the Code System with URI 'https://iscn.karger.com' doesnt provide any codes so the code cannot be validated
-The definition for the Code System with URI 'http://human-phenotype-ontology.org' doesnt provide any codes so the code cannot be validated
-Error from server: HGVS is not supported at this time
-Error from http://tx.fhir.org/r4: HGVS is not supported at this time
+Code System URI 'http://www.omim.org' is unknown so the code cannot be validated
+Code System URI 'http://www.omim.org' could not be found so the code cannot be validated
+Code System URI 'http://www.orpha.net' is unknown so the code cannot be validated
+Code System URI 'http://www.orpha.net' could not be found so the code cannot be validated
+Error from server: Unable to provide support for code system http://www.ebi.ac.uk/ols/ontologies/geno 
 Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.ebi.ac.uk/ols/ontologies/geno
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://sequenceontology.org
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.genenames.org
+Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' is unknown so the code cannot be validated
+Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found so the code cannot be validated
 Unknown System 'http://www.ebi.ac.uk/ols/ontologies/geno' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://www.ebi.ac.uk/ols/ontologies/geno is unknown (from Tx-Server))
-Unknown System 'http://human-phenotype-ontology.org' specified, so Concepts and Filters can't be checked (Details: Resolved system http://human-phenotype-ontology.org (v1.0.0), but the definition is not complete)
+Code System URI 'http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction' is unknown so the code cannot be validated
+Code System URI 'http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction' could not be found so the code cannot be validated
 Unknown System 'http://purl.obolibrary.org/obo/sepio-clingen' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://purl.obolibrary.org/obo/sepio-clingen is unknown (from Tx-Server))
+Code System URI 'https://hgsc.bcm.edu/lab-test-codes/' is unknown so the code cannot be validated
+Code System URI 'https://hgsc.bcm.edu/lab-test-codes/' could not be found so the code cannot be validated
+Code System URI 'https://civicdb.org/evidence' is unknown so the code cannot be validated
+
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|2.1.0-SNAPSHOT
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|2.1.0-SNAPSHOT
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|2.1.0-SNAPSHOT
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|2.1.0-SNAPSHOT
+
+# ---- end CodeSystem and ValueSets ----
 
 # Misc information messages
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
