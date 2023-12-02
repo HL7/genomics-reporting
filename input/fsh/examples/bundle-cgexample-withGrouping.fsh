@@ -351,7 +351,7 @@ Usage: #inline
 * component[=].valueQuantity = 208 '1'
 * component[+].code = $LNC#82155-3
 * component[=].valueQuantity = 1 '1'
-* component[+].code.coding = $LNC#81299-0
+* component[+].code = $LNC#81299-0
 * component[=].valueQuantity.value = 0.48
 * component[+].code = $LNC#81300-6
 * component[=].valueQuantity = 1396929 '1'

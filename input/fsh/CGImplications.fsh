@@ -7,7 +7,7 @@ Description:    "Properties common to genomic implications expressed as computab
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * value[x] 0..0
 * derivedFrom ^slicing.discriminator.type = #profile
-* derivedFrom ^slicing.discriminator.path = "$this.resolve()"
+* derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the resolve().code type"
 * derivedFrom 1..*

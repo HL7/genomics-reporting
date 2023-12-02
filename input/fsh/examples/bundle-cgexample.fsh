@@ -132,16 +132,18 @@ Usage: #inline
 * component[=].valueQuantity = 208 '1'
 * component[+].code = $LNC#82155-3
 * component[=].valueQuantity = 1 '1'
-* component[+].code.coding = $LNC#81299-0
-* component[=].valueQuantity.value = 0.48
-* component[+].code = $LNC#81300-6
-* component[=].valueQuantity = 1396929 '1'
 * component[+].code = $LNC#81301-4
 * component[=].valueRange.low.value = 13200589
 * component[=].valueRange.high.value = 15592000
 * component[+].code = $LNC#81302-2
 * component[=].valueRange.low.value = 14184616
 * component[=].valueRange.high.value = 15581544
+/* - examples of how open slicing is OK - commenting out for now since it causes many cascading issues in validation
+* component[+].code = $LNC#81299-0
+* component[=].valueQuantity.value = 0.48
+* component[+].code = $LNC#81300-6
+* component[=].valueQuantity = 1396929 '1'
+*/
 
 Instance: dis-path
 InstanceOf: DiagnosticImplication

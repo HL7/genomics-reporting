@@ -1,5 +1,3 @@
-Alias: workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
-
 Extension:   RecommendedAction
 Id:          recommended-action
 Title:       "Recommended Action"

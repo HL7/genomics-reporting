@@ -6,6 +6,7 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * ^abstract = true
 //* extension contains GenomicStudy named genomic-study 0..*
 //* extension[GenomicStudy] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
+* extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
 * partOf only Reference(MedicationAdministration or MedicationDispense or MedicationStatement or Procedure or Immunization or ImagingStudy or GenomicStudy)
 * category 2..*
 * category ^slicing.discriminator.type = #value
@@ -27,7 +28,6 @@ May include general statements about the observation, or statements about signif
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of interpretation, value, or component values.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
-* component.extension contains RelatedArtifactComponent named related-artifact 0..*
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
@@ -41,6 +41,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component[conclusion-string].code ^short = "conclusion-string"
 * component[conclusion-string].value[x] only string
 * component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"
+* component.extension contains RelatedArtifactComponent named related-artifact 0..*
 
 Profile:        OverallInterpretation
 Parent:         GenomicBase
@@ -80,7 +81,10 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype in the relationship"
 
-Alias: $SupportingInfo = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
+Alias: $workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
+Alias: $supporting-info = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
+Alias: $hla-genotyping-results-allele-database = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database
+Alias: $hla-genotyping-results-glstring = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring
 
 Profile:        GenomicReport
 Parent:         DiagnosticReport
@@ -90,8 +94,11 @@ Description:    "Genomic profile of DiagnosticReport."
 * extension contains RecommendedAction named recommended-action 0..*
     and GenomicRiskAssessment named genomic-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
-    and $SupportingInfo named supporting-info 0..*
+    and $supporting-info named supporting-info 0..*
     and GenomicStudyReference named genomic-study 0..*
+    and $hla-genotyping-results-allele-database named hla-genotyping-results-allele-database 0..1
+    and $hla-genotyping-results-glstring named hla-genotyping-results-glstring 0..1
+    and $workflow-relatedArtifact named workflow-relatedArtifact 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
 * extension[GenomicReportNote] ^comment = """
@@ -121,7 +128,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
     sequence-phase-relation 0..* and 
     genotype 0..* and 
     haplotype 0..* and
-    biomarker 0..*
+    biomarker 0..* 
 * result[overall] only Reference(OverallInterpretation)
 * result[overall] ^short = "Assessment of overall results"
 * result[diagnostic-implication] only Reference(DiagnosticImplication)

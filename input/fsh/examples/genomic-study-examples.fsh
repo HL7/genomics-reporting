@@ -217,7 +217,6 @@ InstanceOf: GenomicStudy
 Description: "GenomicStudy example of a trio analysis"
 Usage: #example
 * extension[GenomicStudyAnalysisExt][+].valueReference = Reference(genomicstudyanalysis-trio2)
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept.text =  "Trio-analysis"
 * extension[GenomicStudyReferrerExt].valueReference = Reference(Practitioner/practitioner02)
 * identifier[+]
   * use = #temp

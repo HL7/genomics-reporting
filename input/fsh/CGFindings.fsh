@@ -304,7 +304,7 @@ In general, it can be difficult to estimate a copy number from measurements take
 * component[repeat-motif].value[x] only string
 * component[repeat-motif].value[x] 1..1
 * component[repeat-motif].value[x] ^short = "CAG"
-* component[repeat-motif].extension contains RepeatMotifOrder named repeat-motif-order 0..1
+* component[repeat-motif].extension contains RepeatMotifOrder named repeat-motif-order 0..1 
 * component[repeat-motif].extension[RepeatMotifOrder] ^requirements = "The value must be a natural number starting from 1 and increasing sequentially"
 * component[repeat-motif].extension[RepeatMotifOrder] ^comment = "If there are multiple repeat expansion pairs, this must be used both to indicate the sequence position of a given repeat-motif and repeat-number pair and to group the related components together. Components with the same extension value describe the same motif."
 
@@ -339,12 +339,16 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
 * derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
-* derivedFrom contains Haplotype 0..* and 
-    Variant 0..*
-* derivedFrom[Haplotype] only Reference(Haplotype)
-* derivedFrom[Haplotype] ^short = "Haplotype this haplotype is derived from"
-* derivedFrom[Variant] only Reference(Variant)
-* derivedFrom[Variant] ^short = "Variant this haplotype is derived from"
+* derivedFrom contains 
+        haplotype 0..* 
+    and variant 0..* 
+    and molecular-sequence 0..*
+* derivedFrom[haplotype] only Reference(Haplotype)
+* derivedFrom[haplotype] ^short = "Haplotype this haplotype is derived from"
+* derivedFrom[variant] only Reference(Variant)
+* derivedFrom[variant] ^short = "Variant this haplotype is derived from"
+* derivedFrom[molecular-sequence] only Reference(MolecularSequence)
+* derivedFrom[molecular-sequence] ^short = "MolecularSequence this haplotype is derived from"
 
 Profile:        Genotype
 Parent:         GenomicFinding
@@ -364,12 +368,16 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
 * derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
-* derivedFrom contains Haplotype 0..* and 
-    Variant 0..*
-* derivedFrom[Haplotype] only Reference(Haplotype)
-* derivedFrom[Haplotype] ^short = "Haplotype this genotype is derived from"
-* derivedFrom[Variant] only Reference(Variant)
-* derivedFrom[Variant] ^short = "Variant this genotype is derived from"
+* derivedFrom contains 
+        haplotype 0..* 
+    and variant 0..*
+    and molecular-sequence 0..*
+* derivedFrom[haplotype] only Reference(Haplotype)
+* derivedFrom[haplotype] ^short = "Haplotype this genotype is derived from"
+* derivedFrom[variant] only Reference(Variant)
+* derivedFrom[variant] ^short = "Variant this genotype is derived from"
+* derivedFrom[molecular-sequence] only Reference(MolecularSequence)
+* derivedFrom[molecular-sequence] ^short = "MolecularSequence this genotype is derived from"
 
 Profile:        MolecularBiomarker
 Parent:         Observation
@@ -379,7 +387,7 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * code from MolecularBiomarkerCodeVS (example)
 * code ^short = "Code for the biomarker"
 * code ^definition = "The code is used to represent the biomarker - laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
-* category 1..*
+* category 2..*
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
