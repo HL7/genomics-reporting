@@ -97,7 +97,7 @@ Usage: #inline
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
 * component[=].valueCodeableConcept = $CLINVAR#13961 "Clinvar ID 13961"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = $HGVS#p.Val600Glu "p.Val600Glu"
+* component[=].valueCodeableConcept = $HGVS#NP_004324.2:p.Val600Glu "NP_004324.2:p.Val600Glu"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:1097 "BRAF"
 

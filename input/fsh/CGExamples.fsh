@@ -567,7 +567,7 @@ Description: "Example variant 1019"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000016.9:g.31096368C>T
+* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000016.9:g.31096368G>T
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"

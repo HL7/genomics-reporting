@@ -258,9 +258,9 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = $HGVS#9:g.5073770G>T "9:g.5073770G>T"
+* component[=].valueCodeableConcept = $HGVS#NC_000009.12:g.5073770G>T "NC_000009.12:g.5073770G>T"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = $HGVS#p.Val617Phe "p.Val617Phe"
+* component[=].valueCodeableConcept = $HGVS#NP_004963.1:p.Val617Phe "NP_004963.1:p.Val617Phe"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
@@ -281,9 +281,9 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = $HGVS#4:g.55972974T>A "4:g.55972974T>A"
+* component[=].valueCodeableConcept = $HGVS#NC_000004.11:g.55972974T>A "NC_000004.11:g.55972974T>A"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = $HGVS#p.Gln472His "p.Gln472His"
+* component[=].valueCodeableConcept = $HGVS#NP_002244.1:p.Gln472His "NP_002244.1:p.Gln472His"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
@@ -304,7 +304,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
-* component[=].valueCodeableConcept = $HGVS#2:g.212578380del "2:g.212578380del"
+* component[=].valueCodeableConcept = $HGVS#NC_000002.12:g.211713666_211713668del "NC_000002.12:g.211713666_211713668del"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
