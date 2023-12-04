@@ -290,7 +290,7 @@ InstanceOf: GenomicReport
 Description: "Example of a Report carrying a Genotype, Therapeutic Implication, and Medication Recommendation"
 * id = "GenomicReportExample01"
 * basedOn = Reference(GenomicServiceRequestExample01)
-* code = $LNC#51969-4
+* code.coding[+] = $LNC#51969-4
 * code.coding[+] = $LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
 * extension[RecommendedAction][0].valueReference = Reference(MedicationRecommendationExample1)
@@ -886,7 +886,7 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * extension[GenomicStudyReference][+].valueReference = Reference(PGXGenomicStudy)
 * id = "PGxGenomicReportEMERGE"
 * basedOn = Reference(eMERGEServiceRequest)
-* code = $LNC#51969-4
+* code.coding[+] = $LNC#51969-4
 * code.coding[+] = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
 * issued = "2020-01-01T00:00:00-05:00"
@@ -960,7 +960,7 @@ InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
 * id = "PGxGenomicReportEMERGE-withGrouping"
 * basedOn = Reference(eMERGEServiceRequest)
-* code = $LNC#51969-4
+* code.coding[+] = $LNC#51969-4
 * code.coding[+] = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
 * issued = "2020-01-01T00:00:00-05:00"
