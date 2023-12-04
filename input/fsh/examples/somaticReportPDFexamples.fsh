@@ -1196,7 +1196,7 @@ Usage: #example
 * identifier.value = "23-0000345"
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
-* code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* code.coding[0] = $LNC#51969-4 "Genetic analysis report"
 * effectiveDateTime = "2023-02-02"
 * basedOn = Reference(somaticServiceRequest)
 * performer[0] = Reference(pathologistPractitioner)

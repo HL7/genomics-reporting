@@ -49,7 +49,7 @@ Usage: #inline
 * basedOn = Reference(ExampleServiceRequest)
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
-* code.coding = $LNC#81247-9
+* code.coding = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
@@ -351,7 +351,7 @@ Usage: #inline
 * component[=].valueQuantity = 208 '1'
 * component[+].code = $LNC#82155-3
 * component[=].valueQuantity = 1 '1'
-* component[+].code = $LNC#81299-0
+* component[+].code.coding = $LNC#81299-0
 * component[=].valueQuantity.value = 0.48
 * component[+].code = $LNC#81300-6
 * component[=].valueQuantity = 1396929 '1'

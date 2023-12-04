@@ -107,7 +107,7 @@ The CodedAnnotation data type, while not allowing for or intending to make the c
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
 * extension[GenomicStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
-//* code = $LNC#81247-9
+* code = $LNC#51969-4
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open

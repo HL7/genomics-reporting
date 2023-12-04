@@ -294,7 +294,7 @@ Usage: #inline
 * identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/reportID"
 * identifier.value = "42867"
 * status = #final
-* code = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* code = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
 * issued = "2019-09-15T11:35:05.722-04:00"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
