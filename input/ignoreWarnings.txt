@@ -8,9 +8,8 @@
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[6].resource/*Observation/discrete-variant-1a*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# References to Variant Observations, but details show it fails matching to Variant due to the HGVS error (error since we have a required binding)
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[0].resource/*DiagnosticReport/report*/.result[1]: Details for Observation/discrete-variant matching against profile http://hl7.org/fhir/StructureDefinition/Observation|4.0.1
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[0].resource/*DiagnosticReport/report*/.result[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+# GenomicReport.result referencing an Observation, but we have defined our profile to show just our IG profiles (but with open slicing) - ignoring warning
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
 
 
 # This is a publisher induced issue.   The extension in question is introduced by the publisher.   See https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/New.20ConceptMap.20Warning.20--.20induced.20by.20IG.20Publisher 
