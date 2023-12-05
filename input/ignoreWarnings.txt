@@ -2,8 +2,6 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
-# ignore slicing information messages (for now)  #%(this may not be a problem, but you should check that it's not intended to match a slice)%
-
 # Observation.component instances that do not match our slices, but is OK (arrCGH. population freq, etc ...) (and this is ok since we use open slicing)
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[6].resource/*Observation/discrete-variant-1a*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -91,8 +89,8 @@ Unable to check whether the code is in the value set http://hl7.org/fhir/uv/geno
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
 
 # Misc information messages
-The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+# The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
-# Preferred and extensible warnings
+# Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are supressing these messages.
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
