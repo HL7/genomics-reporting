@@ -2,9 +2,7 @@
 
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
-# Observation.component instances that do not match our slices, but is OK (arrCGH. population freq, etc ...) (and this is ok since we use open slicing)
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[6].resource/*Observation/discrete-variant-1a*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+# Observation.component instances that do not match our slices, but is OK (population freq) (and this is ok since we use open slicing)
 INFORMATION: Observation/variant-with-molec-consequences: Observation.component[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. We allow slicing, so we can ignore informational message
@@ -61,14 +59,12 @@ Code System URI 'http://clinicaltrials.gov/' could not be found so the code cann
 
 # CodeSystems and ValueSets not supported yet -- various nih
 Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' could not be found so the code cannot be validated
-Code System URI 'http://ncimeta.nci.nih.gov' could not be found so the code cannot be validated
 Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' could not be found so the code cannot be validated
 Code System URI 'http://www.ncbi.nlm.nih.gov/medgen' could not be found so the code cannot be validated
 Code System URI 'https://api.ncbi.nlm.nih.gov/variation/v0/' could not be found so the code cannot be validated
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/clinvar' doesnt provide any codes so the code cannot be validated
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/refseq' doesnt provide any codes so the code cannot be validated
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/projects/SNP' doesnt provide any codes so the code cannot be validated
-The definition for the Code System with URI 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' doesnt provide any codes so the code cannot be validated
 
 # CodeSystems and ValueSets not supported yet -- other misc 
 The definition for the Code System with URI 'https://iscn.karger.com' doesnt provide any codes so the code cannot be validated
@@ -87,9 +83,6 @@ Unable to check whether the code is in the value set http://hl7.org/fhir/uv/geno
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|3.0.0-BALLOT
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
 Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
-
-# Misc information messages
-# The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 # Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are supressing these messages.
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)

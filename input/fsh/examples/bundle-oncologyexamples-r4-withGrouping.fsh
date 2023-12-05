@@ -147,7 +147,7 @@ Usage: #inline
 * status = #final
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
-* code = $NCIMETA#C43359 "Group"
+* code = $NCIT#C43359 "Group"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
@@ -163,7 +163,7 @@ Usage: #inline
 * status = #final
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
-* code = $NCIMETA#C43359 "Group"
+* code = $NCIT#C43359 "Group"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * effectiveDateTime = "2023-05-01"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)

@@ -21,7 +21,6 @@ Alias: $TASKINTENT = http://hl7.org/fhir/task-intent
 Alias: $REQUESTINTENT = http://hl7.org/fhir/request-intent
 Alias: $REQUESTSTATUS = http://hl7.org/fhir/request-status
 Alias: $NUCCORE = http://www.ncbi.nlm.nih.gov/nuccore
-Alias: $NCIMETA = http://ncimeta.nci.nih.gov
 Alias: $RISKQUAL = 	http://terminology.hl7.org/CodeSystem/risk-probability
 Alias: $NCTTRIAL = http://clinicaltrials.gov/
 Alias: $GENO = http://www.ebi.ac.uk/ols/ontologies/geno
