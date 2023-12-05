@@ -1225,21 +1225,6 @@ Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a pol
 * derivedFrom[1].display = "Variant 2"
 * derivedFrom[1].identifier.system = "http://hospital.example.org"
 * derivedFrom[1].identifier.value = "12"
-* derivedFrom[2].display = "Variant 3"
-* derivedFrom[2].identifier.system = "http://hospital.example.org"
-* derivedFrom[2].identifier.value = "13"
-* derivedFrom[3].display = "Variant 4"
-* derivedFrom[3].identifier.system = "http://hospital.example.org"
-* derivedFrom[3].identifier.value = "14"
-* derivedFrom[4].display = "Variant 5"
-* derivedFrom[4].identifier.system = "http://hospital.example.org"
-* derivedFrom[4].identifier.value = "15"
-* derivedFrom[5].display = "Variant 6"
-* derivedFrom[5].identifier.system = "http://hospital.example.org"
-* derivedFrom[5].identifier.value = "16"
-* derivedFrom[6].display = "Variant 7"
-* derivedFrom[6].identifier.system = "http://hospital.example.org"
-* derivedFrom[6].identifier.value = "17"
 
 
 //Risk assesment for polygenic Diaters2 GenRiskDiabetesT2

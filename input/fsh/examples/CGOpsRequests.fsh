@@ -677,8 +677,7 @@ Usage: #example
 * parameter[=].resource.component[=].valueString = "G"
 * parameter[=].resource.component[+].code = http://loinc.org#92822-6 "Genomic coord system"
 * parameter[=].resource.component[=].valueCodeableConcept = http://loinc.org#LA30100-4 "0-based interval counting"
-* parameter[=].resource.component[+].code = http://loinc.org#81254-5 //"Variant exact start-end"
-* parameter[=].resource.component[+].code.text = "Variant exact start-end"
+* parameter[=].resource.component[+].code = http://loinc.org#81254-5 "Genomic allele start-end"
 * parameter[=].resource.component[=].valueRange.low.value = 86852620
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-population-specific-variants.html
