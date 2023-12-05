@@ -5,11 +5,13 @@ Title:          "Genomic Implication"
 Description:    "Properties common to genomic implications expressed as computable discrete elements."
 * ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
+* extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the observation."
 * value[x] 0..0
-* derivedFrom ^slicing.discriminator.type = #profile
-* derivedFrom ^slicing.discriminator.path = "resolve()"
-* derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Slice based on the resolve().code type"
+// * derivedFrom ^slicing.discriminator.type = #profile
+// * derivedFrom ^slicing.discriminator.path = "resolve()"
+// * derivedFrom ^slicing.rules = #open
+// * derivedFrom ^slicing.description = "Slice based on the resolve().code type"
 * derivedFrom 1..*
 * derivedFrom contains variant 0..* and
     genotype 0..* and
@@ -23,10 +25,10 @@ Description:    "Properties common to genomic implications expressed as computab
 * derivedFrom[haplotype] ^short = "Haplotype the implication is derived from"
 * derivedFrom[biomarker] only Reference(MolecularBiomarker)
 * derivedFrom[biomarker] ^short = "MolecularBiomarker the implication is derived from"
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     evidence-level 0..*
 * component[evidence-level].code = $LNC#93044-6
@@ -39,6 +41,8 @@ Description:    "Properties common to genomic implications expressed as computab
 * component[evidence-level].value[x] ^binding.description = "PharmGKB or ClinVar"
 * component[evidence-level].value[x] ^short = "1A | 1B | 2A | 2B | 3 | 4 | 4-star | 3-star | 2-star | 1-star | no-star"
 //* component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (example)
+* component.extension contains RelatedArtifactComponent named related-artifact 0..*
+* component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 
 Profile:        DiagnosticImplication
 Parent:         GenomicImplication
@@ -50,10 +54,10 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#diagnostic-implication
 * code ^short = "diagnostic-implication"
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     predicted-phenotype 0..* and
     mode-of-inheritance	0..1 and
@@ -96,10 +100,10 @@ Description:    "Profile with properties for observations that convey the potent
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
 * code ^short = "therapeutic-implication"
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     therapeutic-implication 0..* and
     phenotypic-treatment-context 0..* and
@@ -136,7 +140,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[medication-assessed].value[x] 1..1
 * component[medication-assessed].value[x] ^short = "Medication code"
 * component[medication-assessed].extension contains MedicationAssessedReference named medication-assessed-reference 0..*
-* component[medication-assessed].extension[MedicationAssessedReference] ^requirements = "NOTE - If this extension is used, it should not conflict with the code delivered in the component.valueCodeableConcept."
+* component[medication-assessed].extension[MedicationAssessedReference] ^requirements = "NOTE - If this extension is used, it SHALL NOT conflict with the code delivered in the component.valueCodeableConcept."
 
 * component[therapy-assessed] ^short = "Non-medication therapy assessed"
 * component[therapy-assessed] ^definition = "The non-medication therapy (e.g., altered diet, radiation therapy, surgery) implicated with respect to the related finding(s) and cancer/phenotypic treatment context"
@@ -147,7 +151,7 @@ Description:    "Profile with properties for observations that convey the potent
 * component[therapy-assessed].value[x] ^binding.description = "Binding not yet defined"
 * component[therapy-assessed].value[x] 1..1
 * component[therapy-assessed].extension contains TherapyAssessedReference named therapy-assessed-reference 0..*
-* component[therapy-assessed].extension[TherapyAssessedReference] ^requirements = "NOTE - If this extension is used, it should not conflict with the code delivered in the component.valueCodeableConcept."
+* component[therapy-assessed].extension[TherapyAssessedReference] ^requirements = "NOTE - If this extension is used, it SHALL NOT conflict with the code delivered in the component.valueCodeableConcept."
 
 Profile:        MedicationRecommendation
 Parent:         Task
@@ -190,10 +194,10 @@ Description:    "Profile for communicating the calculated or observed effect of 
 //* valueCodeableConcept ^short = "Indeterminate | No call | Present | Absent."
 //* valueCodeableConcept ^definition = "The presence or absence of the variant described in the components. If not searching for specific variations and merely reporting what's found, the profile's value should be set to 'Present'."
 
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     coding-hgvs 0..1 and
     transcript-ref-seq 0..1 and

@@ -6,7 +6,21 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * ^abstract = true
 //* extension contains GenomicStudy named genomic-study 0..*
 //* extension[GenomicStudy] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
-* extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
+* extension ^slicing.discriminator.type = #pattern
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* extension ^slicing.description = "Slice based on the extension.url pattern"
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
+                 and http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
+* component.extension ^slicing.discriminator.type = #pattern
+* component.extension ^slicing.discriminator.path = "url"
+* component.extension ^slicing.rules = #open
+* component.extension ^slicing.description = "Slice based on the extension.url pattern"
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
+* derivedFrom ^slicing.rules = #open
+* derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
+
 * partOf only Reference(MedicationAdministration or MedicationDispense or MedicationStatement or Procedure or Immunization or ImagingStudy or GenomicStudy)
 * category 2..*
 * category ^slicing.discriminator.type = #value
@@ -14,12 +28,11 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * category ^slicing.rules = #open
 * category ^slicing.ordered = false   // can be omitted, since false is the default
 * category ^slicing.description = "Slice based on the category.code pattern"
+
 * category contains labCategory 1..1
-    and geCategory 1..1
+                and geCategory 1..1
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
-* extension contains http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * note only CodedAnnotation
 * note ^short = "Comments about the Observation that also contain a coded type"
 * note ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
@@ -41,7 +54,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component[conclusion-string].code ^short = "conclusion-string"
 * component[conclusion-string].value[x] only string
 * component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"
-* component.extension contains RelatedArtifactComponent named related-artifact 0..*
+
 
 Profile:        OverallInterpretation
 Parent:         GenomicBase
@@ -70,10 +83,10 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * value[x] ^short = "Cis | Trans | Indeterminate | Unknown"
 * method from http://loinc.org/vs/LL4050-2 (extensible)
 * method ^short = "Directly measured | Family DNA | Family history | Inferred from population data"
-* derivedFrom ^slicing.discriminator.type = #profile
-* derivedFrom ^slicing.discriminator.path = "resolve()"
-* derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Slice based on the profile"
+// * derivedFrom ^slicing.discriminator.type = #profile
+// * derivedFrom ^slicing.discriminator.path = "resolve()"
+// * derivedFrom ^slicing.rules = #open
+// * derivedFrom ^slicing.description = "Slice based on the profile"
 * derivedFrom contains variant 0..* and 
     haplotype 0..*
 * derivedFrom[variant] only Reference(Variant)

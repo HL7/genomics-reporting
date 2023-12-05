@@ -5,10 +5,10 @@ Title:          "Genomic Finding"
 Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * ^abstract = true
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains gene-studied 0..* and 
     cytogenetic-location 0..* and 
     reference-sequence-assembly 0..*
@@ -52,10 +52,10 @@ Description:    "Details about a set of changes in the tested sample compared to
 * valueCodeableConcept from http://loinc.org/vs/LL1971-2 (required)
 * valueCodeableConcept ^short = "Indeterminate | No call | Present | Absent."
 * valueCodeableConcept ^definition = "The presence or absence of the variant described in the components. If not searching for specific variations and merely reporting what's found, the profile's value should be set to 'Present'."
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
-* component ^slicing.description = "Slice based on the component.code pattern"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     representative-coding-hgvs 0..1 and
     genomic-hgvs 0..1 and
@@ -335,10 +335,10 @@ Description:    "Assertion of a particular haplotype on the basis of one or more
 * value[x] ^short = "Haplotype name"
 * method from http://loinc.org/vs/LL4050-2 (extensible)
 * method ^short = "Directly measured | Family DNA | Family history | Inferred from population data"
-* derivedFrom ^slicing.discriminator.type = #profile
-* derivedFrom ^slicing.discriminator.path = "resolve()"
-* derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
+// * derivedFrom ^slicing.discriminator.type = #profile
+// * derivedFrom ^slicing.discriminator.path = "resolve()"
+// * derivedFrom ^slicing.rules = #open
+// * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
 * derivedFrom contains 
         haplotype 0..* 
     and variant 0..* 
@@ -364,10 +364,10 @@ Description:    "Assertion of a particular genotype on the basis of one or more 
 * value[x] ^binding.description = "Binding not yet defined"
 * value[x] 1..1
 * value[x] ^short = "Genotype name"
-* derivedFrom ^slicing.discriminator.type = #profile
-* derivedFrom ^slicing.discriminator.path = "resolve()"
-* derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
+// * derivedFrom ^slicing.discriminator.type = #profile
+// * derivedFrom ^slicing.discriminator.path = "resolve()"
+// * derivedFrom ^slicing.rules = #open
+// * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
 * derivedFrom contains 
         haplotype 0..* 
     and variant 0..*
