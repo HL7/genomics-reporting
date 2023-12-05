@@ -31,7 +31,9 @@ Description:    "Base profile that defines characteristics shared by all genetic
 
 * category contains labCategory 1..1
                 and geCategory 1..1
+* category[labCategory].coding 1..1
 * category[labCategory].coding = $OBSCAT#laboratory
+* category[geCategory].coding 1..1
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
 * note only CodedAnnotation
 * note ^short = "Comments about the Observation that also contain a coded type"
@@ -127,6 +129,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * category ^slicing.description = "Slice based on the category code pattern"
 * category contains Genetics 1..1
 //* category[Genetics].coding.system = "http://terminology.hl7.org/CodeSystem/v2-0074"
+* category[Genetics].coding 1..1
 * category[Genetics].coding = $DIAGNOSTICSERVICE#GE
 * effective[x] only dateTime
 * result ^slicing.discriminator.type = #profile

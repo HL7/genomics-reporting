@@ -42,6 +42,7 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
   * ^short = "GenomicStudy.status"
   * ^definition = "GenomicStudy.status is different from Procedure.status, see [mapping](ConceptMap-GenomicStudyStatusMap.html)"
 * category 1..1
+* category.coding 1..1
 * category.coding = $OBSCAT#laboratory
 * code from GenomicStudyTypeVS (example)
   * ^short = "GenomicStudy.type"
@@ -275,6 +276,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * instantiatesUri ^short = "GenomicStudy.analysis.instantiatesUri"
 * status = #completed
 * category 1..1
+* category.coding 1..1
 * category.coding = $OBSCAT#laboratory
 * performed[x] only dateTime
 * performedDateTime ^short = "GenomicStudy.analysis.date"

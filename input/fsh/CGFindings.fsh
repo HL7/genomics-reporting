@@ -396,8 +396,11 @@ Description:    "This profile is used to represent laboratory measurements of hu
      labCategory 1..1 and
      mbCategory 1..1 and
      geCategory 0..1
+* category[labCategory].coding 1..1
 * category[labCategory].coding = $OBSCAT#laboratory
+* category[mbCategory].coding 1..1
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
+* category[geCategory].coding 0..1
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
