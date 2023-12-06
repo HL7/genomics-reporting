@@ -254,6 +254,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:01:01G "HLA-A*01:01:01G"
 * method = $GTR#GTR000000000.0
@@ -276,6 +277,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:02 "HLA-A*01:02"
 * method = $GTR#GTR000000000.0
@@ -300,6 +302,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
 * method = $GTR#GTR000000000.0
@@ -370,6 +373,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HGG00041 "HLA-B*15:01:01G"
 * method = $GTR#GTR000000000.0
@@ -392,6 +396,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-B*57:01:01G "HLA-B*57:01:01G"
 * method = $GTR#GTR000000000.0
@@ -416,6 +421,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
 * method = $GTR#GTR000000000.0
@@ -486,6 +492,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
 * method = $GTR#GTR000000000.0
@@ -508,6 +515,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
 * method = $GTR#GTR000000000.0
@@ -532,6 +540,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
 * method = $GTR#GTR000000000.0
@@ -564,6 +573,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * issued = "2016-12-15T14:15:30-06:00"
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab Inc"
   * type = "Organization"
