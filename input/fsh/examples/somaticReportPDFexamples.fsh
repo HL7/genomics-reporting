@@ -130,7 +130,8 @@ Description: "Example for MSH2 deletion"
 * performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
-* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000242.1:p.Val611fs
+//kp - Error while processing 'NP_000242.1:p.Val611fs': Frameshift variants are not supported
+// * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000242.1:p.Val611fs
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_006885.4
 //* component[allelic-read-depth].valueQuantity =
 * component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000159 "deletion"
@@ -228,7 +229,8 @@ Description: "Example for ATR insertion"
 * performer[0] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
-* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_001175.2:p.R960fs*2
+//kp - Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
+// * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_001175.2:p.R960fs*2
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_001184.4
 * component[allelic-read-depth].valueQuantity = 131 '{reads}/{base}' "reads per base pair"
 * component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000667 "insertion"
@@ -748,8 +750,9 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_000251.3:c.1832del "NM_000251.3:c.1832del"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
-* component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_000242.1:p.Val611fs "NP_000242.1:p.Val611fs"
+//kp - Error while processing 'NP_000242.1:p.Val611fs': Frameshift variants are not supported
+// * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
+// * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_000242.1:p.Val611fs "NP_000242.1:p.Val611fs"
 
 Instance: NTHL1-snv-molc
 InstanceOf: MolecularConsequence
@@ -816,8 +819,9 @@ Usage: #example
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
-* component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
+//kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
+// * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
+// * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
 * component[+].code = TbdCodesCS#functional-effect
 * component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
 
@@ -841,8 +845,9 @@ Usage: #example
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
-* component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
-* component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
+//kp -- error on validation: Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
+// * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
+// * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
 * component[+].code = TbdCodesCS#functional-effect
 * component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
 

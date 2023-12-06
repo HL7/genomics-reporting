@@ -92,7 +92,6 @@ Usage: #inline
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[0].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding.version = "???"
 * component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"
 * component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:21497 "ACAD9"
@@ -106,11 +105,9 @@ Usage: #inline
 * component[=].valueCodeableConcept.coding.version = "137"
 * component[=].valueCodeableConcept.coding = $SNP#rs368949613
 * component[+].code = $LNC#48004-6
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#c.1249C>T
+* component[=].valueCodeableConcept.coding = $HGVS#NM_014049.4:c.1249C>T
 * component[+].code = $LNC#48005-3
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#p.Arg417Cys
+* component[=].valueCodeableConcept.coding = $HGVS#NP_054768.2:p.Arg417Cys
 * component[+].code = $LNC#48019-4
 * component[=].valueCodeableConcept.coding = $LNC#LA6690-7 "Substitution"
 * component[+].code = $LNC#69547-8
@@ -175,8 +172,10 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * hasMember[0] = Reference(complex-component-D)
 * hasMember[+] = Reference(complex-component-E)
+/* - example of open slicing - commenting this out as it causes numerous other cascading Slicing Information issues (everywhere this resource is referenced)
 * component.code = $LNC#81263-6
 * component.valueCodeableConcept = $LNC#LA26218-0 "Haplotype"
+*/
 
 Instance: complex-dis-path
 InstanceOf: DiagnosticImplication
@@ -213,11 +212,9 @@ Usage: #inline
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#c.886C>T
+* component[=].valueCodeableConcept.coding = $HGVS#NM_000106.5:c.886C>T
 * component[+].code = $LNC#48005-3
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#p.Arg296Cys
+* component[=].valueCodeableConcept.coding = $HGVS#NP_000097.3:p.Arg296Cys
 * component[+].code = $LNC#48019-4
 * component[=].valueCodeableConcept.coding = $LNC#LA6690-7 "Substitution"
 
@@ -240,8 +237,7 @@ Usage: #inline
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#c.1457G>C
+* component[=].valueCodeableConcept.coding = $HGVS#NM_000106.5:c.1457G>C
 
 Instance: haplotype
 InstanceOf: Haplotype

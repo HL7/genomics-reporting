@@ -114,8 +114,10 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 * hasMember[0] = Reference(complex-component-D-1a)
 * hasMember[+] = Reference(complex-component-E-1a)
+/* extra slice
 * component.code = $LNC#81263-6
 * component.valueCodeableConcept = $LNC#LA26218-0 "Haplotype"
+*/
 
 Instance: complex-dis-path-1a
 InstanceOf: DiagnosticImplication
@@ -142,7 +144,7 @@ Usage: #inline
 * status = #final
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
-* code = $NCIMETA#C43359 "Panel"
+* code = $NCIT#C43359 "Panel"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
@@ -178,7 +180,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept = $PHARMVAR#"CYP2C9 *2/*5" "CYP2C9 *2/*5"
+* valueCodeableConcept = $PHARMVAR#CYP2C9*2*5" "CYP2C9 *2/*5"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(haplotype-1a)
 * component[0].code = $LNC#48018-6
@@ -267,11 +269,9 @@ Usage: #inline
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#c.886C>T
+* component[=].valueCodeableConcept.coding = $HGVS#NM_000106.5:c.886C>T
 * component[+].code = $LNC#48005-3
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#p.Arg296Cys
+* component[=].valueCodeableConcept.coding = $HGVS#NP_000097.3:p.Arg296Cys
 * component[+].code = $LNC#48019-4
 * component[=].valueCodeableConcept.coding = $LNC#LA6690-7 "Substitution"
 
@@ -289,13 +289,11 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[0].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding.version = "???"
 * component[=].valueCodeableConcept.coding = $CLINVAR#38486 "NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#c.1457G>C
+* component[=].valueCodeableConcept.coding = $HGVS#NM_000106.5:c.1457G>C
 
 Instance: discrete-variant-1a
 InstanceOf: Variant
@@ -311,7 +309,6 @@ Usage: #inline
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[0].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding.version = "???"
 * component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"
 * component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:21497 "ACAD9"
@@ -322,14 +319,11 @@ Usage: #inline
 * component[+].code = $LNC#81290-9
 * component[=].valueCodeableConcept.coding = $HGVS#NC_000003.11:g.128625063C>T
 * component[+].code = $LNC#81252-9
-* component[=].valueCodeableConcept.coding.version = "137"
 * component[=].valueCodeableConcept.coding = $SNP#rs368949613
 * component[+].code = $LNC#48004-6
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#c.1249C>T
+* component[=].valueCodeableConcept.coding = $HGVS#NM_014049.4:c.1249C>T
 * component[+].code = $LNC#48005-3
-* component[=].valueCodeableConcept.coding.version = "15.11"
-* component[=].valueCodeableConcept.coding = $HGVS#p.Arg417Cys
+* component[=].valueCodeableConcept.coding = $HGVS#NP_054768.2:p.Arg417Cys
 * component[+].code = $LNC#48019-4
 * component[=].valueCodeableConcept.coding = $LNC#LA6690-7 "Substitution"
 * component[+].code = $LNC#69547-8
@@ -351,14 +345,15 @@ Usage: #inline
 * component[=].valueQuantity = 208 '1'
 * component[+].code = $LNC#82155-3
 * component[=].valueQuantity = 1 '1'
-* component[+].code.coding = $LNC#81299-0
-* component[=].valueQuantity.value = 0.48
-* component[+].code = $LNC#81300-6
-* component[=].valueQuantity = 1396929 '1'
 * component[+].code = $LNC#81301-4
 * component[=].valueRange.low.value = 13200589
 * component[=].valueRange.high.value = 15592000
 * component[+].code = $LNC#81302-2
 * component[=].valueRange.low.value = 14184616
 * component[=].valueRange.high.value = 15581544
-
+/* - extra slices
+* component[+].code = $LNC#81299-0
+* component[=].valueQuantity.value = 0.48
+* component[+].code = $LNC#81300-6
+* component[=].valueQuantity = 1396929 '1'
+*/

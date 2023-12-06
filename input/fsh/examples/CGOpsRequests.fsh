@@ -567,9 +567,10 @@ Usage: #example
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
-* parameter[=].resource.component[0].code = http://loinc.org#48004-6
-* parameter[=].resource.component[0].code.text = "coding HGVS"
-* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
+//kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
+// * parameter[=].resource.component[0].code = http://loinc.org#48004-6
+// * parameter[=].resource.component[0].code.text = "coding HGVS"
+// * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
@@ -595,8 +596,8 @@ Usage: #example
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
 * parameter[=].resource.component[0].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001366781.1:c.90T>C "NM_001366781.1:c.90T>C"
-* parameter[=].resource.component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
-* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
+// * parameter[=].resource.component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
+// * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
@@ -638,9 +639,10 @@ Usage: #example
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
-* parameter[=].resource.component[0].code = http://loinc.org#48004-6
-* parameter[=].resource.component[0].code.text = "coding HGVS"
-* parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
+//kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
+// * parameter[=].resource.component[0].code = http://loinc.org#48004-6
+// * parameter[=].resource.component[0].code.text = "coding HGVS"
+// * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
@@ -675,8 +677,7 @@ Usage: #example
 * parameter[=].resource.component[=].valueString = "G"
 * parameter[=].resource.component[+].code = http://loinc.org#92822-6 "Genomic coord system"
 * parameter[=].resource.component[=].valueCodeableConcept = http://loinc.org#LA30100-4 "0-based interval counting"
-* parameter[=].resource.component[+].code = http://loinc.org#81254-5 //"Variant exact start-end"
-* parameter[=].resource.component[+].code.text = "Variant exact start-end"
+* parameter[=].resource.component[+].code = http://loinc.org#81254-5 "Genomic allele start-end"
 * parameter[=].resource.component[=].valueRange.low.value = 86852620
 
 //http://build.fhir.org/ig/HL7/genomics-reporting/OperationDefinition-find-population-specific-variants.html
