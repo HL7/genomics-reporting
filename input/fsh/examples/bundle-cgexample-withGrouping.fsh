@@ -144,7 +144,7 @@ Usage: #inline
 * status = #final
 * category[+].coding = $OBSCAT#laboratory
 * category[+].coding = $DIAGNOSTICSERVICE#GE
-* code = $NCIT#C43359 "Panel"
+* code = $NCIT#C43359 "Group"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
