@@ -49,7 +49,7 @@ Usage: #inline
 * basedOn = Reference(ExampleServiceRequest)
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
-* code.coding = $LNC#81247-9
+* code.coding = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"

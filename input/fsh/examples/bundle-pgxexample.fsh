@@ -72,7 +72,7 @@ Usage: #inline
 * basedOn = Reference(pgx-request)
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
-* code = $LNC#81247-9
+* code = $LNC#51969-4
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2016"
 * issued = "2018-03-06T00:00:00-05:00"
@@ -89,7 +89,7 @@ InstanceOf: ServiceRequest
 Usage: #inline
 * status = #active
 * intent = #original-order
-* code = $LNC#81247-9
+* code = $LNC#51969-4
 * subject = Reference(ExamplePatient)
 * reasonCode.text = "Worried about family planning"
 

@@ -491,8 +491,8 @@ Usage: #inline
 * code = $LNC#84414-2 "Haplotype name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
-* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
 * method = $GTR#GTR000000000.0
@@ -539,8 +539,8 @@ Usage: #inline
 * code = $LNC#84413-4 "Genotype display name"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
-* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
 * method = $GTR#GTR000000000.0
@@ -568,11 +568,12 @@ Usage: #inline
   * type = "ServiceRequest"
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
-* code.coding[0] = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* code.coding[0] = $LNC#51969-4 "Genetic analysis report"
 * code.coding[+] = $HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
+* performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * issued = "2016-12-15T14:15:30-06:00"
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab Inc"
   * type = "Organization"

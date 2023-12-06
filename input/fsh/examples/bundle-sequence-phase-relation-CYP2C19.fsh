@@ -33,8 +33,8 @@ InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
-* code = $LNC#81254-5
-  * text = "Genetic analysis report"
+//* code = $LNC#81254-5
+//  * text = "Genetic analysis report"
 * result[0] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
 * result[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)
 * result[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe02)

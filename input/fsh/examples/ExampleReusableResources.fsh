@@ -19,7 +19,7 @@ InstanceOf: ServiceRequest
 Description: "ServiceRequest (order) example"
 * status = #active
 * intent = #original-order
-* code.coding = $LNC#81247-9
+* code.coding = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(ExamplePatient)
 * reasonCode.text = "Worried about family planning"
 

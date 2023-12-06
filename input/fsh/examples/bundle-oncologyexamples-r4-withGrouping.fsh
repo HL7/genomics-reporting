@@ -177,7 +177,7 @@ InstanceOf: GenomicReport
 Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE
-* code = $LNC#81247-9 "Master HL7 genetic variant reporting panel"
+* code = $LNC#51969-4
   * text = "Genetic analysis report"
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
