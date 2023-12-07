@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# Add warning and/or information message here after you've confirmed that they aren't really a problem
+# Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
 # Observation.component instances that do not match our slices, but is OK (and this is ok since we use open slicing)
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
@@ -25,7 +25,7 @@ The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-Con
 # ignore warnings about annotations in UCUM codes
 %Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked%
 
-# the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420
+# the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
@@ -36,20 +36,25 @@ Code System URI 'http://www.genenames.org' could not be found so the code cannot
 Code System URI 'http://www.genenames.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|3.0.0-BALLOT
 The definition for the Code System with URI 'http://www.genenames.org' doesnt provide any codes so the code cannot be validated
 Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.genenames.org
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|3.0.0-BALLOT
 
-# CodeSystems and ValueSets not supported yet -- sequenceontology
+# CodeSystems and ValueSets not supported yet -- sequenceontology - https://jira.hl7.org/browse/HTA-37 (should be in THO soon)
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://sequenceontology.org
 Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated
 Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|3.0.0-BALLOT
 Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
 Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
 Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://sequenceontology.org
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|3.0.0-BALLOT
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
+Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
 
 # CodeSystems and ValueSets not supported yet -- glstring - https://jira.hl7.org/browse/HTA-84
 Code System URI 'http://glstring.org' could not be found so the code cannot be validated
 
 # CodeSystems and ValueSets not supported yet -- human-phenotype-ontology - https://terminology.hl7.org/CodeSystem-HPO.html
 Code System URI 'http://human-phenotype-ontology.org' could not be found so the code cannot be validated
+Error from http://tx.fhir.org/r4: Unable to provide support for code system http://human-phenotype-ontology.org
 The definition for the Code System with URI 'http://human-phenotype-ontology.org' doesnt provide any codes so the code cannot be validated
 Unknown System 'http://human-phenotype-ontology.org' specified, so Concepts and Filters can't be checked (Details: Resolved system http://human-phenotype-ontology.org (v1.0.0), but the definition is not complete)
 
@@ -59,41 +64,42 @@ Code System URI 'http://www.pharmvar.org' could not be found so the code cannot 
 # CodeSystems and ValueSets not supported yet -- clinicaltrials - not requested yet?
 Code System URI 'http://clinicaltrials.gov/' could not be found so the code cannot be validated
 
-# CodeSystems and ValueSets not supported yet -- various nih
-Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' could not be found so the code cannot be validated
-Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' could not be found so the code cannot be validated
-Code System URI 'http://www.ncbi.nlm.nih.gov/medgen' could not be found so the code cannot be validated
-Code System URI 'https://api.ncbi.nlm.nih.gov/variation/v0/' could not be found so the code cannot be validated
+# CodeSystems and ValueSets not supported yet - clinvar - https://terminology.hl7.org/CodeSystem-ClinVarV.html
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/clinvar' doesnt provide any codes so the code cannot be validated
+
+# CodeSystem and ValueSets - refseq - https://terminology.hl7.org/CodeSystem-v3-refSeq.html
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/refseq' doesnt provide any codes so the code cannot be validated
+
+# CodeSystem and ValueSets - dbSNP - https://terminology.hl7.org/CodeSystem-v3-dbSNP.html
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/projects/SNP' doesnt provide any codes so the code cannot be validated
 
-# CodeSystems and ValueSets not supported yet -- other misc 
-The definition for the Code System with URI 'https://iscn.karger.com' doesnt provide any codes so the code cannot be validated
-Code System URI 'http://www.omim.org' could not be found so the code cannot be validated
-Code System URI 'http://www.orpha.net' could not be found so the code cannot be validated
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.ebi.ac.uk/ols/ontologies/geno
-Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found so the code cannot be validated
-Unknown System 'http://www.ebi.ac.uk/ols/ontologies/geno' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://www.ebi.ac.uk/ols/ontologies/geno is unknown (from Tx-Server))
-Code System URI 'http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction' could not be found so the code cannot be validated
-Unknown System 'http://purl.obolibrary.org/obo/sepio-clingen' specified, so Concepts and Filters can't be checked (Details: The CodeSystem http://purl.obolibrary.org/obo/sepio-clingen is unknown (from Tx-Server))
-Code System URI 'https://hgsc.bcm.edu/lab-test-codes/' could not be found so the code cannot be validated
-Code System URI 'https://civicdb.org/evidence' could not be found so the code cannot be validated
+# CodeSystem and ValueSets - gtr - https://terminology.hl7.org/CodeSystem-GTR.html
+Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' could not be found so the code cannot be validated
 
-# CodeSystems and ValueSets not supported yet -- value sets using Code Systems that are not yet supported
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|3.0.0-BALLOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|3.0.0-BALLOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
+# CodeSystems and ValueSets - ISCN - https://terminology.hl7.org/CodeSystem-ISCN.html
+The definition for the Code System with URI 'https://iscn.karger.com' doesnt provide any codes so the code cannot be validated
+
+# Code Systems for diseases - MONDO - https://terminology.hl7.org/CodeSystem-MONDO.html
+The definition for the Code System with URI 'http://purl.obolibrary.org/obo/mondo.owl' doesnt provide any codes so the code cannot be validated
+
+# CodeSystems and ValueSets - nuccore - could be combined with refseq?
+Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' could not be found so the code cannot be validated
+
+# CodeSystems and ValueSets - imgt HLA alleles - not requested for THO as of yet.
+Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found so the code cannot be validated
+
+# This is an example of a local (lab specific) CodeSystem
+Code System URI 'https://hgsc.bcm.edu/lab-test-codes/' could not be found so the code cannot be validated
+
+
+# CodeSystems and ValueSets - specific CodeSystem / code that could be used by a specific lab to deliver codes that are not quite lab specific, but are specific to a particular bioinformatics tool 
+Code System URI 'http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction' could not be found so the code cannot be validated
 
 # Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are supressing these messages.
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
 
 # Codes have been checked and are correct
-WARNING: Bundle/bundle-cgexample-withGrouping: Bundle.entry[12].resource/*Observation/pharmPanel-1a*/.code.coding[0]: The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server) for 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359'
-WARNING: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-13*/.code.coding[0]: The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server) for 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359'
-WARNING: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[13].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-14*/.code.coding[0]: The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server) for 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359'
 WARNING: Observation/GrouperEx01: Observation.code.coding[0]: The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server) for 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359'
 WARNING: Observation/GrouperEx02: Observation.code.coding[0]: The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server) for 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359'
 WARNING: Observation/GrouperEx03: Observation.code.coding[0]: The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server) for 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359'

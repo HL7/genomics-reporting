@@ -17,7 +17,7 @@ Usage: #example
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
 * component[+].code = http://loinc.org#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept = https://api.ncbi.nlm.nih.gov/variation/v0/#NC_000001.10:86852620:A:G "NC_000001.10:86852620:A:G"
+* component[=].valueCodeableConcept = $HGVS#NC_000001.10:g.86852621A>G "NC_000001.10:g.86852621A>G"
 * component[+].code = http://loinc.org#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.6 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = http://loinc.org#69547-8 "Genomic Ref allele [ID]"

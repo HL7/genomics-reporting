@@ -23,16 +23,11 @@ Alias: $REQUESTSTATUS = http://hl7.org/fhir/request-status
 Alias: $NUCCORE = http://www.ncbi.nlm.nih.gov/nuccore
 Alias: $RISKQUAL = 	http://terminology.hl7.org/CodeSystem/risk-probability
 Alias: $NCTTRIAL = http://clinicaltrials.gov/
-Alias: $GENO = http://www.ebi.ac.uk/ols/ontologies/geno
 Alias: $HPO = http://human-phenotype-ontology.org
-Alias: $SEPIOCG = http://purl.obolibrary.org/obo/sepio-clingen
 Alias: $NCBIREFSEQ = http://www.ncbi.nlm.nih.gov/refseq
 Alias: $HLAALLELE = http://www.ebi.ac.uk/ipd/imgt/hla
 Alias: $GLSTRING = http://glstring.org
-Alias: $MEDGEN = http://www.ncbi.nlm.nih.gov/medgen
 Alias: $PHARMVAR = http://www.pharmvar.org
-Alias: $ORPHA = http://www.orpha.net
-Alias: $OMIM = http://www.omim.org
 Alias: $SNP = http://www.ncbi.nlm.nih.gov/projects/SNP
 Alias: $ISCN = https://iscn.karger.com
 Alias: $PARTICIPATIONTYPE = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
@@ -40,6 +35,7 @@ Alias: $CONFIDENTIALITY = http://terminology.hl7.org/CodeSystem/v3-Confidentiali
 Alias: $GSMETHODTYPE = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs
 Alias: $GSFILETYPE = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-data-format-cs
 Alias: $BIOMARKER = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/molecular-biomarker-ontology-cs
+Alias: $MONDO = http://purl.obolibrary.org/obo/mondo.owl
 
 //Extensions
 Alias: operationAllowedType = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile

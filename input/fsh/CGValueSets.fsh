@@ -62,10 +62,6 @@ Id:             condition-inheritance-mode-vs
 Title:          "Condition Inheritance Patterns"
 Description:    "Value Set for specific transmission patterns of a condition in a pedigree"
 * ^experimental = false
-* $GENO#0000143	"Codominant inheritance"
-* $GENO#0000889	"Unknown inheritance"
-* $GENO#0000892	"Mitochondrial inheritance (primarily or exclusively heteroplasmic)"
-* $GENO#0000893	"Mitochondrial inheritance (primarily or exclusively homoplasmic)"
 * $HPO#HP:0000006	"Autosomal dominant inheritance"
 * $HPO#HP:0000007	"Autosomal recessive inheritance"
 * $HPO#HP:0001417	"X-linked inheritance"
@@ -83,11 +79,9 @@ Description:    "Value Set for specific transmission patterns of a condition in 
 * $HPO#HP:0012275	"Autosomal dominant inheritance (with maternal imprinting)"
 * $HPO#HP:0025352	"Autosomal dominant inheritance (primarily or exclusively de novo)"
 * $HPO#HP:0031362	"Autosomal recessive inheritance (sex-limited)"
-* $SEPIOCG#97020	"Semidominant inheritance"
-* $SEPIOCG#97021	"X-linked inheritance (primarily recessive with milder female expression)"
-* $SEPIOCG#97022	"Autosomal dominant inheritance (with genetic anticipation)"
-* $SEPIOCG#97023	"Autosomal recessive inheritance (with genetic anticipation)"
-
+* $HPO#HP:0032113	"Semidominant inheritance"
+* $HPO#HP:0001423 "X-linked dominant inheritance"
+* $HPO#HP:0001419 "X-linked recessive inheritance"
 
 ValueSet:       GeneticTherapeuticImplicationsVS
 Id:             genetic-therapeutic-implications-vs

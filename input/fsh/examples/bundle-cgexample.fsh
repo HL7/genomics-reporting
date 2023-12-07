@@ -155,7 +155,7 @@ Usage: #inline
 * component[0].code = $LNC#53037-8
 * component[=].valueCodeableConcept.coding = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4
-* component[=].valueCodeableConcept.coding = $MEDGEN#C1970173 "Acyl-CoA dehydrogenase family, member 9, deficiency of"
+* component[=].valueCodeableConcept.coding = $MONDO#MONDO:0012624 "acyl-CoA dehydrogenase 9 deficiency"
 
 Instance: complex-variant
 InstanceOf: Variant

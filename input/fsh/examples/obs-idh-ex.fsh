@@ -15,9 +15,7 @@ Usage: #example
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"
 * component[+].code = $LNC#81259-4
-* component[=].valueCodeableConcept.coding[0] = $MEDGEN#C0010674 "Cystic fibrosis"
-* component[=].valueCodeableConcept.coding[+] = $ORPHA#ORPHA:586
-* component[=].valueCodeableConcept.coding[+] = $OMIM#219700
+* component[=].valueCodeableConcept.coding[0] = $MONDO#MONDO:0009061 "cystic fibrosis"
 * component[=].valueCodeableConcept.text = "Cystic fibrosis"
 * component[+].code = TbdCodesCS#condition-inheritance
 * component[=].valueCodeableConcept = $HPO#HP:0000007 "Autosomal recessive inheritance"

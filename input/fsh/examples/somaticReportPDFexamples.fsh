@@ -627,12 +627,7 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[0] = Reference(pathologistPractitioner)
-//* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
-* component[=].valueCodeableConcept = https://civicdb.org/evidence#2994 
-* component[=].valueCodeableConcept.text = "cancer sensitive to gefitinib"
 * component[+].code = $LNC#93044-6 "Level of evidence"
-//* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
@@ -660,10 +655,6 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[0] = Reference(pathologistPractitioner)
-//* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
-* component[=].valueCodeableConcept = https://civicdb.org/evidence#2994 
-* component[=].valueCodeableConcept.text = "cancer sensitive to erlotinib"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
