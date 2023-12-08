@@ -62,6 +62,9 @@ Id:             condition-inheritance-mode-vs
 Title:          "Condition Inheritance Patterns"
 Description:    "Value Set for specific transmission patterns of a condition in a pedigree"
 * ^experimental = false
+// GENO (http://www.ebi.ac.uk/ols/ontologies/geno) is not yet a valid CodeSystem, so commenting out for now
+// * $GENO#0000892	"Mitochondrial inheritance (primarily or exclusively heteroplasmic)"
+// * $GENO#0000893	"Mitochondrial inheritance (primarily or exclusively homoplasmic)"
 * $HPO#HP:0000006	"Autosomal dominant inheritance"
 * $HPO#HP:0000007	"Autosomal recessive inheritance"
 * $HPO#HP:0001417	"X-linked inheritance"

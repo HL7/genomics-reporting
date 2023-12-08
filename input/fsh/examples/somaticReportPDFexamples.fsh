@@ -621,12 +621,13 @@ Description: "Example of high TMB Therapeutic Implication for drug treatment"
 Instance: EGFR-L858R-therapuDrug1
 InstanceOf: TherapeuticImplication
 Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[0] = Reference(pathologistPractitioner)
+* component[+].code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
@@ -649,14 +650,14 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 Instance: EGFR-L858R-therapuDrug2
 InstanceOf: TherapeuticImplication
 Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2"
-//* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
 * category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[0] = Reference(pathologistPractitioner)
+* component[+].code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of evidence"
-//* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
