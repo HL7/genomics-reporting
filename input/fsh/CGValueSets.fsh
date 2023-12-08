@@ -80,8 +80,6 @@ Description:    "Value Set for specific transmission patterns of a condition in 
 * $HPO#HP:0025352	"Autosomal dominant inheritance (primarily or exclusively de novo)"
 * $HPO#HP:0031362	"Autosomal recessive inheritance (sex-limited)"
 * $HPO#HP:0032113	"Semidominant inheritance"
-* $HPO#HP:0001423 "X-linked dominant inheritance"
-* $HPO#HP:0001419 "X-linked recessive inheritance"
 
 ValueSet:       GeneticTherapeuticImplicationsVS
 Id:             genetic-therapeutic-implications-vs
