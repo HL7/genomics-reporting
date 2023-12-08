@@ -537,7 +537,7 @@ Instance: ROS1-Fusion-therapuTrial
 InstanceOf: TherapeuticImplication
 Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
@@ -568,7 +568,7 @@ Instance: ROS1-Fusion-therapuDrug
 InstanceOf: TherapeuticImplication
 Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 //* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
@@ -600,7 +600,7 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 Instance: TMB-therapuDrug
 InstanceOf: TherapeuticImplication
 Description: "Example of high TMB Therapeutic Implication for drug treatment"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
@@ -621,7 +621,7 @@ Description: "Example of high TMB Therapeutic Implication for drug treatment"
 Instance: EGFR-L858R-therapuDrug1
 InstanceOf: TherapeuticImplication
 Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
@@ -650,7 +650,7 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 Instance: EGFR-L858R-therapuDrug2
 InstanceOf: TherapeuticImplication
 Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2"
-* category.coding = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[labCategory] = $OBSCAT#laboratory
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
