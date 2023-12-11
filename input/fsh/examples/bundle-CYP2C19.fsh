@@ -450,7 +450,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -477,7 +477,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -504,7 +504,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -531,7 +531,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -558,7 +558,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -585,7 +585,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -612,7 +612,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -639,7 +639,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -666,7 +666,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -693,7 +693,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -720,7 +720,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -747,7 +747,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -774,7 +774,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -801,7 +801,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -828,7 +828,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -855,7 +855,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -882,7 +882,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -909,7 +909,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -936,7 +936,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -963,7 +963,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -990,7 +990,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1017,7 +1017,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1044,7 +1044,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1071,7 +1071,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1098,7 +1098,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1125,7 +1125,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1152,7 +1152,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1179,7 +1179,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1206,7 +1206,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1233,7 +1233,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1260,7 +1260,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1287,7 +1287,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1314,7 +1314,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1341,7 +1341,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1368,7 +1368,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1395,7 +1395,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1422,7 +1422,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1449,7 +1449,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1476,7 +1476,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1503,7 +1503,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1530,7 +1530,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1557,7 +1557,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1584,7 +1584,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1611,7 +1611,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1638,7 +1638,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1665,7 +1665,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1692,7 +1692,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1719,7 +1719,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1746,7 +1746,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1773,7 +1773,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1800,7 +1800,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1827,7 +1827,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1854,7 +1854,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1881,7 +1881,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1908,7 +1908,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1935,7 +1935,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1962,7 +1962,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -1989,7 +1989,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2016,7 +2016,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2043,7 +2043,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2070,7 +2070,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2097,7 +2097,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2124,7 +2124,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2151,7 +2151,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2178,7 +2178,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2205,7 +2205,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2232,7 +2232,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2259,7 +2259,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2286,7 +2286,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2313,7 +2313,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2340,7 +2340,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2367,7 +2367,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2394,7 +2394,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -2421,7 +2421,7 @@ Usage: #inline
 * component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NC_000010.10
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[+].code = $LNC#69547-8 "Ref nucleotide"

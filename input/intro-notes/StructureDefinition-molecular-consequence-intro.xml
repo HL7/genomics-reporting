@@ -9,8 +9,9 @@
 <p>In this example, a variant in a gene with multiple transcripts is annotated with multiple transcript-specific molecular consequence predictions. This figure shows multiple transcripts of the ODF2L gene.</p>
 <img src="molecularConsequences2.png" alt="Multiple transcripts of ODF2L gene" width="710" height="108"/>
 <p> </p>
-<p>This next figure shows a VCF row. A variant in the ODF2L gene has been annotated with the <a href="http://pcingola.github.io/SnpEff/">snpEff/snpSIFT variant prediction tool</a>. Things to note include: </p>
+<p>This next figure shows a VCF row. A variant in the ODF2L gene has been annotated with the <a href="http://example.org/pcingola.github.io/SnpEff/">snpEff/snpSIFT variant prediction tool</a>. Things to note include: </p>
 <ul>
+<li>The example here prefixes the URI with http://example.org as is the standard approach in HL7 guides when a code system is not an official terminology</li>
 <li>snpEff predicts a molecular consequence for each known transcript</li>
 <li>Each molecular consequence has one or more 'effects' (drawn from Sequence Ontology), and an 'impact category' (HIGH, MODERATE, LOW, MODIFIER)</li>
 <li>Note how variants occurring outside of exons in certain transcripts (e.g. intron_variant) do not have an associated pHGVS</li>

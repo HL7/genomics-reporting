@@ -68,7 +68,7 @@ Description: "Example for NOTCH1 uncertain"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_060087.3:p.A1931T
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_017617.5
-* component[allelic-read-depth].valueQuantity = 221 '{reads}/{base}' "reads per base pair"
+* component[allelic-read-depth].valueQuantity = 221 '1' "reads per base pair"
 //* component[coding-change-type].valueCodeableConcept = 
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_017617.5:c.5791G>A
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7881 "NOTCH1"
@@ -100,7 +100,7 @@ Description: "Example for ZFHX3 uncertain"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_008816.3:p.G585S
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_006885.4
-* component[allelic-read-depth].valueQuantity = 212 '{reads}/{base}' "reads per base pair"
+* component[allelic-read-depth].valueQuantity = 212 '1' "reads per base pair"
 //* component[coding-change-type].valueCodeableConcept = 
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_006885.4:c.1753G>A
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:777 "ZFHX3"
@@ -199,7 +199,7 @@ Description: "Example for STAG2 insertion"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_006594.3:p.S1178*
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_006603.5
-* component[allelic-read-depth].valueQuantity = 88 '{reads}/{base}' "reads per base pair"
+* component[allelic-read-depth].valueQuantity = 88 '1' "reads per base pair"
 * component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000667 "insertion"
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_006603.5:c.3530_3531insGTGACTATTAATAT
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:11355 "STAG2"
@@ -232,7 +232,7 @@ Description: "Example for ATR insertion"
 //kp - Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
 // * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_001175.2:p.R960fs*2
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_001184.4
-* component[allelic-read-depth].valueQuantity = 131 '{reads}/{base}' "reads per base pair"
+* component[allelic-read-depth].valueQuantity = 131 '1' "reads per base pair"
 * component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000667 "insertion"
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_001184.4:c.2878_2879insAGTAA
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:882 "ATR"

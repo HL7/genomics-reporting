@@ -111,7 +111,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.0536 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 112 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 112 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-11
 InstanceOf: Variant
@@ -146,7 +146,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.2568 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 148 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 148 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-12
 InstanceOf: Variant
@@ -181,7 +181,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.2151 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 93 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 93 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-13
 InstanceOf: Variant
@@ -217,7 +217,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.3333 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 60 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 60 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-14
 InstanceOf: Variant
@@ -253,7 +253,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.2642 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 53 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 53 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-15
 InstanceOf: Variant
@@ -288,7 +288,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.1938 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 160 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 160 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-16
 InstanceOf: GenomicReport
@@ -363,7 +363,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.2188 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 64 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 64 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-5
 InstanceOf: Variant
@@ -399,7 +399,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.1793 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 145 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 145 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-6
 InstanceOf: Variant
@@ -434,7 +434,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.1053 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 57 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 57 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-7
 InstanceOf: Variant
@@ -470,7 +470,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.188 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 117 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 117 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-8
 InstanceOf: Variant
@@ -506,7 +506,7 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.1471 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 68 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 68 '1' "reads per base pair"
 
 Instance: Inline-Instance-for-oncology-report-example-9
 InstanceOf: Variant
@@ -542,4 +542,4 @@ Usage: #inline
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity = 0.1343 '1' "relative frequency of a particular allele in the specimen"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 134 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 134 '1' "reads per base pair"

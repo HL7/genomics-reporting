@@ -10,7 +10,7 @@ Usage: #example
 * effectiveDateTime = "2023-06-01"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)
-* interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
+* interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 * component[0].code = http://loinc.org#48004-6
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"

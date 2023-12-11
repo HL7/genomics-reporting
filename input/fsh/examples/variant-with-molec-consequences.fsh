@@ -13,7 +13,7 @@ Usage: #example
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept.coding = $LNC#LA6683-2 "Germline"
 * component[+].code = http://loinc.org#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/nuccore#NC_000001.10
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NC_000001.10
 * component[+].code = $LNC#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
 * component[+].code = http://loinc.org#81252-9 "Discrete genetic variant"

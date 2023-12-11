@@ -247,7 +247,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[feature-consequence].code = TbdCodesCS#feature-consequence
 * component[feature-consequence].code ^short = "feature-consequence"
 * component[feature-consequence] ^short = "Feature Consequence"
-* component[feature-consequence] ^definition = "A feature consequence categorizes the structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion). NOTE: The bound Molecular Consequence value set is extensible. Variant annotation tools such as snpEff provide a rich assortment of feature consequences (see http://pcingola.github.io/SnpEff/se_inputoutput/#effect-prediction-details), some of which are outside the value set. "
+* component[feature-consequence] ^definition = "A feature consequence categorizes the structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion). NOTE: The bound Molecular Consequence value set is extensible. Variant annotation tools such as snpEff provide a rich assortment of feature consequences (see http://example.org/pcingola.github.io/SnpEff/se_inputoutput/#effect-prediction-details), some of which are outside the value set. "
 * component[feature-consequence].value[x] only CodeableConcept
 * component[feature-consequence].value[x] ^short = "stop_lost | stop_gained | inframe_insertion | frameshift_variant | ... (many)"
 * component[feature-consequence].value[x] 1..1

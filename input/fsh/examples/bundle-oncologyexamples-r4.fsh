@@ -186,7 +186,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * effectiveDateTime = "2023-04-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
-* valueQuantity = 25.0 '1/1000000{Base}' "somatic variants per megabase of sequenced DNA"
+* valueQuantity = 25.0 '1/1000000' "somatic variants per megabase of sequenced DNA"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * component[biomarker-category].code = TbdCodesCS#biomarker-category
 * component[biomarker-category].valueCodeableConcept.coding = MolecularBiomarkerOntologyCS#molgen "molecular sequence adjacent category"

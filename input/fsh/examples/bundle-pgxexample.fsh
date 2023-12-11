@@ -205,7 +205,7 @@ Usage: #inline
 * component[0].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
-* component[=].valueCodeableConcept = $NUCCORE#NG_007726.3
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NG_007726.3
 * component[+].code = $LNC#81252-9
 * component[=].valueCodeableConcept = $SNP#rs233455
 * component[+].code = $LNC#69547-8 "Ref nucleotide"
@@ -222,7 +222,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.orientation = #sense
-* referenceSeq.referenceSeqId = $NUCCORE#NG-007726.3
+* referenceSeq.referenceSeqId = $NCBIREFSEQ#NG-007726.3
 * referenceSeq.windowStart = 55227970
 * referenceSeq.windowEnd = 55227980
 
@@ -232,7 +232,7 @@ Usage: #inline
 * type = #dna
 * coordinateSystem = 0
 * referenceSeq.orientation = #sense
-* referenceSeq.referenceSeqId = $NUCCORE#NG-007726.3
+* referenceSeq.referenceSeqId = $NCBIREFSEQ#NG-007726.3
 * referenceSeq.windowStart = 55227970
 * referenceSeq.windowEnd = 55227980
 

@@ -22,14 +22,28 @@ INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[
 # This is a publisher induced issue.   The extension in question is introduced by the publisher.   See https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/New.20ConceptMap.20Warning.20--.20induced.20by.20IG.20Publisher 
 The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version {3} is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
 
-# ignore warnings about annotations in UCUM codes
-%Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked%
-
 # the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
+
+# Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are supressing these messages.
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
+
+# These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look OK as well. Unsure why we are getting the warning. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
+//INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+//INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[8].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-9*/.component[3].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# Additional slice messages that have been reviewed. Each of these refer to (via derivedFrom) a Variant, and it seems it is a valid Variant instance. So, not clear why it does not match a known slice:
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[0].resource/*Observation/MC1*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].resource/*Observation/MC2*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice) 
+
+# Code has been checked and are correct
+%The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server)%
 
 # CodeSystems and ValueSets not supported yet -- https://terminology.hl7.org/CodeSystem-v3-hgnc.html
 Code System URI 'http://www.genenames.org' could not be found so the code cannot be validated
@@ -61,8 +75,8 @@ Unknown System 'http://human-phenotype-ontology.org' specified, so Concepts and 
 # CodeSystems and ValueSets not supported yet -- pharmvar - https://jira.hl7.org/browse/HTA-85
 Code System URI 'http://www.pharmvar.org' could not be found so the code cannot be validated
 
-# CodeSystems and ValueSets not supported yet -- clinicaltrials - not requested yet?
-Code System URI 'http://clinicaltrials.gov/' could not be found so the code cannot be validated
+# CodeSystems and ValueSets not supported yet -- clinicaltrials - https://jira.hl7.org/browse/HTA-126
+Code System URI 'http://clinicaltrials.gov' could not be found so the code cannot be validated
 
 # CodeSystems and ValueSets not supported yet - clinvar - https://terminology.hl7.org/CodeSystem-ClinVarV.html
 The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/clinvar' doesnt provide any codes so the code cannot be validated
@@ -82,32 +96,5 @@ The definition for the Code System with URI 'https://iscn.karger.com' doesnt pro
 # Code Systems for diseases - MONDO - https://terminology.hl7.org/CodeSystem-MONDO.html
 The definition for the Code System with URI 'http://purl.obolibrary.org/obo/mondo.owl' doesnt provide any codes so the code cannot be validated
 
-# CodeSystems and ValueSets - nuccore - could be combined with refseq?
-Code System URI 'http://www.ncbi.nlm.nih.gov/nuccore' could not be found so the code cannot be validated
-
 # CodeSystems and ValueSets - imgt HLA alleles - not requested for THO as of yet.
 Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found so the code cannot be validated
-
-# This is an example of a local (lab specific) CodeSystem
-Code System URI 'https://hgsc.bcm.edu/lab-test-codes/' could not be found so the code cannot be validated
-
-
-# CodeSystems and ValueSets - specific CodeSystem / code that could be used by a specific lab to deliver codes that are not quite lab specific, but are specific to a particular bioinformatics tool 
-Code System URI 'http://pcingola.github.io/SnpEff/se_inputoutput/#impact-prediction' could not be found so the code cannot be validated
-
-# Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are supressing these messages.
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
-
-# Codes have been checked and are correct
-%The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server)%
-
-# These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look OK as well. Unsure why we are getting the warning. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
-INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[8].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-9*/.component[3].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# Additional slice messages that have been reviewed. Each of these refer to (via derivedFrom) a Variant, and it seems it is a valid Variant instance. So, not clear why it does not match a known slice:
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[0].resource/*Observation/MC1*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].resource/*Observation/MC2*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice) 

@@ -15,7 +15,7 @@ In order to receive a PGx report, you must first order a PGx test. Genomic tests
  <intent value="order"/>
  <code>
    <coding>
-     <system value="https://hgsc.bcm.edu/lab-test-codes/"/>
+     <system value="http://example.org/hgsc.bcm.edu/lab-test-codes/"/>
      <code value="emerge-seq-ngs-pnl"/>
    </coding>
  </code>

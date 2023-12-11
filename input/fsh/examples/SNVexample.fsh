@@ -32,4 +32,4 @@ Usage: #example
 * component[=].valueQuantity.system = "http://unitsofmeasure.org"
 * component[=].valueQuantity.unit = "decimal"
 * component[+].code = $LNC#82121-5 "Allelic read depth"
-* component[=].valueQuantity = 120 '{reads}/{base}' "reads per base pair"
+* component[=].valueQuantity = 120 '1' "reads per base pair"

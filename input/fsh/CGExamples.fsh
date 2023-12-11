@@ -37,7 +37,7 @@ Description: "Example for Variant NM_004448.4(ERBB2):c.2264_2278del"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
-* component[0].valueCodeableConcept.coding = $NUCCORE#NC_000017.11
+* component[0].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000017.11
 * component[1].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
 * component[1].valueString = "ATTGAGGGAAAACACAT"
 * component[2].code.coding = http://loinc.org#69551-0 "Alt allele"
@@ -204,7 +204,7 @@ Description: "Example for genomic Variant given by VCF columns"
 //* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 //* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
 * component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
-* component[0].valueCodeableConcept.coding = $NUCCORE#NC_000010.10
+* component[0].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000010.10
 * component[1].code.coding = http://loinc.org#53034-5 "Allelic State"
 * component[1].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
 * component[2].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
@@ -350,7 +350,7 @@ Description: "Example variant 1011"
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96521657C=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96521657
 * component[exact-start-end].valueRange.high.value = 96521657
@@ -378,7 +378,7 @@ Description: "Example variant 1012"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96522463A=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96522463
 * component[exact-start-end].valueRange.high.value = 96522463
@@ -406,7 +406,7 @@ Description: "Example variant 1013"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96535173T=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535173
 * component[exact-start-end].valueRange.high.value = 96535173
@@ -435,7 +435,7 @@ Description: "Example variant 1014"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96535210G=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535210
 * component[exact-start-end].valueRange.high.value = 96535210
@@ -485,7 +485,7 @@ Description: "Example variant 1016"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96541616G=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541616
 * component[exact-start-end].valueRange.high.value = 96541616
@@ -513,7 +513,7 @@ Description: "Example variant 1017"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96541756T=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541756
 * component[exact-start-end].valueRange.high.value = 96541756
@@ -541,7 +541,7 @@ Description: "Example variant 1018"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96612495C=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96612495
 * component[exact-start-end].valueRange.high.value = 96612495
@@ -595,7 +595,7 @@ Description: "Example variant 1020"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96702047C=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96702047
 * component[exact-start-end].valueRange.high.value = 96702047
@@ -627,7 +627,7 @@ Description: "Example variant 1021"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96741053A=
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96741053
 * component[exact-start-end].valueRange.high.value = 96741053
@@ -887,7 +887,7 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * id = "PGxGenomicReportEMERGE"
 * basedOn = Reference(eMERGEServiceRequest)
 * code.coding[+] = $LNC#51969-4
-* code.coding[+] = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* code.coding[+] = http://example.org/hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
@@ -961,7 +961,7 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * id = "PGxGenomicReportEMERGE-withGrouping"
 * basedOn = Reference(eMERGEServiceRequest)
 * code.coding[+] = $LNC#51969-4
-* code.coding[+] = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* code.coding[+] = http://example.org/hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * effectiveDateTime = "2020-01-01T00:00:00-05:00"
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
@@ -1043,7 +1043,7 @@ InstanceOf: ServiceRequest
 Description: "Example PGx Service Request"
 * id = "eMERGEServiceRequest"
 * status = $REQUESTSTATUS#completed "completed"
-* code = https://hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
+* code = http://example.org/hgsc.bcm.edu/lab-test-codes/#emerge-seq-ngs-pnl
 * subject = Reference(CGPatientExample01)
 * intent = $REQUESTINTENT#order "Order"
 * specimen = Reference(GenomicSpecimenExample01)
@@ -1081,7 +1081,7 @@ Description: "Example for germline CNV"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0001019 "copy_number_variation"
 * component[ref-allele].valueString = "T"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000022.10
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000022.10
 * component[copy-number].valueQuantity.value = 3
 * component[copy-number].valueQuantity.code = #1
 * component[copy-number].valueQuantity.system = $UCUM
@@ -1107,7 +1107,7 @@ Description: "Example for somatic CNV"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0001019 "copy_number_variation"
 * component[ref-allele].valueString = "T"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000022.10
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000022.10
 * component[copy-number].valueQuantity.value = 3
 * component[copy-number].valueQuantity.code = #1
 * component[copy-number].valueQuantity.system = $UCUM
@@ -1132,7 +1132,7 @@ Description: "Example for germline DEL"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[ref-allele].valueString = "C"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000001.10
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000001.10
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 756295
 * component[inner-start-end].valueRange.high.value = 756329
@@ -1153,7 +1153,7 @@ Description: "Example for somatic DEL"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0000159 "deletion"
 * component[ref-allele].valueString = "C"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000001.10
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000001.10
 * component[copy-number].valueQuantity.value = 1
 * component[copy-number].valueQuantity.code = #1
 * component[copy-number].valueQuantity.system = $UCUM
@@ -1178,7 +1178,7 @@ Description: "Example for germline INV"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6706-1 "heterozygous"
 * component[ref-allele].valueString = "C"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000001.10
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000001.10
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 12855952
 * component[inner-start-end].valueRange.high.value = 13448205
@@ -1200,7 +1200,7 @@ Description: "Example for somatic INV"
 * component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000036 "inversion"
 * component[ref-allele].valueString = "T"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[genomic-ref-seq].valueCodeableConcept = $NUCCORE#NC_000001.10
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000001.10
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[inner-start-end].valueRange.low.value = 70391323
 * component[inner-start-end].valueRange.high.value = 70391466

@@ -10,7 +10,7 @@ Usage: #example
 * effectiveDateTime = "2023-06-01"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)
-* interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
+* interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 //KP - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
 // * component[0].code = http://loinc.org#48004-6
 // * component[0].code.text = "coding HGVS"

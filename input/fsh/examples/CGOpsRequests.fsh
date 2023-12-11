@@ -41,7 +41,7 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #48013-7
 * parameter[=].part[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/refseq"
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000007.14
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #81258-6
@@ -127,7 +127,7 @@ Usage: #example
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #48013-7
 * parameter[=].part[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/refseq"
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000005.9
 * parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #53034-5
@@ -192,7 +192,7 @@ Usage: #example
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48013-7
 * parameter.part[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/refseq"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000007.13
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48002-0
@@ -254,7 +254,7 @@ Usage: #example
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48013-7
 * parameter.part[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/refseq"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000007.14
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48002-0
@@ -444,7 +444,7 @@ Usage: #example
 * parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #48013-7
 * parameter[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/refseq"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000017.11
 * parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #69547-8
@@ -525,7 +525,7 @@ Usage: #example
 * parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #48013-7
 * parameter[=].resource.component[=].code.coding.display = "Genomic reference sequence ID"
-* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/nuccore"
+* parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.ncbi.nlm.nih.gov/refseq"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.code = #NC_000019.10
 * parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #69547-8
@@ -566,7 +566,7 @@ Usage: #example
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
-* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
+* parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 //kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
 // * parameter[=].resource.component[0].code = http://loinc.org#48004-6
 // * parameter[=].resource.component[0].code.text = "coding HGVS"
@@ -592,7 +592,7 @@ Usage: #example
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
-* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#LOW "Low"
+* parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#LOW "Low"
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
 * parameter[=].resource.component[0].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001366781.1:c.90T>C "NM_001366781.1:c.90T>C"
@@ -616,7 +616,7 @@ Usage: #example
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
-* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
+* parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 * parameter[=].resource.component[0].code = http://loinc.org#48004-6
 * parameter[=].resource.component[0].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
@@ -638,7 +638,7 @@ Usage: #example
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
-* parameter[=].resource.interpretation = http://pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
+* parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 //kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
 // * parameter[=].resource.component[0].code = http://loinc.org#48004-6
 // * parameter[=].resource.component[0].code.text = "coding HGVS"
@@ -664,7 +664,7 @@ Usage: #example
 * parameter[=].resource.component[+].code = $LNC#48002-0 "Genomic source class"
 * parameter[=].resource.component[=].valueCodeableConcept.coding = $LNC#LA6683-2 "Germline"
 * parameter[=].resource.component[+].code = http://loinc.org#48013-7 "Genomic reference sequence ID"
-* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/nuccore#NC_000001.10
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NC_000001.10
 * parameter[=].resource.component[+].code = $LNC#53034-5 "Allelic state"
 * parameter[=].resource.component[=].valueCodeableConcept = $LNC#LA6706-1 "Heterozygous"
 * parameter[=].resource.component[+].code = http://loinc.org#81252-9 "Discrete genetic variant"
