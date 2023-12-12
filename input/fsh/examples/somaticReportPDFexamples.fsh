@@ -9,7 +9,6 @@
 //* entry[+].resource = NTHL1-snv-var
 //* entry[+].resource = STAG2-insertion-var
 //* entry[+].resource = ATR-insertion-var
-//* entry[+].resource = ATM-missense-var
 //* entry[+].resource = EGFR-L858R-var
 //* entry[+].resource = ROS1-Fusion-var
 //* entry[+].resource = NOTCH1-significance
@@ -18,7 +17,6 @@
 //* entry[+].resource = NTHL1-snv-disease
 //* entry[+].resource = STAG2-insertion-significance
 //* entry[+].resource = ATR-insertion-significance
-//* entry[+].resource = ATM-missense-significance
 //* entry[+].resource = EGFR-L858R-significance
 //* entry[+].resource = ROS1-Fusion-disease
 //* entry[+].resource = ROS1-Fusion-therapuTrial
@@ -32,7 +30,6 @@
 //* entry[+].resource = NTHL1-snv-molc
 //* entry[+].resource = STAG2-insertion-molc
 //* entry[+].resource = ATR-insertion-molc
-//* entry[+].resource = ATM-insertion-molc
 //* entry[+].resource = EGFR-L858R-molc
 //* entry[+].resource = ROS1-Fusion
 //* entry[+].resource = somaticStudy
@@ -250,39 +247,6 @@ Description: "Example for ATR insertion"
 * component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
 * component[conclusion-string].valueString = "Gene: ATR; Exon: 14; Nucleotide: NM_001184.4:c.2878_2879insAGTAA; Genomic Location: NC_000003.11:g.142269071_142269072insTTACT; Amino acid: NP_001175.2:p.R960fs*2; Function: loss; Assessment: Likely Pathogenic; Classification: Tier 2C; Allele Fraction: 5.34% (of 131 reads); Variation: Insertion; Interpretation: The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
 
-Instance: ATM-missense-var
-InstanceOf: Variant
-Description: "Example for ATM missense"
-//* id = "VariantExample1"
-* meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant"
-* status = #final "Final"
-* category[labCategory] = $OBSCAT#laboratory
-* method = $LNC#LA26398-0 "Sequencing"
-* subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
-* valueCodeableConcept = $LNC#LA9633-4 "Present"
-//* interpretation = $SCT#10828004 "Positive (qualifier value)"
-* component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000042.3:p.Asn2875His
-//* component[representative-transcript-ref-seq].valueCodeableConcept = 
-//* component[allelic-read-depth].valueQuantity = 
-* component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0001483 "SNV"
-* component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_000051.3:c.8623A>C
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:795 "ATM"
-//* component[alt-allele].valueString = 
-//* component[chromosome-identifier].valueCodeableConcept =  
-//* component[exact-start-end][0].valueRange.low.value = 
-//* component[exact-start-end][0].valueRange.high.value = 
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000003.11
-//* component[ref-allele].valueString = ""
-//* component[variation-code].valueCodeableConcept = 
-* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000011.9:g.108218044A>C
-* component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.062
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
-* component[conclusion-string].valueString = "Gene: ATM; Exon: 14; Nucleotide:NM_001184.4:c.2878_2879insAGTAA; Genomic Location: NC_000003.11:g.142269071_142269072insTTACT; Amino acid: NP_001175.2:p.R960fs*2; Function: loss; Assessment: Likely Pathogenic; Classification: Tier 2C; Allele Fraction: 5.34% (of 131 reads); Variation: Insertion; Interpretation: The protein encoded by this gene belongs to the PI3/PI4-kinase family. This protein is an important cell cycle checkpoint kinase that phosphorylates; thus, it functions as a regulator of a wide variety ... more."
-
 Instance: EGFR-L858R-var
 InstanceOf: Variant
 Description: "Example for EGFR L858R"
@@ -471,22 +435,6 @@ Usage: #example
 * component[=].valueString = "The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
-
-//ATM_insertion
-Instance: ATM-missense-significance
-InstanceOf: DiagnosticImplication
-Description: "Example DiagnosticImplication - ATM likely pathogenic"
-Usage: #example
-* status = #final
-* subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
-* derivedFrom = Reference(ATM-missense-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
-* component[=].valueCodeableConcept = $LNC#LA26332-9 "Likely Pathogenic"
 
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
@@ -812,32 +760,6 @@ Usage: #example
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
-// * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
-// * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
-* component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
-
-Instance: ATM-insertion-molc
-InstanceOf: MolecularConsequence
-Description: "Example Molecular Consequence ATM frameshift"
-Usage: #example
-* status = #final
-* subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
-* subject = Reference(CGPatientExample01)
-* derivedFrom = Reference(ATM-missense-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
-* component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001184.4:c.2878_2879insAGTAA "NM_001184.4:c.2878_2879insAGTAA"
-* component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
-//kp -- error on validation: Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
 * component[+].code = TbdCodesCS#functional-effect
@@ -1207,7 +1129,6 @@ Usage: #example
 * result[+] = Reference(NTHL1-snv-var)
 * result[+] = Reference(STAG2-insertion-var)
 * result[+] = Reference(ATR-insertion-var)
-* result[+] = Reference(ATM-missense-var)
 * result[+] = Reference(EGFR-L858R-var)
 * result[+] = Reference(ROS1-Fusion-var)
 * result[+] = Reference(NOTCH1-significance)
@@ -1216,7 +1137,6 @@ Usage: #example
 * result[+] = Reference(NTHL1-snv-disease)
 * result[+] = Reference(STAG2-insertion-significance)
 * result[+] = Reference(ATR-insertion-significance)
-* result[+] = Reference(ATM-missense-significance)
 * result[+] = Reference(EGFR-L858R-significance)
 * result[+] = Reference(ROS1-Fusion-disease)
 * result[+] = Reference(ROS1-Fusion-therapuTrial)
@@ -1230,7 +1150,6 @@ Usage: #example
 * result[+] = Reference(NTHL1-snv-molc)
 * result[+] = Reference(STAG2-insertion-molc)
 * result[+] = Reference(ATR-insertion-molc)
-* result[+] = Reference(ATM-insertion-molc)
 * result[+] = Reference(EGFR-L858R-molc)
 * result[+] = Reference(ROS1-Fusion)
 * result[+] = Reference(TMBExample)
