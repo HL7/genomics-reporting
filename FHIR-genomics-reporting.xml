@@ -8,6 +8,7 @@
 <version code="0.3.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2019Jan"/>
 <version code="0.1.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2018May"/>
 <version code="1.0" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/STU1"/>
+<version code="3.0.0-BALLOT" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -30,6 +31,7 @@
 <artifact deprecated="true" id="CodeSystem/ConditionInheritanceModeCS" key="CodeSystem-ConditionInheritanceModeCS" name="Condition Inheritance Pattern Codes"/>
 <artifact id="ValueSet/condition-inheritance-mode-vs" key="ValueSet-condition-inheritance-vs" name="Condition Inheritance Patterns"/>
 <artifact id="ValueSet/dna-change-type-vs" key="ValueSet-dna-change-type" name="DNA Change Type"/>
+<artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="DNA Change Type Map"/>
 <artifact id="StructureDefinition/diagnostic-implication" key="StructureDefinition-diagnostic-implication" name="Diagnostic Implication"/>
 <artifact deprecated="true" key="DiagnosticReport" name="DiagnosticReport"/>
 <artifact id="Observation/EGFR-L858R-molc" key="Observation-EGFR-L858R-molc" name="EGFR-L858R-molc"/>
@@ -121,6 +123,7 @@
 <artifact id="StructureDefinition/genomic-study-reference" key="StructureDefinition-genomic-study-reference" name="Genomic Study Reference"/>
 <artifact id="StructureDefinition/genomic-study-referrer-ext" key="StructureDefinition-genomic-study-referrer-ext" name="Genomic Study Referrer Extension"/>
 <artifact id="CodeSystem/genomic-study-status-cs" key="CodeSystem-genomic-study-status-cs" name="Genomic Study Status CodeSystem"/>
+<artifact id="ConceptMap/GenomicStudyStatusMap" key="ConceptMap-GenomicStudyStatusMap" name="Genomic Study Status Map"/>
 <artifact id="ValueSet/genomic-study-status-vs" key="ValueSet-genomic-study-status-vs" name="Genomic Study Status ValueSet"/>
 <artifact id="CodeSystem/genomic-study-type-cs" key="CodeSystem-genomic-study-type-cs" name="Genomic Study Type CodeSystem"/>
 <artifact id="ValueSet/genomic-study-type-vs" key="ValueSet-genomic-study-type-vs" name="Genomic Study Type ValueSet"/>
@@ -128,7 +131,6 @@
 <artifact id="ServiceRequest/GenomicServiceRequestExample01" key="ServiceRequest-GenomicServiceRequestExample01" name="GenomicServiceRequestExample01"/>
 <artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="GenomicSpecimenExample01"/>
 <artifact id="Specimen/GenomicSpecimenExample02" key="Specimen-GenomicSpecimenExample02" name="GenomicSpecimenExample02"/>
-<artifact id="ConceptMap/GenomicStudyStatusMap" key="ConceptMap-GenomicStudyStatusMap" name="GenomicStudyStatusMap"/>
 <artifact deprecated="true" id="StructureDefinition/genomics-artifact" key="StructureDefinition-genomics-artifact" name="Genomics Artifact"/>
 <artifact deprecated="true" id="StructureDefinition/genomics-base" key="StructureDefinition-genomics-base" name="Genomics Base"/>
 <artifact deprecated="true" id="StructureDefinition/genomics-document-reference" key="StructureDefinition-genomics-document-reference" name="Genomics DocumentReference"/>
@@ -303,7 +305,6 @@
 <artifact id="Patient/denovoFather" key="Patient-denovoFather" name="denovoFather"/>
 <artifact id="Patient/denovoMother" key="Patient-denovoMother" name="denovoMother"/>
 <artifact id="DiagnosticReport/diagnosticreport-hla-glstring-r4" key="DiagnosticReport-diagnosticreport-hla-glstring-r4" name="diagnosticreport-hla-glstring-r4"/>
-<artifact id="ConceptMap/dna-change-type-map" key="ConceptMap-dna-change-type-map" name="dna-change-type-map"/>
 <artifact id="ServiceRequest/eMERGEServiceRequest" key="ServiceRequest-eMERGEServiceRequest" name="eMERGEServiceRequest"/>
 <artifact id="DocumentReference/genomicFileFatherBAM" key="DocumentReference-genomicFileFatherBAM" name="genomicFileFatherBAM"/>
 <artifact id="DocumentReference/genomicFileMotherBAM" key="DocumentReference-genomicFileMotherBAM" name="genomicFileMotherBAM"/>
@@ -356,6 +357,7 @@
 <page key="groupingGuidance" name="Appendix H: Grouping Guidance"/>
 <page key="Glossary" name="Appendix I: Glossary"/>
 <page key="artifacts" name="Artifacts Summary"/>
+<page key="changes" name="Change Log"/>
 <page key="general" name="General Genomic Reporting"/>
 <page key="background" name="Genomics Background"/>
 <page key="histocompatibility" name="Histocompatibility and Immunogenetics Reporting"/>

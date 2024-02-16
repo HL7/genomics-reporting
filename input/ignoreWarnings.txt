@@ -3,21 +3,21 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
 # Observation.component instances that do not match our slices, but is OK (and this is ok since we use open slicing)
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/variant-with-molec-consequences: Observation.component[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
+INFORMATION: Observation/variant-with-molec-consequences: Observation.component[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 
 # GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. We allow slicing, so we can ignore informational message
-INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 
 # An example of DiagnosticImplication<Observation>.derivedFrom() that we slice to only allow our profiles. In this example, we did not define specific Variant instances and just refer to some variants by identifier (rather than a full resource), so ignoring these warnings
-INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
+INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 
 # This is a publisher induced issue.   The extension in question is introduced by the publisher.   See https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/New.20ConceptMap.20Warning.20--.20induced.20by.20IG.20Publisher 
 The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version {3} is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
@@ -33,68 +33,73 @@ None of the codings provided are in the value set 'Observation Category Codes' (
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
 
 # These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look OK as well. Unsure why we are getting the warning. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
-# These slice messages have been reviewed - being investigated -- INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-# These slice messages have been reviewed - being investigated -- INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[8].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-9*/.component[3].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
+# These slice messages have been reviewed - being investigated -- INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication%
+# These slice messages have been reviewed - being investigated -- INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[8].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-9*/.component[3].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication%
 
 # These slice messages that have been reviewed. Each of these refer to (via derivedFrom) a Variant, and it seems it is a valid Variant instance. So, not clear why it does not match a known slice:
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[0].resource/*Observation/MC1*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].resource/*Observation/MC2*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence|3.0.0-BALLOT (this may not be a problem, but you should check that it's not intended to match a slice) 
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[0].resource/*Observation/MC1*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].resource/*Observation/MC2*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
+INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 
 # Code has been checked and are correct
-%The system http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl was found but did not contain enough information to properly validate the code "C43359" ("Group") (mode = fragment) (from Tx-Server)%
+Unknown Code 'C43359' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+Wrong Display Name 'Group' for http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43359.%
 
-# CodeSystems and ValueSets not supported yet -- https://terminology.hl7.org/CodeSystem-v3-hgnc.html
-Code System URI 'http://www.genenames.org' could not be found so the code cannot be validated
-Code System URI 'http://www.genenames.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|3.0.0-BALLOT
-The definition for the Code System with URI 'http://www.genenames.org' doesnt provide any codes so the code cannot be validated
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://www.genenames.org
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/hgnc-vs|3.0.0-BALLOT
+# CodeSystems and ValueSets not supported yet -- genenames -- https://terminology.hl7.org/CodeSystem-v3-hgnc.html
+A definition for CodeSystem 'http://www.genenames.org' could not be found, so the code cannot be validated%
+%because the code system http://www.genenames.org was not found
+%Unable to provide support for code system http://www.genenames.org
 
 # CodeSystems and ValueSets not supported yet -- sequenceontology - https://jira.hl7.org/browse/HTA-37 (should be in THO soon)
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://sequenceontology.org
-Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated
-Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|3.0.0-BALLOT
-Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
-Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
-Code System URI 'http://sequenceontology.org' could not be found so the code cannot be validated; Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs|3.0.0-BALLOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/molecular-consequence-vs|3.0.0-BALLOT
-Unable to check whether the code is in the value set http://hl7.org/fhir/uv/genomics-reporting/ValueSet/functional-effect-vs|3.0.0-BALLOT
+A definition for CodeSystem 'http://sequenceontology.org' could not be found, so the code cannot be validated
+%because the code system http://sequenceontology.org was not found
+%because the code system http://sequenceontology.org, http://sequenceontology.org was not found
+%Unable to provide support for code system http://sequenceontology.org
 
 # CodeSystems and ValueSets not supported yet -- glstring - https://jira.hl7.org/browse/HTA-84
-Code System URI 'http://glstring.org' could not be found so the code cannot be validated
+A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. Valid versions: []
 
 # CodeSystems and ValueSets not supported yet -- human-phenotype-ontology - https://terminology.hl7.org/CodeSystem-HPO.html
-Code System URI 'http://human-phenotype-ontology.org' could not be found so the code cannot be validated
-Error from http://tx.fhir.org/r4: Unable to provide support for code system http://human-phenotype-ontology.org
-The definition for the Code System with URI 'http://human-phenotype-ontology.org' doesnt provide any codes so the code cannot be validated
-Unknown System 'http://human-phenotype-ontology.org' specified, so Concepts and Filters can't be checked (Details: Resolved system http://human-phenotype-ontology.org (v1.0.0), but the definition is not complete)
+A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated
+%because the code system http://human-phenotype-ontology.org was not found
+%is not valid in the system http://human-phenotype-ontology.org
+Resolved system http://human-phenotype-ontology.org (%
+%Unable to provide support for code system http://human-phenotype-ontology.org
 
 # CodeSystems and ValueSets not supported yet -- pharmvar - https://jira.hl7.org/browse/HTA-85
-Code System URI 'http://www.pharmvar.org' could not be found so the code cannot be validated
+A definition for CodeSystem 'http://www.pharmvar.org' could not be found, so the code cannot be validated
 
 # CodeSystems and ValueSets not supported yet -- clinicaltrials - https://jira.hl7.org/browse/HTA-126
-Code System URI 'http://clinicaltrials.gov' could not be found so the code cannot be validated
+A definition for CodeSystem 'http://clinicaltrials.gov' could not be found, so the code cannot be validated
 
 # CodeSystems and ValueSets not supported yet - clinvar - https://terminology.hl7.org/CodeSystem-ClinVarV.html
-The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/clinvar' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' version '???' could not be found, so the code cannot be validated. Valid versions: []
 
 # CodeSystem and ValueSets - refseq - https://terminology.hl7.org/CodeSystem-v3-refSeq.html
-The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/refseq' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/refseq' could not be found, so the code cannot be validated
 
 # CodeSystem and ValueSets - dbSNP - https://terminology.hl7.org/CodeSystem-v3-dbSNP.html
-The definition for the Code System with URI 'http://www.ncbi.nlm.nih.gov/projects/SNP' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' version '137' could not be found, so the code cannot be validated. Valid versions: []
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' could not be found, so the code cannot be validated
 
 # CodeSystem and ValueSets - gtr - https://terminology.hl7.org/CodeSystem-GTR.html
-Code System URI 'http://www.ncbi.nlm.nih.gov/gtr' could not be found so the code cannot be validated
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/gtr' could not be found, so the code cannot be validated
 
 # CodeSystems and ValueSets - ISCN - https://terminology.hl7.org/CodeSystem-ISCN.html
-The definition for the Code System with URI 'https://iscn.karger.com' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'https://iscn.karger.com' could not be found, so the code cannot be validated
 
 # Code Systems for diseases - MONDO - https://terminology.hl7.org/CodeSystem-MONDO.html
-The definition for the Code System with URI 'http://purl.obolibrary.org/obo/mondo.owl' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'http://purl.obolibrary.org/obo/mondo.owl' could not be found, so the code cannot be validated
 
 # CodeSystems and ValueSets - imgt HLA alleles - https://jira.hl7.org/browse/HTA-127.
-Code System URI 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found so the code cannot be validated
+A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.23' could not be found, so the code cannot be validated. Valid versions: []
+A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. Valid versions: []
+
+# Supress all references to example CodeSystems
+A definition for CodeSystem 'http://example.org/%
+
+# We define several experimental CodeSystems that we use, so OK to supress this for all IG defined CSs
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
