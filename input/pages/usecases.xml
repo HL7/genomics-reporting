@@ -300,7 +300,7 @@ code=69548-6&_include=Observation:
   
   <pre class="http">GET /DiagnosticReport?_id=16931&amp;_include=DiagnosticReport:result&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
   </pre>
-  <p>The ampersands with include tell the server to 'include' everything through the result reference, and to include everything that can be found through <code>Observation.hasMember</code> or <code>Observation.derivedFrom</code> links (the iterate operator tells the server to iterate through the links).
+  <p>The ampersands will tell the server to 'include' everything through the result reference, and to include everything that can be found through <code>Observation.hasMember</code> or <code>Observation.derivedFrom</code> links (the iterate operator tells the server to iterate through the links).
   </p>
   
   <a name="getCompoundHetVariantAndmemberVariants"></a>
@@ -338,7 +338,7 @@ code=69548-6&_include=Observation:
     This query uses the value of the "Gene studied ID (HGNC)" component, with LOINC code 48018-6, to
     find an instance of Observation Variant with the HGNC id for EGFR.
     "component-code-value-concept" is a construct to use the code of a component and the code of a
-    value for the component. The value in this case is HGNC gene id "HGNC:3236" for EGFR. Note to
+    value for the component. The value in this case is the HGNC gene id "HGNC:3236" for EGFR. Note to
     avoid errors, the gene id's from HGNC must be appended with "HGNC:"
   </p>
   <!--pre class="http">GET /Observation?component-code-value=http://www.genenames.org|3236&amp;component-code-value=http://loinc.org|LA6684-0</pre-->
@@ -395,7 +395,7 @@ code=69548-6&_include=Observation:
   <h3>Other Genomics Use Case</h3>
   <p>
     During the development of the FHIR Genomics design, CGWG participants have commented on the
-    earlier use cases and/or proposed new use cases. In this section, we list describe new cases and
+    earlier use cases and/or proposed new use cases. In this section, we describe new cases and
     demonstrate how the proposed design will address them.
   </p>
   <a name="panel"></a>
@@ -407,7 +407,7 @@ code=69548-6&_include=Observation:
   </p>
   <pre class="http">GET /Observation?code=http://www.ncbi.nlm.nih.gov/gtr|GTR000593044.2&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
   </pre>
-  <p>The ampersands with include tell the server to 'include' everything through the result reference, and to include everything that can be found through <code>Observation.hasMember</code> or <code>Observation.derivedFrom</code> links (the iterate operator tells the server to iterate through the links).
+  <p>The ampersands will tell the server to 'include' everything through the result reference, and to include everything that can be found through <code>Observation.hasMember</code> or <code>Observation.derivedFrom</code> links (the iterate operator tells the server to iterate through the links).
   </p>
 
   <a name="basicQueries"></a>

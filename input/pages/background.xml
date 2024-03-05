@@ -41,7 +41,7 @@
   	When a laboratory decides to add a new test to their test menu for physicians to order, much is required even before the test order goes live and patient testing commences.  The laboratory validates the test system, including its analytical sensitivity, specificity, and reporting.
   </p>
   <p>
-    The payload for a genomic report is carried by the <strong>DiagnosticReport</strong> resource. The report summarizes and packages all of the information produced by the genomic analysis and other related items such as the orders, the specimen, and others. It organizes it for consumption and provide a summary as well as a rendered view of the findings. It is the primary response to the <strong>ServiceRequest</strong> which is the "order" for genomic testing to occur. 
+    The payload for a genomic report is carried by the <strong>DiagnosticReport</strong> resource. The report summarizes and packages all of the information produced by the genomic analysis and other related items such as the orders, the specimen, and others. It organizes it for consumption and provides a summary as well as a rendered view of the findings. It is the primary response to the <strong>ServiceRequest</strong> which is the "order" for genomic testing to occur. 
   </p>
   <p>
   	In practice, there can be multiple ServiceRequests grouped together as part of a single requisition. This allows multiple tests to be ordered at one time and the results to be gathered as a group. A genomic report may also contain information gathered from multiple testing approaches. For example, a more general test might be followed up with more specific tests providing additional details.
@@ -53,7 +53,7 @@
   	<strong>Genomic Findings</strong> are <strong>observations</strong> about the specimen's genomic characteristics. For example, a chromosomal abnormality (such as duplication of a chromosome), genotype, haplotype, or variant that was detected. <strong>Genomic Implications</strong> provide an elaboration of the effect of one or more genomic findings (i.e., an observed variant or genotype), such as ‘poor response to medication X.' For the reported implications, <strong>recommended</strong> actions such as 'reduce dosage' may be included. 
   </p>
   <p>
-    A Genomic <strong>Interpretation</strong> is an overall assessment of the result of the genomic testing in the context one or more service requests, such as a statement that there is a positive or negative finding. Overall Interpretation is reported when variant analysis (sequencing or targeted variants) is done. It provides a coarse overall interpretation of the results reported. More detailed interpretations are also associated with each distinct reported variant. 
+    A Genomic <strong>Interpretation</strong> is an overall assessment of the result of the genomic testing in the context of one or more service requests, such as a statement that there is a positive or negative finding. Overall Interpretation is reported when variant analysis (sequencing or targeted variants) is done. It provides a coarse overall interpretation of the results reported. More detailed interpretations are also associated with each distinct reported variant. 
   </p>
   <p>
   	While any and all of this information may be communicated in the report, it is important to note the clinician has the total patient picture including radiology, patient history, etc, and ultimately assesses the findings.
@@ -78,6 +78,6 @@
     Variations can be described at different levels of granularity, ranging from chromosomal or poly-chromosomal abnormalities such as extra or missing chromosomes or large-scale differences (e.g., as seen in microsatellite instability) down to single changes in individual nucleotides (Single Nucleotide Polymorphisms/Variations, abbreviated SNP or SNV depending on the context).
   </p>
   <p>
-    "Known" variations are often assigned codes and catalogued into code systems. This allows easy linking of knowledge to information found in a particular specimen. Reports can simply specify the <strong>code</strong> and know that clinicians can look up relevant information associated with the code. However, sometimes variations are detected that do not (yet) have a standardized code. In these cases, a description of the variation and where it was located must be communicated. Often, even when a code is known, the details about the location and type of change are communicated.
+    "Known" variations are often assigned codes and cataloged into code systems. This allows easy linking of knowledge to information found in a particular specimen. Reports can simply specify the <strong>code</strong> and know that clinicians can look up relevant information associated with the code. However, sometimes variations are detected that do not (yet) have a standardized code. In these cases, a description of the variation and where it was located must be communicated. Often, even when a code is known, the details about the location and type of change are communicated.
   </p>
 </div>
