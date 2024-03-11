@@ -102,3 +102,6 @@ A definition for CodeSystem 'http://example.org/%
 
 # We define several experimental CodeSystems that we use, so OK to supress this for all IG defined CSs
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
+
+# Suppressing OK'ed by Grahame: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Publisher.20introducing.20extension.2C.20and.20then.20issues.20warning
+The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version 1.0 is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
