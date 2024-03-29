@@ -57,20 +57,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component[conclusion-string].value[x] only string
 * component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"
 
-
-Profile:        OverallInterpretation
-Parent:         GenomicBase
-Id:             overall-interpretation
-Title:          "Overall Interpretation"
-Description:    "Provides a coarse overall interpretation of the genomic results reported."
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
-* code = $LNC#51968-6
-* code ^short = "51968-6"
-* value[x] only CodeableConcept
-* value[x] 1..1
-* value[x] from http://loinc.org/vs/LL541-4 (preferred)
-* value[x] ^short = "Positive | Negative | Inconclusive | Failure"
-
 Profile:        SequencePhaseRelationship
 Parent:         GenomicFinding
 Id:             sequence-phase-relationship
@@ -136,7 +122,7 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
-* result contains overall 0..1 and
+* result contains 
     diagnostic-implication 0..* and
     therapeutic-implication 0..* and
 	molecular-consequence 0..* and
@@ -145,8 +131,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
     genotype 0..* and 
     haplotype 0..* and
     biomarker 0..* 
-* result[overall] only Reference(OverallInterpretation)
-* result[overall] ^short = "Assessment of overall results"
 * result[diagnostic-implication] only Reference(DiagnosticImplication)
 * result[diagnostic-implication] ^short = "Diagnostic Implication"
 * result[therapeutic-implication] only Reference(TherapeuticImplication)
@@ -163,6 +147,8 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * result[haplotype] ^short = "Haplotype"
 * result[biomarker] only Reference(MolecularBiomarker)
 * result[biomarker] ^short = "MolecularBiomarker"
+* conclusion ^short = "Assessment of overall results"
+* conclusionCode ^short = "Coarse overall interpretation of the genomic results"
 
 Profile:        GenomicDataFile
 Parent:         DocumentReference

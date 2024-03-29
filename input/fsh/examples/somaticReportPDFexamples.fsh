@@ -33,7 +33,6 @@
 //* entry[+].resource = EGFR-L858R-molc
 //* entry[+].resource = ROS1-Fusion
 //* entry[+].resource = somaticStudy
-//* entry[+].resource = overallInt
 //* entry[+].resource = TMBExample
 //* entry[+].resource = MSIExample
 //* entry[+].resource = PDL1Example
@@ -940,20 +939,6 @@ Usage: #example
 * content.attachment.url = "https://chat.fhir.org/user_uploads/10155/ha97JexWz8T5PLHl7zoLsosd/Default.WGS.GRCh38.bed"
 * content.attachment.title = "Full Genome"
 
-Instance: overallInt
-InstanceOf: OverallInterpretation
-Description: "Example for Overall Interpretation."
-* id = "overallInt"
-* subject = Reference(Patient/somaticPatient)
-* effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept = $LNC#LA6576-8 "Positive"
-* subject = Reference(somaticPatient)
-* status = #final
-* component[conclusion-string].valueString = "Patient is positive for Tier 1 / Level A variants, including variants with FDA-approved indications."
-
 Instance: TMBExample
 InstanceOf: MolecularBiomarker
 Description: "Example for Tumor Mutation Burden"
@@ -1119,7 +1104,6 @@ Usage: #example
 * performer[+] = Reference(performingOrganization)
 * resultsInterpreter[0] = Reference(supervisorPractitioner)
 * resultsInterpreter[+] = Reference(performingOrganization)
-* result[0] = Reference(overallInt)
 * result[+] = Reference(NOTCH1-uncertain-var)
 * result[+] = Reference(ZFHX3-uncertain-var)
 * result[+] = Reference(MSH2-del-var)
@@ -1158,6 +1142,8 @@ Usage: #example
 * result[+] = Reference(HLA-B-haplotype2)
 * result[+] = Reference(HLA-C-haplotype1)
 * result[+] = Reference(HLA-C-haplotype2)
+* conclusionCode[+] = $LNC#LA6576-8 "Positive"
+* conclusion = "Patient is positive for Tier 1 / Level A variants, including variants with FDA-approved indications."
 
 Instance: somaticServiceRequest
 InstanceOf: ServiceRequest

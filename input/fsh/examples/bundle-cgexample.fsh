@@ -13,8 +13,6 @@ Usage: #example
 * entry[=].resource = ExampleLab
 * entry[+].fullUrl = "http://example.org/fhir/ServiceRequest/ExampleServiceRequest"
 * entry[=].resource = ExampleServiceRequest
-* entry[+].fullUrl = "http://example.org/fhir/Observation/overall-interp"
-* entry[=].resource = overall-interp
 * entry[+].fullUrl = "http://example.org/fhir/Observation/discrete-variant"
 * entry[=].resource = discrete-variant
 * entry[+].fullUrl = "http://example.org/fhir/Observation/dis-path"
@@ -51,7 +49,6 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* result[0] = Reference(overall-interp)
 * result[+] = Reference(discrete-variant)
 * result[+] = Reference(dis-path)
 * result[+] = Reference(complex-variant)
@@ -62,21 +59,8 @@ Usage: #inline
 * result[+] = Reference(efficacy)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = "UHV0IHRoZSByZXBvcnQgdGV4dCBoZXJlIC0gbWltZS1lbmNvZGVk"
-
-Instance: overall-interp
-InstanceOf: OverallInterpretation
-Usage: #inline
-* status = #final
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = $LNC#51968-6
-* subject = Reference(ExamplePatient)
-* effectiveDateTime = "2016"
-* issued = "2016-09-06T00:00:00-05:00"
-* performer = Reference(ExampleLab)
-* valueCodeableConcept.coding[0] = $LNC#LA6576-8 "Positive"
-* valueCodeableConcept.coding[+] = $SCT#10828004 "Positive"
-* specimen = Reference(ExampleSpecimen)
+* conclusionCode[+] = $LNC#LA6576-8 "Positive"
+* conclusionCode[+] = $SCT#10828004 "Positive"
 
 Instance: discrete-variant
 InstanceOf: Variant

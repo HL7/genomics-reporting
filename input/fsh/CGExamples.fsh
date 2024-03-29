@@ -299,11 +299,12 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * result[0].display = "impact for high risk allele"
 * result[0] = Reference(TherapeuticImplicationExample1)
 * result[1] = Reference(GenotypeExample1)
-* result[2] = Reference(OverallInterpExample1)
 * status = #final
 * subject = Reference(CGPatientExample01)
 * extension[workflow-relatedArtifact][0].valueRelatedArtifact.type = #citation
 * extension[workflow-relatedArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
+* conclusionCode[+] = $LNC#LA6576-8 "Positive"
+* conclusion = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
 Instance: SequencePhaseRelationExample1
 InstanceOf: SequencePhaseRelationship
@@ -320,20 +321,6 @@ Description: "Example for sequence phase relation."
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
-
-Instance: OverallInterpExample1
-InstanceOf: OverallInterpretation
-Description: "Example for Overall Interpretation."
-* id = "OverallInterpExample1"
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* valueCodeableConcept = $LNC#LA6576-8 "Positive"
-* subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2019-04-01"
-* performer = Reference(ExampleOrg)
-* specimen = Reference(GenomicSpecimenExample01)
-* status = #final
-* component[conclusion-string].valueString = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
 Instance: Pgx-var-1011
 InstanceOf: Variant
@@ -892,7 +879,6 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* result[+] = Reference(OverallInterpExample2) "gene-drug interactions found."
 * result[+] = Reference(TxImp01) "clopidogrel, poor metabolizer"
 * result[+] = Reference(TxImp02) "voriconazole, poor metabolizer"
 * result[+] = Reference(TxImp03) "citalopram, poor metabolizer"
@@ -925,6 +911,8 @@ Since FDA Approval is not required for clinical use of this test, this laborator
 pursuant to the requirement of CLIA '88. This laboratory is licensed and/or accredited under CLIA and CAP (CAP# xxxxxxx / CLIA# xxxxxxxxxx).
 """
 * status = #final
+* conclusionCode[+] = $LNC#LA6576-8 "Positive"
+* conclusion = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram."
 
 Instance: PGXGenomicStudy
 InstanceOf: GenomicStudy
@@ -966,10 +954,9 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * issued = "2020-01-01T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
 * subject = Reference(CGPatientExample01)
-* result[0] = Reference(OverallInterpExample2) "gene-drug interactions found."
-* result[1] = Reference(GrouperEx01) "Therapeutic Implications"
-* result[2] = Reference(GrouperEx02) "Genotypes"
-* result[3] = Reference(GrouperEx03) "Regions studied and Variants"
+* result[+] = Reference(GrouperEx01) "Therapeutic Implications"
+* result[+] = Reference(GrouperEx02) "Genotypes"
+* result[+] = Reference(GrouperEx03) "Regions studied and Variants"
 * extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
 * extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
 * extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
@@ -1022,21 +1009,6 @@ Description: "Example of a Medication Recommendation for decreasing dosage for a
 * description = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * for = Reference(CGPatientExample01)
 * reasonReference = Reference(TxImp05) "Poor metabolizer"
-
-Instance: OverallInterpExample2
-InstanceOf: OverallInterpretation
-Description: "Example for Overall Interpretation."
-* id = "OverallInterpExample2"
-* category[labCategory] = $OBSCAT#laboratory
-* category[geCategory] = $DIAGNOSTICSERVICE#GE
-* subject = Reference(CGPatientExample01)
-* effectiveDateTime = "2019-04-01"
-* performer = Reference(ExampleOrg)
-* valueCodeableConcept = $LNC#LA6576-8 "Positive"
-* specimen = Reference(GenomicSpecimenExample01)
-* status = #final
-* component[conclusion-string].valueString = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram."
-
 
 Instance: eMERGEServiceRequest
 InstanceOf: ServiceRequest
