@@ -52,6 +52,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * valueCodeableConcept from http://loinc.org/vs/LL1971-2 (required)
 * valueCodeableConcept ^short = "Indeterminate | No call | Present | Absent."
 * valueCodeableConcept ^definition = "The presence or absence of the variant described in the components. If not searching for specific variations and merely reporting what's found, the profile's value should be set to 'Present'."
+* valueCodeableConcept ^comment = "See [here](sequencing.html#variant-assessment) for usage guidance."
 // * component ^slicing.discriminator.type = #pattern
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
@@ -175,6 +176,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * component[allelic-read-depth].code ^short = "82121-5"
 * component[allelic-read-depth] ^short = "Allelic Read Depth"
 * component[allelic-read-depth] ^definition = "Specifies the number of reads that identified the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4."
+* component[allelic-read-depth] ^comment = "See [here](sequencing.html#variant-assessment) for usage guidance."
 * component[allelic-read-depth].value[x] only Quantity
 * component[allelic-read-depth].value[x] ^short = "Unfiltered count of supporting reads"
 
@@ -292,6 +294,7 @@ In general, it can be difficult to estimate a copy number from measurements take
 * component[variant-confidence-status].code ^short = "variant-confidence-status"
 * component[variant-confidence-status] ^short = "Variant Confidence Status"
 * component[variant-confidence-status] ^definition = "A code that represents the confidence of a true positive variant call."
+* component[variant-confidence-status] ^comment = "See [here](sequencing.html#variant-assessment) for usage guidance."
 * component[variant-confidence-status].value[x] only CodeableConcept
 * component[variant-confidence-status].value[x] 1..1
 * component[variant-confidence-status].value[x] ^short = "High | Intermediate | Low"
