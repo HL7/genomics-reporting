@@ -12,7 +12,7 @@ Description: "Code System for specific types of relationships"
 CodeSystem: TbdCodesCS
 Id: tbd-codes-cs
 Title: "To Be Determined Codes"
-Description: "These codes are currently 'TBD' codes. The CG WG plans to request formal LOINC codes to replace these codes as these concepts are validated."
+Description: "These codes are 'TBD' codes, meaning they are important concepts but codes have not been identifed in available code systems. The CG WG anticpates these codes maturing over time. We may remove some codes as we refine the concepts, or identify suitable replacement codes from other code systems. As we approach normative and these concepts are validated, for codes that remain, we plan to request formal LOINC codes to replace these temporary codes."
 * ^caseSensitive = true
 * ^experimental = false
 * #associated-therapy "Associated Therapy" "The non-medication therapy (procedure) associated with this implication."
