@@ -157,7 +157,7 @@ Profile:        MedicationRecommendation
 Parent:         Task
 Id:             medication-recommendation
 Title:          "Medication Recommendation"
-Description:    "Task proposing medication recommendations based on genetic results."
+Description:    "Task proposing medication recommendations based on the implications of genomic findings."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = $TASKSTATUS#requested
@@ -171,14 +171,14 @@ Profile:        FollowupRecommendation
 Parent:         Task
 Id:             followup-recommendation
 Title:          "Followup Recommendation"
-Description:    "Task describing the follow-up that is recommended"
+Description:    "Task proposing a follow-up that is recommended based on the implications of genomic findings."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * status 1..1
 * status = $TASKSTATUS#requested
 * intent 1..1
 * intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)
-
+* reasonReference only Reference(TherapeuticImplication or DiagnosticImplication or MolecularConsequence)
 
 Profile:        MolecularConsequence
 Parent:         GenomicImplication
