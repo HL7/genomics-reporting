@@ -246,7 +246,7 @@
 	<a name="Grouping observations"> </a>
 	<h3>Referencing Observations from GenomicReport</h3>
 	<p>
-		The following is derived from the CORE FHIR guidance on <a href="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3">Diagnostic Report Resource</a> and <a href="{{site.data.fhir.path}}observation.html#obsgrouping">Observation Resource</a>
+		The following is derived from the CORE FHIR guidance on <a href="{{site.data.fhir.path}}diagnosticreport.html#10.3.5.3">Diagnostic Report Resource</a> and <a href="{{site.data.fhir.path}}observation.html#obsgrouping">Observation Resource</a>.
 	</p>
 	<p>
 		For receivers of genetic reports, to ensure all clinically relevant information is processed, consumers of Genomic Diagnostic reports MUST navigate through all hasMember relations, and navigate through derivedFrom when processing Genomic Diagnostic reports.
@@ -264,55 +264,58 @@
   <a name="flexibility"></a>
   <h3>Additional Structured Data</h3>
   <p>
-    This Implementation Guide uses <a hef="{{site.data.fhir.path}}profiling.html">FHIR profiling</a> to define constraints on base resources to provide an interoperable structure for reporting structured genomic data. While this guide seeks to fully describe concepts necessary for a complete genomics report, there might be other data to be considered. Here are ways and examples where flexibility might be needed:
+    This implementation guide utilizes <a hef="{{site.data.fhir.path}}profiling.html">FHIR profiling</a> to define constraints on base resources, thereby offering an interoperable framework for reporting structured genomic data. While this guide seeks to describe concepts necessary for a complete genomics report, it's important to acknowledge potential areas where flexibility is required. Here are instances and examples illustrating where such flexibility might be necessary:
   </p>
   <ul>
-    <li>Data attributes related to existing profiles: e.g. unique variant or biomarker annotations</li>
-    <li>New concepts not represented by profiles: e.g. panel observations for grouping results</li>
-    <li>Building relationships between concepts not represented by profiles: e.g. panel observations referenced from a report</li>
-    <li>Coded values not in referenced ValueSets: e.g. lab specific codes for level of evidence</li>
+    <li>Data attributes related to existing profiles: For instance, unique variant or biomarker annotations.</li>
+    <li>New concepts not represented by profiles: For example, panel observations for grouping results.</li>
+    <li>Building relationships between concepts not represented by profiles: Such as panel observations referenced from a report.</li>
+    <li>Coded values not in referenced ValueSets: For instance, lab-specific codes for the level of evidence.</li>
   </ul>
   <p>
-    The data in question might be represented in this guide in a different way, so implementers SHALL carefully review this guide. Every deviation from this guide makes implementations less consistent and therefore less interoperable. The Clinical Genomics working group welcomes questions and will assist with appropriate usage of this guide. The group will make corrections and enhancments to this guide that benefits the broader community. All this said, we recognize it will be likely for some implementers to exercise this flexibility, so here is additional guidance on the appropriate options.
+    Prior to incorporating new data, implementers should carefully review the implementation guide to determine if the concept exists within its structure but is represented differently. Only upon confirming the absence of a matching concept should they proceed with introducing a new data element. This precaution is crucial, as any deviation from the guide reduces implementation consistency and consequently undermines interoperability.
+  </p>
+  <p>
+    Considering this, we acknowledge that some implementers may need to utilize this flexibility. Therefore, here is further guidance on suitable options.
   </p>
 
   <a name="custom extensions"></a>
   <h4>Custom Extensions</h4>
   <p>
-    This guide introduces a number of extensions where an attribute was identified as important to report genomic data, but other extensions can be introduced for specific implementations. Implementers may use the <a href="{{site.data.fhir.path}}extensibility.html">extensibility</a> features built into FHIR.
+    This guide introduces several extensions where specific attributes for reporting genomic data are identified. However, additional extensions can be introduced for specific implementations as needed. Implementers may use the <a href="{{site.data.fhir.path}}extensibility.html">extensibility</a> features built into FHIR.
   </p>
 
   <a name="open slicing"></a>
   <h4>Open Slicing</h4>
   <p>
-    When constraining attributes that can contain multiple values, the FHIR concept of <a href="{{site.data.fhir.path}}profiling.html#slicing">slicing</a> is used. The slices defined are all 'open' which means that while the specific rules should be used when possible, implementers are free to send additional data.
+    When constraining attributes that can contain multiple values, the FHIR concept of <a href="{{site.data.fhir.path}}profiling.html#slicing">slicing</a> is used. All defined slices are 'open,' signifying that while specific rules should be adhered to when feasible, implementers have the freedom to include additional data as needed.
   </p>
 
   <p>
-    The guide requires specific codes in some cases, but other codes (like lab specific codes) are still allowed. For example, in <code>Observation.code</code>, profiles require a specific code be sent, but allows other codes in <code>Observation.code.coding</code>, as long implementations meet the rules for "Additional Codes" found <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">here</a>
+    The guide mandates specific codes in certain cases, while permitting the use of other codes (such as lab-specific ones). For instance, in <code>Observation.code</code>, profiles require a specific code, yet alternative codes are permissible within <code>Observation.code.coding</code>. Implementations must adhere to the guidance outlined for "Additional Codes" available <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">here</a>.
   </p> 
 
   <p>
-    In <code>Observation.component</code>, additional supporting results can be described in <code>Observation.component.code</code> and a value delivered in <code>Observation.component.value[x]</code>. When considering additional components, review the grouping guidance for components <a href="{{site.data.fhir.path}}observation.html#gr-comp">here</a>.
+    In <code>Observation.component</code>, supporting results can be described within <code>Observation.component.code</code>, with corresponding values provided in <code>Observation.component.value[x]</code>. For further guidance on grouping components, please refer to the guidance available <a href="{{site.data.fhir.path}}observation.html#gr-comp">here</a>.
   </p>
   
   <p>
-    For references between resources, the guide defines slices to indicate the type of resources we suggest referencing. However references to other resources, if allowed in the base specification, are still valid. For example, in the <a href="StructureDefinition-genomic-report.html">Genomic Report</a>, the <code>result</code> element is sliced by the variety of Observation profiles defined in this guide. When additional Observations are used, they should still be referenced by <code>result</code> to ensure all instances can be easily discovered.
+    When establishing references between resources, the guide employs slices to specify the type of resources we recommend referencing. However, references to other resources remain valid if permitted in the base specification. For instance, in the <a href="StructureDefinition-genomic-report.html">Genomic Report</a>, the <code>result</code> element is sliced according to the various Observation profiles defined in this guide. When incorporating additional Observations, they should still be referenced using <code>result</code> to ensure discoverability of all instances.
   </p>
   
   <p>
-    Specifically for references between Observations, there are two attributes for defining relationships between instances. For additional guidance on appropriately using <code>hasMember</code> and <code>derivedFrom</code>, please see <a href="{{site.data.fhir.path}}observation.html#gr-other">here</a>.
+    Specifically for references between Observations, there are two attributes used to define relationships between instances: <code>hasMember</code> and <code>derivedFrom</code>. For further guidance on their appropriate usage, please refer to the information available <a href="{{site.data.fhir.path}}observation.html#gr-other">here</a>.
   </p> 
 
   <a name="binding strength"></a>
   <h4>Binding Strength</h4>
   <p>
-    When the guide references a ValueSet, a <a href="{{site.data.fhir.path}}terminologies.html#strength">binding strength</a> indicates the flexibility implementers have in choosing codes. With few exeptions, the guide defines bindings that allow implementers flexibility to select other codes when the indicated ValueSet does not have an appropriate code. Implementers should align codes with those suggested by the guide when possible.
+    When the guide references a ValueSet, a <a href="{{site.data.fhir.path}}terminologies.html#strength">binding strength</a> signifies the degree of flexibility afforded to implementers in selecting codes. With few exceptions, the guide specifies bindings that permit implementers to choose alternative codes when the designated ValueSet lacks suitable options. Implementers are encouraged to align their codes with those suggested by the guide whenever feasible.
   </p>
 
   <blockquote class="stu-note">
     <p>
-      The work group is actively requesting feedback from the community on additional codes, values, and extensions that stakeholders have found helpful when implementing the structures and use cases defined in this guide.
+      The Clinical Genomics Work Group actively seeks feedback from the community regarding additional structured data necessary for a comprehensive report. We want to hear about profiles, codes, values, and extensions that stakeholders have found beneficial while implementing the structures and use cases outlined in this guide. For ways to contact the work group, please refer to <a href="index.html#acknowledgments">here</a>.
     </p>
   </blockquote>
   
