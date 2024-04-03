@@ -612,4 +612,9 @@ Suggested minimal representations of common structural variants are shown in the
 
 <p>It is important to note in this example that the Variant observation indicates the presence or absence of a variant with the given ALT allele, and does not indicate presence of the REF allele on the other chromosome of the pair. Even though it is almost always the case for heterozygous variants that one chromosome has the variant and the other chromosome has the reference allele, one should not assume this is the case from a single heterozygous Variant without separate knowledge that no other variants were detected at that position.</p>
 <p>If there is a need to be explicit about both alleles at a given location, one can use the <a href="StructureDefinition-genotype.html">Genotype</a> observation profile. Here is a <a href="Bundle-bundle-complexVariant-nonHGVS.html">bundle</a> showing a compound heterozygous example with two Variant instances grouped together by one Genotype instance.</p>
+
+<a name="flexibility"></a>
+<h3>Additional variant attributes</h3>
+<p>If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on <a href="general.html#flexibility">flexibility</a> for additional guidance, especially the guidance for the Open Slicing allowed on <code>Observation.component</code>.</p>
+
 </div>

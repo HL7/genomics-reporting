@@ -1,14 +1,20 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+
+	<a name="Scope and Usage"> </a>
+	<h3>Scope and Usage</h3>
   <p>The term '<b>biomarker</b>' is broad, encompassing observable characteristics that indicate normal or abnormal biological processes and that are often used to assess prognosis or guide therapy. In the broad sense, many clinical and laboratory observations might be considered a 'biomarker'. '<b>Molecular biomarker</b>' is likewise broad, primarily encompassing laboratory measurements of human inherent substances such as gene products, antigens and antibodies, complex chemicals that result from post-translational processing of multi-gene products, etc. Molecular biomarkers include many different types of measurements, such as presence or absence of a chemical, or the level of a chemical. Here, we are primarily interested in those molecular biomarkers that have associated therapeutic implications, particularly in precision cancer care, including but not limited to: cell receptor levels (e.g. ER, PR, HER2); molecular sequence adjacent observations (e.g. microsatellite instability, tumor mutation burden, gene promoter methylation); cell receptor ligands (e.g. PD-L1); proteins, antigens, and antibodies (e.g. HLA type).
   </p>
   <p>The <code>code</code> is bound to the <a href="ValueSet-molecular-biomarker-code-vs.html">Molecular Biomarker Codes</a> ValueSet. It is <i>not</i> a comprehensive list of biomarkers and only provides representative examples.</p>
   <p>Component '<code>gene-studied</code>' is an optional and repeating field for representing the gene or genes from which the observed substance is derived. </p>
   <p>Component '<code>biomarker-category</code>' is a repeating field that provides for a categorization of a given biomarker observation. 
 
+	<a name="Biomarker Ontology"> </a>
+	<h3>Biomarker Ontology</h3>
+
 The <a href="CodeSystem-molecular-biomarker-ontology-cs.html">Molecular Biomarker Ontology code system</a> provides a categorization of biomarkers along several axes. A given lab test can be associated with more than one category within more than one axis. For example, LOINC code <a href="https://loinc.org/85337-4/">85337-4</a> represents Estrogen receptor antigen in tissue by immune stain. It can be categorized by physiologic role of cell receptor and antigen; by molecule type of protein; and by method of immune stain.
 </p>
 
-<p>Molecular Biomarker Ontology with examples</p>
+<h4>Molecular Biomarker Ontology with examples</h4>
 <ul>
   <li>Molecular biomarker categorized by physiologic role</li>
   <ul>
@@ -68,6 +74,9 @@ The <a href="CodeSystem-molecular-biomarker-ontology-cs.html">Molecular Biomarke
   </ul>
 </ul>
 
+	<a name="Biomarker Categories"> </a>
+	<h4>Biomarker Categories</h4>
+
 <p>Biomarker categories can be associated with LOINC value sets to facilitate retrieval, as shown in this non-normative example table.</p>
 
 <table border="1">
@@ -109,5 +118,9 @@ The <a href="CodeSystem-molecular-biomarker-ontology-cs.html">Molecular Biomarke
   </td>
  </tr>
 </table>
+
+	<a name="Other Guidance"> </a>
+	<h3>Other Guidance</h3>
+  <p>If implementers have additional annotations for biomarkers, the Molecular Biomarker profile is defined to allow flexibility. See the section on <a href="general.html#flexibility">flexibility</a> for additional guidance, especially the guidance for the Open Slicing allowed on <code>Observation.component</code>.</p>
 
 </div>

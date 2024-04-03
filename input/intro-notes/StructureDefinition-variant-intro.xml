@@ -1,6 +1,13 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+	<a name="Scope and Usage"> </a>
+	<h3>Scope and Usage</h3>
   <p>
     This profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms.  Labs are encouraged to populate what properties they know. In future versions of this implementation guide, HL7 may provide additional guidance on what properties should be sent in which situations and may subdivide <i>Variant</i> into multiple sub-profiles with more specific purpose.
   </p>
+  
+	<a name="Other Guidance"> </a>
+	<h3>Other Guidance</h3>
   <p>See <a href="sequencing.html">Variant Reporting</a> for details on use.</p>
+
+  <p>If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on <a href="general.html#flexibility">flexibility</a> for additional guidancem, especially the guidance for the Open Slicing allowed on <code>Observation.component</code>.</p>
 </div>
