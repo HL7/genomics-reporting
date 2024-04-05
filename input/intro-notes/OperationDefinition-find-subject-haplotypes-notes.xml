@@ -1,6 +1,6 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
 	<a name="Error codes"/>
-	<h3>Error Codes</h3>
+	<h4>Error Codes</h4>
 	<p>Valid response codes are shown in the following table. Additional response codes (e.g. 5xx server error) may also be encountered.</p>
 	<table border="1">
 		<thead>
@@ -29,7 +29,7 @@
 			</tbody>
 	</table>
 <a name="Examples"/>
-	<h3>Examples</h3>
+	<h4>Examples</h4>
 	<p>CYP2D6 haplotypes?</p><pre>$find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org|HGNC:2625</pre>
 	<p>Haplotypes that include HLA-A or HLA-B?</p><pre>$find-subject-haplotypes?subject=HG00403&amp;genes=http://www.genenames.org|HGNC:4931,http://www.genenames.org|HGNC:4932</pre>
 	

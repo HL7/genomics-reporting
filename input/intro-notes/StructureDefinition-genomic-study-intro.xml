@@ -21,24 +21,6 @@
 
 <p>Detailed information about the results of the analyses may be represented by Observations and gathered in a <a href="StructureDefinition-genomic-report.html">Genomic Report</a>. Both resources may refer back to the originating genomic study to allow navigation.</p>
 
-<a name="metricsandregions"> </a>
-<h4>Metrics and Region Details</h4>
-<p>
-  Since the release of R5 included the GenomicStudy resource, some concepts are being added and others are being slightly reframed. The <a href="StructureDefinition-genomic-study-analysis-metrics.html">Metrics</a> extension is used to assert high level quality metrics. The <a href="StructureDefinition-genomic-study-analysis-regions.html">Regions</a> extension is used to assert details about the scope of the analysis. There are options to express detail about genes and regions in the analysis. These include:
-</p>
-<ul>
-  <li>all genes or regions that were studied for analysis</li>
-  <li>genes or regions that had sufficient quality and coverage and are deemed to be called</li> 
-  <li>genes or regions that were deemed uncallable, typically due to low coverage, but could be due to other quality issues</li>
-</ul>
-<p>
-  When expressing the each of those elements, there are two approaches to consider:
-<ul>
-  <li>genes may be listed as coded values (HGNC)</li>
-  <li>region details may be shared via a BED file (the exact specification of the BED file is beyond the scope of this IG)</li> 
-</ul>
-</p>
-
 <a name="example"> </a>
 <h4>Example Walkthrough</h4>
 <p>The following figure is based on the <a href="Procedure-lungMass.html">Procedure/lungMass</a> example. Some things to note:</p>

@@ -1,0 +1,33 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+
+  <a name="interpretations"> </a>
+	<h4>Overall Interpretation and Conclusion</h4>
+  <p>
+    On the report, it is important to answer the question "Did you find anything when you did the test I asked you to do?" The data sender can use attributes of <code>conclusionCode</code> and <code>conclusion</code> to represent the summary result of the test (e.g., Positive, Negative, Unknown) and a textual summary. These are typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease were found or not.
+  </p>
+
+  <a name="observations"> </a>
+	<h4>Linking To Genomic Observations</h4>
+  <p>
+    Results observation profiles, like genomic observations, are typically referenced directly by a Genomic Report. The genetic findings and implication profiles all contain links to computably define their composite relationships (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, observations could be organized into groups by other observations. See this <a href="groupingGuidance.html">grouping guidance</a> for an overview with examples and considerations for processing reports. Be aware that consumers of Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships to ensure processing of all clinically relevant information.
+  </p>
+
+  <a name="riskassessments"> </a>
+	<h4>Risk Assessments</h4>
+  <p>
+    In some cases, the lab or other reporting organization may generate risk assessments as part of their reports. These are referenced from a report or an observation from the <a href="StructureDefinition-genomic-risk-assessment.html">Genomic Risk</a> extension.
+  </p>
+
+  <a name="presentedform"> </a>
+	<h4>Presented Form</h4>
+  <p>
+    When sending a copy of the report (e.g., PDF or other document containing the written report), use <code>presentedForm</code>. Note this is different from the <a href="{{site.data.fhir.path}}extension-workflow-relatedartifact.html">Related Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. Another approach which should be avoided (at least for this current release) is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case.
+  </p>
+
+  <a name="Complex Reports"> </a>
+	<h4>Complex Reports</h4>
+  <p>
+   If needed, large or complex genomic reports may be broken down into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. This approach is particularly useful when different labs or services are performing later steps in the analysis, for example. Or a panel <code>Observation.code</code> can be used.
+  </p>
+
+</div>

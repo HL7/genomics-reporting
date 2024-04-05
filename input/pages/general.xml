@@ -10,7 +10,7 @@
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
    <p>
-    This page defines the core profiles and concepts that would be expected to be present in most genomic reports, regardless of type, and how those profiles relate to each other. Concepts covered include the genomic report itself and the high-level categories of observations and other elements that make up the report, such as patient, specimen, variants, haplotypes, genotypes, etc.
+    This page defines the core profiles and concepts that would be expected to be present in most genomic reports, regardless of type, and how those profiles relate to each other. Concepts covered include the genomic report itself and the high-level categories of observations and other elements that make up the report, such as patient, specimen, variants, haplotypes, genotypes, etc. See the profile pages for more detailed information and guidance.
   </p>
    <p>
     This table describes the categories of data contained in this implementation guide.
@@ -52,7 +52,7 @@
   <a name="diagnosticreport"> </a>
   <h3>Genomic Report</h3>
   <p>
-    The <a href="StructureDefinition-genomic-report.html">genomic report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>. The report can be organized into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>, which is especially useful for later analysis steps. Additionally, an observation can be used to <a href="groupingGuidance.html">group</a> content for viewing purposes or to indicate a higher-level panel (with a specific LOINC panel code in the <code>Observation.code</code> for example).
+    The <a href="StructureDefinition-genomic-report.html">genomic report</a> is the focus of all genomic reporting. It conveys metadata about the overall report (what kind of report it was, when it was written, who wrote it, final vs. draft, etc.). It also typically includes a rendered version for review by a clinician. It also groups together all relevant information found as part of the genomic analysis (Rules for relevancy will depend on the type of testing ordered, the reason for testing and the policies of the lab). Most of the structured genomic information is expressed as FHIR <a href="{{site.data.fhir.path}}observation.html">Observations</a>. Any recommendations that come with the report are expressed as FHIR <a href="{{site.data.fhir.path}}task.html">Tasks</a>.
   </p>
   <img src="general-report-overview.png" alt="Class diagram showing the high-level categories of the component parts in a genomic diagnostic report" width="429" height="333"/>
   <p>
@@ -62,25 +62,8 @@
     <a href="StructureDefinition-genomic-report.html">Genomic Report</a>,
     <a href="#findings">Genomic Findings</a>,
     <a href="#implications">Genomic Implications</a>,
-    <!--<a href="#grouper">Grouper</a>,-->
     <a href="#genomicstudy">Genomic Study</a>,
     <a href="#recommendations">Recommended Actions</a>
-  </p>
-  <a name="interpretations"> </a>
-  <p>
-    On the report, it is important to answer the question "Did you find anything when you did the test I asked you to do?" The data sender can use attributes of <code>conclusionCode</code> and <code>conclusion</code> to represent the summary result of the test (e.g., Positive, Negative, Unknown) and a textual summary. These are typically used when the genomic test was looking for a particular genomically-based disease. It allows indication of whether genomic results known to be associated with the disease were found or not.
-  </p>
-   <p>
-    Results observation profiles, like genomic observations, are typically referenced directly by a Genomic Report. The genetic findings and implication profiles all contain links to computably define their composite relationships (e.g., the variant observation is referenced within the implication profile using <code>derivedFrom</code>). However, observations could be organized into groups by other observations. See this <a href="groupingGuidance.html">grouping guidance</a> for an overview with examples and considerations for processing reports. Be aware that consumers of Genomic Diagnostic Report MUST navigate through all <code>hasMember</code> relations and navigate through <code>derivedFrom</code> relationships to ensure processing of all clinically relevant information.
-   </p>
-  <p>
-    When sending a copy of the report (e.g., PDF or other document containing the written report), use <code>presentedForm</code>. Note this is different from the <a href="{{site.data.fhir.path}}extension-workflow-relatedartifact.html">Related Artifact</a> extension, which is used to reference citations, evidence and other supporting documentation for the observation or report. Another approach which should be avoided (at least for this current release) is the <code>DiagnosticReport.media</code> attribute. Its definition focuses on "Key images associated with this report" which does not align well with this use case.
-  </p>
-  <p>
-   If needed, large or complex genomic reports may be broken down into sub-reports using core DiagnosticReport extensions like <a href="{{site.data.fhir.path}}extension-diagnosticreport-extends.html">extends</a> or <a href="{{site.data.fhir.path}}extension-diagnosticreport-summaryof.html">summaryOf</a>. This approach is particularly useful when different labs or services are performing later steps in the analysis, for example. Or a panel <code>Observation.code</code> can be used.
-  </p>
-  <p>
-    In some cases, the lab or other reporting organization may generate risk assessments as part of their reports. These are referenced from a report or an observation from the <a href="StructureDefinition-genomic-risk-assessment.html">Genomic Risk</a> extension.
   </p>
 
   <a name="genomicstudy"> </a>
@@ -95,32 +78,6 @@
     </p>
     <p>
      The <code>GenomicStudy</code> instance SHOULD be referenced from a <a href="#diagnosticreport">report</a> and CAN be referenced by various <a href="#observations">observations</a>.
-    </p>
-
-    <a name="fileattachments"> </a>
-    <h4>Attaching Genomic Files</h4>
-    <blockquote class="stu-note">
-      <p>
-        The guidance below for file attachments needs to be carefully reviewed and considered. There are potential issues, and the Work Group welcomes feedback.
-      </p>
-    </blockquote>
-    <p>
-      While this implementation guide strives to provide structured genomic data via a variety of <a href="#observations">observations</a>, there are use cases that warrant a deeper level of data than this guide allows. These use cases might be best served by sending commonly used files (VCF, BAM, CRAM, MAF, BED to name a few) with the genomic study. To promote a consistent approach to sharing these files, we provide the guidance in this section. Even with this guidance, note that best practices in exchanging these files along with the metadata necessary to make use of them through a FHIR API, remains a complicated and open issue. See <a href="operations.html">operations</a> for a description of an experimental alternative workflow.
-    </p>
-    <p>
-      When sending these genomic files, implementers should first utilize the <a href="#genomicstudy">Genomic Study</a> profiles. Each study has one or more analyses, each of which can define <code>input</code> and <code>output</code> elements. From there, the <a href="StructureDefinition-genomic-data-file.html">GenomicDataFile</a> can be used to send the file content along with meaningful metadata. This approach allows the files to have their own existence and enables queries to find them via the <code>DocumentReference</code> resource. To enable linking from the report to files, the <a href="StructureDefinition-genomic-study-reference.html">Genomic Study Reference</a> extension can be used to reference the study, corresponding analyses, and then the files. This can be helpful for those processing the report to easily identify the files that were sent along with the report.
-    </p>
-    <p>
-      When sending genomic files there are many considerations. For example, it is not unusual for files to be gigabytes in size. The <code>DocumentReference</code> resource has different options to evaluate for your use case. If embedded directly using <code>DocumentReference.content.attachment.data</code>, servers receiving the files may have size constraints per resource or per transaction which may limit your options. Instead of sending a large data file, the file can be referenced by a URL and title using the <code>DocumentReference.content.attachment.url</code> element. This can point to an online resource that hosts the file or from where the file can be accessed. For genomic files, the host is likely not the FHIR server providing the <code>DocumentReference</code> data instance. Be aware that use of <code>DocumentReference</code> to provide access to files through URLs introduces authorization requirements that are out of scope of this Implementation Guide. With either of these approaches, it is important to note the files might be compressed. Also, the mime types for these genomic files will vary, or possibly be missing. The senders of the data should include as much metadata as possible to enable the receiver to appropriately handle the files.
-    </p>
-    <p>
-      For receivers to make use of these files, many facets of the generation of the files will be needed, such as what pipelines, tools, and settings were used. The intended downstream use cases must be carefully evaluated to ensure appropriate file preparation. The <a href="StructureDefinition-genomic-study-analysis.html">Genomic Study Analysis</a> defines a number of attributes that can be used to better understand the file. Also, the <code>DocumentReference.description</code> might be helpful for a sending system to provide guidance on how the file was generated. A fully computable approach for this issue has yet to be defined.
-    </p>
-    <p>
-      It should be noted that this <code>Genomic Study</code> approach is <i>not</i> an appropriate way to send a copy of the report (e.g., PDF or other document containing the written report). Instead, use <code>DiagnosticReport.presentedForm</code>.
-    </p>
-    <p>
-      A full, detailed implementation discussion is outside the scope of this IG. In a future release, this IG may include other profiles or artifacts along with more specific guidance.
     </p>
 
   <a name="observations"> </a>
