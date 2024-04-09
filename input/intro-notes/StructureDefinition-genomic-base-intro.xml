@@ -1,0 +1,24 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+
+	<a name="Scope and Usage"> </a>
+	<h3>Scope and Usage</h3>
+
+  <p>
+    This profile is the base profile for all other profiles in this guide, defining a set of constraints that are applicable across all observations.
+  </p>
+
+	<a name="Common Elements"> </a>
+	<h4>Common Elements</h4>
+
+ <p>
+  <ul>
+    <li><code>secondary-finding (extension)</code> can flag an observation as a secondary finding, a finding that is unrelated to the primary purpose for the test</li>
+    <li><code>partOf</code> is limited to references which are applicable to genomic observations</li>
+    <li><code>category</code> slices required two categories for all genomic observations in order to facilitate more efficient queries</li>
+    <li><code>note</code> is a <a href="StructureDefinition-coded-annotation.html">CodedAnnotation</a> that allow all comments to also contain coded type</li>
+    <li><code>derivedFrom</code> is limited to references which are applicable to genomic observations</li>
+    <li><code>conclusion-string (component)</code> represents a summary conclusion to provide interpretation or impression guidance</li>
+  </ul>
+</p>
+
+</div>
