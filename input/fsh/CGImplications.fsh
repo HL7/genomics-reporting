@@ -30,26 +30,35 @@ Description:    "Properties common to genomic implications expressed as computab
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-    evidence-level 0..*
+    evidence-level 0..* and
+	clinical-significance 0..1
 * component[evidence-level].code = $LNC#93044-6
 * component[evidence-level].code ^short = "93044-6"
 * component[evidence-level] ^short = "Level of Evidence"
-* component[evidence-level] ^definition = "Classification of the amount of observed support for the association between one or more particular variants and a particular disorder or disease state, not conflated with clinical significance."
+* component[evidence-level] ^definition = "The amount of observed support for the association between an implication and a variant / haplotype / genotype / biomarker. There are dozens if not hundreds of evidence-level value sets, generally providing an ordinal range of codes from low evidence (e.g. 'predicted', 'case report', '1-star') to high evidence (e.g. 'professional society guideline', 'expert panel consensus', '1A')."
 * component[evidence-level].value[x] only CodeableConcept
 * component[evidence-level].value[x] 1..1
 * component[evidence-level].value[x] from EvidenceLevelExampleVS (example)
 * component[evidence-level].value[x] ^binding.description = "PharmGKB or ClinVar"
 * component[evidence-level].value[x] ^short = "1A | 1B | 2A | 2B | 3 | 4 | 4-star | 3-star | 2-star | 1-star | no-star"
-//* component[evidence-level].value[x] from http://loinc.org/vs/LL5356-2 (example)
-* component.extension contains RelatedArtifactComponent named related-artifact 0..*
-* component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
+* component[clinical-significance] ^short = "Clinical significance"
+* component[clinical-significance] ^definition = "The clinical impact of an implication on a person's health. There are dozens if not hundreds of clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response')."
+* component[clinical-significance].code = $LNC#53037-8
+* component[clinical-significance].code ^short = "53037-8"
+* component[clinical-significance].value[x] only CodeableConcept
+* component[clinical-significance].value[x] 1..1
+* component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (example)
+* component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
 
 Profile:        DiagnosticImplication
 Parent:         GenomicImplication
 Id:             diagnostic-implication
 Title:          "Diagnostic Implication"
-Description:    "Observation stating a linkage between one or more genotype/haplotype/variation Observations and evidence for or against a particular disease, condition, or cancer diagnosis."
+Description:    "Observation stating a diagnostic annotation (e.g. disease risk) on one or more genotype/haplotype/variant/biomarker observations."
 * . ^short = "Diagnostic Implication"
+
+
+
 * extension contains GenomicRiskAssessment named genomic-risk-assessment 0..*
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#diagnostic-implication
@@ -60,9 +69,7 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     predicted-phenotype 0..* and
-    mode-of-inheritance	0..1 and
-    clinical-significance 0..1 //and
-//    functional-effect 0..*
+    mode-of-inheritance	0..1
 * component[predicted-phenotype] ^short = "Predicted phenotype"
 * component[predicted-phenotype] ^definition = "An observable characteristic (e.g., condition; disease) of an individual, as predicted by the presence of associated molecular finding(s)associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings. Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
 * component[predicted-phenotype].code = $LNC#81259-4
@@ -72,7 +79,6 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[predicted-phenotype].value[x] ^binding.strength = #example
 * component[predicted-phenotype].value[x] ^binding.description = "Multiple bindings accepted"
 * component[predicted-phenotype].value[x] 1..1
-
 * component[mode-of-inheritance] ^short = "Mode of Inheritance"
 * component[mode-of-inheritance] ^definition = "The transmission pattern of the condition/phenotype in a pedigree. Values originally curated by GA4GH." 
 * component[mode-of-inheritance].code = TbdCodesCS#condition-inheritance
@@ -82,20 +88,11 @@ Description:    "Observation stating a linkage between one or more genotype/hapl
 * component[mode-of-inheritance].value[x] from ConditionInheritanceModeVS (preferred)
 * component[mode-of-inheritance].value[x] ^short = "Autosomal dominant | Autosomal recessive | X-linked | ... (more)"
 
-* component[clinical-significance] ^short = "Clinical significance"
-* component[clinical-significance] ^definition = "An assessment of the magnitude of the linked genomic findings' clinical effect, as related to the predicted phenotype and observed in the evidence."
-* component[clinical-significance].code = $LNC#53037-8
-* component[clinical-significance].code ^short = "53037-8"
-* component[clinical-significance].value[x] only CodeableConcept
-* component[clinical-significance].value[x] 1..1
-* component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (extensible)
-* component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
-
 Profile:        TherapeuticImplication
 Parent:         GenomicImplication
 Id:             therapeutic-implication
 Title:          "Therapeutic Implication"
-Description:    "Profile with properties for observations that convey the potential impact of genomic characteristics on a medication or non-medicinal therapy."
+Description:    "Observation stating a therapeutic annotation (e.g. drug susceptibility, clinical trial eligibility) on one or more genotype/haplotype/variant/biomarker observations."
 * . ^short = "Therapeutic Implication"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
