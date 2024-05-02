@@ -72,6 +72,15 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 * usedReference 0..0
 * usedCode 0..0
 
+Extension:   GenomicStudyAnalysisGenomicSourceClass
+Id:          genomic-study-analysis-genomic-source-class
+Title:      "Genomic Study Analysis Method Type"
+Description: "The genomic class of the specimen being analyzed: Germline for inherited genome, somatic for cancer genome, and prenatal for fetal genome."
+* ^context[+].type = #element
+* ^context[=].expression = "Procedure"
+* value[x] only CodeableConcept
+* valueCodeableConcept from http://loinc.org/vs/LL378-1 (extensible)
+
 Extension:   GenomicStudyAnalysisMethodType
 Id:          genomic-study-analysis-method-type
 Title:      "Genomic Study Analysis Method Type"
@@ -79,16 +88,17 @@ Description: "Defines a method type for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
-* valueCodeableConcept from GenomicStudyMethodTypeVS (example)
+* valueCodeableConcept from GenomicStudyMethodTypeVS (preferred)
 
 Extension:   GenomicStudyAnalysisChangeType
 Id:          genomic-study-analysis-change-type
 Title:      "Genomic Study Analysis Change Type"
-Description: "Defines the change type for a genomic analysis"
+Description: "Defines the types of alterations detectable by a given genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
-* valueCodeableConcept from GenomicStudyChangeTypeVS (example)
+* value[x] ^short = "SNV | MNV | delins | gene_fusion | ... (many)"
+* valueCodeableConcept from GenomicStudyChangeTypeVS (preferred)
 
 Extension:   GenomicStudyAnalysisGenomeBuild
 Id:          genomic-study-analysis-genome-build
@@ -113,7 +123,7 @@ Description:   "Genomic Study Analysis Input"
 * extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.input.type"
 * extension[type].value[x] only CodeableConcept
-* extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
+* extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (preferred)
 * extension[generatedBy] ^short = "GenomicStudy.analysis.input.generatedBy"
 * extension[generatedBy].value[x] only Identifier or Reference(GenomicStudy)
 
@@ -130,7 +140,7 @@ Description:   "Genomic Study Analysis Output"
 * extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.output.type"
 * extension[type].value[x] only CodeableConcept
-* extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (example)
+* extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (preferred)
 
 Extension:   GenomicStudyAnalysisTitle
 Id:          genomic-study-analysis-title
@@ -249,6 +259,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension contains GenomicStudyAnalysisMethodType named method-type 0..*
                  and GenomicStudyAnalysisChangeType named change-type 0..*
                  and GenomicStudyAnalysisGenomeBuild named genome-build 0..1
+				 and GenomicStudyAnalysisGenomicSourceClass named genomic-source-class 0..1				 
                  and GenomicStudyAnalysisTitle named title 0..1
                  and GenomicStudyAnalysisFocus named focus 0..*
                  and GenomicStudyAnalysisSpecimen named specimen 0..*
@@ -261,6 +272,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension[GenomicStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
+* extension[GenomicStudyAnalysisGenomicSourceClass] ^short = "GenomicStudy.analysis.genomicSourceClass"
 * extension[GenomicStudyAnalysisTitle] ^short = "GenomicStudy.analysis.title"
 * extension[GenomicStudyAnalysisFocus] ^short = "GenomicStudy.analysis.focus"
 * extension[GenomicStudyAnalysisSpecimen] ^short = "GenomicStudy.analysis.specimen"
@@ -500,7 +512,7 @@ ValueSet: GenomicStudyMethodTypeVS
 Id: genomic-study-method-type-vs
 Title: "Genomic Study Method Type ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-methodtype"
-* ^experimental = true
+* ^experimental = false
 * include codes from system GenomicStudyMethodTypeCS
 
 CodeSystem: GenomicStudyChangeTypeCS
@@ -519,7 +531,9 @@ ValueSet: GenomicStudyChangeTypeVS
 Id: genomic-study-change-type-vs
 Title: "Genomic Study Change Type ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-changetype"
-* ^experimental = true
+* ^experimental = false
+* include codes from system $SEQONT where concept is-a #SO:0002072
+* include codes from system $SEQONT where concept is-a #SO:0001060
 * include codes from system GenomicStudyChangeTypeCS
 
 CodeSystem: GenomicStudyDataFormatCS
@@ -573,5 +587,5 @@ ValueSet: GenomicStudyDataFormatVS
 Id: genomic-study-data-format-vs
 Title: "Genomic Study Data Format ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"
-* ^experimental = true
+* ^experimental = false
 * include codes from system GenomicStudyDataFormatCS
