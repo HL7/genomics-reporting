@@ -31,7 +31,7 @@ Description:    "Properties common to genomic implications expressed as computab
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     evidence-level 0..* and
-	clinical-significance 0..1
+    clinical-significance 0..1
 * component[evidence-level].code = $LNC#93044-6
 * component[evidence-level].code ^short = "93044-6"
 * component[evidence-level] ^short = "Level of Evidence"
@@ -41,6 +41,8 @@ Description:    "Properties common to genomic implications expressed as computab
 * component[evidence-level].value[x] from EvidenceLevelExampleVS (example)
 * component[evidence-level].value[x] ^binding.description = "PharmGKB or ClinVar"
 * component[evidence-level].value[x] ^short = "1A | 1B | 2A | 2B | 3 | 4 | 4-star | 3-star | 2-star | 1-star | no-star"
+* component.extension contains RelatedArtifactComponent named related-artifact 0..*
+* component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 * component[clinical-significance] ^short = "Clinical significance"
 * component[clinical-significance] ^definition = "The clinical impact of an implication on a person's health. There are dozens if not hundreds of clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response')."
 * component[clinical-significance].code = $LNC#53037-8

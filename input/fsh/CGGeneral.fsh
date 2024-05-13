@@ -47,8 +47,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
-* component.extension contains RelatedArtifactComponent named related-artifact 0..*
-* component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 * component contains conclusion-string 0..1
 * component[conclusion-string] ^short = "Clinical Conclusion"
 * component[conclusion-string] ^definition = "Concise and clinically contextualized summary conclusion (interpretation/impression) of the observation"

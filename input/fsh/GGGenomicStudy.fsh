@@ -74,11 +74,12 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 
 Extension:   GenomicStudyAnalysisGenomicSourceClass
 Id:          genomic-study-analysis-genomic-source-class
-Title:      "Genomic Study Analysis Method Type"
+Title:      "Genomic Study Analysis Source Class"
 Description: "The genomic class of the specimen being analyzed: Germline for inherited genome, somatic for cancer genome, and prenatal for fetal genome."
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
+* value[x] ^short = "Germline | Somatic | Fetal | Likely germline | Likely somatic | Likely fetal | Unknown genomic origin | De novo"
 * valueCodeableConcept from http://loinc.org/vs/LL378-1 (extensible)
 
 Extension:   GenomicStudyAnalysisMethodType
@@ -88,6 +89,7 @@ Description: "Defines a method type for a genomic analysis"
 * ^context[+].type = #element
 * ^context[=].expression = "Procedure"
 * value[x] only CodeableConcept
+* value[x] ^short = "cytogenetics | deletion-duplication-analysis | fish | sequence-analysis-of-the-entire-coding-region | ... (many)"
 * valueCodeableConcept from GenomicStudyMethodTypeVS (preferred)
 
 Extension:   GenomicStudyAnalysisChangeType
@@ -123,6 +125,7 @@ Description:   "Genomic Study Analysis Input"
 * extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.input.type"
 * extension[type].value[x] only CodeableConcept
+* extension[type].value[x] ^short = "bam | bed | vcf | ... (many)"
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (preferred)
 * extension[generatedBy] ^short = "GenomicStudy.analysis.input.generatedBy"
 * extension[generatedBy].value[x] only Identifier or Reference(GenomicStudy)
@@ -140,6 +143,7 @@ Description:   "Genomic Study Analysis Output"
 * extension[file].value[x] only Reference(GenomicDataFile)
 * extension[type] ^short = "GenomicStudy.analysis.output.type"
 * extension[type].value[x] only CodeableConcept
+* extension[type].value[x] ^short = "bam | bed | vcf | ... (many)"
 * extension[type].valueCodeableConcept from GenomicStudyDataFormatVS (preferred)
 
 Extension:   GenomicStudyAnalysisTitle
@@ -257,18 +261,18 @@ Id: genomic-study-analysis
 Title: "Genomic Study Analysis"
 Description: "A genomic study analysis is a component of a genomic study."
 * extension contains GenomicStudyAnalysisMethodType named method-type 0..*
-                 and GenomicStudyAnalysisChangeType named change-type 0..*
-                 and GenomicStudyAnalysisGenomeBuild named genome-build 0..1
-				 and GenomicStudyAnalysisGenomicSourceClass named genomic-source-class 0..1				 
-                 and GenomicStudyAnalysisTitle named title 0..1
-                 and GenomicStudyAnalysisFocus named focus 0..*
-                 and GenomicStudyAnalysisSpecimen named specimen 0..*
-                 and GenomicStudyAnalysisMetrics named metrics 0..1
-                 and GenomicStudyAnalysisRegions named regions 0..1
-                 and GenomicStudyAnalysisDevice named device 0..*
-                 and GenomicStudyAnalysisProtocolPerformed named protocol-performed 0..1
-                 and GenomicStudyAnalysisInput named input 0..*
-                 and GenomicStudyAnalysisOutput named output 0..*
+    and GenomicStudyAnalysisChangeType named change-type 0..*
+    and GenomicStudyAnalysisGenomeBuild named genome-build 0..1
+    and GenomicStudyAnalysisGenomicSourceClass named genomic-source-class 0..1				 
+    and GenomicStudyAnalysisTitle named title 0..1
+    and GenomicStudyAnalysisFocus named focus 0..*
+    and GenomicStudyAnalysisSpecimen named specimen 0..*
+    and GenomicStudyAnalysisMetrics named metrics 0..1
+    and GenomicStudyAnalysisRegions named regions 0..1
+    and GenomicStudyAnalysisDevice named device 0..*
+    and GenomicStudyAnalysisProtocolPerformed named protocol-performed 0..1
+    and GenomicStudyAnalysisInput named input 0..*
+    and GenomicStudyAnalysisOutput named output 0..*
 * extension[GenomicStudyAnalysisMethodType] ^short = "GenomicStudy.analysis.methodType"
 * extension[GenomicStudyAnalysisChangeType] ^short = "GenomicStudy.analysis.changeType"
 * extension[GenomicStudyAnalysisGenomeBuild] ^short = "GenomicStudy.analysis.genomeBuild"
