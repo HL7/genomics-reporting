@@ -15,13 +15,6 @@
 
 |JIRA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Summary|
 |----|-------|
-|[FHIR-36041](https://jira.hl7.org/browse/FHIR-36041)|New operations, additional guidance|
-|[FHIR-37893](https://jira.hl7.org/browse/FHIR-37893)|Add ranges parameter to subject phenotype operations|
-|[FHIR-37892](https://jira.hl7.org/browse/FHIR-37892)|Add phase data to find subject variants operation|
-|[FHIR-41355](https://jira.hl7.org/browse/FHIR-41355)|Add new molecular consequence phenotype operations|
-|[FHIR-35864](https://jira.hl7.org/browse/FHIR-35864)|Add GenomicStudy to support study-level metadata|
-|[FHIR-41248](https://jira.hl7.org/browse/FHIR-41248)|Add region studied meta data to Genomic Study and remove existing profile|
-|[FHIR-41587](https://jira.hl7.org/browse/FHIR-41587)|Additional meta data for Genomic Study for regions: studied, called, uncalled|
 |[FHIR-25170](https://jira.hl7.org/browse/FHIR-25170)|Send related artifacts at the Observation.component level|
 |[FHIR-28943](https://jira.hl7.org/browse/FHIR-28943)|Introduced new MolecularBiomarker artifacts|
 |[FHIR-31030](https://jira.hl7.org/browse/FHIR-31030)|Add pattern for GenomicReport.code for LOINC 51969-4|
@@ -29,10 +22,22 @@
 |[FHIR-32101](https://jira.hl7.org/browse/FHIR-32101)|Observation.component to capture variant inheritance basis|
 |[FHIR-32696](https://jira.hl7.org/browse/FHIR-32696)|Improved somatic reporting guidance|
 |[FHIR-34418](https://jira.hl7.org/browse/FHIR-34418)|Support repeat expansions|
+|[FHIR-35864](https://jira.hl7.org/browse/FHIR-35864)|Add GenomicStudy to support study-level metadata|
+|[FHIR-36041](https://jira.hl7.org/browse/FHIR-36041)|New operations, additional guidance|
+|[FHIR-37892](https://jira.hl7.org/browse/FHIR-37892)|Add phase data to find subject variants operation|
+|[FHIR-37893](https://jira.hl7.org/browse/FHIR-37893)|Add ranges parameter to subject phenotype operations|
 |[FHIR-40320](https://jira.hl7.org/browse/FHIR-40320)|Create a new MolecularConsequence profile|
 |[FHIR-40805](https://jira.hl7.org/browse/FHIR-40805)|Support copy number range and decimal in Variant profile|
 |[FHIR-41245](https://jira.hl7.org/browse/FHIR-41245)|Merge predicted-therapeutic-implication slice into therapeutic-implication|
 |[FHIR-41246](https://jira.hl7.org/browse/FHIR-41246)|Remove prognosis slice from implications, and prognostic-implication TBD code|
 |[FHIR-41247](https://jira.hl7.org/browse/FHIR-41247)|For therapy- and medication-assessed extensions, move extensions to corresponding component slices|
+|[FHIR-41248](https://jira.hl7.org/browse/FHIR-41248)|Add region studied meta data to Genomic Study and remove existing profile|
+|[FHIR-41355](https://jira.hl7.org/browse/FHIR-41355)|Add new molecular consequence phenotype operations|
+|[FHIR-41587](https://jira.hl7.org/browse/FHIR-41587)|Additional meta data for Genomic Study for regions: studied, called, uncalled|
 |[FHIR-41610](https://jira.hl7.org/browse/FHIR-41610)|Guidance for consistently representing Variant value (especially for pertinent negatives)|
 |[FHIR-42850](https://jira.hl7.org/browse/FHIR-42850)|Cleanup guidance for star alleles|
+|[FHIR-43574](https://jira.hl7.org/browse/FHIR-43574)|Resolve discrepancies on Somatic page|
+|[FHIR-43517](https://jira.hl7.org/browse/FHIR-43517)|Enhance somatic table of examples|
+|[FHIR-43744](https://jira.hl7.org/browse/FHIR-43744)|Add additional GenomicStudyAnalysis metadata|
+|[FHIR-43745](https://jira.hl7.org/browse/FHIR-43745)|Advance several GenomicStudyAnalysis value sets to Preferred|
+|[FHIR-45434](https://jira.hl7.org/browse/FHIR-45434)|Add clarity to representation of Significance and Evidence in implication profiles|

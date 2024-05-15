@@ -9,11 +9,6 @@
 *****************************************************************************************
 {% endcomment %} -->
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
- <blockquote class="stu-note">
-    <p>
-      FHIR Genomics Operations have a FHIR Maturity Level of 'draft', and have not yet gone through an HL7 ballot cycle.
-    </p>
-  </blockquote>
 
   <p>
     <a href="http://hl7.org/fhir/operations.html">FHIR Operations</a> are a supplement to standard queries, and are used to fulfill a number of purposes, such as where the server needs to play an active role in formulating the content of the response, where the intended purpose is to cause side effects such as the creation of new resources, and for data normalization to abstract away from variability in variant representation. This is particularly relevant in genomics, where a tremendous amount of raw data exists in non-FHIR formats, and where variability in variant representation is a known barrier to matching a patient’s genetic profile against knowledge bases – for clinical trials matching, for precision medication selection, etc.

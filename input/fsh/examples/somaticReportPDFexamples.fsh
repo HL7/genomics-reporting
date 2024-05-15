@@ -838,6 +838,9 @@ Description: "Example for Tumor Normal Genomics Study Analysis"
 Usage: #example
 * extension[GenomicStudyAnalysisRegions]
   * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:76 "ABL1"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:427 "ALK"
+  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:583 "APC"
   * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
 * extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
 * extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"

@@ -1,12 +1,7 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <blockquote class="stu-note">
-    <p>
-    The content in this section may be significantly revised prior to the next ballot after initial use and feedback.
-    </p>
-	  
-  </blockquote>
   <p>
-		The Genomic Implication profile is an abstract profile for Therapeutic and Diagnostic implications. Implications are relevant information which are derived from the presence of a haplotype, genotype, variant or other observed genetic change.
+		The Genomic Implication profile is an abstract profile for therapeutic and diagnostic implications and molecular consequences. 
+		Implications are relevant information which are derived from the presence of a haplotype, genotype, variant or molecular biomarker.
 	This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  
   </p>
 
@@ -16,7 +11,33 @@
   <ul>
     <li><code>Related Artifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication</li>
     <li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
+    <li><code>clinical-significance (component)</code> indicates the clinical impact of an implication</li>
   </ul>
+
+	<a name="Evidence-Significance"> </a>
+	<h3>evidence-level versus clinical-significance</h3>
+	<p><b>evidence-level</b>: The amount of observed support for the association between an implication and a variant / haplotype / genotype / biomarker. 
+	There are dozens if not hundreds of evidence-level value sets, generally providing an ordinal range of codes from low evidence 
+	(e.g. 'predicted', 'case report', '1-star') to high evidence (e.g. 'professional society guideline', 'expert panel consensus', '1A'). </p>
+	<p><b>clinical-significance</b>: The clinical impact of an implication on a person's health. There are dozens if not hundreds of 
+	clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high 
+	significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response'). </p>
+	<p>While <b>evidence</b> and <b>significance</b> are orthogonal concepts, some codes conflate the two (e.g. 'expert panel consensus of strong efficacy', 
+	'strong evidence refutes the clinical utility of this drug', 'case report evidence of pathogenicity'). 
+	In general, using discrete evidence and significance codes allow for a more precise characterization of an implication. 
+	Where an implementation is using a conflated code, we recommend communicating that code in the evidence-level field. </p>
+	<p>Examples of other code sets for evidence-level and clinical-significance:</p>
+	<ul>
+		<li><a href="https://loinc.org/LL5356-2/">ACMG_Level of evidence</a></li>
+		<li><a href="https://www.oncokb.org/levels#version=V2">Oncokb levels</a></li>	
+		<li><a href="https://www.oncokb.org/therapeutic-levels#version=FDA"></a>US FDA levels</li>
+		<li><a href="https://www.oncokb.org/therapeutic-levels#version=AAC"></a>AMP/ASCO/CAP levels</li>
+		<li><a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/"></a>Classification on ClinVar submitted records</li>
+		<li><a href="https://bioportal.bioontology.org/ontologies/NGBO/?p=classes&amp;conceptid=http://purl.obolibrary.org/obo/ngbo.owl/NGBO_6000302">Bioportal clinical variant interpretation</a></li>
+		<li><a href="https://civic.readthedocs.io/en/latest/model/evidence/overview.html">CIViC Evidence</a></li>
+		<li><a href="https://civic.readthedocs.io/en/latest/model/evidence/significance.html">CIViC Significance</a></li>
+	</ul>
+
 
 <p>
 	Here are some examples of how the evidence-level component can be used (NOTE - they would be used in the appropriate, use case specific profile):

@@ -30,12 +30,18 @@
 <li><a href="Observation-molec-conseq4.html">Molecular consequence 4</a></li>
 </ul>
 
+<a name="Evidence-Significance"> </a>
+	<h3>evidence-level versus clinical-significance</h3>
+	<p>
+		See <a href="StructureDefinition-implication.html#Evidence-Significance">Genomic Implication</a> for guidance. 
+	</p>
+	
 	<a name="Differentiating AND vs OR"> </a>
 	<h3>Differentiating AND vs OR</h3>
 	<p>
 		There are several cases where it is necessary to differentiate 'AND' conditions (e.g. a consequence of a DNA variant is both X and Y, as in the first example above where a consequence is both a 'splice_donor_variation' AND a 'intron_variant') vs. 'OR' conditions (e.g. a consequence of a DNA variant may be X or may by Y, as in the example above where a consequence might be 'synonymous variant' OR 'intron_variant'). This situation is not unique to molecular consequences, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">Clinvar submission API</a> condition set). To be consistent with other precedents, where molecular consequences have fields with cardinality >1, the inclusion of multiple values within a field shall indicate an 'AND' condition. An 'OR' condition is represented by multiple observation instances.
 	</p>
 	<p>
-		see <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information. Implication fields affected by this guidance include: derivedFrom, evidence-level, feature-consequence.
+		See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for additional information. Implication fields affected by this guidance include: derivedFrom, evidence-level, feature-consequence.
 	</p>
 </div>
