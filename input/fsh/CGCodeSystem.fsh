@@ -102,3 +102,35 @@ Description: "This (experimental) code system provides for a draft categorizatio
   * #methylationAnalysis "methylation analysis category" "Molecular biomarker method is methylation analysis."
   * #molgen "molecular sequence adjacent category" "Molecular biomarker method is molecular sequence adjacent observation."
 
+CodeSystem: SamplePopulationCS
+Id: sample-population-cs
+Title: "Sample Population Coding System"
+Description: "Population group that the sample is from. Groups are taken from OakVar output columns a the time July/02/2024”"
+* ^caseSensitive = true
+* ^experimental = false
+* #african "African" "African"
+* #east-asian "East Asian" "East Asian"
+* #south-asian "South Asian" "South Asian"
+* #global "Global" "Global"
+* #other-asian "Other Asian" "Other Asian"
+* #asian "Asian" "Asian"
+* #european "European" "European"
+* #latin-america "Latin america" "Latin America"
+* #amish "Amish" "Amish"
+* #latin-admixed-american "Latin-admixed American" "Latin/Admixed American"
+* #finnish "Finnish" "Finnish"
+* #middle-east "Middle-east" "Middle East"
+* #non-finnish-european "Non-Finnish-European" "Non-finnish European"
+* #north-american "North-American" "No
+* #australian "Australian" "Australian"
+
+CodeSystem: AnnotationModuleCS
+Id: annotation-module-cs
+Title: "Annotation Module Coding System"
+Description: "Code System for Annotation module that performed annotation calculations"
+* ^caseSensitive = true
+* ^experimental = true
+* #alfa "ALFA" "Allele Frequency Aggregator"
+* #gnomad3 "gnomAD3" "Genome Aggregation Database version 3"
+* #thousandgenomes "1000genomes" "thousandgenomes annotation for allele frequency"
+* #oncokb "OncoKB" "MSK Precision Oncology Knowledge Database"

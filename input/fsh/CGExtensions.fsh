@@ -66,3 +66,22 @@ Description: "Use the RelatedArtifact at the Observation.component element (not 
 * ^context[0].type = #element
 * ^context[0].expression = "Observation.component"
 * value[x] only RelatedArtifact
+
+Extension:  SamplePopulation
+Id:      	sample-population-group
+Title:   	"Sample Population"
+Description: "The population the sample/variant was present in or obtained from”
+* ^context[0].type = #element
+* ^context[0].expression = "Observation.component"
+* value[x] only CodeableConcept
+* value[x] from PopulationVS (example)
+
+Extension:   AnnotationModule
+Id:      	annotation-module
+Title:   	"Annotation module"
+Description: "The annotation module that performed the computation"
+* ^context[0].type = #element
+* ^context[0].expression = "Observation.component"
+* value[x] only CodeableConcept
+* value[x] from AnnotationModuleVS 
+

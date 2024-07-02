@@ -3,7 +3,7 @@ Parent:         GenomicBase
 Id:             implication
 Title:          "Genomic Implication"
 Description:    "Properties common to genomic implications expressed as computable discrete elements."
-* ^abstract = true
+* ^abstract = false
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
 * extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the observation."
