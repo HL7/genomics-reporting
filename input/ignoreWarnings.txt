@@ -3,24 +3,23 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 
 # Observation.component instances that do not match our slices, but is OK (and this is ok since we use open slicing)
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
-INFORMATION: Bundle/bundle-cgexample: Bundle.entry[6].resource/*Observation/discrete-variant*/.component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
+INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/discrete-variant*/.component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 INFORMATION: Observation/variant-with-molec-consequences: Observation.component[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 
+
 # GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. We allow slicing, so we can ignore informational message
-INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
+INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
-INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticReport.result[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 
 # An example of DiagnosticImplication<Observation>.derivedFrom() that we slice to only allow our profiles. In this example, we did not define specific Variant instances and just refer to some variants by identifier (rather than a full resource), so ignoring these warnings
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 
-# This is a publisher induced issue.   The extension in question is introduced by the publisher.   See https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/New.20ConceptMap.20Warning.20--.20induced.20by.20IG.20Publisher 
-The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version {3} is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
 
 # the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
@@ -29,8 +28,8 @@ Found multiple matching profiles for Task/med-usage-impact-task-pgx-example amon
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 
 # Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are supressing these messages.
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set) (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
 
 # These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look OK as well. Unsure why we are getting the warning. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
 # These slice messages have been reviewed - being investigated -- INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication%
@@ -41,9 +40,6 @@ INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[0].re
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].resource/*Observation/MC2*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
-
-# Code has been checked and are correct
-Unknown Code 'C43359' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 
 # CodeSystems and ValueSets not supported yet -- genenames -- https://terminology.hl7.org/CodeSystem-v3-hgnc.html
 A definition for CodeSystem 'http://www.genenames.org' could not be found, so the code cannot be validated%
@@ -62,8 +58,6 @@ A definition for CodeSystem 'http://glstring.org' version '1.0' could not be fou
 # CodeSystems and ValueSets not supported yet -- human-phenotype-ontology - https://terminology.hl7.org/CodeSystem-HPO.html
 A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated
 %because the code system http://human-phenotype-ontology.org was not found
-%is not valid in the system http://human-phenotype-ontology.org
-Resolved system http://human-phenotype-ontology.org (%
 %Unable to provide support for code system http://human-phenotype-ontology.org
 
 # CodeSystems and ValueSets not supported yet -- pharmvar - https://jira.hl7.org/browse/HTA-85
@@ -105,3 +99,27 @@ Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/C
 
 # Suppressing OK'ed by Grahame: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Publisher.20introducing.20extension.2C.20and.20then.20issues.20warning
 The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version 1.0 is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
+
+# Each of these codes have been validated (as of Jul 5 2024), so suppressing these warnings until HPO becomes a supported code system.
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: The code 'HP:0000006' is not valid in the system http://human-phenotype-ontology.org (Unable to evaluate based on code system with status = not-present)
+INFORMATION: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: Unable to evaluate based on code system with status = not-present
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[1]: The code 'HP:0000007' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[2]: The code 'HP:0001417' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[3]: The code 'HP:0001419' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[4]: The code 'HP:0001423' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[5]: The code 'HP:0001426' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[6]: The code 'HP:0001427' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[7]: The code 'HP:0001442' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[8]: The code 'HP:0001450' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[9]: The code 'HP:0001470' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[10]: The code 'HP:0003743' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[11]: The code 'HP:0003745' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[12]: The code 'HP:0010983' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[13]: The code 'HP:0012274' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[14]: The code 'HP:0012275' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[15]: The code 'HP:0025352' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[16]: The code 'HP:0032113' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
+
+# Have reviewed this and we are using the CodeSystem recommended by binding in r4 (Observation.category, RiskAssessment.prediction.qualitativeRisk)
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category%
+%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/risk-probability%

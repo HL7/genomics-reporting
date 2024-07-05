@@ -107,6 +107,11 @@ May include general statements about the report, or statements about significant
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
+// add this comment to prevent an link error, as the base spec includes a link to 'supportingInfo extension' but the link doesn't convert correctly
+* extension[$workflow-relatedArtifact] ^comment = """
+Note that in contrast this extension, the supportingInfo extension references other resources from the patient record that were used in creating the resource.
+"""
+
 * extension[GenomicStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * code = $LNC#51969-4
 * category ^slicing.discriminator.type = #pattern

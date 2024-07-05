@@ -7,6 +7,10 @@ Description:    "Properties common to genomic implications expressed as computab
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
 * extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the observation."
+// add this comment to prevent an link error, as the base spec includes a link to 'supportingInfo extension' but the link doesn't convert correctly
+* extension[$workflow-relatedArtifact] ^comment = """
+Note that in contrast this extension, the supportingInfo extension references other resources from the patient record that were used in creating the resource.
+"""
 * value[x] 0..0
 // * derivedFrom ^slicing.discriminator.type = #profile
 // * derivedFrom ^slicing.discriminator.path = "resolve()"

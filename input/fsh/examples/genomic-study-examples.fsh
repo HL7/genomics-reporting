@@ -19,6 +19,7 @@ InstanceOf: GenomicStudyAnalysis
 Description: "Example of Sequence analysis of the entire coding region"
 Usage: #example
 * extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
@@ -46,6 +47,7 @@ InstanceOf: GenomicStudyAnalysis
 Description: "Example of Deletion/duplication analysis"
 Usage: #example
 * extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
 * extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
 * extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
