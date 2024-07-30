@@ -181,6 +181,6 @@ Description:    "Value Set of the different populations for Population Allele Fr
 ValueSet:       AnnotationModuleValueSet
 Id:             annotation-module-vs
 Title:          "Annotation Module Value Set"
-Description:    "Value Set for annotation Modules”
+Description:    "Value Set containing different annotation databases"
 * ^experimental = false
 * codes from system AnnotationModuleCS

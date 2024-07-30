@@ -262,3 +262,25 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[functional-effect].value[x] ^short = "gain of function | loss of function | loss of heterozygosity | decreased transcript level | increased transcipt level | dominant negative variant | ... (more)"
 * component[functional-effect].value[x] from FunctionalEffectVS (extensible)
 * component[functional-effect].value[x] ^binding.description = "Sequence Ontology terms under SO:0001536"
+
+Profile:        GenomicAnnotation
+Parent:         GenomicImplication
+Id:             genomic-annotation
+Title:          "Genomic Annotation"
+Description:    "Profile for communicating the genome annotation of a DNA variant. Annotations are obtained from different databases (Clinvar,gnomad3,thousandgenomes etc.). NOTE: The bound Annotation Module value set is extensible. New annotation programs are being developed and old programs are being upodated/revised, meaning some annotation modules are outside the value set."
+* . ^short = "Genomic Annotation"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* code = TbdCodesCS#genomic-annotation
+* code ^short = "genomic=annotation"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
+* component contains
+    sample-population-allele-frequency 0..*
+
+* component[sample-population-allele-frequency].code = $LNC#92821-8
+* component[sample-population-allele-frequency].code ^short = "92821-8"
+* component[sample-population-allele-frequency] ^short = "Sample Population Allele Frequency"
+* component[sample-population-allele-frequency] ^definition = "The allelic frequency of a variant within a specific sample population."
+* component[sample-population-allele-frequency].value[x] only Quantity
