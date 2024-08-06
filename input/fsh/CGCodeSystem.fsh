@@ -106,8 +106,7 @@ Description: "This (experimental) code system provides for a draft categorizatio
 CodeSystem: SamplePopulationCS
 Id: sample-population-cs
 Title: "Sample Population Coding System"
-!
-Description: "Population group that the sample is from. Groups are taken from the [insert source] on July/02/2024”"
+Description: "Population group that the sample is from. Groups are taken from the a variety of annotation module outputs such as ClinVar, gnomAD3, 1000genomes etc. These values were obtained on July/02/2024. This code system is not meant to be a definitive list of sample populations but instead is an example of this type of code system can be established. ”
 * ^caseSensitive = true
 * ^experimental = false
 * #african "African" "African"
@@ -129,7 +128,7 @@ Description: "Population group that the sample is from. Groups are taken from th
 CodeSystem: AnnotationModuleCS
 Id: annotation-module-cs
 Title: "Annotation Module Coding System"
-Description: "Code System for Annotation module that performed annotation calculations"
+Description: "Code System for detailing the Annotation module that performed annotation calculations. This list is meant to include major/common annotation databases but is no definitive. As new databases or modules are being developed or depreciated this list can change accordingly."
 * ^caseSensitive = true
 * ^experimental = true
 * #abraom "ABRaOM" "Arquivo Brasileiro Online de Mutacoes"
