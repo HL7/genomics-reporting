@@ -3,7 +3,7 @@ Parent:         GenomicBase
 Id:             implication
 Title:          "Genomic Implication"
 Description:    "Properties common to genomic implications expressed as computable discrete elements."
-* ^abstract = false
+* ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
 * extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the observation."
@@ -273,14 +273,14 @@ Description:    "Profile for communicating the genome annotation of a DNA varian
 * code = TbdCodesCS#genomic-annotation
 * code ^short = "genomic=annotation"
 // * component ^slicing.discriminator.type = #pattern
-// * component ^slicing.discriminator.path = "code"
+// * component ^slicing.discriminator.path = "value"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     sample-population-allele-frequency 0..*
 
-* component[sample-population-allele-frequency].code = $LNC#92821-8
-* component[sample-population-allele-frequency].code ^short = "92821-8"
-* component[sample-population-allele-frequency] ^short = "Sample Population Allele Frequency"
-* component[sample-population-allele-frequency] ^definition = "The allelic frequency of a variant within a specific sample population."
+* component[sample-population-allele-frequency].value[x] 0..1
 * component[sample-population-allele-frequency].value[x] only Quantity
+* component[sample-population-allele-frequency].extension contains AnnotationModule named annotation-module 0..*
+* component[sample-population-allele-frequency].extension contains SamplePopulation named sample-population 0..*
+* component[sample-population-allele-frequency].extension[AnnotationModule] ^requirements = "NOTE - If this extension is used, it SHALL NOT conflict with the code delivered in the component.valueCodeableConcept."

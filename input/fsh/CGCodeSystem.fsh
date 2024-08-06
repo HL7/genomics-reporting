@@ -106,7 +106,8 @@ Description: "This (experimental) code system provides for a draft categorizatio
 CodeSystem: SamplePopulationCS
 Id: sample-population-cs
 Title: "Sample Population Coding System"
-Description: "Population group that the sample is from. Groups are taken from the output on July/02/2024”"
+!
+Description: "Population group that the sample is from. Groups are taken from the [insert source] on July/02/2024”"
 * ^caseSensitive = true
 * ^experimental = false
 * #african "African" "African"
