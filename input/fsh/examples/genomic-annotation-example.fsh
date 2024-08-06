@@ -12,10 +12,10 @@ Usage: #example
 * component[sample-population-allele-frequency][0]
   * code = $LNC#92821-8 "Allelic frequency in Population"
   * extension[annotation-module].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/annotation-module-cs#gnomad3 "gnomAD3"
-  * extension[sample-population].valueCodeableConcept =  http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/sample-population-cs#east-asian "East Asian"
+  * extension[sample-population].valueCodeableConcept =  http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/sample-population-cs#east-asian "East-Asian"
   * valueQuantity.value = 0.28
 * component[sample-population-allele-frequency][1]
   * code = $LNC#92821-8 "Allelic frequency in Population"
   * extension[annotation-module].valueCodeableConcept = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/annotation-module-cs#thousandgenomes "1000genomes"
-  * extension[sample-population].valueCodeableConcept =  http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/sample-population-cs#east-asian "East Asian"
+  * extension[sample-population].valueCodeableConcept =  http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/sample-population-cs#east-asian "East-Asian"
   * valueQuantity.value = 0.28

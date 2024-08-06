@@ -106,17 +106,17 @@ Description: "This (experimental) code system provides for a draft categorizatio
 CodeSystem: SamplePopulationCS
 Id: sample-population-cs
 Title: "Sample Population Coding System"
-Description: "Population group that the sample is from. Groups are taken from the a variety of annotation module outputs such as ClinVar, gnomAD3, 1000genomes etc. These values were obtained on July/02/2024. This code system is not meant to be a definitive list of sample populations but instead is an example of this type of code system can be established. ”
+Description: "Population group that the sample is from. Groups are taken from the a variety of annotation module outputs such as ClinVar, gnomAD3, 1000genomes etc. These values were obtained on July/02/2024. This code system is not meant to be a definitive list of sample populations but instead is an example of this type of code system can be established."
 * ^caseSensitive = true
 * ^experimental = false
 * #african "African" "African"
-* #east-asian "East Asian" "East Asian"
-* #south-asian "South Asian" "South Asian"
+* #east-asian "East-Asian" "East Asian"
+* #south-asian "South-Asian" "South Asian"
 * #global "Global" "Global"
-* #other-asian "Other Asian" "Other Asian"
+* #other-asian "Other-Asian" "Other Asian"
 * #asian "Asian" "Asian"
 * #european "European" "European"
-* #latin-america "Latin america" "Latin America"
+* #latin-america "Latin-america" "Latin America"
 * #amish "Amish" "Amish"
 * #latin-admixed-american "Latin-admixed American" "Latin/Admixed American"
 * #finnish "Finnish" "Finnish"
