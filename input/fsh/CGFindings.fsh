@@ -11,12 +11,13 @@ Description:    "Properties common to genetic findings whose results are express
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains gene-studied 0..* and 
     cytogenetic-location 0..* and 
-    reference-sequence-assembly 0..*
+    reference-sequence-assembly 0..* and
+    chromosome-identifier 0..*
+
 * component[gene-studied] ^short = "Gene Studied"
 * component[gene-studied] ^definition = "The gene(s) on which the variant is located."
 * component[gene-studied].code = $LNC#48018-6
 * component[gene-studied].code ^short = "48018-6"
-
 * component[gene-studied].value[x] only CodeableConcept
 * component[gene-studied].value[x] ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
 * component[gene-studied].value[x] 1..1
@@ -29,6 +30,7 @@ Description:    "Properties common to genetic findings whose results are express
 * component[cytogenetic-location].value[x] only CodeableConcept
 * component[cytogenetic-location].value[x] 1..1
 * component[cytogenetic-location].value[x] ^short = "Example: 1q21.1"
+
 * component[reference-sequence-assembly] ^short = "Human Reference Sequence Assembly"
 * component[reference-sequence-assembly] ^definition = "The reference genome/assembly used in this analysis."
 * component[reference-sequence-assembly].code = $LNC#62374-4
@@ -37,6 +39,15 @@ Description:    "Properties common to genetic findings whose results are express
 * component[reference-sequence-assembly].value[x] 1..1
 * component[reference-sequence-assembly].value[x] ^short = "GRCh37 | GRCh38 | ..."
 * component[reference-sequence-assembly].value[x] from http://loinc.org/vs/LL1040-6 (extensible)
+
+* component[chromosome-identifier].code = $LNC#48000-4
+* component[chromosome-identifier].code ^short = "48000-4"
+* component[chromosome-identifier] ^short = "Chromosome Identifier"
+* component[chromosome-identifier] ^definition = "An indicator, enumerated in humans by numbers 1-22, X, and Y, representing the chromosome on which the finding is located."
+* component[chromosome-identifier].value[x] only CodeableConcept
+* component[chromosome-identifier].value[x] 1..1
+* component[chromosome-identifier].value[x] ^short = "Chromosome 1 | Chromosome 2 | ... | Chromosome 22 | Chromosome X | Chromosome Y"
+* component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
 
 Profile:        Variant
 Parent:         GenomicFinding
@@ -78,7 +89,6 @@ Description:    "Details about a set of changes in the tested sample compared to
     variant-inheritance 0..1 and
     variant-inheritance-basis 0..1 and
     variation-code 0..* and
-    chromosome-identifier 0..* and
     representative-protein-hgvs 0..1 and
 //  amino-acid-change-type 0..1 and
 //  molecular-consequence 0..1 and
@@ -271,15 +281,6 @@ In general, it can be difficult to estimate a copy number from measurements take
 * component[variant-inheritance-basis].value[x] 1..1
 * component[variant-inheritance-basis].value[x] ^short = "Directly measured | Family DNA | Family history | Inferred from population data"
 * component[variant-inheritance-basis].value[x] from http://loinc.org/vs/LL4050-2 (extensible)
-
-* component[chromosome-identifier].code = $LNC#48000-4
-* component[chromosome-identifier].code ^short = "48000-4"
-* component[chromosome-identifier] ^short = "Chromosome Identifier"
-* component[chromosome-identifier] ^definition = "An indicator, enumerated in humans by numbers 1-22, X, and Y, representing the chromosome on which the variant is located."
-* component[chromosome-identifier].value[x] only CodeableConcept
-* component[chromosome-identifier].value[x] 1..1
-* component[chromosome-identifier].value[x] ^short = "Chromosome 1 | Chromosome 2 | ... | Chromosome 22 | Chromosome X | Chromosome Y"
-* component[chromosome-identifier].value[x] from http://loinc.org/vs/LL2938-0 (required)
 
 * component[representative-protein-hgvs].code = $LNC#48005-3
 * component[representative-protein-hgvs].code ^short = "48005-3"
