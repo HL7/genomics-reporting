@@ -1,12 +1,3 @@
-ValueSet:       HighLowCodesVS
-Id:             high-low-codes-vs
-Title:          "High Low codes"
-Description:    "This value set includes high/low codes for Observation Interpretations"
-* ^experimental = false
-* $OBSINT#H "High"
-* $OBSINT#L "Low"
-* $OBSINT#I "Intermediate"
-
 ValueSet:       HGNCVS
 Id:             hgnc-vs
 Title:          "HUGO Gene Nomenclature Committee Gene Names (HGNC)"
