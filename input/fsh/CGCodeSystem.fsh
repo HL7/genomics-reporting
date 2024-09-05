@@ -14,7 +14,7 @@ Id: tbd-codes-cs
 Title: "To Be Determined Codes"
 Description: "These codes are 'TBD' codes, meaning they are important concepts but codes have not been identifed in available code systems. The CG WG anticpates these codes maturing over time. We may remove some codes as we refine the concepts, or identify suitable replacement codes from other code systems. As we approach normative and these concepts are validated, for codes that remain, we plan to request formal LOINC codes to replace these temporary codes."
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 * #associated-therapy "Associated Therapy" "The non-medication therapy (procedure) associated with this implication."
 * #molecular-consequence "Molecular Consequence" "The calculated or observed effect of a DNA variant on its downstream transcript and, if applicable, ensuing protein sequence."
 * #feature-consequence "Feature Consequence" "The structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion)."
@@ -34,7 +34,7 @@ Id: clinvar-evidence-level-custom-cs
 Title: "ClinVar Evidence Level Example Codes"
 Description: "ClinVar contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on  ClinVar https://www.ncbi.nlm.nih.gov/clinvar/docs/review_status/ . These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 * #4-star	"4 star"	"Supported by practice guideline"
 * #3-star	"3 star"	"Supported by expert panel review"
 * #2-star	"2 star"	"Supported by submission by multiple-submitters with documentation of criteria for assertion"
@@ -46,7 +46,7 @@ Id: pharmgkb-evidence-level-custom-cs
 Title: "PharmGKB Evidence Level Example Codes"
 Description: "PharmGKB contains examples of evidence level concepts that are not conflated with clinical significance. These can be found on PharmGKB https://www.pharmgkb.org/page/clinAnnLevels. These examples are informational only, for copyright information contact the relevant source."
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 * #1A	"PGKB 1A"	"High level of evidence. Supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
 * #1B	"PGKB 1B"	"High level of evidence. But, NOT supported by a guideline or FDA label with variant specific prescribing guidance. Additionally, supported by at least one publication."
 * #2A	"PGKB 2A"	"Moderate level of evidence. Supported by being a KNOWN pharmacogene on https://www.pharmgkb.org/vips. Also, found in multiple studies but may have a minority of studies that did not support the majority opinion. Supported by at least two indpendent publications."
@@ -59,7 +59,7 @@ Id: variant-confidence-status-cs
 Title: "Variant Confidence Status Codes"
 Description: "A code that represents the confidence of a true positive variant call."
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 * #high	        "High"	        "High confidence true positive variant call. Suitable for clinical reporting."
 * #intermediate	"Intermediate"	"Candidate true positive variant call. Unable to confirm without additional testing."
 * #low	        "Low"	        "High confidence false positive variant call."
@@ -69,7 +69,7 @@ Id: coded-annotation-types-cs
 Title: "Coded Annotation Type Codes"
 Description: "Code System for specific types of coded annotations"
 * ^caseSensitive = true
-* ^experimental = false
+* ^experimental = true
 * #test-disclaimer "Test Disclaimer" "Test disclaimer with the report"
 * #test-methodology "Test Methodology" "Additional details regarding the test methdology"
 * #result-confirmation "Result Confirmation" "Additional details regarding the confirmation of the results"
