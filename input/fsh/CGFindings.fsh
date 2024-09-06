@@ -391,6 +391,20 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * code from MolecularBiomarkerCodeVS (example)
 * code ^short = "Code for the biomarker"
 * code ^definition = "The code is used to represent the biomarker - laboratory measurements of human inherent substances such as gene products, antigens and antibodies, and complex chemicals that result from post-translational processing of multi-gene products."
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
+* derivedFrom ^slicing.rules = #open
+* derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
+* derivedFrom 0..*
+* derivedFrom contains variant 0..* and
+    genotype 0..* and
+    haplotype 0..*
+* derivedFrom[variant] only Reference(Variant)
+* derivedFrom[variant] ^short = "Variant the biomarker is derived from"
+* derivedFrom[genotype] only Reference(Genotype)
+* derivedFrom[genotype] ^short = "Genotype the biomarker is derived from"
+* derivedFrom[haplotype] only Reference(Haplotype)
+* derivedFrom[haplotype] ^short = "Haplotype the biomarker is derived from"
 * category 2..*
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "coding"

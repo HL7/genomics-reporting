@@ -398,6 +398,16 @@ code=69548-6&_include=Observation:
     earlier use cases and/or proposed new use cases. In this section, we describe new cases and
     demonstrate how the proposed design will address them.
   </p>
+ 
+  <a name="genomicStudy"></a>
+  <h4>Genomic Study</h4>
+  <p>Users can query Genomic Study and Genomic Study Analysis instances. Use cases include identifying all genomic tests a patient has had, 
+determining the scope of a genomic study (e.g. genes studied, types of molecular alterations detectable), identifying those tests that used a particular specimen or occurred within a given time frame, etc. </p>
+  <p>The FHIR R4 backport of the FHIR R5/R6 GenomicStudy resource implements a number of R5/R6 attributes as Procedure extensions. Thus, much of the semantic content of a FHIR R4 Genomic Study is conveyed as extension values. Searching against extension values is complex, and a full description is outside the scope of this IG. We refer the reader to a <a href="https://stackoverflow.com/questions/53482491/fhir-search-by-extension">post by Lloyd McKenzie from Nov 2018</a> in which he states that "two steps are required: first, you need to define a custom SearchParameter that searchs on the element you wish in the way you wish. Second, all relevant servers must be manually changed (i.e. have code written) to support the new search parameter".</p>
+  <p>To query for all genomic studies performed between Jan 1 and Mar 1 2023:</p>
+    <pre class="http">GET /Procedure?patient=44969753&amp;date=ge2023-01-01&amp;date=le2023-03-01
+  </pre>
+  
   <a name="panel"></a>
   <h4>Panel</h4>
   <p>
@@ -498,5 +508,8 @@ code=69548-6&_include=Observation:
       Find specimens collected within a relative date range
   </p>
   <pre class="http">GET /Specimen?duration=quot</pre-->
+
+
+
 
 </div>
