@@ -7,9 +7,13 @@
   <p>The <code>code</code> is bound to the <a href="ValueSet-molecular-biomarker-code-vs.html">Molecular Biomarker Codes</a> ValueSet. It is <i>not</i> a comprehensive list of biomarkers and only provides representative examples drawn from LOINC and NCI Thesaurus. </p>
 <p>Where the biomarker is a proxy or higher level abstraction for one or more underlying genetic observations, the <code>derivedFrom</code> attribute can be used to reference the source variant(s), haplotype(s) and/or genotype(s).</p>  
   <p>Component '<code>gene-studied</code>' is an optional and repeating field for representing the gene or genes from which the observed substance is derived. </p>
-  <p>Component '<code>biomarker-category</code>' is a repeating field that provides for a categorization of a given biomarker observation.
+  <p>Component '<code>biomarker-category</code>' is a repeating field that provides for a categorization of a given biomarker observation.</p>
 
-<p>In the absence of a well defined and comprehensive value set for molecular biomarkers, we provide general guidance for the construction of a biomarker instance for an arbitrary biomarker. A typical use of this profile includes (1) identify the appropriate observation.code (e.g. drawing from LOINC, NCIt, etc); (2) add an observation.category of 'biomarker-category'; (3) populate component:gene-studied if applicable; (4) optionally populate component:biomarker-category; (5) populate other applicable observation fields similar to how you would populate them for regular lab observations (e.g. include observation.value, observation.effectiveDateTime, etc). </p>
+<p>In the absence of a well defined and comprehensive value set for molecular biomarkers, we provide general guidance for the construction of a biomarker 
+instance for an arbitrary biomarker. A typical use of this profile includes (1) identify the appropriate observation.code 
+(e.g. drawing from LOINC, NCIt, etc); (2) add an observation.category of 'biomarker-category'; (3) populate component:gene-studied if applicable; 
+(4) optionally populate component:biomarker-category; (5) populate other applicable observation fields similar to how you would populate them for 
+regular lab observations (e.g. include observation.value, observation.effectiveDateTime, etc). </p>
 
 
 
@@ -17,7 +21,7 @@
 	<a name="Biomarker Ontology"> </a>
 	<h3>Biomarker Ontology</h3>
 
-The <a href="CodeSystem-molecular-biomarker-ontology-cs.html">Molecular Biomarker Ontology code system</a> provides a categorization of biomarkers along several axes. A given lab test can be associated with more than one category within more than one axis. For example, LOINC code <a href="https://loinc.org/85337-4/">85337-4</a> represents Estrogen receptor antigen in tissue by immune stain. It can be categorized by physiologic role of cell receptor and antigen; by molecule type of protein; and by method of immune stain.
+<p>The <a href="CodeSystem-molecular-biomarker-ontology-cs.html">Molecular Biomarker Ontology code system</a> provides a categorization of biomarkers along several axes. A given lab test can be associated with more than one category within more than one axis. For example, LOINC code <a href="https://loinc.org/85337-4/">85337-4</a> represents Estrogen receptor antigen in tissue by immune stain. It can be categorized by physiologic role of cell receptor and antigen; by molecule type of protein; and by method of immune stain.
 </p>
 
 <h4>Molecular Biomarker Ontology with examples</h4>
