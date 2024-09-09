@@ -8,6 +8,12 @@
 	<a name="Other Guidance"> </a>
 	<h3>Other Guidance</h3>
   <p>See <a href="sequencing.html">Variant Reporting</a> for details on use.</p>
+  <p>A variety of annotations (see <a href="implication.html">variant implications</a>) can be applied to identified variants, such as: (1) predicted 
+  molecular consequences (e.g. a prediction that a variant leads to loss of gene function); (2) diagnostic implications (e.g. presence of a 
+  variant indicates increased risk for breast cancer); (3) therapeutic implications (e.g. presence of a somatic variant is associated
+with sensitivity to a particular drug or eligibility into a clinical trial).</p>
+<p>Most human genes are transcribed into multiple transcripts. The molecular consequences profile can be used to indicate transcript-specific predicted consequences, 
+for one or more transcripts. In the Variant instance itself, one can also indicate a representative transcript-level HGVS and/or protein HGVS.</p>
 
   <p>If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on <a href="general.html#flexibility">flexibility</a> for additional guidancem, especially the guidance for the Open Slicing allowed on <code>Observation.component</code>.</p>
 </div>
