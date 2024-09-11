@@ -6,7 +6,7 @@ Description:    "Properties common to genomic implications expressed as computab
 * ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
-* extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the observation."
+* extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are relevant to the implication."
 // add this comment to prevent an link error, as the base spec includes a link to 'supportingInfo extension' but the link doesn't convert correctly
 * extension[$workflow-relatedArtifact] ^comment = """
 Note that in contrast this extension, the supportingInfo extension references other resources from the patient record that were used in creating the resource.
@@ -45,8 +45,10 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component[evidence-level].value[x] from EvidenceLevelExampleVS (example)
 * component[evidence-level].value[x] ^binding.description = "PharmGKB or ClinVar"
 * component[evidence-level].value[x] ^short = "1A | 1B | 2A | 2B | 3 | 4 | 4-star | 3-star | 2-star | 1-star | no-star"
-* component.extension contains RelatedArtifactComponent named related-artifact 0..*
+
+* component.extension contains RelatedArtifactComponent named workflow-relatedArtifactComponent 0..*
 * component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
+
 * component[clinical-significance] ^short = "Clinical significance"
 * component[clinical-significance] ^definition = "The clinical impact of an implication on a person's health. There are dozens if not hundreds of clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response')."
 * component[clinical-significance].code = $LNC#53037-8

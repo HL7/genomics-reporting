@@ -60,7 +60,7 @@ Description: "Use to group and order repeat expansion motifs."
 * value[x] only positiveInt
 
 Extension:   RelatedArtifactComponent
-Id:          related-artifact-component
+Id:          workflow-relatedArtifactComponent //use a name that aligns with the 'workflow-relatedArtifact' extension
 Title:       "Related Artifact for Observation component"
 Description: "Use the RelatedArtifact at the Observation.component element (not valid in the R4 extension)"
 * ^context[0].type = #element

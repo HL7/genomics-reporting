@@ -9,8 +9,9 @@
     This profile defines a common set of elements for other Implications:
  </p>
   <ul>
-    <li><code>Related Artifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication</li>
-    <li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
+    <li><code>workflow-relatedArtifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication, such as documentation which applies to the full implication Observation</li>
+    <li><code>workflow-relatedArtifactComponent (component level extension)</code> supports conveying references to citations, supporting documentation and other information specific to the component's code and value, such as documentation supporting a specific clinical significance or evidence level value</li>    
+		<li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
     <li><code>clinical-significance (component)</code> indicates the clinical impact of an implication</li>
   </ul>
 
