@@ -8,7 +8,15 @@
 - Addition of support for GenomicStudy to capture structed, study level metadata. This is back porting a resource introduced in R5 as a set of profiles, code systems, and value sets into this R4 based IG. This includes structured extensions to capture region studied details, and the existing profile was removed. See [here](StructureDefinition-genomic-study.html) for more information.
 - Broadening support for biomarker observations by introducing a new, more generic MolecularBiomarker profile, along with refactoring existing profiles and examples. Explore the new profile [here](StructureDefinition-molecular-biomarker.html).
 - Improved guidance on the Somatic Reporting page, including a detailed synthetic report and additional example instances. See the new page [here](somatics.html).
-- Update in the representation of molecular consequences through the creation of a new Molecular Consequences observation profile that is treated as an Implication. This is a non-passive change, as several Variant(Observation).component and DiagnosticImplication(Observation).component slices were moved to the new profile. See [here](StructureDefinition-molecular-consequence.html) for the new profile.
+- Update in the representation of molecular consequences through the creation of a new Molecular Consequences observation profile that is treated as an Implication. This is a non-passive change, as several Variant(Observation).component and DiagnosticImplication(Observation).component slices were moved to the new profile. See [here](StructureDefinition-molecular-consequence.html) for the new profile. A list of changes includes: 
+  * Variant
+    * rename component:coding-hgvs to component:representative-coding-hgvs (same LOINC code)
+    * rename component:transcript-ref-seq to component:representative-transcript-ref-seq (same LOINC code)
+    * rename component:protein-hgvs to component:representative-protein-hgvs (same LOINC code)
+    * delete component:amino-acid-change-type
+    * move component:molecular-consequence to Molecular Consequence profile, renamed component:feature-consequence
+  * DiagnosticImplication
+    * move component:functional-effect to Molecular Consequence profile
 - Support repeat expansions on the Variant profile. See [here](sequencing.html#defining-repeat-expansion-variants) for guidance on the new slices.
 
 #### Trackers

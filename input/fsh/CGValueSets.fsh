@@ -160,3 +160,4 @@ This value set includes content from SNOMED CT, which is copyright © 2002+ Inte
 * $LNC#62862-8 "Microsatellite instability Immune stain Ql (Tiss)"
 * $LNC#81704-9 "Microsatellite instability marker D17S250 Ql (Cancer specimen)"
 * $LNC#94077-5 "Tumor mutation burden Ql (Tumor) [Interp]"
+* $NCIT#C120465 "Homologous Recombination Repair Deficiency"
