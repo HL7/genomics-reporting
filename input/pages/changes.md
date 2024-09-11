@@ -41,3 +41,5 @@
 |[FHIR-43744](https://jira.hl7.org/browse/FHIR-43744)|Add additional GenomicStudyAnalysis metadata|
 |[FHIR-43745](https://jira.hl7.org/browse/FHIR-43745)|Advance several GenomicStudyAnalysis value sets to Preferred|
 |[FHIR-45434](https://jira.hl7.org/browse/FHIR-45434)|Add clarity to representation of Significance and Evidence in implication profiles|
+|[FHIR-43691](https://jira.hl7.org/browse/FHIR-43691)|Remove Overall Interpretation profile and provide [guidance](StructureDefinition-genomic-report.html#overall-interpretation-and-conclusion) for GenomicsReport attributes for conclusion and conclusionCode.
+|[FHIR-43745](https://jira.hl7.org/browse/FHIR-43745)|Advance several GenomicStudyAnalysis value sets to Preferred|

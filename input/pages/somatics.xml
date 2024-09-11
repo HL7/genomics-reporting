@@ -54,7 +54,7 @@ Alternatively, look in the table below for just those profiles of interest. (The
   </tr>
 </thead>
 <tbody>
-  <tr><td>1</td><td><a href="StructureDefinition-genomic-report.html">Genomics Report</a></td><td>Primary container of the overall report.</td><td><a href="DiagnosticReport-somaticReport.html">somaticReport</a></td><td></td></tr>
+  <tr><td>1</td><td><a href="StructureDefinition-genomic-report.html">Genomics Report</a></td><td>Primary container of the overall report, including a report conclusion.</td><td><a href="DiagnosticReport-somaticReport.html">somaticReport</a></td><td></td></tr>
   <tr><td>2</td><td><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></td><td>The genomics report references the subject of the report, usually the patient.</td><td><a href="Patient-somaticPatient.html">somaticPatient</a></td><td></td></tr>
   <tr><td>3</td><td><a href="http://hl7.org/fhir/R4/specimen.html">Specimen</a></td><td>The genomics report references specimens that this report is based on.</td><td><a href="Specimen-tumorSpecimen.html">tumorSpecimen</a>, <a href="Specimen-normalSpecimen.html">normalSpecimen</a></td><td></td></tr>
   <tr><td>4</td><td><a href="http://hl7.org/fhir/R4/servicerequest.html">Service Request</a></td><td>The genomics report can reference orders that lead to the testing being reported.</td><td><a href="ServiceRequest-somaticServiceRequest.html">somaticServiceRequest</a></td><td></td></tr>
@@ -87,4 +87,3 @@ Alternatively, look in the table below for just those profiles of interest. (The
   </ul>
 
 </div>
-
