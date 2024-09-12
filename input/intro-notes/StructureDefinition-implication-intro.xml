@@ -5,10 +5,20 @@
 	This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  
   </p>
 
+<p>At the heart of many genomic reports are findings (<a href="StructureDefinition-variant.html">variants</a>, 
+<a href="StructureDefinition-haplotype.html">haplotypes</a>, 
+<a href="StructureDefinition-genotype.html">genotypes</a>, 
+<a href="StructureDefinition-molecular-biomarker.html">biomarkers</a>) and annotations derived from those findings (<a href="StructureDefinition-diagnostic-implication.html">diagnostic implications</a>, 
+<a href="StructureDefinition-therapeutic-implication.html">therapeutic implications</a>, 
+<a href="StructureDefinition-molecular-consequence.html">predicted molecular consequences</a>), as shown in the following figure:</p>
+<img src="Somatic_General_Guidance.svg" alt="generalGuidance" height="195" width="410"/>
+<p> </p>
+
  <p>
     This profile defines a common set of elements for other Implications:
  </p>
   <ul>
+  	<li><code>derivedFrom</code> is a required field that provides an explicit reference from an implication to the variant(s) / haplotype(s) / genotype(s) / molecular biomarker(s) from which the implication is derived.</li>
     <li><code>workflow-relatedArtifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication, such as documentation which applies to the full implication Observation</li>
     <li><code>workflow-relatedArtifactComponent (component level extension)</code> supports conveying references to citations, supporting documentation and other information specific to the component's code and value, such as documentation supporting a specific clinical significance or evidence level value</li>    
 		<li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
@@ -99,7 +109,7 @@
 		This situation is not unique to genomic implications, and arises elsewhere within FHIR (e.g. <a href="https://www.hl7.org/fhir/search.html#combining">FHIR Search</a>) and outside of FHIR (e.g., <a href="https://www.ncbi.nlm.nih.gov/clinvar/docs/api_http/">ClinVar submission API</a> condition set). To be consistent with other precedents:
   </p>
   <p>
-		Where Diagnostic and Therapeutic implications have fields with cardinality > 1, the inclusion of multiple values within a field SHALL indicate an 'AND' condition. An 'OR' condition SHALL be represented by multiple observation instances.
+		Where implications have fields with cardinality > 1, the inclusion of multiple values within a field SHALL indicate an 'AND' condition. An 'OR' condition SHALL be represented by multiple observation instances.
 	</p>
 	<p>
 		Implication fields affected by this guidance include:
