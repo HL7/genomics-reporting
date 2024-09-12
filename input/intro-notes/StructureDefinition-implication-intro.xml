@@ -49,58 +49,6 @@
 		<li><a href="https://civic.readthedocs.io/en/latest/model/evidence/significance.html">CIViC Significance</a></li>
 	</ul>
 
-
-<p>
-	Here are some examples of how the evidence-level component can be used (NOTE - they would be used in the appropriate, use case specific profile):
-	<ul>
-
-	<li>Coded ACMG (see <a href="https://www.acmg.net/docs/standards_guidelines_for_the_interpretation_of_sequence_variants.pdf">ACMG</a>)<br/>
-			<div class="example"><pre class="json">
-{
-  "valueCodeableConcept": {
-    "coding": [{
-      "system": "https://www.acmg.org",
-      "code": "PS1",
-    },
-    {
-      "system": "https://www.acmg.org",
-      "code": "PM2"
-    }
-    ]
-  }
-}
-			</pre></div>
-	</li>
-
-		<li>Coded PGx (see <a href="https://www.pharmgkb.org/clinicalAnnotations">PharmGKB</a>)<br/>
-			<div class="example"><pre class="json">
-{
-  "valueCodeableConcept": {
-    "coding": [{
-      "system": "https://www.pharmgkb.org/",
-      "code": "Level 1A",
-    }
-    ]
-  }
-}
-			</pre></div>
-		</li>
-		<li>Coded Somatic (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728662/">MVLD</a>)<br/>
-			<div class="example"><pre class="json">
-{
-  "valueCodeableConcept": {
-    "coding": [{
-      "system": "https://www.clinicalgenome.org/mvld/",
-      "code": "Tier1 LevelA",
-    }
-    ]
-  }
-}
-			</pre></div>
-		</li>
-	</ul>
-</p>
-
 	<a name="Differentiating AND vs OR"> </a>
 	<h3>Differentiating AND vs OR</h3>
 	<p>
