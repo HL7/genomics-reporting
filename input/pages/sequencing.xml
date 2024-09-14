@@ -622,6 +622,37 @@ Suggested minimal representations of common structural variants are shown in the
 It can be beneficial to provide a higher-level categorization of a variant. For instance, the LOINC <a href="https://loinc.org/83005-9">Variant category</a> offers 'simple' or 'structural' codes. While the component <code>coding-change-type (LOINC 48019-4)</code> provides a coarse description of the change, an implementer could also include a higher-level code as an additional <code>coding</code>. Other codes may be included as long as they adhere to the rules for additional <code>coding</code> described <a href="{{site.data.fhir.path}}datatypes.html#CodeableConcept">here</a>.
 </p>
 <p>
+  This is an example of the <code>coding-change-type</code> component showing threee entries:
+  <ul>
+    <li>Code from the ValueSet in the binding (from SequenceOntology)</li>
+    <li>Code from the Variant Category ValueSet (from LOINC)</li>
+    <li>Code from a lab defined ValueSet</li>
+  </ul>
+</p>
+<div class="example">
+  <pre class="json">
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system" : "http://sequenceontology.org",
+        "code" : "SO:0000694",
+        "display" : "SNP"
+      },
+      {
+        "system" : "http://loinc.org",
+        "code" : "LA26801-3",
+        "display" : "Simple variant"
+      },
+      {
+        "system" : "http://example.org/labX-variant-category",
+        "code" : "substitution",
+        "display" : "Substitution"
+      }
+    ]
+  }
+</pre></div>
+  
+<p>
 Moreover, the <a href="StructureDefinition-molecular-consequence.html">Molecular Consequence</a> profile includes a component <code>feature-consequence</code>, which categorizes the structural implications of a variant. The codes in the <a href="ValueSet-molecular-consequence-vs.html">ValueSet</a> could be used, and a higher-level concept could be included as well.
 </p>
 
