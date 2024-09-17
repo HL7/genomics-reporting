@@ -1,9 +1,33 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <p>
-		The Genomic Implication profile is an abstract profile for therapeutic and diagnostic implications and molecular consequences. 
-		Implications are relevant information which are derived from the presence of a haplotype, genotype, variant or molecular biomarker.
-	This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  
-  </p>
+
+<style type="text/css">
+table {
+		border: 1px solid grey;
+		border-collapse: collapse;
+}
+th {
+		background-color: lightgrey;
+		border: 1px solid gray;
+		vertical-align:middle;
+}
+td {
+		border: 1px solid gray;
+		text-align:left;
+		vertical-align:top;
+}
+td:first-child {
+	background-color: lightgrey;
+}
+tr:first-child td {
+		border-top-width: 0;
+}
+</style>
+
+<p>
+	The Genomic Implication profile is an abstract profile for therapeutic and diagnostic implications and molecular consequences. 
+	Implications are relevant information which are derived from the presence of a haplotype, genotype, variant or molecular biomarker.
+This portion of the implementation guide relies on the content in the <a href="general.html">General Genomic Reporting</a> and <a href="sequencing.html">Variant Reporting</a> portions of this implementation guide.  
+</p>
 
 <p>At the heart of many genomic reports are findings (<a href="StructureDefinition-variant.html">variants</a>, 
 <a href="StructureDefinition-haplotype.html">haplotypes</a>, 
@@ -72,7 +96,36 @@
 		<a href="StructureDefinition-diagnostic-implication.html">Diagnostic implications</a>: derivedFrom, evidence-level, predicted-phenotype, genomic-risk-assessment.
 	</p>
 	<p>
-		As an example, assume Variant X is pathogenic for Disease Y AND Disease Z in combination. This would be a single diagnostic implication, where predicted-phenotype is a list containing both Disease Y and Disease Z. If on the other hand, Variant X might be pathogenic for Disease Y alone, or Disease Z alone, this would be two diagnostic implications, one containing a predicted-phenotype of Disease Y, and the other containing a predicted-phenotype of Disease Z.
+		Here are examples of these rules with DiagnosticImplication (but the principles would apply to any Implication):
+		<table>
+			<thead>
+				<th>Use Case</th>
+				<th>Description</th>
+				<th>Visual</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Variant X is pathogenic for Disease Y AND Disease Z (in combination)</td>
+					<td>One DiagnosticImplication with two <code>predicted-phenotype</code> instances for Disease Y and Disease Z that is <code>derivedFrom</code> one Variant for VariantX</td>
+					<td><img src="implication-and-or-ex1.jpg"/></td>
+				</tr>
+				<tr>
+					<td>Variant X might be pathogenic for Disease Y alone, or Disease Z alone</td>
+					<td>Two DiagnosticImplications, one with <code>predicted-phenotype</code> for DiseaseY, second with <code>predicted-phenotype</code> for DiseaseZ, and both are <code>derivedFrom</code> the same Variant for VariantX</td>
+					<td><img src="implication-and-or-ex2.jpg"/></td>
+				</tr>
+				<tr>
+					<td>Variant X AND Variant Y (in combination) are pathogenic for Disease Z</td>
+					<td>One DiagnosticImplications with <code>predicted-phenotype</code> for DiseaseZ that is <code>derivedFrom</code> the two Variants (VariantX and VariantY)</td>
+					<td><img src="implication-and-or-ex3.jpg"/></td>
+				</tr>
+				<tr>
+					<td>Variant X OR Variant Y might be pathogenic for Disease Z</td>
+					<td>Two DiagnosticImplications, each with <code>predicted-phenotype</code> for DiseaseZ, one that is <code>derivedFrom</code> a Variant for VariantX, the other that is <code>derivedFrom</code> a Variant for VariantY</td>
+					<td><img src="implication-and-or-ex4.jpg"/></td>
+				</tr>
+			</tbody>
+		</table>
 	</p>
 
 </div>
