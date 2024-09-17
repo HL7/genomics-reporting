@@ -46,11 +46,11 @@ A definition for CodeSystem 'http://www.genenames.org' could not be found, so th
 %because the code system http://www.genenames.org was not found
 %Unable to provide support for code system http://www.genenames.org
 
-# CodeSystems and ValueSets not supported yet -- sequenceontology - https://jira.hl7.org/browse/HTA-37 (should be in THO soon)
-A definition for CodeSystem 'http://sequenceontology.org' could not be found, so the code cannot be validated
-%because the code system http://sequenceontology.org was not found
-%because the code system http://sequenceontology.org, http://sequenceontology.org was not found
-%Unable to provide support for code system http://sequenceontology.org
+# CodeSystems and ValueSets not supported yet -- sequenceontology - https://terminology.hl7.org/CodeSystem-SO.html
+A definition for CodeSystem 'http://www.sequenceontology.org' could not be found, so the code cannot be validated
+%because the code system http://www.sequenceontology.org was not found
+%because the code system http://www.sequenceontology.org, http://www.sequenceontology.org was not found
+%Unable to provide support for code system http://www.sequenceontology.org
 
 # CodeSystems and ValueSets not supported yet -- glstring - https://jira.hl7.org/browse/HTA-84
 A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. Valid versions: []
@@ -97,9 +97,6 @@ A definition for CodeSystem 'http://example.org/%
 # We define several experimental CodeSystems that we use, so OK to supress this for all IG defined CSs
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
 
-# Suppressing OK'ed by Grahame: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/Publisher.20introducing.20extension.2C.20and.20then.20issues.20warning
-The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version 1.0 is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
-
 # Each of these codes have been validated (as of Jul 5 2024), so suppressing these warnings until HPO becomes a supported code system.
 WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: The code 'HP:0000006' is not valid in the system http://human-phenotype-ontology.org (Unable to evaluate based on code system with status = not-present)
 INFORMATION: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: Unable to evaluate based on code system with status = not-present
@@ -119,7 +116,11 @@ WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].con
 WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[14]: The code 'HP:0012275' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
 WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[15]: The code 'HP:0025352' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
 WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[16]: The code 'HP:0032113' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-
-# Have reviewed this and we are using the CodeSystem recommended by binding in r4 (Observation.category, RiskAssessment.prediction.qualitativeRisk)
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category%
-%Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/risk-probability%
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].target: Target Code System http://www.sequenceontology.org doesn't have all content (content = not-present), so the target codes cannot be checked
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[0].target[0].code: The code 'SO:0002073' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[1].target[0].code: The code 'SO:0000159' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[2].target[0].code: The code 'SO:1000035' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[3].target[0].code: The code 'SO:0000667' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[4].target[0].code: The code 'SO:1000032' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[5].target[0].code: The code 'SO:1000036' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[6].target[0].code: The code 'SO:1000002' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'

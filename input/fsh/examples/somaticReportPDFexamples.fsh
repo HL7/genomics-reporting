@@ -130,7 +130,7 @@ Description: "Example for MSH2 deletion"
 // * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_000242.1:p.Val611fs
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_006885.4
 //* component[allelic-read-depth].valueQuantity =
-* component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000159 "deletion"
+* component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0000159 "deletion"
 //* component[representative-coding-hgvs].valueCodeableConcept = 
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7235 "MSH2"
 //* component[alt-allele].valueString = 
@@ -164,7 +164,7 @@ Description: "Example for NTHL1 SNV"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_002519.2:p.Trp243Ter
 //* component[representative-transcript-ref-seq].valueCodeableConcept = 
 //* component[allelic-read-depth].valueQuantity =
-* component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0001483 "SNV"
+* component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "SNV"
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_002528.7:c.728G>A
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:8028 "NTHL1"
 //* component[alt-allele].valueString = 
@@ -196,7 +196,7 @@ Description: "Example for STAG2 insertion"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_006594.3:p.S1178*
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_006603.5
 * component[allelic-read-depth].valueQuantity = 88 '1' "reads per base pair"
-* component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000667 "insertion"
+* component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0000667 "insertion"
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_006603.5:c.3530_3531insGTGACTATTAATAT
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:11355 "STAG2"
 * component[alt-allele].valueString = "GTGACTA"
@@ -229,7 +229,7 @@ Description: "Example for ATR insertion"
 // * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_001175.2:p.R960fs*2
 * component[representative-transcript-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NM_001184.4
 * component[allelic-read-depth].valueQuantity = 131 '1' "reads per base pair"
-* component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0000667 "insertion"
+* component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0000667 "insertion"
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_001184.4:c.2878_2879insAGTAA
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:882 "ATR"
 * component[alt-allele].valueString = "TTACT"
@@ -263,7 +263,7 @@ Description: "Example for EGFR L858R"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_005219.2:p.Leu858Arg
 //* component[representative-transcript-ref-seq].valueCodeableConcept = 
 //* component[allelic-read-depth].valueQuantity = 
-* component[coding-change-type].valueCodeableConcept = http://sequenceontology.org#SO:0001483 "SNV"
+* component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0001483 "SNV"
 * component[representative-coding-hgvs].valueCodeableConcept = $HGVS#NM_005228.4:c.2573T>G
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:3236 "EGFR"
 //* component[alt-allele].valueString = 
@@ -640,7 +640,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "NM_017617.5"
 
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001583 "missense_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_060087.3:p.A1931T "NP_060087.3:p.A1931T"
@@ -664,7 +664,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "NM_006885.4"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001583 "missense_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_008816.3:p.G585S "NP_008816.3:p.G585S"
 
@@ -685,7 +685,7 @@ Usage: #example
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_000251.3:c.1832del "NM_000251.3:c.1832del"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp - Error while processing 'NP_000242.1:p.Val611fs': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_000242.1:p.Val611fs "NP_000242.1:p.Val611fs"
@@ -707,7 +707,7 @@ Usage: #example
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_002528.7:c.728G>A "NM_002528.7:c.728G>A"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001587 "stop_gained"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001587 "stop_gained"
 * component[=].valueCodeableConcept.text = "nonsense codon"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_002519.2:p.Trp243Ter "NP_002519.2:p.Trp243Ter"
@@ -731,7 +731,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "NM_006603.5"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_006594.3:p.S1178* "NP_006594.3:p.S1178*"
 
@@ -754,12 +754,12 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001589 "frameshift_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
 * component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
 
 Instance: EGFR-L858R-molc
 InstanceOf: MolecularConsequence
@@ -778,7 +778,7 @@ Usage: #example
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_005228.4:c.2573T>G "NM_005228.4:c.2573T>G"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001583 "missense_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_005219.2:p.Leu858Arg "NP_005219.2:p.Leu858Arg"
 
@@ -796,7 +796,7 @@ Usage: #example
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ROS1-Fusion-var)
 * component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001886 "transcript_fusion"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001886 "transcript_fusion"
 
 Instance: somaticPatient
 InstanceOf: Patient

@@ -37,7 +37,7 @@
 	<pre>$find-subject-tx-implications?subject=HG00403&amp;treatments=http://www.nlm.nih.gov/research/umls/rxnorm|32968</pre>
 	
 	<p>Clinician is considering treatment options for a 66 year old non-smoker recently diagnosed with metastatic non-small cell lung cancer. The clinician wants to see if patient has any NSCLC-specific druggable targets in ALK (NC_000002.12:29190991-29921589), BRAF (NC_000007.14:140713327-140924929), or EGFR (NC_000007.14:55019016-55211628).</p>
-	<pre>$find-subject-tx-implications?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628&amp;conditions=http://sequenceontology.org|3908</pre>
+	<pre>$find-subject-tx-implications?subject=HG00403&amp;ranges=NC_000002.12:29190991-29921589,NC_000007.14:140713327-140924929,NC_000007.14:55019016-55211628&amp;conditions=http://www.sequenceontology.org|3908</pre>
 
 	<p>This query seeks to determine if the subject has any breast cancer-specific therapeutic implications (e.g. medications, clinical trials) based on identified somatic variants in recent specimen.</p>
 	<pre>$find-subject-tx-implications?subject=HG00403&amp;conditions=http://snomed.info/sct|372137005&amp;genomicSourceClass=somatic&amp;specimenIdentfiers=1</pre>
@@ -51,4 +51,3 @@
 </ul>
 
 </div>
-

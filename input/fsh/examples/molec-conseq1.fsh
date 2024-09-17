@@ -18,7 +18,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001575 "splice_donor_variant"
-* component[=].valueCodeableConcept.coding[1] = http://sequenceontology.org#SO:0001627 "intron_variant"
+* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
+* component[=].valueCodeableConcept.coding[1] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#functional-effect
-* component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"

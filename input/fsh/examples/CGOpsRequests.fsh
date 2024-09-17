@@ -186,7 +186,7 @@ Usage: #example
 * parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48019-4
 * parameter.part[=].resource.component[=].code.coding.display = "DNA Change Type"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://sequenceontology.org"
+* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.sequenceontology.org"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #SO:0000159
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "deletion"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
@@ -248,7 +248,7 @@ Usage: #example
 * parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48019-4
 * parameter.part[=].resource.component[=].code.coding.display = "DNA Change Type"
-* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://sequenceontology.org"
+* parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.sequenceontology.org"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.code = #SO:0001019
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.display = "copy_number_variation"
 * parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
@@ -574,10 +574,10 @@ Usage: #example
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* parameter[=].resource.component[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001575 "splice_donor_variant"
-* parameter[=].resource.component[=].valueCodeableConcept.coding[1] = http://sequenceontology.org#SO:0001627 "intron_variant"
+* parameter[=].resource.component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
+* parameter[=].resource.component[=].valueCodeableConcept.coding[1] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#functional-effect
-* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC2"
@@ -601,7 +601,7 @@ Usage: #example
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001819 "synonymous_variant"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001819 "synonymous_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC3"
@@ -623,7 +623,7 @@ Usage: #example
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001623 "5_prime_UTR_variant"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001623 "5_prime_UTR_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC4"
@@ -646,7 +646,7 @@ Usage: #example
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
 * parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* parameter[=].resource.component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001627 "intron_variant"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * parameter[+].name = "variant"
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "variantExampleMC"
@@ -837,10 +837,10 @@ Usage: #example
 * parameter.part[+].name = "genomicBuild"
 * parameter.part[=].valueCodeableConcept = http://loinc.org#LA26806-2 "GRCh38"
 * parameter.part[+].name = "dnaChangeType"
-* parameter.part[=].valueCodeableConcept.coding[0] = http://sequenceontology.org#SO:0001483 "SNV"
-* parameter.part[=].valueCodeableConcept.coding[+] = http://sequenceontology.org#SO:0002007 "MNV"
-* parameter.part[=].valueCodeableConcept.coding[+] = http://sequenceontology.org#SO:1000032 "delins"
-* parameter.part[=].valueCodeableConcept.coding[+] = http://sequenceontology.org#SO:0001019 "copy_number_variation"
+* parameter.part[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001483 "SNV"
+* parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0002007 "MNV"
+* parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:1000032 "delins"
+* parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001019 "copy_number_variation"
 * parameter.part[+].name = "regionStudied"
 * parameter.part[=].valueString = "['NC_000007.14:55019016-55019365', 'NC_000007.14:55142285-55142437', 'NC_000007.14:55143304-55143488', 'NC_000007.14:55146605-55146740', 'NC_000007.14:55151293-55151362', 'NC_000007.14:55152545-55152664', 'NC_000007.14:55154010-55154152', 'NC_000007.14:55155829-55155946', 'NC_000007.14:55156532-55156659', 'NC_000007.14:55156758-55156832', 'NC_000007.14:55157662-55157753', 'NC_000007.14:55160138-55160338', 'NC_000007.14:55161498-55161631', 'NC_000007.14:55163732-55163823', 'NC_000007.14:55165279-55165437', 'NC_000007.14:55171174-55171213', 'NC_000007.14:55172982-55173124', 'NC_000007.14:55173920-55174043', 'NC_000007.14:55174721-55174820', 'NC_000007.14:55181292-55181478', 'NC_000007.14:55191718-55191874', 'NC_000007.14:55192765-55192841', 'NC_000007.14:55198716-55198863', 'NC_000007.14:55200315-55200413', 'NC_000007.14:55201187-55201355', 'NC_000007.14:55201734-55201782', 'NC_000007.14:55202516-55202625', 'NC_000007.14:55205255-55211628']"
 * parameter.part[+].name = "uncallableRegions"

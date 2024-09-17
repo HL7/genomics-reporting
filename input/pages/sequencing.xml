@@ -463,7 +463,7 @@ This implementation guide defines several components on <a href="StructureDefini
       <td>coding-change-type (LOINC 48019-4)</td>
       <td><div class="example"><pre class="json">
 {
-"system" : "http://sequenceontology.org",
+"system" : "http://www.sequenceontology.org",
 "code" : "SO:1000002",
 "display" : "substitution"
 }          </pre></div>
@@ -510,11 +510,11 @@ Suggested minimal representations of common structural variants are shown in the
   <tbody>
     <tr>    
       <td>[1..1] component: coding-change-type (LOINC 48019-4)</td>
-      <td>SO:0001019 | copy_number_variation | http://sequenceontology.org</td>
-      <td>SO:1000035 | duplication | http://sequenceontology.org</td>
-      <td>SO:0000159 | deletion | http://sequenceontology.org</td>
-      <td>SO:1000036 | inversion | http://sequenceontology.org</td>
-      <td>SO:0000667 | insertion | http://sequenceontology.org</td>
+      <td>SO:0001019 | copy_number_variation | http://www.sequenceontology.org</td>
+      <td>SO:1000035 | duplication | http://www.sequenceontology.org</td>
+      <td>SO:0000159 | deletion | http://www.sequenceontology.org</td>
+      <td>SO:1000036 | inversion | http://www.sequenceontology.org</td>
+      <td>SO:0000667 | insertion | http://www.sequenceontology.org</td>
     </tr>
     <tr>    
       <td>[1..1] component: genomic-ref-seq (LOINC 48013-7)</td>
@@ -634,7 +634,7 @@ It can be beneficial to provide a higher-level categorization of a variant. For 
   "valueCodeableConcept": {
     "coding": [
       {
-        "system" : "http://sequenceontology.org",
+        "system" : "http://www.sequenceontology.org",
         "code" : "SO:0000694",
         "display" : "SNP"
       },

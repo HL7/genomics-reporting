@@ -2,7 +2,7 @@
 Instance: dna-change-type-map
 InstanceOf: ConceptMap
 Usage: #definition
-Description: "Mapping from http://loinc.org ValueSet for DNA Change Type to http://sequenceontology.org codes"
+Description: "Mapping from http://loinc.org ValueSet for DNA Change Type to http://www.sequenceontology.org codes"
 * title = "DNA Change Type Map"
 * experimental = false
 * name = "DNAChangeType"
@@ -11,8 +11,8 @@ Description: "Mapping from http://loinc.org ValueSet for DNA Change Type to http
 * publisher = "HL7 International Clinical Genomics Work Group"
 * description = "LOINC and SequenceOntology mappings for dna change type"
 * sourceCanonical = "http://loinc.org/vs/LL379-9"
-* targetCanonical = $SEQONT
-* group[0].source = "http://loinc.org"
+* targetCanonical = "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs"
+* group[0].source = $LNC
 * group[0].target = $SEQONT
 * group[0].element[0].code = $LNC#LA9658-1
 * group[0].element[0].display = "Wild type"

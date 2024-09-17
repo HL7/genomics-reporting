@@ -18,5 +18,5 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
 * component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
-* component[=].valueCodeableConcept = http://sequenceontology.org#SO:0001627 "intron_variant"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 
