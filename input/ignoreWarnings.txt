@@ -98,6 +98,9 @@ A definition for CodeSystem 'http://example.org/%
 # We define several experimental CodeSystems that we use, so OK to supress this for all IG defined CSs
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
 
+# We define several experimental ValueSets that we use, so OK to supress this for all IG defined VSs
+%which is experimental, but this structure is not labeled as experimental
+
 # Each of these codes have been validated (as of Jul 5 2024), so suppressing these warnings until HPO becomes a supported code system.
 WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: The code 'HP:0000006' is not valid in the system http://human-phenotype-ontology.org (Unable to evaluate based on code system with status = not-present)
 INFORMATION: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: Unable to evaluate based on code system with status = not-present
