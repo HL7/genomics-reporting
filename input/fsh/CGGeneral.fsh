@@ -6,16 +6,8 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * ^abstract = true
 //* extension contains GenomicStudy named genomic-study 0..*
 //* extension[GenomicStudy] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
-* extension ^slicing.discriminator.type = #pattern
-* extension ^slicing.discriminator.path = "url"
-* extension ^slicing.rules = #open
-* extension ^slicing.description = "Slice based on the extension.url pattern"
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
                  and http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
-* component.extension ^slicing.discriminator.type = #pattern
-* component.extension ^slicing.discriminator.path = "url"
-* component.extension ^slicing.rules = #open
-* component.extension ^slicing.description = "Slice based on the extension.url pattern"
 * derivedFrom ^slicing.discriminator.type = #profile
 * derivedFrom ^slicing.discriminator.path = "resolve()"
 * derivedFrom ^slicing.rules = #open
