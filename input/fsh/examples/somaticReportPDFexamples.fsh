@@ -423,24 +423,15 @@ Usage: #example
 * derivedFrom = Reference(ATR-insertion-var)
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26332-9 "Likely Pathogenic"
-
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier 2C"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
-
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
 * component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
-
-* component[+].code = $LNC#93044-6 "Level of evidence"
-//* component[=].valueCodeableConcept = codesystem#code "display"
-* component[=].valueCodeableConcept.text = "Tier 2C"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
-
 
 //EGFR L858R
 //LA6668-3 Pathogenic
