@@ -23,8 +23,8 @@ Description: "SMN1 CNV companion for SMN1/SMN2 CNV example"
 * component[copy-number].valueQuantity.code = #1
 * component[copy-number].valueQuantity.system = $UCUM
 * component[genomic-ref-seq].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000005.10
-* component[inner-start-end].valueRange.high.value = 70924941
-* component[inner-start-end].valueRange.low.value = 70966375
+* component[inner-start-end].valueRange.low.value = 70924941
+* component[inner-start-end].valueRange.high.value = 70966375
 
 
 Instance: obs2-interact-smn1-smn2
@@ -50,8 +50,8 @@ Description: "SMN2 CNV companion for SMN1/SMN2 CNV example"
 * component[copy-number].valueQuantity.system = $UCUM
 
 * component[genomic-ref-seq].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000005.10
-* component[inner-start-end].valueRange.high.value = 70049523
-* component[inner-start-end].valueRange.low.value = 70090528
+* component[inner-start-end].valueRange.low.value = 70049523
+* component[inner-start-end].valueRange.high.value = 70090528
 
 
 
