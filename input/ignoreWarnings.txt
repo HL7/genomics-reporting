@@ -42,6 +42,17 @@ INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].re
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 
+
+# These slice messages that have been reviewed. Each of these refer to (via derivedFrom) a Variant, and it seems it is a valid Variant instance. So, not clear why it does not match a known slice:
+INFORMATION: Observation/diagnosticImplication-interact-smn1-smn2: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/therapuDrug1-interact-smn1-smn2: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/therapuDrug1-interact-smn1-smn2: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/therapuDrug2-interact-smn1-smn2: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/therapuDrug2-interact-smn1-smn2: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/therapuDrug3-interact-smn1-smn2: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/therapuDrug3-interact-smn1-smn2: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
+
+
 # CodeSystems and ValueSets not supported yet -- genenames -- https://terminology.hl7.org/CodeSystem-v3-hgnc.html
 A definition for CodeSystem 'http://www.genenames.org' could not be found, so the code cannot be validated%
 %because the code system http://www.genenames.org was not found
