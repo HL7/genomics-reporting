@@ -1,5 +1,4 @@
-### Version = 3.0.0 - ballot (January 2024 Ballot)
-- url: <https://hl7.org/fhir/uv/genomics-reporting/2024Jan/>
+### Version = STU3
 - FHIR version: 4.0.1
 
 #### Summary of updates
