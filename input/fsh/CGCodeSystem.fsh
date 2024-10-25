@@ -2,6 +2,7 @@ CodeSystem: SequencePhaseRelationshipCS
 Id: sequence-phase-relationship-cs
 Title: "Sequence Phase Relationship Codes"
 Description: "Code System for specific types of relationships"
+* ^url = "http://terminology.hl7.org/CodeSystem/sequence-phase-relationship-cs"
 * ^caseSensitive = true
 * ^experimental = false
 * #Cis "Cis" "Phase is in cis (same chromosome)"
@@ -58,6 +59,7 @@ CodeSystem: VariantConfidenceStatusCS
 Id: variant-confidence-status-cs
 Title: "Variant Confidence Status Codes"
 Description: "A code that represents the confidence of a true positive variant call."
+* ^url = "http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs"
 * ^caseSensitive = true
 * ^experimental = true
 * #high	        "High"	        "High confidence true positive variant call. Suitable for clinical reporting."
