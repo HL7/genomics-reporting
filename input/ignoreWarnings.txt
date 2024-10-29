@@ -1,14 +1,12 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-
 # Observation.component instances that do not match our slices, but is OK (and this is ok since we use open slicing)
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/discrete-variant*/.component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 INFORMATION: Observation/variant-with-molec-consequences: Observation.component[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 
 
-# GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. We allow slicing, so we can ignore informational message
+# GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. We allow slicing, so can ignore informational message
 INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
@@ -31,12 +29,11 @@ Found multiple matching profiles for Task/med-usage-impact-task-pgx-example amon
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
 
-# These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look OK as well. Unsure why we are getting the warning. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
-# These slice messages have been reviewed - being investigated -- 
+# These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look valid. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
 INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[8].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-withGrouping-9*/.component[3].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication|3.0.1-SNAPSHOT (this may not be a problem, but you should check that it's not intended to match a slice)
 
-# These slice messages that have been reviewed. Each of these refer to (via derivedFrom) a Variant, and it seems it is a valid Variant instance. So, not clear why it does not match a known slice:
+# These slice messages that have been reviewed. Each of these refer to (via derivedFrom) a Variant, and are a valid Variant instance. They are similar to ones mentioned on https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F 
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[0].resource/*Observation/MC1*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].resource/*Observation/MC2*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
@@ -132,7 +129,7 @@ WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[4].target[0
 WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[5].target[0].code: The code 'SO:1000036' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
 WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[6].target[0].code: The code 'SO:1000002' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
 
-# CG has reviewed these CodeSystems and have decided to keep this in our IG for now:
+# CG has reviewed these CodeSystems and have decided to keep this in our IG
 INFORMATION: CodeSystem/clinvar-evidence-level-custom-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/coded-annotation-types-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/genomic-study-change-type-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -146,8 +143,8 @@ INFORMATION: CodeSystem/sequence-phase-relationship-cs: CodeSystem: Most code sy
 INFORMATION: CodeSystem/tbd-codes-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/variant-confidence-status-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# the mappings in this concept map have been human reviewed
+# the mappings in this concept map have been human reviewed and is corrrect
 INFORMATION: ConceptMap/dna-change-type-map: ConceptMap.group[0].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
 
-# this code has been human reviewed
+# this code has been human reviewed and is correct
 INFORMATION: ValueSet/molecular-biomarker-code-vs: ValueSet.compose.include[1].concept[0]: Unknown Code 'C120465' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
