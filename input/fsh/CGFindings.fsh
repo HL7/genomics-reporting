@@ -5,7 +5,7 @@ Title:          "Genomic Finding"
 Description:    "Properties common to genetic findings whose results are expressed as computable discrete elements (e.g. genotypes, haplotypes, variants, etc.)."
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * ^abstract = true
-// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.type = #value
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
@@ -64,7 +64,7 @@ Description:    "Details about a set of changes in the tested sample compared to
 * valueCodeableConcept ^short = "Indeterminate | No call | Present | Absent."
 * valueCodeableConcept ^definition = "The presence or absence of the variant described in the components. If not searching for specific variations and merely reporting what's found, the profile's value should be set to 'Present'."
 * valueCodeableConcept ^comment = "See [here](sequencing.html#variant-assessment) for usage guidance."
-// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.type = #value
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
@@ -406,7 +406,7 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype the biomarker is derived from"
 * category 2..*
-* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category.code pattern"
@@ -420,7 +420,7 @@ Description:    "This profile is used to represent laboratory measurements of hu
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding 0..1
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"

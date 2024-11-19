@@ -35,7 +35,7 @@ May include general statements about the observation, or statements about signif
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of interpretation, value, or component values.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
-* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.type = #value
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component ^slicing.description = "Slice based on the component.code pattern"
@@ -106,7 +106,7 @@ Note that in contrast this extension, the supportingInfo extension references ot
 
 * extension[GenomicStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * code = $LNC#51969-4
-* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the category code pattern"

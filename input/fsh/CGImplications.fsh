@@ -29,7 +29,7 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * derivedFrom[haplotype] ^short = "Haplotype the implication is derived from"
 * derivedFrom[biomarker] only Reference(MolecularBiomarker)
 * derivedFrom[biomarker] ^short = "MolecularBiomarker the implication is derived from"
-// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.type = #value
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
@@ -71,7 +71,7 @@ Description:    "Observation stating a diagnostic annotation (e.g. disease risk)
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#diagnostic-implication
 * code ^short = "diagnostic-implication"
-// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.type = #value
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
@@ -105,7 +105,7 @@ Description:    "Observation stating a therapeutic annotation (e.g. drug suscept
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#therapeutic-implication
 * code ^short = "therapeutic-implication"
-// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.type = #value
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
@@ -199,7 +199,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
 //* valueCodeableConcept ^short = "Indeterminate | No call | Present | Absent."
 //* valueCodeableConcept ^definition = "The presence or absence of the variant described in the components. If not searching for specific variations and merely reporting what's found, the profile's value should be set to 'Present'."
 
-// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.type = #value
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
