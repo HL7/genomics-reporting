@@ -6,7 +6,7 @@ INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/disc
 INFORMATION: Observation/variant-with-molec-consequences: Observation.component[9]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 
 
-# GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. We allow slicing, so can ignore informational message
+# GenomicReport<DiagnosticReport>.result referencing Observation instances. We have defined our report profile to slice .result with our Observation profiles. Slicing is open, this informational message can be ignored
 INFORMATION: Bundle/bundle-cgexample-withGrouping: Bundle.entry[0].resource/*DiagnosticReport/report-withGrouping*/.result[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
 INFORMATION: Bundle/bundle-oncologyexamples-r4-withGrouping: Bundle.entry[14].resource/*DiagnosticReport/Inline-Instance-for-oncologyexamples-r4-withGrouping-15*/.result[6]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report%
@@ -18,8 +18,7 @@ INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticRep
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 
-
-# the IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
+# The IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
 Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation
@@ -39,53 +38,29 @@ INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].re
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 
+# The following code system are not discoverable because they are code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct
 
-# CodeSystems and ValueSets not supported yet -- genenames -- https://terminology.hl7.org/CodeSystem-v3-hgnc.html
 A definition for CodeSystem 'http://www.genenames.org' could not be found, so the code cannot be validated%
 %because the code system http://www.genenames.org was not found
 %Unable to provide support for code system http://www.genenames.org
-
-# CodeSystems and ValueSets not supported yet -- sequenceontology - https://terminology.hl7.org/CodeSystem-SO.html
 A definition for CodeSystem 'http://www.sequenceontology.org' could not be found, so the code cannot be validated
 %because the code system http://www.sequenceontology.org was not found
 %because the code system http://www.sequenceontology.org, http://www.sequenceontology.org was not found
 %Unable to provide support for code system http://www.sequenceontology.org
-
-# CodeSystems and ValueSets not supported yet -- glstring - https://jira.hl7.org/browse/HTA-84
 A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. Valid versions: []
-
-# CodeSystems and ValueSets not supported yet -- human-phenotype-ontology - https://terminology.hl7.org/CodeSystem-HPO.html
 A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated
 %because the code system http://human-phenotype-ontology.org was not found
 %Unable to provide support for code system http://human-phenotype-ontology.org
-
-# CodeSystems and ValueSets not supported yet -- pharmvar - https://jira.hl7.org/browse/HTA-85
 A definition for CodeSystem 'http://www.pharmvar.org' could not be found, so the code cannot be validated
-
-# CodeSystems and ValueSets not supported yet -- clinicaltrials - https://jira.hl7.org/browse/HTA-126
 A definition for CodeSystem 'http://clinicaltrials.gov' could not be found, so the code cannot be validated
-
-# CodeSystems and ValueSets not supported yet - clinvar - https://terminology.hl7.org/CodeSystem-ClinVarV.html
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' version '???' could not be found, so the code cannot be validated. Valid versions: []
-
-# CodeSystem and ValueSets - refseq - https://terminology.hl7.org/CodeSystem-v3-refSeq.html
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/refseq' could not be found, so the code cannot be validated
-
-# CodeSystem and ValueSets - dbSNP - https://terminology.hl7.org/CodeSystem-v3-dbSNP.html
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' version '137' could not be found, so the code cannot be validated. Valid versions: []
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' could not be found, so the code cannot be validated
-
-# CodeSystem and ValueSets - gtr - https://terminology.hl7.org/CodeSystem-GTR.html
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/gtr' could not be found, so the code cannot be validated
-
-# CodeSystems and ValueSets - ISCN - https://terminology.hl7.org/CodeSystem-ISCN.html
 A definition for CodeSystem 'https://iscn.karger.com' could not be found, so the code cannot be validated
-
-# Code Systems for diseases - MONDO - https://terminology.hl7.org/CodeSystem-MONDO.html
 A definition for CodeSystem 'http://purl.obolibrary.org/obo/mondo.owl' could not be found, so the code cannot be validated
-
-# CodeSystems and ValueSets - imgt HLA alleles - https://jira.hl7.org/browse/HTA-127.
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.23' could not be found, so the code cannot be validated. Valid versions: []
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. Valid versions: []
@@ -93,10 +68,9 @@ A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0'
 # Suppress all references to example CodeSystems
 A definition for CodeSystem 'http://example.org/%
 
-# We define several experimental CodeSystems that we use, so OK to suppress this for all IG defined CSs
+# We define several experimental CodeSystems that we use, so OK to suppress this for all IG defined CSs, https://chat.fhir.org/#narrow/channel/179202-terminology/topic/Overuse.20of.20the.20Experimental.20flag, https://confluence.hl7.org/x/LKOZCQ 
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
 Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs%
-
 
 # In several places we use experimental ValueSets with experimental bindings. The elements are marked as experimental. So we suppress the warning. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/consent-content-code.20warning
 %which is experimental, but this structure is not labeled as experimental
@@ -139,12 +113,10 @@ INFORMATION: CodeSystem/genomic-study-status-cs: CodeSystem: Most code systems d
 INFORMATION: CodeSystem/genomic-study-type-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/molecular-biomarker-ontology-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/pharmgkb-evidence-level-custom-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-INFORMATION: CodeSystem/sequence-phase-relationship-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/tbd-codes-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-INFORMATION: CodeSystem/variant-confidence-status-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 
-# the mappings in this concept map have been human reviewed and is correct
+# The mappings in this concept map have been human reviewed and is correct
 INFORMATION: ConceptMap/dna-change-type-map: ConceptMap.group[0].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
 
-# this code has been human reviewed and is correct
+# This code has been human reviewed and is correct
 INFORMATION: ValueSet/molecular-biomarker-code-vs: ValueSet.compose.include[1].concept[0]: Unknown Code 'C120465' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
