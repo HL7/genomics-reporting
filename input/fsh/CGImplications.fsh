@@ -35,7 +35,9 @@ Note that in contrast this extension, the supportingInfo extension references ot
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     evidence-level 0..* and
-    clinical-significance 0..1
+    clinical-significance 0..1 and 
+	knowledge-base 0..1 and 
+	annotation-pipeline 0..1
 * component[evidence-level].code = $LNC#93044-6
 * component[evidence-level].code ^short = "93044-6"
 * component[evidence-level] ^short = "Level of Evidence"
@@ -49,6 +51,9 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component.extension contains RelatedArtifactComponent named workflow-relatedArtifactComponent 0..*
 * component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 
+* component.extension contains KnowledgebaseAncestryGroup named knowledgebase-ancestry-group 0..1
+* component.extension[KnowledgebaseAncestryGroup] ^requirements = "This SHOULD be used to identify the sample ancestry group according to the referenced knowledgebase"
+
 * component[clinical-significance] ^short = "Clinical significance"
 * component[clinical-significance] ^definition = "The clinical impact of an implication on a person's health. There are dozens if not hundreds of clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response')."
 * component[clinical-significance].code = $LNC#53037-8
@@ -57,6 +62,20 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component[clinical-significance].value[x] 1..1
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (example)
 * component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
+
+* component[knowledge-base] ^short = "Knowledge Base"
+* component[knowledge-base] ^definition = "The database from which the annotation is derived"
+* component[knowledge-base].code = TbdCodesCS#knowledge-base
+* component[knowledge-base].code ^short = "knowledge-base"
+* component[knowledge-base].value[x] only CodeableConcept
+* component[knowledge-base].value[x] 1..1
+
+* component[annotation-pipeline] ^short = "Annotation Pipeline"
+* component[annotation-pipeline] ^definition = "The name of the data pipeline that processed the genomic data file"
+* component[annotation-pipeline].code = TbdCodesCS#annotation-pipeline
+* component[annotation-pipeline].code ^short = "annotation-pipeline"
+* component[annotation-pipeline].value[x] only CodeableConcept
+* component[annotation-pipeline].value[x] 1..1 
 
 Profile:        DiagnosticImplication
 Parent:         GenomicImplication
@@ -268,3 +287,34 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[functional-effect].value[x] ^short = "gain of function | loss of function | loss of heterozygosity | decreased transcript level | increased transcipt level | dominant negative variant | ... (more)"
 * component[functional-effect].value[x] from FunctionalEffectVS (extensible)
 * component[functional-effect].value[x] ^binding.description = "Sequence Ontology terms under SO:0001536"
+
+Profile:        GenomicAnnotation
+Parent:         GenomicImplication
+Id:             genomic-annotation
+Title:          "Genomic Annotation"
+Description:    "Profile for communicating the genome annotation derived from a genomic finding. Annotations are obtained from different databases (Clinvar,gnomad3,thousandgenomes etc.). NOTE: The bound Annotation Module value set is extensible. New annotation programs are being developed and old programs are being updated/revised, meaning some annotation modules are outside the value set."
+* . ^short = "Genomic Annotation"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* code = TbdCodesCS#genomic-annotation
+* code ^short = "genomic=annotation"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "value"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
+* component contains
+	population-allele-frequency 0..1 and 
+	conservation-score 0..1
+
+* component[population-allele-frequency].code = $LNC#92821-8
+* component[population-allele-frequency].code ^short = "population-allele-frequency"
+* component[population-allele-frequency] ^short = "Population Allele Frequency"
+* component[population-allele-frequency] ^definition = "The observed rate of appearance a frequency has in a given sample population"
+* component[population-allele-frequency].value[x] only Quantity
+* component[population-allele-frequency].value[x] 1..1
+
+* component[conservation-score].code = TbdCodesCS#conservation-score
+* component[conservation-score].code ^short = "conservation-score"
+* component[conservation-score] ^short = "conservation score"
+* component[conservation-score] ^definition = "The measure of evolutionary conservation at an individual alignment site"
+* component[conservation-score].value[x] only Quantity
+* component[conservation-score].value[x] 1..1

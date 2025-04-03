@@ -66,3 +66,12 @@ Description: "Use the RelatedArtifact at the Observation.component element (not 
 * ^context[0].type = #element
 * ^context[0].expression = "Observation.component"
 * value[x] only RelatedArtifact
+
+Extension:   KnowledgebaseAncestryGroup
+Id:          knowledgebase-ancestry-group
+Title:       "KnowledgebaseAncestryGroup"
+Description: "Used to identify the sample ancestry group using terms obtained from the knowledgebase"
+* ^context[0].type = #element
+* ^context[0].expression = "Observation.component"
+* value[x] only CodeableConcept
+

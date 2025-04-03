@@ -21,6 +21,7 @@ Description: "These codes are 'TBD' codes, meaning they are important concepts b
 * #feature-consequence "Feature Consequence" "The structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion)."
 * #diagnostic-implication "Diagnostic Implication" "An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition."
 * #therapeutic-implication "Therapeutic Implication" "An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy. Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
+* #genomic-annotation "Genomic Annotation" "Profile for communicating the genome annotation derived from a genomic finding. Annotations are obtained from different databases (Clinvar,gnomad3,thousandgenomes etc.). NOTE: The bound Annotation Module value set is extensible. New annotation programs are being developed and old programs are being upodated/revised, meaning some annotation modules are outside the value set."
 * #functional-effect "Functional Effect" "The effect of a variant on downstream biological products or pathways (from Sequence Ontology)."
 * #conclusion-string "Conclusion Text" "Clinical conclusion (interpretation) of the observation."
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
@@ -29,6 +30,9 @@ Description: "These codes are 'TBD' codes, meaning they are important concepts b
 * #repeat-number "Number of Repeat Expansions" "Number of repeats of a repeat expansion."
 * #biomarker-category "A characterization of a given biomarker observation."
 * #protein-ref-seq "An identifier for the protein reference sequence."
+* #conservation-score "Conservation Score" "The conservation score calculated" 
+* #annotation-pipeline "Annotation Pipeline" "The name of the data pipeline that processed the genomic data file"
+* #knowledge-base "Knowledge Base" "The database from which the annotation is derived"
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
