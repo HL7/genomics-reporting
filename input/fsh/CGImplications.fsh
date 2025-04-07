@@ -69,6 +69,7 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component[knowledge-base].code ^short = "knowledge-base"
 * component[knowledge-base].value[x] only CodeableConcept
 * component[knowledge-base].value[x] 1..1
+* component[knowledge-base].value[x] from KnowledgeBaseVersionVS (example)
 
 * component[annotation-pipeline] ^short = "Annotation Pipeline"
 * component[annotation-pipeline] ^definition = "The name of the data pipeline that processed the genomic data file"

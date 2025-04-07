@@ -161,3 +161,10 @@ This value set includes content from SNOMED CT, which is copyright © 2002+ Inte
 * $LNC#81704-9 "Microsatellite instability marker D17S250 Ql (Cancer specimen)"
 * $LNC#94077-5 "Tumor mutation burden Ql (Tumor) [Interp]"
 * $NCIT#C120465 "Homologous Recombination Repair Deficiency"
+
+ValueSet:       KnowledgeBaseVersionVS
+Id:             knowledge-base-version-vs
+Title:          "Knowledge Base Version Codes"
+Description:    "Value set for example terms to display the knowledge base version used to calculate and/or obtain data"
+* ^experimental = false
+* codes from system KnowledgeBaseCS

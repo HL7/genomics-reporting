@@ -108,3 +108,19 @@ Description: "This (experimental) code system provides for a draft categorizatio
   * #methylationAnalysis "methylation analysis category" "Molecular biomarker method is methylation analysis."
   * #molgen "molecular sequence adjacent category" "Molecular biomarker method is molecular sequence adjacent observation."
 
+CodeSystem: KnowledgeBaseCS
+Id: knowledge-base-cs
+Title: "Knowledge Base Codes"
+Description: "This example code systems provides examples on how to properly display the knowledge base version number. Version numbers should always be followed by the letter v and calendar dates are displayed Month Day Year. For clarity the month SHALL be written in full."
+* ^experimental = true
+* ^caseSensitive = false
+* #gnomadv4.1exome "gnomad v4.1 exome" "gnomAD version 4.1 exome"
+* #gnomadv4.1genome "gnomad v4.1 genome" "gnomAD version 4.1 genome"
+* #clinvar-april2024 "clinvar april 2024" "Clinvar April 2024 release"
+* #clinvar-march2024 "clinvar march 2024" "Clinvar March 2024 release" 
+* #1000genomesv4.1.0 "1000genomes v4.1.0" "1000genomes version 4.1.0"
+* #civicv1.2.0 "civic v1.2.0" "CIViC version 1.2.0"
+* #graspv2.1.0 "grasp v2.1.0" "GRASP version 2.1.0"
+* #oncokbv1.5.2 "oncokb v1.5.2" "OncoKB version 1.5.2"
+* #pharmgkbv2.3.5 "pharmgkb v2.3.5" "PharmGKB version 2.3.5"
+* #phastconsv3.6.0 "phascons v.3.6.0" "PhastCons version 3.6.0"
