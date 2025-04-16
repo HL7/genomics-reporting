@@ -293,7 +293,7 @@ Profile:        GenomicAnnotation
 Parent:         GenomicImplication
 Id:             genomic-annotation
 Title:          "Genomic Annotation"
-Description:    "Profile for communicating the genome annotation derived from a genomic finding. Annotations are obtained from different databases (Clinvar,gnomad3,thousandgenomes etc.). NOTE: The bound Annotation Module value set is extensible. New annotation programs are being developed and old programs are being updated/revised, meaning some annotation modules are outside the value set."
+Description:    "Profile for communicating miscellaneous genomic annotations that are neither Diagnostic Implications, Therapeutic Implications, nor Molecular Consequences." 
 * . ^short = "Genomic Annotation"
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * code = TbdCodesCS#genomic-annotation
@@ -303,8 +303,8 @@ Description:    "Profile for communicating the genome annotation derived from a 
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
-	population-allele-frequency 0..1 and 
-	conservation-score 0..1
+	population-allele-frequency 0..* and 
+	conservation-score 0..*
 
 * component[population-allele-frequency].code = $LNC#92821-8
 * component[population-allele-frequency].code ^short = "population-allele-frequency"

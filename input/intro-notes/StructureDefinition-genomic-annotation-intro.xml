@@ -1,0 +1,35 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <p>
+    This section provides guidance for reporting of miscellaneous genomic annotations. Several types of annotations (e.g. population allele frequency) are important for clinical decision making, but are neither <a href="StructureDefinition-therapeutic-implication.html"> Therapeutic Implications</a>, <a href="StructureDefinition-diagnostic-implication.html"> Diagnostic Implications</a>, nor <a href="StructureDefinition-molecular-consequence.html"> Molecular Consequences</a>. The intent of this profile is to provide a 'catch-all' mechanism for communicating existing or evolving annotations that don't fit nicely into other specific implication profiles. </p>
+
+<a name="usageNotes"> </a>
+	<h3>General usage notes</h3>
+<p>The genomic annotation profile can be used to annotate variants, haplotypes, genotypes, or molecular biomarkers 
+with miscellaneous associations. For example, this profile can be used to assert the population allele frequency of a given variant.</p>
+<p>Useful components include those that are broadly applicable to a number of annotations (e.g. component:knowledge-base), and those that are specific to a given type of annotation (e.g. component:population-allele-frequency):</p>
+<ul>
+<li><b>component:evidence-level</b>: The amount of observed support for the association between an implication and a variant / haplotype / genotype / biomarker. (See the discussion of <a href="StructureDefinition-implication.html#Evidence-Significance">evidence-level vs. clinical significance</a> for additional guidance).</li>
+<li><b>component:knowledge-base</b>: indicates the database from which the annotation is derived. Annotations are obtained from different knowledge bases (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/">Clinvar</a>, <a href="https://gnomad.broadinstitute.org/">gnomAD</a>, <a href="https://www.internationalgenome.org/">1000 Genomes</a>). Knowledge bases continue to evolve, with new ones being developed, and existing ones being updated/revised.</li>
+<li><b>component:annotation-pipeline</b>: indicates the name of the data pipeline that processed the genomic data file.</li>
+<li><b>component:population-allele-frequency</b>: a specific type of annotation that indicates the prevalence of an allele in a population. This component can use the <a href="StructureDefinition-knowledgebase-ancestry-group.html">knowledgebase-ancestry-group</a> extension to further characterize the applicable population.</li>
+<li><b>component:conservation-score</b>: a specific type of annotation that indicates how much a specific DNA sequence or protein residue has remained unchanged across the evolutionary history of different species. High conservation scores indicate that a region is likely under strong selective pressure, meaning mutations in that region are detrimental to the organism's survival and reproduction. This component can use the <a href="StructureDefinition-knowledgebase-ancestry-group.html">knowledgebase-ancestry-group</a> extension to further characterize the applicable population.
+</li>
+</ul>
+
+
+<p>As with all implications, the explicit reference to the variant(s)/haplotype(s)/genotype(s)/molecular biomarker(s) being 
+annotated must be provided in the Observation.derivedFrom field.</p>
+
+
+<a name="Evidence-Significance"> </a>
+	<h3>evidence-level versus clinical-significance</h3>
+	<p>
+		See <a href="StructureDefinition-implication.html#Evidence-Significance">Genomic Implication</a> for guidance. 
+	</p>
+
+	<a name="Differentiating AND vs OR"> </a>
+	<h3>Differentiating AND vs OR</h3>
+	<p>
+		See <a href="StructureDefinition-implication.html#differentiating-and-vs-or">Genomic Implication</a> for guidance. Implication fields affected by this guidance include: derivedFrom, evidence-level, predicted-phenotype, genomic-risk-assessment.
+	</p>
+</div>
