@@ -51,9 +51,6 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component.extension contains RelatedArtifactComponent named workflow-relatedArtifactComponent 0..*
 * component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 
-* component.extension contains KnowledgebaseAncestryGroup named knowledgebase-ancestry-group 0..1
-* component.extension[KnowledgebaseAncestryGroup] ^requirements = "This SHOULD be used to identify the sample ancestry group according to the referenced knowledgebase"
-
 * component[clinical-significance] ^short = "Clinical significance"
 * component[clinical-significance] ^definition = "The clinical impact of an implication on a person's health. There are dozens if not hundreds of clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response')."
 * component[clinical-significance].code = $LNC#53037-8
@@ -305,6 +302,9 @@ Description:    "Profile for communicating miscellaneous genomic annotations tha
 * component contains
 	population-allele-frequency 0..* and 
 	conservation-score 0..*
+
+* component.extension contains KnowledgebaseAncestryGroup named knowledgebase-ancestry-group 0..1
+* component.extension[KnowledgebaseAncestryGroup] ^requirements = "This SHOULD be used to identify the sample ancestry group according to the referenced knowledgebase"
 
 * component[population-allele-frequency].code = $LNC#92821-8
 * component[population-allele-frequency].code ^short = "population-allele-frequency"
