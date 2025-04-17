@@ -9,7 +9,7 @@ To build locally:
 
 - Clone repo
 - run '\_updatePublisher.{sh | bat}' script (answering Y to the prompts) to ensure you have the latest version of the publisher and templates
-- run '\_genonce.{sh | bat}' script to run the build
+- run '\_build_.{sh | bat}' script to run the build
 - review the build output for any errors
 - review the output/qa.html for any new error/warning/informational entries
   
