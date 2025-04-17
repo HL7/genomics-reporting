@@ -21,6 +21,7 @@ Description: "These codes are 'TBD' codes, meaning they are important concepts b
 * #feature-consequence "Feature Consequence" "The structural implications of a variant (e.g. the variant disrupts a regulatory region, the variant is an inframe insertion)."
 * #diagnostic-implication "Diagnostic Implication" "An observation linking a genomic finding with a knowledge base, providing context that may aid in diagnosing a patient with a particular phenotype or condition."
 * #therapeutic-implication "Therapeutic Implication" "An observation linking a genomic finding with a knowledge base, providing potential evidence of an interaction with a specified medication or non-medicinal therapy. Ramifications may include alterations in drug metabolism (or pharmacokinetics) that determine the concentration of the drug, prodrug, and/or break-down products over time; alterations in drug efficacy (or pharmacodynamics) that determine how effective a drug is at a given concentration; alterations that alter the risk of adverse drug events, or other types of implications that indicate altered responsiveness to other types of therapies."
+* #genomic-annotation "Genomic Annotation" "Profile for communicating the genome annotation derived from a genomic finding. Annotations are obtained from different databases (Clinvar,gnomad3,thousandgenomes etc.). NOTE: The bound Annotation Module value set is extensible. New annotation programs are being developed and old programs are being upodated/revised, meaning some annotation modules are outside the value set."
 * #functional-effect "Functional Effect" "The effect of a variant on downstream biological products or pathways (from Sequence Ontology)."
 * #conclusion-string "Conclusion Text" "Clinical conclusion (interpretation) of the observation."
 * #condition-inheritance "Condition Inheritance" "The transmission pattern of the condition/phenotype in a pedigree."
@@ -29,6 +30,9 @@ Description: "These codes are 'TBD' codes, meaning they are important concepts b
 * #repeat-number "Number of Repeat Expansions" "Number of repeats of a repeat expansion."
 * #biomarker-category "A characterization of a given biomarker observation."
 * #protein-ref-seq "An identifier for the protein reference sequence."
+* #conservation-score "Conservation Score" "The conservation score calculated" 
+* #annotation-pipeline "Annotation Pipeline" "The name of the data pipeline that processed the genomic data file"
+* #knowledge-base "Knowledge Base" "The database from which the annotation is derived"
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
@@ -104,3 +108,19 @@ Description: "This (experimental) code system provides for a draft categorizatio
   * #methylationAnalysis "methylation analysis category" "Molecular biomarker method is methylation analysis."
   * #molgen "molecular sequence adjacent category" "Molecular biomarker method is molecular sequence adjacent observation."
 
+CodeSystem: KnowledgeBaseCS
+Id: knowledge-base-cs
+Title: "Knowledge Base Codes"
+Description: "This example code systems provides examples on how to properly display the knowledge base version number. Version numbers should always be followed by the letter v and calendar dates are displayed Month Day Year. For clarity the month SHALL be written in full."
+* ^experimental = true
+* ^caseSensitive = false
+* #gnomadv4.1exome "gnomad v4.1 exome" "gnomAD version 4.1 exome"
+* #gnomadv4.1genome "gnomad v4.1 genome" "gnomAD version 4.1 genome"
+* #clinvar-april2024 "clinvar april 2024" "Clinvar April 2024 release"
+* #clinvar-march2024 "clinvar march 2024" "Clinvar March 2024 release" 
+* #1000genomesv4.1.0 "1000genomes v4.1.0" "1000genomes version 4.1.0"
+* #civicv1.2.0 "civic v1.2.0" "CIViC version 1.2.0"
+* #graspv2.1.0 "grasp v2.1.0" "GRASP version 2.1.0"
+* #oncokbv1.5.2 "oncokb v1.5.2" "OncoKB version 1.5.2"
+* #pharmgkbv2.3.5 "pharmgkb v2.3.5" "PharmGKB version 2.3.5"
+* #phastconsv3.6.0 "phascons v.3.6.0" "PhastCons version 3.6.0"

@@ -35,7 +35,9 @@ Note that in contrast this extension, the supportingInfo extension references ot
 // * component ^slicing.description = "Slice based on the component.code pattern"
 * component contains
     evidence-level 0..* and
-    clinical-significance 0..1
+    clinical-significance 0..1 and 
+	knowledge-base 0..1 and 
+	annotation-pipeline 0..1
 * component[evidence-level].code = $LNC#93044-6
 * component[evidence-level].code ^short = "93044-6"
 * component[evidence-level] ^short = "Level of Evidence"
@@ -57,6 +59,21 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component[clinical-significance].value[x] 1..1
 * component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (example)
 * component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
+
+* component[knowledge-base] ^short = "Knowledge Base"
+* component[knowledge-base] ^definition = "The database from which the annotation is derived"
+* component[knowledge-base].code = TbdCodesCS#knowledge-base
+* component[knowledge-base].code ^short = "knowledge-base"
+* component[knowledge-base].value[x] only CodeableConcept
+* component[knowledge-base].value[x] 1..1
+* component[knowledge-base].value[x] from KnowledgeBaseVersionVS (example)
+
+* component[annotation-pipeline] ^short = "Annotation Pipeline"
+* component[annotation-pipeline] ^definition = "The name of the data pipeline that processed the genomic data file"
+* component[annotation-pipeline].code = TbdCodesCS#annotation-pipeline
+* component[annotation-pipeline].code ^short = "annotation-pipeline"
+* component[annotation-pipeline].value[x] only CodeableConcept
+* component[annotation-pipeline].value[x] 1..1 
 
 Profile:        DiagnosticImplication
 Parent:         GenomicImplication
@@ -268,3 +285,37 @@ Description:    "Profile for communicating the calculated or observed effect of 
 * component[functional-effect].value[x] ^short = "gain of function | loss of function | loss of heterozygosity | decreased transcript level | increased transcipt level | dominant negative variant | ... (more)"
 * component[functional-effect].value[x] from FunctionalEffectVS (extensible)
 * component[functional-effect].value[x] ^binding.description = "Sequence Ontology terms under SO:0001536"
+
+Profile:        GenomicAnnotation
+Parent:         GenomicImplication
+Id:             genomic-annotation
+Title:          "Genomic Annotation"
+Description:    "Profile for communicating miscellaneous genomic annotations that are neither Diagnostic Implications, Therapeutic Implications, nor Molecular Consequences." 
+* . ^short = "Genomic Annotation"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
+* code = TbdCodesCS#genomic-annotation
+* code ^short = "genomic=annotation"
+// * component ^slicing.discriminator.type = #pattern
+// * component ^slicing.discriminator.path = "value"
+// * component ^slicing.rules = #open
+// * component ^slicing.description = "Slice based on the component.code pattern"
+* component contains
+	population-allele-frequency 0..* and 
+	conservation-score 0..*
+
+* component.extension contains KnowledgebaseAncestryGroup named knowledgebase-ancestry-group 0..1
+* component.extension[KnowledgebaseAncestryGroup] ^requirements = "This SHOULD be used to identify the sample ancestry group according to the referenced knowledgebase"
+
+* component[population-allele-frequency].code = $LNC#92821-8
+* component[population-allele-frequency].code ^short = "population-allele-frequency"
+* component[population-allele-frequency] ^short = "Population Allele Frequency"
+* component[population-allele-frequency] ^definition = "The observed rate of appearance a frequency has in a given sample population"
+* component[population-allele-frequency].value[x] only Quantity
+* component[population-allele-frequency].value[x] 1..1
+
+* component[conservation-score].code = TbdCodesCS#conservation-score
+* component[conservation-score].code ^short = "conservation-score"
+* component[conservation-score] ^short = "conservation score"
+* component[conservation-score] ^definition = "The measure of evolutionary conservation at an individual alignment site"
+* component[conservation-score].value[x] only Quantity
+* component[conservation-score].value[x] 1..1
