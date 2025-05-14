@@ -1,0 +1,14 @@
+#Automatically normalize line endings
+* text=auto
+
+#Explicit line endings for file types of interest
+*.fsh text eol=lf 
+*.xml text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.yml text eol=lf 
+
+
+#Keep Binary Files untouched
+*.png binary
+*.jpg binary

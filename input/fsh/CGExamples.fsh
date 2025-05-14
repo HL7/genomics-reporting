@@ -1465,3 +1465,21 @@ Description: "Basic example of a Diagnostic Implication for CML"
 * component[predicted-phenotype].valueCodeableConcept = $SCT#92818009 "Chronic myeloid leukemia"
 * derivedFrom = Reference(ISCN-CMLExample)
 * status = #final
+
+Instance: pop-allele-freq
+InstanceOf: GenomicAnnotation
+Description: "Example genomic annotation showing a population allele frequency"
+Usage: #example
+* status = #final
+* category[labCategory] = $OBSCAT#laboratory
+* category[geCategory] = $DIAGNOSTICSERVICE#GE
+* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#genomic-annotation
+* subject = Reference(Patient/HG00403)
+* effectiveDateTime = "2023-06-01"
+* performer = Reference(ExampleLab)
+* derivedFrom = Reference(Observation/variant-with-molec-consequences)
+* component[population-allele-frequency].code.coding.display = "Allelic frequency in Population"
+* component[population-allele-frequency].valueQuantity.value = 0.01
+* component[population-allele-frequency].extension[knowledgebase-ancestry-group].valueCodeableConcept.text = "south asian"
+* component[knowledge-base].valueCodeableConcept.text = "gnomAD v3.1.2 Exomes"
+* component[annotation-pipeline].valueCodeableConcept.text = "Oakvar v2.34"

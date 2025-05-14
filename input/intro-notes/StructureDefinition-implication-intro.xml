@@ -34,7 +34,7 @@ This portion of the implementation guide relies on the content in the <a href="g
 <a href="StructureDefinition-genotype.html">genotypes</a>, 
 <a href="StructureDefinition-molecular-biomarker.html">biomarkers</a>) and annotations derived from those findings (<a href="StructureDefinition-diagnostic-implication.html">diagnostic implications</a>, 
 <a href="StructureDefinition-therapeutic-implication.html">therapeutic implications</a>, 
-<a href="StructureDefinition-molecular-consequence.html">predicted molecular consequences</a>), as shown in the following figure:</p>
+<a href="StructureDefinition-molecular-consequence.html">predicted molecular consequences</a>, <a href="StructureDefinition-genomic-annotation.html"> other genomic annotations</a>), as shown in the following figure:</p>
 <img src="Somatic_General_Guidance.svg" alt="generalGuidance" height="195" width="410"/>
 <p> </p>
 
@@ -43,10 +43,12 @@ This portion of the implementation guide relies on the content in the <a href="g
  </p>
   <ul>
   	<li><code>derivedFrom</code> is a required field that provides an explicit reference from an implication to the variant(s) / haplotype(s) / genotype(s) / molecular biomarker(s) from which the implication is derived.</li>
-    <li><code>workflow-relatedArtifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication, such as documentation which applies to the full implication Observation</li>
-    <li><code>workflow-relatedArtifactComponent (component level extension)</code> supports conveying references to citations, supporting documentation and other information specific to the component's code and value, such as documentation supporting a specific clinical significance or evidence level value</li>    
-		<li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication</li>
-    <li><code>clinical-significance (component)</code> indicates the clinical impact of an implication</li>
+    <li><code>workflow-relatedArtifact (base extension)</code> supports conveying references to citations, supporting documentation and other information relevant to the asserted implication, such as documentation which applies to the full implication Observation.</li>
+    <li><code>workflow-relatedArtifactComponent (component level extension)</code> supports conveying references to citations, supporting documentation and other information specific to the component's code and value, such as documentation supporting a specific clinical significance or evidence level value.</li>    
+	<li><code>evidence-level (component)</code> indicates the strength of the evidence behind the asserted implication.</li>
+    <li><code>clinical-significance (component)</code> indicates the clinical impact of an implication.</li>
+	<li><code>knowledge-base (component)</code> indicates the database from which the annotation is derived. Annotations are obtained from different knowledge bases (e.g. <a href="https://www.ncbi.nlm.nih.gov/clinvar/">Clinvar</a>, <a href="https://gnomad.broadinstitute.org/">gnomAD</a>, <a href="https://www.internationalgenome.org/">1000 Genomes</a>). Knowledge bases continue to evolve, with new ones being developed, and existing ones being updated/revised.</li>	
+	<li><code>annotation-pipeline (component)</code> indicates the name of the data pipeline that processed the genomic data file.</li>
   </ul>
 
 	<a name="Evidence-Significance"> </a>
@@ -94,6 +96,9 @@ This portion of the implementation guide relies on the content in the <a href="g
 	</p>
 	<p>
 		<a href="StructureDefinition-diagnostic-implication.html">Diagnostic implications</a>: derivedFrom, evidence-level, predicted-phenotype, genomic-risk-assessment.
+	</p>
+	<p>
+		<a href="StructureDefinition-genomic-annotation.html">Genomic annotations</a>: derivedFrom, evidence-level, population-allele-frequency, conservation-score.
 	</p>
 	<p>
 		Here are examples of these rules with DiagnosticImplication (but the principles would apply to any Implication):
