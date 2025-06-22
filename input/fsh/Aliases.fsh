@@ -31,9 +31,6 @@ Alias: $SNP = http://www.ncbi.nlm.nih.gov/projects/SNP
 Alias: $ISCN = https://iscn.karger.com //defined in THO with https
 Alias: $PARTICIPATIONTYPE = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 Alias: $CONFIDENTIALITY = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
-Alias: $GSMETHODTYPE = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-method-type-cs
-Alias: $GSFILETYPE = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/genomic-study-data-format-cs
-Alias: $BIOMARKER = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/molecular-biomarker-ontology-cs
 Alias: $MONDO = http://purl.obolibrary.org/obo/mondo.owl
 
 //Extensions

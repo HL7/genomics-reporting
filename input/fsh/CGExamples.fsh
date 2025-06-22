@@ -1473,7 +1473,7 @@ Usage: #example
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#genomic-annotation
+* code = TbdCodesCS#genomic-annotation
 * subject = Reference(Patient/HG00403)
 * effectiveDateTime = "2023-06-01"
 * performer = Reference(ExampleLab)

@@ -18,7 +18,7 @@ Instance: lungMass-analysis1
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of Sequence analysis of the entire coding region"
 Usage: #example
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
 * extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
@@ -31,7 +31,7 @@ Usage: #example
   * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
   * extension[uncalled][+].valueReference = Reference(DocumentReference/UncallableRegions) 
   * extension[called][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
-* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
+* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
 * extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
@@ -46,7 +46,7 @@ Instance: lungMass-analysis2
 InstanceOf: GenomicStudyAnalysis
 Description: "Example of Deletion/duplication analysis"
 Usage: #example
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#deletion-duplication-analysis "Deletion/duplication analysis"
 * extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
 * extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
@@ -55,7 +55,7 @@ Usage: #example
 * extension[GenomicStudyAnalysisRegions]
   * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
   * extension[called][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
-* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
+* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
 * extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
 * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 * status = #completed
@@ -70,7 +70,7 @@ Instance: genomicSpecimen
 InstanceOf: Specimen
 Description: "Example of lung specimen obtained by biopsy"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
+* identifier.system = "http://example.org/identifiers/specimens"
 * identifier.value = "4"
 * status = #available
 * type = $SCT#122610009 "Specimen from lung obtained by biopsy (specimen)"
@@ -89,7 +89,7 @@ Description: "Example patient"
 Usage: #example
 * identifier.use = #temp
 * identifier.type = $IDTYPE#MR "Medical record number"
-* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.system = "http://example.org/identifiers/persons"
 * identifier.value = "11117"
 * identifier.period.start = "2021-01-01"
 * identifier.assigner.display = "General Hospital"
@@ -107,7 +107,7 @@ Description: "Example practitioner"
 Usage: #example
 * identifier.use = #temp
 * identifier.type = $IDTYPE#PRN "Provider number"
-* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.system = "http://example.org/identifiers/persons"
 * identifier.value = "11116"
 * identifier.period.start = "2021-01-01"
 * identifier.assigner.display = "Child Hospital"
@@ -122,7 +122,7 @@ Description: "Example of Molecular genetic test"
 Usage: #example
 * identifier.type = $IDTYPE#LACSN
 * identifier.type.text = "Laboratory Accession ID"
-* identifier.system = "http://www.somesystemabc.net/identifiers/serviceRequests"
+* identifier.system = "http://example.org/identifiers/serviceRequests"
 * identifier.value = "111111112"
 * status = #active
 * intent = #plan
@@ -133,7 +133,7 @@ Instance: WES-FullSequencedRegion-GRCh38
 InstanceOf: GenomicDataFile
 Description: "WES_FullSequencedRegion_GRCh38: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11117"
 * status = #current
 * docStatus = #preliminary
@@ -147,7 +147,7 @@ Instance: CNVAnalysis-called
 InstanceOf: GenomicDataFile
 Description: "CNVAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11120"
 * status = #current
 * docStatus = #preliminary
@@ -161,7 +161,7 @@ Instance: genomicVCFfile-cnv
 InstanceOf: GenomicDataFile
 Description: "genomicVCFfile_cnv: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11121"
 * status = #current
 * docStatus = #preliminary
@@ -175,7 +175,7 @@ Instance: genomicVCFfile-simple
 InstanceOf: GenomicDataFile
 Description: "genomicVCFfile_simple: A sample Document Reference instance representing a VCF file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11119"
 * status = #current
 * docStatus = #preliminary
@@ -189,7 +189,7 @@ Instance: SimpleVariantAnalysis-called
 InstanceOf: GenomicDataFile
 Description: "SimpleVariantAnalysis_called: A sample Document Reference instance representing a BED file that may be used as input or output of a genomic analysis pipeline."
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11118"
 * status = #current
 * docStatus = #preliminary
@@ -203,7 +203,7 @@ Instance: UncallableRegions
 InstanceOf: GenomicDataFile
 Description: "Representing a BED file that represents uncallable regions"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11125"
 * status = #current
 * docStatus = #preliminary
@@ -222,7 +222,7 @@ Usage: #example
 * extension[GenomicStudyReferrerExt].valueReference = Reference(Practitioner/practitioner02)
 * identifier[+]
   * use = #temp
-  * system = "http://www.somesystemabc.net/identifiers/genomicstudies"
+  * system = "http://example.org/identifiers/genomicstudies"
   * value = "urn:uuid:1111-1111-1111-1113"
 * status = #completed
 * code.text = "Trio Analysis"
@@ -265,7 +265,7 @@ Description: "Triodenovo Software"
 Usage: #example
 * id = "triodenovo-software"
 * identifier[+]
-  * system = "http://www.somesystemabc.net/identifiers/devices"
+  * system = "http://example.org/identifiers/devices"
   * value = "11112"
 * status = #active
 * manufacturer = "Vanderbilt Genetics Institute"
@@ -282,7 +282,7 @@ Usage: #example
 * identifier[+]
   * use = #temp
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical record number"
-  * system = "http://www.somesystemabc.net/identifiers/persons"
+  * system = "http://example.org/identifiers/persons"
   * value = "1234-11111"
 * name[+]
   * use = #official
@@ -296,7 +296,7 @@ Usage: #example
 * identifier[+]
   * use = #temp
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical record number"
-  * system = "http://www.somesystemabc.net/identifiers/persons"
+  * system = "http://example.org/identifiers/persons"
   * value = "6789-11111"
 * name[+]
   * use = #official
@@ -310,7 +310,7 @@ Usage: #example
 * identifier[+]
   * use = #temp
   * type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical record number"
-  * system = "http://www.somesystemabc.net/identifiers/persons"
+  * system = "http://example.org/identifiers/persons"
   * value = "0987-11111"
 * name[+]
   * use = #official
@@ -322,7 +322,7 @@ InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
-  * system = "http://www.somesystemabc.net/identifiers/files"
+  * system = "http://example.org/identifiers/files"
   * value = "11118"
 * status = #current
 * docStatus = #preliminary
@@ -330,7 +330,7 @@ Usage: #example
 * description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
 * securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
 * content[+].attachment
-  * url = "http://www.somesystemabc.net/identifiers/files/11111"
+  * url = "http://example.org/identifiers/files/11111"
   * title = "Probands BAM file"
 
 Instance: genomicFileMotherBAM
@@ -338,7 +338,7 @@ InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
-  * system = "http://www.somesystemabc.net/identifiers/files"
+  * system = "http://example.org/identifiers/files"
   * value = "11125"
 * status = #current
 * docStatus = #preliminary
@@ -346,7 +346,7 @@ Usage: #example
 * description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
 * securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
 * content[+].attachment
-  * url = "http://www.somesystemabc.net/identifiers/files/11125"
+  * url = "http://example.org/identifiers/files/11125"
   * title = "Mothers BAM file"
 
 Instance: genomicFileFatherBAM
@@ -354,7 +354,7 @@ InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
-  * system = "http://www.somesystemabc.net/identifiers/files"
+  * system = "http://example.org/identifiers/files"
   * value = "11132"
 * status = #current
 * docStatus = #preliminary
@@ -362,7 +362,7 @@ Usage: #example
 * description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
 * securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
 * content[+].attachment
-  * url = "http://www.somesystemabc.net/identifiers/files/11132"
+  * url = "http://example.org/identifiers/files/11132"
   * title = "Fathers BAM file"
 
 Instance: genomicFileProbandVCF
@@ -370,7 +370,7 @@ InstanceOf: GenomicDataFile
 Description: "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline"
 Usage: #example
 * identifier[+]
-  * system = "http://www.somesystemabc.net/identifiers/files"
+  * system = "http://example.org/identifiers/files"
   * value = "11150"
 * status = #current
 * docStatus = #preliminary
@@ -378,7 +378,7 @@ Usage: #example
 * description = "A sample Document Reference instance representing a generic genomic file that may ber used as input or output of a genomic analysis pipeline."
 * securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "Restricted"
 * content[+].attachment
-  * url = "http://www.somesystemabc.net/identifiers/files/11150"
+  * url = "http://example.org/identifiers/files/11150"
   * title = "Probands VCF file"
 
 Instance: SequencingProcedure

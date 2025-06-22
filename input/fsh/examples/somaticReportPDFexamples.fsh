@@ -620,7 +620,7 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(NOTCH1-uncertain-var)
 * component[0].code = http://loinc.org#48004-6
@@ -630,7 +630,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "NM_017617.5"
 
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -646,7 +646,7 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ZFHX3-uncertain-var)
 * component[0].code = http://loinc.org#48004-6
@@ -654,7 +654,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006885.4:c.1753G>A "NM_006885.4:c.1753G>A"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "NM_006885.4"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_008816.3:p.G585S "NP_008816.3:p.G585S"
@@ -669,13 +669,13 @@ Usage: #example
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(MSH2-del-var)
 * component[0].code = http://loinc.org#48004-6
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_000251.3:c.1832del "NM_000251.3:c.1832del"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp - Error while processing 'NP_000242.1:p.Val611fs': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -691,13 +691,13 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(NTHL1-snv-var)
 * component[0].code = http://loinc.org#48004-6
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_002528.7:c.728G>A "NM_002528.7:c.728G>A"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001587 "stop_gained"
 * component[=].valueCodeableConcept.text = "nonsense codon"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -713,7 +713,7 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(STAG2-insertion-var)
 * component[0].code = http://loinc.org#48004-6
@@ -721,7 +721,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006603.5:c.3530_3531insGTGACTATTAATAT "NM_006603.5:c.3530_3531insGTGACTATTAATAT"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "NM_006603.5"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_006594.3:p.S1178* "NP_006594.3:p.S1178*"
@@ -736,7 +736,7 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ATR-insertion-var)
 * component[0].code = http://loinc.org#48004-6
@@ -744,7 +744,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001184.4:c.2878_2879insAGTAA "NM_001184.4:c.2878_2879insAGTAA"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -762,13 +762,13 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(EGFR-L858R-var)
 * component[0].code = http://loinc.org#48004-6
 * component[0].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_005228.4:c.2573T>G "NM_005228.4:c.2573T>G"
-* component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_005219.2:p.Leu858Arg "NP_005219.2:p.Leu858Arg"
@@ -783,7 +783,7 @@ Usage: #example
 * performer[0] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ROS1-Fusion-var)
 * component[+].code = TbdCodesCS#functional-effect
@@ -795,7 +795,7 @@ Description: "Somatic example Patient"
 Usage: #example
 * identifier.use = #temp
 * identifier.type = $IDTYPE#MR "Medical record number"
-* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.system = "http://example.org/identifiers/persons"
 * identifier.value = "1234567"
 * identifier.period.start = "2021-01-01"
 * identifier.assigner.display = "General Hospital"
@@ -833,8 +833,8 @@ Usage: #example
   * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:427 "ALK"
   * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:583 "APC"
   * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = $GSMETHODTYPE#deletion-duplication-analysis "Deletion/duplication analysis"
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#deletion-duplication-analysis "Deletion/duplication analysis"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
@@ -844,7 +844,7 @@ Usage: #example
 * extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/normalSpecimen)
 * extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
 * extension[GenomicStudyAnalysisOutput][+]
-  * extension[type].valueCodeableConcept = $GSFILETYPE#vcf "VCF"
+  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
   * extension[file].valueReference = Reference(DocumentReference/somaticVCFfile)
 * status = #completed
 * category = $OBSCAT#laboratory
@@ -857,7 +857,7 @@ InstanceOf: GenomicStudyAnalysis
 Description: "Example for just Tumor RNA Genomic Study Analysis"
 Usage: #example
 * extension[GenomicStudyAnalysisRegions].extension[studied][+].valueReference = Reference(DocumentReference/FullGenome-GRCh38)
-* extension[GenomicStudyAnalysisMethodType].valueCodeableConcept = $GSMETHODTYPE#rna-analysis "RNA analysis"
+* extension[GenomicStudyAnalysisMethodType].valueCodeableConcept = GenomicStudyMethodTypeCS#rna-analysis "RNA analysis"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001565 "gene_fusion"
 * extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001576 "transcript_variant"
 * extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
@@ -871,7 +871,7 @@ Instance: tumorSpecimen
 InstanceOf: Specimen
 Description: "Example for tumor specimen"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
+* identifier.system = "http://example.org/identifiers/specimens"
 * identifier.value = "222333"
 * status = #available
 * type = $SCT#122610009 "Specimen from lung obtained by biopsy (specimen)"
@@ -886,7 +886,7 @@ Instance: normalSpecimen
 InstanceOf: Specimen
 Description: "Example for normal specimen"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/specimens"
+* identifier.system = "http://example.org/identifiers/specimens"
 * identifier.value = "444555"
 * status = #available
 * type = $SCT#119297000 "Blood specimen (specimen)"
@@ -898,7 +898,7 @@ Instance: WES-UncallableRegions-GRCh38
 InstanceOf: GenomicDataFile
 Description: "Example for Genomic Data File WES-UncallableRegions-GRCh38"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "11146520"
 * status = #current
 * docStatus = #preliminary
@@ -911,7 +911,7 @@ Instance: somaticVCFfile
 InstanceOf: GenomicDataFile
 Description: "Example for Genomic Data File somaticVCFfile"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "1134121"
 * status = #current
 * docStatus = #preliminary
@@ -924,7 +924,7 @@ Instance: FullGenome-GRCh38
 InstanceOf: GenomicDataFile
 Description: "Example for Genomic Data File FullGenome-GRCh38"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/files"
+* identifier.system = "http://example.org/identifiers/files"
 * identifier.value = "1076146520"
 * status = #current
 * docStatus = #preliminary
@@ -984,8 +984,8 @@ Description: "Example for PD-L1"
 * code = $LNC#85147-7 "PD-L1 by clone 22C3 in Tissue by Immune stain Report"
 * subject = Reference(somaticPatient)
 * valueCodeableConcept = $LNC#LA6576-8 "Positive"
-* component[biomarker-category][0].valueCodeableConcept = $BIOMARKER#cellReceptorLigand "cell receptor ligand category"
-* component[biomarker-category][1].valueCodeableConcept = $BIOMARKER#immuneStain "immune stain category"
+* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptorLigand "cell receptor ligand category"
+* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:17635 "CD274"
 * note.text = "5% tumor proportion score"
 
@@ -1145,7 +1145,7 @@ Description: "Example for Somatic Testing Request"
 Usage: #example
 * identifier.type = $IDTYPE#LACSN
 * identifier.type.text = "Laboratory Accession ID"
-* identifier.system = "http://www.somesystemabc.net/identifiers/serviceRequests"
+* identifier.system = "http://example.org/identifiers/serviceRequests"
 * identifier.value = "1111jh11112"
 * status = #active
 * intent = #plan
@@ -1173,7 +1173,7 @@ Instance: pathologistPractitioner
 InstanceOf: Practitioner
 Description: "Example of a pathologist"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.system = "http://example.org/identifiers/persons"
 * identifier.value = "11d116"
 * active = true
 * name.family = "Dolin"
@@ -1184,7 +1184,7 @@ Instance: supervisorPractitioner
 InstanceOf: Practitioner
 Description: "Example of a supervisor"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/persons"
+* identifier.system = "http://example.org/identifiers/persons"
 * identifier.value = "11d1x16"
 * active = true
 * name.family = "Chamala"
@@ -1195,7 +1195,7 @@ Instance: performingOrganization
 InstanceOf: Organization
 Description: "Example of a Pathology lab"
 Usage: #example
-* identifier.system = "http://www.somesystemabc.net/identifiers/CLIA"
+* identifier.system = "http://example.org/identifiers/CLIA"
 * identifier.value = "10000DLAB8"
 * name = "My Test Pathology Laboratories"
 * telecom[0].system = #phone

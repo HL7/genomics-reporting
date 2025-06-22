@@ -561,7 +561,7 @@ Usage: #example
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.code = TbdCodesCS#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
@@ -573,10 +573,10 @@ Usage: #example
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
-* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
 * parameter[=].resource.component[=].valueCodeableConcept.coding[1] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
-* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#functional-effect
+* parameter[=].resource.component[+].code = TbdCodesCS#functional-effect
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
@@ -587,7 +587,7 @@ Usage: #example
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.code = TbdCodesCS#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
@@ -600,7 +600,7 @@ Usage: #example
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
-* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001819 "synonymous_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
@@ -611,7 +611,7 @@ Usage: #example
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.code = TbdCodesCS#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
@@ -622,7 +622,7 @@ Usage: #example
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
-* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001623 "5_prime_UTR_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
@@ -633,7 +633,7 @@ Usage: #example
 * parameter[=].resource.status = #final
 * parameter[=].resource.category[+].coding = $OBSCAT#laboratory
 * parameter[=].resource.category[+].coding = $DIAGNOSTICSERVICE#GE
-* parameter[=].resource.code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#molecular-consequence
+* parameter[=].resource.code = TbdCodesCS#molecular-consequence
 * parameter[=].resource.subject = Reference(Patient/HG00403)
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
@@ -645,7 +645,7 @@ Usage: #example
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
-* parameter[=].resource.component[+].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#feature-consequence
+* parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * parameter[+].name = "variant"
 * parameter[=].resource.resourceType = "Observation"
