@@ -1,9 +1,9 @@
 id: genomics-reporting
 extension:
-#  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-#    valueCode: trial-use
-#  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-#    valueInteger: 2
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 2
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
     valueCode: cg
 canonical: http://hl7.org/fhir/uv/genomics-reporting
@@ -27,6 +27,9 @@ parameters:
   special-url:
     - http://terminology.hl7.org/CodeSystem/sequence-phase-relationship-cs
     - http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs
+    - http://www.ebi.ac.uk/ipd/imgt/hla
+  special-url-base:
+    - https://pubmed.ncbi.nlm.nih.gov
 copyrightYear: 2022+
 releaseLabel: STU 4 ballot
 
