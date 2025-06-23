@@ -7,17 +7,17 @@ Usage: #example
 * entry[=].resource = Inline-Instance-for-oncology-report-example-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Organization"
-* entry[=].request.ifNoneExist = "identifier=http://molit.eu/fhir/genomics/NamingSystem/organization|CEGAT"
+* entry[=].request.ifNoneExist = "identifier=http://example.org/genomics/NamingSystem/organization|CEGAT"
 * entry[+].fullUrl = "urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648"
 * entry[=].resource = Inline-Instance-for-oncology-report-example-2
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
-* entry[=].request.ifNoneExist = "identifier=http://molit.eu/fhir/genomics/NamingSystem/cegat/patID|11111"
+* entry[=].request.ifNoneExist = "identifier=http://example.org/genomics/NamingSystem/cegat/patID|11111"
 * entry[+].fullUrl = "urn:uuid:a2041c83-b73d-4fc8-9466-4ba4a92da516"
 * entry[=].resource = Inline-Instance-for-oncology-report-example-3
 * entry[=].request.method = #POST
 * entry[=].request.url = "Specimen"
-* entry[=].request.ifNoneExist = "identifier=http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID|UNKNOWN"
+* entry[=].request.ifNoneExist = "identifier=http://example.org/genomics/NamingSystem/cegat/tissueID|UNKNOWN"
 * entry[+].fullUrl = "urn:uuid:dac358c3-403a-4dbb-b478-4259aed882ae"
 * entry[=].resource = Inline-Instance-for-oncology-report-example-4
 * entry[=].request.method = #POST
@@ -74,7 +74,7 @@ Usage: #example
 Instance: Inline-Instance-for-oncology-report-example-1
 InstanceOf: Organization
 Usage: #inline
-* identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/organization"
+* identifier.system = "http://example.org/genomics/NamingSystem/organization"
 * identifier.value = "CEGAT"
 * name = "CEGAT"
 
@@ -90,7 +90,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -125,7 +125,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -160,7 +160,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -195,7 +195,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -231,7 +231,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -267,7 +267,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -293,7 +293,7 @@ Usage: #inline
 Instance: Inline-Instance-for-oncology-report-example-16
 InstanceOf: GenomicReport
 Usage: #inline
-* identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/reportID"
+* identifier.system = "http://example.org/genomics/NamingSystem/cegat/reportID"
 * identifier.value = "42867"
 * status = #final
 * code = $LNC#51969-4 "Genetic analysis report"
@@ -317,13 +317,13 @@ Usage: #inline
 Instance: Inline-Instance-for-oncology-report-example-2
 InstanceOf: Patient
 Usage: #inline
-* identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/patID"
+* identifier.system = "http://example.org/genomics/NamingSystem/cegat/patID"
 * identifier.value = "11111"
 
 Instance: Inline-Instance-for-oncology-report-example-3
 InstanceOf: Specimen
 Usage: #inline
-* identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * identifier.value = "UNKNOWN"
 * type = $SPECIMENTYPE#TUMOR "Tumor"
 * subject = Reference(urn:uuid:f7a438e6-f484-453d-97e8-aa4d51008648)
@@ -342,7 +342,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -377,7 +377,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -413,7 +413,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -448,7 +448,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -484,7 +484,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
@@ -520,7 +520,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
-* specimen.identifier.system = "http://molit.eu/fhir/genomics/NamingSystem/cegat/tissueID"
+* specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
 * component[0].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"

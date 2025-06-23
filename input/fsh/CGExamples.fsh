@@ -1369,9 +1369,9 @@ Description: "Example for Genomic Specimen from Buccal Swab"
 * status = #available "Available"
 * processing.timeDateTime = "2020-10-05"
 * type = $SCT#258564008 "Buccal smear sample"
-* identifier.system  = "http://myorgsurl.com"
+* identifier.system  = "http://example.org"
 * identifier.value = "123"
-* accessionIdentifier.system = "http://mylabsurl.com"
+* accessionIdentifier.system = "http://example.org"
 * accessionIdentifier.value = "456"
 
 Instance: HaplotypeExamplePharmVar01

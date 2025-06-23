@@ -2,7 +2,7 @@ Instance: servicerequest-hla-a-r4
 InstanceOf: ServiceRequest
 Description: "Example ServiceRequest for genomics"
 Usage: #example
-* identifier.system = "http:/aDonorRegistry.com"
+* identifier.system = "http://example.org/donor-registry"
 * identifier.value = "1234.5678"
 * status = #completed
 * intent = #order

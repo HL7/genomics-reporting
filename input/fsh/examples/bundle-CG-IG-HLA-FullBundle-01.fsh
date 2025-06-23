@@ -117,7 +117,7 @@ InstanceOf: Patient
 Usage: #inline
 * identifier.use = #usual
 * identifier.type = $IDTYPE#DR
-* identifier.system = "urn:oid:0.0.0.0.0.0.0"
+* identifier.system = "http://example.org"
 * identifier.value = "12345"
 * identifier.period.start = "2012-11-10"
 * identifier.assigner.display = "aDonorRegistry"
@@ -137,9 +137,9 @@ Usage: #inline
 Instance: CG-IG-HLA-FullBundle-01-2
 InstanceOf: Specimen
 Usage: #inline
-* identifier.system = "http://myorgsurl.com"
+* identifier.system = "http://example.org"
 * identifier.value = "123"
-* accessionIdentifier.system = "http://mylabsurl.com"
+* accessionIdentifier.system = "http://example.org"
 * accessionIdentifier.value = "456"
 * type = $SCT#122555007 "Venous blood specimen"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
