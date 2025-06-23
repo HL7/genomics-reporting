@@ -421,7 +421,7 @@ determining the scope of a genomic study (e.g. genes studied, types of molecular
   <!--pre class="http">GET /DiagnosticReport?code=N0336&amp;patient=123</pre-->
   This is an example using Observation to find a panel and iterate through to find all the clinical results. The query would ensure finding the leaf node observations. At the moment, we're not providing an example of searching for a DiagnosticReport containing the panel, this is more complex. One option would be to use "_revinclude" to go from the Panel Observation backwards to the DiagnosticReport. In the case below we are using a GTR encoded panel, but it should be noted that a LOINC code would most likely also be associated with the <code>Observation.code</code> value. Recall, if two codings are equivalent in meaning then they can be used simultaneously. The specific test here is a Panel of several genes. The assumption here is that a Panel was used to group the individual variants and their interpretations together. 
   </p>
-  <pre class="http">GET /Observation?code=http://www.ncbi.nlm.nih.gov/gtr|GTR000593044.2&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
+  <pre class="http">GET /Observation?code=https://www.ncbi.nlm.nih.gov/gtr|GTR000593044.2&amp;_include:iterate=Observation:has-member&amp;_include:iterate=Observation:derived-from
   </pre>
   <p>The ampersands will tell the server to 'include' everything through the result reference, and to include everything that can be found through <code>Observation.hasMember</code> or <code>Observation.derivedFrom</code> links (the iterate operator tells the server to iterate through the links).
   </p>
