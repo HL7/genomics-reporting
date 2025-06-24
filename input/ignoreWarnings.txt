@@ -19,10 +19,10 @@ INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 
 # The IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
-Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|3.0.0, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|3.0.0
-Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|3.0.0, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|3.0.0
-Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|3.0.0, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|3.0.0
-Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|3.0.0, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|3.0.0
+Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot
+Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot
+Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot
+Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot
 
 # Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are Suppressing these messages.
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
@@ -124,26 +124,22 @@ INFORMATION: ConceptMap/dna-change-type-map: ConceptMap.group[0].source: Source 
 INFORMATION: ValueSet/molecular-biomarker-code-vs: ValueSet.compose.include[1].concept[0]: Unknown Code 'C120465' in the CodeSystem 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 
 # These URLs have been validated and are apporpriately used in our examples
-No definition could be found for URL value 'https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex'
-No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19'
-No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
-No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient'
-No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
-No definition could be found for URL value 'https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment'
-No definition could be found for URL value 'https://civicdb.org/evidence/2994/summary'
-No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
-No definition could be found for URL value 'https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment'
-No definition could be found for URL value 'https://civicdb.org/evidence/2994/summary'
-No definition could be found for URL value 'https://civicdb.org/molecular-profiles/2562/summary'
-No definition could be found for URL value 'https://civicdb.org/evidence/7282/summary'
 No definition could be found for URL value 'http://slk-kliniken.de/fhir/namingSystem/tissueID'
-No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/'
+No definition could be found for URL value 'https://civicdb.org/evidence/2994/summary'
+No definition could be found for URL value 'https://civicdb.org/evidence/7282/summary'
+No definition could be found for URL value 'https://civicdb.org/molecular-profiles/2562/summary'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19'
 No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/'
 No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/'
 No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/'
-No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions'
+No definition could be found for URL value 'https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex'
 No definition could be found for URL value 'https://pubmed.ncbi.nlm.nih.gov/29614695/'
 No definition could be found for URL value 'https://pubmed.ncbi.nlm.nih.gov/33927380/'
+No definition could be found for URL value 'https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment'
+No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
+No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions'
+No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient'
 
 # Pinned versions have been reviewed:
 Pinned the version of http://hl7.org/fhir/StructureDefinition/%
