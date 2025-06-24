@@ -48,6 +48,7 @@ A definition for CodeSystem 'http://www.sequenceontology.org' could not be found
 %because the code system http://www.sequenceontology.org, http://www.sequenceontology.org was not found
 %Unable to provide support for code system http://www.sequenceontology.org
 A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. Valid versions: []
+No definition could be found for URL value 'http://glstring.org'
 A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated
 %because the code system http://human-phenotype-ontology.org was not found
 %Unable to provide support for code system http://human-phenotype-ontology.org
@@ -62,6 +63,7 @@ A definition for CodeSystem 'https://www.ncbi.nlm.nih.gov/gtr' could not be foun
 A definition for CodeSystem 'https://iscn.karger.com' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://purl.obolibrary.org/obo/mondo.owl' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found, so the code cannot be validated
+No definition could be found for URL value 'http://www.ebi.ac.uk/ipd/imgt/hla'
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.23' could not be found, so the code cannot be validated. Valid versions: []
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. Valid versions: []
 
@@ -119,4 +121,29 @@ INFORMATION: CodeSystem/tbd-codes-cs: CodeSystem: Most code systems defined in H
 INFORMATION: ConceptMap/dna-change-type-map: ConceptMap.group[0].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
 
 # This code has been human reviewed and is correct
-INFORMATION: ValueSet/molecular-biomarker-code-vs: ValueSet.compose.include[1].concept[0]: Unknown Code 'C120465' in the system 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+INFORMATION: ValueSet/molecular-biomarker-code-vs: ValueSet.compose.include[1].concept[0]: Unknown Code 'C120465' in the CodeSystem 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+
+# These URLs have been validated and are apporpriately used in our examples
+No definition could be found for URL value 'https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19'
+No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
+No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient'
+No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
+No definition could be found for URL value 'https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment'
+No definition could be found for URL value 'https://civicdb.org/evidence/2994/summary'
+No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
+No definition could be found for URL value 'https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment'
+No definition could be found for URL value 'https://civicdb.org/evidence/2994/summary'
+No definition could be found for URL value 'https://civicdb.org/molecular-profiles/2562/summary'
+No definition could be found for URL value 'https://civicdb.org/evidence/7282/summary'
+No definition could be found for URL value 'http://slk-kliniken.de/fhir/namingSystem/tissueID'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/'
+No definition could be found for URL value 'https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/'
+No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions'
+No definition could be found for URL value 'https://pubmed.ncbi.nlm.nih.gov/29614695/'
+No definition could be found for URL value 'https://pubmed.ncbi.nlm.nih.gov/33927380/'
+
+# Pinned versions have been reviewed:
+Pinned the version of http://hl7.org/fhir/StructureDefinition/%

@@ -302,7 +302,7 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * status = #final
 * subject = Reference(CGPatientExample01)
 * extension[workflow-relatedArtifact][0].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
+* extension[workflow-relatedArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
 * conclusionCode[+] = $LNC#LA6576-8 "Positive"
 * conclusion = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
@@ -671,7 +671,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19)"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
