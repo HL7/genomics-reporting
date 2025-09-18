@@ -569,7 +569,6 @@ Usage: #inline
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
 * code.coding[0] = $LNC#51969-4 "Genetic analysis report"
-* code.coding[+] = $HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"

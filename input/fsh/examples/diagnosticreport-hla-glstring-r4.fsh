@@ -6,7 +6,6 @@ Usage: #example
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
 * code.coding[0] = $LNC#51969-4 "Genetic analysis report"
-* code.coding[+] = $HGNCID#HGNC:588 "Histocompatibility complex (HLA)"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2023-06-01"
 * performer = Reference(ExampleLab)
