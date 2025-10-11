@@ -72,7 +72,7 @@ function build_ig() {
     if [ "$online" = "false" ]; then
       args+=("-tx" "n/a")
     fi
-    java -Dfile.encoding=UTF-8 -jar "$jar_location" -ig . "${args[@]}" "$@"
+    java -Xmx1536m -Dfile.encoding=UTF-8 -jar "$jar_location" -ig . "${args[@]}" "$@"
   else
     echo "publisher.jar not found. Please run update."
   fi

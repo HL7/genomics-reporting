@@ -811,61 +811,41 @@ Instance: somaticStudy
 InstanceOf: GenomicStudy
 Description: "Example for somatic genetic study"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
-* extension[=].valueReference = Reference(analysisTumorNormalDNA)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
-* extension[=].valueReference = Reference(analysisTumorRNA)
-* status = #completed
-* code.text = "My Test Cancer 700 Gene Panel"
-* category = $OBSCAT#laboratory
+* status = #available
+* type.text = "My Test Cancer 700 Gene Panel"
 * subject = Reference(somaticPatient)
-* performedDateTime = "2023-02-02"
-* reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+* startDate = "2023-02-02"
+* reason.concept = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
 * note.text = "I. Assay Overview: The Genomic Cancer Testing Assay is a comprehensive molecular examination designed to detect and quantify specific DNA and RNA alterations associated with malignancies. The test incorporates Next Generation Sequencing (NGS) technology to profile tumor samples, providing insights into the genomic alterations that drive tumor behavior and prognosis. II. Target Genes and Biomarkers: This assay evaluates an extensive panel of cancer-related genes, focusing on mutations, copy number variations, fusions, and select RNA expression levels known to be relevant in the oncology field. The analyzed genes are implicated in various cancer types and have established therapeutic, diagnostic, prognostic, or predictive relevance. Genes tested: ABL1, ATK1, ALK, APC, etc. III. Methodology: Sample Type: Formalin-fixed, paraffin-embedded (FFPE) tumor tissue. Sequencing Platform: Illumina-based NGS technology. Library Preparation: Amplification of specific target regions within the genes of interest. Bioinformatics Analysis: Employing advanced algorithms and databases to annotate and interpret the detected variants' clinical significance. IV. Assay Performance: Sensitivity: Detects variants with a mutant allele frequency (MAF) as low as 5%. Specificity: >99% for single nucleotide variants (SNVs) and indels. Reportable Range: Identification and quantification of SNVs, indels, fusions, amplifications, and RNA expression levels of specific genes. V. Clinical Interpretation: The report offers a concise clinical interpretation of identified genomic alterations, linking the detected variants to FDA-approved therapies, clinical trials, or the patient's potential response to specific treatments. VI. Limitations: The assay might not detect alterations present at low levels or in regions not covered by the test. Variants may be present in genes not included in the panel. The test does not assess epigenetic changes, like methylation status. False negatives and false positives, although rare, may occur due to the technical limitations of the methodology employed. VII. Quality Assurance: The laboratory follows CAP/CLIA guidelines, ensuring stringent quality control and assurance practices at each step, from sample reception to result reporting. VIII. Result Delivery: Results are delivered within 10-14 working days from the sample receipt. The report outlines detected genomic alterations, their clinical implications, and potential therapeutic options. IX. Contact: For further clarification or questions regarding the results, healthcare providers are encouraged to contact our molecular pathology board-certified experts."
-
-Instance: analysisTumorNormalDNA
-InstanceOf: GenomicStudyAnalysis
-Description: "Example for Tumor Normal Genomics Study Analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisRegions]
-  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:76 "ABL1"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:427 "ALK"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:583 "APC"
-  * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#deletion-duplication-analysis "Deletion/duplication analysis"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
-* extension[GenomicStudyAnalysisGenomeBuild].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/normalSpecimen)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
-* extension[GenomicStudyAnalysisOutput][+]
-  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
-  * extension[file].valueReference = Reference(DocumentReference/somaticVCFfile)
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2023-02-02T01:01:10-06:00"
-* note.text = "For technical reasons, BCR gene was deemed uncallable."
-* subject = Reference(somaticPatient)
-
-Instance: analysisTumorRNA
-InstanceOf: GenomicStudyAnalysis
-Description: "Example for just Tumor RNA Genomic Study Analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisRegions].extension[studied][+].valueReference = Reference(DocumentReference/FullGenome-GRCh38)
-* extension[GenomicStudyAnalysisMethodType].valueCodeableConcept = GenomicStudyMethodTypeCS#rna-analysis "RNA analysis"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001565 "gene_fusion"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001576 "transcript_variant"
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2023-02-02T01:01:10-06:00"
-* subject = Reference(somaticPatient)
+* analysis[+]
+  * regionsStudied[+] = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+//  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:76 "ABL1"
+//  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:427 "ALK"
+//  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:583 "APC"
+//  * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#deletion-duplication-analysis "Deletion/duplication analysis"
+  * changeType[+] = $SEQONT#SO:0001483 "SNV"
+  * changeType[+] = $SEQONT#SO:0002007 "MNV"
+  * changeType[+] = $SEQONT#SO:1000032 "delins"
+  * changeType[+] = $SEQONT#SO:0001019 "CNV"
+  * genomeBuild = $LNC#LA26806-2 "GRCh38"
+  * specimen[+] = Reference(Specimen/tumorSpecimen)
+  * specimen[+] = Reference(Specimen/normalSpecimen)
+  * focus[+] = Reference(Patient/somaticPatient)
+  * output[+]
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#vcf "VCF"
+    * file = Reference(DocumentReference/somaticVCFfile)
+  * note.text = "For technical reasons, BCR gene was deemed uncallable."
+  * date = "2023-02-02T01:01:10-06:00"
+* analysis[+]
+  * regionsStudied[+] = Reference(DocumentReference/FullGenome-GRCh38)
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#rna-analysis "RNA analysis"
+  * changeType[+] = $SEQONT#SO:0001565 "gene_fusion"
+  * changeType[+] = $SEQONT#SO:0001576 "transcript_variant"
+  * specimen[+] = Reference(Specimen/tumorSpecimen)
+  * focus[+] = Reference(Patient/somaticPatient)
+  * date = "2023-02-02T01:01:10-06:00"
 
 Instance: tumorSpecimen
 InstanceOf: Specimen
@@ -1083,8 +1063,8 @@ Instance: somaticReport
 InstanceOf: GenomicReport
 Description: "Example somatic GenomicReport"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-reference"
-* extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
+//* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-reference"
+//* extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
 * identifier.type.coding.code = #ACSN
 * identifier.type.coding.display = "Accession ID"
 * identifier.type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
@@ -1096,6 +1076,7 @@ Usage: #example
 * basedOn = Reference(somaticServiceRequest)
 * performer[0] = Reference(pathologistPractitioner)
 * performer[+] = Reference(performingOrganization)
+* study = Reference(somaticStudy) "somaticStudy"
 * resultsInterpreter[0] = Reference(supervisorPractitioner)
 * resultsInterpreter[+] = Reference(performingOrganization)
 * result[+] = Reference(NOTCH1-uncertain-var)
@@ -1149,9 +1130,9 @@ Usage: #example
 * identifier.value = "1111jh11112"
 * status = #active
 * intent = #plan
-* code.text = "My Test Cancer 700 Gene Panel"
+* code.concept.text = "My Test Cancer 700 Gene Panel"
 * subject = Reference(somaticPatient)
-* reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+* reason.concept = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
 * requester = Reference(orderingPractitioner)
 
 Instance: orderingPractitioner
@@ -1164,10 +1145,10 @@ Usage: #example
 * name.family = "Submitter"
 * name.given = "Test"
 * name.prefix = "Dr"
-* address.line = "1000 SE Submitter Ave"
-* address.city = "Los Angeles"
-* address.state = "CA"
-* address.postalCode = "90027"
+* address[0].line[0] = "1000 SE Submitter Ave"
+* address[0].city = "Los Angeles"
+* address[0].state = "CA"
+* address[0].postalCode = "90027"
 
 Instance: pathologistPractitioner
 InstanceOf: Practitioner
@@ -1191,20 +1172,22 @@ Usage: #example
 * name.given = "Test"
 * name.prefix = "Dr"
 
+
 Instance: performingOrganization
 InstanceOf: Organization
 Description: "Example of a Pathology lab"
 Usage: #example
-* identifier.system = "http://example.org/identifiers/CLIA"
-* identifier.value = "10000DLAB8"
+* identifier[0].system = "http://example.org/identifiers/CLIA"
+* identifier[0].value = "10000DLAB8"
 * name = "My Test Pathology Laboratories"
-* telecom[0].system = #phone
-* telecom[=].value = "(100) 200-3000"
-* telecom[+].system = #fax
-* telecom[=].value = "(400) 500-6000"
-* telecom[+].system = #url
-* telecom[=].value = "http://www.example.com/mytestpathlabs"
-* address.line = "1000 SE Lab Ave"
-* address.city = "Los Angeles"
-* address.state = "CA"
-* address.postalCode = "90027"
+* contact[+]
+  * telecom[0].system = #phone
+  * telecom[0].value = "(100) 200-3000"
+  * telecom[1].system = #fax
+  * telecom[1].value = "(400) 500-6000"
+  * telecom[2].system = #url
+  * telecom[2].value = "http://www.example.com/mytestpathlabs"
+  * address[0].line[0] = "1000 SE Lab Ave"
+  * address[0].city = "Los Angeles"
+  * address[0].state = "CA"
+  * address[0].postalCode = "90027"

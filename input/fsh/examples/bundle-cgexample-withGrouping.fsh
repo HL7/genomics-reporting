@@ -233,7 +233,7 @@ Usage: #inline
 * focus = Reference(MedicationStatementWarfarin)
 * for = Reference(ExamplePatient)
 * requester = Reference(ExampleLab)
-* reasonReference = Reference(metab-1a)
+* reason.reference = Reference(metab-1a)
 
 Instance: complex-component-D-1a
 InstanceOf: Variant

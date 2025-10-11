@@ -23,8 +23,8 @@ Found multiple matching profiles for Task/usage-1a among choices:%
 Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices%
 
 # Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are Suppressing these messages.
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
-None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
+None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|6.0.0-ballot3), and a coding is recommended to come from this value set (codes = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#biomarker-category)
 
 # These slice messages have been reviewed, and our StructureDefinition apporpriately defines the slices of extension, and examples look valid. Have asked for feedback here: https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/slicing.20in.20Observation.2Ecomponent.2Eextension.20information.20help.3F
 INFORMATION: Bundle/bundle-oncologyexamples-r4: Bundle.entry[12].resource/*Observation/Inline-Instance-for-oncologyexamples-r4-14*/.component[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication%

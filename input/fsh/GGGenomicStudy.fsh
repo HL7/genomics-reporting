@@ -1,3 +1,4 @@
+/*
 Extension:   GenomicStudyReference
 Id:          genomic-study-reference
 Title:      "Genomic Study Reference"
@@ -35,9 +36,6 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 * extension[GenomicStudyReferrerExt] ^short = "GenomicStudy.referrer"
 * text ^short = "GenomicStudy.description"
 * identifier ^short = "GenomicStudy.identifier"
-* instantiatesCanonical only Canonical(PlanDefinition)
-  * ^short = "GenomicStudy.instantiatesCanonical"
-* instantiatesUri ^short = "GenomicStudy.instantiatesUri"
 * status 
   * ^short = "GenomicStudy.status"
   * ^definition = "GenomicStudy.status is different from Procedure.status, see [mapping](ConceptMap-GenomicStudyStatusMap.html)"
@@ -55,7 +53,7 @@ Description: "A genomic study is a set of analyses performed to analyze and gene
 * asserter only Reference(Practitioner or PractitionerRole)
   * ^short = "GenomicStudy.interpreter"
 * reasonCode ^short = "GenomicStudy.reason"
-* reasonReference only Reference(Condition or Observation)
+* reason only Reference(Condition or Observation)
   * ^short = "GenomicStudy.reason"
 * note ^short = "GenomicStudy.note"
 * partOf 0..0
@@ -287,9 +285,6 @@ Description: "A genomic study analysis is a component of a genomic study."
 * extension[GenomicStudyAnalysisInput] ^short = "GenomicStudy.analysis.input"
 * extension[GenomicStudyAnalysisOutput] ^short = "GenomicStudy.analysis.output"
 * identifier ^short = "GenomicStudy.analysis.identifier"
-* instantiatesCanonical only Canonical(PlanDefinition or ActivityDefinition)
-  * ^short = "GenomicStudy.analysis.instantiatesCanonical"
-* instantiatesUri ^short = "GenomicStudy.analysis.instantiatesUri"
 * status = #completed
 * category 1..1
 * category.coding 1..1
@@ -317,7 +312,7 @@ Description: "A genomic study analysis is a component of a genomic study."
 * usedReference 0..0
 * usedCode 0..0
 * reasonCode 0..0
-* reasonReference 0..0
+* reason 0..0
 * report 0..0
 
 // Concept Maps
@@ -593,3 +588,4 @@ Title: "Genomic Study Data Format ValueSet"
 Description: "Backport of http://hl7.org/fhir/ValueSet/genomicstudy-dataformat"
 * ^experimental = false
 * include codes from system GenomicStudyDataFormatCS
+*/

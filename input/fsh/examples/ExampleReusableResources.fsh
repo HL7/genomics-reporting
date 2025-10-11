@@ -19,13 +19,13 @@ InstanceOf: ServiceRequest
 Description: "ServiceRequest (order) example"
 * status = #active
 * intent = #original-order
-* code.coding = $LNC#51969-4 "Genetic analysis report"
+* code.concept = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(ExamplePatient)
-* reasonCode.text = "Worried about family planning"
+* reason.concept.text = "Worried about family planning"
 
 Instance: MedicationStatementWarfarin
 InstanceOf: MedicationStatement
 Description: "MedicationStatement for Warfarin"
 * status = #unknown
-* medicationCodeableConcept.coding = $RXN#11289 "Warfarin"
+* medication.concept = $RXN#11289 "Warfarin"
 * subject = Reference(ExamplePatient)

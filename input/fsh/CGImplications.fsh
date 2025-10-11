@@ -182,7 +182,7 @@ Description:    "Task proposing medication recommendations based on the implicat
 * intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL4049-4 
 * focus only Reference(MedicationStatement)
-* reasonReference only Reference(TherapeuticImplication)
+* reason only CodeableReference(TherapeuticImplication)
 
 Profile:        FollowupRecommendation
 Parent:         Task
@@ -195,7 +195,7 @@ Description:    "Task proposing a follow-up that is recommended based on the imp
 * intent 1..1
 * intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)
-* reasonReference only Reference(TherapeuticImplication or DiagnosticImplication or MolecularConsequence)
+* reason only CodeableReference(TherapeuticImplication or DiagnosticImplication or MolecularConsequence)
 
 Profile:        MolecularConsequence
 Parent:         GenomicImplication

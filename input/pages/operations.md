@@ -78,11 +78,15 @@ As our understanding of genomics grows, we continue to recognize the clinical si
 
 For all operations, positional coordinates are [zero-based](https://www.biostars.org/p/84686/). Some operations return variants that overlap a 0-based interval range of integers, whereas some operations return variants that subsume a range. In the following figure, variants 1-5 overlap or intersect with the X..Y range, whereas only variant 2 subsumes the X..Y range.
 
-![Genes vs. Regions](find-variants-fig1.png)
+<div style="text-align: left; margin: 20px 0; clear: both; overflow: hidden;">
+<img src="find-variants-fig1.png" alt="Genes vs. Regions" style="max-width: 100%; display: block; margin: 0; float: none;" />
+</div>
 
 A zero-based coordinate system has an inclusive start and an exclusive end. For example, in the following figure, bases GCT are in range 1..4, whereas base A is not in range 1..4. As a result, a variant at position X is considered to intersect the X..Y range, whereas a variant at position Y does not. (Note that an insertion that starts before X, regardless of length, would not overlap X..Y, and would therefore not be returned). Imprecise implementations are allowed, where results contain some records outside a requested range.
 
-![Zero-based example](zero-based.png)
+<div style="text-align: left; margin: 20px 0; clear: both; overflow: hidden;">
+<img src="zero-based.png" alt="Zero-based example" style="max-width: 100%; display: block; margin: 0; float: none;" />
+</div>
 
 #### Expectation of normalized variant search {#normalization}
 

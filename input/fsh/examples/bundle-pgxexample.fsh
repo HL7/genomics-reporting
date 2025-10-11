@@ -47,6 +47,8 @@ Usage: #example
 * entry[=].resource = variant-2-pgx-example
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
+// MolecularSequence bundle entries commented out for R6 compatibility
+/*
 * entry[+].fullUrl = "http://example.org/fhir/MolecularSequence/sequence-1-pgx-example"
 * entry[=].resource = sequence-1-pgx-example
 * entry[=].request.method = #POST
@@ -55,6 +57,7 @@ Usage: #example
 * entry[=].resource = sequence-2-pgx-example
 * entry[=].request.method = #POST
 * entry[=].request.url = "MolecularSequence"
+*/
 * entry[+].fullUrl = "http://example.org/fhir/Task/med-usage-impact-task-pgx-example"
 * entry[=].resource = med-usage-impact-task-pgx-example
 * entry[=].request.method = #POST
@@ -91,7 +94,7 @@ Usage: #inline
 * intent = #original-order
 * code = $LNC#51969-4
 * subject = Reference(ExamplePatient)
-* reasonCode.text = "Worried about family planning"
+* reason.concept.text = "Worried about family planning"
 
 Instance: med-impact-pgx-example
 InstanceOf: TherapeuticImplication
@@ -175,7 +178,7 @@ Usage: #inline
 * performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
-* derivedFrom = Reference(sequence-1-pgx-example)
+//* derivedFrom = Reference(sequence-1-pgx-example)
 * component[0].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#81252-9
@@ -201,7 +204,8 @@ Usage: #inline
 * performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
-* derivedFrom = Reference(sequence-2-pgx-example)
+// Reference to MolecularSequence commented out for R6 compatibility
+/* * derivedFrom = Reference(sequence-2-pgx-example) */
 * component[0].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
@@ -216,6 +220,8 @@ Usage: #inline
 * component[=].valueRange.low.value = 55227978
 * component[=].valueRange.high.value = 55227979
 
+// MolecularSequence instance commented out for R6 compatibility
+/*
 Instance: sequence-1-pgx-example
 InstanceOf: MolecularSequence
 Usage: #inline
@@ -225,7 +231,9 @@ Usage: #inline
 * referenceSeq.referenceSeqId = $NCBIREFSEQ#NG-007726.3
 * referenceSeq.windowStart = 55227970
 * referenceSeq.windowEnd = 55227980
-
+*/
+// MolecularSequence instance commented out for R6 compatibility
+/*
 Instance: sequence-2-pgx-example
 InstanceOf: MolecularSequence
 Usage: #inline
@@ -235,10 +243,11 @@ Usage: #inline
 * referenceSeq.referenceSeqId = $NCBIREFSEQ#NG-007726.3
 * referenceSeq.windowStart = 55227970
 * referenceSeq.windowEnd = 55227980
+*/
 
 Instance: current-med-example
 InstanceOf: MedicationStatement
 Usage: #inline
 * status = #unknown
-* medicationCodeableConcept = $RXN#103 "mercaptopurine"
+* medication.concept = $RXN#103 "mercaptopurine"
 * subject = Reference(ExamplePatient)

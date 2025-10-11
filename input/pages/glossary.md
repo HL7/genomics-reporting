@@ -1,5 +1,4 @@
 
-
 | Term                     | Definition |
 |--------------------------|------------|
 | Allele | An allele is a specific version of a contiguous nucleotide sequence, typically located within a gene. Two or more alleles may exist for any given gene or section of genomic DNA. An individual inherits two alleles for each sequenced gene or region, one from each parent. If the two alleles are the same, the individual is homozygous for that gene. If the alleles are different, the individual is heterozygous. In other organisms, the ploidy (number of alleles per locus) differs from two. |

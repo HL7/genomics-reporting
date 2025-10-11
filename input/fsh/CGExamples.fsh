@@ -1,28 +1,27 @@
-Instance: HG00403 
+
+Instance: HG00403
 InstanceOf: Patient
 Description: "Example for Patient. Supports references to subject for multiple genomics reporting profile conforming instances."
 * id = "HG00403"
-// * text = "Patient example used for subject reference by CG FHIR examples"
-* identifier.use = #usual
-* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
-* identifier.system = "http://hospital.example.org"
-* identifier.value = "m234"
-* name.family = "Everyone"
-* name.given[0] = "Alanine"
-* name.given[1] = "B."
-* contact.telecom[0].system = #phone
-* contact.telecom[0].value = "555-555-5555"
-* contact.telecom[0].use = #home
-* contact.telecom[1].system = #email
-* contact.telecom[1].value = "alanine.everyone@example.com"
+* identifier[0].use = #usual
+* identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
+* identifier[0].system = "http://hospital.example.org"
+* identifier[0].value = "m234"
+* name[0].family = "Everyone"
+* name[0].given[0] = "Alanine"
+* name[0].given[1] = "B."
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "555-555-5555"
+* contact[0].telecom[0].use = #home
+* contact[0].telecom[1].system = #email
+* contact[0].telecom[1].value = "alanine.everyone@example.com"
 * gender = #unknown
 * birthDate = "1951-01-20"
-* address.line = "123 Main St"
-* address.city = "Anytown"
-* address.postalCode = "12345"
-* address.country = "US"
-* communication.language = urn:ietf:bcp:47#en-US "English (Region=United States)"
-* communication.language.text = "English"
+* address[0].line[0] = "123 Main St"
+* address[0].city = "Anytown"
+* address[0].postalCode = "12345"
+* address[0].country = "US"
+
 
 Instance: VariantExample
 InstanceOf: Variant
@@ -58,31 +57,31 @@ Description: "Example for Genomic Specimen"
 * processing.timeDateTime = "2020-10-05"
 * type = $SPECIMENTYPE#TISS "Tissue"
 
-Instance: CGPatientExample01 
+
+Instance: CGPatientExample01
 InstanceOf: Patient
 Description: "Example for Patient. Supports references to subject for multiple genomics reporting profile conforming instances."
 * id = "CGPatientExample01"
-// * text = "Patient example used for subject reference by CG FHIR examples"
-* identifier.use = #usual
-* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
-* identifier.system = "http://hospital.example.org"
-* identifier.value = "m123"
-* name.family = "Everyman"
-* name.given[0] = "Adam"
-* name.given[1] = "B."
-* contact.telecom[0].system = #phone
-* contact.telecom[0].value = "555-555-5555"
-* contact.telecom[0].use = #home
-* contact.telecom[1].system = #email
-* contact.telecom[1].value = "adam.everyman@example.com"
+* identifier[0].use = #usual
+* identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
+* identifier[0].system = "http://hospital.example.org"
+* identifier[0].value = "m123"
+* name[0].family = "Everyman"
+* name[0].given[0] = "Adam"
+* name[0].given[1] = "B."
+* contact[0].telecom[0].system = #phone
+* contact[0].telecom[0].value = "555-555-5555"
+* contact[0].telecom[0].use = #home
+* contact[0].telecom[1].system = #email
+* contact[0].telecom[1].value = "adam.everyman@example.com"
 * gender = #male
 * birthDate = "1951-01-20"
-* address.line = "123 Main St"
-* address.city = "Anytown"
-* address.postalCode = "12345"
-* address.country = "US"
-* communication.language = urn:ietf:bcp:47#en-US "English (Region=United States)"
-* communication.language.text = "English"
+* address[0].line[0] = "123 Main St"
+* address[0].city = "Anytown"
+* address[0].postalCode = "12345"
+* address[0].country = "US"
+* communication[0].language.text = "English"
+
 
 Instance: TumorMutationBurdenExample01
 InstanceOf: MolecularBiomarker
@@ -282,7 +281,7 @@ Description: "Example of a Medication Recommendation"
 * description = "Patients positive for this allele should not be treated with CBZ, unless the benefits clearly outweigh the risk. Therapy should be discontinued immediately if symptoms of SJS or TEN develop. Alternative medication should be used as first line therapy. Consideration in the choice for alternative medications should be given to potential cross-reactivity with structurally similar aromatic antiepileptic drugs such as oxcarbazepine, phenytoin, fosphenytoin and lamotrigine, which can also moderately increase risk for SJS/TEN in association with HLA-B*15:02 positivity."
 * for = Reference(CGPatientExample01)
 * intent = #proposal
-* reasonReference = Reference(TherapeuticImplicationExample1)
+* reason.reference = Reference(TherapeuticImplicationExample1)
 * status = #requested
 
 Instance: GenomicReportExample01
@@ -302,7 +301,7 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * status = #final
 * subject = Reference(CGPatientExample01)
 * extension[workflow-relatedArtifact][0].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
+* extension[workflow-relatedArtifact][0].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
 * conclusionCode[+] = $LNC#LA6576-8 "Positive"
 * conclusion = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
@@ -671,7 +670,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -691,7 +690,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For voriconazole, higher dose-adjusted trough concentrations of voriconazole are expected in individuals with this genotype and may increase the probability of adverse events. An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -711,7 +710,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -731,7 +730,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -751,7 +750,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA9657-3 "Poor metabolizer"
 * component[conclusion-string].valueString = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/"
 * derivedFrom = Reference(Pgx-geno-1001)
 * status = #final
 
@@ -804,7 +803,7 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[therapeutic-implication].valueCodeableConcept = $LNC#LA25391-6 "Normal metabolizer"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
+* extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
 * derivedFrom[0] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
 * derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
@@ -870,7 +869,7 @@ Description: "Generic grouping of Regions Studied and Variant observations"
 Instance: PGxGenomicReportEMERGE
 InstanceOf: GenomicReport
 Description: "Example of a Report carrying multiple Therapeutic Implications, Genotypes, and Variants"
-* extension[GenomicStudyReference][+].valueReference = Reference(PGXGenomicStudy)
+* study[+] = Reference(PGXGenomicStudy)
 * id = "PGxGenomicReportEMERGE"
 * basedOn = Reference(eMERGEServiceRequest)
 * code.coding[+] = $LNC#51969-4
@@ -918,30 +917,22 @@ Instance: PGXGenomicStudy
 InstanceOf: GenomicStudy
 Description: "Example of PGX sequencing panel"
 Usage: #example
-* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(PGXGenomicStudyAnalysis)
-* status = #completed
-* code.text = "PGX sequencing panel"
-* category = $OBSCAT#laboratory
+* status = #available
+* type.text = "PGX sequencing panel"
 * subject = Reference(CGPatientExample01)
-* performedDateTime = "2021-01-01"
+* startDate = "2021-01-01"
 * basedOn = Reference(eMERGEServiceRequest)
 * note.text = "For technical reasons, PIK3CB was deemed uncallable."
-
-Instance: PGXGenomicStudyAnalysis
-InstanceOf: GenomicStudyAnalysis
-Description: "Example of PGX Sequence analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisMetrics].extension[sequencing-coverage].valueQuantity.value = 100
-* extension[GenomicStudyAnalysisRegions]
-  * extension[description].valueString = "protein-coding and exon-splicing regions"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2021-01-01T01:01:10-06:00"
-* subject = Reference(CGPatientExample01)
+* analysis[+]
+  * genomeBuild = $LNC#LA26806-2 "GRCh38"
+//  * extension[GenomicStudyAnalysisMetrics].extension[sequencing-coverage].valueQuantity.value = 100
+//  * extension[GenomicStudyAnalysisRegions]
+//    * extension[description].valueString = "protein-coding and exon-splicing regions"
+//    * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
+//    * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
+//    * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:23663 "VKORC1"
+  * note.text = "protein-coding and exon-splicing regions"
+  * date = "2021-01-01T01:01:10-06:00"
 
 Instance: PGxGenomicReportEMERGE-withGrouping
 InstanceOf: GenomicReport
@@ -972,7 +963,7 @@ Description: "Example of a Medication Recommendation for alternatives to clopido
 * code = $LNC#LA26421-0 "Consider alternative medication"
 * description = "For clopidogrel, individuals with this diplotype are expected to have significantly reduced platelet inhibition, increased residual platelet aggregation and increased risk for adverse cardiovascular events in response to clopidogrel. Alternative antiplatelet therapy (if no contraindication) is recommended. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline- for-clopidogrel-and-cyp2c19/"
 * for = Reference(CGPatientExample01)
-* reasonReference = Reference(TxImp01) "Poor metabolizer"
+* reason.reference = Reference(TxImp01) "Poor metabolizer"
 
 Instance: PGxRecEx02
 InstanceOf: FollowupRecommendation
@@ -981,7 +972,7 @@ Description: "Example of a Medication Recommendation for alternatives to voricon
 * code = $LNC#LA26421-0 "Consider alternative medication"
 * description = "voriconazole - An alternative agent that is not dependent on CYP2C19 metabolism such as isavuconazole, liposomal amphotericin B, or posaconazole is recommended as primary therapy in lieu of voriconazole. A lower than standard dosage of voriconazole with careful therapeutic drug monitoring is another alternative. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-voriconazole-and-cyp2c19/."
 * for = Reference(CGPatientExample01)
-* reasonReference = Reference(TxImp02) "Poor metabolizer"
+* reason.reference = Reference(TxImp02) "Poor metabolizer"
 
 Instance: PGxRecEx03
 InstanceOf: FollowupRecommendation
@@ -990,7 +981,7 @@ Description: "Example of a Medication Recommendation for decreasing dosage for c
 * code = $LNC#LA26422-8 "Decrease dose"
 * description = "For citalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * for = Reference(CGPatientExample01)
-* reasonReference = Reference(TxImp03) "Poor metabolizer"
+* reason.reference = Reference(TxImp03) "Poor metabolizer"
 
 Instance: PGxRecEx04
 InstanceOf: FollowupRecommendation
@@ -999,7 +990,7 @@ Description: "Example of a Medication Recommendation for decreasing dosage for e
 * code = $LNC#LA26422-8 "Decrease dose"
 * description = "For escitalopram, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment or select an alternate drug not predominantly metabolized by CYP2C19. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for-selective-serotonin-reuptake-inhibitors-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * for = Reference(CGPatientExample01)
-* reasonReference = Reference(TxImp04) "Poor metabolizer"
+* reason.reference = Reference(TxImp04) "Poor metabolizer"
 
 Instance: PGxRecEx05
 InstanceOf: FollowupRecommendation
@@ -1008,7 +999,7 @@ Description: "Example of a Medication Recommendation for decreasing dosage for a
 * code = $LNC#LA26422-8 "Decrease dose"
 * description = "For amitriptyline, a 50% reduction in starting dose is recommended with therapeutic drug monitoring to guide dose adjustment. Refer to current guidelines for dosage and recommendations at https://cpicpgx.org/guidelines/guideline-for- tricyclic-antidepressants-and-cyp2d6-and-cyp2c19/. If CYP2D6 genotyping is available, refer to the current guidelines for dosing recommendations."
 * for = Reference(CGPatientExample01)
-* reasonReference = Reference(TxImp05) "Poor metabolizer"
+* reason.reference = Reference(TxImp05) "Poor metabolizer"
 
 Instance: eMERGEServiceRequest
 InstanceOf: ServiceRequest
@@ -1019,7 +1010,6 @@ Description: "Example PGx Service Request"
 * subject = Reference(CGPatientExample01)
 * intent = $REQUESTINTENT#order "Order"
 * specimen = Reference(GenomicSpecimenExample01)
-//* instantiatesCanonical = Reference(eMERGEPD)
 
 /*
 Instance: eMERGEPD

@@ -318,5 +318,5 @@ Usage: #inline
 * focus = Reference(MedicationStatementWarfarin)
 * for = Reference(ExamplePatient)
 * requester = Reference(ExampleLab)
-* reasonReference = Reference(metab)
+* reason.reference = Reference(metab)
 

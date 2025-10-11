@@ -83,7 +83,6 @@ Description:    "Genomic profile of DiagnosticReport."
     and GenomicRiskAssessment named genomic-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
     and $supporting-info named supporting-info 0..*
-    and GenomicStudyReference named genomic-study 0..*
     and HLAGenotypingResultsAlleleDatabase named hla-genotyping-results-allele-database 0..1
     and HLAGenotypingResultsGLString named hla-genotyping-results-glstring 0..1
     and $workflow-relatedArtifact named workflow-relatedArtifact 0..*
@@ -98,8 +97,6 @@ One important note is that Annotation is a FHIR data type, this is **NOT** about
 * extension[$workflow-relatedArtifact] ^comment = """
 Note that in contrast this extension, the supportingInfo extension references other resources from the patient record that were used in creating the resource.
 """
-
-* extension[GenomicStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * code = $LNC#51969-4
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
@@ -147,5 +144,5 @@ Parent:         DocumentReference
 Id:             genomic-data-file
 Title:          "Genomic Data File"
 Description:    "A profile of DocumentReference used to represent a genomics file."
-* context.related only Reference(GenomicReport)
+* related only Reference(GenomicReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"

@@ -1,5 +1,4 @@
 ### Description
-
 Retrieve count or list of patients having diagnostic implications. More specifically, this operation retrieves the count +/- list of patients that have diagnostic implications involving specific conditions, derived from specific variants/haplotypes/genotypes.
 
 A patient meets numerator criteria if they have at least one diagnostic implication matching the query parameters.
