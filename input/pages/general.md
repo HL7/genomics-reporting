@@ -30,6 +30,8 @@ The [genomic report](StructureDefinition-genomic-report.html) is the focus of al
 [Recommended Actions](#recommendations)
 
 ### Genomic Study {#genomicstudy}
+
+<!--
 In the R5 release, the [GenomicStudy resource](https://hl7.org/fhir/R5/genomicstudy.html) was introduced. This resource is intended at capturing relevant information about the reasons, purpose, and performers of the study. It also provides technical endpoints to access the data. It could be a logical aggregator for complex analyses.
 
 These features are important to appropriately manage and structure the metadata about a genomic study. As such, this guide has introduced new profiles to 'backport' these features for this R4 based implementation guide. Refer to these profiles for additional details:
@@ -39,6 +41,12 @@ These features are important to appropriately manage and structure the metadata 
 [GenomicStudyAnalysis profile](StructureDefinition-genomic-study-analysis.html) to represent the analysis level metadata.
 
 The `GenomicStudy` instance SHOULD be referenced from a [report](#diagnosticreport) and CAN be referenced by various [observations](#observations).
+-->
+> **ToDo Note:** GenomicStudy details tbd.
+> 
+> In the R5 release, the [GenomicStudy]({{site.data.fhir.path}}genomicstudy.html) was introduced. This resource is intended at capturing relevant information about the reasons, purpose, and performers of the study. It also provides technical endpoints to access the data. It could be a logical aggregator for complex analyses.
+>
+> The `GenomicStudy` instance SHOULD be referenced from a [report](#diagnosticreport) and CAN be referenced by various [observations](#observations).
 
 ### Genomic Observations {#observations}
 
