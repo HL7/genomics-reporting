@@ -26,6 +26,6 @@ Description: "ServiceRequest (order) example"
 Instance: MedicationStatementWarfarin
 InstanceOf: MedicationStatement
 Description: "MedicationStatement for Warfarin"
-* status = #unknown
+* status = #recorded
 * medication.concept = $RXN#11289 "Warfarin"
 * subject = Reference(ExamplePatient)

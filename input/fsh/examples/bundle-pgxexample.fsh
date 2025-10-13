@@ -248,6 +248,6 @@ Usage: #inline
 Instance: current-med-example
 InstanceOf: MedicationStatement
 Usage: #inline
-* status = #unknown
+* status = #recorded
 * medication.concept = $RXN#103 "mercaptopurine"
 * subject = Reference(ExamplePatient)

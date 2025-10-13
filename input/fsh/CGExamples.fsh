@@ -80,8 +80,6 @@ Description: "Example for Patient. Supports references to subject for multiple g
 * address[0].city = "Anytown"
 * address[0].postalCode = "12345"
 * address[0].country = "US"
-* communication[0].language.text = "English"
-
 
 Instance: TumorMutationBurdenExample01
 InstanceOf: MolecularBiomarker
