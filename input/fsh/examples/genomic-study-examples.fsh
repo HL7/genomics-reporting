@@ -247,7 +247,7 @@ Usage: #example
 * manufacturer = "Vanderbilt Genetics Institute"
 * name[+]
   * value = "Triodenovo Software"
-  * type = #user-friendly-name
+  * type = http://hl7.org/fhir/device-nametype#user-friendly-name
 * type = $SCT#706687001 "Software (physical object)"
 * deviceVersion[+].value = "0.06"
 

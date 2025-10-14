@@ -1,5 +1,10 @@
 == Suppressed Messages ==
 
+# THESE SHOULD BE REVIEWED BEFORE PUBLICATION
+Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-ballot3
+Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+
+
 # Observation.component instances that do not match our slices, but is OK (and this is ok since we use open slicing)
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/discrete-variant*/.component[18]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
 INFORMATION: Bundle/bundle-cgexample: Bundle.entry[5].resource/*Observation/discrete-variant*/.component[19]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant%
