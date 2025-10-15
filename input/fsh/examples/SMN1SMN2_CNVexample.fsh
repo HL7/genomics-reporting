@@ -74,7 +74,7 @@ Description: "Antisense Oligonucelotide example of Therapeutic Implication for S
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Spinal muscular atrophy (SMA) is an autosomal recessive disease characterized by the degeneration of alpha motor neurons in the spinal cord, leading to muscular atrophy. SMA is caused by deletions or mutations in the survival motor neuron 1 gene (SMN1). In humans, a nearly identical copy gene, SMN2, is present. Because SMN2 has been shown to decrease disease severity in a dose-dependent manner, SMN2 copy number is predictive of disease severity...The overarching recommendation is that all infants with two or three copies of SMN2 should receive immediate treatment"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://pubmed.ncbi.nlm.nih.gov/29614695/"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://pubmed.ncbi.nlm.nih.gov/29614695/"
 
 Instance: therapuDrug2-interact-smn1-smn2
 InstanceOf: TherapeuticImplication
@@ -95,7 +95,7 @@ Description: "Transgene example of Therapeutic Implication for SMN1/SMN2 CNV exa
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Spinal muscular atrophy (SMA) is an autosomal recessive disease characterized by the degeneration of alpha motor neurons in the spinal cord, leading to muscular atrophy. SMA is caused by deletions or mutations in the survival motor neuron 1 gene (SMN1). In humans, a nearly identical copy gene, SMN2, is present. Because SMN2 has been shown to decrease disease severity in a dose-dependent manner, SMN2 copy number is predictive of disease severity...The overarching recommendation is that all infants with two or three copies of SMN2 should receive immediate treatment"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://pubmed.ncbi.nlm.nih.gov/29614695/"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://pubmed.ncbi.nlm.nih.gov/29614695/"
 
 Instance: therapuDrug3-interact-smn1-smn2
 InstanceOf: TherapeuticImplication
@@ -116,7 +116,7 @@ Description: "Small molecule example of Therapeutic Implication for SMN1/SMN2 CN
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Spinal muscular atrophy (SMA) is an autosomal recessive disease characterized by the degeneration of alpha motor neurons in the spinal cord, leading to muscular atrophy. SMA is caused by deletions or mutations in the survival motor neuron 1 gene (SMN1). In humans, a nearly identical copy gene, SMN2, is present. Because SMN2 has been shown to decrease disease severity in a dose-dependent manner, SMN2 copy number is predictive of disease severity...The overarching recommendation is that all infants with two or three copies of SMN2 should receive immediate treatment"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://pubmed.ncbi.nlm.nih.gov/29614695/"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://pubmed.ncbi.nlm.nih.gov/29614695/"
 
 
 Instance: diagnosticImplication-interact-smn1-smn2

@@ -13,7 +13,7 @@ Usage: #example
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"
 * component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.coding[0] = $MONDO#MONDO:0009061 "cystic fibrosis"
 * component[=].valueCodeableConcept.text = "Cystic fibrosis"
