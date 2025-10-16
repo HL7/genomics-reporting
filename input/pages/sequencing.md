@@ -83,6 +83,7 @@ These variant assessments are supplemented by other indicators of the analysis l
 | [Allelic Read Depth](StructureDefinition-variant-definitions.html#diff_Observation.component:allelic-read-depth) | Specifies the number of reads that identifies the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4. |
 > **ToDo Note:** GenomicStudy details tbd.
 > Metrics and Regions
+{:.modified-content}
 <!--
 | [Genomic Study Analysis: Metrics](StructureDefinition-genomic-study-analysis-metrics.html) | This extension on the Genomic Study Analysis profile is used to structure high level metrics like read depth and coverage. |
 | [Genomic Study Analysis: Regions](StructureDefinition-genomic-study-analysis-regions.html) | This extension on the Genomic Study Analysis profile is used to assert genes or regions that were studied in analysis, genes or regions called, and genes or regions that were deemed uncallable. |

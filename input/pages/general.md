@@ -47,6 +47,7 @@ The `GenomicStudy` instance SHOULD be referenced from a [report](#diagnosticrepo
 > In the R5 release, the [GenomicStudy]({{site.data.fhir.path}}genomicstudy.html) was introduced. This resource is intended at capturing relevant information about the reasons, purpose, and performers of the study. It also provides technical endpoints to access the data. It could be a logical aggregator for complex analyses.
 >
 > The `GenomicStudy` instance SHOULD be referenced from a [report](#diagnosticreport) and CAN be referenced by various [observations](#observations).
+{:.modified-content}
 
 ### Genomic Observations {#observations}
 

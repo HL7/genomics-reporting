@@ -14,6 +14,7 @@ These constructs are assembled within the broader context of the [Genomics Repor
 > **ToDo Note:** GenomicStudy details tbd
 >
 > These constructs are assembled within the broader context of the [Genomics Report](StructureDefinition-genomic-report.html), which generally contains information about the [specimen(s)]({{site.data.fhir.path}}specimen.html) and providers and organizations involved in the ordering and testing process. The report may also contain details about the [genomic study]({{site.data.fhir.path}}genomicstudy.html) analyses used to obtain the findings, as shown in the following figure:
+{:.modified-content}
 
 <div style="text-align: left; margin: 20px 0; clear: both; overflow: hidden;">
 <img src="Somatic_Report_Overview.svg" alt="Somatic report overview" style="max-width: 100%; display: block; margin: 0; float: none;" />
@@ -37,6 +38,7 @@ The following four images are pages 1-4 of a synthetic somatic report that is de
 <!--The entire bundle containing all FHIR Genomics instances for this detailed somatic example is [here](Bundle-bundle-somaticReportPDFdraftExamples.html).--> The somatic GenomicsReport which connects to all the FHIR Genomics instances for this detailed somatic example is [here](DiagnosticReport-somaticReport.html). A mapping spreadsheet is provided [here](https://chat.fhir.org/user_uploads/10155/-05xEKSs8tWp4qE3bCcA_Fvz/Somatic_Report_Only.xlsx). Alternatively, look in the table below for just those profiles of interest. (The numbers in the 'Label' column correspond to the numbers in the figures up above).
 
 > **ToDo Note:** GenomicStudy details tbd.
+{:.modified-content}
 
 | Label | Resource / Profile | Description of somatic usage | Example(s) | Example Notes |
 |-------|-------------------|------------------------------|------------|---------------|

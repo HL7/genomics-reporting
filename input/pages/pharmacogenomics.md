@@ -50,6 +50,7 @@ This PGx report, like all genomic reporting, is packaged with the [diagnostic re
 -->
 > **ToDo Note:** GenomicStudy details tbd.
 > This PGx report, like all genomic reporting, is packaged with the [GenomicReport](StructureDefinition-genomic-report.html) profile. It conveys metadata about the overall report via the [GenomicStudy]({{site.data.fhir.path}}genomicstudy.html) and carries multiple “result” [Observations]({{site.data.fhir.path}}observation.html). All of the observation findings may “hang” directly off of the [GenomicReport](StructureDefinition-genomic-report.html). 
+{:.modified-content}
 
 <!--However, they can also be part of group referenced by a grouping observation. The grouping observation here has observation.code for the 'Group'/'Panel' NCI Metathesaurus term. It is used in this example PGx report to group all PGx-specific content (Therapeutic Implications and their derived Variants and Genotypes) into one section for viewing purposes. Note that the grouping by this profile does not add additional meaning to its child Observations. It is used just for convenience of presentation. Other configurations of one or more grouping Observations would also be valid, as no pre-coordinated groupings are recommended in this IG. If a group represents a specific panel then a specific panel code (such as a LOINC code) could be used as the observation.code for the grouping observation to give the grouping observation meaning.-->
 
@@ -131,6 +132,7 @@ Below is one of the therapeutic implications in the report:
 The following table contains additional information regarding the profiles used in mapping this example PGx report to FHIR, as well as individual example instances
 
 > **ToDo Note:** GenomicStudy details tbd.
+{:.modified-content}
 
 | **_Profile_**| **_Description of PGx usage_**| **_Example links_**| **_Example Notes_**|
 | --- | --- | --- | --- |
