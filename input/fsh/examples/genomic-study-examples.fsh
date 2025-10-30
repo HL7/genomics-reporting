@@ -1,5 +1,5 @@
 Instance: lungMass
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "Example of solid tumor whole exome sequencing panel"
 Usage: #example
 * status = #available
@@ -201,7 +201,7 @@ Usage: #example
 
 
 Instance: genomicstudy-trio2
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "GenomicStudy example of a trio analysis"
 Usage: #example
 * identifier[+]

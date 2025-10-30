@@ -912,7 +912,7 @@ pursuant to the requirement of CLIA '88. This laboratory is licensed and/or accr
 * conclusion = "Based on the genotype result, this patient is predicted to have a CYP2C19 poor metabolizer phenotype. This genotype information can be used by patients and clinicians as part of the shared decision-making process for several drugs metabolized by CYP2C19 including clopidogrel, voriconazole, amitriptyline, citalopram and escitalopram."
 
 Instance: PGXGenomicStudy
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "Example of PGX sequencing panel"
 Usage: #example
 * status = #available

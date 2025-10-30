@@ -4,8 +4,6 @@ Id:             genomic-base
 Title:          "Genomic Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 * ^abstract = true
-//* extension contains GenomicStudy named genomic-study 0..*
-//* extension[GenomicStudy] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
                  and http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * derivedFrom ^slicing.discriminator.type = #profile
@@ -13,7 +11,8 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
 
-* partOf only Reference(MedicationAdministration or MedicationDispense or MedicationStatement or Procedure or Immunization or ImagingStudy or GenomicStudy)
+* partOf only Reference(GenomicStudy or GenomicStudyMetadata)
+* partOf ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * category 2..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"

@@ -1,1 +1,0 @@
-This extension is used for overall, analysis level metrics. These metrics are not specific to a region that is studied in the analysis. The metrics here are specific to sequencing analysis, but others could be added if they make sense to the use case.

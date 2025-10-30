@@ -808,7 +808,7 @@ Usage: #example
 * birthDate = "1987-09-01"
 
 Instance: somaticStudy
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "Example for somatic genetic study"
 Usage: #example
 * status = #available

@@ -1,7 +1,8 @@
-The details of a performed genomic study are captured as genomic study analysis instances, referenced via the genomic study's genomic-study-analysis-ext extension.
+> **ToDo Note:** GenomicStudy details todo.
+>
+{:.modified-content}
 
-> **STU Note:** Genomic Study and Genomic Study Analysis profiles are backported from the [FHIR R5 GenomicStudy resource](https://hl7.org/fhir/R5/genomicstudy.html).
-{:.stu-note}
+The details of a performed genomic study are captured as genomic study analysis instances, referenced via the genomic study's genomic-study-analysis-ext extension.
 
 ### Scope and Usage
 
@@ -17,7 +18,7 @@ Detailed information about the results of the analyses may be represented by Obs
 
 #### Example Walkthrough
 
-The following figure is based on the [Procedure/lungMass](Procedure-lungMass.html) example. Some things to note:
+The following figure is based on the [GenomicStudy/lungMass](GenomicStudy-lungMass.html) example. Some things to note:
 
 * A genomics report can reference 0..* genomic studies.
 * A genomic study's code codifies the overall test that was performed.
