@@ -1,6 +1,10 @@
 > **STU Note:** The Clinical Genomics committee has identified overlaps and redundancies between content in the MolecularSequence resource and content in this implementation guide. The committee is considering options for modifying the resource and anticipates potential changes being brought forward in an upcoming ballot.
 {:.stu-note}
 
+> **ToDo Note:** MolecularSequence details todo.
+> Need to consider updates here until MolDef is part of the MolDef IG as an Additional Resource.
+{:.modified-content}
+
 This section is about the FHIR resource [MolecularSequence](https://hl7.org/fhir/R4/molecularsequence.html).
 
 [MolecularSequence](https://hl7.org/fhir/R4/molecularsequence.html) can be used to hold clinically relevant sequence data in a manner that is both efficient and versatile, integrating new and yet undefined types of genomic and other -omics data that will soon be commonly entered into health records for clinical use. MolecularSequence will be leveraged by other FHIR resources, including Observation. This is consistent with how all FHIR resources are designed and used.

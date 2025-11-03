@@ -1,5 +1,5 @@
 > **ToDo Note:** GenomicStudy details todo.
->
+> No further updates until GenomicStudy is moved to this IG as an Additional Resource.
 {:.modified-content}
 
 The details of a performed genomic study are captured as genomic study analysis instances, referenced via the genomic study's genomic-study-analysis-ext extension.
