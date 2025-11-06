@@ -1,3 +1,5 @@
+
+
 | Term                     | Definition |
 |--------------------------|------------|
 | Allele | An allele is a specific version of a contiguous nucleotide sequence, typically located within a gene. Two or more alleles may exist for any given gene or section of genomic DNA. An individual inherits two alleles for each sequenced gene or region, one from each parent. If the two alleles are the same, the individual is homozygous for that gene. If the alleles are different, the individual is heterozygous. In other organisms, the ploidy (number of alleles per locus) differs from two. |
@@ -43,3 +45,4 @@
 | Variant Inheritance | The source or inheritance of a variation found in an individual patient. Understanding the source can help determine the significance of a particular variant and its association with different diseases or syndromes. Germline variants are either inherited or de novo. Inherited variants can be maternal, paternal, or a combination of maternal and paternal. De novo variants are those that are not present in parental germline cells, but that arise in the egg or sperm prior to conception or just after the zygote is formed. Somatic variants arise at points later in time. The enumeration for this element is Sequence Ontology, all terms that are children of SO:0001762. |
 | Variant Risk (Medication) | How a variant affects the risk of the possessing individual being administered certain medications. Example: Due to this variant, the drug is at increased risk of causing an adverse reaction. |
 | Variant Therapeutic Efficacy Effect | A variant's effect on the efficacy of a specified treatment. The efficacy (or pharmacodynamics) of a drug determines how effective a drug is at a given concentration. Therefore, variants that affect a drug's efficacy will alter the potency of a drug. Example: Due to this variant, the drug will be less efficacious against this target. |
+{:.grid}

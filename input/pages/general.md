@@ -11,6 +11,7 @@ This table describes the categories of data contained in this implementation gui
 | [Molecular Biomarkers](#biomarkers) | These are observations describing Molecular Biomarkers, which encompasses laboratory measurements of human inherent substances such as gene products, antigens and antibodies, or complex chemicals that result from post-translational processing of multi-gene products. |
 | [Recommended Actions](#recommendations) | Specific actions be taken, such as genomic counseling, re-testing, adjusting drug dosages, etc. - driven by the results found. |
 | [Contextual Resources](#contextual) | Other resources that provide contextual details. |
+{:.grid}
 
 ### Genomic Report {#diagnosticreport}
 

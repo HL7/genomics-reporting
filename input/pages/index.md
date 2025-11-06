@@ -24,6 +24,7 @@ The remaining sections provide support for more specialized types of reporting. 
 | [Pharmacogenomic Reporting](pharmacogenomics.html) | Guidance and examples related to genomic testing done for the purpose of assessing genomic variations' implication on the use of medications - both for oncology and for general patient treatment. |
 | [Somatic Reporting](somatics.html) | Guidance related to genomic testing done on somatic (non-germline) tissues, including assessments of tumors. |
 | [Histocompatibility Reporting](histocompatibility.html) | Guidance related to genomic testing done for histocompatibility and immunogenomics assessments, including HLA typing. |
+{:.grid}
 
 ### Guiding principles {#principles}
 
@@ -98,6 +99,7 @@ Implementers should use this guide to structure genomics data in an interoperabl
 | [Appendix G: Molecular Sequence](molecularsequence.html) | Notes on the FHIR Resource for representing a Molecular Sequence |
 | [Appendix H: Grouping observations](groupingguidance.html) | Guidance on the types of grouping that might be encountered |
 | [Appendix I: Glossary](glossary.html) | Table of concepts referenced on Observation profiles |
+{:.grid}
 
 ### Acknowledgments {#acknowledgments}
 

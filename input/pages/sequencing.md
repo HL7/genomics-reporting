@@ -34,6 +34,7 @@ This pattern describes the observed nucleotide sequence or configuration using H
 |-------------------|---------------|------|
 | genomic-hgvs (LOINC 81290-9) OR representative-coding-hgvs (LOINC 48004-6) | `{ "system" : "http://varnomen.hgvs.org", "code" : "NM_022787.3:c.769G>A" }` | Proper usage of HGVS contains the reference sequence identifier followed by ':g.' for genomic or ':c.' for a coding sequence. In HGVS notation, the "=" (equals) is used to indicate a sequence was tested but found unchanged [[ref]](https://varnomen.hgvs.org/recommendations/general/). |
 | cyogenomic-nomenclature (LOINC 81291-7) | `{"system" : "https://iscn.karger.com", "code" : "46,XX,t(9;22)(q34;q4)"}` | more information on formatting structural variations below. |
+{:.grid}
 
 #### Variants defined by multiple components (VCF-like) {#ComponentwiseVariants}
 
@@ -47,6 +48,7 @@ This representation leverages multiple component slices to communicate an allele
 | exact-start-end (LOINC 81254-5) | `{"valueRange" : {"low" : {"value" : 96527334}}}` | Interpretation of this number requires the reference sequence and coordinate system. |
 | ref-allele (LOINC 69547-8) | "valueString" : "C" | This string should be normalized per the VCF standard. |
 | alt-allele (LOINC 69551-0) | "valueString" : "A" | If the reference allele is tested and found unchanged, this string should be equal to the REF allele string. |
+{:.grid}
 
 #### Defining Repeat Expansion Variants {#RepeatExpansionVariants}
 
@@ -57,6 +59,7 @@ When reporting a repeat expansion variant (also known as trinucleotide repeat or
 | Component: repeat-motif (TBD code repeat-motif) | `{"valueString" : "GGC"}` | the nucleotides of the repeat expansion motif |
 | Component: repeat-number (TBD code repeat-number) | `{"valueQuantity" : {"value" : 11}}` | the number of repeats of the repeat expansion |
 | Extension: repeat-motif-order | `{"extension" : [{"url" : "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/repeat-motif-order","valuePositiveInt" : 1}]}` | If there are multiple repeat expansion pairs, this extension is used both to indicate the sequence position of a given motif-number pair and to group the related components together. Related components with the same repeat-motif-order extension describe the same motif. This extension is optional when a single repeat expansion pair is used, but is required when multiple are used. |
+{:.grid}
 
 ### Variant Assessment {#variantassessment}
 
@@ -70,15 +73,17 @@ See below for additional guidance on each answer from this value set.
 | Absent | The defined variant was NOT found in the sample. This can be used to structure a 'Pertinent Negative', or a variant whose absence is deemed important enough to share, even though the defined variant is not present. |
 | No call | The defined variant could not be called by the analysis, but the variant was deemed important enough to share. This usage of this value SHALL be constrained to coverage issues with the variant's region (i.e. the locus was sequenced but the coverage was insufficient to support calling the presence or absence of the variant). |
 | Indeterminate | The defined variant could not be called by the analysis, but the variant was deemed important enough to share. This value SHALL be used for any issues with the sample or analysis that are not related to the coverage of the locus for the variant. Additional details about the call MAY be shared in `Observation.note`. |
+{:.grid}
 
 These variant assessments are supplemented by other indicators of the analysis like quality and coverage. These other indicators include:
 
 | Indicator | Usage Notes |
 |-----------|-------------|
-| [Variant Confidence Status](StructureDefinition-variant-definitions.html#diff_Observation.component:variant-confidence-status) | Provides a way to indicate the reporting organization's confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence: ```json {"system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs","code" : "high","display" : "High"}``` It is important to note that variant confidence status is not a required component. If the reporting organization's confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive. |
+| [Variant Confidence Status](StructureDefinition-variant-definitions.html#diff_Observation.component:variant-confidence-status) | Provides a way to indicate the reporting organization's confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence: `{"system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs","code" : "high","display" : "High"}` It is important to note that variant confidence status is not a required component. If the reporting organization's confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive. |
 | [Allelic Read Depth](StructureDefinition-variant-definitions.html#diff_Observation.component:allelic-read-depth) | Specifies the number of reads that identifies the allele in question whether it consists of one or a small sequence of contiguous nucleotides. Different methods and purposes require different numbers of reads to be acceptable. Often >400, sometimes as few as 2-4. |
 | [Genomic Study Analysis: Metrics](StructureDefinition-genomic-study-analysis-metrics.html) | This extension on the Genomic Study Analysis profile is used to structure high level metrics like read depth and coverage. |
 | [Genomic Study Analysis: Regions](StructureDefinition-genomic-study-analysis-regions.html) | This extension on the Genomic Study Analysis profile is used to assert genes or regions that were studied in analysis, genes or regions called, and genes or regions that were deemed uncallable. |
+{:.grid}
 
 ### Contextualizing Variants {#ContextualComponents}
 
@@ -97,6 +102,7 @@ Note that many other properties associated with contextualizing the observed var
 | component[variant-inheritance] (LOINC 94186-4) | Maternal \| Paternal \| Unknown | |
 | component[variant-inheritance-basis] (LOINC 82309-6) | Directly measured \| Family DNA \| Family history \| Inferred from population data | |
 | component[confidence] | high \| intermediate \| low | |
+{:.grid}
 
 ### Annotating Variants {#AnnotationComponents}
 
@@ -110,6 +116,7 @@ This implementation guide defines several components on [Variant](StructureDefin
 | gene-studied (LOINC 48018-6) | `{ "system": "http://www.genenames.org","code" : "HGNC:644","display" : "AR"}` | derivable from reference sequence |
 | coding-change-type (LOINC 48019-4) | `{"system" : "http://www.sequenceontology.org","code" : "SO:1000002","display" : "substitution"}` | may be required for certain types of structural variants. See below. |
 | representative-protein-hgvs (LOINC 48005-3) | `{"system": "http://varnomen.hgvs.org","code" : "NP_006209.2:p.(His1047Arg)","display" : "p.H1047R"}` | Proper usage of HGVS contains the reference sequence and usage of parenthesis to denote the amino acid change is calculated rather than directly observed. |
+{:.grid}
 
 ### Representing Structural Variants {#StructuralVariants}
 
@@ -131,6 +138,7 @@ Suggested minimal representations of common structural variants are shown in the
 | [0..1] component: alt-allele (LOINC 69551-0) | Generally, structural variants will not report Alt Alleles. In some cases, an Alt Allele may be reported for an Insertion. ||||
 | [1..1] component: coordinate-system (LOINC 92822-6) | Should be populated ||||
 | [0..1] component: outer-start-end (LOINC 81301-4) and [0..1] component: inner-start-end (LOINC 81302-2) | Outer and/or inner start should be populated, as well as outer and/or inner end. ||||
+{:.grid}
 
 #### Notes {#SNVnotes}
 
