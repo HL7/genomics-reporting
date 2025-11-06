@@ -402,8 +402,8 @@ Usage: #example
 * derivedFrom = Reference(STAG2-insertion-var)
 * component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26332-9 "Likely Pathogenic"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
 
 //ATR insertion 
 //LA26332-9^Likely Pathogenic
@@ -426,12 +426,12 @@ Usage: #example
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier 2C"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
 
 //EGFR L858R
 //LA6668-3 Pathogenic
@@ -493,10 +493,10 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 
 
 Instance: ROS1-Fusion-therapuDrug
@@ -517,19 +517,19 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Crizotinib"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://civicdb.org/molecular-profiles/2562/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/molecular-profiles/2562/summary"
 * derivedFrom = Reference(ROS1-Fusion-var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer positive for ROS1 fusions are sensitive to crizotinib"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://civicdb.org/evidence/7282/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/7282/summary"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 
 
 Instance: TMB-therapuDrug
@@ -565,21 +565,21 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Gefitinib"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 * derivedFrom = Reference(EGFR-L858R-var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer with EGFR L858R mutation is sensitive to gefitinib"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
 
 
 Instance: EGFR-L858R-therapuDrug2
@@ -594,21 +594,21 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Erlotinib"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 * derivedFrom = Reference(EGFR-L858R-var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer with EGFR L858R mutation is sensitive to erlotinib"
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.type = #citation
-* component[=].extension[RelatedArtifactComponent].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
 
 Instance: NOTCH1-uncertain-molc
 InstanceOf: MolecularConsequence

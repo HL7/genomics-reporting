@@ -43,15 +43,17 @@ Usage: #inline
 * birthDate = "1962-12-31"
 * generalPractitioner = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 
+
 Instance: Inline-Instance-for-oncology-diagnostic-2
 InstanceOf: Practitioner
 Usage: #inline
-* identifier.value = "4654765876"
-* name.given[0] = "Akerman"
-* name.given[+] = "Philip"
-* name.given[+] = "Prof"
-* address.city = "Castro Valley"
-* address.state = "CA"
+* identifier[0].value = "4654765876"
+* name[0].given[0] = "Akerman"
+* name[0].given[1] = "Philip"
+* name[0].given[2] = "Prof"
+* address[0].city = "Castro Valley"
+* address[0].state = "CA"
+
 
 Instance: Inline-Instance-for-oncology-diagnostic-3
 InstanceOf: Specimen

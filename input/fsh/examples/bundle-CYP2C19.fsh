@@ -331,24 +331,37 @@ Usage: #inline
 * name[=].text = "The Human Torch"
 * gender = #male
 * birthDate = "1986-12-31"
+* telecom[0].system = #phone
+* telecom[0].value = "1-800-555-1234"
+* telecom[0].use = #work
+* telecom[0].rank = 1
+* address[0].use = #work
+* address[0].type = #both
+* address[0].text = "123 Main St, Sometown, ND 99999"
+* address[0].line[0] = "123 Main St"
+* address[0].city = "Sometown"
+* address[0].state = "ND"
+* address[0].postalCode = "99999"
+* address[0].country = "USA"
+
 
 Instance: performingLab
 InstanceOf: Organization
 Usage: #inline
 * name = "aTypingLab Inc"
-* alias = "aTL"
-* telecom.system = #phone
-* telecom.value = "1-800-555-1234"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "123 Main St, Sometown, ND 99999"
-* address.line = "123 Main St"
-* address.city = "Sometown"
-* address.state = "ND"
-* address.postalCode = "99999"
-* address.country = "USA"
+* alias[+] = "aTL"
+* telecom[0].system = #phone
+* telecom[0].value = "1-800-555-1234"
+* telecom[0].use = #work
+* telecom[0].rank = 1
+* address[0].use = #work
+* address[0].type = #both
+* address[0].text = "123 Main St, Sometown, ND 99999"
+* address[0].line[0] = "123 Main St"
+* address[0].city = "Sometown"
+* address[0].state = "ND"
+* address[0].postalCode = "99999"
+* address[0].country = "USA"
 
 Instance: report-CYP2C19
 InstanceOf: GenomicReport

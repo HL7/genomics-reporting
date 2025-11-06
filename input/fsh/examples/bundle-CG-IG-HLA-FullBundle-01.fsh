@@ -145,41 +145,43 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 
+
 Instance: CG-IG-HLA-FullBundle-01-3
 InstanceOf: Organization
 Usage: #inline
 * name = "aTypingLab Inc"
-* alias = "aTL"
-* telecom.system = #phone
-* telecom.value = "1-800-555-1234"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "123 Main St, Sometown, ND 99999"
-* address.line = "123 Main St"
-* address.city = "Sometown"
-* address.state = "ND"
-* address.postalCode = "99999"
-* address.country = "USA"
+* alias[0] = "aTL"
+* telecom[0].system = #phone
+* telecom[0].value = "1-800-555-1234"
+* telecom[0].use = #work
+* telecom[0].rank = 1
+* address[0].use = #work
+* address[0].type = #both
+* address[0].text = "123 Main St, Sometown, ND 99999"
+* address[0].line[0] = "123 Main St"
+* address[0].city = "Sometown"
+* address[0].state = "ND"
+* address[0].postalCode = "99999"
+* address[0].country = "USA"
 
 Instance: CG-IG-HLA-FullBundle-01-4
 InstanceOf: Organization
 Usage: #inline
 * name = "aDonorRegistry"
-* alias = "ADR"
-* telecom.system = #phone
-* telecom.value = "1-800-555-6789"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "456 Main St, Anytown ND, 00000"
-* address.line = "456 Main St"
-* address.city = "Anytown"
-* address.state = "ND"
-* address.postalCode = "00000"
-* address.country = "USA"
+* alias[0] = "ADR"
+* telecom[0].system = #phone
+* telecom[0].value = "1-800-555-6789"
+* telecom[0].use = #work
+* telecom[0].rank = 1
+* address[0].use = #work
+* address[0].type = #both
+* address[0].text = "456 Main St, Anytown ND, 00000"
+* address[0].line[0] = "456 Main St"
+* address[0].city = "Anytown"
+* address[0].state = "ND"
+* address[0].postalCode = "00000"
+* address[0].country = "USA"
+
 
 Instance: CG-IG-HLA-FullBundle-01-5
 InstanceOf: ServiceRequest
