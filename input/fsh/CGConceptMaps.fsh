@@ -3,10 +3,8 @@ Instance: dna-change-type-map
 InstanceOf: ConceptMap
 Usage: #definition
 Description: "Mapping from http://loinc.org ValueSet for DNA Change Type to http://www.sequenceontology.org codes"
-
 * title = "DNA Change Type Map"
 * name = "DNAChangeType"
-* status = #draft
 * experimental = false
 * publisher = "HL7 International Clinical Genomics Work Group"
 * description = "LOINC and SequenceOntology mappings for DNA change type"
