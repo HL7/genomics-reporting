@@ -325,6 +325,7 @@ Instance: GenomicStudyStatusMap
 InstanceOf: ConceptMap
 Usage: #definition
 Description: "Mapping from Procedure's EventStatus (http://hl7.org/fhir/ValueSet/event-status) ValueSet for 'status' to http://hl7.org/fhir/uv/genomics-reporting/ValueSet/genomicstudy-status-vs codes"
+* status = #active
 * title = "Genomic Study Status Map"
 * experimental = false
 * name = "GenomicStudyStatusMap"

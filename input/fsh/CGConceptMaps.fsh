@@ -3,6 +3,7 @@ Instance: dna-change-type-map
 InstanceOf: ConceptMap
 Usage: #definition
 Description: "Mapping from http://loinc.org ValueSet for DNA Change Type to http://www.sequenceontology.org codes"
+* status = #active
 * title = "DNA Change Type Map"
 * name = "DNAChangeType"
 * experimental = false
