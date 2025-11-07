@@ -5,7 +5,7 @@ Usage: #example
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* code.coding[0] = $LNC#84413-4 "Genotype display name"
+* code.coding[+] = $LNC#84413-4 "Genotype display name"
 * code.coding[+] = $LNC#57290-9 "HLA-A [Type] by High resolution"
 * subject = Reference(ExamplePatient)
 * effectiveDateTime = "2018-07-26"
@@ -15,6 +15,6 @@ Usage: #example
 * valueCodeableConcept.coding = $GLSTRING#hla#3.31.0#HLA-A*03:01:01:01+HLA-A*30:01:01
 * method.text = "PACBIO Sequel"
 * specimen = Reference(specimen-hla-r4)
-* derivedFrom[0] = Reference(haplotype-hla-a-1-r4)
+* derivedFrom[+] = Reference(haplotype-hla-a-1-r4)
 * component.code = $LNC#48018-6 "Gene studied [ID]"
 * component.valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"

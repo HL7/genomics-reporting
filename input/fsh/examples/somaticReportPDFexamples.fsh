@@ -59,7 +59,7 @@ Description: "Example for NOTCH1 uncertain"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_060087.3:p.A1931T
@@ -70,16 +70,16 @@ Description: "Example for NOTCH1 uncertain"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7881 "NOTCH1"
 * component[alt-allele].valueString = "T"
 * component[chromosome-identifier].valueCodeableConcept =  $LNC#LA21262-3 "Chromosome 9"
-* component[exact-start-end][0].valueRange.low.value = 139395147
-* component[exact-start-end][0].valueRange.high.value = 139395147
+* component[exact-start-end][+].valueRange.low.value = 139395147
+* component[exact-start-end][=].valueRange.high.value = 139395147
 * component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000009.11
 * component[ref-allele].valueString = "C"
 //* component[variation-code].valueCodeableConcept = 
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000009.11:g.139395147C>T
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.15
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[sample-allelic-frequency][+].valueQuantity.value = 0.15
+* component[sample-allelic-frequency][=].valueQuantity.system = "http://unitsofmeasure.org"
+* component[sample-allelic-frequency][=].valueQuantity.unit = "decimal"
 
 Instance: ZFHX3-uncertain-var
 InstanceOf: Variant
@@ -91,7 +91,7 @@ Description: "Example for ZFHX3 uncertain"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_008816.3:p.G585S
@@ -102,16 +102,16 @@ Description: "Example for ZFHX3 uncertain"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:777 "ZFHX3"
 * component[alt-allele].valueString = "T"
 * component[chromosome-identifier].valueCodeableConcept =  $LNC#LA21269-8 "Chromosome 16"
-* component[exact-start-end][0].valueRange.low.value = 72992292
-* component[exact-start-end][0].valueRange.high.value = 72992292
+* component[exact-start-end][+].valueRange.low.value = 72992292
+* component[exact-start-end][=].valueRange.high.value = 72992292
 * component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000016.9
 * component[ref-allele].valueString = "C"
 //* component[variation-code].valueCodeableConcept = 
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000016.9:g.72992292C>T
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.10
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[sample-allelic-frequency][+].valueQuantity.value = 0.10
+* component[sample-allelic-frequency][=].valueQuantity.system = "http://unitsofmeasure.org"
+* component[sample-allelic-frequency][=].valueQuantity.unit = "decimal"
 
 Instance: MSH2-del-var
 InstanceOf: Variant
@@ -123,7 +123,7 @@ Description: "Example for MSH2 deletion"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 //kp - Error while processing 'NP_000242.1:p.Val611fs': Frameshift variants are not supported
@@ -158,7 +158,7 @@ Description: "Example for NTHL1 SNV"
 
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_002519.2:p.Trp243Ter
@@ -190,7 +190,7 @@ Description: "Example for STAG2 insertion"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[representative-protein-hgvs].valueCodeableConcept = $HGVS#NP_006594.3:p.S1178*
@@ -201,16 +201,16 @@ Description: "Example for STAG2 insertion"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:11355 "STAG2"
 * component[alt-allele].valueString = "GTGACTA"
 * component[chromosome-identifier].valueCodeableConcept =  $LNC#LA21276-3 "Chromosome X"
-* component[exact-start-end][0].valueRange.low.value = 123227930
-* component[exact-start-end][0].valueRange.high.value = 123227930
+* component[exact-start-end][+].valueRange.low.value = 123227930
+* component[exact-start-end][=].valueRange.high.value = 123227930
 * component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000023.10
 //* component[ref-allele].valueString = ""
 //* component[variation-code].valueCodeableConcept = 
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000023.10:g.123227930_123227931insGTGACTATTAATAT
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.08
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[sample-allelic-frequency][+].valueQuantity.value = 0.08
+* component[sample-allelic-frequency][=].valueQuantity.system = "http://unitsofmeasure.org"
+* component[sample-allelic-frequency][=].valueQuantity.unit = "decimal"
 
 Instance: ATR-insertion-var
 InstanceOf: Variant
@@ -222,7 +222,7 @@ Description: "Example for ATR insertion"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 //kp - Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
@@ -234,16 +234,16 @@ Description: "Example for ATR insertion"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:882 "ATR"
 * component[alt-allele].valueString = "TTACT"
 * component[chromosome-identifier].valueCodeableConcept =  $LNC#LA21256-5 "Chromosome 3"
-* component[exact-start-end][0].valueRange.low.value = 142269071
-* component[exact-start-end][0].valueRange.high.value = 142269071
+* component[exact-start-end][+].valueRange.low.value = 142269071
+* component[exact-start-end][=].valueRange.high.value = 142269071
 * component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000003.11
 //* component[ref-allele].valueString = ""
 //* component[variation-code].valueCodeableConcept = 
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000003.11:g.142269071_142269072insTTACT
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.075
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[sample-allelic-frequency][+].valueQuantity.value = 0.075
+* component[sample-allelic-frequency][=].valueQuantity.system = "http://unitsofmeasure.org"
+* component[sample-allelic-frequency][=].valueQuantity.unit = "decimal"
 * component[conclusion-string].valueString = "Gene: ATR; Exon: 14; Nucleotide: NM_001184.4:c.2878_2879insAGTAA; Genomic Location: NC_000003.11:g.142269071_142269072insTTACT; Amino acid: NP_001175.2:p.R960fs*2; Function: loss; Assessment: Likely Pathogenic; Classification: Tier 2C; Allele Fraction: 5.34% (of 131 reads); Variation: Insertion; Interpretation: The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
 
 Instance: EGFR-L858R-var
@@ -256,7 +256,7 @@ Description: "Example for EGFR L858R"
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
 * component[variation-code].valueCodeableConcept.text = "EGFR L858R"
@@ -275,9 +275,9 @@ Description: "Example for EGFR L858R"
 //* component[variation-code].valueCodeableConcept = 
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000007.13:g.55259515T>G
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* component[sample-allelic-frequency][0].valueQuantity.value = 0.066
-* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+* component[sample-allelic-frequency][+].valueQuantity.value = 0.066
+* component[sample-allelic-frequency][=].valueQuantity.system = "http://unitsofmeasure.org"
+* component[sample-allelic-frequency][=].valueQuantity.unit = "decimal"
 
 Instance: ROS1-Fusion-var
 InstanceOf: Variant
@@ -289,7 +289,7 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 * method = $LNC#LA26398-0 "Sequencing"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[variation-code].valueCodeableConcept.text = "ROS1 Fusion"
 //* interpretation = $SCT#10828004 "Positive (qualifier value)"
@@ -319,12 +319,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(NOTCH1-uncertain-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26333-7 "Uncertain Significance"
 
 
@@ -335,12 +335,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(ZFHX3-uncertain-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26333-7 "Uncertain Significance"
 
 //MSH2_del 
@@ -353,12 +353,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(MSH2-del-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4 "Associated phenotype"
 * component[=].valueCodeableConcept.coding[0] = $SCT#699346009 "Hereditary cancer-predisposing syndrome (disorder)"
@@ -374,12 +374,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(NTHL1-snv-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4 "Associated phenotype"
 * component[=].valueCodeableConcept.coding[0] = $SCT#699346009 "Hereditary cancer-predisposing syndrome (disorder)"
@@ -395,12 +395,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(STAG2-insertion-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26332-9 "Likely Pathogenic"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
@@ -416,12 +416,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(ATR-insertion-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26332-9 "Likely Pathogenic"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
@@ -442,12 +442,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(EGFR-L858R-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 
 
@@ -458,12 +458,12 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * derivedFrom = Reference(ROS1-Fusion-var)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 
 
@@ -476,7 +476,7 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 //* component[=].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -507,9 +507,9 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 //* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[=].valueCodeableConcept.text = "cancer sensitive to crizotinib"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -539,8 +539,8 @@ Description: "Example of high TMB Therapeutic Implication for drug treatment"
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* performer[+] = Reference(pathologistPractitioner)
+* component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[=].valueCodeableConcept.text = "cancer sensitive to pembrolizumab"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
@@ -560,7 +560,7 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * component[+].code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of evidence"
@@ -589,7 +589,7 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2
 * code = TbdCodesCS#therapeutic-implication
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * component[+].code = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of evidence"
@@ -617,14 +617,14 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(NOTCH1-uncertain-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_017617.5:c.5791G>A "NM_017617.5:c.5791G>A"
 
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
@@ -643,14 +643,14 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ZFHX3-uncertain-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006885.4:c.1753G>A "NM_006885.4:c.1753G>A"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "NM_006885.4"
@@ -665,15 +665,15 @@ Description: "Example Molecular Consequence MSH2 frameshift"
 Usage: #example
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * status = #final
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(MSH2-del-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_000251.3:c.1832del "NM_000251.3:c.1832del"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
@@ -688,14 +688,14 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(NTHL1-snv-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_002528.7:c.728G>A "NM_002528.7:c.728G>A"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001587 "stop_gained"
@@ -710,14 +710,14 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(STAG2-insertion-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006603.5:c.3530_3531insGTGACTATTAATAT "NM_006603.5:c.3530_3531insGTGACTATTAATAT"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "NM_006603.5"
@@ -733,14 +733,14 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(ATR-insertion-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001184.4:c.2878_2879insAGTAA "NM_001184.4:c.2878_2879insAGTAA"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
@@ -759,14 +759,14 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
 * subject = Reference(CGPatientExample01)
 * derivedFrom = Reference(EGFR-L858R-var)
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_005228.4:c.2573T>G "NM_005228.4:c.2573T>G"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
@@ -780,7 +780,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = TbdCodesCS#molecular-consequence
@@ -802,7 +802,7 @@ Usage: #example
 * active = true
 * name.use = #official
 * name.family = "Hamsburg"
-* name.given[0] = "Substance"
+* name.given[+] = "Substance"
 * name.given[+] = "Junior"
 * gender = #male
 * birthDate = "1987-09-01"
@@ -811,7 +811,7 @@ Instance: somaticStudy
 InstanceOf: GenomicStudy
 Description: "Example for somatic genetic study"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
 * extension[=].valueReference = Reference(analysisTumorNormalDNA)
 * extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
 * extension[=].valueReference = Reference(analysisTumorRNA)
@@ -941,7 +941,7 @@ Description: "Example for Tumor Mutation Burden"
 * status = #final "final"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
@@ -959,7 +959,7 @@ Description: "Example for MSI"
 * status = #final "final"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
@@ -977,15 +977,15 @@ Description: "Example for PD-L1"
 * status = #final "final"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory].coding = $OBSCAT#laboratory
 * category[mbCategory].coding = TbdCodesCS#biomarker-category
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
 * code = $LNC#85147-7 "PD-L1 by clone 22C3 in Tissue by Immune stain Report"
 * subject = Reference(somaticPatient)
 * valueCodeableConcept = $LNC#LA6576-8 "Positive"
-* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptorLigand "cell receptor ligand category"
-* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
+* component[biomarker-category][+].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptorLigand "cell receptor ligand category"
+* component[biomarker-category][+].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:17635 "CD274"
 * note.text = "5% tumor proportion score"
 
@@ -996,7 +996,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1011,7 +1011,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1026,7 +1026,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1041,7 +1041,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1056,7 +1056,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1071,7 +1071,7 @@ Usage: #example
 * status = #final
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
@@ -1083,7 +1083,7 @@ Instance: somaticReport
 InstanceOf: GenomicReport
 Description: "Example somatic GenomicReport"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-reference"
+* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-reference"
 * extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
 * identifier.type.coding.code = #ACSN
 * identifier.type.coding.display = "Accession ID"
@@ -1091,12 +1091,12 @@ Usage: #example
 * identifier.value = "23-0000345"
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
-* code.coding[0] = $LNC#51969-4 "Genetic analysis report"
+* code.coding[+] = $LNC#51969-4 "Genetic analysis report"
 * effectiveDateTime = "2023-02-02"
 * basedOn = Reference(somaticServiceRequest)
-* performer[0] = Reference(pathologistPractitioner)
+* performer[+] = Reference(pathologistPractitioner)
 * performer[+] = Reference(performingOrganization)
-* resultsInterpreter[0] = Reference(supervisorPractitioner)
+* resultsInterpreter[+] = Reference(supervisorPractitioner)
 * resultsInterpreter[+] = Reference(performingOrganization)
 * result[+] = Reference(NOTCH1-uncertain-var)
 * result[+] = Reference(ZFHX3-uncertain-var)
@@ -1198,7 +1198,7 @@ Usage: #example
 * identifier.system = "http://example.org/identifiers/CLIA"
 * identifier.value = "10000DLAB8"
 * name = "My Test Pathology Laboratories"
-* telecom[0].system = #phone
+* telecom[+].system = #phone
 * telecom[=].value = "(100) 200-3000"
 * telecom[+].system = #fax
 * telecom[=].value = "(400) 500-6000"

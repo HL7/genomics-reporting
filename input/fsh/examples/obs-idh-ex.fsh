@@ -10,7 +10,7 @@ Usage: #example
 * effectiveDateTime = "2023-06-01"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(SNVexample)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions"

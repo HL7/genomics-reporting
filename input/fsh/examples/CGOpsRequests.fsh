@@ -4,7 +4,7 @@ Instance: FindSubjectVariantsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'Find Subject Variants' Operation"
 
-* parameter[0].name = "variants"
+* parameter[+].name = "variants"
 * parameter[=].part[0].name = "rangeItem"
 * parameter[=].part[=].valueString = "NC_000017.11:39688093-39728660"
 * parameter[=].part[+].name = "presence"
@@ -75,7 +75,7 @@ Instance: FindSubjectSpecificVariantsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectSpecificVariants' Operation"
 Usage: #example
-* parameter[0].name = "variants"
+* parameter[+].name = "variants"
 * parameter[=].part[0].name = "variantItem"
 * parameter[=].part[=].valueString = "NM_001354609.2:c.1799T>A"
 * parameter[=].part[+].name = "presence"
@@ -161,7 +161,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectStructuralIntersectingVariants' Operation"
 Usage: #example
 * parameter.name = "variants"
-* parameter.part[0].name = "rangeItem"
+* parameter.part[+].name = "rangeItem"
 * parameter.part[=].valueString = "NC_000007.13:55242414-55242513"
 * parameter.part[+].name = "presence"
 * parameter.part[=].valueBoolean = true
@@ -223,7 +223,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectStructuralSubsumingVariants' Operation"
 Usage: #example
 * parameter.name = "variants"
-* parameter.part[0].name = "rangeItem"
+* parameter.part[+].name = "rangeItem"
 * parameter.part[=].valueString = "NC_000007.14:116672195-116798386"
 * parameter.part[+].name = "presence"
 * parameter.part[=].valueBoolean = true
@@ -290,7 +290,7 @@ Instance: FindSubjectHaplotypesOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectHaplotypes' Operation"
 Usage: #example
-* parameter[0].name = "haplotypes"
+* parameter[+].name = "haplotypes"
 * parameter[=].part[0].name = "geneItem"
 * parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2625"
 * parameter[=].part[+].name = "genotype"
@@ -354,7 +354,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectSpecificHaplotypes' Operation"
 Usage: #example
 * parameter.name = "haplotypes"
-* parameter.part[0].name = "haplotypeItem"
+* parameter.part[+].name = "haplotypeItem"
 * parameter.part[=].valueString = "HLA-A*23"
 * parameter.part[+].name = "presence"
 * parameter.part[=].valueBoolean = true
@@ -686,7 +686,7 @@ Instance: FindANYPopulationSpecificVariantsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'OR' logic"
 Usage: #example
-* parameter[0].name = "variants"
+* parameter[+].name = "variants"
 * parameter[=].part[0].name = "variantItem"
 * parameter[=].part[=].valueString = "NC_000010.10:g.121551307G>A"
 * parameter[=].part[+].name = "numerator"
@@ -707,7 +707,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'AND' logic"
 Usage: #example
 * parameter.name = "variants"
-* parameter.part[0].name = "variantItem"
+* parameter.part[+].name = "variantItem"
 * parameter.part[=].valueString = "NC_000010.10:g.121551307G>A AND NC_000011.10:g.8263343T>C AND NC_000001.10:g.198742263G>A"
 * parameter.part[+].name = "numerator"
 * parameter.part[=].valueQuantity.value = 2
@@ -718,7 +718,7 @@ Instance: FindPopulationStructuralIntersectingVariantsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationStructuralIntersectingVariants' Operation"
 Usage: #example
-* parameter[0].name = "variants"
+* parameter[+].name = "variants"
 * parameter[=].part[0].name = "rangeItem"
 * parameter[=].part[=].valueString = "NC_000017.11:43044294-43125364"
 * parameter[=].part[+].name = "numerator"
@@ -748,7 +748,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationStructuralSubsumingVariants' Operation"
 Usage: #example
 * parameter.name = "variants"
-* parameter.part[0].name = "rangeItem"
+* parameter.part[+].name = "rangeItem"
 * parameter.part[=].valueString = "NC_000022.10:42522500-42526812"
 * parameter.part[+].name = "numerator"
 * parameter.part[=].valueQuantity.value = 113
@@ -766,7 +766,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationSpecificHaplotypes' Operation"
 Usage: #example
 * parameter.name = "haplotypes"
-* parameter.part[0].name = "haplotypeItem"
+* parameter.part[+].name = "haplotypeItem"
 * parameter.part[=].valueString = "A*1 and B*8 and DRB1*03 and DRB3*01 and A*31 and  B*35 and DRB1*04 and DRB4*01:02"
 * parameter.part[+].name = "numerator"
 * parameter.part[=].valueQuantity.value = 0
@@ -780,7 +780,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationTxImplications' Operation"
 Usage: #example
 * parameter.name = "implications"
-* parameter.part[0].name = "numerator"
+* parameter.part[+].name = "numerator"
 * parameter.part[=].valueQuantity.value = 23
 * parameter.part[+].name = "subject"
 * parameter.part[=].valueString = "patient/12345"
@@ -796,7 +796,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationDxImplications' Operation"
 Usage: #example
 * parameter.name = "implications"
-* parameter.part[0].name = "numerator"
+* parameter.part[+].name = "numerator"
 * parameter.part[=].valueQuantity.value = 23
 * parameter.part[+].name = "subject"
 * parameter.part[=].valueString = "patient/12345"
@@ -812,7 +812,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationMolecConseq' Operation"
 Usage: #example
 * parameter.name = "consequences"
-* parameter.part[0].name = "numerator"
+* parameter.part[+].name = "numerator"
 * parameter.part[=].valueQuantity.value = 23
 * parameter.part[+].name = "subject"
 * parameter.part[=].valueString = "patient/12345"
@@ -828,7 +828,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindStudyMetadata' Operation"
 Usage: #example
 * parameter.name = "tests"
-* parameter.part[0].name = "testId"
+* parameter.part[+].name = "testId"
 * parameter.part[=].valueString = "test08736abc87"
 * parameter.part[+].name = "testDate"
 * parameter.part[=].valueDateTime = "2020-07-13"

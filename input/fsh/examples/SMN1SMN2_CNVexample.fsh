@@ -62,13 +62,13 @@ Description: "Antisense Oligonucelotide example of Therapeutic Implication for S
 * code = TbdCodesCS#therapeutic-implication
 * subject.display = "A Newborn"
 * effectiveDateTime = "2019-04-01"
-* performer[0] = Reference(ExampleOrg)
+* performer[+] = Reference(ExampleOrg)
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "nusinersen (antisense oligonucleotide)"
-* derivedFrom[0] = Reference(obs1-interact-smn1-smn2)
+* derivedFrom[+] = Reference(obs1-interact-smn1-smn2)
 * derivedFrom[+] = Reference(obs2-interact-smn1-smn2)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
@@ -83,13 +83,13 @@ Description: "Transgene example of Therapeutic Implication for SMN1/SMN2 CNV exa
 * code = TbdCodesCS#therapeutic-implication
 * subject.display = "A Newborn"
 * effectiveDateTime = "2019-04-01"
-* performer[0] = Reference(ExampleOrg)
+* performer[+] = Reference(ExampleOrg)
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "onasemnogene abeparvovec (transgene)"
-* derivedFrom[0] = Reference(obs1-interact-smn1-smn2)
+* derivedFrom[+] = Reference(obs1-interact-smn1-smn2)
 * derivedFrom[+] = Reference(obs2-interact-smn1-smn2)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
@@ -104,13 +104,13 @@ Description: "Small molecule example of Therapeutic Implication for SMN1/SMN2 CN
 * code = TbdCodesCS#therapeutic-implication
 * subject.display = "A Newborn"
 * effectiveDateTime = "2019-04-01"
-* performer[0] = Reference(ExampleOrg)
+* performer[+] = Reference(ExampleOrg)
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "risdiplam (small molecule)"
-* derivedFrom[0] = Reference(obs1-interact-smn1-smn2)
+* derivedFrom[+] = Reference(obs1-interact-smn1-smn2)
 * derivedFrom[+] = Reference(obs2-interact-smn1-smn2)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
@@ -128,10 +128,10 @@ Description: "Diagnostic Implication for SMN1/SMN2 CNV example"
 * code = TbdCodesCS#diagnostic-implication "Diagnostic Implication"
 * subject.display = "A Newborn"
 * effectiveDateTime = "2019-04-01"
-* performer[0] = Reference(ExampleOrg)
+* performer[+] = Reference(ExampleOrg)
 * method = $LNC#LA26811-2 "Computational analysis"
 * derivedFrom = Reference(obs1-interact-smn1-smn2)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
