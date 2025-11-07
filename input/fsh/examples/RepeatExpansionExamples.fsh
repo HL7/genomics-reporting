@@ -11,7 +11,7 @@ Usage: #example
 * performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
-* component[0].code = $LNC#48018-6 "Gene studied ID"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:8565 "PABPN1"
 
 * component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
@@ -51,7 +51,7 @@ Usage: #example
 * performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 
-* component[0].code = $LNC#48018-6 "Gene studied ID"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:3775 "FMR1"
 
 * component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"

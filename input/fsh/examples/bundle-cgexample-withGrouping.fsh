@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example bundle showing a variety of profiles, including how groupings of Observations might be delivered."
 Usage: #example
 * type = #collection
-* entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/report-withGrouping"
+* entry[+].fullUrl = "http://example.org/fhir/DiagnosticReport/report-withGrouping"
 * entry[=].resource = report-withGrouping
 * entry[+].fullUrl = "http://example.org/fhir/Patient/ExamplePatient"
 * entry[=].resource = ExamplePatient
@@ -63,7 +63,7 @@ Usage: #inline
 * result[+] = Reference(efficacy-1a)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = "UHV0IHRoZSByZXBvcnQgdGV4dCBoZXJlIC0gbWltZS1lbmNvZGVk"
-* conclusionCode[0] = $LNC#LA6576-8 "Positive"
+* conclusionCode[+] = $LNC#LA6576-8 "Positive"
 * conclusionCode[+] = $SCT#10828004 "Positive"
 
 Instance: dis-path-1a
@@ -78,7 +78,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(discrete-variant-1a)
-* component[0].code = $LNC#53037-8
+* component[+].code = $LNC#53037-8
 * component[=].valueCodeableConcept.coding = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.coding = $MONDO#MONDO:0012624 "acyl-CoA dehydrogenase 9 deficiency"
@@ -96,7 +96,7 @@ Usage: #inline
 * performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
-* hasMember[0] = Reference(complex-component-D-1a)
+* hasMember[+] = Reference(complex-component-D-1a)
 * hasMember[+] = Reference(complex-component-E-1a)
 /* extra slice
 * component.code = $LNC#81263-6
@@ -115,7 +115,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(complex-variant-1a)
-* component[0].code = $LNC#53037-8
+* component[+].code = $LNC#53037-8
 * component[=].valueCodeableConcept.coding = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4
 * component[=].valueCodeableConcept.coding = $SCT#293498008 "Debrisoquine adverse reaction (disorder)"
@@ -133,7 +133,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* hasMember[0] = Reference(haplotype-1a)
+* hasMember[+] = Reference(haplotype-1a)
 * hasMember[+] = Reference(genotype-1a)
 * hasMember[+] = Reference(metab-1a)
 * hasMember[+] = Reference(efficacy-1a)
@@ -167,7 +167,7 @@ Usage: #inline
 * valueCodeableConcept = $PHARMVAR#CYP2C9*2*5" "CYP2C9 *2/*5"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(haplotype-1a)
-* component[0].code = $LNC#48018-6
+* component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:23663 "VKORC1"
@@ -184,7 +184,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype-1a)
-* component[0].code = $LNC#51963-7
+* component[+].code = $LNC#51963-7
 * component[=].valueCodeableConcept.coding = $RXN#11289 "Warfarin"
 * component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept.coding = $LNC#LA25390-8 "Rapid metabolizer"
@@ -201,7 +201,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype-1a)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept.coding = $LNC#LA6676-6 "Resistant"
 * component[+].code = $LNC#51963-7
 * component[=].valueCodeableConcept.coding = $RXN#11289 "Warfarin"
@@ -218,7 +218,7 @@ Usage: #inline
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype-1a)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept.coding = $LNC#LA19542-2 "Low risk"
 * component[+].code = $LNC#51963-7
 * component[=].valueCodeableConcept.coding = $RXN#11289 "Warfarin"
@@ -248,7 +248,7 @@ Usage: #inline
 * performer = Reference(ExampleLab)
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
-* component[0].code = $LNC#81252-9 "Discrete genetic variant"
+* component[+].code = $LNC#81252-9 "Discrete genetic variant"
 * component[=].valueCodeableConcept.coding = $CLINVAR#31934 "NM_000106.5(CYP2D6):c.886C>T (p.Arg296Cys)"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NM_000106.5
@@ -272,7 +272,7 @@ Usage: #inline
 * performer = Reference(ExampleLab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
-* component[0].code = $LNC#81252-9 "Discrete genetic variant"
+* component[+].code = $LNC#81252-9 "Discrete genetic variant"
 * component[=].valueCodeableConcept.coding = $CLINVAR#38486 "NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000106.5
@@ -292,7 +292,7 @@ Usage: #inline
 * performer = Reference(ExampleLab)
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
-* component[0].code = $LNC#81252-9 "Discrete genetic variant"
+* component[+].code = $LNC#81252-9 "Discrete genetic variant"
 * component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"
 * component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:21497 "ACAD9"
