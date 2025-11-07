@@ -13,7 +13,7 @@ Usage: #example
 * interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 //KP - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
 // * component[+].code = http://loinc.org#48004-6
-// * component[+].code.text = "coding HGVS"
+// * component[=].code.text = "coding HGVS"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"

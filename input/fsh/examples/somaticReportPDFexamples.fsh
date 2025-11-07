@@ -136,15 +136,15 @@ Description: "Example for MSH2 deletion"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
 //* component[exact-start-end][+].valueRange.low.value = 
-//* component[exact-start-end][+].valueRange.high.value = 
+//* component[exact-start-end][=].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = 
 * component[variation-code].valueCodeableConcept = $CLINVAR#1780982 "NM_000251.3(MSH2):c.1832del (p.Val611fs)"
 //* component[genomic-hgvs].valueCodeableConcept = 
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 //* component[sample-allelic-frequency][+].valueQuantity.value = 
-//* component[sample-allelic-frequency][+].valueQuantity.system = 
-//* component[sample-allelic-frequency][+].valueQuantity.unit = 
+//* component[sample-allelic-frequency][=].valueQuantity.system = 
+//* component[sample-allelic-frequency][=].valueQuantity.unit = 
 
 //NTHL1_snv
 Instance: NTHL1-snv-var
@@ -170,15 +170,15 @@ Description: "Example for NTHL1 SNV"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
 //* component[exact-start-end][+].valueRange.low.value = 
-//* component[exact-start-end][+].valueRange.high.value = 
+//* component[exact-start-end][=].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = 
 * component[variation-code].valueCodeableConcept = $CLINVAR#962538 "NM_002528.7(NTHL1):c.728G>A (p.Trp243Ter)"
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000016.10:g.2040196C>T
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 //* component[sample-allelic-frequency][+].valueQuantity.value = 
-//* component[sample-allelic-frequency][+].valueQuantity.system = 
-//* component[sample-allelic-frequency][+].valueQuantity.unit =
+//* component[sample-allelic-frequency][=].valueQuantity.system = 
+//* component[sample-allelic-frequency][=].valueQuantity.unit =
 
 Instance: STAG2-insertion-var
 InstanceOf: Variant
@@ -269,7 +269,7 @@ Description: "Example for EGFR L858R"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
 //* component[exact-start-end][+].valueRange.low.value = 
-//* component[exact-start-end][+].valueRange.high.value = 
+//* component[exact-start-end][=].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = ""
 //* component[variation-code].valueCodeableConcept = 
@@ -302,15 +302,15 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
 //* component[exact-start-end][+].valueRange.low.value = 
-//* component[exact-start-end][+].valueRange.high.value = 
+//* component[exact-start-end][=].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = ""
 //* component[variation-code].valueCodeableConcept = 
 //* component[genomic-hgvs].valueCodeableConcept = 
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 //* component[sample-allelic-frequency][+].valueQuantity.value = 0.075
-//* component[sample-allelic-frequency][+].valueQuantity.system = "http://unitsofmeasure.org"
-//* component[sample-allelic-frequency][+].valueQuantity.unit = "decimal"
+//* component[sample-allelic-frequency][=].valueQuantity.system = "http://unitsofmeasure.org"
+//* component[sample-allelic-frequency][=].valueQuantity.unit = "decimal"
 
 Instance: NOTCH1-significance
 InstanceOf: DiagnosticImplication
