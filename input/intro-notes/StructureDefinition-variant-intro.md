@@ -1,6 +1,6 @@
 ### Scope and Usage
   
-This profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms.  Labs are encouraged to populate what properties they know. In future versions of this implementation guide, HL7 may provide additional guidance on what properties should be sent in which situations and may subdivide *Variant* into multiple sub-profiles with more specific purpose.
+This profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms. Labs are encouraged to populate what properties they know. In future versions of this implementation guide, HL7 may provide additional guidance on what properties should be sent in which situations and may subdivide *Variant* into multiple sub-profiles with more specific purpose.
 
 ### Other Guidance
   
