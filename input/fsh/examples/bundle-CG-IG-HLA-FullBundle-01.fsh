@@ -601,10 +601,14 @@ Usage: #inline
 Instance: CG-IG-HLA-FullBundle-01-27
 InstanceOf: GenomicReport
 Usage: #inline
-* extension[hla-genotyping-results-allele-database].valueString = "http://www.ebi.ac.uk/ipd/imgt/hla|3.23"
-* extension[hla-genotyping-results-glstring]
-  * extension[text].valueString = "HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"
-  * extension[url].valueUri = "https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex"
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
+* extension[=].valueCodeableConcept.coding.system = "http://www.ebi.ac.uk/ipd/imgt/hla"
+* extension[=].valueCodeableConcept.coding.version = "3.23"
+* extension[+].extension[0].url = "text"
+* extension[=].extension[=].valueString = "HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"
+* extension[=].extension[+].url = "url"
+* extension[=].extension[=].valueUri = "https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex"
+* extension[=].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring"
 * basedOn = Reference(urn:uuid:99309303-045e-4cf4-90d7-250d7a7476ea) "Class I HLA genotyping for John Storm"
   * type = "ServiceRequest"
 * status = #final
