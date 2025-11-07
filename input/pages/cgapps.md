@@ -12,7 +12,7 @@ For more information about SMART:
 
 ### SMART App Structure {#appStructure}
 
-Following figure shows common structure of a SMART on FHIR app.
+The following figure shows common structure of a SMART on FHIR app.
 
 <div style="text-align: left; margin: 20px 0; clear: both; overflow: hidden;">
 <img src="cgapps-StructureSMARTApps-fg1.png" alt="Image showing common structure of CG apps" style="max-width: 100%; display: block; margin: 0; float: none;" />

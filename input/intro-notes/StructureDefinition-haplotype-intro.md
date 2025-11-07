@@ -1,6 +1,6 @@
 Haplotype describe a set of genomic [variations](StructureDefinition-variant.html) that appear on a single strand of DNA - and which are therefore typically inherited together. Many haplotypes are expressed as simple strings, and can be conveyed in `valueCodeableConcept.text`. In some cases, haplotypes are sufficiently standardized to be conveyed as codes in `valueCodeableConcept.code`.
 
-For Pharmacogenomics, implementers SHOULD send coded haplotypes.  Here is an example using PharmVar:
+For Pharmacogenomics, implementers SHOULD send coded haplotypes. Here is an example using PharmVar:
 - Coded PGx
 ```json
 { 

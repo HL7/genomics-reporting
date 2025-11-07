@@ -1,6 +1,6 @@
 ### Scope and Usage
   
-This profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms.  Labs are encouraged to populate what properties they know. In future versions of this implementation guide, HL7 may provide additional guidance on what properties should be sent in which situations and may subdivide *Variant* into multiple sub-profiles with more specific purpose.
+This profile allows a full description of the variant found using properties from a variety of testing approaches and allowing for a variety of descriptive mechanisms. Labs are encouraged to populate what properties they know. In future versions of this implementation guide, HL7 may provide additional guidance on what properties should be sent in which situations and may subdivide *Variant* into multiple sub-profiles with more specific purpose.
 
 ### Other Guidance
   
@@ -10,7 +10,7 @@ A variety of annotations (see [variant implications](StructureDefinition-implica
 
 Most human genes are transcribed into multiple transcripts. The molecular consequences profile can be used to indicate transcript-specific predicted consequences, for one or more transcripts. In the Variant instance itself, one can also indicate a representative transcript-level HGVS and/or protein HGVS.
 
-If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on [flexibility](general.html#flexibility) for additional guidancem, especially the guidance for the Open Slicing allowed on `Observation.component`.
+If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on [flexibility](general.html#flexibility) for additional guidance, especially the guidance for the Open Slicing allowed on `Observation.component`.
 
 #### Note on Molecular Consequence in STU2
 

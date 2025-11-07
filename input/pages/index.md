@@ -91,7 +91,7 @@ Implementers should use this guide to structure genomics data in an interoperabl
 | Appendix | Description |
 |----------|-------------|
 | [Appendix A: Relation to v2 reporting](v2.html) | Links to v2 Genetic Variation Model Implementation Guide and v2 Cytogenomic Model Implementation Guide |
-| [Appendix B: Clinical Genomics Apps](cgapps.html) | Introduction of the Clinical Genomics Applications (Genomics Advisor, etc) apply for this implementation guide |
+| [Appendix B: Clinical Genomics Apps](cgapps.html) | Introduction of the Clinical Genomics Applications (Genomics Advisor, etc) that apply to this implementation guide |
 | [Appendix C: Domain Analysis Model](domain.html) | A domain analysis model for various use cases in clinical genomics |
 | [Appendix D: Query Guidance](usecases.html) | Query guidance based on use-cases from the Domain Analysis Document |
 | [Appendix E: External Coding Systems](codings.html) | Reference for publicly available external coding systems |

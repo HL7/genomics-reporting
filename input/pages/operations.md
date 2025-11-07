@@ -66,7 +66,7 @@ In such cases, it is important that FHIR Genomics operations be able to specify 
 
 #### AND/OR logic in queries {#and-or-logic-in-queries}
 
-[FHIR Search](http://hl7.org/fhir/r4/search.html) defines general AND/OR logic in FHIR queries: A logical 'AND' is achieved by repeating a query parameter (e.g. '/Patient?language=FR&language=NL') , whereas a logical 'OR' is achieved via a comma-separated list of values for a single query parameter (e.g. '/Patient?language=FR,NL'). Unless stated otherwise, all FHIR Genomics Operations support 'OR' logic, and only support 'AND' logic for date fields (e.g. '...&testDateRange=ge2020-06-01&testDateRange=le2020-08-01'). Parameters that have a cardinality greater than one can be populated with a comma-separated list of values that represent a logical 'OR'.
+[FHIR Search](http://hl7.org/fhir/r4/search.html) defines general AND/OR logic in FHIR queries: A logical 'AND' is achieved by repeating a query parameter (e.g. '/Patient?language=FR&language=NL'), whereas a logical 'OR' is achieved via a comma-separated list of values for a single query parameter (e.g. '/Patient?language=FR,NL'). Unless stated otherwise, all FHIR Genomics Operations support 'OR' logic, and only support 'AND' logic for date fields (e.g. '...&testDateRange=ge2020-06-01&testDateRange=le2020-08-01'). Parameters that have a cardinality greater than one can be populated with a comma-separated list of values that represent a logical 'OR'.
 
 #### Simple vs. Structural variant operations {#simple-structural}
 

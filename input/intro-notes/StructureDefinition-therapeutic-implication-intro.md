@@ -1,6 +1,6 @@
-This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications or other therapeutic alternatives (such as clinical trials).  
+This section provides guidance for genomic reporting about the implication of a patient's genetics on the behavior of one or more medications or other therapeutic alternatives (such as clinical trials).
     
-This portion of the implementation guide relies on the content in the [General Genomic Reporting](general.html) and [Variant Reporting](sequencing.html) portions of this implementation guide.  Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles. Implementers of pharmacogenomic reporting may also be interested in the [Somatic Reporting](somatics.html) section of this implementation guide.
+This portion of the implementation guide relies on the content in the [General Genomic Reporting](general.html) and [Variant Reporting](sequencing.html) portions of this implementation guide. Pharmacogenomic reports supplement this information with a set of pharmacogenomic-specific implication profiles. Implementers of pharmacogenomic reporting may also be interested in the [Somatic Reporting](somatics.html) section of this implementation guide.
 
 ### Communicating disease or tumor context
   
