@@ -13,9 +13,9 @@ Id:          genomic-risk-assessment
 Title:       "Genomic Risk Assessment"
 Description: "RiskAssessment delivered as part of a genomics report or observation"
 * ^context[+].type = #element
-* ^context[+].expression = "DiagnosticReport"
-* ^context[1].type = #element
-* ^context[1].expression = "Observation"
+* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation"
 * value[x] only Reference(RiskAssessment)
 
 Extension:   AnnotationCode
@@ -40,7 +40,7 @@ Id:          therapy-assessed-reference
 Title:       "Therapy Assessed reference to a FHIR resource"
 Description: "Used to reference a specific therapy that was assessed (e.g. a FHIR ResearchStudy, a FHIR CarePlan, or a FHIR PlanDefinition)."
 * ^context[+].type = #element
-* ^context[+].expression = "Observation.component"
+* ^context[=].expression = "Observation.component"
 * value[x] only Reference(CarePlan or ResearchStudy or PlanDefinition)
 
 Extension:   MedicationAssessedReference
@@ -48,7 +48,7 @@ Id:          medication-assessed-reference
 Title:       "Medication Assessed reference to a FHIR resource"
 Description: "Used to reference a specific medication that was assessed (e.g. a FHIR Medication or a FHIR MedicationKnowledge)."
 * ^context[+].type = #element
-* ^context[+].expression = "Observation.component"
+* ^context[=].expression = "Observation.component"
 * value[x] only Reference(Medication or MedicationKnowledge)
 
 Extension:   RepeatMotifOrder
@@ -56,7 +56,7 @@ Id:          repeat-motif-order
 Title:       "Repeat Motif Order"
 Description: "Use to group and order repeat expansion motifs."
 * ^context[+].type = #element
-* ^context[+].expression = "Observation.component"
+* ^context[=].expression = "Observation.component"
 * value[x] only positiveInt
 
 Extension:   KnowledgebaseAncestryGroup
@@ -64,5 +64,5 @@ Id:          knowledgebase-ancestry-group
 Title:       "Knowledgebase Ancestry Group"
 Description: "Used to identify the sample ancestry group using terms obtained from the knowledgebase"
 * ^context[+].type = #element
-* ^context[+].expression = "Observation.component"
+* ^context[=].expression = "Observation.component"
 * value[x] only CodeableConcept

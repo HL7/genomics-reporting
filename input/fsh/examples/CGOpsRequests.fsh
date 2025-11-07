@@ -569,7 +569,7 @@ Usage: #example
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 //kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
 // * parameter[=].resource.component[+].code = http://loinc.org#48004-6
-// * parameter[=].resource.component[+].code.text = "coding HGVS"
+// * parameter[=].resource.component[=].code.text = "coding HGVS"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
@@ -594,7 +594,7 @@ Usage: #example
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#LOW "Low"
 * parameter[=].resource.component[+].code = http://loinc.org#48004-6
-* parameter[=].resource.component[+].code.text = "coding HGVS"
+* parameter[=].resource.component[=].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001366781.1:c.90T>C "NM_001366781.1:c.90T>C"
 // * parameter[=].resource.component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
@@ -618,7 +618,7 @@ Usage: #example
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 * parameter[=].resource.component[+].code = http://loinc.org#48004-6
-* parameter[=].resource.component[+].code.text = "coding HGVS"
+* parameter[=].resource.component[=].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
