@@ -10,7 +10,7 @@ A variety of annotations (see [variant implications](StructureDefinition-implica
 
 Most human genes are transcribed into multiple transcripts. The molecular consequences profile can be used to indicate transcript-specific predicted consequences, for one or more transcripts. In the Variant instance itself, one can also indicate a representative transcript-level HGVS and/or protein HGVS.
 
-If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on [flexibility](general.html#flexibility) for additional guidancem, especially the guidance for the Open Slicing allowed on `Observation.component`.
+If implementers have additional variant annotations, the Variant profile is defined to allow flexibility. See the section on [flexibility](general.html#flexibility) for additional guidance, especially the guidance for the Open Slicing allowed on `Observation.component`.
 
 #### Note on Molecular Consequence in STU2
 
