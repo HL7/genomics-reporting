@@ -66,34 +66,3 @@ Description: "Used to identify the sample ancestry group using terms obtained fr
 * ^context[0].type = #element
 * ^context[0].expression = "Observation.component"
 * value[x] only CodeableConcept
-
-// these HLA extensions have been deprecated in the FHIR extensions registry, so we will make local versions
-Extension:   HLAGenotypingResultsAlleleDatabase
-Id:          hla-genotyping-results-allele-database
-Title:       "HLA Genotyping Results Allele Database"
-Description: "Indicates the allele database version used for HLA genotyping results."
-* ^context[0].type = #element
-* ^context[0].expression = "DiagnosticReport"
-* value[x] only string
-
-Extension:   HLAGenotypingResultsGLString
-Id:          hla-genotyping-results-glstring
-Title:       "HLA Genotyping Results GL String"
-Description: "Represents the HLA genotyping results as a GL String."
-* ^context[0].type = #element
-* ^context[0].expression = "DiagnosticReport"
-* extension contains
-    url 0..1 and
-    text 0..1
-* extension[url] only Extension
-* extension[url] ^short = "glstring.url"
-* extension[url] ^definition = "glstring using a URI reference."
-* extension[url].url only uri
-* extension[url].value[x] 1..
-* extension[url].value[x] only uri
-* extension[text] only Extension
-* extension[text] ^short = "glstring.text"
-* extension[text] ^definition = "glstring using inline data."
-* extension[text].url only uri
-* extension[text].value[x] 1..
-* extension[text].value[x] only string

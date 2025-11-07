@@ -84,8 +84,8 @@ Description:    "Genomic profile of DiagnosticReport."
     and GenomicReportNote named coded-note 0..*
     and $supporting-info named supporting-info 0..*
     and GenomicStudyReference named genomic-study 0..*
-    and HLAGenotypingResultsAlleleDatabase named hla-genotyping-results-allele-database 0..1
-    and HLAGenotypingResultsGLString named hla-genotyping-results-glstring 0..1
+    and $hla-genotyping-results-allele-database named hla-genotyping-results-allele-database 0..1
+    and $hla-genotyping-results-glstring named hla-genotyping-results-glstring 0..1
     and $workflow-relatedArtifact named workflow-relatedArtifact 0..*
 * extension[GenomicReportNote] ^short = "Comments about the report that also contain a coded type"
 * extension[GenomicReportNote] ^requirements = "Need to be able to provide free text additional information. Notes SHALL NOT contain information which can be captured in a structured way."
