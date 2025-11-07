@@ -5,12 +5,12 @@ InstanceOf: Parameters
 Description: "Example Output of 'Find Subject Variants' Operation"
 
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "rangeItem"
+* parameter[=].part[+].name = "rangeItem"
 * parameter[=].part[=].valueString = "NC_000017.11:39688093-39728660"
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = false
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "rangeItem"
+* parameter[=].part[+].name = "rangeItem"
 * parameter[=].part[=].valueString = "NC_000007.14:140713327-140924929"
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = true
@@ -32,7 +32,7 @@ Description: "Example Output of 'Find Subject Variants' Operation"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "Present"
-* parameter[=].part[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #48002-0
 * parameter[=].part[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
@@ -76,27 +76,27 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectSpecificVariants' Operation"
 Usage: #example
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NM_001354609.2:c.1799T>A"
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = false
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NM_007294.4:c.5559C>A"
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = false
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NM_001354609.2:c.1802="
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = false
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NC_000001.10:g.12225351T>A"
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = false
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NM_000038.6:c.55G>T"
 * parameter[=].part[+].name = "presence"
 * parameter[=].part[=].valueBoolean = true
@@ -118,7 +118,7 @@ Usage: #example
 * parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].part[=].resource.valueCodeableConcept.coding.display = "Present"
-* parameter[=].part[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component[=].code.coding.code = #48002-0
 * parameter[=].part[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
 * parameter[=].part[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
@@ -183,7 +183,7 @@ Usage: #example
 * parameter.part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter.part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter.part[=].resource.valueCodeableConcept.coding.display = "present"
-* parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48019-4
 * parameter.part[=].resource.component[=].code.coding.display = "DNA Change Type"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.sequenceontology.org"
@@ -245,7 +245,7 @@ Usage: #example
 * parameter.part[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter.part[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter.part[=].resource.valueCodeableConcept.coding.display = "present"
-* parameter.part[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter.part[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter.part[=].resource.component[=].code.coding.code = #48019-4
 * parameter.part[=].resource.component[=].code.coding.display = "DNA Change Type"
 * parameter.part[=].resource.component[=].valueCodeableConcept.coding.system = "http://www.sequenceontology.org"
@@ -291,7 +291,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindSubjectHaplotypes' Operation"
 Usage: #example
 * parameter[+].name = "haplotypes"
-* parameter[=].part[0].name = "geneItem"
+* parameter[=].part[+].name = "geneItem"
 * parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2625"
 * parameter[=].part[+].name = "genotype"
 * parameter[=].part[=].resource.resourceType = "Observation"
@@ -319,7 +319,7 @@ Usage: #example
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.code = #HGNC:2625
 * parameter[=].part[=].resource.component.valueCodeableConcept.coding.display = "CYP2D6"
 * parameter[+].name = "haplotypes"
-* parameter[=].part[0].name = "geneItem"
+* parameter[=].part[+].name = "geneItem"
 * parameter[=].part[=].valueString = "http://www.genenames.org|HGNC:2621"
 * parameter[=].part[+].name = "genotype"
 * parameter[=].part[=].resource.resourceType = "Observation"
@@ -406,7 +406,7 @@ Usage: #example
 * parameter[=].resource.effectiveDateTime = "2023-07-01"
 * parameter[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].resource.derivedFrom.reference = "Observation/VariantExample"
-* parameter[=].resource.component[0].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
+* parameter[=].resource.component[+].code.coding.system = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs"
 * parameter[=].resource.component[=].code.coding.code = #therapeutic-implication
 * parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.code = #LA6677-4
@@ -435,7 +435,7 @@ Usage: #example
 * parameter[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].resource.valueCodeableConcept.coding.display = "Present"
-* parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #48002-0
 * parameter[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
@@ -486,7 +486,7 @@ Usage: #example
 * parameter[=].resource.effectiveDateTime = "2023-04-01"
 * parameter[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter[=].resource.derivedFrom.reference = "Observation/VariantExample2"
-* parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #53037-8
 * parameter[=].resource.component[=].code.text = "Genetic variation clinical significance"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
@@ -516,7 +516,7 @@ Usage: #example
 * parameter[=].resource.valueCodeableConcept.coding.system = "http://loinc.org"
 * parameter[=].resource.valueCodeableConcept.coding.code = #LA9633-4
 * parameter[=].resource.valueCodeableConcept.coding.display = "Present"
-* parameter[=].resource.component[0].code.coding.system = "http://loinc.org"
+* parameter[=].resource.component[+].code.coding.system = "http://loinc.org"
 * parameter[=].resource.component[=].code.coding.code = #48002-0
 * parameter[=].resource.component[=].code.coding.display = "Genomic source class [Type]"
 * parameter[=].resource.component[=].valueCodeableConcept.coding.system = "http://loinc.org"
@@ -568,14 +568,14 @@ Usage: #example
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#HIGH "High"
 //kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
-// * parameter[=].resource.component[0].code = http://loinc.org#48004-6
-// * parameter[=].resource.component[0].code.text = "coding HGVS"
+// * parameter[=].resource.component[+].code = http://loinc.org#48004-6
+// * parameter[=].resource.component[+].code.text = "coding HGVS"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
 * parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
-* parameter[=].resource.component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
-* parameter[=].resource.component[=].valueCodeableConcept.coding[1] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
+* parameter[=].resource.component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
+* parameter[=].resource.component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * parameter[=].resource.component[+].code = TbdCodesCS#functional-effect
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
 * parameter[+].name = "consequence"
@@ -593,8 +593,8 @@ Usage: #example
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#LOW "Low"
-* parameter[=].resource.component[0].code = http://loinc.org#48004-6
-* parameter[=].resource.component[0].code.text = "coding HGVS"
+* parameter[=].resource.component[+].code = http://loinc.org#48004-6
+* parameter[=].resource.component[+].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001366781.1:c.90T>C "NM_001366781.1:c.90T>C"
 // * parameter[=].resource.component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
@@ -617,8 +617,8 @@ Usage: #example
 * parameter[=].resource.performer = Reference(Organization/ExampleOrg)
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
-* parameter[=].resource.component[0].code = http://loinc.org#48004-6
-* parameter[=].resource.component[0].code.text = "coding HGVS"
+* parameter[=].resource.component[+].code = http://loinc.org#48004-6
+* parameter[=].resource.component[+].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
@@ -640,8 +640,8 @@ Usage: #example
 * parameter[=].resource.derivedFrom = Reference(Observation/variantExampleMC)
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 //kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
-// * parameter[=].resource.component[0].code = http://loinc.org#48004-6
-// * parameter[=].resource.component[0].code.text = "coding HGVS"
+// * parameter[=].resource.component[+].code = http://loinc.org#48004-6
+// * parameter[=].resource.component[+].code.text = "coding HGVS"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
@@ -687,17 +687,17 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'OR' logic"
 Usage: #example
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NC_000010.10:g.121551307G>A"
 * parameter[=].part[+].name = "numerator"
 * parameter[=].part[=].valueQuantity.value = 7
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NC_000011.10:g.8263343T>C"
 * parameter[=].part[+].name = "numerator"
 * parameter[=].part[=].valueQuantity.value = 1
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "variantItem"
+* parameter[=].part[+].name = "variantItem"
 * parameter[=].part[=].valueString = "NC_000001.10:g.198742263G>A"
 * parameter[=].part[+].name = "numerator"
 * parameter[=].part[=].valueQuantity.value = 3
@@ -719,7 +719,7 @@ InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationStructuralIntersectingVariants' Operation"
 Usage: #example
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "rangeItem"
+* parameter[=].part[+].name = "rangeItem"
 * parameter[=].part[=].valueString = "NC_000017.11:43044294-43125364"
 * parameter[=].part[+].name = "numerator"
 * parameter[=].part[=].valueQuantity.value = 17
@@ -730,7 +730,7 @@ Usage: #example
 * parameter[=].part[+].name = "subject"
 * parameter[=].part[=].valueString = "..."
 * parameter[+].name = "variants"
-* parameter[=].part[0].name = "rangeItem"
+* parameter[=].part[+].name = "rangeItem"
 * parameter[=].part[=].valueString = "NC_000013.11:32315507-32400268"
 * parameter[=].part[+].name = "numerator"
 * parameter[=].part[=].valueQuantity.value = 4
@@ -837,7 +837,7 @@ Usage: #example
 * parameter.part[+].name = "genomicBuild"
 * parameter.part[=].valueCodeableConcept = http://loinc.org#LA26806-2 "GRCh38"
 * parameter.part[+].name = "dnaChangeType"
-* parameter.part[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001483 "SNV"
+* parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001483 "SNV"
 * parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0002007 "MNV"
 * parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:1000032 "delins"
 * parameter.part[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001019 "copy_number_variation"

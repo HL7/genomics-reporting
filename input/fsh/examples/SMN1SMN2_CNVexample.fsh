@@ -64,7 +64,7 @@ Description: "Antisense Oligonucelotide example of Therapeutic Implication for S
 * effectiveDateTime = "2019-04-01"
 * performer[+] = Reference(ExampleOrg)
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "nusinersen (antisense oligonucleotide)"
@@ -85,7 +85,7 @@ Description: "Transgene example of Therapeutic Implication for SMN1/SMN2 CNV exa
 * effectiveDateTime = "2019-04-01"
 * performer[+] = Reference(ExampleOrg)
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "onasemnogene abeparvovec (transgene)"
@@ -106,7 +106,7 @@ Description: "Small molecule example of Therapeutic Implication for SMN1/SMN2 CN
 * effectiveDateTime = "2019-04-01"
 * performer[+] = Reference(ExampleOrg)
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "risdiplam (small molecule)"
@@ -136,5 +136,5 @@ Description: "Diagnostic Implication for SMN1/SMN2 CNV example"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
 * component[+].code = $LNC#81259-4
-* component[=].valueCodeableConcept.coding[0] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#5262007 "Spinal muscular atrophy (disorder)"
 * component[=].valueCodeableConcept.text = "Spinal muscular atrophy (SMA)"

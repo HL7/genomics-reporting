@@ -135,16 +135,16 @@ Description: "Example for MSH2 deletion"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7235 "MSH2"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
-//* component[exact-start-end][0].valueRange.low.value = 
-//* component[exact-start-end][0].valueRange.high.value = 
+//* component[exact-start-end][+].valueRange.low.value = 
+//* component[exact-start-end][+].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = 
 * component[variation-code].valueCodeableConcept = $CLINVAR#1780982 "NM_000251.3(MSH2):c.1832del (p.Val611fs)"
 //* component[genomic-hgvs].valueCodeableConcept = 
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-//* component[sample-allelic-frequency][0].valueQuantity.value = 
-//* component[sample-allelic-frequency][0].valueQuantity.system = 
-//* component[sample-allelic-frequency][0].valueQuantity.unit = 
+//* component[sample-allelic-frequency][+].valueQuantity.value = 
+//* component[sample-allelic-frequency][+].valueQuantity.system = 
+//* component[sample-allelic-frequency][+].valueQuantity.unit = 
 
 //NTHL1_snv
 Instance: NTHL1-snv-var
@@ -169,16 +169,16 @@ Description: "Example for NTHL1 SNV"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:8028 "NTHL1"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
-//* component[exact-start-end][0].valueRange.low.value = 
-//* component[exact-start-end][0].valueRange.high.value = 
+//* component[exact-start-end][+].valueRange.low.value = 
+//* component[exact-start-end][+].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = 
 * component[variation-code].valueCodeableConcept = $CLINVAR#962538 "NM_002528.7(NTHL1):c.728G>A (p.Trp243Ter)"
 * component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000016.10:g.2040196C>T
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-//* component[sample-allelic-frequency][0].valueQuantity.value = 
-//* component[sample-allelic-frequency][0].valueQuantity.system = 
-//* component[sample-allelic-frequency][0].valueQuantity.unit =
+//* component[sample-allelic-frequency][+].valueQuantity.value = 
+//* component[sample-allelic-frequency][+].valueQuantity.system = 
+//* component[sample-allelic-frequency][+].valueQuantity.unit =
 
 Instance: STAG2-insertion-var
 InstanceOf: Variant
@@ -268,8 +268,8 @@ Description: "Example for EGFR L858R"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:3236 "EGFR"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
-//* component[exact-start-end][0].valueRange.low.value = 
-//* component[exact-start-end][0].valueRange.high.value = 
+//* component[exact-start-end][+].valueRange.low.value = 
+//* component[exact-start-end][+].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = ""
 //* component[variation-code].valueCodeableConcept = 
@@ -301,16 +301,16 @@ Description: "Example for ROS1 Fusion but as typically reported in PDF, without 
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:10261 "ROS1"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
-//* component[exact-start-end][0].valueRange.low.value = 
-//* component[exact-start-end][0].valueRange.high.value = 
+//* component[exact-start-end][+].valueRange.low.value = 
+//* component[exact-start-end][+].valueRange.high.value = 
 //* component[genomic-ref-seq].valueCodeableConcept = 
 //* component[ref-allele].valueString = ""
 //* component[variation-code].valueCodeableConcept = 
 //* component[genomic-hgvs].valueCodeableConcept = 
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-//* component[sample-allelic-frequency][0].valueQuantity.value = 0.075
-//* component[sample-allelic-frequency][0].valueQuantity.system = "http://unitsofmeasure.org"
-//* component[sample-allelic-frequency][0].valueQuantity.unit = "decimal"
+//* component[sample-allelic-frequency][+].valueQuantity.value = 0.075
+//* component[sample-allelic-frequency][+].valueQuantity.system = "http://unitsofmeasure.org"
+//* component[sample-allelic-frequency][+].valueQuantity.unit = "decimal"
 
 Instance: NOTCH1-significance
 InstanceOf: DiagnosticImplication
@@ -361,7 +361,7 @@ Usage: #example
 * component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4 "Associated phenotype"
-* component[=].valueCodeableConcept.coding[0] = $SCT#699346009 "Hereditary cancer-predisposing syndrome (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#699346009 "Hereditary cancer-predisposing syndrome (disorder)"
 * component[=].valueCodeableConcept.text = "Hereditary cancer-predisposing syndrome"
 
 //NTHL1_snv  
@@ -382,7 +382,7 @@ Usage: #example
 * component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#81259-4 "Associated phenotype"
-* component[=].valueCodeableConcept.coding[0] = $SCT#699346009 "Hereditary cancer-predisposing syndrome (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#699346009 "Hereditary cancer-predisposing syndrome (disorder)"
 * component[=].valueCodeableConcept.text = "Hereditary cancer-predisposing syndrome"
 
 //STAG2_insertion
@@ -477,11 +477,11 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[+] = Reference(pathologistPractitioner)
-//* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
+//* component[+].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 //* component[=].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 //#HP:0003002
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Taletrectinib"
@@ -508,12 +508,12 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * subject = Reference(Patient/somaticPatient)
 * effectiveDateTime = "2023-02-01"
 * performer[+] = Reference(pathologistPractitioner)
-//* component[0].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
+//* component[+].code.coding = TbdCodesCS#predicted-therapeutic-implication "Predicted Therapeutic Implication"
 * component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[=].valueCodeableConcept.text = "cancer sensitive to crizotinib"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Crizotinib"
@@ -544,7 +544,7 @@ Description: "Example of high TMB Therapeutic Implication for drug treatment"
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[=].valueCodeableConcept.text = "cancer sensitive to pembrolizumab"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Pembrolizumab"
@@ -568,7 +568,7 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Gefitinib"
@@ -597,7 +597,7 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
-* component[=].valueCodeableConcept.coding[0] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
+* component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Erlotinib"
@@ -631,7 +631,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "NM_017617.5"
 
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_060087.3:p.A1931T "NP_060087.3:p.A1931T"
@@ -655,7 +655,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "NM_006885.4"
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_008816.3:p.G585S "NP_008816.3:p.G585S"
 
@@ -676,7 +676,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_000251.3:c.1832del "NM_000251.3:c.1832del"
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp - Error while processing 'NP_000242.1:p.Val611fs': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_000242.1:p.Val611fs "NP_000242.1:p.Val611fs"
@@ -698,7 +698,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_002528.7:c.728G>A "NM_002528.7:c.728G>A"
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001587 "stop_gained"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001587 "stop_gained"
 * component[=].valueCodeableConcept.text = "nonsense codon"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_002519.2:p.Trp243Ter "NP_002519.2:p.Trp243Ter"
@@ -722,7 +722,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "NM_006603.5"
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_006594.3:p.S1178* "NP_006594.3:p.S1178*"
 
@@ -745,7 +745,7 @@ Usage: #example
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
@@ -769,7 +769,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_005228.4:c.2573T>G "NM_005228.4:c.2573T>G"
 * component[+].code = TbdCodesCS#feature-consequence
-* component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
+* component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_005219.2:p.Leu858Arg "NP_005219.2:p.Leu858Arg"
 
