@@ -641,7 +641,7 @@ Usage: #example
 * parameter[=].resource.interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
 //kp - Error while processing 'NM_001395525.1:c.-281+2T>C': Intronic variants are not yet supported
 // * parameter[=].resource.component[+].code = http://loinc.org#48004-6
-// * parameter[=].resource.component[+].code.text = "coding HGVS"
+// * parameter[=].resource.component[=].code.text = "coding HGVS"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
