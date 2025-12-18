@@ -2,7 +2,8 @@
 
 # THESE SHOULD BE REVIEWED BEFORE PUBLICATION - ADDING THESE OCT 2025 JUST TO KEEP THE QA A LITTLE CLEANER FOR NOW
 Reference to experimental CodeSystem http://hl7.org/fhir/CodeSystem/fhirpath-types|6.0.0-ballot3
-Constraint failed: eld-31: 'additionalBindings should have a key' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+Constraint failed: eld-30: 'targetProfiles SHOULD be unique (targetProfile.isDistinct())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition)
+Constraint failed: eld-31: 'additionalBindings should have a key (key.exists())' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
 
 
@@ -42,44 +43,14 @@ INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[1].re
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[2].resource/*Observation/MC3*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].resource/*Observation/MC4*/.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence%
 
-# The following code system are not discoverable because they are code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct
+# The following code system are not discoverable because they are code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct - AS OF DEC 2025 REMOVED THESE FOR TESTING WITH NEW GENOMICS TERM SERVER. TALK TO KEVIN POWER WITH QUESTIONS.
 
-A definition for CodeSystem 'http://www.genenames.org' could not be found, so the code cannot be validated%
-A definition for CodeSystem 'http://www.sequenceontology.org' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. No versions of this code system are known
-A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.pharmvar.org' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://clinicaltrials.gov' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' version '???' could not be found, so the code cannot be validated. No versions of this code system are known
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/refseq' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' version '137' could not be found, so the code cannot be validated. No versions of this code system are known
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://www.ncbi.nlm.nih.gov/gtr' could not be found, so the code cannot be validated
-A definition for CodeSystem 'https://iscn.karger.com' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://purl.obolibrary.org/obo/mondo.owl' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.23' could not be found, so the code cannot be validated. No versions of this code system are known
-A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. No versions of this code system are known
 
 # Suppress all references to example CodeSystems
 A definition for CodeSystem 'http://example.org/%
 
 # We define several experimental CodeSystems that we use, so OK to suppress this for all IG defined CSs, https://chat.fhir.org/#narrow/channel/179202-terminology/topic/Overuse.20of.20the.20Experimental.20flag, https://confluence.hl7.org/x/LKOZCQ 
-Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
-Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs%
-
-# Each of these codes have been validated (as of Jul 5 2024), so suppressing these warnings until HPO becomes a supported code system.
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].target: Target Code System http://www.sequenceontology.org doesn't have all content (content = not-present), so the target codes cannot be checked
-
-# OCT 2025 - THE VALUESET IN THE WARNING BECAME 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[0].target[0].code: The code 'SO:0002073' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[1].target[0].code: The code 'SO:0000159' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[2].target[0].code: The code 'SO:1000035' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[3].target[0].code: The code 'SO:0000667' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[4].target[0].code: The code 'SO:1000032' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[5].target[0].code: The code 'SO:1000036' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[6].target[0].code: The code 'SO:1000002' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+Reference to experimental CodeSystem%
 
 # CG has reviewed these CodeSystems and have decided to keep this in our IG
 INFORMATION: CodeSystem/clinvar-evidence-level-custom-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -93,9 +64,6 @@ INFORMATION: CodeSystem/molecular-biomarker-ontology-cs: CodeSystem: Most code s
 INFORMATION: CodeSystem/pharmgkb-evidence-level-custom-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/tbd-codes-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/knowledge-base-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# This version number has been validated
-WARNING: Observation/haplotype-hla-a-1-r4: Observation.value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. No versions of this code system are known
 
 # The mappings in this concept map have been human reviewed and is correct
 INFORMATION: ConceptMap/dna-change-type-map: ConceptMap.group[0].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
@@ -117,9 +85,3 @@ No definition could be found for URL value 'https://www.cancer.net/cancer-types/
 No definition could be found for URL value 'https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg'
 No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/clinvar/variation/53685/#clinical-assertions'
 No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient'
-
-# Pinned versions have been reviewed:
-Pinned the version of http://hl7.org/fhir/StructureDefinition/%
-
-# not defined in this IG, so it must be a problem upstream
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
