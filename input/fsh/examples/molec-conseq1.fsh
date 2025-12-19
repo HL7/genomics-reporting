@@ -21,4 +21,4 @@ Usage: #example
 * component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
 * component[=].valueCodeableConcept.coding[1] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0002054 "loss_of_function_variant"

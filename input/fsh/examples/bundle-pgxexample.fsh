@@ -124,7 +124,9 @@ Usage: #inline
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept = $PHARMVAR#CYP2C9 "CYP2C9 *4/*35B"
+* valueCodeableConcept.coding[0] = $PHARMVAR#PV00540 "CYP2C9*4"
+* valueCodeableConcept.coding[+] = $PHARMVAR#PV00571 "CYP2C9*35"
+* valueCodeableConcept.text = "CYP2C9 *4/*35"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom[0] = Reference(haplotype-1-pgx-example)
 * derivedFrom[+] = Reference(haplotype-2-pgx-example)
@@ -142,7 +144,7 @@ Usage: #inline
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept = $PHARMVAR#CYP2C9 "CYP2C9 *35B"
+* valueCodeableConcept.coding = $PHARMVAR#PV00571 "CYP2C9*35"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-1-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
@@ -159,7 +161,7 @@ Usage: #inline
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept = $PHARMVAR#CYP2C9 "CYP2C9 *4"
+* valueCodeableConcept.coding = $PHARMVAR#PV00540 "CYP2C9*4"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(variant-2-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"

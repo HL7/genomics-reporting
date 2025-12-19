@@ -36,7 +36,7 @@ Usage: #example
 * analysis[+]
   * methodType = http://hl7.org/fhir/genomicstudy-methodtype#deletion-duplication-analysis "Deletion/duplication analysis"
 //  * extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-  * changeType[+] = $SEQONT#SO:0001019 "CNV"
+  * changeType[+] = $SEQONT#SO:0001019 "copy_number_variation"
   * genomeBuild = $LNC#LA26806-2 "GRCh38"
   * specimen = Reference(Specimen/genomicSpecimen)
   * focus = Reference(Patient/genomicPatient)

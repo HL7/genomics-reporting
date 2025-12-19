@@ -308,9 +308,13 @@ Usage: #example
 * parameter[=].part[=].resource.subject.reference = "Patient/CGPatientExample01"
 * parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
 * parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
-* parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://www.pharmvar.org"
-* parameter[=].part[=].resource.valueCodeableConcept.coding.code = #CYP2D6_*1/*1
-* parameter[=].part[=].resource.valueCodeableConcept.coding.display = "CYP2D6 *1/*1"
+* parameter[=].part[=].resource.valueCodeableConcept.text = "CYP2D6 *1/*1"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[0].system = "http://www.pharmvar.org"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[0].code = #PV00126
+* parameter[=].part[=].resource.valueCodeableConcept.coding[0].display = "CYP2D6*1.001"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[1].system = "http://www.pharmvar.org"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[1].code = #PV00126
+* parameter[=].part[=].resource.valueCodeableConcept.coding[1].display = "CYP2D6*1.001"
 * parameter[=].part[=].resource.specimen.reference = "Specimen/GenomicSpecimenExample01"
 * parameter[=].part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component.code.coding.code = #48018-6
@@ -336,9 +340,13 @@ Usage: #example
 * parameter[=].part[=].resource.subject.reference = "Patient/CGPatientExample01"
 * parameter[=].part[=].resource.effectiveDateTime = "2023-07-01"
 * parameter[=].part[=].resource.performer.reference = "Organization/ExampleOrg"
-* parameter[=].part[=].resource.valueCodeableConcept.coding.system = "http://www.pharmvar.org"
-* parameter[=].part[=].resource.valueCodeableConcept.coding.code = #CYP2C19_*1/*2
-* parameter[=].part[=].resource.valueCodeableConcept.coding.display = "CYP2C19 *1/*2"
+* parameter[=].part[=].resource.valueCodeableConcept.text = "CYP2C19 *1/*2"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[0].system = "http://www.pharmvar.org"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[0].code = #PV00073
+* parameter[=].part[=].resource.valueCodeableConcept.coding[0].display = "CYP2C19*1.006"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[1].system = "http://www.pharmvar.org"
+* parameter[=].part[=].resource.valueCodeableConcept.coding[1].code = #PV00111
+* parameter[=].part[=].resource.valueCodeableConcept.coding[1].display = "CYP2C19*2.001"
 * parameter[=].part[=].resource.specimen.reference = "Specimen/GenomicSpecimenExample01"
 * parameter[=].part[=].resource.component.code.coding.system = "http://loinc.org"
 * parameter[=].part[=].resource.component.code.coding.code = #48018-6
@@ -577,7 +585,7 @@ Usage: #example
 * parameter[=].resource.component[=].valueCodeableConcept.coding[0] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
 * parameter[=].resource.component[=].valueCodeableConcept.coding[1] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * parameter[=].resource.component[+].code = TbdCodesCS#functional-effect
-* parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0002054 "loss_of_function_variant"
 * parameter[+].name = "consequence"
 * parameter[=].resource.resourceType = "Observation"
 * parameter[=].resource.id = "MC2"

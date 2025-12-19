@@ -132,7 +132,7 @@ Description: "Example for MSH2 deletion"
 //* component[allelic-read-depth].valueQuantity =
 * component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0000159 "deletion"
 //* component[representative-coding-hgvs].valueCodeableConcept = 
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7235 "MSH2"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7325 "MSH2"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
 //* component[exact-start-end][0].valueRange.low.value = 
@@ -750,7 +750,7 @@ Usage: #example
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
 * component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0002054 "loss_of_function_variant"
 
 Instance: EGFR-L858R-molc
 InstanceOf: MolecularConsequence
@@ -828,7 +828,7 @@ Usage: #example
   * changeType[+] = $SEQONT#SO:0001483 "SNV"
   * changeType[+] = $SEQONT#SO:0002007 "MNV"
   * changeType[+] = $SEQONT#SO:1000032 "delins"
-  * changeType[+] = $SEQONT#SO:0001019 "CNV"
+  * changeType[+] = $SEQONT#SO:0001019 "copy_number_variation"
   * genomeBuild = $LNC#LA26806-2 "GRCh38"
   * specimen[+] = Reference(Specimen/tumorSpecimen)
   * specimen[+] = Reference(Specimen/normalSpecimen)
@@ -981,7 +981,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#A*24:02 "HLA-A*24:02"
+* valueCodeableConcept = $HLAALLELE#HLA-A*24:02:01:01 "HLA-A*24:02:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-A-haplotype2

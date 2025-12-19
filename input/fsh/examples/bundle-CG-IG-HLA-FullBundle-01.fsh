@@ -399,7 +399,7 @@ Usage: #inline
 * effectiveDateTime = "2016-12-15"
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
-* valueCodeableConcept.coding = $HLAALLELE#HGG00041 "HLA-B*15:01:01G"
+* valueCodeableConcept.coding = $HLAALLELE#HLA-B*15:01:01G
 * method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 //* derivedFrom[0] = Reference(urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670) "HLA-B*15:01:01:01, exon 2"

@@ -342,8 +342,8 @@ Description: "Example variant 1011"
 * component[alt-allele].valueString = "C"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:262 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "wild type"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "no_sequence_alteration"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -371,7 +371,7 @@ Description: "Example variant 1012"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "no_sequence_alteration"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -399,7 +399,7 @@ Description: "Example variant 1013"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "no_sequence_alteration"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -428,7 +428,7 @@ Description: "Example variant 1014"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:0002073 "no_sequence_alteration"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -478,7 +478,7 @@ Description: "Example variant 1016"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -506,7 +506,7 @@ Description: "Example variant 1017"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -534,7 +534,7 @@ Description: "Example variant 1018"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2621 "CYP2C19"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -588,7 +588,7 @@ Description: "Example variant 1020"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#high
@@ -620,7 +620,7 @@ Description: "Example variant 1021"
 * component[genomic-source-class].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[allelic-state].valueCodeableConcept = $LNC#LA6705-3 "homozygous"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
-* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "wild type"
+* component[coding-change-type].valueCodeableConcept = $SEQONT#SO:1000002 "substitution"
 * component[allelic-read-depth].valueQuantity.value = 20
 * component[allelic-read-depth].valueQuantity.comparator = #>
 * component[variant-confidence-status].valueCodeableConcept = VariantConfidenceStatusCS#intermediate

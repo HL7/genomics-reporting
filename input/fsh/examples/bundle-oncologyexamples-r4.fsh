@@ -228,7 +228,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept = $HGNCID#JAK2 "JAK2"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:6192 "JAK2"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-7
 InstanceOf: Variant
@@ -250,7 +250,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept = $HGNCID#KDR "KDR"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:6307 "KDR"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-8
 InstanceOf: Variant
@@ -270,7 +270,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept = $HGNCID#ERBB4 "ERBB4"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:3432 "ERBB4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-9
 InstanceOf: TherapeuticImplication
