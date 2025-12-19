@@ -272,8 +272,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:01:01G "HLA-A*01:01:01G"
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 //* derivedFrom[0] = Reference(urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804) "HLA-A*01:01:01:01, exon 2"
 //* derivedFrom[=].type = "MolecularSequence"
@@ -295,8 +294,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-A*01:02 "HLA-A*01:02"
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 //* derivedFrom[0] = Reference(urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621) "HLA-A*01:02, exon 2"
 //* derivedFrom[=].type = "MolecularSequence"
@@ -320,8 +318,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6) "HLA-A*01:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
@@ -403,8 +400,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HGG00041 "HLA-B*15:01:01G"
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 //* derivedFrom[0] = Reference(urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670) "HLA-B*15:01:01:01, exon 2"
 //* derivedFrom[=].type = "MolecularSequence"
@@ -426,8 +422,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-B*57:01:01G "HLA-B*57:01:01G"
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 //* derivedFrom[0] = Reference(urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe) "HLA-B*57:01:01, exon 2"
 //* derivedFrom[=].type = "MolecularSequence"
@@ -451,8 +446,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a) "HLA-B*15:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
@@ -534,8 +528,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 // References to MolecularSequence instances commented out for R6 compatibility
 /*
@@ -560,8 +553,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "3.23"
 * valueCodeableConcept.coding = $HLAALLELE#HLA-C*01:02:01G "HLA-C*01:02:01G"
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 // References to MolecularSequence instances commented out for R6 compatibility
 /*
@@ -588,8 +580,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab, Inc"
 * valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
-* method = $GTR#GTR000000000.0
-  * text = "NGS based Class I HLA-A, -B, -C genotyping"
+* method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
 * derivedFrom[0] = Reference(urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47) "HLA-C*03:04:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
