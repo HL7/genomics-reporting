@@ -6,11 +6,10 @@ Description:    "Properties common to genomic implications expressed as computab
 * ^abstract = true
 * ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
-* extension[$workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are relevant to the implication."
-// add this comment to prevent an link error, as the base spec includes a link to 'supportingInfo extension' but the link doesn't convert correctly
-* extension[$workflow-relatedArtifact] ^comment = """
-Note that in contrast this extension, the supportingInfo extension references other resources from the patient record that were used in creating the resource.
-"""
+* extension[workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are relevant to the implication."
+
+* component.extension contains $workflow-relatedArtifact named workflow-relatedArtifact 0..*
+* component.extension[workflow-relatedArtifact] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 * value[x] 0..0
 // * derivedFrom ^slicing.discriminator.type = #profile
 // * derivedFrom ^slicing.discriminator.path = "resolve()"
@@ -47,9 +46,6 @@ Note that in contrast this extension, the supportingInfo extension references ot
 * component[evidence-level].value[x] from EvidenceLevelExampleVS (example)
 * component[evidence-level].value[x] ^binding.description = "PharmGKB or ClinVar"
 * component[evidence-level].value[x] ^short = "1A | 1B | 2A | 2B | 3 | 4 | 4-star | 3-star | 2-star | 1-star | no-star"
-
-* component.extension contains RelatedArtifactComponent named workflow-relatedArtifactComponent 0..*
-* component.extension[RelatedArtifactComponent] ^requirements = "This SHOULD be used to deliver artifacts that are specific to the component code and value."
 
 * component[clinical-significance] ^short = "Clinical significance"
 * component[clinical-significance] ^definition = "The clinical impact of an implication on a person's health. There are dozens if not hundreds of clinical-significance value sets, generally providing an ordinal range of codes from low significance (e.g. 'benign') to high significance (e.g. 'pathogenic', 'oncogenic','predictive of drug response')."
@@ -89,9 +85,10 @@ Description:    "Observation stating a diagnostic annotation (e.g. disease risk)
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
+
 * component contains
     predicted-phenotype 0..* and
-    mode-of-inheritance	0..1
+    mode-of-inheritance        0..1
 * component[predicted-phenotype] ^short = "Predicted phenotype"
 * component[predicted-phenotype] ^definition = "An observable characteristic (e.g., condition; disease) of an individual, as predicted by the presence of associated molecular finding(s)associated with the variant.  A code set is not specified, but it is ideal to use terms related to medical findings. Some examples are SNOMED CT descendants of 'Clinical finding' (404684003), ICD-10-CM chapters 1-18 (codes starting with letters A-R), and/or all of Human Phenotype Ontology (HPO). For example, if an individual's variant is associated with Type I Ehlers-Danlos syndrome, a valid response from SNOMED CT would be 'Ehlers-Danlos syndrome, type 1 (code 83470009)'."
 * component[predicted-phenotype].code = $LNC#81259-4
@@ -123,6 +120,7 @@ Description:    "Observation stating a therapeutic annotation (e.g. drug suscept
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
+
 * component contains
     therapeutic-implication 0..* and
     phenotypic-treatment-context 0..* and
@@ -184,7 +182,7 @@ Description:    "Task proposing medication recommendations based on the implicat
 * intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL4049-4 
 * focus only Reference(MedicationStatement)
-* reasonReference only Reference(TherapeuticImplication)
+* reason only CodeableReference(TherapeuticImplication)
 
 Profile:        FollowupRecommendation
 Parent:         Task
@@ -197,7 +195,7 @@ Description:    "Task proposing a follow-up that is recommended based on the imp
 * intent 1..1
 * intent = $TASKINTENT#proposal
 * code from http://loinc.org/vs/LL1037-2 (extensible)
-* reasonReference only Reference(TherapeuticImplication or DiagnosticImplication or MolecularConsequence)
+* reason only CodeableReference(TherapeuticImplication or DiagnosticImplication or MolecularConsequence)
 
 Profile:        MolecularConsequence
 Parent:         GenomicImplication
@@ -217,6 +215,7 @@ Description:    "Profile for communicating the calculated or observed effect of 
 // * component ^slicing.discriminator.path = "code"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
+
 * component contains
     coding-hgvs 0..1 and
     transcript-ref-seq 0..1 and
@@ -296,9 +295,10 @@ Description:    "Profile for communicating miscellaneous genomic annotations tha
 // * component ^slicing.discriminator.path = "value"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
+
 * component contains
-	population-allele-frequency 0..* and 
-	conservation-score 0..*
+       population-allele-frequency 0..* and 
+       conservation-score 0..*
 
 * component.extension contains KnowledgebaseAncestryGroup named knowledgebase-ancestry-group 0..1
 * component.extension[KnowledgebaseAncestryGroup] ^requirements = "This SHOULD be used to identify the sample ancestry group according to the referenced knowledgebase"

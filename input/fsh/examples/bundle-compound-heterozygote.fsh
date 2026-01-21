@@ -70,6 +70,6 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * code = $LNC#84413-4
-* valueCodeableConcept = $CLINVAR#RCV000664188.1 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
+* valueCodeableConcept = $CLINVAR#RCV000664188 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
 * hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e) "NM_022787.3:c.53A>G"
 * hasMember[+] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "NM_022787.3:c.769G>A"

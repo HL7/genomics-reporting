@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/STU4" ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting" defaultVersion="3.0.0" defaultWorkgroup="cg" gitUrl="https://github.com/HL7/genomics-reporting" url="http://hl7.org/fhir/uv/genomics-reporting">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/genomics-reporting/STU4-snapshot" ciUrl="http://build.fhir.org/ig/HL7/genomics-reporting" defaultVersion="3.0.0" defaultWorkgroup="cg" gitUrl="https://github.com/HL7/genomics-reporting" url="http://hl7.org/fhir/uv/genomics-reporting">
 <version code="current" url="http://build.fhir.org/ig/HL7/genomics-reporting"/>
-<version code="4.0.0-ballot" url="http://hl7.org/fhir/uv/genomics-reporting/STU4"/>
+<version code="4.0.0-cibuild" url="http://hl7.org/fhir/uv/genomics-reporting/STU4-snapshot"/>
 <version code="3.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU3"/>
 <version code="3.0.0-ballot" deprecated="true" url="http://hl7.org/fhir/uv/genomics-reporting/2024Jan"/>
 <version code="2.0.0" url="http://hl7.org/fhir/uv/genomics-reporting/STU2"/>
@@ -102,35 +102,36 @@
 <artifact id="StructureDefinition/genomic-report" key="StructureDefinition-genomic-report" name="Genomic Report"/>
 <artifact id="StructureDefinition/genomic-report-note" key="StructureDefinition-genomic-report-note" name="Genomic Report Note"/>
 <artifact id="StructureDefinition/genomic-risk-assessment" key="StructureDefinition-genomic-risk-assessment" name="Genomic Risk Assessment"/>
-<artifact id="StructureDefinition/genomic-study" key="StructureDefinition-genomic-study" name="Genomic Study"/>
-<artifact id="StructureDefinition/genomic-study-analysis" key="StructureDefinition-genomic-study-analysis" name="Genomic Study Analysis"/>
-<artifact id="StructureDefinition/genomic-study-analysis-change-type" key="StructureDefinition-genomic-study-analysis-change-type" name="Genomic Study Analysis Change Type"/>
-<artifact id="StructureDefinition/genomic-study-analysis-device" key="StructureDefinition-genomic-study-analysis-device" name="Genomic Study Analysis Device"/>
-<artifact id="StructureDefinition/genomic-study-analysis-ext" key="StructureDefinition-genomic-study-analysis-ext" name="Genomic Study Analysis Extension"/>
-<artifact id="StructureDefinition/genomic-study-analysis-focus" key="StructureDefinition-genomic-study-analysis-focus" name="Genomic Study Analysis Focus"/>
-<artifact id="StructureDefinition/genomic-study-analysis-genome-build" key="StructureDefinition-genomic-study-analysis-genome-build" name="Genomic Study Analysis Genome Build"/>
-<artifact id="StructureDefinition/genomic-study-analysis-input" key="StructureDefinition-genomic-study-analysis-input" name="Genomic Study Analysis Input"/>
-<artifact id="StructureDefinition/genomic-study-analysis-method-type" key="StructureDefinition-genomic-study-analysis-method-type" name="Genomic Study Analysis Method Type"/>
-<artifact id="StructureDefinition/genomic-study-analysis-metrics" key="StructureDefinition-genomic-study-analysis-metrics" name="Genomic Study Analysis Metrics"/>
-<artifact id="StructureDefinition/genomic-study-analysis-output" key="StructureDefinition-genomic-study-analysis-output" name="Genomic Study Analysis Output"/>
-<artifact id="StructureDefinition/genomic-study-analysis-protocol-performed" key="StructureDefinition-genomic-study-analysis-protocol-performed" name="Genomic Study Analysis Protocol Performed"/>
-<artifact id="StructureDefinition/genomic-study-analysis-regions" key="StructureDefinition-genomic-study-analysis-regions" name="Genomic Study Analysis Regions"/>
-<artifact id="StructureDefinition/genomic-study-analysis-genomic-source-class" key="StructureDefinition-genomic-study-analysis-genomic-source-class" name="Genomic Study Analysis Source Class"/>
-<artifact id="StructureDefinition/genomic-study-analysis-specimen" key="StructureDefinition-genomic-study-analysis-specimen" name="Genomic Study Analysis Specimen"/>
-<artifact id="StructureDefinition/genomic-study-analysis-title" key="StructureDefinition-genomic-study-analysis-title" name="Genomic Study Analysis Title"/>
-<artifact id="CodeSystem/genomic-study-change-type-cs" key="CodeSystem-genomic-study-change-type-cs" name="Genomic Study Change Type CodeSystem"/>
-<artifact id="ValueSet/genomic-study-change-type-vs" key="ValueSet-genomic-study-change-type-vs" name="Genomic Study Change Type ValueSet"/>
-<artifact id="CodeSystem/genomic-study-data-format-cs" key="CodeSystem-genomic-study-data-format-cs" name="Genomic Study Data Format CodeSystem"/>
-<artifact id="ValueSet/genomic-study-data-format-vs" key="ValueSet-genomic-study-data-format-vs" name="Genomic Study Data Format ValueSet"/>
-<artifact id="CodeSystem/genomic-study-method-type-cs" key="CodeSystem-genomic-study-method-type-cs" name="Genomic Study Method Type CodeSystem"/>
-<artifact id="ValueSet/genomic-study-method-type-vs" key="ValueSet-genomic-study-method-type-vs" name="Genomic Study Method Type ValueSet"/>
-<artifact id="StructureDefinition/genomic-study-reference" key="StructureDefinition-genomic-study-reference" name="Genomic Study Reference"/>
-<artifact id="StructureDefinition/genomic-study-referrer-ext" key="StructureDefinition-genomic-study-referrer-ext" name="Genomic Study Referrer Extension"/>
-<artifact id="CodeSystem/genomic-study-status-cs" key="CodeSystem-genomic-study-status-cs" name="Genomic Study Status CodeSystem"/>
-<artifact id="ConceptMap/GenomicStudyStatusMap" key="ConceptMap-GenomicStudyStatusMap" name="Genomic Study Status Map"/>
-<artifact id="ValueSet/genomic-study-status-vs" key="ValueSet-genomic-study-status-vs" name="Genomic Study Status ValueSet"/>
-<artifact id="CodeSystem/genomic-study-type-cs" key="CodeSystem-genomic-study-type-cs" name="Genomic Study Type CodeSystem"/>
-<artifact id="ValueSet/genomic-study-type-vs" key="ValueSet-genomic-study-type-vs" name="Genomic Study Type ValueSet"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study" key="StructureDefinition-genomic-study" name="Genomic Study"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis" key="StructureDefinition-genomic-study-analysis" name="Genomic Study Analysis"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-change-type" key="StructureDefinition-genomic-study-analysis-change-type" name="Genomic Study Analysis Change Type"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-device" key="StructureDefinition-genomic-study-analysis-device" name="Genomic Study Analysis Device"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-ext" key="StructureDefinition-genomic-study-analysis-ext" name="Genomic Study Analysis Extension"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-focus" key="StructureDefinition-genomic-study-analysis-focus" name="Genomic Study Analysis Focus"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-genome-build" key="StructureDefinition-genomic-study-analysis-genome-build" name="Genomic Study Analysis Genome Build"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-input" key="StructureDefinition-genomic-study-analysis-input" name="Genomic Study Analysis Input"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-method-type" key="StructureDefinition-genomic-study-analysis-method-type" name="Genomic Study Analysis Method Type"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-metrics" key="StructureDefinition-genomic-study-analysis-metrics" name="Genomic Study Analysis Metrics"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-output" key="StructureDefinition-genomic-study-analysis-output" name="Genomic Study Analysis Output"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-protocol-performed" key="StructureDefinition-genomic-study-analysis-protocol-performed" name="Genomic Study Analysis Protocol Performed"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-regions" key="StructureDefinition-genomic-study-analysis-regions" name="Genomic Study Analysis Regions"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-genomic-source-class" key="StructureDefinition-genomic-study-analysis-genomic-source-class" name="Genomic Study Analysis Source Class"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-specimen" key="StructureDefinition-genomic-study-analysis-specimen" name="Genomic Study Analysis Specimen"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-analysis-title" key="StructureDefinition-genomic-study-analysis-title" name="Genomic Study Analysis Title"/>
+<artifact deprecated="true" id="CodeSystem/genomic-study-change-type-cs" key="CodeSystem-genomic-study-change-type-cs" name="Genomic Study Change Type CodeSystem"/>
+<artifact deprecated="true" id="ValueSet/genomic-study-change-type-vs" key="ValueSet-genomic-study-change-type-vs" name="Genomic Study Change Type ValueSet"/>
+<artifact deprecated="true" id="CodeSystem/genomic-study-data-format-cs" key="CodeSystem-genomic-study-data-format-cs" name="Genomic Study Data Format CodeSystem"/>
+<artifact deprecated="true" id="ValueSet/genomic-study-data-format-vs" key="ValueSet-genomic-study-data-format-vs" name="Genomic Study Data Format ValueSet"/>
+<artifact id="StructureDefinition/genomic-study-metadata" key="StructureDefinition-genomic-study-metadata" name="Genomic Study Metadata"/>
+<artifact deprecated="true" id="CodeSystem/genomic-study-method-type-cs" key="CodeSystem-genomic-study-method-type-cs" name="Genomic Study Method Type CodeSystem"/>
+<artifact deprecated="true" id="ValueSet/genomic-study-method-type-vs" key="ValueSet-genomic-study-method-type-vs" name="Genomic Study Method Type ValueSet"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-reference" key="StructureDefinition-genomic-study-reference" name="Genomic Study Reference"/>
+<artifact deprecated="true" id="StructureDefinition/genomic-study-referrer-ext" key="StructureDefinition-genomic-study-referrer-ext" name="Genomic Study Referrer Extension"/>
+<artifact deprecated="true" id="CodeSystem/genomic-study-status-cs" key="CodeSystem-genomic-study-status-cs" name="Genomic Study Status CodeSystem"/>
+<artifact deprecated="true" id="ConceptMap/GenomicStudyStatusMap" key="ConceptMap-GenomicStudyStatusMap" name="Genomic Study Status Map"/>
+<artifact deprecated="true" id="ValueSet/genomic-study-status-vs" key="ValueSet-genomic-study-status-vs" name="Genomic Study Status ValueSet"/>
+<artifact deprecated="true" id="CodeSystem/genomic-study-type-cs" key="CodeSystem-genomic-study-type-cs" name="Genomic Study Type CodeSystem"/>
+<artifact deprecated="true" id="ValueSet/genomic-study-type-vs" key="ValueSet-genomic-study-type-vs" name="Genomic Study Type ValueSet"/>
 <artifact id="DiagnosticReport/GenomicReportExample01" key="DiagnosticReport-GenomicReportExample01" name="GenomicReportExample01"/>
 <artifact id="ServiceRequest/GenomicServiceRequestExample01" key="ServiceRequest-GenomicServiceRequestExample01" name="GenomicServiceRequestExample01"/>
 <artifact id="Specimen/GenomicSpecimenExample01" key="Specimen-GenomicSpecimenExample01" name="GenomicSpecimenExample01"/>
@@ -176,7 +177,7 @@
 <artifact deprecated="true" key="ImplementationGuide" name="ImplementationGuide"/>
 <artifact id="CodeSystem/knowledge-base-cs" key="CodeSystem-knowledge-base-cs" name="Knowledge Base Codes"/>
 <artifact id="ValueSet/knowledge-base-version-vs" key="ValueSet-knowledge-base-version-vs" name="Knowledge Base Version Codes"/>
-<artifact id="StructureDefinition/knowledgebase-ancestry-group" key="StructureDefinition-knowledgebase-ancestry-group" name="KnowledgebaseAncestryGroup"/>
+<artifact id="StructureDefinition/knowledgebase-ancestry-group" key="StructureDefinition-knowledgebase-ancestry-group" name="Knowledgebase Ancestry Group"/>
 <artifact id="Observation/MSH2-del-disease" key="Observation-MSH2-del-disease" name="MSH2-del-disease"/>
 <artifact id="Observation/MSH2-del-molc" key="Observation-MSH2-del-molc" name="MSH2-del-molc"/>
 <artifact id="Observation/MSH2-del-var" key="Observation-MSH2-del-var" name="MSH2-del-var"/>
@@ -208,8 +209,8 @@
 <artifact deprecated="true" id="Observation/OverallInterpExample1" key="Observation-OverallInterpExample1" name="OverallInterpExample1"/>
 <artifact deprecated="true" id="Observation/OverallInterpExample2" key="Observation-OverallInterpExample2" name="OverallInterpExample2"/>
 <artifact id="Observation/PDL1Example" key="Observation-PDL1Example" name="PDL1Example"/>
-<artifact id="Procedure/PGXGenomicStudy" key="Procedure-PGXGenomicStudy" name="PGXGenomicStudy"/>
-<artifact id="Procedure/PGXGenomicStudyAnalysis" key="Procedure-PGXGenomicStudyAnalysis" name="PGXGenomicStudyAnalysis"/>
+<artifact id="GenomicStudy/PGXGenomicStudy" key="Procedure-PGXGenomicStudy" name="PGXGenomicStudy"/>
+<artifact deprecated="true" id="Procedure/PGXGenomicStudyAnalysis" key="Procedure-PGXGenomicStudyAnalysis" name="PGXGenomicStudyAnalysis"/>
 <artifact id="DiagnosticReport/PGxGenomicReportEMERGE" key="DiagnosticReport-PGxGenomicReportEMERGE" name="PGxGenomicReportEMERGE"/>
 <artifact id="DiagnosticReport/PGxGenomicReportEMERGE-withGrouping" key="DiagnosticReport-PGxGenomicReportEMERGE-withGrouping" name="PGxGenomicReportEMERGE-withGrouping"/>
 <artifact deprecated="true" id="DiagnosticReport/PGxGenomicsReportEMERGE" key="DiagnosticReport-PGxGenomicsReportEMERGE" name="PGxGenomicsReportEMERGE"/>
@@ -246,7 +247,7 @@
 <artifact deprecated="true" id="Observation/RegionStudiedPGx2" key="Observation-RegionStudiedPGx2" name="RegionStudiedPGx2"/>
 <artifact deprecated="true" id="Observation/RegionStudiedPGx3" key="Observation-RegionStudiedPGx3" name="RegionStudiedPGx3"/>
 <artifact deprecated="true" id="StructureDefinition/CGRelatedArtifact" key="StructureDefinition-CGRelatedArtifact" name="Related Artifact"/>
-<artifact id="StructureDefinition/workflow-relatedArtifactComponent" key="StructureDefinition-related-artifact-component" name="Related Artifact for Observation component"/>
+<artifact deprecated="true" id="StructureDefinition/workflow-relatedArtifactComponent" key="StructureDefinition-related-artifact-component" name="Related Artifact for Observation component"/>
 <artifact id="StructureDefinition/repeat-motif-order" key="StructureDefinition-repeat-motif-order" name="Repeat Motif Order"/>
 <artifact id="Observation/RepeatExpansion" key="Observation-RepeatExpansion" name="RepeatExpansion"/>
 <artifact id="Observation/SNVexample" key="Observation-SNVexample" name="SNVexample"/>
@@ -294,8 +295,8 @@
 <artifact id="Observation/ZFHX3-significance" key="Observation-ZFHX3-significance" name="ZFHX3-significance"/>
 <artifact id="Observation/ZFHX3-uncertain-molc" key="Observation-ZFHX3-uncertain-molc" name="ZFHX3-uncertain-molc"/>
 <artifact id="Observation/ZFHX3-uncertain-var" key="Observation-ZFHX3-uncertain-var" name="ZFHX3-uncertain-var"/>
-<artifact id="Procedure/analysisTumorNormalDNA" key="Procedure-analysisTumorNormalDNA" name="analysisTumorNormalDNA"/>
-<artifact id="Procedure/analysisTumorRNA" key="Procedure-analysisTumorRNA" name="analysisTumorRNA"/>
+<artifact deprecated="true" id="Procedure/analysisTumorNormalDNA" key="Procedure-analysisTumorNormalDNA" name="analysisTumorNormalDNA"/>
+<artifact deprecated="true" id="Procedure/analysisTumorRNA" key="Procedure-analysisTumorRNA" name="analysisTumorRNA"/>
 <artifact id="Bundle/bundle-CG-IG-HLA-FullBundle-01" key="Bundle-CG-IG-HLA-FullBundle-01" name="bundle-CG-IG-HLA-FullBundle-01"/>
 <artifact id="Bundle/bundle-CYP2C19" key="DiagnosticReport-report-CYP2C19" name="bundle-CYP2C19"/>
 <artifact id="Bundle/bundle-cgexample" key="Bundle-diagnosticreport-cgexample" name="bundle-cgexample"/>
@@ -323,13 +324,13 @@
 <artifact id="Specimen/genomicSpecimen" key="Specimen-genomicSpecimen" name="genomicSpecimen"/>
 <artifact id="DocumentReference/genomicVCFfile-cnv" key="DocumentReference-genomicVCFfile-cnv" name="genomicVCFfile-cnv"/>
 <artifact id="DocumentReference/genomicVCFfile-simple" key="DocumentReference-genomicVCFfile-simple" name="genomicVCFfile-simple"/>
-<artifact id="Procedure/genomicstudy-trio2" key="Procedure-genomicstudy-trio2" name="genomicstudy-trio2"/>
-<artifact id="Procedure/genomicstudyanalysis-trio2" key="Procedure-genomicstudyanalysis-trio2" name="genomicstudyanalysis-trio2"/>
+<artifact id="GenomicStudy/genomicstudy-trio2" key="Procedure-genomicstudy-trio2" name="genomicstudy-trio2"/>
+<artifact deprecated="true" id="Procedure/genomicstudyanalysis-trio2" key="Procedure-genomicstudyanalysis-trio2" name="genomicstudyanalysis-trio2"/>
 <artifact id="Observation/genotype-hla-a-glstring-r4" key="Observation-genotype-hla-a-glstring-r4" name="genotype-hla-a-glstring-r4"/>
 <artifact id="Observation/haplotype-hla-a-1-r4" key="Observation-haplotype-hla-a-1-r4" name="haplotype-hla-a-1-r4"/>
-<artifact id="Procedure/lungMass" key="Procedure-lungMass" name="lungMass"/>
-<artifact id="Procedure/lungMass-analysis1" key="Procedure-lungMass-analysis1" name="lungMass-analysis1"/>
-<artifact id="Procedure/lungMass-analysis2" key="Procedure-lungMass-analysis2" name="lungMass-analysis2"/>
+<artifact id="GenomicStudy/lungMass" key="Procedure-lungMass" name="lungMass"/>
+<artifact deprecated="true" id="Procedure/lungMass-analysis1" key="Procedure-lungMass-analysis1" name="lungMass-analysis1"/>
+<artifact deprecated="true" id="Procedure/lungMass-analysis2" key="Procedure-lungMass-analysis2" name="lungMass-analysis2"/>
 <artifact id="Observation/molec-conseq1" key="Observation-molec-conseq1" name="molec-conseq1"/>
 <artifact id="Observation/molec-conseq2" key="Observation-molec-conseq2" name="molec-conseq2"/>
 <artifact id="Observation/molec-conseq3" key="Observation-molec-conseq3" name="molec-conseq3"/>
@@ -348,7 +349,7 @@
 <artifact id="Patient/somaticPatient" key="Patient-somaticPatient" name="somaticPatient"/>
 <artifact id="DiagnosticReport/somaticReport" key="DiagnosticReport-somaticReport" name="somaticReport"/>
 <artifact id="ServiceRequest/somaticServiceRequest" key="ServiceRequest-somaticServiceRequest" name="somaticServiceRequest"/>
-<artifact id="Procedure/somaticStudy" key="Procedure-somaticStudy" name="somaticStudy"/>
+<artifact id="GenomicStudy/somaticStudy" key="Procedure-somaticStudy" name="somaticStudy"/>
 <artifact id="DocumentReference/somaticVCFfile" key="DocumentReference-somaticVCFfile" name="somaticVCFfile"/>
 <artifact id="Specimen/specimen-hla-r4" key="Specimen-specimen-hla-r4" name="specimen-hla-r4"/>
 <artifact id="Practitioner/supervisorPractitioner" key="Practitioner-supervisorPractitioner" name="supervisorPractitioner"/>
@@ -370,8 +371,9 @@
 <page key="molecularSequence" name="Appendix G: Molecular Sequence"/>
 <page key="groupingGuidance" name="Appendix H: Grouping Guidance"/>
 <page key="Glossary" name="Appendix I: Glossary"/>
-<page key="artifacts" name="Artifacts Summary"/>
+<page key="artifacts" name="Artifact List"/>
 <page key="changes" name="Change Log"/>
+<page key="cytogenomics" name="Cytogenomic Reporting"/>
 <page key="general" name="General Genomic Reporting"/>
 <page key="background" name="Genomic Background"/>
 <page key="operations" name="Genomic Operations"/>

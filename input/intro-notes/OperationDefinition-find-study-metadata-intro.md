@@ -1,0 +1,14 @@
+### Description
+	
+Retrieve metadata about sequencing studies performed on a subject.
+
+> **STU Note:** The Clinical Genomics committee is reviewing [Jira 35864: Add study-level metadata capabilities into the FHIR Genomics IG](https://jira.hl7.org/browse/FHIR-35864). It is expected that the response of this operation will be revised in the future, to align with the Jira resolution.
+{:.stu-note}
+
+**Test Id** and **test date** are always returned. Additional metadata is server dependent, and specific implementations can indicate their capabilities using a [FHIR Capability Statement](https://www.hl7.org/fhir/capabilitystatement.html). Frequently useful metadata includes **Specimen Id** and **Genomic build** (reference sequence assembly upon which variants were called, e.g. 'GRCh37', 'GRCh38'). Additionally, it can be useful to indicate the **DNA change types** or types of variants detectable by the test (e.g. 'SNV', 'InDel', 'CNV'). Servers can choose to return additional metadata.
+
+As described in [general guidance](operations.html#query-filters), metadata can be used to filter the results of other operations.
+
+In some scenarios, users need to know whether or not a particular genomic region was studied by a given test (**studied region**), and whether or not there are uncallable subregions within regions studied (**uncallable regions**). Genomic sequencing tests are designed to study specific portions of a person's genome. For instance, whole genome sequencing (WGS) tests are designed to study the entire genome; whole exome sequencing (WES) tests are designed to study protein-coding exons; targeted sequencing tests are designed to only study selected regions of the genome. In many cases, while a particular region was targeted to be studied by a given test, a portion of the region might be untestable, due to patient-specific factors, reagent-specific factors, etc. Whereas labs report variants found to be present, labs cannot enumerate every variant found to be absent - when you consider that a person has 4 billion base pairs, 99% of which are the same as a reference sequence, you can imagine how big a report would need to be to enumerate every variant found to be absent! Rather, absence of a variant at a particular position can potentially be inferred by knowing the region studied, and whether or not there were uncallable subregions within the studied region.
+
+Users can request this level of detail by including the **ranges** parameter, in which case each returned test will include **intersecting** studied and uncallable regions. Studied and uncallable regions can be voluminous - data can be curtailed by specifying appropriately narrow ranges. Range data is returned as a list of non-overlapping regions, each in zero-based RefSeq:Integer-range format (e.g. "['NC_000007.14:55173910-55174053', 'NC_000007.14:55174711-55174830', 'NC_000007.14:55181282-55181488']").

@@ -331,24 +331,38 @@ Usage: #inline
 * name[=].text = "The Human Torch"
 * gender = #male
 * birthDate = "1986-12-31"
+* telecom[0].system = #phone
+* telecom[0].value = "1-800-555-1234"
+* telecom[0].use = #work
+* telecom[0].rank = 1
+* address[0].use = #work
+* address[0].type = #physical  // R6 removed 'both'; use 'physical' or 'postal'
+* address[0].text = "123 Main St, Sometown, ND 99999"
+* address[0].line[0] = "123 Main St"
+* address[0].city = "Sometown"
+* address[0].state = "ND"
+* address[0].postalCode = "99999"
+* address[0].country = "USA"
+
 
 Instance: performingLab
 InstanceOf: Organization
 Usage: #inline
 * name = "aTypingLab Inc"
-* alias = "aTL"
-* telecom.system = #phone
-* telecom.value = "1-800-555-1234"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "123 Main St, Sometown, ND 99999"
-* address.line = "123 Main St"
-* address.city = "Sometown"
-* address.state = "ND"
-* address.postalCode = "99999"
-* address.country = "USA"
+* alias[+] = "aTL"
+* contact[+]
+  * telecom[+].system = #phone
+  * telecom[=].value = "1-800-555-1234"
+  * telecom[=].use = #work
+  * telecom[=].rank = 1
+  * address[+].use = #work
+  * address[=].type = #physical  // 'both' is not valid in R6
+  * address[=].text = "123 Main St, Sometown, ND 99999"
+  * address[=].line[+] = "123 Main St"
+  * address[=].city = "Sometown"
+  * address[=].state = "ND"
+  * address[=].postalCode = "99999"
+  * address[=].country = "USA"
 
 Instance: report-CYP2C19
 InstanceOf: GenomicReport
@@ -367,7 +381,6 @@ Usage: #inline
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe08)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe09)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe10)
-* result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe11)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe12)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe13)
 * result[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe14)

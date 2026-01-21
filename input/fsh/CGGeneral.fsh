@@ -4,8 +4,6 @@ Id:             genomic-base
 Title:          "Genomic Base"
 Description:    "Base profile that defines characteristics shared by all genetic observations."
 * ^abstract = true
-//* extension contains GenomicStudy named genomic-study 0..*
-//* extension[GenomicStudy] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-secondaryFinding named secondary-finding 0..1
                  and http://hl7.org/fhir/StructureDefinition/bodySite named body-structure 0..1
 * derivedFrom ^slicing.discriminator.type = #profile
@@ -13,7 +11,8 @@ Description:    "Base profile that defines characteristics shared by all genetic
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
 
-* partOf only Reference(MedicationAdministration or MedicationDispense or MedicationStatement or Procedure or Immunization or ImagingStudy or GenomicStudy)
+* partOf only Reference(GenomicStudy or GenomicStudyMetadata)
+* partOf ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * category 2..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
@@ -74,11 +73,6 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype in the relationship"
 
-Alias: $workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
-Alias: $supporting-info = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
-Alias: $hla-genotyping-results-allele-database = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database
-Alias: $hla-genotyping-results-glstring = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring
-
 Profile:        GenomicReport
 Parent:         DiagnosticReport
 Id:             genomic-report
@@ -88,7 +82,6 @@ Description:    "Genomic profile of DiagnosticReport."
     and GenomicRiskAssessment named genomic-risk-assessment 0..*
     and GenomicReportNote named coded-note 0..*
     and $supporting-info named supporting-info 0..*
-    and GenomicStudyReference named genomic-study 0..*
     and $hla-genotyping-results-allele-database named hla-genotyping-results-allele-database 0..1
     and $hla-genotyping-results-glstring named hla-genotyping-results-glstring 0..1
     and $workflow-relatedArtifact named workflow-relatedArtifact 0..*
@@ -99,12 +92,6 @@ May include general statements about the report, or statements about significant
 The CodedAnnotation data type, while not allowing for or intending to make the content computable, does allow the author to indicate the type of note. This does not replace the use of results or conclusion or conclusionCode.
 One important note is that Annotation is a FHIR data type, this is **NOT** about annotations in the genomic context.
 """
-// add this comment to prevent an link error, as the base spec includes a link to 'supportingInfo extension' but the link doesn't convert correctly
-* extension[$workflow-relatedArtifact] ^comment = """
-Note that in contrast this extension, the supportingInfo extension references other resources from the patient record that were used in creating the resource.
-"""
-
-* extension[GenomicStudyReference] ^short = "Reference to full details of an genomic study associated with the diagnostic report"
 * code = $LNC#51969-4
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding"
@@ -152,5 +139,5 @@ Parent:         DocumentReference
 Id:             genomic-data-file
 Title:          "Genomic Data File"
 Description:    "A profile of DocumentReference used to represent a genomics file."
-* context.related only Reference(GenomicReport)
+* related only Reference(GenomicReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"

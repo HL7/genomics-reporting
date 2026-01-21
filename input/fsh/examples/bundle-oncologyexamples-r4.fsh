@@ -157,15 +157,16 @@ Usage: #inline
 * result[+] = Reference(urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20) "Therapy match result 3"
 * result[+] = Reference(urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4) "Therapy match result 4"
 
+
 Instance: Inline-Instance-for-oncologyexamples-r4-2
 InstanceOf: Practitioner
 Usage: #inline
-* identifier.value = "4654765876"
-* name.given[0] = "Akerman"
-* name.given[+] = "Philip"
-* name.given[+] = "Prof"
-* address.city = "Castro Valley"
-* address.state = "CA"
+* identifier[0].value = "4654765876"
+* name[0].given[0] = "Akerman"
+* name[0].given[1] = "Philip"
+* name[0].given[2] = "Prof"
+* address[0].city = "Castro Valley"
+* address[0].state = "CA"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-3
 InstanceOf: Specimen
@@ -227,8 +228,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
-* component[=].valueCodeableConcept.coding.display = "JAK2"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:6192 "JAK2"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-7
 InstanceOf: Variant
@@ -250,8 +250,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
-* component[=].valueCodeableConcept.coding.display = "KDR"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:6307 "KDR"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-8
 InstanceOf: Variant
@@ -271,8 +270,7 @@ Usage: #inline
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
-* component[=].valueCodeableConcept.coding.display = "ERBB4"
+* component[=].valueCodeableConcept = $HGNCID#HGNC:3432 "ERBB4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-9
 InstanceOf: TherapeuticImplication

@@ -1,0 +1,1 @@
+**Region Studied** can assert and describe actual regions studied for the performed test(s). It can provide this description as a list at the gene level, mutation level, or as a textual description. Arbitrary ranges can be conveyed using the 3 components `ranges-examined:51959-5`, `genomic-ref-seq:48013-7` and `coordinate-system:92822-6`.

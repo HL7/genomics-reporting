@@ -5,7 +5,6 @@ Alias: $UCUM = http://unitsofmeasure.org
 Alias: $NCIT = http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl
 Alias: $ICD10CM = http://hl7.org/fhir/sid/icd-10-cm
 Alias: $RXN = http://www.nlm.nih.gov/research/umls/rxnorm
-Alias: $GTR = https://www.ncbi.nlm.nih.gov/gtr
 Alias: $CLINVAR = http://www.ncbi.nlm.nih.gov/clinvar
 Alias: $IDTYPE = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: $HGNCID = 	http://www.genenames.org
@@ -34,4 +33,8 @@ Alias: $CONFIDENTIALITY = http://terminology.hl7.org/CodeSystem/v3-Confidentiali
 Alias: $MONDO = http://purl.obolibrary.org/obo/mondo.owl
 
 //Extensions
-Alias: operationAllowedType = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile
+Alias: $operation-allowed-type = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile
+Alias: $workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
+Alias: $supporting-info = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
+Alias: $hla-genotyping-results-allele-database = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database
+Alias: $hla-genotyping-results-glstring = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring

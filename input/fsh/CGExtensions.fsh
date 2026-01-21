@@ -59,19 +59,10 @@ Description: "Use to group and order repeat expansion motifs."
 * ^context[0].expression = "Observation.component"
 * value[x] only positiveInt
 
-Extension:   RelatedArtifactComponent
-Id:          workflow-relatedArtifactComponent //use a name that aligns with the 'workflow-relatedArtifact' extension
-Title:       "Related Artifact for Observation component"
-Description: "Use the RelatedArtifact at the Observation.component element (not valid in the R4 extension)"
-* ^context[0].type = #element
-* ^context[0].expression = "Observation.component"
-* value[x] only RelatedArtifact
-
 Extension:   KnowledgebaseAncestryGroup
 Id:          knowledgebase-ancestry-group
-Title:       "KnowledgebaseAncestryGroup"
+Title:       "Knowledgebase Ancestry Group"
 Description: "Used to identify the sample ancestry group using terms obtained from the knowledgebase"
 * ^context[0].type = #element
 * ^context[0].expression = "Observation.component"
 * value[x] only CodeableConcept
-
