@@ -77,7 +77,6 @@ See below for additional guidance on each answer from this value set.
 
 These variant assessments are supplemented by other indicators of the analysis like quality and coverage. These other indicators include:
 
-
 | Indicator | Usage Notes |
 |-----------|-------------|
 | [Variant Confidence Status](StructureDefinition-variant-definitions.html#diff_Observation.component:variant-confidence-status) | Provides a way to indicate the reporting organization's confidence that the variant is truly positive. Noting the confidence level may be important in the overall interpretation of the variant and related implications. Confidence is noted as High, Intermediate or Low. The following example shows how to express a high variant confidence: `{"system": "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/variant-confidence-status-cs","code" : "high","display" : "High"}` It is important to note that variant confidence status is not a required component. If the reporting organization's confidence levels are not structured in a way that it can be reported using this standard coding system, implementers must determine other ways to ensure that confidence in a variant call is understood. For example, a laboratory might only send structured variants when the confidence is 'high' that they are truly positive. |

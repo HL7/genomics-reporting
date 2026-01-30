@@ -9,7 +9,7 @@ Description: "Mapping from http://loinc.org ValueSet for DNA Change Type to http
 * experimental = false
 * publisher = "HL7 International Clinical Genomics Work Group"
 * description = "LOINC and SequenceOntology mappings for DNA change type"
-* copyright = "This material contains content from LOINC (http://loinc.org)..."
+* copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc."
 * sourceScopeCanonical = "http://loinc.org/vs/LL379-9"
 * targetScopeCanonical = "http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs"
 

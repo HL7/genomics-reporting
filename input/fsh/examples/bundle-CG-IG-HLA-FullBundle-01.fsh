@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example of a HLA bundle"
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
+* entry[+].fullUrl = "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
 * entry[=].resource = CG-IG-HLA-FullBundle-01-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
@@ -130,7 +130,7 @@ Usage: #inline
 * identifier.value = "12345"
 * identifier.period.start = "2012-11-10"
 * identifier.assigner.display = "aDonorRegistry"
-* name[0].use = #official
+* name[+].use = #official
 * name[=].text = "John Storm"
 * name[=].family = "Storm"
 * name[=].given = "John"
@@ -320,7 +320,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-A:01:01G+HLA-A*01:02
 * method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6) "HLA-A*01:01:01G, exons 2 and 3"
+* derivedFrom[+] = Reference(urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6) "HLA-A*01:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32) "HLA-A*01:02, exons 2 and 3"
   * type = "Observation"
@@ -448,7 +448,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-B*15:01:01G+HLA-B*57:01:01G
 * method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a) "HLA-B*15:01:01G, exons 2 and 3"
+* derivedFrom[+] = Reference(urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a) "HLA-B*15:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5) "HLA-B*57:01:01G, exons 2 and 3"
   * type = "Observation"
@@ -582,7 +582,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $GLSTRING#hla#3.23.0#HLA-C*01:02:01G+HLA-C*03:04:01G
 * method.text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47) "HLA-C*03:04:01G, exons 2 and 3"
+* derivedFrom[+] = Reference(urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47) "HLA-C*03:04:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:709c5315-9403-4867-9d82-0b953836665f) "HLA-C*01:02:01G, exons 2 and 3"
   * type = "Observation"
@@ -592,10 +592,10 @@ Usage: #inline
 Instance: CG-IG-HLA-FullBundle-01-27
 InstanceOf: GenomicReport
 Usage: #inline
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
 * extension[=].valueCodeableConcept.coding.system = "http://www.ebi.ac.uk/ipd/imgt/hla"
 * extension[=].valueCodeableConcept.coding.version = "3.23"
-* extension[+].extension[0].url = "text"
+* extension[+].extension[+].url = "text"
 * extension[=].extension[=].valueString = "HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"
 * extension[=].extension[+].url = "url"
 * extension[=].extension[=].valueUri = "https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex"
@@ -604,7 +604,7 @@ Usage: #inline
   * type = "ServiceRequest"
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
-* code.coding[0] = $LNC#51969-4 "Genetic analysis report"
+* code.coding[+] = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
@@ -613,7 +613,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab Inc"
   * type = "Organization"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* result[0] = Reference(urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228) "HLA-A: HLA-A:01:01:01G+HLA-A*01:02"
+* result[+] = Reference(urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228) "HLA-A: HLA-A:01:01:01G+HLA-A*01:02"
 * result[=].type = "Observation"
 * result[+] = Reference(urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70) "HLA-B: HLA-B*15:01:01G+HLA-B*57:01:01G"
   * type = "Observation"

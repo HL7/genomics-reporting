@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example bundle with a PGx report and a variety of observations."
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "http://example.org/fhir/DiagnosticReport/pgx-report"
+* entry[+].fullUrl = "http://example.org/fhir/DiagnosticReport/pgx-report"
 * entry[=].resource = pgx-report
 * entry[=].request.method = #POST
 * entry[=].request.url = "DiagnosticReport"
@@ -80,7 +80,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* result[0] = Reference(med-impact-pgx-example) "genetics impact for medication metabolism accessment"
+* result[+] = Reference(med-impact-pgx-example) "genetics impact for medication metabolism accessment"
 * result[+] = Reference(genotype-pgx-example)
 * result[+] = Reference(haplotype-1-pgx-example)
 * result[+] = Reference(haplotype-2-pgx-example)
@@ -108,7 +108,7 @@ Usage: #inline
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(genotype-pgx-example)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept = $LNC#LA25390-8 "Rapid metabolizer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept = $RXN#103 "mercaptopurine"
@@ -124,11 +124,11 @@ Usage: #inline
 * effectiveDateTime = "2018"
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept.coding[0] = $PHARMVAR#PV00540 "CYP2C9*4"
+* valueCodeableConcept.coding[+] = $PHARMVAR#PV00540 "CYP2C9*4"
 * valueCodeableConcept.coding[+] = $PHARMVAR#PV00571 "CYP2C9*35"
 * valueCodeableConcept.text = "CYP2C9 *4/*35"
 * specimen = Reference(ExampleSpecimen)
-* derivedFrom[0] = Reference(haplotype-1-pgx-example)
+* derivedFrom[+] = Reference(haplotype-1-pgx-example)
 * derivedFrom[+] = Reference(haplotype-2-pgx-example)
 * component.code = $LNC#48018-6 "Gene studied ID"
 * component.valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
@@ -208,7 +208,7 @@ Usage: #inline
 * specimen = Reference(ExampleSpecimen)
 // Reference to MolecularSequence commented out for R6 compatibility
 /* * derivedFrom = Reference(sequence-2-pgx-example) */
-* component[0].code = $LNC#48018-6 "Gene studied ID"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NG_007726.3

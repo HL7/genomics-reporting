@@ -82,7 +82,7 @@ Usage: #example
 * active = true
 * name.use = #official
 * name.family = "Doe"
-* name.given[0] = "John"
+* name.given[+] = "John"
 * name.given[+] = "Junior"
 * gender = #unknown
 * birthDate = "2001-01-01"

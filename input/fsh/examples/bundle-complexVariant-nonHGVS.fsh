@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example bundle with compound heterozygous variant, where the specific changes are represented without HGVS."
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"
+* entry[+].fullUrl = "urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d"
 * entry[=].resource = Inline-Instance-for-complexVariant-nonHGVS-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Observation"
@@ -37,7 +37,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#51958-7 "Transcript ref sequence ID"
+* component[+].code = $LNC#51958-7 "Transcript ref sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_022787.3 "NM_022787.3"
 * component[+].code = $LNC#81254-5
 * component[=].valueRange.low.value = 769
@@ -62,7 +62,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#51958-7 "Transcript ref sequence ID"
+* component[+].code = $LNC#51958-7 "Transcript ref sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_022787.3 "NM_022787.3"
 * component[+].code = $LNC#81254-5
 * component[=].valueRange.low.value = 53
@@ -85,6 +85,6 @@ Usage: #inline
 * effectiveDateTime = "2019-03-05"
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
-* valueCodeableConcept = $CLINVAR#RCV000664188 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
-* hasMember[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e) "unpacked representation of NM_022787.3:c.53A>G"
+* valueCodeableConcept = $CLINVAR#RCV000664188.1 "NM_022787.3(NMNAT1):c.[53A>G];[769G>A] AND Cone-rod dystrophy"
+* hasMember[+] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12e) "unpacked representation of NM_022787.3:c.53A>G"
 * hasMember[+] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "unpacked representation of NM_022787.3:c.769G>A"

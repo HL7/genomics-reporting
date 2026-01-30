@@ -11,8 +11,8 @@ Usage: #example
 * performer = Reference(ExampleLab)
 * derivedFrom = Reference(Observation/variant-with-molec-consequences)
 * interpretation = http://example.org/pcingola.github.io/SnpEff/se_inputoutput/\#impact-prediction#MOD "Modifier"
-* component[0].code = http://loinc.org#48004-6
-* component[0].code.text = "coding HGVS"
+* component[+].code = http://loinc.org#48004-6
+* component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
