@@ -82,7 +82,7 @@ These define constraints on FHIR data types for systems conforming to this imple
 </tbody>
 </table>
 
-### Extension Profiles 
+### Extensions 
 These define constraints on FHIR extensions for systems conforming to this implementation guide.
 
 {% assign profiles = site.data.structuredefinitions | where: "type", "Extension" | sort: "title" %}
@@ -192,28 +192,6 @@ These define operations that are used by systems conforming to this implementati
 </tbody>
 </table>
 
-### Parameters
-These define example parameters for operations used by systems conforming to this implementation guide.
-
-{% assign parameters = site.data.resourceOutput | where: "Type", "Parameters" | sort: "Name" %}
-
-<table class="grid">
-<thead>
-<tr>
-<th>Parameters</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-{% for param in parameters %}
-<tr>
-<td><a href="{{param.Web}}">{{param.Name}}</a></td>
-<td>{{param.Description}}</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-
 ### Example Instances
 These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.
 
@@ -233,7 +211,7 @@ Create a hash to group examples by profile
       {% if detail.exampleOf %}
         {% assign profileName = detail.exampleOf.name %}
       {% else %}
-        {% assign profileName = "No Profile" %}
+        {% assign profileName = "Other" %}
       {% endif %}
       
       {% unless profileNames contains profileName %}
@@ -247,26 +225,26 @@ Create a hash to group examples by profile
 {% assign finalProfileOrder = "" | split: "" %}
 
 {% comment %}
-Add all profiles except "No Profile" first
+Add all profiles except "Other" (no profile) first
 {% endcomment %}
 {% for profileName in sortedProfileNames %}
-  {% unless profileName == "No Profile" %}
+  {% unless profileName == "Other" %}
     {% assign finalProfileOrder = finalProfileOrder | push: profileName %}
   {% endunless %}
 {% endfor %}
 
 {% comment %}
-Add "No Profile" at the end if it exists
+Add "Other" at the end if it exists
 {% endcomment %}
-{% if profileNames contains "No Profile" %}
-  {% assign finalProfileOrder = finalProfileOrder | push: "No Profile" %}
+{% if profileNames contains "Other" %}
+  {% assign finalProfileOrder = finalProfileOrder | push: "Other" %}
 {% endif %}
 
 {% for profileName in finalProfileOrder %}
 
 #### {{profileName}} Examples
 
-{% if profileName == "No Profile" %}
+{% if profileName == "Other" %}
 <table class="grid">
 <thead>
 <tr>
@@ -293,13 +271,13 @@ Add "No Profile" at the end if it exists
     {% assign exampleArray = site.data.resourceOutput | where: "Web", artifact %}
     {% assign example = exampleArray[0] %}
     {% if example %}
-      {% assign currentProfileName = "No Profile" %}
+      {% assign currentProfileName = "Other" %}
       {% if detail.exampleOf %}
         {% assign currentProfileName = detail.exampleOf.name %}
       {% endif %}
       
       {% if currentProfileName == profileName %}
-        {% if profileName == "No Profile" %}
+        {% if profileName == "Other" %}
 <tr>
 <td><a href="{{example.Web}}">{{example.Id}}</a></td>
 <td>{{example.Type}}</td>
