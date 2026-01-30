@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example oncology bundle including report, variants, and other resources."
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17"
+* entry[+].fullUrl = "urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17"
 * entry[=].resource = Inline-Instance-for-oncology-report-example-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Organization"
@@ -92,7 +92,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:1787 "CDKN2A"
@@ -127,7 +127,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:9949 "RECQL4"
@@ -162,7 +162,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:10483 "RYR1"
@@ -197,7 +197,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:10519 "SACS"
@@ -233,7 +233,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:11086 "SLIT2"
@@ -269,7 +269,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:11100 "SMARCA4"
@@ -301,7 +301,7 @@ Usage: #inline
 * issued = "2019-09-15T11:35:05.722-04:00"
 * performer = Reference(urn:uuid:fc16d84c-8584-4e1d-baae-64e2f95bfe17)
 * specimen = Reference(urn:uuid:a2041c83-b73d-4fc8-9466-4ba4a92da516)
-* result[0] = Reference(urn:uuid:dac358c3-403a-4dbb-b478-4259aed882ae)
+* result[+] = Reference(urn:uuid:dac358c3-403a-4dbb-b478-4259aed882ae)
 * result[+] = Reference(urn:uuid:1d773d66-cec7-44a2-b92a-46d00adeae00)
 * result[+] = Reference(urn:uuid:842d9ab9-d940-4f0c-adf9-e5c528f5c0e5)
 * result[+] = Reference(urn:uuid:9a9f9a4a-52e3-4738-bd0b-a25374bbf358)
@@ -344,7 +344,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:8975 "PIK3CA"
@@ -379,7 +379,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:7989 "NRAS"
@@ -415,7 +415,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:16712 "FBXW7"
@@ -450,7 +450,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:7133 "KMT2D"
@@ -486,7 +486,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:8975 "PIK3CA"
@@ -522,7 +522,7 @@ Usage: #inline
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://example.org/genomics/NamingSystem/cegat/tissueID"
 * specimen.identifier.value = "UNKNOWN"
-* component[0].code = $LNC#48002-0 "Genomic source class"
+* component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
 * component[+].code = $LNC#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:6126 "IRS2"

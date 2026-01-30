@@ -13,7 +13,7 @@ Usage: #example
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen.identifier.system = "http://slk-kliniken.de/fhir/namingSystem/tissueID"
 * specimen.identifier.value = "16-123456-23"
-* component[0].code = $LNC#48018-6 "Gene studied ID"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:644 "AR"
 * component[+].code = $LNC#48001-2 "Cytogenetic (chromosome) location"
 * component[=].valueCodeableConcept.text = "chrX"

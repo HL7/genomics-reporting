@@ -1,0 +1,12 @@
+> **STU Note:** The Clinical Genomics committee has identified overlaps and redundancies between content in the MolecularSequence resource and content in this implementation guide. The committee is considering options for modifying the resource and anticipates potential changes being brought forward in an upcoming ballot.
+{:.stu-note}
+
+This section is about the FHIR resource [MolecularSequence](https://hl7.org/fhir/R4/molecularsequence.html).
+
+[MolecularSequence](https://hl7.org/fhir/R4/molecularsequence.html) can be used to hold clinically relevant sequence data in a manner that is both efficient and versatile, integrating new and yet undefined types of genomic and other -omics data that will soon be commonly entered into health records for clinical use. MolecularSequence will be leveraged by other FHIR resources, including Observation. This is consistent with how all FHIR resources are designed and used.
+
+This resource can be used with the profiles found in this Implementation Guide to support a large set of clinical use cases. The goal of this approach is to address all emergent -omics use cases, including Next-Generation Sequencing (NGS) in a way that is simple to implement, will optimize payload sizes, and help developers avoid redundant retrieval of data.
+
+The September 2014 Informative Ballot ("HL7 Clinical Genomics, Domain Analysis Model: Clinical Sequencing Release 1") provided guiding use cases, which initially informed development of the initial Standard Genetics profile that is found in FHIR DSTU2. The same use cases also led to a second Project to develop a MolecularSequence resource ("Develop FHIR sequence resource for Clinical Genomics"). A preliminary effort to address these issues has been explored and published in context of the [Substitutable Medical Applications and Reusable Technologies](http://smarthealthit.org/an-app-platform-for-healthcare/about/) Platforms Project and described in an article ("[SMART on FHIR Genomics: Facilitating standardized clinico-genomic apps](http://jamia.oxfordjournals.org/content/early/2015/07/21/jamia.ocv045.long)").
+
+Some examples in this guide, including [this one](Bundle-bundle-CG-IG-HLA-FullBundle-01.html), leverage MolecularSequence. The community is still evaluating overlap between MolecularSequence and Observation and encourages adopter feedback.

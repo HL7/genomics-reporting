@@ -34,4 +34,8 @@ Alias: $CONFIDENTIALITY = http://terminology.hl7.org/CodeSystem/v3-Confidentiali
 Alias: $MONDO = http://purl.obolibrary.org/obo/mondo.owl
 
 //Extensions
-Alias: operationAllowedType = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile
+Alias: $operation-allowed-type = http://hl7.org/fhir/StructureDefinition/operationdefinition-profile
+Alias: $workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
+Alias: $supporting-info = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
+Alias: $hla-genotyping-results-allele-database = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database
+Alias: $hla-genotyping-results-glstring = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring

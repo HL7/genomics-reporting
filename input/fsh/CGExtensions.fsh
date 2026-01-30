@@ -12,10 +12,10 @@ Extension:   GenomicRiskAssessment
 Id:          genomic-risk-assessment
 Title:       "Genomic Risk Assessment"
 Description: "RiskAssessment delivered as part of a genomics report or observation"
-* ^context[0].type = #element
-* ^context[0].expression = "DiagnosticReport"
-* ^context[1].type = #element
-* ^context[1].expression = "Observation"
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation"
 * value[x] only Reference(RiskAssessment)
 
 Extension:   AnnotationCode
@@ -39,39 +39,30 @@ Extension:   TherapyAssessedReference
 Id:          therapy-assessed-reference
 Title:       "Therapy Assessed reference to a FHIR resource"
 Description: "Used to reference a specific therapy that was assessed (e.g. a FHIR ResearchStudy, a FHIR CarePlan, or a FHIR PlanDefinition)."
-* ^context[0].type = #element
-* ^context[0].expression = "Observation.component"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"
 * value[x] only Reference(CarePlan or ResearchStudy or PlanDefinition)
 
 Extension:   MedicationAssessedReference
 Id:          medication-assessed-reference
 Title:       "Medication Assessed reference to a FHIR resource"
 Description: "Used to reference a specific medication that was assessed (e.g. a FHIR Medication or a FHIR MedicationKnowledge)."
-* ^context[0].type = #element
-* ^context[0].expression = "Observation.component"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"
 * value[x] only Reference(Medication or MedicationKnowledge)
 
 Extension:   RepeatMotifOrder
 Id:          repeat-motif-order
 Title:       "Repeat Motif Order"
 Description: "Use to group and order repeat expansion motifs."
-* ^context[0].type = #element
-* ^context[0].expression = "Observation.component"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"
 * value[x] only positiveInt
-
-Extension:   RelatedArtifactComponent
-Id:          workflow-relatedArtifactComponent //use a name that aligns with the 'workflow-relatedArtifact' extension
-Title:       "Related Artifact for Observation component"
-Description: "Use the RelatedArtifact at the Observation.component element (not valid in the R4 extension)"
-* ^context[0].type = #element
-* ^context[0].expression = "Observation.component"
-* value[x] only RelatedArtifact
 
 Extension:   KnowledgebaseAncestryGroup
 Id:          knowledgebase-ancestry-group
-Title:       "KnowledgebaseAncestryGroup"
+Title:       "Knowledgebase Ancestry Group"
 Description: "Used to identify the sample ancestry group using terms obtained from the knowledgebase"
-* ^context[0].type = #element
-* ^context[0].expression = "Observation.component"
+* ^context[+].type = #element
+* ^context[=].expression = "Observation.component"
 * value[x] only CodeableConcept
-

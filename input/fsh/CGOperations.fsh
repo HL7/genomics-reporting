@@ -99,7 +99,7 @@ Description: "Determine if simple variants are present that overlap range(s)."
     * max = "*"
     * documentation = "If includeVariants=true then include variants in the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
+    * extension[$operation-allowed-type].valueUri = Canonical(Variant)
   * part[+]
     * name = #sequencePhaseRelationship
     * use = #out
@@ -107,7 +107,7 @@ Description: "Determine if simple variants are present that overlap range(s)."
     * max = "*"
     * documentation = "If includePhasing=true and includeVariants=true then include sequence-phase-relationships between returned variants. Sequence phase relationships must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-sequence-phase-relationship.html] and minimally include valueCodeableConcept and 2..2 derivedFrom:variant references."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
+    * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 
 Instance: find-subject-specific-variants
 InstanceOf: OperationDefinition
@@ -196,7 +196,7 @@ Description: "Determine if specified simple variants are present."
     * max = "*"
     * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:genomic-ref-seq; component:ref-allele; component:alt-allele; component:coordinate-system (valued with '0-based interval counting'); component:exact-start-end."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
+    * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 
 Instance: find-subject-structural-intersecting-variants
 InstanceOf: OperationDefinition
@@ -293,7 +293,7 @@ Description: "Determine if structural variants are present that overlap range(s)
     * max = "*"
     * documentation = "If includeVariants=true then include variants that intersect the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:coding-change-type; component:genomic-ref-seq; component:coordinate-system (valued with '0-based interval counting'); components outer-start-end and/or inner-start-end."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
+    * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 
 Instance: find-subject-structural-subsuming-variants
 InstanceOf: OperationDefinition
@@ -390,7 +390,7 @@ Description: "Determine if structural variants are present that fully subsume a 
     * max = "*"
     * documentation = "If includeVariants=true then include variants that subsume the range. Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant] and minimally include valueCodeableConcept; component:coding-change-type; component:genomic-ref-seq; component:coordinate-system (valued with '0-based interval counting'); components outer-start-end and/or inner-start-end."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Variant)
+    * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 
 Instance: find-subject-haplotypes
 InstanceOf: OperationDefinition
@@ -473,7 +473,7 @@ Description: "Retrieve haplotypes/genotypes for specified genes."
     * max = "*"
     * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Haplotype)
+    * extension[$operation-allowed-type].valueUri = Canonical(Haplotype)
   * part[+]
     * name = #genotype
     * use = #out
@@ -481,7 +481,7 @@ Description: "Retrieve haplotypes/genotypes for specified genes."
     * max = "*"
     * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Genotype)
+    * extension[$operation-allowed-type].valueUri = Canonical(Genotype)
 
 Instance: find-subject-specific-haplotypes
 InstanceOf: OperationDefinition
@@ -570,7 +570,7 @@ Description: "See if specified haplotypes/genotypes are present."
     * max = "*"
     * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Haplotype)
+    * extension[$operation-allowed-type].valueUri = Canonical(Haplotype)
   * part[+]
     * name = #genotype
     * use = #out
@@ -578,7 +578,7 @@ Description: "See if specified haplotypes/genotypes are present."
     * max = "*"
     * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
     * type = #Observation
-    * extension[operationAllowedType].valueUri = Canonical(Genotype)
+    * extension[$operation-allowed-type].valueUri = Canonical(Genotype)
 
 Instance: find-subject-tx-implications
 InstanceOf: OperationDefinition
@@ -680,7 +680,7 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * max = "*"
   * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/therapeutic-implication]. The target(s) of the implication's derivedFrom shall also be included in the response."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(TherapeuticImplication)
+  * extension[$operation-allowed-type].valueUri = Canonical(TherapeuticImplication)
 * parameter[+]
   * name = #variant
   * use = #out
@@ -688,7 +688,7 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * max = "*"
   * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(Variant)
+  * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 * parameter[+]
   * name = #haplotype
   * use = #out
@@ -696,7 +696,7 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * max = "*"
   * documentation = "Haplotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/haplotype]."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(Haplotype)
+  * extension[$operation-allowed-type].valueUri = Canonical(Haplotype)
 * parameter[+]
   * name = #genotype
   * use = #out
@@ -704,7 +704,7 @@ Description: "Retrieves genetic therapeutic implications for variants/haplotypes
   * max = "*"
   * documentation = "Genotypes must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genotype]."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(Genotype)
+  * extension[$operation-allowed-type].valueUri = Canonical(Genotype)
 
 Instance: find-subject-dx-implications
 InstanceOf: OperationDefinition
@@ -790,7 +790,7 @@ Description: "Retrieves genetic diagnostic implications for variants."
   * max = "*"
   * documentation = "Implications must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication]. The target(s) of the implication's derivedFrom shall also be included in the response."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(DiagnosticImplication)
+  * extension[$operation-allowed-type].valueUri = Canonical(DiagnosticImplication)
 * parameter[+]
   * name = #variant
   * use = #out
@@ -798,7 +798,7 @@ Description: "Retrieves genetic diagnostic implications for variants."
   * max = "*"
   * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(Variant)
+  * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 
 Instance: find-subject-molecular-consequences
 InstanceOf: OperationDefinition
@@ -884,7 +884,7 @@ Description: "Retrieves molecular consequences of a DNA variant."
   * max = "*"
   * documentation = "Consequences must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence]. The target(s) of the consequence's derivedFrom shall also be included in the response."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(MolecularConsequence)
+  * extension[$operation-allowed-type].valueUri = Canonical(MolecularConsequence)
 * parameter[+]
   * name = #variant
   * use = #out
@@ -892,7 +892,7 @@ Description: "Retrieves molecular consequences of a DNA variant."
   * max = "*"
   * documentation = "Variants must conform to [Profile: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/variant]."
   * type = #Observation
-  * extension[operationAllowedType].valueUri = Canonical(Variant)
+  * extension[$operation-allowed-type].valueUri = Canonical(Variant)
 
 Instance: find-population-specific-variants
 InstanceOf: OperationDefinition

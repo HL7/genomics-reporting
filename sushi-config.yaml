@@ -8,7 +8,7 @@ extension:
     valueCode: cg
 canonical: http://hl7.org/fhir/uv/genomics-reporting
 packageId: hl7.fhir.uv.genomics-reporting
-version: 4.0.0-ballot
+version: 4.0.0-cibuild
 name: GenomicsReporting
 title: Genomics Reporting Implementation Guide
 status: active
@@ -29,50 +29,70 @@ parameters:
     - http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs
     - https://www.ncbi.nlm.nih.gov/gtr
   pin-canonicals: pin-multiples
-copyrightYear: 2022+
-releaseLabel: STU 4 ballot
+copyrightYear: 2025+
+releaseLabel: CI Build
 
 pages:
   index.html:
     title: Home Page
+    generation: markdown
   background.html:
     title: Genomic Background
+    generation: markdown
   general.html:
     title: General Genomic Reporting
+    generation: markdown
   sequencing.html:
     title: Variant Reporting
+    generation: markdown
+  cytogenomics.html:
+    title: Cytogenomic Reporting
+    generation: markdown
   pharmacogenomics.html:
     title: Pharmacogenomic Reporting
     generation: markdown
   somatics.html:
     title: Somatic Reporting
+    generation: markdown
   histocompatibility.html:
     title: Histocompatibility and Immunogenetic Reporting
+    generation: markdown
   operations.html:
     title: Genomic Operations
+    generation: markdown
   downloads.html:
     title: Useful Downloads
+    generation: markdown
   v2.html:
     title: "Appendix A: Relation to v2 reporting"
+    generation: markdown
   cgapps.html:
     title: "Appendix B: Clinical Genomic Apps"
+    generation: markdown
   domain.html:
     title: "Appendix C: HL7 Domain Analysis Model"
+    generation: markdown
   usecases.html:
     title: "Appendix D: Query Guidance"
+    generation: markdown
   codings.html:
     title: "Appendix E: External Coding Systems"
     generation: markdown
   conversion.html:
     title: "Appendix F: Conversion from FHIR Core STU3"
-  molecularSequence.html:
+    generation: markdown
+  molecularsequence.html:
     title: "Appendix G: Molecular Sequence"
-  groupingGuidance.html:
+    generation: markdown
+  groupingguidance.html:
     title: "Appendix H: Grouping Guidance"
-  Glossary.html:
+    generation: markdown
+  glossary.html:
     title: "Appendix I: Glossary"
+    generation: markdown
   changes.html:
     title: "Change Log"
     generation: markdown
-#  artifacts.html:
-#    title: Artifact List
+  artifacts.html:
+    title: Artifact List
+    generation: markdown

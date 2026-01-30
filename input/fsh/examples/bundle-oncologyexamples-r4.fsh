@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example bundle with an oncology report with SNVs, TMB, MSI, and therapy matches."
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+* entry[+].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
 * entry[=].resource = Inline-Instance-for-oncologyexamples-r4-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
@@ -64,7 +64,7 @@ Instance: Inline-Instance-for-oncologyexamples-r4-1
 InstanceOf: Patient
 Usage: #inline
 * identifier.value = "1007"
-* name.given[0] = "Carrot"
+* name.given[+] = "Carrot"
 * name.given[+] = "John"
 * name.given[+] = "Mr"
 * gender = #male
@@ -84,7 +84,7 @@ Usage: #inline
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -106,7 +106,7 @@ Usage: #inline
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -128,7 +128,7 @@ Usage: #inline
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -147,7 +147,7 @@ Usage: #inline
 * subject = Reference(urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d)
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* result[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "SNV analysis for JAK2 variant"
+* result[+] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "SNV analysis for JAK2 variant"
 * result[+] = Reference(urn:uuid:772de7d7-e1bd-4183-bdb5-cea8eda317cd) "SNV analysis for KDR variant"
 * result[+] = Reference(urn:uuid:b33eb7ec-d83e-49d2-b0f3-729d024ebe01) "SNV analysis for ERBB4 variant"
 * result[+] = Reference(urn:uuid:40e85eda-4d31-4bd2-a5a0-c39d63f9824f) "TMB value analysis"
@@ -157,15 +157,16 @@ Usage: #inline
 * result[+] = Reference(urn:uuid:05713d1c-0df5-46d5-a5a9-2085eef56c20) "Therapy match result 3"
 * result[+] = Reference(urn:uuid:294f1401-e2eb-4df1-b6d2-09e1b7a6eca4) "Therapy match result 4"
 
+
 Instance: Inline-Instance-for-oncologyexamples-r4-2
 InstanceOf: Practitioner
 Usage: #inline
-* identifier.value = "4654765876"
-* name.given[0] = "Akerman"
-* name.given[+] = "Philip"
-* name.given[+] = "Prof"
-* address.city = "Castro Valley"
-* address.state = "CA"
+* identifier[+].value = "4654765876"
+* name[+].given[+] = "Akerman"
+* name[=].given[+] = "Philip"
+* name[=].given[+] = "Prof"
+* address[+].city = "Castro Valley"
+* address[=].state = "CA"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-3
 InstanceOf: Specimen
@@ -220,15 +221,14 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[+].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NC_000009.12:g.5073770G>T "NC_000009.12:g.5073770G>T"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_004963.1:p.Val617Phe "NP_004963.1:p.Val617Phe"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
-* component[=].valueCodeableConcept.coding.display = "JAK2"
+* component[=].valueCodeableConcept = $HGNCID#JAK2 "JAK2"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-7
 InstanceOf: Variant
@@ -243,15 +243,14 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[+].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NC_000004.11:g.55972974T>A "NC_000004.11:g.55972974T>A"
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_002244.1:p.Gln472His "NP_002244.1:p.Gln472His"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
-* component[=].valueCodeableConcept.coding.display = "KDR"
+* component[=].valueCodeableConcept = $HGNCID#KDR "KDR"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-8
 InstanceOf: Variant
@@ -266,13 +265,12 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
+* component[+].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NC_000002.12:g.211713666_211713668del "NC_000002.12:g.211713666_211713668del"
 * component[+].code = $LNC#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $LNC#LA6683-2 "Germline"
 * component[+].code = $LNC#48018-6 "Gene studied ID"
-* component[=].valueCodeableConcept.coding.system = "http://www.genenames.org"
-* component[=].valueCodeableConcept.coding.display = "ERBB4"
+* component[=].valueCodeableConcept = $HGNCID#ERBB4 "ERBB4"
 
 Instance: Inline-Instance-for-oncologyexamples-r4-9
 InstanceOf: TherapeuticImplication
@@ -287,7 +285,7 @@ Usage: #inline
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = TbdCodesCS#therapeutic-implication
+* component[+].code = TbdCodesCS#therapeutic-implication
 * component[=].valueCodeableConcept = $LNC#LA6677-4 "Responsive"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"

@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example of a HLA bundle"
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
+* entry[+].fullUrl = "urn:uuid:13f34265-335c-4853-bc38-0815315edafa"
 * entry[=].resource = CG-IG-HLA-FullBundle-01-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
@@ -121,7 +121,7 @@ Usage: #inline
 * identifier.value = "12345"
 * identifier.period.start = "2012-11-10"
 * identifier.assigner.display = "aDonorRegistry"
-* name[0].use = #official
+* name[+].use = #official
 * name[=].text = "John Storm"
 * name[=].family = "Storm"
 * name[=].given = "John"
@@ -145,41 +145,43 @@ Usage: #inline
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 
+
 Instance: CG-IG-HLA-FullBundle-01-3
 InstanceOf: Organization
 Usage: #inline
 * name = "aTypingLab Inc"
-* alias = "aTL"
-* telecom.system = #phone
-* telecom.value = "1-800-555-1234"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "123 Main St, Sometown, ND 99999"
-* address.line = "123 Main St"
-* address.city = "Sometown"
-* address.state = "ND"
-* address.postalCode = "99999"
-* address.country = "USA"
+* alias[+] = "aTL"
+* telecom[+].system = #phone
+* telecom[=].value = "1-800-555-1234"
+* telecom[=].use = #work
+* telecom[=].rank = 1
+* address[+].use = #work
+* address[=].type = #both
+* address[=].text = "123 Main St, Sometown, ND 99999"
+* address[=].line[+] = "123 Main St"
+* address[=].city = "Sometown"
+* address[=].state = "ND"
+* address[=].postalCode = "99999"
+* address[=].country = "USA"
 
 Instance: CG-IG-HLA-FullBundle-01-4
 InstanceOf: Organization
 Usage: #inline
 * name = "aDonorRegistry"
-* alias = "ADR"
-* telecom.system = #phone
-* telecom.value = "1-800-555-6789"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "456 Main St, Anytown ND, 00000"
-* address.line = "456 Main St"
-* address.city = "Anytown"
-* address.state = "ND"
-* address.postalCode = "00000"
-* address.country = "USA"
+* alias[+] = "ADR"
+* telecom[+].system = #phone
+* telecom[=].value = "1-800-555-6789"
+* telecom[=].use = #work
+* telecom[=].rank = 1
+* address[+].use = #work
+* address[=].type = #both
+* address[=].text = "456 Main St, Anytown ND, 00000"
+* address[=].line[+] = "456 Main St"
+* address[=].city = "Anytown"
+* address[=].state = "ND"
+* address[=].postalCode = "00000"
+* address[=].country = "USA"
+
 
 Instance: CG-IG-HLA-FullBundle-01-5
 InstanceOf: ServiceRequest
@@ -260,7 +262,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804) "HLA-A*01:01:01:01, exon 2"
+* derivedFrom[+] = Reference(urn:uuid:8200dab6-18a2-4550-b913-a7db480c0804) "HLA-A*01:01:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:7c393185-f15c-45bc-a714-c0fdbea32675) "HLA-A*01:01:01:01, exon 3"
   * type = "MolecularSequence"
@@ -283,7 +285,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621) "HLA-A*01:02, exon 2"
+* derivedFrom[+] = Reference(urn:uuid:65c85f14-c3a0-4b72-818f-820e04fcc621) "HLA-A*01:02, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:fbba9fe7-0ece-4ec1-9233-a437a8d242a0) "HLA-A*01:02, exon 3"
   * type = "MolecularSequence"
@@ -308,7 +310,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6) "HLA-A*01:01:01G, exons 2 and 3"
+* derivedFrom[+] = Reference(urn:uuid:b7765bbf-df40-486a-9f2f-404309643de6) "HLA-A*01:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:d98d92a7-0e86-4ae5-b036-b7e1bba6ec32) "HLA-A*01:02, exons 2 and 3"
   * type = "Observation"
@@ -379,7 +381,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670) "HLA-B*15:01:01:01, exon 2"
+* derivedFrom[+] = Reference(urn:uuid:cbabf93e-1b4b-46f2-ba1e-d84862670670) "HLA-B*15:01:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:c233ad3d-1572-48d6-93da-0a583535e138) "HLA-B*15:01:01:01, exon 3"
   * type = "MolecularSequence"
@@ -402,7 +404,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe) "HLA-B*57:01:01, exon 2"
+* derivedFrom[+] = Reference(urn:uuid:05fa52d7-5c67-460a-8722-d3460b24d6fe) "HLA-B*57:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:db69e549-6267-4777-b4b9-8813f3329309) "HLA-B*57:01:01, exon 3"
   * type = "MolecularSequence"
@@ -427,7 +429,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a) "HLA-B*15:01:01G, exons 2 and 3"
+* derivedFrom[+] = Reference(urn:uuid:e2092243-2970-49d2-a90f-b90d1d49715a) "HLA-B*15:01:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:792be53e-d4fb-4887-a367-815ef6c706e5) "HLA-B*57:01:01G, exons 2 and 3"
   * type = "Observation"
@@ -498,7 +500,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0) "HLA-C*01:02:01, exon 2"
+* derivedFrom[+] = Reference(urn:uuid:bb55c2bc-5ad2-4bc1-8ff3-c407d06b12d0) "HLA-C*01:02:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:46938bb2-0486-4e87-bfd3-89aab2d5e22f) "HLA-C*01:02:01, exon 3"
   * type = "MolecularSequence"
@@ -521,7 +523,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce) "HLA-C*03:04:01:01, exon 2"
+* derivedFrom[+] = Reference(urn:uuid:2ae2ff34-279e-43c2-9018-b054fd3fc1ce) "HLA-C*03:04:01:01, exon 2"
 * derivedFrom[=].type = "MolecularSequence"
 * derivedFrom[+] = Reference(urn:uuid:19153ef1-68c6-47a2-9676-c4eefbd39af9) "HLA-C*03:04:01:01, exon 3"
   * type = "MolecularSequence"
@@ -546,7 +548,7 @@ Usage: #inline
 * method = $GTR#GTR000000000.0
   * text = "NGS based Class I HLA-A, -B, -C genotyping"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* derivedFrom[0] = Reference(urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47) "HLA-C*03:04:01G, exons 2 and 3"
+* derivedFrom[+] = Reference(urn:uuid:8b2aa21c-1426-4717-8ab0-a84d83df7d47) "HLA-C*03:04:01G, exons 2 and 3"
 * derivedFrom[=].type = "Observation"
 * derivedFrom[+] = Reference(urn:uuid:709c5315-9403-4867-9d82-0b953836665f) "HLA-C*01:02:01G, exons 2 and 3"
   * type = "Observation"
@@ -556,10 +558,10 @@ Usage: #inline
 Instance: CG-IG-HLA-FullBundle-01-27
 InstanceOf: GenomicReport
 Usage: #inline
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database"
 * extension[=].valueCodeableConcept.coding.system = "http://www.ebi.ac.uk/ipd/imgt/hla"
 * extension[=].valueCodeableConcept.coding.version = "3.23"
-* extension[+].extension[0].url = "text"
+* extension[+].extension[+].url = "text"
 * extension[=].extension[=].valueString = "HLA-A*01:01:01G+HLA-A*01:02^HLA-B*15:01:01G+HLA-B*57:01:01G^HLA-C*01:02:01G+HLA-C*03:04:01G"
 * extension[=].extension[+].url = "url"
 * extension[=].extension[=].valueUri = "https://gl.nmdp.org/imgt-hla/3.23.0/multilocus-unphased-genotype/ex"
@@ -568,7 +570,7 @@ Usage: #inline
   * type = "ServiceRequest"
 * status = #final
 * category[Genetics] = $DIAGNOSTICSERVICE#GE "Genetics"
-* code.coding[0] = $LNC#51969-4 "Genetic analysis report"
+* code.coding[+] = $LNC#51969-4 "Genetic analysis report"
 * subject = Reference(urn:uuid:13f34265-335c-4853-bc38-0815315edafa) "John Storm"
   * type = "Patient"
 * effectiveDateTime = "2016-12-15"
@@ -577,7 +579,7 @@ Usage: #inline
 * performer = Reference(urn:uuid:9243cc20-27bd-4f87-ba90-0328ed474950) "aTypingLab Inc"
   * type = "Organization"
 * specimen = Reference(urn:uuid:e44fbe33-6084-4ae2-a95e-8bc451c63340) "buccal swab from John Storm"
-* result[0] = Reference(urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228) "HLA-A: HLA-A:01:01:01G+HLA-A*01:02"
+* result[+] = Reference(urn:uuid:49a86246-4004-42eb-9bdc-f542f93f9228) "HLA-A: HLA-A:01:01:01G+HLA-A*01:02"
 * result[=].type = "Observation"
 * result[+] = Reference(urn:uuid:60613a43-c4cb-4502-b3e2-cf9215feaa70) "HLA-B: HLA-B*15:01:01G+HLA-B*57:01:01G"
   * type = "Observation"

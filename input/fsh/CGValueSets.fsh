@@ -144,22 +144,25 @@ This material contains content from LOINC (http://loinc.org). LOINC is copyright
 This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.
 """
 * ^experimental = false
-* $LNC#85337-4 "Estrogen receptor Ag Immune stain Ql (Breast cancer specimen)"
-* $LNC#72382-5 "HER2 IA Qn (Tiss)" 
-* $LNC#77637-7 "HLA-A and B and C (class I) IgG panel IA [Identifier]"
-* $LNC#40557-1 "Progesterone receptor Ag Immune stain Ql (Tiss)"
-* $LNC#85147-7 "PD-L1 by clone 22C3 Immune stain Doc (Tiss)"
-* $LNC#59025-7 "Neutrophil Ab FC Qn (S)"
-* $LNC#59003-4 "Lactoferrin Ab IA Qn (S)"
-* $LNC#10495-0 "Insulin Ag Immune stain Ql (Tiss)"
-* $LNC#16550-6 "Carbohydrates Nom (U)"
-* $LNC#2569-2 "Lipids (S) [Mass/Vol]"
-* $LNC#4551-8 "Hemoglobin A2 (Bld) [Mass fraction]"
-* $LNC#19195-7 "Prostate specific Ag Qn"
-* $LNC#64083-9 "MGMT gene methylation score Molgen (Tiss) [Ratio]"
-* $LNC#62862-8 "Microsatellite instability Immune stain Ql (Tiss)"
-* $LNC#81704-9 "Microsatellite instability marker D17S250 Ql (Cancer specimen)"
-* $LNC#94077-5 "Tumor mutation burden Ql (Tumor) [Interp]"
+// Note: This ValueSet includes NCIT#C120465 from NCI Thesaurus, which is a large code system
+// that may only be available as a fragment on some terminology servers, potentially causing
+// expansion warnings. This is expected and acceptable for this use case.
+* $LNC#85337-4 "Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain"
+* $LNC#72382-5 "HER2 [Units/volume] in Tissue by Immunoassay"
+* $LNC#77637-7 "HLA-A and B and C (class I) IgG panel [Identifier] - Serum or Plasma by Immunoassay"
+* $LNC#40557-1 "Progesterone receptor Ag [Presence] in Tissue by Immune stain"
+* $LNC#85147-7 "PD-L1 by clone 22C3 in Tissue by Immune stain Report"
+* $LNC#59025-7 "Neutrophil Ab [Units/volume] in Serum by Flow cytometry (FC)"
+* $LNC#59003-4 "Lactoferrin Ab [Units/volume] in Serum by Immunoassay"
+* $LNC#10495-0 "Insulin Ag [Presence] in Tissue by Immune stain"
+* $LNC#16550-6 "Carbohydrates [Identifier] in Urine"
+* $LNC#2569-2 "Lipids [Mass/volume] in Serum"
+* $LNC#4551-8 "Hemoglobin A2/Hemoglobin.total in Blood"
+* $LNC#19195-7 "Prostate specific Ag [Units/volume] in Serum or Plasma"
+* $LNC#64083-9 "MGMT gene methylation score in Tissue by Molecular genetics method"
+* $LNC#62862-8 "Microsatellite instability [Presence] in Tissue by Immune stain"
+* $LNC#81704-9 "Microsatellite instability marker D17S250 in Cancer specimen Qualitative"
+* $LNC#94077-5 "Tumor mutation burden [Interpretation]"
 * $NCIT#C120465 "Homologous Recombination Repair Deficiency"
 
 ValueSet:       KnowledgeBaseVersionVS

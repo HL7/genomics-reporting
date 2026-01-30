@@ -18,11 +18,9 @@ INFORMATION: DiagnosticReport/PGxGenomicReportEMERGE-withGrouping: DiagnosticRep
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 INFORMATION: Observation/PolyGenicDiagnosticImpExample: Observation.derivedFrom[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/diagnostic-implication%
 
-# The IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times.
-Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot
-Found multiple matching profiles for Task/usage-1a among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot
-Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot
-Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices: http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/followup-recommendation|4.0.0-ballot, http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/medication-recommendation|4.0.0-ballot
+# The IG Validator returns different warnings on this error: https://github.com/HL7/fhir-ig-publisher/issues/420 - in short, the validator returns the "among choices" profiles in a different order different times, so suppressing by wildcard
+Found multiple matching profiles for Task/usage-1a among choices:%
+Found multiple matching profiles for Task/med-usage-impact-task-pgx-example among choices%
 
 # Our Observation profiles require a code from the Observation Category value set (LAB), but in some cases require additional codes from other value sets. Since this binding is "Preferred" the resources are still conformant, so we are Suppressing these messages.
 None of the codings provided are in the value set 'Observation Category Codes' (http://hl7.org/fhir/ValueSet/observation-category|4.0.1), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v2-0074#GE)
@@ -41,31 +39,22 @@ INFORMATION: Parameters/FindSubjectMolecConseqOutput: Parameters.parameter[3].re
 # The following code system are not discoverable because they are code systems in THO, but THO doesn't define the codes. They have been checked and the identifiers are correct
 
 A definition for CodeSystem 'http://www.genenames.org' could not be found, so the code cannot be validated%
-%because the code system http://www.genenames.org was not found
-%Unable to provide support for code system http://www.genenames.org
 A definition for CodeSystem 'http://www.sequenceontology.org' could not be found, so the code cannot be validated
-%because the code system http://www.sequenceontology.org was not found
-%because the code system http://www.sequenceontology.org, http://www.sequenceontology.org was not found
-%Unable to provide support for code system http://www.sequenceontology.org
-A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. Valid versions: []
-No definition could be found for URL value 'http://glstring.org'
+A definition for CodeSystem 'http://glstring.org' version '1.0' could not be found, so the code cannot be validated. No versions of this code system are known
 A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated
-%because the code system http://human-phenotype-ontology.org was not found
-%Unable to provide support for code system http://human-phenotype-ontology.org
 A definition for CodeSystem 'http://www.pharmvar.org' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://clinicaltrials.gov' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' version '???' could not be found, so the code cannot be validated. Valid versions: []
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/clinvar' version '???' could not be found, so the code cannot be validated. No versions of this code system are known
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/refseq' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' version '137' could not be found, so the code cannot be validated. Valid versions: []
+A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' version '137' could not be found, so the code cannot be validated. No versions of this code system are known
 A definition for CodeSystem 'http://www.ncbi.nlm.nih.gov/projects/SNP' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://www.ncbi.nlm.nih.gov/gtr' could not be found, so the code cannot be validated
 A definition for CodeSystem 'https://iscn.karger.com' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://purl.obolibrary.org/obo/mondo.owl' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' could not be found, so the code cannot be validated
-No definition could be found for URL value 'http://www.ebi.ac.uk/ipd/imgt/hla'
-A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.23' could not be found, so the code cannot be validated. Valid versions: []
-A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. Valid versions: []
+A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.23' could not be found, so the code cannot be validated. No versions of this code system are known
+A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. No versions of this code system are known
 
 # Suppress all references to example CodeSystems
 A definition for CodeSystem 'http://example.org/%
@@ -74,36 +63,17 @@ A definition for CodeSystem 'http://example.org/%
 Reference to experimental CodeSystem http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/%
 Reference to experimental CodeSystem http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs%
 
-# In several places we use experimental ValueSets with experimental bindings. The elements are marked as experimental. So we suppress the warning. See https://chat.fhir.org/#narrow/channel/179252-IG-creation/topic/consent-content-code.20warning
-%which is experimental, but this structure is not labeled as experimental
-
 # Each of these codes have been validated (as of Jul 5 2024), so suppressing these warnings until HPO becomes a supported code system.
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: The code 'HP:0000006' is not valid in the system http://human-phenotype-ontology.org (Unable to evaluate based on code system with status = not-present)
-INFORMATION: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[0]: Unable to evaluate based on code system with status = not-present
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[1]: The code 'HP:0000007' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[2]: The code 'HP:0001417' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[3]: The code 'HP:0001419' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[4]: The code 'HP:0001423' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[5]: The code 'HP:0001426' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[6]: The code 'HP:0001427' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[7]: The code 'HP:0001442' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[8]: The code 'HP:0001450' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[9]: The code 'HP:0001470' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[10]: The code 'HP:0003743' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[11]: The code 'HP:0003745' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[12]: The code 'HP:0010983' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[13]: The code 'HP:0012274' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[14]: The code 'HP:0012275' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[15]: The code 'HP:0025352' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
-WARNING: ValueSet/condition-inheritance-mode-vs: ValueSet.compose.include[0].concept[16]: The code 'HP:0032113' is not valid in the system http://human-phenotype-ontology.org (A definition for CodeSystem 'http://human-phenotype-ontology.org' could not be found, so the code cannot be validated)
 WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].target: Target Code System http://www.sequenceontology.org doesn't have all content (content = not-present), so the target codes cannot be checked
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[0].target[0].code: The code 'SO:0002073' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[1].target[0].code: The code 'SO:0000159' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[2].target[0].code: The code 'SO:1000035' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[3].target[0].code: The code 'SO:0000667' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[4].target[0].code: The code 'SO:1000032' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[5].target[0].code: The code 'SO:1000036' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
-WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[6].target[0].code: The code 'SO:1000002' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'http://hl7.org/fhir/uv/genomics-reporting/ValueSet/dna-change-type-vs'
+
+# OCT 2025 - THE VALUESET IN THE WARNING BECAME 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[0].target[0].code: The code 'SO:0002073' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[1].target[0].code: The code 'SO:0000159' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[2].target[0].code: The code 'SO:1000035' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[3].target[0].code: The code 'SO:0000667' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[4].target[0].code: The code 'SO:1000032' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[5].target[0].code: The code 'SO:1000036' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
+WARNING: ConceptMap/dna-change-type-map: ConceptMap.group[0].element[6].target[0].code: The code 'SO:1000002' comes from the system http://www.sequenceontology.org which could not be found, so it's not known whether it's valid in the value set 'null'
 
 # CG has reviewed these CodeSystems and have decided to keep this in our IG
 INFORMATION: CodeSystem/clinvar-evidence-level-custom-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -116,12 +86,13 @@ INFORMATION: CodeSystem/genomic-study-type-cs: CodeSystem: Most code systems def
 INFORMATION: CodeSystem/molecular-biomarker-ontology-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/pharmgkb-evidence-level-custom-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
 INFORMATION: CodeSystem/tbd-codes-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+INFORMATION: CodeSystem/knowledge-base-cs: CodeSystem: Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# This version number has been validated
+WARNING: Observation/haplotype-hla-a-1-r4: Observation.value.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://www.ebi.ac.uk/ipd/imgt/hla' version '3.31.0' could not be found, so the code cannot be validated. No versions of this code system are known
 
 # The mappings in this concept map have been human reviewed and is correct
 INFORMATION: ConceptMap/dna-change-type-map: ConceptMap.group[0].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
-
-# This code has been human reviewed and is correct
-INFORMATION: ValueSet/molecular-biomarker-code-vs: ValueSet.compose.include[1].concept[0]: Unknown Code 'C120465' in the CodeSystem 'http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl' version '' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 
 # These URLs have been validated and are apporpriately used in our examples
 No definition could be found for URL value 'http://slk-kliniken.de/fhir/namingSystem/tissueID'
@@ -143,3 +114,6 @@ No definition could be found for URL value 'https://www.ncbi.nlm.nih.gov/gene/54
 
 # Pinned versions have been reviewed:
 Pinned the version of http://hl7.org/fhir/StructureDefinition/%
+
+# not defined in this IG, so it must be a problem upstream
+The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated

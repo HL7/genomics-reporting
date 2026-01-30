@@ -28,9 +28,9 @@ Description: "These codes are 'TBD' codes, meaning they are important concepts b
 * #variant-confidence-status "Variant Confidence Status" "The confidence of a true positive variant call."
 * #repeat-motif "Repeat Expansion Motif" "Nucleotides of a repeat expansion motif."
 * #repeat-number "Number of Repeat Expansions" "Number of repeats of a repeat expansion."
-* #biomarker-category "A characterization of a given biomarker observation."
-* #protein-ref-seq "An identifier for the protein reference sequence."
-* #conservation-score "Conservation Score" "The conservation score calculated" 
+* #biomarker-category "Biomarker Category" "A characterization of a given biomarker observation."
+* #protein-ref-seq "Protein Reference Sequence" "An identifier for the protein reference sequence."
+* #conservation-score "Conservation Score" "The conservation score calculated for a genomic position or region indicating evolutionary conservation."
 * #annotation-pipeline "Annotation Pipeline" "The name of the data pipeline that processed the genomic data file"
 * #knowledge-base "Knowledge Base" "The database from which the annotation is derived"
 

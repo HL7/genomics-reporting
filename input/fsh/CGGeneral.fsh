@@ -74,11 +74,6 @@ Description:    "Indicates whether two entities are in Cis (same strand) or Tran
 * derivedFrom[haplotype] only Reference(Haplotype)
 * derivedFrom[haplotype] ^short = "Haplotype in the relationship"
 
-Alias: $workflow-relatedArtifact = http://hl7.org/fhir/StructureDefinition/workflow-relatedArtifact
-Alias: $supporting-info = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
-Alias: $hla-genotyping-results-allele-database = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-allele-database
-Alias: $hla-genotyping-results-glstring = http://hl7.org/fhir/StructureDefinition/hla-genotyping-results-glstring
-
 Profile:        GenomicReport
 Parent:         DiagnosticReport
 Id:             genomic-report

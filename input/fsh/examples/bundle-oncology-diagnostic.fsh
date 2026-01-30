@@ -3,7 +3,7 @@ InstanceOf: Bundle
 Description: "Example of an oncology report, TMB, variants, and implications."
 Usage: #example
 * type = #transaction
-* entry[0].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
+* entry[+].fullUrl = "urn:uuid:d0b4affa-91d6-46d1-af01-b30d9f16ef6d"
 * entry[=].resource = Inline-Instance-for-oncology-diagnostic-1
 * entry[=].request.method = #POST
 * entry[=].request.url = "Patient"
@@ -36,22 +36,24 @@ Instance: Inline-Instance-for-oncology-diagnostic-1
 InstanceOf: Patient
 Usage: #inline
 * identifier.value = "1007"
-* name.given[0] = "Carrot"
+* name.given[+] = "Carrot"
 * name.given[+] = "John"
 * name.given[+] = "Mr"
 * gender = #male
 * birthDate = "1962-12-31"
 * generalPractitioner = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 
+
 Instance: Inline-Instance-for-oncology-diagnostic-2
 InstanceOf: Practitioner
 Usage: #inline
-* identifier.value = "4654765876"
-* name.given[0] = "Akerman"
-* name.given[+] = "Philip"
-* name.given[+] = "Prof"
-* address.city = "Castro Valley"
-* address.state = "CA"
+* identifier[+].value = "4654765876"
+* name[+].given[+] = "Akerman"
+* name[=].given[+] = "Philip"
+* name[=].given[+] = "Prof"
+* address[+].city = "Castro Valley"
+* address[=].state = "CA"
+
 
 Instance: Inline-Instance-for-oncology-diagnostic-3
 InstanceOf: Specimen
@@ -90,7 +92,7 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * method = $LNC#LA26398-0 "Sequencing"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#81290-9 "Genomic DNA change (gHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NC_000007.13:g.140453136A>T "NC_000007.13:g.140453136A>T"
@@ -116,7 +118,7 @@ Usage: #inline
 * method = $LNC#LA26811-2 "Computational analysis"
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
 * derivedFrom = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d)
-* component[0].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
+* component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[+].code = $LNC#93044-6 "Level of Evidence"
 * component[=].valueCodeableConcept = $LNC#LA30200-2 "Very strong evidence pathogenic"
@@ -134,5 +136,5 @@ Usage: #inline
 * effectiveDateTime = "2019-03-05"
 * performer = Reference(urn:uuid:a48256f8-db37-44e0-a0f6-d7af16c7c9ef)
 * specimen = Reference(urn:uuid:a5d6a6a9-4859-480e-85b2-56974fef3b9d)
-* result[0] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "BRAF V600E mutation observed"
+* result[+] = Reference(urn:uuid:16fdd5fc-e665-48af-99e4-48d603f3e12d) "BRAF V600E mutation observed"
 * result[+] = Reference(urn:uuid:1bf9642d-fd1c-4819-8c5d-44fae4bad524) "melanoma implicated"

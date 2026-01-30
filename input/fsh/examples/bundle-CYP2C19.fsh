@@ -319,7 +319,7 @@ Usage: #example
 Instance: patient
 InstanceOf: Patient
 Usage: #inline
-* name[0].use = #official
+* name[+].use = #official
 * name[=].text = "John Storm"
 * name[=].family = "Storm"
 * name[=].given = "John"
@@ -331,24 +331,37 @@ Usage: #inline
 * name[=].text = "The Human Torch"
 * gender = #male
 * birthDate = "1986-12-31"
+* telecom[+].system = #phone
+* telecom[=].value = "1-800-555-1234"
+* telecom[=].use = #work
+* telecom[=].rank = 1
+* address[+].use = #work
+* address[=].type = #both
+* address[=].text = "123 Main St, Sometown, ND 99999"
+* address[=].line[+] = "123 Main St"
+* address[=].city = "Sometown"
+* address[=].state = "ND"
+* address[=].postalCode = "99999"
+* address[=].country = "USA"
+
 
 Instance: performingLab
 InstanceOf: Organization
 Usage: #inline
 * name = "aTypingLab Inc"
-* alias = "aTL"
-* telecom.system = #phone
-* telecom.value = "1-800-555-1234"
-* telecom.use = #work
-* telecom.rank = 1
-* address.use = #work
-* address.type = #both
-* address.text = "123 Main St, Sometown, ND 99999"
-* address.line = "123 Main St"
-* address.city = "Sometown"
-* address.state = "ND"
-* address.postalCode = "99999"
-* address.country = "USA"
+* alias[+] = "aTL"
+* telecom[+].system = #phone
+* telecom[=].value = "1-800-555-1234"
+* telecom[=].use = #work
+* telecom[=].rank = 1
+* address[+].use = #work
+* address[=].type = #both
+* address[=].text = "123 Main St, Sometown, ND 99999"
+* address[=].line[+] = "123 Main St"
+* address[=].city = "Sometown"
+* address[=].state = "ND"
+* address[=].postalCode = "99999"
+* address[=].country = "USA"
 
 Instance: report-CYP2C19
 InstanceOf: GenomicReport
@@ -447,7 +460,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -474,7 +487,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -501,7 +514,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -528,7 +541,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -555,7 +568,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -582,7 +595,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -609,7 +622,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -636,7 +649,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -663,7 +676,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -690,7 +703,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -717,7 +730,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -744,7 +757,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -771,7 +784,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -798,7 +811,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -825,7 +838,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -852,7 +865,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -879,7 +892,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -906,7 +919,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -933,7 +946,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -960,7 +973,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -987,7 +1000,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1014,7 +1027,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1041,7 +1054,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1068,7 +1081,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1095,7 +1108,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1122,7 +1135,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1149,7 +1162,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1176,7 +1189,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1203,7 +1216,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1230,7 +1243,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1257,7 +1270,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1284,7 +1297,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1311,7 +1324,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1338,7 +1351,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1365,7 +1378,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1392,7 +1405,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1419,7 +1432,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1446,7 +1459,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1473,7 +1486,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1500,7 +1513,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1527,7 +1540,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1554,7 +1567,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1581,7 +1594,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1608,7 +1621,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1635,7 +1648,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1662,7 +1675,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1689,7 +1702,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1716,7 +1729,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1743,7 +1756,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1770,7 +1783,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1797,7 +1810,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1824,7 +1837,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1851,7 +1864,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1878,7 +1891,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1905,7 +1918,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1932,7 +1945,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1959,7 +1972,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -1986,7 +1999,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2013,7 +2026,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2040,7 +2053,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2067,7 +2080,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2094,7 +2107,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2121,7 +2134,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2148,7 +2161,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2175,7 +2188,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2202,7 +2215,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2229,7 +2242,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2256,7 +2269,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2283,7 +2296,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2310,7 +2323,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2337,7 +2350,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2364,7 +2377,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2391,7 +2404,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2418,7 +2431,7 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code = $LNC#62374-4 "Human reference sequence assembly version"
+* component[+].code = $LNC#62374-4 "Human reference sequence assembly version"
 * component[=].valueCodeableConcept = $LNC#LA14029-5 "GRCh37"
 * component[+].code = $LNC#48013-7 "Genomic reference sequence ID"
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10
@@ -2445,5 +2458,5 @@ Usage: #inline
 * issued = "2019-03-05T16:04:44+00:00"
 * performer = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfeab)
 * valueCodeableConcept = SequencePhaseRelationshipCS#Cis "Cis"
-* derivedFrom[0] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
+* derivedFrom[+] = Reference(urn:uuid:19ac0aeb-6bd4-4e92-a891-d44a807bfe60)
 * derivedFrom[+] = Reference(urn:uuid:20ac0aeb-6bd4-4e92-a891-d44a807bfe01)

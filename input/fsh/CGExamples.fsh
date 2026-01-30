@@ -8,13 +8,13 @@ Description: "Example for Patient. Supports references to subject for multiple g
 * identifier.system = "http://hospital.example.org"
 * identifier.value = "m234"
 * name.family = "Everyone"
-* name.given[0] = "Alanine"
-* name.given[1] = "B."
-* contact.telecom[0].system = #phone
-* contact.telecom[0].value = "555-555-5555"
-* contact.telecom[0].use = #home
-* contact.telecom[1].system = #email
-* contact.telecom[1].value = "alanine.everyone@example.com"
+* name.given[+] = "Alanine"
+* name.given[+] = "B."
+* contact.telecom[+].system = #phone
+* contact.telecom[=].value = "555-555-5555"
+* contact.telecom[=].use = #home
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "alanine.everyone@example.com"
 * gender = #unknown
 * birthDate = "1951-01-20"
 * address.line = "123 Main St"
@@ -36,16 +36,16 @@ Description: "Example for Variant NM_004448.4(ERBB2):c.2264_2278del"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
-* component[0].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000017.11
-* component[1].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
-* component[1].valueString = "ATTGAGGGAAAACACAT"
-* component[2].code.coding = http://loinc.org#69551-0 "Alt allele"
-* component[2].valueString = "T"
-* component[3].code.coding = http://loinc.org#81254-5 "Genomic allele start-end"
-* component[3].valueRange.low.value = 39723965
-* component[4].code.coding = http://loinc.org#92822-6 "Genomic coord system"
-* component[4].valueCodeableConcept.coding = http://loinc.org#LA30100-4
+* component[+].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
+* component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000017.11
+* component[+].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
+* component[=].valueString = "ATTGAGGGAAAACACAT"
+* component[+].code.coding = http://loinc.org#69551-0 "Alt allele"
+* component[=].valueString = "T"
+* component[+].code.coding = http://loinc.org#81254-5 "Genomic allele start-end"
+* component[=].valueRange.low.value = 39723965
+* component[+].code.coding = http://loinc.org#92822-6 "Genomic coord system"
+* component[=].valueCodeableConcept.coding = http://loinc.org#LA30100-4
 
 
 Instance: GenomicSpecimenExample01 
@@ -68,13 +68,13 @@ Description: "Example for Patient. Supports references to subject for multiple g
 * identifier.system = "http://hospital.example.org"
 * identifier.value = "m123"
 * name.family = "Everyman"
-* name.given[0] = "Adam"
-* name.given[1] = "B."
-* contact.telecom[0].system = #phone
-* contact.telecom[0].value = "555-555-5555"
-* contact.telecom[0].use = #home
-* contact.telecom[1].system = #email
-* contact.telecom[1].value = "adam.everyman@example.com"
+* name.given[+] = "Adam"
+* name.given[+] = "B."
+* contact.telecom[+].system = #phone
+* contact.telecom[=].value = "555-555-5555"
+* contact.telecom[=].use = #home
+* contact.telecom[+].system = #email
+* contact.telecom[=].value = "adam.everyman@example.com"
 * gender = #male
 * birthDate = "1951-01-20"
 * address.line = "123 Main St"
@@ -130,12 +130,12 @@ Description: "Example for HER2 by immune stain"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = http://www.genenames.org#HGNC:3430 "ERBB2"
-* component[biomarker-category][0].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
-* component[biomarker-category][1].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptor	        "cell receptor category"
-* component[biomarker-category][2].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
+* component[biomarker-category][+].code = TbdCodesCS#biomarker-category
+* component[biomarker-category][=].valueCodeableConcept = MolecularBiomarkerOntologyCS#immuneStain "immune stain category"
+* component[biomarker-category][+].code = TbdCodesCS#biomarker-category
+* component[biomarker-category][=].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptor	        "cell receptor category"
+* component[biomarker-category][+].code = TbdCodesCS#biomarker-category
+* component[biomarker-category][=].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
 
 Instance: HER2byImmunoassayExample
 InstanceOf: MolecularBiomarker
@@ -152,12 +152,12 @@ Description: "Example for HER2 by immunoassay"
 * valueQuantity.unit = "IU/mL"
 * component[gene-studied].code = $LNC#48018-6 "Gene studied [ID]"
 * component[gene-studied].valueCodeableConcept = http://www.genenames.org#HGNC:3430 "ERBB2"
-* component[biomarker-category][0].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][0].valueCodeableConcept = MolecularBiomarkerOntologyCS#immunoassay	"immunoassay category"
-* component[biomarker-category][1].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][1].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptor	        "cell receptor category"
-* component[biomarker-category][2].code = TbdCodesCS#biomarker-category
-* component[biomarker-category][2].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
+* component[biomarker-category][+].code = TbdCodesCS#biomarker-category
+* component[biomarker-category][=].valueCodeableConcept = MolecularBiomarkerOntologyCS#immunoassay	"immunoassay category"
+* component[biomarker-category][+].code = TbdCodesCS#biomarker-category
+* component[biomarker-category][=].valueCodeableConcept = MolecularBiomarkerOntologyCS#cellReceptor	        "cell receptor category"
+* component[biomarker-category][+].code = TbdCodesCS#biomarker-category
+* component[biomarker-category][=].valueCodeableConcept = MolecularBiomarkerOntologyCS#protein	"protein category"
 
 Instance: GenomicServiceRequestExample01
 InstanceOf: ServiceRequest
@@ -203,16 +203,16 @@ Description: "Example for genomic Variant given by VCF columns"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[0].code.coding = http://loinc.org#62374-4 "Human Reference Sequence Assembly"
 //* component[0].valueCodeableConcept.coding = http://loinc.org#LA14029-5 "GRCh37"
-* component[0].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
-* component[0].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000010.10
-* component[1].code.coding = http://loinc.org#53034-5 "Allelic State"
-* component[1].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
-* component[2].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
-* component[2].valueString = "C"
-* component[3].code.coding = http://loinc.org#69551-0 "Alt allele"
-* component[3].valueString = "A"
-* component[4].code.coding = http://loinc.org#81254-5 "Genomic allele start-end"
-* component[4].valueRange.low.value = 96527334
+* component[+].code.coding = http://loinc.org#48013-7 "Genomic reference sequence [ID]"
+* component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NC_000010.10
+* component[+].code.coding = http://loinc.org#53034-5 "Allelic State"
+* component[=].valueCodeableConcept.coding = http://loinc.org#LA6706-1 "heterozygous"
+* component[+].code.coding = http://loinc.org#69547-8 "Ref nucleotide"
+* component[=].valueString = "C"
+* component[+].code.coding = http://loinc.org#69551-0 "Alt allele"
+* component[=].valueString = "A"
+* component[+].code.coding = http://loinc.org#81254-5 "Genomic allele start-end"
+* component[=].valueRange.low.value = 96527334
 //* component[6].code.coding = http://loinc.org#92822-6 "Genomic coord system"
 //* component[6].valueCodeableConcept.coding = http://loinc.org#LA30102-0
 
@@ -233,10 +233,10 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
-* component[0].valueCodeableConcept.coding = $LNC#LA19541-4 "High risk"
-* component[1].code.coding = $LNC#51963-7 "Medication assessed"
-* component[1].valueCodeableConcept.coding = http://www.nlm.nih.gov/research/umls/rxnorm#2002 "Carbamazepine"
+* component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept.coding = $LNC#LA19541-4 "High risk"
+* component[+].code.coding = $LNC#51963-7 "Medication assessed"
+* component[=].valueCodeableConcept.coding = http://www.nlm.nih.gov/research/umls/rxnorm#2002 "Carbamazepine"
 //* component[2].code.coding = $LNC#93044-6 "Level of evidence"
 //* component[2].valueCodeableConcept.coding = $LNC#LA30200-2 "Very strong evidence pathogenic"
 * derivedFrom = Reference(GenotypeExample1)
@@ -293,16 +293,16 @@ Description: "Example of a Report carrying a Genotype, Therapeutic Implication, 
 * code.coding[+] = $LNC#51969-4
 * code.coding[+] = $LNC#57979-7 "HLA-B*15:02 [Presence]"
 * effectiveDateTime = "2016"
-* extension[RecommendedAction][0].valueReference = Reference(MedicationRecommendationExample1)
+* extension[RecommendedAction][+].valueReference = Reference(MedicationRecommendationExample1)
 * issued = "2018-03-06T00:00:00-05:00"
 * performer = Reference(ExampleOrg)
-* result[0].display = "impact for high risk allele"
-* result[0] = Reference(TherapeuticImplicationExample1)
-* result[1] = Reference(GenotypeExample1)
+* result[+].display = "impact for high risk allele"
+* result[=] = Reference(TherapeuticImplicationExample1)
+* result[+] = Reference(GenotypeExample1)
 * status = #final
 * subject = Reference(CGPatientExample01)
-* extension[workflow-relatedArtifact][0].valueRelatedArtifact.type = #citation
-* extension[workflow-relatedArtifact][0].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
+* extension[workflow-relatedArtifact][+].valueRelatedArtifact.type = #citation
+* extension[workflow-relatedArtifact][=].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-clopidogrel-and-cyp2c19"
 * conclusionCode[+] = $LNC#LA6576-8 "Positive"
 * conclusion = "Patient is positive for high risk allele HLA-B*15:02 and should not be treated with CBZ."
 
@@ -313,8 +313,8 @@ Description: "Example for sequence phase relation."
 * meta.profile = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/sequence-phase-relationship"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-* derivedFrom[0] = Reference(VariantExample1)
-* derivedFrom[1] = Reference(VariantExample2)
+* derivedFrom[+] = Reference(VariantExample1)
+* derivedFrom[+] = Reference(VariantExample2)
 * issued = "2019-03-05T16:04:44+00:00"
 * status = #final
 * subject = Reference(CGPatientExample01)
@@ -645,14 +645,14 @@ Description: "Example of a Genotype from eMERGE"
 * performer = Reference(ExampleOrg)
 * specimen = Reference(GenomicSpecimenExample01)
 * status = #final
-* derivedFrom[0] = Reference(Pgx-var-1011)
-* derivedFrom[1] = Reference(Pgx-var-1012)
-* derivedFrom[2] = Reference(Pgx-var-1013)
-* derivedFrom[3] = Reference(Pgx-var-1014)
-* derivedFrom[4] = Reference(Pgx-var-1015)
-* derivedFrom[5] = Reference(Pgx-var-1016)
-* derivedFrom[6] = Reference(Pgx-var-1017)
-* derivedFrom[7] = Reference(Pgx-var-1018)
+* derivedFrom[+] = Reference(Pgx-var-1011)
+* derivedFrom[+] = Reference(Pgx-var-1012)
+* derivedFrom[+] = Reference(Pgx-var-1013)
+* derivedFrom[+] = Reference(Pgx-var-1014)
+* derivedFrom[+] = Reference(Pgx-var-1015)
+* derivedFrom[+] = Reference(Pgx-var-1016)
+* derivedFrom[+] = Reference(Pgx-var-1017)
+* derivedFrom[+] = Reference(Pgx-var-1018)
 
 Instance: TxImp01
 InstanceOf: TherapeuticImplication
@@ -805,8 +805,8 @@ Description: "Example of a Therapeutic Implication from eMERGE"
 * component[conclusion-string].valueString = "This individual is homozygous for the normal allele for the CYP2C9 gene. Based on the genotype result, this patient is predicted to have normal CYP2C9 function. This individual is also heterozygous for the variant allele for the VKORC1 gene. Expression level of the VKORC1 gene is associated with warfarin sensitivity. Based on the genotype result, this patient is predicted to have medium sensitivity to warfarin. See https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/ guidelines for detail."
 * extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
 * extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://cpicpgx.org/guidelines/guideline-for-warfarin-and-cyp2c9-and-vkorc1/"
-* derivedFrom[0] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
-* derivedFrom[1] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
+* derivedFrom[+] = Reference(Pgx-geno-1002) "CYP2C9*1/*1"
+* derivedFrom[+] = Reference(Pgx-geno-1003) "VKORC1 rs9923231 C/T"
 * status = #final
 
 Instance: GrouperEx01
@@ -820,12 +820,12 @@ Description: "Generic grouping of Therapeutic Implication observations"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * status = #final
-* hasMember[0] = Reference(TxImp01) "clopidogrel, poor metabolizer"
-* hasMember[1] = Reference(TxImp02) "voriconazole, poor metabolizer"
-* hasMember[2] = Reference(TxImp03) "citalopram, poor metabolizer"
-* hasMember[3] = Reference(TxImp04) "escitalopram, poor metabolizer"
-* hasMember[4] = Reference(TxImp05) "amitriptyline, poor metabolizer"
-* hasMember[5] = Reference(TxImp06) "medium sensitivity to warfarin"
+* hasMember[+] = Reference(TxImp01) "clopidogrel, poor metabolizer"
+* hasMember[+] = Reference(TxImp02) "voriconazole, poor metabolizer"
+* hasMember[+] = Reference(TxImp03) "citalopram, poor metabolizer"
+* hasMember[+] = Reference(TxImp04) "escitalopram, poor metabolizer"
+* hasMember[+] = Reference(TxImp05) "amitriptyline, poor metabolizer"
+* hasMember[+] = Reference(TxImp06) "medium sensitivity to warfarin"
 
 Instance: GrouperEx02
 InstanceOf: Observation
@@ -838,9 +838,9 @@ Description: "Generic grouping of Genotype observations"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * status = #final
-* hasMember[0] = Reference(Pgx-geno-1001)
-* hasMember[1] = Reference(Pgx-geno-1003)
-* hasMember[2] = Reference(Pgx-geno-1002)
+* hasMember[+] = Reference(Pgx-geno-1001)
+* hasMember[+] = Reference(Pgx-geno-1003)
+* hasMember[+] = Reference(Pgx-geno-1002)
 
 
 Instance: GrouperEx03
@@ -854,17 +854,17 @@ Description: "Generic grouping of Regions Studied and Variant observations"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * status = #final
-* hasMember[0] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
-* hasMember[1] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
-* hasMember[2] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
-* hasMember[3] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
-* hasMember[4] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
-* hasMember[5] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
-* hasMember[6] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
-* hasMember[7] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
-* hasMember[8] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
-* hasMember[9] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
-* hasMember[10] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
+* hasMember[+] = Reference(Pgx-var-1011) "NC_000010.10(CYP2C19):g.96521657C="
+* hasMember[+] = Reference(Pgx-var-1012) "NC_000010.10(CYP2C19):g.96522463A="
+* hasMember[+] = Reference(Pgx-var-1013) "NC_000010.10(CYP2C19):g.96535173T="
+* hasMember[+] = Reference(Pgx-var-1014) "NC_000010.10(CYP2C19):g.96535210G="
+* hasMember[+] = Reference(Pgx-var-1015) "NC_000010.10(CYP2C19):g.96540410G>A"
+* hasMember[+] = Reference(Pgx-var-1016) "NC_000010.10(CYP2C19):g.96541616G="
+* hasMember[+] = Reference(Pgx-var-1017) "NC_000010.10(CYP2C19):g.96541756T="
+* hasMember[+] = Reference(Pgx-var-1018) "NC_000010.10(CYP2C19):g.96612495C="
+* hasMember[+] = Reference(Pgx-var-1019) "NC_000016.9(VKORC1):g.31096368C>T"
+* hasMember[+] = Reference(Pgx-var-1020) "NC_000010.10(CYP2C9):g.96702047C="
+* hasMember[+] = Reference(Pgx-var-1021) "NC_000010.10(CYP2C9):g.96741053A="
 
 //* variants if needed
 Instance: PGxGenomicReportEMERGE
@@ -957,11 +957,11 @@ Description: "Example of a Report carrying multiple Therapeutic Implications, Ge
 * result[+] = Reference(GrouperEx01) "Therapeutic Implications"
 * result[+] = Reference(GrouperEx02) "Genotypes"
 * result[+] = Reference(GrouperEx03) "Regions studied and Variants"
-* extension[RecommendedAction][0].valueReference = Reference(PGxRecEx01) "No clopidogrel"
-* extension[RecommendedAction][1].valueReference = Reference(PGxRecEx02) "No voriconazole"
-* extension[RecommendedAction][2].valueReference = Reference(PGxRecEx03) "50% citalopram"
-* extension[RecommendedAction][3].valueReference = Reference(PGxRecEx04) "50% escitalopram"
-* extension[RecommendedAction][4].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
+* extension[RecommendedAction][+].valueReference = Reference(PGxRecEx01) "No clopidogrel"
+* extension[RecommendedAction][+].valueReference = Reference(PGxRecEx02) "No voriconazole"
+* extension[RecommendedAction][+].valueReference = Reference(PGxRecEx03) "50% citalopram"
+* extension[RecommendedAction][+].valueReference = Reference(PGxRecEx04) "50% escitalopram"
+* extension[RecommendedAction][+].valueReference = Reference(PGxRecEx04) "50% amitriptyline"
 * status = #final
 
 
@@ -1032,8 +1032,8 @@ Description: "Example Plan Definition from eMERGE"
 * description = "This test interrogates the protein-coding and exon-splicing regions of 109 genes as well as 1551 single-nucleotide polymorphisms that may impact human health and disease. Clinical interpretation and reporting are provided for pathogenic and likely pathogenic variants for genes and single nucleotide polymorphisms as described in the methodology section.",
 //* relatedArtifact[0].type = #citation
 //* relatedArtifact[0].citation = "Illumina, Inc. (2011) Multiplexing Sample Preparation Guide (Part # 1005361 Rev. D). 2011."
-* action[0].prefix = "1"
-* action[0].description = "1. eMERGE-Seq Version 2 NGS Panel: for the paired-end pre-capture library procedure, genome DNA is fragmented by sonicating genome DNA and ligating to the Illumina multiplexing PE adapters (reference 1).  The adapter-ligated DNA is then PCR amplified using primers with sequencing barcodes (indexes). For target enrichment capture procedure, the pre-capture library is enriched by hybridizing to biotin labeled in-solution probes&nbsp;(reference 2) at&nbsp; 56&deg;C for 16 - 19 hours.&nbsp; For massively parallel sequencing, the post-capture library DNA is subjected to sequence analysis on Illumina HiSeq platform for 100 bp paired-end reads. The following quality control metrics of the sequencing data are generally achieved: &gt;70% of reads aligned to target, &gt;99% target base covered at &gt;20X, &gt;98% target base covered at &gt;40X, average coverage of target bases &gt;200X. SNP concordance to SNPTrace genotype array: &gt;99%. This test may not provide detection of certain genes or portions of certain genes due to local sequence characteristics or the presence of closely related pseudogenes. Gross deletions or duplications, changes from repetitive sequences may not be accurately identified by this methodology. Genomic rearrangements cannot be detected by this assay."
+* action[+].prefix = "1"
+* action[=].description = "1. eMERGE-Seq Version 2 NGS Panel: for the paired-end pre-capture library procedure, genome DNA is fragmented by sonicating genome DNA and ligating to the Illumina multiplexing PE adapters (reference 1).  The adapter-ligated DNA is then PCR amplified using primers with sequencing barcodes (indexes). For target enrichment capture procedure, the pre-capture library is enriched by hybridizing to biotin labeled in-solution probes&nbsp;(reference 2) at&nbsp; 56&deg;C for 16 - 19 hours.&nbsp; For massively parallel sequencing, the post-capture library DNA is subjected to sequence analysis on Illumina HiSeq platform for 100 bp paired-end reads. The following quality control metrics of the sequencing data are generally achieved: &gt;70% of reads aligned to target, &gt;99% target base covered at &gt;20X, &gt;98% target base covered at &gt;40X, average coverage of target bases &gt;200X. SNP concordance to SNPTrace genotype array: &gt;99%. This test may not provide detection of certain genes or portions of certain genes due to local sequence characteristics or the presence of closely related pseudogenes. Gross deletions or duplications, changes from repetitive sequences may not be accurately identified by this methodology. Genomic rearrangements cannot be detected by this assay."
 */
 
 
@@ -1190,16 +1190,16 @@ Description: "Example of a Diagnostic Implication for Diabetes Type 2 with a pol
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* extension[GenomicRiskAssessment][0].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
+* extension[GenomicRiskAssessment][+].valueReference = Reference(GenRiskDiabetesT2) "Polygenic Risk Score"
 //Reference(GenomicRiskAssesmPolyGenicScoreRef)
 * component[clinical-significance].valueCodeableConcept = $LNC#LA6668-3 "Pathogenic"
 * component[predicted-phenotype].valueCodeableConcept = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"
-* derivedFrom[0].display = "Variant 1"
-* derivedFrom[0].identifier.system = "http://hospital.example.org"
-* derivedFrom[0].identifier.value = "11"
-* derivedFrom[1].display = "Variant 2"
-* derivedFrom[1].identifier.system = "http://hospital.example.org"
-* derivedFrom[1].identifier.value = "12"
+* derivedFrom[+].display = "Variant 1"
+* derivedFrom[=].identifier.system = "http://hospital.example.org"
+* derivedFrom[=].identifier.value = "11"
+* derivedFrom[+].display = "Variant 2"
+* derivedFrom[=].identifier.system = "http://hospital.example.org"
+* derivedFrom[=].identifier.value = "12"
 
 
 //Risk assesment for polygenic Diaters2 GenRiskDiabetesT2
@@ -1211,42 +1211,42 @@ Description: "Polygenic Risk Score example"
 * parent = Reference (PolyGenicDiagnosticImpExample)
 * status = #final
 * subject = Reference(CGPatientExample01)
-* basis[0].display = "Variant 1"
-* basis[0].identifier.system = "http://hospital.example.org"
-* basis[0].identifier.value = "11"
-* basis[1].display = "Variant 2"
-* basis[1].identifier.system = "http://hospital.example.org"
-* basis[1].identifier.value = "12"
-* basis[2].display = "Variant 3"
-* basis[2].identifier.system = "http://hospital.example.org"
-* basis[2].identifier.value = "13"
-* basis[3].display = "Variant 4"
-* basis[3].identifier.system = "http://hospital.example.org"
-* basis[3].identifier.value = "14"
-* basis[4].display = "Variant 5"
-* basis[4].identifier.system = "http://hospital.example.org"
-* basis[4].identifier.value = "15"
-* basis[5].display = "Variant 6"
-* basis[5].identifier.system = "http://hospital.example.org"
-* basis[5].identifier.value = "16"
-* basis[6].display = "Variant 7"
-* basis[6].identifier.system = "http://hospital.example.org"
-* basis[6].identifier.value = "17"
+* basis[+].display = "Variant 1"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "11"
+* basis[+].display = "Variant 2"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "12"
+* basis[+].display = "Variant 3"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "13"
+* basis[+].display = "Variant 4"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "14"
+* basis[+].display = "Variant 5"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "15"
+* basis[+].display = "Variant 6"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "16"
+* basis[+].display = "Variant 7"
+* basis[=].identifier.system = "http://hospital.example.org"
+* basis[=].identifier.value = "17"
 
-* prediction[0].outcome = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"
-* prediction[0].probabilityDecimal = 0.26
-* prediction[0].qualitativeRisk = $RISKQUAL#low "Low likelihood"
-* prediction[0].relativeRisk = 1.05
-* prediction[0].whenRange.high = 53 'a' "years"
+* prediction[+].outcome = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"
+* prediction[=].probabilityDecimal = 0.26
+* prediction[=].qualitativeRisk = $RISKQUAL#low "Low likelihood"
+* prediction[=].relativeRisk = 1.05
+* prediction[=].whenRange.high = 53 'a' "years"
 //.value = 53.0 'a'
 //* prediction[0].whenRange.high.unit = "years"
 //* prediction[0].whenRange.high.system = "http://unitsofmeasure.org"
 //* prediction[0].whenRange.high.code = a
-* prediction[1].outcome = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"
-* prediction[1].probabilityDecimal = 0.7
-* prediction[1].qualitativeRisk = $RISKQUAL#high "High likelihood"
-* prediction[1].relativeRisk = 2.69
-* prediction[1].whenRange.high = 65 'a' "years"
+* prediction[+].outcome = $SCT#44054006 "Diabetes mellitus type 2 (disorder)"
+* prediction[=].probabilityDecimal = 0.7
+* prediction[=].qualitativeRisk = $RISKQUAL#high "High likelihood"
+* prediction[=].relativeRisk = 2.69
+* prediction[=].whenRange.high = 65 'a' "years"
 //.value = 65.0 'a'
 //* prediction[1].whenRange.high.unit = "years"
 //* prediction[1].whenRange.high.system = "http://unitsofmeasure.org"
@@ -1282,13 +1282,13 @@ Description: "Example of a Therapeutic Implication for Clinical Trial"
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
-* component[0].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
-* component[1].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
+* component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept.coding = $SCT#399223003 "Patient eligible for clinical trial"
+* component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 //#HP:0003002
-* component[1].valueCodeableConcept.coding = 	$SCT#254837009 "Breast Cancer"
-* component[2].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
-* component[2].valueCodeableConcept.coding = $NCTTRIAL#NCT01234567 "NCT01234567"
+* component[=].valueCodeableConcept.coding = $SCT#254837009 "Breast Cancer"
+* component[+].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
+* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT01234567 "NCT01234567"
 * derivedFrom = Reference(Variant-Somatic-Clinical-Trial)
 * status = #final
 
@@ -1337,8 +1337,8 @@ Description: "Example of a Genotype. A complete haplotype set defines a genotype
 * valueCodeableConcept.text = "APOE e1/e1"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * specimen = Reference(GenomicSpecimenExample02)
-* derivedFrom[0] = Reference(HaplotypeSet-Clinical-Trial-Example-1of2)
-* derivedFrom[1] = Reference(HaplotypeSet-Clinical-Trial-Example-2of2)
+* derivedFrom[+] = Reference(HaplotypeSet-Clinical-Trial-Example-1of2)
+* derivedFrom[+] = Reference(HaplotypeSet-Clinical-Trial-Example-2of2)
 * status = #final
 
 Instance: Therapeutic-Implication-Clinical-Trial-2
@@ -1352,10 +1352,10 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * specimen = Reference(GenomicSpecimenExample02)
-* component[0].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
-* component[0].valueCodeableConcept.coding = $SCT#444734003 "Does not meet eligibility criteria for clinical trial"
-* component[1].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
-* component[1].valueCodeableConcept.coding = $NCTTRIAL#NCT03131453 "NCT03131453"
+* component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
+* component[=].valueCodeableConcept.coding = $SCT#444734003 "Does not meet eligibility criteria for clinical trial"
+* component[+].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
+* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT03131453 "NCT03131453"
 * derivedFrom = Reference(Genotype-Clinical-Trial-Example-using-haplotypes)
 * status = #final
 
@@ -1433,8 +1433,8 @@ Description: "Normal example for karyotype Variant expressed in ISCN"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code.coding = $LNC#81291-7 "Variant ISCN"
-* component[0].valueCodeableConcept.coding = $ISCN#46,XX
+* component[+].code.coding = $LNC#81291-7 "Variant ISCN"
+* component[=].valueCodeableConcept.coding = $ISCN#46,XX
 
 Instance: ISCN-CMLExample
 InstanceOf: Variant
@@ -1448,8 +1448,8 @@ Description: "Basic example for karyotype Variant expressed in ISCN"
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
-* component[0].code.coding = $LNC#81291-7 "Variant ISCN"
-* component[0].valueCodeableConcept.coding = $ISCN#46,XX,t(9;22)(q34;q4)
+* component[+].code.coding = $LNC#81291-7 "Variant ISCN"
+* component[=].valueCodeableConcept.coding = $ISCN#46,XX,t(9;22)(q34;q4)
 
 Instance: ISCN-CMLImplication
 InstanceOf: DiagnosticImplication
