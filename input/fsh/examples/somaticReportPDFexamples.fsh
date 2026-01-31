@@ -1145,10 +1145,10 @@ Usage: #example
 * name.family = "Submitter"
 * name.given = "Test"
 * name.prefix = "Dr"
-* address[0].line[0] = "1000 SE Submitter Ave"
-* address[0].city = "Los Angeles"
-* address[0].state = "CA"
-* address[0].postalCode = "90027"
+* address[+].line[+] = "1000 SE Submitter Ave"
+* address[=].city = "Los Angeles"
+* address[=].state = "CA"
+* address[=].postalCode = "90027"
 
 Instance: pathologistPractitioner
 InstanceOf: Practitioner
@@ -1177,8 +1177,8 @@ Instance: performingOrganization
 InstanceOf: Organization
 Description: "Example of a Pathology lab"
 Usage: #example
-* identifier[0].system = "http://example.org/identifiers/CLIA"
-* identifier[0].value = "10000DLAB8"
+* identifier[+].system = "http://example.org/identifiers/CLIA"
+* identifier[=].value = "10000DLAB8"
 * name = "My Test Pathology Laboratories"
 * contact[+]
   * telecom[+].system = #phone

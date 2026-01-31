@@ -181,7 +181,7 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 //* derivedFrom = Reference(sequence-1-pgx-example)
-* component[0].code = $LNC#48018-6 "Gene studied ID"
+* component[+].code = $LNC#48018-6 "Gene studied ID"
 * component[=].valueCodeableConcept = $HGNCID#HGNC:2623 "CYP2C9"
 * component[+].code = $LNC#81252-9
 * component[=].valueCodeableConcept = $SNP#rs12345

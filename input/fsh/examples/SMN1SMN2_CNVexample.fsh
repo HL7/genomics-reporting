@@ -8,9 +8,6 @@ Description: "SMN1 CNV companion for SMN1/SMN2 CNV example"
 * status = #final "Final"
 * category[labCategory] = $OBSCAT#laboratory
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
-//* code.coding[1].system = "http://loinc.org"
-//* code.coding[1].code = #35462-1
-//* code.coding[1].display = "SMN1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
 * method = $LNC#LA26418-6 "PCR"
 * subject.display = "A Newborn"
 * effectiveDateTime = "2019-04-01"

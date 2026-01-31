@@ -249,7 +249,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept.coding[0] = $PHARMVAR#PV00538 "CYP2C9*2"
+* valueCodeableConcept.coding[+] = $PHARMVAR#PV00538 "CYP2C9*2"
 * valueCodeableConcept.coding[+] = $PHARMVAR#PV00541 "CYP2C9*5"
 * valueCodeableConcept.text = "CYP2C9 *2/*5"
 * specimen = Reference(ExampleSpecimen)
