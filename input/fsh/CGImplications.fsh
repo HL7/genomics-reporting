@@ -295,10 +295,10 @@ Description:    "Profile for communicating miscellaneous genomic annotations tha
 // * component ^slicing.discriminator.path = "value"
 // * component ^slicing.rules = #open
 // * component ^slicing.description = "Slice based on the component.code pattern"
-
 * component contains
-       population-allele-frequency 0..* and 
-       conservation-score 0..*
+	population-allele-frequency 0..* and 
+	conservation-score 0..* and
+    annotation-score 0..*
 
 * component.extension contains KnowledgebaseAncestryGroup named knowledgebase-ancestry-group 0..1
 * component.extension[KnowledgebaseAncestryGroup] ^requirements = "This SHOULD be used to identify the sample ancestry group according to the referenced knowledgebase"
@@ -316,3 +316,8 @@ Description:    "Profile for communicating miscellaneous genomic annotations tha
 * component[conservation-score] ^definition = "The measure of evolutionary conservation at an individual alignment site"
 * component[conservation-score].value[x] only Quantity
 * component[conservation-score].value[x] 1..1
+
+* component[annotation-score] ^short = "annotation score"
+* component[annotation-score].code from AnnotationScoreComponentVS (extensible)
+* component[annotation-score].value[x] only Quantity or CodeableConcept
+* component[annotation-score].value[x] 1..1

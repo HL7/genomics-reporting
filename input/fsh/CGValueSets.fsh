@@ -171,3 +171,9 @@ Title:          "Knowledge Base Version Codes"
 Description:    "Value set for example terms to display the knowledge base version used to calculate and/or obtain data"
 * ^experimental = false
 * codes from system KnowledgeBaseCS
+
+ValueSet: AnnotationScoreComponentVS
+Id: annotation-score-vs
+Title: "Annotation Score Component Value Set"
+Description: "Value set containing annotation score type codes for component.code field"
+* codes from system AnnotationScoreTypes

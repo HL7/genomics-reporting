@@ -31,8 +31,9 @@ Description: "These codes are 'TBD' codes, meaning they are important concepts b
 * #biomarker-category "Biomarker Category" "A characterization of a given biomarker observation."
 * #protein-ref-seq "Protein Reference Sequence" "An identifier for the protein reference sequence."
 * #conservation-score "Conservation Score" "The conservation score calculated for a genomic position or region indicating evolutionary conservation."
-* #annotation-pipeline "Annotation Pipeline" "The name of the data pipeline that processed the genomic data file"
-* #knowledge-base "Knowledge Base" "The database from which the annotation is derived"
+* #annotation-pipeline "Annotation Pipeline" "The name of the data pipeline that processed the genomic data file."
+* #knowledge-base "Knowledge Base" "The database from which the annotation is derived."
+* #computational-prediction "Computational Prediction" "Evidence generated from computational or in-silico analysis."
 
 CodeSystem: ClinVarEvidenceLevelCustomCS
 Id: clinvar-evidence-level-custom-cs
@@ -124,3 +125,60 @@ Description: "This example code systems provides examples on how to properly dis
 * #oncokbv1.5.2 "oncokb v1.5.2" "OncoKB version 1.5.2"
 * #pharmgkbv2.3.5 "pharmgkb v2.3.5" "PharmGKB version 2.3.5"
 * #phastconsv3.6.0 "phascons v.3.6.0" "PhastCons version 3.6.0"
+
+CodeSystem: AnnotationScoreTypes
+Id: annotation-score-type-cs
+Title: "Annotation Score Type Codes"
+Description: "Code system defining types of annotation scores that can be reported for genomic variants"
+* ^url = "http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/annotation-score-type-cs"
+* ^caseSensitive = true
+* #cadd-phred-score "CADD Phred Score" "Phred-scaled CADD score (higher = more deleterious)"
+* #cadd-raw-score "CADD Raw Score" "Unscaled CADD score based on SVM model"
+* #oncokb-oncogenicity "OncoKB Oncogenicity" "OncoKB oncogenicity classification"
+* #oncokb-therapeutic-level "OncoKB Therapeutic Level" "OncoKB therapeutic level of evidence"
+* #oncokb-diagnostic-level "OncoKB Diagnostic Level" "OncoKB diagnostic level of evidence"
+* #oncokb-prognostic-level "OncoKB Prognostic Level" "OncoKB prognostic level of evidence"
+
+CodeSystem: OncoKBTherapeuticLevels
+Id: oncokb-tx-score-cs
+Title: "OncoKB Therapeutic Levels Code System"
+Description: "OncoKB Therapeutic levels of evidence for genomic biomarkers."
+* ^caseSensitive = true
+* #LEVEL_1 "Level 1 - FDA-recognized biomarker" "FDA-recognized biomarker predictive of response to an FDA-approved drug in this indication"
+* #LEVEL_2 "Level 2 - Standard care biomarker" "Standard care biomarker recommended by the NCCN or other expert panels predictive of response to an FDA-approved drug in this indication"
+* #LEVEL_3A "Level 3A - Compelling clinical evidence" "Compelling clinical evidence supports the biomarker as being predictive of response to a drug in this indication"
+* #LEVEL_3B "Level 3B - Standard care or investigational in another indication" "Standard care or investigational biomarker predictive of response to an FDA-approved or investigational drug in another indication"
+* #LEVEL_4 "Level 4 - Compelling biological evidence" "Compelling biological evidence supports the biomarker as being predictive of response to a drug"
+* #LEVEL_R1 "Level R1 - Standard care biomarker for resistance" "Standard care biomarker predictive of resistance to an FDA-approved drug in this indication"
+* #LEVEL_R2 "Level R2 - Compelling clinical evidence for resistance" "Compelling clinical evidence supports the biomarker as being predictive of resistance to a drug"
+
+CodeSystem: OncoKBDiagnosticLevels
+Id: oncokb-dx-score-cs
+Title: "OncoKB Diagnostic Levels Code System"
+Description: "OncoKB diagnostic levels of evidence indicating the strength of evidence a specific biomarker can be used for disease diagnosis, classification, or subtyping"
+* ^caseSensitive = true
+* #LEVEL_Dx1 "Level Dx1 - FDA and/or professional guideline-recognized" "FDA and/or professional guideline-recognized biomarker required for diagnosis or classification in this indication"
+* #LEVEL_Dx2 "Level Dx2 - Proven diagnostic significance" "Biomarker is recognized as diagnostic or classification marker in professional guidelines and/or the medical literature"
+* #LEVEL_Dx3 "Level Dx3 - Evidence of diagnostic significance" "Biomarker has diagnostic or classification significance in this indication based on clinical evidence in smaller studies or multiple studies with mixed results"
+
+CodeSystem: OncoKBPrognosticLevels
+Id: oncokb-px-score-cs
+Title: "OncoKB Prognostic Levels Code System"
+Description: "OncoKB prognostic levels of evidence indicating the strength of evidence that 
+a biomarker is associated with patient outcome (overall survival, disease-free survival, progression-free survival, etc.)"
+* ^caseSensitive = true
+* #LEVEL_Px1 "Level Px1 - FDA and/or professional guideline-recognized" "FDA and/or professional guideline-recognized biomarker prognostic in this indication based on well-powered studie(s)"
+* #LEVEL_Px2 "Level Px2 - Proven prognostic significance" "Biomarker is prognostic in this indication based on well-powered studie(s)"
+* #LEVEL_Px3 "Level Px3 - Evidence of prognostic significance" "Biomarker is prognostic in this indication based on clinical evidence in smaller studies or multiple studies with mixed results"
+
+CodeSystem: OncoKBOncogenicity
+Id: oncokb-oncogenicity-cs
+Title: "OncoKB Oncogenicity Classifications"
+Description: "OncoKB oncogenicity classifications assessing whether a genomic alteration is likely to be cancer-causing (oncogenic) or functionally neutral."
+* ^caseSensitive = true
+* #oncogenic "Oncogenic" "Alteration is recognized as oncogenic in the medical literature"
+* #likely-oncogenic "Likely Oncogenic" "Alteration is likely oncogenic based on biological evidence"
+* #predicted-oncogenic "Predicted Oncogenic" "Alteration is predicted to be oncogenic based on computational evidence"
+* #likely-neutral "Likely Neutral" "Alteration is likely to be functionally neutral"
+* #inconclusive "Inconclusive" "Evidence for oncogenicity is inconclusive or conflicting"
+* #unknown "Unknown"  "Oncogenic potential has not been assessed or is unknown"
