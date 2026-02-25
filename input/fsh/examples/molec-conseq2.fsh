@@ -18,6 +18,6 @@ Usage: #example
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "Homo sapiens outer dense fiber of sperm tails 2 like (ODF2L), transcript variant 6, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001819 "synonymous_variant"

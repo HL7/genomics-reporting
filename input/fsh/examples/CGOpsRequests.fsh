@@ -382,7 +382,6 @@ Usage: #example
 * parameter.part[=].resource.effectiveDateTime = "2023-07-01"
 * parameter.part[=].resource.performer.reference = "Organization/ExampleOrg"
 * parameter.part[=].resource.valueCodeableConcept.coding.system = "http://glstring.org"
-* parameter.part[=].resource.valueCodeableConcept.coding.version = "1.0"
 * parameter.part[=].resource.valueCodeableConcept.coding.code = #hla#3.33.0#HLA-A*02:69+HLA-A*23:30|HLA-A*02:302+HLA-A*23:26/HLA-A*23:39
 * parameter.part[=].resource.valueCodeableConcept.coding.display = "hla#3.33.0#HLA-A*02:69+HLA-A*23:30|HLA-A*02:302+HLA-A*23:26/HLA-A*23:39"
 * parameter.part[=].resource.specimen.reference = "Specimen/GenomicSpecimenExample01"
@@ -580,7 +579,7 @@ Usage: #example
 // * parameter[=].resource.component[=].code.text = "coding HGVS"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395525.1:c.-281+2T>C "NM_001395525.1:c.-281+2T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "NM_001395525.1"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395525.1 "Homo sapiens outer dense fiber of sperm tails 2 like (ODF2L), transcript variant 16, mRNA"
 * parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001575 "splice_donor_variant"
 * parameter[=].resource.component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001627 "intron_variant"
@@ -607,7 +606,7 @@ Usage: #example
 // * parameter[=].resource.component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#p.Cys30Cys "p.Cys30Cys"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "NM_001366781.1"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001366781.1 "Homo sapiens outer dense fiber of sperm tails 2 like (ODF2L), transcript variant 6, mRNA"
 * parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001819 "synonymous_variant"
 * parameter[+].name = "consequence"
@@ -629,7 +628,7 @@ Usage: #example
 * parameter[=].resource.component[=].code.text = "coding HGVS"
 * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "Homo sapiens outer dense fiber of sperm tails 2 like (ODF2L), transcript variant 34, mRNA"
 * parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001623 "5_prime_UTR_variant"
 * parameter[+].name = "consequence"
@@ -652,7 +651,7 @@ Usage: #example
 // * parameter[=].resource.component[=].code.text = "coding HGVS"
 // * parameter[=].resource.component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395544.1:c.-21-3742T>C "NM_001395544.1:c.-21-3742T>C"
 * parameter[=].resource.component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "NM_001395544.1"
+* parameter[=].resource.component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395544.1 "Homo sapiens outer dense fiber of sperm tails 2 like (ODF2L), transcript variant 35, mRNA"
 * parameter[=].resource.component[+].code = TbdCodesCS#feature-consequence
 * parameter[=].resource.component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001627 "intron_variant"
 * parameter[+].name = "variant"

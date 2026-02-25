@@ -105,7 +105,7 @@ Usage: #inline
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_000068.1:p.Ala4_Pro11del
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000077.4 "NM_000077.4"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000077.4 "Homo sapiens cyclin dependent kinase inhibitor 2A (CDKN2A), transcript variant 1, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "AGGCTCCATGCTGCTCCCCGCCGCC"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -140,7 +140,7 @@ Usage: #inline
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_004251.4:p.Arg696Cys 
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004260.4 "NM_004260.4"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004260.4 "Homo sapiens RecQ like helicase 4 (RECQL4), transcript variant 1, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "G"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -175,7 +175,7 @@ Usage: #inline
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_000531.2:p.Arg1655Leu
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000540.2 "NM_000540.3"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000540.2 "Homo sapiens ryanodine receptor 1 (RYR1), transcript variant 1, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "G"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -211,7 +211,7 @@ Usage: #inline
 //* component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 //* component[=].valueCodeableConcept.text = "p.A4040T" //$HGVS#p.A4040T
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_014363.5 "NM_014363.5"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_014363.5 "Homo sapiens sacsin molecular chaperone (SACS), transcript variant 1, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "C"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -247,7 +247,7 @@ Usage: #inline
 //* component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 //* component[=].valueCodeableConcept.text = "p.N430K" //$HGVS#p.N430K
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004787.3 "NM_004787.3"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004787.3 "Homo sapiens slit guidance ligand 2 (SLIT2), transcript variant 1, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "C"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -282,7 +282,7 @@ Usage: #inline
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_003063.2:p.Ala791Val
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_003072.5 "NM_003072.5"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_003072.5 "Homo sapiens SWI/SNF related BAF chromatin remodeling complex subunit ATPase 4 (SMARCA4), transcript variant 3, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "C"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -357,7 +357,7 @@ Usage: #inline
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_006209.2:p.His1047Arg "NP_006209.2:p.His1047Arg"
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_006218.3 "NM_006218.4"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_006218.3 "Homo sapiens phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha (PIK3CA), mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "A"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -393,7 +393,7 @@ Usage: #inline
 // * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept.text = "p.G12C" //$HGVS#p.G12C
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_002524.4 "NM_002524.4"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_002524.4 "Homo sapiens NRAS proto-oncogene, GTPase (NRAS), mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "C"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -428,7 +428,7 @@ Usage: #inline
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_001336727.1:p.Arg465His "NP_001336727.1:p.Arg465His"
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_001349798.2 "NM_001349798.2"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_001349798.2 "Homo sapiens F-box and WD repeat domain containing 7 (FBXW7), transcript variant 5, mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "C"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -464,7 +464,7 @@ Usage: #inline
 // * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept.text = "p.Q2634Afs*20" //$HGVS#p.Q2634Afs*20
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_003482.3 "NM_003482.3"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_003482.3 "Homo sapiens lysine methyltransferase 2D (KMT2D), mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "CTG"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -500,7 +500,7 @@ Usage: #inline
 // * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept.text = "p.K111N" //$HGVS#p.K111N
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_006218.3 "NM_006218.3"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_006218.3 "Homo sapiens phosphatidylinositol-4,5-bisphosphate 3-kinase catalytic subunit alpha (PIK3CA), mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "G"
 * component[+].code = $LNC#81258-6 "Sample VAF"
@@ -536,7 +536,7 @@ Usage: #inline
 // * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept.text = "p.=" //$HGVS#p.=
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_003749.2 "NM_003749.2"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_003749.2 "Homo sapiens insulin receptor substrate 2 (IRS2), mRNA"
 * component[+].code = $LNC#69547-8 "Genomic ref allele [ID]"
 * component[=].valueString = "G"
 * component[+].code = $LNC#81258-6 "Sample VAF"

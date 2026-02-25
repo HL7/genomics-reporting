@@ -628,7 +628,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_017617.5:c.5791G>A "NM_017617.5:c.5791G>A"
 
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "NM_017617.5"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "Homo sapiens notch receptor 1 (NOTCH1), mRNA"
 
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
@@ -653,7 +653,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006885.4:c.1753G>A "NM_006885.4:c.1753G>A"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "NM_006885.4"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "Homo sapiens zinc finger homeobox 3 (ZFHX3), transcript variant A, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -720,7 +720,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006603.5:c.3530_3531insGTGACTATTAATAT "NM_006603.5:c.3530_3531insGTGACTATTAATAT"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "NM_006603.5"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "Homo sapiens STAG2 cohesin complex component (STAG2), transcript variant 4, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -743,7 +743,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001184.4:c.2878_2879insAGTAA "NM_001184.4:c.2878_2879insAGTAA"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "Homo sapiens ATR checkpoint kinase (ATR), transcript variant 1, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
@@ -981,7 +981,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA-A*24:02:01:01 "HLA-A*24:02:01:01"
+* valueCodeableConcept = $HLAALLELE#HLA00004 "A*24:02:01:01 (A*)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-A-haplotype2
@@ -996,7 +996,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#A*02:06 "HLA-A*02:06"
+* valueCodeableConcept = $HLAALLELE#HLA00005 "A*02:06 (A*)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-B-haplotype1
@@ -1011,7 +1011,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#B*35:01 "HLA-B*35:01"
+* valueCodeableConcept = $HLAALLELE#HLA00006 "B*35:01 (B*)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: HLA-B-haplotype2
@@ -1026,7 +1026,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#B*35:01 "HLA-B*35:01"
+* valueCodeableConcept = $HLAALLELE#HLA00006 "B*35:01 (B*)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: HLA-C-haplotype1
@@ -1041,7 +1041,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#C*03:03 "HLA-C*03:03"
+* valueCodeableConcept = $HLAALLELE#HLA00007 "C*03:03 (C*)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: HLA-C-haplotype2
@@ -1056,7 +1056,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#C*15:02 "HLA-C*15:02"
+* valueCodeableConcept = $HLAALLELE#HLA00008 "C*15:02 (C*)"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: somaticReport

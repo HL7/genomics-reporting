@@ -15,6 +15,6 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001395543.1:c.-171T>C "NM_001395543.1:c.-171T>C"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "NM_001395543.1"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001395543.1 "Homo sapiens outer dense fiber of sperm tails 2 like (ODF2L), transcript variant 34, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0001623 "5_prime_UTR_variant"

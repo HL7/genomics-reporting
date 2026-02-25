@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build genomics-reporting IG using local terminology server
-# This script builds the IG and points it to your local HAPI FHIR terminology server
+# This script builds the IG and points it to the genomics-txserver with fallback proxy
 
 set -e
 
@@ -10,7 +10,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
 # Configuration
-LOCAL_TX_SERVER="http://localhost:8080/fhir"
+LOCAL_TX_SERVER="http://localhost:3000/tx/r5"
 publisher_jar="input-cache/publisher.jar"
 input_cache_path="$(pwd)/input-cache/"
 
@@ -22,7 +22,7 @@ NC='\033[0m' # No Color
 
 echo -e "${YELLOW}=====================================${NC}"
 echo -e "${YELLOW}Genomics Reporting IG - Local Build${NC}"
-echo -e "${YELLOW}Using Local Terminology Server${NC}"
+echo -e "${YELLOW}Using Local Terminology Server (fallback proxy enabled)${NC}"
 echo -e "${YELLOW}=====================================${NC}"
 echo
 

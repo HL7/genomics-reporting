@@ -76,7 +76,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"
+* component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.5(ACAD9):c.1249C>T (p.Arg417Cys)"
 * component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:21497 "ACAD9"
 * component[+].code = $LNC#51958-7
@@ -86,7 +86,6 @@ Usage: #inline
 * component[+].code = $LNC#81290-9
 * component[=].valueCodeableConcept.coding = $HGVS#NC_000003.11:g.128625063C>T
 * component[+].code = $LNC#81252-9
-* component[=].valueCodeableConcept.coding.version = "137"
 * component[=].valueCodeableConcept.coding = $SNP#rs368949613
 * component[+].code = $LNC#48004-6
 * component[=].valueCodeableConcept.coding = $HGVS#NM_014049.4:c.1249C>T
@@ -192,7 +191,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding = $CLINVAR#31934 "NM_000106.5(CYP2D6):c.886C>T (p.Arg296Cys)"
+* component[=].valueCodeableConcept.coding = $CLINVAR#RCV000018391.27 "NM_000106.5(CYP2D6):c.[886C>T;457G>C]"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
@@ -216,8 +215,7 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding.version = "???"
-* component[=].valueCodeableConcept.coding = $CLINVAR#38486 "NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)"
+* component[=].valueCodeableConcept.coding = $CLINVAR#RCV000018391.27 "NM_000106.5(CYP2D6):c.[886C>T;457G>C]"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
@@ -234,7 +232,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept.coding = $HLAALLELE#HLA-A*02:01
+* valueCodeableConcept.coding = $HLAALLELE#HLA00003 "A*02:01"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(discrete-variant)
 

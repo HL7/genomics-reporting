@@ -334,7 +334,7 @@ Description: "Example variant 1011"
 * effectiveDateTime = "2020-01-01"
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96521657C=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96521657
 * component[exact-start-end].valueRange.high.value = 96521657
@@ -362,7 +362,7 @@ Description: "Example variant 1012"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96522463A=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96522463
 * component[exact-start-end].valueRange.high.value = 96522463
@@ -390,7 +390,7 @@ Description: "Example variant 1013"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96535173T=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535173
 * component[exact-start-end].valueRange.high.value = 96535173
@@ -419,7 +419,7 @@ Description: "Example variant 1014"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96535210G=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96535210
 * component[exact-start-end].valueRange.high.value = 96535210
@@ -469,7 +469,7 @@ Description: "Example variant 1016"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96541616G=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541616
 * component[exact-start-end].valueRange.high.value = 96541616
@@ -497,7 +497,7 @@ Description: "Example variant 1017"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96541756T=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96541756
 * component[exact-start-end].valueRange.high.value = 96541756
@@ -525,7 +525,7 @@ Description: "Example variant 1018"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96612495C=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96612495
 * component[exact-start-end].valueRange.high.value = 96612495
@@ -579,7 +579,7 @@ Description: "Example variant 1020"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96702047C=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96702047
 * component[exact-start-end].valueRange.high.value = 96702047
@@ -611,7 +611,7 @@ Description: "Example variant 1021"
 * performer = Reference(ExampleOrg)
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 //* component[genomic-hgvs].valueCodeableConcept = $HGVS#NC_000010.10:g.96741053A=
-* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "b37 Chr10"
+* component[genomic-ref-seq].valueCodeableConcept = $NCBIREFSEQ#NC_000010.10 "Homo sapiens chromosome 10, GRCh37.p13 Primary Assembly"
 * component[coordinate-system].valueCodeableConcept = $LNC#LA30102-0 "1-based character counting"
 * component[exact-start-end].valueRange.low.value = 96741053
 * component[exact-start-end].valueRange.high.value = 96741053
@@ -1266,7 +1266,7 @@ Description: "Example of a Haplotype as part of a Haplotype Set (1 of 2). A comp
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
+* valueCodeableConcept.coding = $CLINVAR#RCV000019439.29 "NM_000041.2(APOE):c.526C>T (p.Arg176Cys)"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * specimen = Reference(GenomicSpecimenExample02)
 //* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
@@ -1282,7 +1282,7 @@ Description: "Example of a Haplotype as part of a Haplotype Set (2 of 2). A comp
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* valueCodeableConcept.coding = $CLINVAR#441262 "APOE1"
+* valueCodeableConcept.coding = $CLINVAR#RCV000019439.29 "NM_000041.2(APOE):c.526C>T (p.Arg176Cys)"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * specimen = Reference(GenomicSpecimenExample02)
 //* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
