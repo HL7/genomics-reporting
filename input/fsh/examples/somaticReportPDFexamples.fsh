@@ -981,7 +981,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA00004 "A*24:02:01:01 (A*)"
+* valueCodeableConcept = $HLAALLELE#HLA00004 "A*01:04:01:01N"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-A-haplotype2
@@ -996,7 +996,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA00005 "A*02:06 (A*)"
+* valueCodeableConcept = $HLAALLELE#HLA00005 "A*02:01:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-B-haplotype1
@@ -1011,7 +1011,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA00006 "B*35:01 (B*)"
+* valueCodeableConcept = $HLAALLELE#HLA00006 "A*02:01:02:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: HLA-B-haplotype2
@@ -1026,7 +1026,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA00006 "B*35:01 (B*)"
+* valueCodeableConcept = $HLAALLELE#HLA00006 "A*02:01:02:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: HLA-C-haplotype1
@@ -1041,7 +1041,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA00007 "C*03:03 (C*)"
+* valueCodeableConcept = $HLAALLELE#HLA00007 "A*02:02:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: HLA-C-haplotype2
@@ -1056,7 +1056,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#HLA00008 "C*15:02 (C*)"
+* valueCodeableConcept = $HLAALLELE#HLA00008 "A*02:03:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: somaticReport

@@ -149,7 +149,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept.coding = $HLAALLELE#HLA00003 "A*02:01"
+* valueCodeableConcept.coding = $HLAALLELE#HLA00003 "A*01:03:01:01"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(discrete-variant-1a)
 
