@@ -486,7 +486,7 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Taletrectinib"
 * component[+].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
-* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT04919811 "NCT04919811"
+* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT04919811 "Taletrectinib Phase 2 Global Study in ROS1 Positive NSCLC"
 * component[=].valueCodeableConcept.text = "A Single-Arm, Open-Label, Multicenter Phase 2 Study to Evaluate the Efficacy and Safety of Taletrectinib in Patients With Advanced or Metastatic ROS1 Positive NSCLC and Other Solid Tumors"
 * derivedFrom = Reference(ROS1-Fusion-var)
 * status = #final

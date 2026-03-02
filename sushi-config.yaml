@@ -28,6 +28,7 @@ parameters:
     - http://terminology.hl7.org/CodeSystem/sequence-phase-relationship-cs
     - http://terminology.hl7.org/CodeSystem/variant-confidence-status-cs
     - https://www.ncbi.nlm.nih.gov/gtr
+    - http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_33.html
   pin-canonicals: pin-multiples
 copyrightYear: 2025+
 releaseLabel: CI Build
@@ -95,4 +96,7 @@ pages:
     generation: markdown
   artifacts.html:
     title: Artifact List
+    generation: markdown
+  StructureDefinition-workflow-supportingInfo.html:
+    title: Supporting Info Extension (Compatibility)
     generation: markdown

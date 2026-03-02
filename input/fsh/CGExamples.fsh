@@ -1252,7 +1252,7 @@ Description: "Example of a Therapeutic Implication for Clinical Trial"
 //#HP:0003002
 * component[=].valueCodeableConcept.coding = $SCT#254837009 "Breast Cancer"
 * component[+].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
-* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT01234567 "NCT01234567"
+* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT00965276 "Relationship of pAKT to Survival in Patients With Node-Positive Breast Cancer"
 * derivedFrom = Reference(Variant-Somatic-Clinical-Trial)
 * status = #final
 
@@ -1266,7 +1266,7 @@ Description: "Example of a Haplotype as part of a Haplotype Set (1 of 2). A comp
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* valueCodeableConcept.coding = $CLINVAR#RCV000019439.29 "NM_000041.2(APOE):c.526C>T (p.Arg176Cys)"
+* valueCodeableConcept.coding = $CLINVAR#RCV000019439.29 "NM_000041.3(APOE):c.[434G>A;526C>T]"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * specimen = Reference(GenomicSpecimenExample02)
 //* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
@@ -1282,7 +1282,7 @@ Description: "Example of a Haplotype as part of a Haplotype Set (2 of 2). A comp
 * subject = Reference(CGPatientExample01)
 * effectiveDateTime = "2019-04-01"
 * performer = Reference(ExampleOrg)
-* valueCodeableConcept.coding = $CLINVAR#RCV000019439.29 "NM_000041.2(APOE):c.526C>T (p.Arg176Cys)"
+* valueCodeableConcept.coding = $CLINVAR#RCV000019439.29 "NM_000041.3(APOE):c.[434G>A;526C>T]"
 * component[gene-studied].valueCodeableConcept.coding = http://www.genenames.org#HGNC:613 "APOE"
 * specimen = Reference(GenomicSpecimenExample02)
 //* derivedFrom = NM_000041.2(APOE):c.526C>T (p.Arg176Cys) - Variation ID 17848
@@ -1319,7 +1319,7 @@ Description: "Example of a Therapeutic Implication for Carbamazepine"
 * component[+].code.coding = TbdCodesCS#therapeutic-implication "Therapeutic Implication"
 * component[=].valueCodeableConcept.coding = $SCT#444734003 "Does not meet eligibility criteria for clinical trial"
 * component[+].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
-* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT03131453 "NCT03131453"
+* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT07198035 "A Study to Learn if Multiple Doses of the Study Medicine Called Carbamazepine Changes How the Body Processes the Other Study Medicine PF-07248144"
 * derivedFrom = Reference(Genotype-Clinical-Trial-Example-using-haplotypes)
 * status = #final
 
