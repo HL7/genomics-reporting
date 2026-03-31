@@ -21,7 +21,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 echo -e "${YELLOW}=====================================${NC}"
-echo -e "${YELLOW}Genomics Reporting IG - Local Build${NC}"
+echo -e "${YELLOW}Local Build${NC}"
 echo -e "${YELLOW}Using Local Terminology Server (fallback proxy enabled)${NC}"
 echo -e "${YELLOW}=====================================${NC}"
 echo
