@@ -11,7 +11,6 @@ Usage: #example
 * effectiveDateTime = "2018-07-26"
 * performer.type = "Organization"
 * performer.display = "aTypingLab, Inc"
-* valueCodeableConcept.coding.version = "1.0"
 * valueCodeableConcept.coding = $GLSTRING#hla#3.31.0#HLA-A*03:01:01:01+HLA-A*30:01:01
 * method.text = "PACBIO Sequel"
 * specimen = Reference(specimen-hla-r4)

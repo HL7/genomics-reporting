@@ -20,11 +20,23 @@ Here are some examples that are standardized, note that there are examples which
 }
 ```
 
-- PGx Genotype (textually represents the CYP2C9 *2C haplotype (or 'star allele') on one chromosome and the CYP2C9 *1A haplotype on the homologous chromosome)
+- PGx Genotype (coded haplotypes with human-readable text; represents the CYP2C9 *2 haplotype on one chromosome and the CYP2C9 *5 haplotype on the homologous chromosome)
 ```json
 { 
-  "valueCodeableConcept": { 
-    "text": "CYP2C9 *2C/*1A" 
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://www.pharmvar.org",
+        "code": "PV00538",
+        "display": "CYP2C9*2"
+      },
+      {
+        "system": "http://www.pharmvar.org",
+        "code": "PV00541",
+        "display": "CYP2C9*5"
+      }
+    ],
+    "text": "CYP2C9 *2/*5" 
   } 
 }
 ```

@@ -39,7 +39,7 @@ $find-subject-tx-implications?subject=HG00403&conditions=http://snomed.info/sct|
 This query seeks to determine if the subject has any genetic findings that have implications for inclusion in clinical trial NCT01234567.
 
 <pre style="white-space: pre-wrap; word-wrap: break-word;">
-$find-subject-tx-implications?subject=HG00403&treatments=https://clinicaltrials.gov/|NCT01234567
+$find-subject-tx-implications?subject=HG00403&treatments=http://clinicaltrials.gov/|NCT01234567
 </pre>
 
 Patient HG00403 has metastatic breast cancer. Targeted sequencing of a tumor biopsy specimen shows ERBB2 (HER2) variant NM_004448.4:c.2264_2278del. What are the treatment implications for this patient? (Results indicate responsiveness to lapatinib).

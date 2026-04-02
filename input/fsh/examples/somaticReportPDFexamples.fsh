@@ -132,7 +132,7 @@ Description: "Example for MSH2 deletion"
 //* component[allelic-read-depth].valueQuantity =
 * component[coding-change-type].valueCodeableConcept = http://www.sequenceontology.org#SO:0000159 "deletion"
 //* component[representative-coding-hgvs].valueCodeableConcept = 
-* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7235 "MSH2"
+* component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:7325 "MSH2"
 //* component[alt-allele].valueString = 
 //* component[chromosome-identifier].valueCodeableConcept =  
 //* component[exact-start-end][+].valueRange.low.value = 
@@ -403,7 +403,7 @@ Usage: #example
 * component[+].code = $LNC#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $LNC#LA26332-9 "Likely Pathogenic"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
 
 //ATR insertion 
 //LA26332-9^Likely Pathogenic
@@ -427,11 +427,11 @@ Usage: #example
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier 2C"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "The protein encoded by this gene is a serine/threonine kinase and DNA damage sensor, activating cell cycle checkpoint signaling upon DNA stress. The encoded protein can phosphorylate and activate several proteins involved ... more"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.ncbi.nlm.nih.gov/gene/545#:~:text=ATR%20may%20function%20as%20an,radiation%20when%20ATM%20is%20deficient"
 
 //EGFR L858R
 //LA6668-3 Pathogenic
@@ -486,7 +486,7 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Taletrectinib"
 * component[+].code.coding = TbdCodesCS#associated-therapy "Associated Therapy"
-* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT04919811 "NCT04919811"
+* component[=].valueCodeableConcept.coding = $NCTTRIAL#NCT04919811 "Taletrectinib Phase 2 Global Study in ROS1 Positive NSCLC"
 * component[=].valueCodeableConcept.text = "A Single-Arm, Open-Label, Multicenter Phase 2 Study to Evaluate the Efficacy and Safety of Taletrectinib in Patients With Advanced or Metastatic ROS1 Positive NSCLC and Other Solid Tumors"
 * derivedFrom = Reference(ROS1-Fusion-var)
 * status = #final
@@ -494,9 +494,9 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for Clinical Trial"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 
 
 Instance: ROS1-Fusion-therapuDrug
@@ -518,18 +518,18 @@ Description: "Example of ROS1 Fusion Therapeutic Implication for drug treatment"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Crizotinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/molecular-profiles/2562/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://civicdb.org/molecular-profiles/2562/summary"
 * derivedFrom = Reference(ROS1-Fusion-var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer positive for ROS1 fusions are sensitive to crizotinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/7282/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://civicdb.org/evidence/7282/summary"
 * component[+].code = $LNC#93044-6 "Level of evidence"
 //* component[=].valueCodeableConcept = codesystem#code "display"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 
 
 Instance: TMB-therapuDrug
@@ -566,20 +566,20 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 1
 * component[+].code = $LNC#93044-6 "Level of evidence"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Gefitinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 * derivedFrom = Reference(EGFR-L858R-var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer with EGFR L858R mutation is sensitive to gefitinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://civicdb.org/evidence/2994/summary"
 
 
 Instance: EGFR-L858R-therapuDrug2
@@ -595,20 +595,20 @@ Description: "Example of EGFR-L858R Therapeutic Implication for drug treatment 2
 * component[+].code = $LNC#93044-6 "Level of evidence"
 * component[=].valueCodeableConcept.text = "Tier I - Level A"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.jmdjournal.org/cms/attachment/ee43a71b-81de-4cb3-ac5e-2fb9a7d41491/gr2.jpg"
 * component[+].code.coding = $LNC#81259-4 // "Phenotypic treatment context"
 * component[=].valueCodeableConcept.coding[+] = $SCT#254637007 "Non-small cell lung cancer (disorder)"
 * component[=].valueCodeableConcept.text = "Non-small cell lung cancer"
 * component[+].code = $LNC#51963-7 "Medication assessed"
 * component[=].valueCodeableConcept.text = "Erlotinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://www.cancer.net/cancer-types/lung-cancer-non-small-cell/types-treatment"
 * derivedFrom = Reference(EGFR-L858R-var)
 * status = #final
 * component[+].code = TbdCodesCS#conclusion-string
 * component[=].valueString = "Non-small cell lung cancer with EGFR L858R mutation is sensitive to erlotinib"
 * component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.type = #citation
-* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.url = "https://civicdb.org/evidence/2994/summary"
+* component[=].extension[workflow-relatedArtifact].valueRelatedArtifact.document.url = "https://civicdb.org/evidence/2994/summary"
 
 Instance: NOTCH1-uncertain-molc
 InstanceOf: MolecularConsequence
@@ -628,7 +628,7 @@ Usage: #example
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_017617.5:c.5791G>A "NM_017617.5:c.5791G>A"
 
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "NM_017617.5"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_017617.5 "Homo sapiens notch receptor 1 (NOTCH1), mRNA"
 
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
@@ -653,7 +653,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006885.4:c.1753G>A "NM_006885.4:c.1753G>A"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "NM_006885.4"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006885.4 "Homo sapiens zinc finger homeobox 3 (ZFHX3), transcript variant A, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001583 "missense_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -720,7 +720,7 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_006603.5:c.3530_3531insGTGACTATTAATAT "NM_006603.5:c.3530_3531insGTGACTATTAATAT"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "NM_006603.5"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_006603.5 "Homo sapiens STAG2 cohesin complex component (STAG2), transcript variant 4, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
@@ -743,14 +743,14 @@ Usage: #example
 * component[=].code.text = "coding HGVS"
 * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NM_001184.4:c.2878_2879insAGTAA "NM_001184.4:c.2878_2879insAGTAA"
 * component[+].code = http://loinc.org#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "NM_001184.4"
+* component[=].valueCodeableConcept = http://www.ncbi.nlm.nih.gov/refseq#NM_001184.4 "Homo sapiens ATR checkpoint kinase (ATR), transcript variant 1, mRNA"
 * component[+].code = TbdCodesCS#feature-consequence
 * component[=].valueCodeableConcept.coding[+] = http://www.sequenceontology.org#SO:0001589 "frameshift_variant"
 //kp Error while processing 'NP_001175.2:p.R960fs*2': Frameshift variants are not supported
 // * component[+].code = http://loinc.org#48005-3 "Amino acid change (pHGVS)"
 // * component[=].valueCodeableConcept = http://varnomen.hgvs.org#NP_001175.2:p.R960fs*2 "NP_001175.2:p.R960fs*2"
 * component[+].code = TbdCodesCS#functional-effect
-* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO_0002054 "loss_of_function_variant"
+* component[=].valueCodeableConcept = http://www.sequenceontology.org#SO:0002054 "loss_of_function_variant"
 
 Instance: EGFR-L858R-molc
 InstanceOf: MolecularConsequence
@@ -808,64 +808,44 @@ Usage: #example
 * birthDate = "1987-09-01"
 
 Instance: somaticStudy
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "Example for somatic genetic study"
 Usage: #example
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
-* extension[=].valueReference = Reference(analysisTumorNormalDNA)
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-analysis-ext"
-* extension[=].valueReference = Reference(analysisTumorRNA)
-* status = #completed
-* code.text = "My Test Cancer 700 Gene Panel"
-* category = $OBSCAT#laboratory
+* status = #available
+* type.text = "My Test Cancer 700 Gene Panel"
 * subject = Reference(somaticPatient)
-* performedDateTime = "2023-02-02"
-* reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+* startDate = "2023-02-02"
+* reason.concept = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
 * note.text = "I. Assay Overview: The Genomic Cancer Testing Assay is a comprehensive molecular examination designed to detect and quantify specific DNA and RNA alterations associated with malignancies. The test incorporates Next Generation Sequencing (NGS) technology to profile tumor samples, providing insights into the genomic alterations that drive tumor behavior and prognosis. II. Target Genes and Biomarkers: This assay evaluates an extensive panel of cancer-related genes, focusing on mutations, copy number variations, fusions, and select RNA expression levels known to be relevant in the oncology field. The analyzed genes are implicated in various cancer types and have established therapeutic, diagnostic, prognostic, or predictive relevance. Genes tested: ABL1, ATK1, ALK, APC, etc. III. Methodology: Sample Type: Formalin-fixed, paraffin-embedded (FFPE) tumor tissue. Sequencing Platform: Illumina-based NGS technology. Library Preparation: Amplification of specific target regions within the genes of interest. Bioinformatics Analysis: Employing advanced algorithms and databases to annotate and interpret the detected variants' clinical significance. IV. Assay Performance: Sensitivity: Detects variants with a mutant allele frequency (MAF) as low as 5%. Specificity: >99% for single nucleotide variants (SNVs) and indels. Reportable Range: Identification and quantification of SNVs, indels, fusions, amplifications, and RNA expression levels of specific genes. V. Clinical Interpretation: The report offers a concise clinical interpretation of identified genomic alterations, linking the detected variants to FDA-approved therapies, clinical trials, or the patient's potential response to specific treatments. VI. Limitations: The assay might not detect alterations present at low levels or in regions not covered by the test. Variants may be present in genes not included in the panel. The test does not assess epigenetic changes, like methylation status. False negatives and false positives, although rare, may occur due to the technical limitations of the methodology employed. VII. Quality Assurance: The laboratory follows CAP/CLIA guidelines, ensuring stringent quality control and assurance practices at each step, from sample reception to result reporting. VIII. Result Delivery: Results are delivered within 10-14 working days from the sample receipt. The report outlines detected genomic alterations, their clinical implications, and potential therapeutic options. IX. Contact: For further clarification or questions regarding the results, healthcare providers are encouraged to contact our molecular pathology board-certified experts."
-
-Instance: analysisTumorNormalDNA
-InstanceOf: GenomicStudyAnalysis
-Description: "Example for Tumor Normal Genomics Study Analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisRegions]
-  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:76 "ABL1"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:427 "ALK"
-  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:583 "APC"
-  * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#deletion-duplication-analysis "Deletion/duplication analysis"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
-* extension[GenomicStudyAnalysisGenomeBuild].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/normalSpecimen)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
-* extension[GenomicStudyAnalysisOutput][+]
-  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
-  * extension[file].valueReference = Reference(DocumentReference/somaticVCFfile)
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2023-02-02T01:01:10-06:00"
-* note.text = "For technical reasons, BCR gene was deemed uncallable."
-* subject = Reference(somaticPatient)
-
-Instance: analysisTumorRNA
-InstanceOf: GenomicStudyAnalysis
-Description: "Example for just Tumor RNA Genomic Study Analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisRegions].extension[studied][+].valueReference = Reference(DocumentReference/FullGenome-GRCh38)
-* extension[GenomicStudyAnalysisMethodType].valueCodeableConcept = GenomicStudyMethodTypeCS#rna-analysis "RNA analysis"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001565 "gene_fusion"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001576 "transcript_variant"
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/tumorSpecimen)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/somaticPatient)
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2023-02-02T01:01:10-06:00"
-* subject = Reference(somaticPatient)
+* analysis[+]
+  * regionsStudied[+] = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+//  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:76 "ABL1"
+//  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:427 "ALK"
+//  * extension[studied][+].valueCodeableConcept = $HGNCID#HGNC:583 "APC"
+//  * extension[uncalled][+].valueReference = Reference(DocumentReference/WES-UncallableRegions-GRCh38)
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#deletion-duplication-analysis "Deletion/duplication analysis"
+  * changeType[+] = $SEQONT#SO:0001483 "SNV"
+  * changeType[+] = $SEQONT#SO:0002007 "MNV"
+  * changeType[+] = $SEQONT#SO:1000032 "delins"
+  * changeType[+] = $SEQONT#SO:0001019 "copy_number_variation"
+  * genomeBuild = $LNC#LA26806-2 "GRCh38"
+  * specimen[+] = Reference(Specimen/tumorSpecimen)
+  * specimen[+] = Reference(Specimen/normalSpecimen)
+  * focus[+] = Reference(Patient/somaticPatient)
+  * output[+]
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#vcf "VCF"
+    * file = Reference(DocumentReference/somaticVCFfile)
+  * note.text = "For technical reasons, BCR gene was deemed uncallable."
+  * date = "2023-02-02T01:01:10-06:00"
+* analysis[+]
+  * regionsStudied[+] = Reference(DocumentReference/FullGenome-GRCh38)
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#rna-analysis "RNA analysis"
+  * changeType[+] = $SEQONT#SO:0001565 "gene_fusion"
+  * changeType[+] = $SEQONT#SO:0001576 "transcript_variant"
+  * specimen[+] = Reference(Specimen/tumorSpecimen)
+  * focus[+] = Reference(Patient/somaticPatient)
+  * date = "2023-02-02T01:01:10-06:00"
 
 Instance: tumorSpecimen
 InstanceOf: Specimen
@@ -1001,7 +981,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#A*24:02 "HLA-A*24:02"
+* valueCodeableConcept = $HLAALLELE#HLA00004 "A*01:04:01:01N"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-A-haplotype2
@@ -1016,7 +996,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#A*02:06 "HLA-A*02:06"
+* valueCodeableConcept = $HLAALLELE#HLA00005 "A*02:01:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4931 "HLA-A"
 
 Instance: HLA-B-haplotype1
@@ -1031,7 +1011,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#B*35:01 "HLA-B*35:01"
+* valueCodeableConcept = $HLAALLELE#HLA00006 "A*02:01:02:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: HLA-B-haplotype2
@@ -1046,7 +1026,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#B*35:01 "HLA-B*35:01"
+* valueCodeableConcept = $HLAALLELE#HLA00006 "A*02:01:02:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4932 "HLA-B"
 
 Instance: HLA-C-haplotype1
@@ -1061,7 +1041,7 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#C*03:03 "HLA-C*03:03"
+* valueCodeableConcept = $HLAALLELE#HLA00007 "A*02:02:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: HLA-C-haplotype2
@@ -1076,15 +1056,15 @@ Usage: #example
 * category[geCategory] = $DIAGNOSTICSERVICE#GE
 * code = $LNC#84414-2 "Haplotype Name"
 * issued = "2023-02-01T00:00:00-05:00"
-* valueCodeableConcept = $HLAALLELE#C*15:02 "HLA-C*15:02"
+* valueCodeableConcept = $HLAALLELE#HLA00008 "A*02:03:01:01"
 * component[gene-studied].valueCodeableConcept = $HGNCID#HGNC:4933 "HLA-C"
 
 Instance: somaticReport
 InstanceOf: GenomicReport
 Description: "Example somatic GenomicReport"
 Usage: #example
-* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-reference"
-* extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
+//* extension[+].url = "http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-study-reference"
+//* extension[=].valueReference = Reference(somaticStudy) "somaticStudy"
 * identifier.type.coding.code = #ACSN
 * identifier.type.coding.display = "Accession ID"
 * identifier.type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
@@ -1096,6 +1076,7 @@ Usage: #example
 * basedOn = Reference(somaticServiceRequest)
 * performer[+] = Reference(pathologistPractitioner)
 * performer[+] = Reference(performingOrganization)
+* study = Reference(somaticStudy) "somaticStudy"
 * resultsInterpreter[+] = Reference(supervisorPractitioner)
 * resultsInterpreter[+] = Reference(performingOrganization)
 * result[+] = Reference(NOTCH1-uncertain-var)
@@ -1149,9 +1130,9 @@ Usage: #example
 * identifier.value = "1111jh11112"
 * status = #active
 * intent = #plan
-* code.text = "My Test Cancer 700 Gene Panel"
+* code.concept.text = "My Test Cancer 700 Gene Panel"
 * subject = Reference(somaticPatient)
-* reasonCode = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
+* reason.concept = $SCT#424993006 "Adenocarcinoma of lung, stage IV (disorder)"
 * requester = Reference(orderingPractitioner)
 
 Instance: orderingPractitioner
@@ -1164,10 +1145,10 @@ Usage: #example
 * name.family = "Submitter"
 * name.given = "Test"
 * name.prefix = "Dr"
-* address.line = "1000 SE Submitter Ave"
-* address.city = "Los Angeles"
-* address.state = "CA"
-* address.postalCode = "90027"
+* address[+].line[+] = "1000 SE Submitter Ave"
+* address[=].city = "Los Angeles"
+* address[=].state = "CA"
+* address[=].postalCode = "90027"
 
 Instance: pathologistPractitioner
 InstanceOf: Practitioner
@@ -1191,20 +1172,22 @@ Usage: #example
 * name.given = "Test"
 * name.prefix = "Dr"
 
+
 Instance: performingOrganization
 InstanceOf: Organization
 Description: "Example of a Pathology lab"
 Usage: #example
-* identifier.system = "http://example.org/identifiers/CLIA"
-* identifier.value = "10000DLAB8"
+* identifier[+].system = "http://example.org/identifiers/CLIA"
+* identifier[=].value = "10000DLAB8"
 * name = "My Test Pathology Laboratories"
-* telecom[+].system = #phone
-* telecom[=].value = "(100) 200-3000"
-* telecom[+].system = #fax
-* telecom[=].value = "(400) 500-6000"
-* telecom[+].system = #url
-* telecom[=].value = "http://www.example.com/mytestpathlabs"
-* address.line = "1000 SE Lab Ave"
-* address.city = "Los Angeles"
-* address.state = "CA"
-* address.postalCode = "90027"
+* contact[+]
+  * telecom[+].system = #phone
+  * telecom[=].value = "(100) 200-3000"
+  * telecom[+].system = #fax
+  * telecom[=].value = "(400) 500-6000"
+  * telecom[+].system = #url
+  * telecom[=].value = "http://www.example.com/mytestpathlabs"
+  * address[+].line[+] = "1000 SE Lab Ave"
+  * address[=].city = "Los Angeles"
+  * address[=].state = "CA"
+  * address[=].postalCode = "90027"

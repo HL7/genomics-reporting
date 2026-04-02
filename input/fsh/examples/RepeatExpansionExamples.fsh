@@ -18,7 +18,7 @@ Usage: #example
 * component[=].valueCodeableConcept.text = "chr14"
 
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004643.4 "NM_004643.4"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_004643.4 "Homo sapiens poly(A) binding protein nuclear 1 (PABPN1), transcript variant 1, mRNA"
 
 * component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
 * component[=].valueCodeableConcept.coding = $HGVS#NM_004643.3:c.3GGC[14] "NM_004643.3:c.3GGC[14]"
@@ -58,7 +58,7 @@ Usage: #example
 * component[=].valueCodeableConcept.text = "chrx"
 
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_002024.5 "NM_002024.5"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_002024.5 "Homo sapiens FMRP translational regulator 1 (FMR1), transcript variant ISO1, mRNA"
 
 * component[+].code = $LNC#48004-6 "DNA change (c.HGVS)"
 * component[=].valueCodeableConcept.coding = $HGVS#NM_002024.5:c.-128_-69GGC[10]GGA[1]GGC[9]GGA[1]GGC[10] "NM_002024.5:c.-128_-69GGC[10]GGA[1]GGC[9]GGA[1]GGC[10]"

@@ -26,7 +26,7 @@ Usage: #example
 * component[+].code = $LNC#48005-3 "Amino acid change (pHGVS)"
 * component[=].valueCodeableConcept = $HGVS#NP_000035.2:p.Val3Met "NP_000035.2:p.Val3Met"
 * component[+].code = $LNC#51958-7 "Transcript reference sequence [ID]"
-* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000044.3 "NM_000044.6"
+* component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000044.3 "Homo sapiens androgen receptor (AR), transcript variant 1, mRNA"
 * component[+].code = $LNC#81258-6 "Sample VAF"
 * component[=].valueQuantity.value = 0.44
 * component[=].valueQuantity.system = "http://unitsofmeasure.org"

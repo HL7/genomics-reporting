@@ -149,7 +149,7 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept.coding = $HLAALLELE#*2
+* valueCodeableConcept.coding = $HLAALLELE#HLA00003 "A*01:03:01:01"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(discrete-variant-1a)
 
@@ -164,7 +164,9 @@ Usage: #inline
 * effectiveDateTime = "2016"
 * issued = "2016-09-06T00:00:00-05:00"
 * performer = Reference(ExampleLab)
-* valueCodeableConcept = $PHARMVAR#CYP2C9*2*5" "CYP2C9 *2/*5"
+* valueCodeableConcept.coding[+] = $PHARMVAR#PV00538 "CYP2C9*2"
+* valueCodeableConcept.coding[+] = $PHARMVAR#PV00541 "CYP2C9*5"
+* valueCodeableConcept.text = "CYP2C9 *2/*5"
 * specimen = Reference(ExampleSpecimen)
 * derivedFrom = Reference(haplotype-1a)
 * component[+].code = $LNC#48018-6
@@ -233,7 +235,7 @@ Usage: #inline
 * focus = Reference(MedicationStatementWarfarin)
 * for = Reference(ExamplePatient)
 * requester = Reference(ExampleLab)
-* reasonReference = Reference(metab-1a)
+* reason.reference = Reference(metab-1a)
 
 Instance: complex-component-D-1a
 InstanceOf: Variant
@@ -249,7 +251,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding = $CLINVAR#31934 "NM_000106.5(CYP2D6):c.886C>T (p.Arg296Cys)"
+* component[=].valueCodeableConcept.coding = $CLINVAR#RCV000018391.36 "NM_000106.5(CYP2D6):c.[886C>T;457G>C]"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept.coding = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
@@ -273,7 +275,7 @@ Usage: #inline
 * valueCodeableConcept = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding = $CLINVAR#38486 "NM_000106.5(CYP2D6):c.1457G>C (p.Ser486Thr)"
+* component[=].valueCodeableConcept.coding = $CLINVAR#RCV000018391.27 "NM_000106.5(CYP2D6):c.[886C>T;457G>C]"
 * component[+].code = $LNC#51958-7
 * component[=].valueCodeableConcept = $NCBIREFSEQ#NM_000106.5
 * component[+].code = $LNC#48004-6
@@ -293,7 +295,7 @@ Usage: #inline
 * valueCodeableConcept.coding = $LNC#LA9633-4 "Present"
 * specimen = Reference(ExampleSpecimen)
 * component[+].code = $LNC#81252-9 "Discrete genetic variant"
-* component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.4(ACAD9):c.1249C>T (p.Arg417Cys)"
+* component[=].valueCodeableConcept.coding = $CLINVAR#30880 "NM_014049.5(ACAD9):c.1249C>T (p.Arg417Cys)"
 * component[+].code = $LNC#48018-6
 * component[=].valueCodeableConcept.coding = $HGNCID#HGNC:21497 "ACAD9"
 * component[+].code = $LNC#51958-7

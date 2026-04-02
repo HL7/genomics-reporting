@@ -82,6 +82,23 @@ Allele ambiguity is often captured using [NMDP Multiple Allele Codes](https://bi
 
 For example, this valueCodeableConcept would be used to describe a genotype for HLA-B, based on the 3.31.0 release of the IMGT-IPD/HLA database, that is ambiguous for one of the alleles in the genotype (HLA-B*07:02:01:01/HLA-B*07:02:01:03), and unambiguous for the other (HLA-B*13:02:01:01).
 
+#### HLA - Code System Usage {#hla-code-system-usage}
+
+The HLA allele code system (`http://www.ebi.ac.uk/ipd/imgt/hla`) uses IPD-IMGT/HLA accession numbers as canonical codes. When a `Coding` references an HLA allele, the `code` field **must contain the database accession** (e.g., `HLA00001`), while the `display` field contains the human-readable allele name and locus (e.g., `A*01:01:01:01 (HLA-A)`).
+
+**Example:**
+```
+Coding {
+  system: "http://www.ebi.ac.uk/ipd/imgt/hla",
+  code: "HLA00001",
+  display: "A*01:01:01:01 (HLA-A)"
+}
+```
+
+The terminology server accepts allele names (e.g., `A*01:01:01:01`, `HLA-A*01:01:01:01`) as input for validation and will normalize them to their corresponding accession number. This ensures consistent interchange and prevents ambiguity that can arise from allele name changes or duplicate nomenclature across IMGT/HLA releases.
+
+#### HLA - Ambiguity
+
 ```xml
 <valueCodeableConcept>
     <coding>

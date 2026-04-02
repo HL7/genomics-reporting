@@ -1,70 +1,56 @@
 Instance: lungMass
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "Example of solid tumor whole exome sequencing panel"
 Usage: #example
-* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis1)
-* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(lungMass-analysis2)
-* status = #completed
-* code.text = "Solid tumor whole exome sequencing panel"
-* category = $OBSCAT#laboratory
+* status = #available
+* type.text = "Solid tumor whole exome sequencing panel"
 * subject = Reference(Patient/genomicPatient)
-* performedDateTime = "2019-03-01"
+* startDate = "2019-03-01"
 * basedOn = Reference(ServiceRequest/genomicServiceRequest)
-* asserter = Reference(Practitioner/practitioner02)
-* reasonCode = $SCT#309529002 "Lung mass (finding)"
+* interpreter = Reference(Practitioner/practitioner02)
+* reason.concept = $SCT#309529002 "Lung mass (finding)"
 * note.text = "For technical reasons, PIK3CB was deemed uncallable."
-
-Instance: lungMass-analysis1
-InstanceOf: GenomicStudyAnalysis
-Description: "Example of Sequence analysis of the entire coding region"
-Usage: #example
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
-* extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001483 "SNV"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0002007 "MNV"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:1000032 "delins"
-* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
-* extension[GenomicStudyAnalysisDevice][+].extension[device].valueReference = Reference(Device/triodenovo-software)
-* extension[GenomicStudyAnalysisRegions]
-  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-  * extension[uncalled][+].valueReference = Reference(DocumentReference/UncallableRegions) 
-  * extension[called][+].valueReference = Reference(DocumentReference/SimpleVariantAnalysis-called)
-* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
-* extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-simple)
-* instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2019-03-01T01:01:10-06:00"
-* note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
-* performer.actor = Reference(Practitioner/practitioner02)
-* performer.function = $PARTICIPATIONTYPE#PRF "Performer"
-* subject = Reference(Patient/genomicPatient)
-
-Instance: lungMass-analysis2
-InstanceOf: GenomicStudyAnalysis
-Description: "Example of Deletion/duplication analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisMethodType][+].valueCodeableConcept = GenomicStudyMethodTypeCS#deletion-duplication-analysis "Deletion/duplication analysis"
-* extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
-* extension[GenomicStudyAnalysisChangeType][+].valueCodeableConcept = $SEQONT#SO:0001019 "CNV"
-* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisSpecimen][+].valueReference = Reference(Specimen/genomicSpecimen)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/genomicPatient)
-* extension[GenomicStudyAnalysisRegions]
-  * extension[studied][+].valueReference = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
-  * extension[called][+].valueReference = Reference(DocumentReference/CNVAnalysis-called)
-* extension[GenomicStudyAnalysisOutput][+].extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
-* extension[GenomicStudyAnalysisOutput][=].extension[file].valueReference = Reference(DocumentReference/genomicVCFfile-cnv)
-* instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2019-03-01T01:01:10-06:00"
-* note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
-* performer.actor = Reference(Practitioner/practitioner02)
-* performer.function = $PARTICIPATIONTYPE#PRF "Performer"
-* subject = Reference(Patient/genomicPatient)
+* analysis[+]
+  * methodType[+] = http://hl7.org/fhir/genomicstudy-methodtype#sequence-analysis-of-the-entire-coding-region "Sequence analysis of the entire coding region"
+//  * extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
+  * changeType[+] = $SEQONT#SO:0001483 "SNV"
+  * changeType[+] = $SEQONT#SO:0002007 "MNV"
+  * changeType[+] = $SEQONT#SO:1000032 "delins"
+  * genomeBuild = $LNC#LA26806-2 "GRCh38"
+  * specimen = Reference(Specimen/genomicSpecimen)
+  * focus = Reference(Patient/genomicPatient)
+  * device[+].device = Reference(Device/triodenovo-software)
+  * regionsStudied[+] = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+  * regionsCalled[+] = Reference(DocumentReference/SimpleVariantAnalysis-called)
+//  * extension[GenomicStudyAnalysisRegions]
+//    * extension[uncalled][+].valueReference = Reference(DocumentReference/UncallableRegions) 
+  * output[+]
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#vcf "VCF"
+    * file = Reference(DocumentReference/genomicVCFfile-simple)
+  * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
+  * date = "2019-03-01T01:01:10-06:00"
+  * note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
+  * performer[+]
+    * actor = Reference(Practitioner/practitioner02)
+    * role = $PARTICIPATIONTYPE#PRF "Performer"
+* analysis[+]
+  * methodType = http://hl7.org/fhir/genomicstudy-methodtype#deletion-duplication-analysis "Deletion/duplication analysis"
+//  * extension[GenomicStudyAnalysisGenomicSourceClass].valueCodeableConcept = $LNC#LA6684-0 "Somatic"
+  * changeType[+] = $SEQONT#SO:0001019 "copy_number_variation"
+  * genomeBuild = $LNC#LA26806-2 "GRCh38"
+  * specimen = Reference(Specimen/genomicSpecimen)
+  * focus = Reference(Patient/genomicPatient)
+  * regionsStudied[+] = Reference(DocumentReference/WES-FullSequencedRegion-GRCh38)
+  * regionsCalled[+] = Reference(DocumentReference/CNVAnalysis-called)
+  * output[+]
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#vcf "VCF"
+    * file = Reference(DocumentReference/genomicVCFfile-cnv)
+  * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
+  * date = "2019-03-01T01:01:10-06:00"
+  * note.text = "For technical reasons, PIK3CB was deemed uncallable using this method."
+  * performer[+]
+    * actor = Reference(Practitioner/practitioner02)
+    * role = $PARTICIPATIONTYPE#PRF "Performer"
 
 Instance: genomicSpecimen
 InstanceOf: Specimen
@@ -215,49 +201,39 @@ Usage: #example
 
 
 Instance: genomicstudy-trio2
-InstanceOf: GenomicStudy
+InstanceOf: GenomicStudyMetadata
 Description: "GenomicStudy example of a trio analysis"
 Usage: #example
-* extension[GenomicStudyAnalysisExt][+].valueReference = Reference(genomicstudyanalysis-trio2)
-* extension[GenomicStudyReferrerExt].valueReference = Reference(Practitioner/practitioner02)
 * identifier[+]
   * use = #temp
   * system = "http://example.org/identifiers/genomicstudies"
   * value = "urn:uuid:1111-1111-1111-1113"
-* status = #completed
-* code.text = "Trio Analysis"
-* category = $OBSCAT#laboratory
+* status = #available
+* type.text = "Trio Analysis"
 * subject = Reference(Patient/denovoChild)
-* performedDateTime = "2023-10-01"
-* asserter = Reference(Practitioner/practitioner02)
+* startDate = "2023-10-01"
+* interpreter = Reference(Practitioner/practitioner02)
 * note.text = "De novo mutation study of the patient. The Prenatal Trio Whole Exome Sequencing (Prenatal Trio WES) test is ordered by a physician and must be accompanied with a consent form and detailed clinical information. In general, the test is used when prenatal imaging detects an anomaly that strongly suggests that there is an underlying genetic etiology. Prenatal Trio WES is often considered only after fetal chromosome microarray analysis has been non-diagnostic."
-
-Instance: genomicstudyanalysis-trio2
-InstanceOf: GenomicStudyAnalysis
-Description: "GenomicStudy Analysis example of a trio analysis"
-Usage: #example
-* extension[GenomicStudyAnalysisGenomeBuild][+].valueCodeableConcept = $LNC#LA26806-2 "GRCh38"
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/denovoFather)
-* extension[GenomicStudyAnalysisFocus][+].valueReference = Reference(Patient/denovoMother)
-* extension[GenomicStudyAnalysisTitle].valueString = "Parental Sequence Variation Detection Using Next Generation Sequencing"
-* extension[GenomicStudyAnalysisProtocolPerformed].valueReference = Reference(Procedure/SequencingProcedure)
-* extension[GenomicStudyAnalysisInput][+]
-  * extension[file].valueReference = Reference(DocumentReference/genomicFileProbandBAM)
-  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#bam "BAM"
-* extension[GenomicStudyAnalysisInput][+]
-  * extension[file].valueReference = Reference(DocumentReference/genomicFileMotherBAM)
-  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#bam "BAM"
-* extension[GenomicStudyAnalysisInput][+]
-  * extension[file].valueReference = Reference(DocumentReference/genomicFileFatherBAM)
-  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#bam "BAM"
-* extension[GenomicStudyAnalysisOutput][+]
-  * extension[file].valueReference = Reference(DocumentReference/genomicFileProbandVCF)
-  * extension[type].valueCodeableConcept = GenomicStudyDataFormatCS#vcf "VCF"
-* status = #completed
-* category = $OBSCAT#laboratory
-* performedDateTime = "2023-10-01"
-* instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
-* subject = Reference(Patient/denovoChild)
+* analysis[+]
+  * genomeBuild = $LNC#LA26806-2 "GRCh38"
+  * focus[+] = Reference(Patient/denovoFather)
+  * focus[+] = Reference(Patient/denovoMother)
+  * title = "Parental Sequence Variation Detection Using Next Generation Sequencing"
+  * protocolPerformed = Reference(Procedure/SequencingProcedure)
+  * input[+]
+    * file = Reference(DocumentReference/genomicFileProbandBAM)
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#bam "BAM"
+  * input[+]
+    * file = Reference(DocumentReference/genomicFileMotherBAM)
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#bam "BAM"
+  * input[+]
+    * file = Reference(DocumentReference/genomicFileFatherBAM)
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#bam "BAM"
+  * output[+]
+    * file = Reference(DocumentReference/genomicFileProbandVCF)
+    * type = http://hl7.org/fhir/genomicstudy-dataformat#vcf "VCF"
+  * date = "2023-10-01"
+  * instantiatesUri = "https://pubmed.ncbi.nlm.nih.gov/33927380/"
 
 Instance: triodenovo-software
 InstanceOf: Device
@@ -269,11 +245,11 @@ Usage: #example
   * value = "11112"
 * status = #active
 * manufacturer = "Vanderbilt Genetics Institute"
-* deviceName[+]
-  * name = "Triodenovo Software"
-  * type = #user-friendly-name
+* name[+]
+  * value = "Triodenovo Software"
+  * type = http://hl7.org/fhir/device-nametype#user-friendly-name
 * type = $SCT#706687001 "Software (physical object)"
-* version[+].value = "0.06"
+* deviceVersion[+].value = "0.06"
 
 Instance: denovoChild
 InstanceOf: Patient

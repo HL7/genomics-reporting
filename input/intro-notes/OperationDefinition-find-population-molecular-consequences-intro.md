@@ -1,5 +1,4 @@
 ### Description
-
 Retrieve count or list of patients having molecular consequences. More specifically, this operation retrieves the count +/- list of patients that have molecular consequences involving specific featureConsequences, derived from specific variants.
 
 A patient meets numerator criteria if they have at least one molecular consequence matching the query parameters.

@@ -9,4 +9,4 @@ Usage: #inline
 * description = "Any Increase does Recommendation Text from the provider"
 * focus = Reference(current-med-example)
 * for = Reference(ExamplePatient)
-* reasonReference = Reference(med-impact-pgx-example)
+* reason.reference = Reference(med-impact-pgx-example)
