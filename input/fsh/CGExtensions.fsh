@@ -66,3 +66,9 @@ Description: "Used to identify the sample ancestry group using terms obtained fr
 * ^context[+].type = #element
 * ^context[=].expression = "Observation.component"
 * value[x] only CodeableConcept
+
+Extension:   SpecimenAssessedReference
+Id:          specimen-assessed-reference
+Title:       "Specimen Assessed reference to a FHIR resource"
+Description: "Used to reference a specific specimen that was assessed and/or related to the FHIR resource."
+* value[x] only Reference(Specimen)
