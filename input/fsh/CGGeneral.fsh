@@ -149,4 +149,4 @@ Title:          "Genomic Data File"
 Description:    "A profile of DocumentReference used to represent a genomics file."
 * context.related only Reference(GenomicReport)
 * description ^short = "Human-readable description to provide guidance on how the file was generated"
-* extension contains SpecimenAssessedReference named specimen 0..*
+
