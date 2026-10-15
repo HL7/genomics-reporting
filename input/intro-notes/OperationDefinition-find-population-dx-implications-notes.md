@@ -6,7 +6,7 @@ Valid response codes are shown in the following table. Additional response codes
 |---------------|-------------|
 | 200 | Successfully executed request |
 | 400 | ERROR: Invalid query parameters |
-| 404 | ERROR: Patient not found |
+| 404 | ERROR: Group not found |
 | 422 | ERROR: Failed [LiftOver](operations.html#liftover) |
 {:.grid}
 
