@@ -925,6 +925,14 @@ Description: "Retrieve count or list of patients having specified variants."
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -948,21 +956,21 @@ Description: "Retrieve count or list of patients having specified variants."
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients having this variant"
+    * documentation = "Count of patients having this variant (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-population-structural-intersecting-variants
@@ -996,6 +1004,14 @@ Description: "Retrieve count or list of patients having structural intersecting 
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -1019,21 +1035,21 @@ Description: "Retrieve count or list of patients having structural intersecting 
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients having this variant"
+    * documentation = "Count of patients having this variant (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-population-structural-subsuming-variants
@@ -1067,6 +1083,14 @@ Description: "Retrieve count or list of patients having structural subsuming var
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -1090,21 +1114,21 @@ Description: "Retrieve count or list of patients having structural subsuming var
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients having this variant"
+    * documentation = "Count of patients having this variant (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-population-specific-haplotypes
@@ -1138,6 +1162,14 @@ Description: "Retrieve count or list of patients having specified genotypes/hapl
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -1162,21 +1194,21 @@ Description: "Retrieve count or list of patients having specified genotypes/hapl
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients having this variant"
+    * documentation = "Count of patients having this variant (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-population-tx-implications
@@ -1234,6 +1266,14 @@ Description: "Retrieve count or list of patients having therapeutic implications
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -1250,21 +1290,21 @@ Description: "Retrieve count or list of patients having therapeutic implications
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients having this variant"
+    * documentation = "Count of patients having this variant (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-population-dx-implications
@@ -1314,6 +1354,14 @@ Description: "Retrieve count or list of patients having diagnostic implications.
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -1330,21 +1378,21 @@ Description: "Retrieve count or list of patients having diagnostic implications.
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients having this variant"
+    * documentation = "Count of patients having this variant (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-population-molecular-consequences
@@ -1386,6 +1434,14 @@ Description: "Retrieve count or list of patients having molecular consequences."
   * type = #string
   * searchType = #token
 * parameter[+]
+  * name = #group
+  * use = #in
+  * min = 0
+  * max = "1"
+  * documentation = "Identifier of a FHIR Group. If supplied, the search is restricted to members of the group: numerator counts only group members, denominator is the number of members in the group, and the subject list (if includePatientList=true) contains only group members. If omitted, all patients in the repository are searched. An unknown group identifier results in an error."
+  * type = #string
+  * searchType = #reference
+* parameter[+]
   * name = #includePatientList
   * use = #in
   * min = 0
@@ -1402,21 +1458,21 @@ Description: "Retrieve count or list of patients having molecular consequences."
     * use = #out
     * min = 1
     * max = "1"
-    * documentation = "Count of patients meeting criteria"
+    * documentation = "Count of patients meeting criteria (limited to members of group, if supplied)"
     * type = #Quantity
   * part[+]
     * name = #denominator
     * use = #out
     * min = 0
     * max = "1"
-    * documentation = "Count of patients in the cohort searched"
+    * documentation = "Count of patients in the cohort searched (the number of members in group, if supplied; otherwise all patients in the repository)"
     * type = #Quantity
   * part[+]
     * name = #subject
     * use = #out
     * min = 0
     * max = "*"
-    * documentation = "Patient ID. Include if includePatientList=true"
+    * documentation = "Patient ID. Include if includePatientList=true. Limited to members of group, if supplied"
     * type = #string
 
 Instance: find-study-metadata

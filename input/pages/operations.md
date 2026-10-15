@@ -10,18 +10,23 @@ In scope are clinical genomics operations. In the future, operations supporting 
 
 #### Summary of Operations {#OperationsSummary}
 
-|  | Subject Operations | Population Operations |
-|---|---|---|
-| **Genotype Operations** |  |  |
-| simple variants | [find-subject-variants](OperationDefinition-find-subject-variants.html); [find-subject-specific-variants](OperationDefinition-find-subject-specific-variants.html) | [find-population-specific-variants](OperationDefinition-find-population-specific-variants.html) |
-| structural variants | [find-subject-structural-intersecting-variants](OperationDefinition-find-subject-structural-intersecting-variants.html); [find-subject-structural-subsuming-variants](OperationDefinition-find-subject-structural-subsuming-variants.html) | [find-population-structural-intersecting-variants](OperationDefinition-find-population-structural-intersecting-variants.html); [find-population-structural-subsuming-variants](OperationDefinition-find-population-structural-subsuming-variants.html) |
-| haplotype/genotypes | [find-subject-haplotypes](OperationDefinition-find-subject-haplotypes.html); [find-subject-specific-haplotypes](OperationDefinition-find-subject-specific-haplotypes.html) | [find-population-specific-haplotypes](OperationDefinition-find-population-specific-haplotypes.html) |
-| **Phenotype Operations** |  |  |
-| therapeutic implications | [find-subject-tx-implications](OperationDefinition-find-subject-tx-implications.html) | [find-population-tx-implications](OperationDefinition-find-population-tx-implications.html) |
-| diagnostic implications | [find-subject-dx-implications](OperationDefinition-find-subject-dx-implications.html) | [find-population-dx-implications](OperationDefinition-find-population-dx-implications.html) |
-| molecular consequences | [find-subject-molecular-consequences](OperationDefinition-find-subject-molecular-consequences.html) | [find-population-molecular-consequences](OperationDefinition-find-population-molecular-consequences.html) |
-| **Metadata Operations** |  |  |
-| study metadata | [find-study-metadata](OperationDefinition-find-study-metadata.html) |  |
+<table class="grid">
+  <thead>
+    <tr><th></th><th>Subject Operations</th><th>Population Operations</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="3"><b>Genotype Operations</b></td></tr>
+    <tr><td>simple variants</td><td><a href="OperationDefinition-find-subject-variants.html">find-subject-variants</a>; <a href="OperationDefinition-find-subject-specific-variants.html">find-subject-specific-variants</a></td><td><a href="OperationDefinition-find-population-specific-variants.html">find-population-specific-variants</a></td></tr>
+    <tr><td>structural variants</td><td><a href="OperationDefinition-find-subject-structural-intersecting-variants.html">find-subject-structural-intersecting-variants</a>; <a href="OperationDefinition-find-subject-structural-subsuming-variants.html">find-subject-structural-subsuming-variants</a></td><td><a href="OperationDefinition-find-population-structural-intersecting-variants.html">find-population-structural-intersecting-variants</a>; <a href="OperationDefinition-find-population-structural-subsuming-variants.html">find-population-structural-subsuming-variants</a></td></tr>
+    <tr><td>haplotype/genotypes</td><td><a href="OperationDefinition-find-subject-haplotypes.html">find-subject-haplotypes</a>; <a href="OperationDefinition-find-subject-specific-haplotypes.html">find-subject-specific-haplotypes</a></td><td><a href="OperationDefinition-find-population-specific-haplotypes.html">find-population-specific-haplotypes</a></td></tr>
+    <tr><td colspan="3"><b>Phenotype Operations</b></td></tr>
+    <tr><td>therapeutic implications</td><td><a href="OperationDefinition-find-subject-tx-implications.html">find-subject-tx-implications</a></td><td><a href="OperationDefinition-find-population-tx-implications.html">find-population-tx-implications</a></td></tr>
+    <tr><td>diagnostic implications</td><td><a href="OperationDefinition-find-subject-dx-implications.html">find-subject-dx-implications</a></td><td><a href="OperationDefinition-find-population-dx-implications.html">find-population-dx-implications</a></td></tr>
+    <tr><td>molecular consequences</td><td><a href="OperationDefinition-find-subject-molecular-consequences.html">find-subject-molecular-consequences</a></td><td><a href="OperationDefinition-find-population-molecular-consequences.html">find-population-molecular-consequences</a></td></tr>
+    <tr><td colspan="3"><b>Metadata Operations</b></td></tr>
+    <tr><td>study metadata</td><td><a href="OperationDefinition-find-study-metadata.html">find-study-metadata</a></td><td></td></tr>
+  </tbody>
+</table>
 
 #### Operation Descriptions {#OperationDescriptions}
 
@@ -44,6 +49,7 @@ In scope are clinical genomics operations. In the future, operations supporting 
 | [find-population-molecular-consequences](OperationDefinition-find-population-molecular-consequences.html) | Retrieve count or list of patients having molecular consequences. |
 | [find-population-dx-implications](OperationDefinition-find-population-dx-implications.html) | Retrieve count or list of patients having diagnostic implications. |
 | [find-study-metadata](OperationDefinition-find-study-metadata.html) | Retrieve metadata about sequencing studies performed on a subject. |
+{:.grid}
 
 ### General Guidance for the use of these Operations {#Guidance}
 
@@ -51,7 +57,7 @@ Genomics is a complex and highly dynamic field. We provide general guidance appl
 
 #### Use of coded query parameters {#QueryByCode}
 
-Many operations have coded elements as input parameters. In such cases, the description of the parameter will include 'must be in token or codesystem|code format'. A token is a string that should be used by the server to perform case-insensitive search through text, display, code, and/or codeSystem. Servers may optionally broaden the use of a token to also perform close to exact searching. If supplied parameter is in codeSystem|code format, server should only perform case-sensitive code- and codeSystem-specific retrieval.
+Many operations have coded elements as input parameters. In such cases, the description of the parameter will include 'must be in token or codesystem\|code format'. A token is a string that should be used by the server to perform case-insensitive search through text, display, code, and/or codeSystem. Servers may optionally broaden the use of a token to also perform close to exact searching. If supplied parameter is in codeSystem\|code format, server should only perform case-sensitive code- and codeSystem-specific retrieval.
 
 #### Query filters {#QueryFilters}
 
@@ -63,6 +69,16 @@ In such cases, it is important that FHIR Genomics operations be able to specify 
 - **Test date range**: Only results generated during this range will be returned
 - **Specimen identifiers**: Only results derived from one of these specimens will be returned.
 - **Source class**: Enables an App to limit results to those that are 'germline' or 'somatic'.
+
+#### Population numerator and denominator {#population-denominator}
+
+Population operations return a **numerator** (the count of patients matching the query criteria, e.g. having a specified variant) and optionally a **denominator** (the count of patients in the cohort searched). By default, the cohort searched is all patients in the repository. Population operations also support an optional **group** parameter, populated with the identifier of a [FHIR Group](http://hl7.org/fhir/R4/group.html), which restricts the cohort to members of that group. When a group is supplied:
+
+- the denominator is the number of members in the group;
+- the numerator counts only group members that match the query criteria;
+- where includePatientList=true, the returned list of patients is limited to group members.
+
+An unknown group identifier results in an error (404 Group not found).
 
 #### AND/OR logic in queries {#and-or-logic-in-queries}
 
@@ -78,11 +94,15 @@ As our understanding of genomics grows, we continue to recognize the clinical si
 
 For all operations, positional coordinates are [zero-based](https://www.biostars.org/p/84686/). Some operations return variants that overlap a 0-based interval range of integers, whereas some operations return variants that subsume a range. In the following figure, variants 1-5 overlap or intersect with the X..Y range, whereas only variant 2 subsumes the X..Y range.
 
-![Genes vs. Regions](find-variants-fig1.png)
+<div style="text-align: left; margin: 20px 0; clear: both; overflow: hidden;">
+<img src="find-variants-fig1.png" alt="Genes vs. Regions" style="max-width: 100%; display: block; margin: 0; float: none;" />
+</div>
 
 A zero-based coordinate system has an inclusive start and an exclusive end. For example, in the following figure, bases GCT are in range 1..4, whereas base A is not in range 1..4. As a result, a variant at position X is considered to intersect the X..Y range, whereas a variant at position Y does not. (Note that an insertion that starts before X, regardless of length, would not overlap X..Y, and would therefore not be returned). Imprecise implementations are allowed, where results contain some records outside a requested range.
 
-![Zero-based example](zero-based.png)
+<div style="text-align: left; margin: 20px 0; clear: both; overflow: hidden;">
+<img src="zero-based.png" alt="Zero-based example" style="max-width: 100%; display: block; margin: 0; float: none;" />
+</div>
 
 #### Expectation of normalized variant search {#normalization}
 

@@ -702,6 +702,38 @@ Usage: #example
 * parameter[=].part[+].name = "numerator"
 * parameter[=].part[=].valueQuantity.value = 3
 
+Instance: FindPopulationSpecificVariantsGroupOutput
+InstanceOf: Parameters
+Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'OR' logic, restricted to members of a group, with includePatientList=true"
+Usage: #example
+* parameter[+].name = "variants"
+* parameter[=].part[+].name = "variantItem"
+* parameter[=].part[=].valueString = "NC_000010.10:g.121551307G>A"
+* parameter[=].part[+].name = "numerator"
+* parameter[=].part[=].valueQuantity.value = 2
+* parameter[=].part[+].name = "denominator"
+* parameter[=].part[=].valueQuantity.value = 40
+* parameter[=].part[+].name = "subject"
+* parameter[=].part[=].valueString = "HG00403"
+* parameter[=].part[+].name = "subject"
+* parameter[=].part[=].valueString = "HG00406"
+* parameter[+].name = "variants"
+* parameter[=].part[+].name = "variantItem"
+* parameter[=].part[=].valueString = "NC_000011.10:g.8263343T>C"
+* parameter[=].part[+].name = "numerator"
+* parameter[=].part[=].valueQuantity.value = 0
+* parameter[=].part[+].name = "denominator"
+* parameter[=].part[=].valueQuantity.value = 40
+* parameter[+].name = "variants"
+* parameter[=].part[+].name = "variantItem"
+* parameter[=].part[=].valueString = "NC_000001.10:g.198742263G>A"
+* parameter[=].part[+].name = "numerator"
+* parameter[=].part[=].valueQuantity.value = 1
+* parameter[=].part[+].name = "denominator"
+* parameter[=].part[=].valueQuantity.value = 40
+* parameter[=].part[+].name = "subject"
+* parameter[=].part[=].valueString = "HG00419"
+
 Instance: FindALLPopulationSpecificVariantsOutput
 InstanceOf: Parameters
 Description: "Example Output of 'FindPopulationSpecificVariants' Operation, based on 'AND' logic"
