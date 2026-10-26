@@ -10,4 +10,4 @@ As shown in the following picture, this operation can return previously instanti
 <img src="implications.png" alt="Instantiated vs Dynamically Computed Implications" style="max-width: 100%; display: block; margin: 0; float: none;" />
 </div>
 
-Population queries are designed to return a **count** of patients that match each item sought, with or without a **list** of patients matching the item(s) sought.
+Population queries are designed to return a **count** of patients that match each item sought, with or without a **list** of patients matching the item(s) sought. As described in  [general guidance](operations.html#population-denominator), the population denominator can be limited by referencing a FHIR Group instance. 

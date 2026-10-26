@@ -12,4 +12,4 @@ As shown in the following picture, this operation can return previously instanti
 
 Dynamic computation of implications can return a large number of results (e.g. 'find therapeutic implications for cancer'). Results can be curtailed using additional operation parameters (e.g. 'find therapeutic implications for somatic variant NM_007294.4:c.5578del in breast cancer").
 
-Population queries are designed to return a **count** of patients that match each item sought, with or without a **list** of patients matching the item(s) sought.
+Population queries are designed to return a **count** of patients that match each item sought, with or without a **list** of patients matching the item(s) sought. As described in  [general guidance](operations.html#population-denominator), the population denominator can be limited by referencing a FHIR Group instance. 

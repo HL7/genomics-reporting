@@ -4,4 +4,4 @@ Retrieve count or list of patients having structural subsuming variants in speci
 
 A patient meets numerator criteria if they have at least one structural variant subsuming a given range.
 
-Population queries are designed to return a **count** of patients that match each item sought, with or without a **list** of patients matching the item(s) sought.
+Population queries are designed to return a **count** of patients that match each item sought, with or without a **list** of patients matching the item(s) sought. As described in  [general guidance](operations.html#population-denominator), the population denominator can be limited by referencing a FHIR Group instance. 

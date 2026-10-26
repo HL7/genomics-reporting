@@ -77,8 +77,11 @@ Population operations return a **numerator** (the count of patients matching the
 - the denominator is the number of members in the group;
 - the numerator counts only group members that match the query criteria;
 - where includePatientList=true, the returned list of patients is limited to group members.
+- An unknown group identifier results in an error (404 Group not found).
 
-An unknown group identifier results in an error (404 Group not found).
+Groups need not be static lists of patients. A group may be constructed dynamically, based on an intensional definition (i.e. the criteria for membership, such as age, sex, diagnosis, specimen type, or enrollment in a program), rather than an extensional definition (i.e. an explicit enumeration of members). Intensionally defined groups can be shared: one organization can share the criteria used to construct its group, and another organization can apply those same criteria to construct an equivalent group from its own patients, enabling comparable population queries across repositories. In [FHIR R6](https://build.fhir.org/group.html), a Group can carry its intensional definition directly: Group.membership is set to 'definitional', and each membership criterion is expressed as a Group.characteristic, whose Group.characteristic.formula element can hold a computable expression (e.g. CQL or FHIRPath) used to determine membership.
+
+
 
 #### AND/OR logic in queries {#and-or-logic-in-queries}
 
